@@ -1,92 +1,89 @@
 #include <algorithm>
 #include <array>
+#include <atomic>
 #include <chrono>
 #include <cstdint>
 #include <iostream>
 #include <stdexcept>
+#include <thread>
 #include <vector>
 
 #include "frame_arena.hpp"
 
-struct alignas(64) CameraToken {
-  std::uint64_t frame_id = 0;
-  std::array<float, 12> pose{};
-};
-
-struct DestructionProbe {
-  explicit DestructionProbe(std::vector<int>& trace, int id) : trace_(trace), id_(id) {}
-  ~DestructionProbe() {
-    trace_.push_back(id_);
-  }
-  std::vector<int>& trace_;
-  int id_;
-};
-
 struct ControlCommand {
   float velocity[6]{};
-  std::uint64_t timestamp = 0;
+  std::uint64_t frame_id = 0;
 };
-
+struct ManagedTelemetry {
+  explicit ManagedTelemetry(std::atomic<int>& destroyed) noexcept : destroyed_(destroyed) {}
+  ~ManagedTelemetry() {
+    destroyed_.fetch_add(1, std::memory_order_relaxed);
+  }
+  std::atomic<int>& destroyed_;
+};
 template <typename F>
 double measure_us(F&& action) {
-  const auto start = std::chrono::steady_clock::now();
+  const auto begin = std::chrono::steady_clock::now();
   action();
-  const auto end = std::chrono::steady_clock::now();
-  return std::chrono::duration<double, std::micro>(end - start).count();
+  return std::chrono::duration<double, std::micro>(std::chrono::steady_clock::now() - begin)
+      .count();
 }
-
-double percentile(std::vector<double> samples, double ratio) {
-  std::sort(samples.begin(), samples.end());
-  return samples[static_cast<std::size_t>((samples.size() - 1) * ratio)];
+double percentile(std::vector<double> values, double ratio) {
+  std::sort(values.begin(), values.end());
+  return values[static_cast<std::size_t>((values.size() - 1) * ratio)];
 }
-
 int main() {
   try {
-    FrameArena arena(4096, 8);
-    auto* token = arena.make<CameraToken>();
-    if (reinterpret_cast<std::uintptr_t>(token) % alignof(CameraToken) != 0) {
-      throw std::runtime_error("64-byte alignment check failed");
-    }
-    std::vector<int> destruction_trace;
-    arena.make<DestructionProbe>(destruction_trace, 1);
-    arena.make<DestructionProbe>(destruction_trace, 2);
-    arena.reset();
-    if (destruction_trace != std::vector<int>{2, 1} || arena.used_bytes() != 0) {
-      throw std::runtime_error("reverse destruction or reset check failed");
-    }
-
-    FrameArena tiny(32, 1);
-    bool out_of_memory = false;
+    constexpr int kWorkers = 4, kPerWorker = 64;
+    FrameArena arena(kWorkers * kPerWorker * sizeof(ControlCommand) + 4096);
+    std::atomic<int> made{0}, destroyed{0};
+    std::vector<std::thread> workers;
+    for (int worker = 0; worker < kWorkers; ++worker)
+      workers.emplace_back([&] {
+        auto producer = arena.acquire_producer();
+        (void)arena.managed_new<ManagedTelemetry>(producer, destroyed);
+        for (int i = 0; i < kPerWorker; ++i) {
+          auto* command = arena.make<ControlCommand>(producer);
+          command->frame_id = static_cast<std::uint64_t>(made.fetch_add(1));
+        }
+      });
+    for (auto& worker : workers) worker.join();
+    if (made != kWorkers * kPerWorker || arena.used_bytes() == 0)
+      throw std::runtime_error("concurrent allocation failed");
+    arena.reset_after_join();
+    if (destroyed != kWorkers || arena.used_bytes() != 0)
+      throw std::runtime_error("managed destruction/reset failed");
+    bool busy_reset_rejected = false;
+    auto held = arena.acquire_producer();
     try {
-      (void)tiny.make<CameraToken>();
-    } catch (const std::bad_alloc&) {
-      out_of_memory = true;
+      arena.reset_after_join();
+    } catch (const std::logic_error&) {
+      busy_reset_rejected = true;
     }
-    if (!out_of_memory || tiny.used_bytes() != 0) {
-      throw std::runtime_error("capacity failure must not corrupt arena state");
-    }
-
-    constexpr int kCommands = 256;
-    constexpr int kWarmup = 20;
-    constexpr int kSamples = 100;
-    volatile std::uint64_t checksum = 0;  // 防止基准循环被完全消除。
-    FrameArena frame_pool(sizeof(ControlCommand) * kCommands + 64, 0);
+    held = {};
+    if (!busy_reset_rejected)
+      throw std::runtime_error("active producer reset was not rejected");
+    constexpr int kCommands = 256, kWarmup = 20, kSamples = 100;
+    FrameArena benchmark_pool(kCommands * sizeof(ControlCommand) + 64);
+    volatile std::uint64_t checksum = 0;
     auto run_arena = [&] {
+      auto producer = benchmark_pool.acquire_producer();
       for (int i = 0; i < kCommands; ++i) {
-        auto* command = frame_pool.make<ControlCommand>();
-        command->timestamp = static_cast<std::uint64_t>(i);
-        checksum += command->timestamp;
+        auto* command = benchmark_pool.make<ControlCommand>(producer);
+        command->frame_id = static_cast<std::uint64_t>(i);
+        checksum += command->frame_id;
       }
-      frame_pool.reset();  // 计时只含每帧 bump 分配，不含池的初始化分配。
+      producer = {};
+      benchmark_pool.reset_after_join();
     };
     auto run_heap = [&] {
       std::array<ControlCommand*, kCommands> commands{};
       for (int i = 0; i < kCommands; ++i) {
-        commands[i] = new ControlCommand{};  // 仅作为内存管理主题的对照。
-        commands[i]->timestamp = static_cast<std::uint64_t>(i);
+        commands[i] = new ControlCommand{};
+        commands[i]->frame_id = static_cast<std::uint64_t>(i);
       }
       for (auto* command : commands) {
-        checksum += command->timestamp;
+        checksum += command->frame_id;
         delete command;
       }
     };
@@ -95,18 +92,16 @@ int main() {
       run_heap();
     }
     std::vector<double> arena_samples, heap_samples;
-    arena_samples.reserve(kSamples);
-    heap_samples.reserve(kSamples);
     for (int i = 0; i < kSamples; ++i) {
       arena_samples.push_back(measure_us(run_arena));
       heap_samples.push_back(measure_us(run_heap));
     }
-    std::cout << "correctness=PASS alignment=64 reverse_destruction=PASS oom_rollback=PASS\n";
-    std::cout << "arena_us p50=" << percentile(arena_samples, 0.50)
-              << " p95=" << percentile(arena_samples, 0.95) << "\n";
-    std::cout << "heap_us p50=" << percentile(heap_samples, 0.50)
-              << " p95=" << percentile(heap_samples, 0.95) << "\n";
-    std::cout << "checksum=" << checksum << "\n";
+    std::cout << "correctness=PASS workers=4 managed_destruction=PASS reset_gate=PASS\n";
+    std::cout << "arena_us p50=" << percentile(arena_samples, .50)
+              << " p95=" << percentile(arena_samples, .95) << '\n';
+    std::cout << "heap_us p50=" << percentile(heap_samples, .50)
+              << " p95=" << percentile(heap_samples, .95) << '\n';
+    std::cout << "checksum=" << checksum << '\n';
   } catch (const std::exception& error) {
     std::cerr << "FAIL: " << error.what() << '\n';
     return 1;

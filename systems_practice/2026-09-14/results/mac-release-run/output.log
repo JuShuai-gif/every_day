@@ -1,16 +1,10 @@
--- The CXX compiler identification is AppleClang 21.0.0.21000101
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /usr/bin/c++ - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Configuring done (0.5s)
+-- Configuring done (0.0s)
 -- Generating done (0.0s)
 -- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/2026-09-14/results/mac-release-build
 [ 50%] Building CXX object CMakeFiles/frame_arena.dir/src/main.cpp.o
 [100%] Linking CXX executable frame_arena
 [100%] Built target frame_arena
-correctness=PASS alignment=64 reverse_destruction=PASS oom_rollback=PASS
-arena_us p50=2.75 p95=3.25
-heap_us p50=11 p95=13.083
+correctness=PASS workers=4 managed_destruction=PASS reset_gate=PASS
+arena_us p50=1.084 p95=1.167
+heap_us p50=12.875 p95=13.25
 checksum=7833600

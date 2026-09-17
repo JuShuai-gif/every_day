@@ -1,4 +1,4 @@
-correctness=PASS alignment=64 reverse_destruction=PASS oom_rollback=PASS
-arena_us p50=11.958 p95=12.041
-heap_us p50=23.875 p95=31.583
+correctness=PASS workers=4 managed_destruction=PASS reset_gate=PASS
+arena_us p50=16.292 p95=20.042
+heap_us p50=24.459 p95=32.167
 checksum=7833600
