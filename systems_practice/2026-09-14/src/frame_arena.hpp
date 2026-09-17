@@ -35,6 +35,7 @@ class FrameArena {
     explicit Producer(FrameArena* arena) : arena_(arena) {}
     void release() noexcept {
       if (arena_ != nullptr) {
+        // release 与 reset 的 acquire/CAS 配对：最后一个 producer 离开后才能关闭本帧。
         arena_->state_.fetch_sub(1, std::memory_order_release);
         arena_ = nullptr;
       }
@@ -58,6 +59,7 @@ class FrameArena {
   // 获取帧生产者租约。reset 只有在所有租约释放后才允许开始。
   Producer acquire_producer() {
     std::uint64_t state = state_.load(std::memory_order_relaxed);
+    // 高位为 closed，低 63 位是活跃 producer 数；一次 CAS 同时完成“检查并加一”。
     while ((state & kClosedBit) == 0) {
       if ((state & ~kClosedBit) == kClosedBit - 1)
         throw std::overflow_error("producer count overflow");
@@ -83,6 +85,7 @@ class FrameArena {
     static_assert(std::is_nothrow_constructible_v<T, Args...>,
                   "managed_new requires noexcept construction in this fixed-capacity exercise");
     auto* node = construct<ManagedNode<T>>(std::forward<Args>(args)...);
+    // 先构造完整节点，再用 acq_rel CAS 发布到无锁析构栈，避免 reset 看见半对象。
     ManagedNodeBase* head = managed_head_.load(std::memory_order_relaxed);
     do {
       node->next = head;
@@ -119,6 +122,7 @@ class FrameArena {
   static constexpr std::size_t kAlignment = 16;
   static constexpr std::uint64_t kClosedBit = std::uint64_t{1} << 63;
   struct ManagedNodeBase {
+    // 基类让不同 T 共用一条析构链表；destroy 保存正确的静态析构函数。
     ManagedNodeBase* next = nullptr;
     void (*destroy)(ManagedNodeBase*) noexcept = nullptr;
   };
@@ -143,6 +147,7 @@ class FrameArena {
       throw std::invalid_argument("over-aligned type is unsupported");
     const std::size_t rounded = round_up(bytes);
     std::size_t old = used_.load(std::memory_order_relaxed);
+    // CAS 在提交 cursor 前检查容量；不能用 fetch_add 后再失败，否则 cursor 会永久越界。
     do {
       if (old > storage_.size() || rounded > storage_.size() - old)
         throw std::bad_alloc();
@@ -160,6 +165,7 @@ class FrameArena {
       throw std::logic_error("Producer belongs to another or closed arena");
   }
   void destroy_managed() noexcept {
+    // 先摘下整条链，析构函数即使引入新节点也会在外层循环的下一轮被处理。
     while (ManagedNodeBase* node = managed_head_.exchange(nullptr, std::memory_order_acq_rel)) {
       while (node != nullptr) {
         ManagedNodeBase* next = node->next;
@@ -170,6 +176,6 @@ class FrameArena {
   }
   std::vector<std::byte> storage_;
   std::atomic<std::size_t> used_{0};
-  std::atomic<std::uint64_t> state_{0};
+  std::atomic<std::uint64_t> state_{0};  // closed bit + 活跃 producer 计数，保护 reset 边界。
   std::atomic<ManagedNodeBase*> managed_head_{nullptr};
 };

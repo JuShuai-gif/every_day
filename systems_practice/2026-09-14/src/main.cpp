@@ -11,12 +11,14 @@
 #include "frame_arena.hpp"
 
 struct ControlCommand {
+  // 平凡析构对象可不进析构链：帧 reset 时只需整体复用字节。
   float velocity[6]{};
   std::uint64_t frame_id = 0;
 };
 struct ManagedTelemetry {
   explicit ManagedTelemetry(std::atomic<int>& destroyed) noexcept : destroyed_(destroyed) {}
   ~ManagedTelemetry() {
+    // 用计数验证受管对象不会在 worker 返回前被提前析构。
     destroyed_.fetch_add(1, std::memory_order_relaxed);
   }
   std::atomic<int>& destroyed_;
@@ -38,6 +40,7 @@ int main() {
     FrameArena arena(kWorkers * kPerWorker * sizeof(ControlCommand) + 4096);
     std::atomic<int> made{0}, destroyed{0};
     std::vector<std::thread> workers;
+    // 每个 worker 的 Producer 是帧内写权限；离开 lambda 自动归还。
     for (int worker = 0; worker < kWorkers; ++worker)
       workers.emplace_back([&] {
         auto producer = arena.acquire_producer();
@@ -50,7 +53,7 @@ int main() {
     for (auto& worker : workers) worker.join();
     if (made != kWorkers * kPerWorker || arena.used_bytes() == 0)
       throw std::runtime_error("concurrent allocation failed");
-    arena.reset_after_join();
+    arena.reset_after_join();  // join 是业务层同步；allocator 的原子操作不能替代它。
     if (destroyed != kWorkers || arena.used_bytes() != 0)
       throw std::runtime_error("managed destruction/reset failed");
     bool busy_reset_rejected = false;
@@ -67,6 +70,7 @@ int main() {
     FrameArena benchmark_pool(kCommands * sizeof(ControlCommand) + 64);
     volatile std::uint64_t checksum = 0;
     auto run_arena = [&] {
+      // 复用同一个池，计时只覆盖每帧分配/关闭，不把初始化 vector 分配混入结果。
       auto producer = benchmark_pool.acquire_producer();
       for (int i = 0; i < kCommands; ++i) {
         auto* command = benchmark_pool.make<ControlCommand>(producer);
@@ -77,6 +81,7 @@ int main() {
       benchmark_pool.reset_after_join();
     };
     auto run_heap = [&] {
+      // 此处裸 new/delete 仅作为内存管理主题的逐对象分配对照。
       std::array<ControlCommand*, kCommands> commands{};
       for (int i = 0; i < kCommands; ++i) {
         commands[i] = new ControlCommand{};
