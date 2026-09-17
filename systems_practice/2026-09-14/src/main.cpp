@@ -31,11 +31,13 @@ double measure_us(F&& action) {
       .count();
 }
 double percentile(std::vector<double> values, double ratio) {
+  // 复制后排序，保留原始样本便于后续扩展更多统计量。
   std::sort(values.begin(), values.end());
   return values[static_cast<std::size_t>((values.size() - 1) * ratio)];
 }
 int main() {
   try {
+    // 第一段：模拟四个视觉/状态 worker 向同一控制帧写入临时 command。
     constexpr int kWorkers = 4, kPerWorker = 64;
     FrameArena arena(kWorkers * kPerWorker * sizeof(ControlCommand) + 4096);
     std::atomic<int> made{0}, destroyed{0};
@@ -51,12 +53,14 @@ int main() {
         }
       });
     for (auto& worker : workers) worker.join();
+    // join 是业务层同步点；之后控制线程才独占本帧的生命周期。
     if (made != kWorkers * kPerWorker || arena.used_bytes() == 0)
       throw std::runtime_error("concurrent allocation failed");
     arena.reset_after_join();  // join 是业务层同步；allocator 的原子操作不能替代它。
     if (destroyed != kWorkers || arena.used_bytes() != 0)
       throw std::runtime_error("managed destruction/reset failed");
     bool busy_reset_rejected = false;
+    // 第二段：故意保留租约，验证提前 reset 不会悄悄释放仍在使用的存储。
     auto held = arena.acquire_producer();
     try {
       arena.reset_after_join();
@@ -67,6 +71,7 @@ int main() {
     if (!busy_reset_rejected)
       throw std::runtime_error("active producer reset was not rejected");
     constexpr int kCommands = 256, kWarmup = 20, kSamples = 100;
+    // 第三段：微基准复用池，只比较分配/关闭路径，不测线程创建或相机推理。
     FrameArena benchmark_pool(kCommands * sizeof(ControlCommand) + 64);
     volatile std::uint64_t checksum = 0;
     auto run_arena = [&] {
@@ -101,6 +106,7 @@ int main() {
       arena_samples.push_back(measure_us(run_arena));
       heap_samples.push_back(measure_us(run_heap));
     }
+    // 这些仅是 CPU 微基准；不能解释为端到端机器人控制时延。
     std::cout << "correctness=PASS workers=4 managed_destruction=PASS reset_gate=PASS\n";
     std::cout << "arena_us p50=" << percentile(arena_samples, .50)
               << " p95=" << percentile(arena_samples, .95) << '\n';

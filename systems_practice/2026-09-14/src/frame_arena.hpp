@@ -44,6 +44,7 @@ class FrameArena {
   };
 
   explicit FrameArena(std::size_t bytes) : storage_(round_up(bytes)) {
+    // 仅在创建时申请底层 vector；帧内 allocate 不会触发动态扩容。
     if (bytes == 0)
       throw std::invalid_argument("arena capacity must be positive");
   }
@@ -72,6 +73,7 @@ class FrameArena {
 
   template <typename T, typename... Args>
   T* make(Producer& producer, Args&&... args) {
+    // 平凡析构对象不进析构链，适合 command/POD 等纯帧内数据。
     check_producer(producer);
     static_assert(std::is_trivially_destructible_v<T>,
                   "non-trivial types require managed_new so reset can destroy them");
@@ -80,6 +82,7 @@ class FrameArena {
 
   template <typename T, typename... Args>
   T* managed_new(Producer& producer, Args&&... args) {
+    // 资源型对象走受管路径，reset 才能统一调用其析构函数。
     check_producer(producer);
     static_assert(alignof(T) <= kAlignment, "exercise arena supports up to 16-byte alignment");
     static_assert(std::is_nothrow_constructible_v<T, Args...>,
@@ -96,6 +99,7 @@ class FrameArena {
 
   // 关闭帧必须先等待 worker 释放 Producer；成功后析构受管对象并复用全部容量。
   void close_and_reset() noexcept {
+    // 析构兜底：只有无人生产时才释放帧内对象；正常业务请调用下面的严格接口。
     std::uint64_t expected = 0;
     if (!state_.compare_exchange_strong(expected, kClosedBit, std::memory_order_acq_rel,
                                         std::memory_order_relaxed))
@@ -105,6 +109,7 @@ class FrameArena {
     state_.store(0, std::memory_order_release);
   }
   void reset_after_join() {
+    // 正常控制线程路径：join 后关闭帧；有活跃 worker 则抛异常暴露协议错误。
     std::uint64_t expected = 0;
     if (!state_.compare_exchange_strong(expected, kClosedBit, std::memory_order_acq_rel,
                                         std::memory_order_relaxed)) {
@@ -138,6 +143,7 @@ class FrameArena {
     T value;
   };
   static std::size_t round_up(std::size_t bytes) {
+    // 16-byte 粒度便于固定对齐 bump；不是所有硬件/DMA 类型的通用对齐策略。
     if (bytes > std::numeric_limits<std::size_t>::max() - (kAlignment - 1))
       throw std::bad_alloc();
     return (bytes + kAlignment - 1) & ~(kAlignment - 1);
@@ -157,10 +163,12 @@ class FrameArena {
   }
   template <typename T, typename... Args>
   T* construct(Args&&... args) {
+    // placement new 只开始对象生命周期；字节所有权仍属于 FrameArena，调用者不得 delete。
     static_assert(alignof(T) <= kAlignment, "exercise arena supports up to 16-byte alignment");
     return ::new (allocate(sizeof(T), alignof(T))) T(std::forward<Args>(args)...);
   }
   void check_producer(const Producer& producer) const {
+    // 防止误用其他帧或已 move 的租约，避免跨帧写入。
     if (producer.arena_ != this)
       throw std::logic_error("Producer belongs to another or closed arena");
   }
