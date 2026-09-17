@@ -18,7 +18,8 @@ class FrameArena {
     Producer() = default;
     Producer(const Producer&) = delete;
     Producer& operator=(const Producer&) = delete;
-    Producer(Producer&& other) noexcept : arena_(std::exchange(other.arena_, nullptr)) {}
+    Producer(Producer&& other) noexcept : arena_(std::exchange(other.arena_, nullptr)) {
+    }
     Producer& operator=(Producer&& other) noexcept {
       if (this != &other) {
         release();
@@ -32,7 +33,8 @@ class FrameArena {
 
    private:
     friend class FrameArena;
-    explicit Producer(FrameArena* arena) : arena_(arena) {}
+    explicit Producer(FrameArena* arena) : arena_(arena) {
+    }
     void release() noexcept {
       if (arena_ != nullptr) {
         // release 与 reset 的 acquire/CAS 配对：最后一个 producer 离开后才能关闭本帧。
@@ -45,15 +47,17 @@ class FrameArena {
 
   explicit FrameArena(std::size_t bytes) : storage_(round_up(bytes)) {
     // 仅在创建时申请底层 vector；帧内 allocate 不会触发动态扩容。
-    if (bytes == 0)
+    if (bytes == 0) {
       throw std::invalid_argument("arena capacity must be positive");
+    }
   }
   FrameArena(const FrameArena&) = delete;
   FrameArena& operator=(const FrameArena&) = delete;
   ~FrameArena() {
     // 对象析构时仍有 worker 属于调用方协议错误；继续释放 storage 会造成 UAF。
-    if ((state_.load(std::memory_order_acquire) & ~kClosedBit) != 0)
+    if ((state_.load(std::memory_order_acquire) & ~kClosedBit) != 0) {
       std::terminate();
+    }
     close_and_reset();
   }
 
@@ -62,11 +66,13 @@ class FrameArena {
     std::uint64_t state = state_.load(std::memory_order_relaxed);
     // 高位为 closed，低 63 位是活跃 producer 数；一次 CAS 同时完成“检查并加一”。
     while ((state & kClosedBit) == 0) {
-      if ((state & ~kClosedBit) == kClosedBit - 1)
+      if ((state & ~kClosedBit) == kClosedBit - 1) {
         throw std::overflow_error("producer count overflow");
-      if (state_.compare_exchange_weak(state, state + 1, std::memory_order_acquire,
-                                       std::memory_order_relaxed))
+      }
+      if (state_.compare_exchange_weak(
+              state, state + 1, std::memory_order_acquire, std::memory_order_relaxed)) {
         return Producer(this);
+      }
     }
     throw std::logic_error("frame is closing");
   }
@@ -92,8 +98,8 @@ class FrameArena {
     ManagedNodeBase* head = managed_head_.load(std::memory_order_relaxed);
     do {
       node->next = head;
-    } while (!managed_head_.compare_exchange_weak(head, node, std::memory_order_acq_rel,
-                                                  std::memory_order_relaxed));
+    } while (!managed_head_.compare_exchange_weak(
+        head, node, std::memory_order_acq_rel, std::memory_order_relaxed));
     return &node->value;
   }
 
@@ -101,9 +107,10 @@ class FrameArena {
   void close_and_reset() noexcept {
     // 析构兜底：只有无人生产时才释放帧内对象；正常业务请调用下面的严格接口。
     std::uint64_t expected = 0;
-    if (!state_.compare_exchange_strong(expected, kClosedBit, std::memory_order_acq_rel,
-                                        std::memory_order_relaxed))
+    if (!state_.compare_exchange_strong(
+            expected, kClosedBit, std::memory_order_acq_rel, std::memory_order_relaxed)) {
       return;
+    }
     destroy_managed();
     used_.store(0, std::memory_order_relaxed);
     state_.store(0, std::memory_order_release);
@@ -111,8 +118,8 @@ class FrameArena {
   void reset_after_join() {
     // 正常控制线程路径：join 后关闭帧；有活跃 worker 则抛异常暴露协议错误。
     std::uint64_t expected = 0;
-    if (!state_.compare_exchange_strong(expected, kClosedBit, std::memory_order_acq_rel,
-                                        std::memory_order_relaxed)) {
+    if (!state_.compare_exchange_strong(
+            expected, kClosedBit, std::memory_order_acq_rel, std::memory_order_relaxed)) {
       throw std::logic_error("reset requires every Producer to be released");
     }
     destroy_managed();
@@ -144,21 +151,24 @@ class FrameArena {
   };
   static std::size_t round_up(std::size_t bytes) {
     // 16-byte 粒度便于固定对齐 bump；不是所有硬件/DMA 类型的通用对齐策略。
-    if (bytes > std::numeric_limits<std::size_t>::max() - (kAlignment - 1))
+    if (bytes > std::numeric_limits<std::size_t>::max() - (kAlignment - 1)) {
       throw std::bad_alloc();
+    }
     return (bytes + kAlignment - 1) & ~(kAlignment - 1);
   }
   void* allocate(std::size_t bytes, std::size_t alignment) {
-    if (alignment > kAlignment)
+    if (alignment > kAlignment) {
       throw std::invalid_argument("over-aligned type is unsupported");
+    }
     const std::size_t rounded = round_up(bytes);
     std::size_t old = used_.load(std::memory_order_relaxed);
     // CAS 在提交 cursor 前检查容量；不能用 fetch_add 后再失败，否则 cursor 会永久越界。
     do {
-      if (old > storage_.size() || rounded > storage_.size() - old)
+      if (old > storage_.size() || rounded > storage_.size() - old) {
         throw std::bad_alloc();
-    } while (!used_.compare_exchange_weak(old, old + rounded, std::memory_order_relaxed,
-                                          std::memory_order_relaxed));
+      }
+    } while (!used_.compare_exchange_weak(
+        old, old + rounded, std::memory_order_relaxed, std::memory_order_relaxed));
     return storage_.data() + old;
   }
   template <typename T, typename... Args>
@@ -169,8 +179,9 @@ class FrameArena {
   }
   void check_producer(const Producer& producer) const {
     // 防止误用其他帧或已 move 的租约，避免跨帧写入。
-    if (producer.arena_ != this)
+    if (producer.arena_ != this) {
       throw std::logic_error("Producer belongs to another or closed arena");
+    }
   }
   void destroy_managed() noexcept {
     // 先摘下整条链，析构函数即使引入新节点也会在外层循环的下一轮被处理。

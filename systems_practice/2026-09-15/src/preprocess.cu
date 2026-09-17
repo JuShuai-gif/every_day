@@ -73,7 +73,9 @@ __device__ float normalize(float x, int c) {
   const float stds[3] = {0.229f, 0.224f, 0.225f};
   return (x / 255.0f - means[c]) / stds[c];
 }
-__global__ void layout(const std::uint8_t* input, float* scratch, std::size_t count,
+__global__ void layout(const std::uint8_t* input,
+                       float* scratch,
+                       std::size_t count,
                        std::size_t plane) {
   const std::size_t i = static_cast<std::size_t>(blockIdx.x) * blockDim.x + threadIdx.x;
   if (i >= count)
@@ -83,14 +85,18 @@ __global__ void layout(const std::uint8_t* input, float* scratch, std::size_t co
   const auto b = i / (3 * plane);
   scratch[i] = input[(b * plane + p) * 3 + c];
 }
-__global__ void normalize_cast(const float* scratch, __half* output, std::size_t count,
+__global__ void normalize_cast(const float* scratch,
+                               __half* output,
+                               std::size_t count,
                                std::size_t plane) {
   const std::size_t i = static_cast<std::size_t>(blockIdx.x) * blockDim.x + threadIdx.x;
   if (i < count)
     output[i] = __float2half_rn(normalize(scratch[i], (i / plane) % 3));
 }
 // Exercise focus: derive NHWC source index from NCHW output index; fuse without scratch.
-__global__ void fused(const std::uint8_t* input, __half* output, std::size_t count,
+__global__ void fused(const std::uint8_t* input,
+                      __half* output,
+                      std::size_t count,
                       std::size_t plane) {
   const std::size_t i = static_cast<std::size_t>(blockIdx.x) * blockDim.x + threadIdx.x;
   if (i >= count)
@@ -100,8 +106,13 @@ __global__ void fused(const std::uint8_t* input, __half* output, std::size_t cou
   const auto b = i / (3 * plane);
   output[i] = __float2half_rn(normalize(input[(b * plane + p) * 3 + c], c));
 }
-void launch(bool fuse, const std::uint8_t* input, float* scratch, __half* output, Shape s,
-            int block, cudaStream_t stream) {
+void launch(bool fuse,
+            const std::uint8_t* input,
+            float* scratch,
+            __half* output,
+            Shape s,
+            int block,
+            cudaStream_t stream) {
   const auto count = s.elements();
   if (!count)
     return;  // Empty batch is a no-op, never a zero-grid launch.
@@ -153,11 +164,14 @@ Stats benchmark(bool fuse, Shape s, int block) {
     return max_error;
   };
   auto pipeline = [&]() {
-    CUDA_CHECK(cudaMemcpyAsync(device_input.ptr, host_input.ptr, count, cudaMemcpyHostToDevice,
-                               stream.value));
+    CUDA_CHECK(cudaMemcpyAsync(
+        device_input.ptr, host_input.ptr, count, cudaMemcpyHostToDevice, stream.value));
     launch(fuse, device_input.ptr, scratch.ptr, device_output.ptr, s, block, stream.value);
-    CUDA_CHECK(cudaMemcpyAsync(host_output.ptr, device_output.ptr, count * sizeof(__half),
-                               cudaMemcpyDeviceToHost, stream.value));
+    CUDA_CHECK(cudaMemcpyAsync(host_output.ptr,
+                               device_output.ptr,
+                               count * sizeof(__half),
+                               cudaMemcpyDeviceToHost,
+                               stream.value));
     CUDA_CHECK(cudaStreamSynchronize(stream.value));
   };
   for (int i = 0; i < warmups; ++i) {
@@ -175,8 +189,11 @@ Stats benchmark(bool fuse, Shape s, int block) {
     float ms = 0;
     CUDA_CHECK(cudaEventElapsedTime(&ms, begin.value, end.value));
     kernels.push_back(ms);
-    CUDA_CHECK(cudaMemcpyAsync(host_output.ptr, device_output.ptr, count * sizeof(__half),
-                               cudaMemcpyDeviceToHost, stream.value));
+    CUDA_CHECK(cudaMemcpyAsync(host_output.ptr,
+                               device_output.ptr,
+                               count * sizeof(__half),
+                               cudaMemcpyDeviceToHost,
+                               stream.value));
     CUDA_CHECK(cudaStreamSynchronize(stream.value));
     max_error = std::max(max_error, verify());
   }

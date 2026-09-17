@@ -16,7 +16,8 @@ struct ControlCommand {
   std::uint64_t frame_id = 0;
 };
 struct ManagedTelemetry {
-  explicit ManagedTelemetry(std::atomic<int>& destroyed) noexcept : destroyed_(destroyed) {}
+  explicit ManagedTelemetry(std::atomic<int>& destroyed) noexcept : destroyed_(destroyed) {
+  }
   ~ManagedTelemetry() {
     // 用计数验证受管对象不会在 worker 返回前被提前析构。
     destroyed_.fetch_add(1, std::memory_order_relaxed);
@@ -43,7 +44,7 @@ int main() {
     std::atomic<int> made{0}, destroyed{0};
     std::vector<std::thread> workers;
     // 每个 worker 的 Producer 是帧内写权限；离开 lambda 自动归还。
-    for (int worker = 0; worker < kWorkers; ++worker)
+    for (int worker = 0; worker < kWorkers; ++worker) {
       workers.emplace_back([&] {
         auto producer = arena.acquire_producer();
         (void)arena.managed_new<ManagedTelemetry>(producer, destroyed);
@@ -52,13 +53,19 @@ int main() {
           command->frame_id = static_cast<std::uint64_t>(made.fetch_add(1));
         }
       });
-    for (auto& worker : workers) worker.join();
+    }
+
+    for (auto& worker : workers) {
+      worker.join();
+    }
     // join 是业务层同步点；之后控制线程才独占本帧的生命周期。
-    if (made != kWorkers * kPerWorker || arena.used_bytes() == 0)
+    if (made != kWorkers * kPerWorker || arena.used_bytes() == 0) {
       throw std::runtime_error("concurrent allocation failed");
+    }
     arena.reset_after_join();  // join 是业务层同步；allocator 的原子操作不能替代它。
-    if (destroyed != kWorkers || arena.used_bytes() != 0)
+    if (destroyed != kWorkers || arena.used_bytes() != 0) {
       throw std::runtime_error("managed destruction/reset failed");
+    }
     bool busy_reset_rejected = false;
     // 第二段：故意保留租约，验证提前 reset 不会悄悄释放仍在使用的存储。
     auto held = arena.acquire_producer();
@@ -68,8 +75,9 @@ int main() {
       busy_reset_rejected = true;
     }
     held = {};
-    if (!busy_reset_rejected)
+    if (!busy_reset_rejected) {
       throw std::runtime_error("active producer reset was not rejected");
+    }
     constexpr int kCommands = 256, kWarmup = 20, kSamples = 100;
     // 第三段：微基准复用池，只比较分配/关闭路径，不测线程创建或相机推理。
     FrameArena benchmark_pool(kCommands * sizeof(ControlCommand) + 64);

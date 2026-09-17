@@ -29,15 +29,19 @@ std::vector<uint8_t> pack_to_rknn_stride(const std::vector<uint8_t>& tight, cons
 int main() {
   const NhwcShape s{1, 4, 6, 3, 8};  // 模拟 Runtime 查询到的 w_stride=8，而非模型宽度 6。
   std::vector<uint8_t> input(static_cast<size_t>(s.n) * s.h * s.w * s.c);
-  for (size_t i = 0; i < input.size(); ++i) input[i] = static_cast<uint8_t>(i % 251);
+  for (size_t i = 0; i < input.size(); ++i)
+    input[i] = static_cast<uint8_t>(i % 251);
   const auto packed = pack_to_rknn_stride(input, s);
   for (int y = 0; y < s.h; ++y) {
     const size_t src = static_cast<size_t>(y) * s.w * s.c;
     const size_t dst = static_cast<size_t>(y) * s.w_stride * s.c;
     if (!std::equal(input.begin() + src, input.begin() + src + s.w * s.c, packed.begin() + dst))
       return 2;
-    if (std::any_of(packed.begin() + dst + s.w * s.c, packed.begin() + dst + s.w_stride * s.c,
-                    [](uint8_t v) { return v != 0; }))
+    if (std::any_of(packed.begin() + dst + s.w * s.c,
+                    packed.begin() + dst + s.w_stride * s.c,
+                    [](uint8_t v) {
+                      return v != 0;
+                    }))
       return 3;
   }
   try {
@@ -46,9 +50,11 @@ int main() {
   } catch (const std::invalid_argument&) {
   }
   constexpr int kWarmup = 1000, kSamples = 10000;
-  for (int i = 0; i < kWarmup; ++i) (void)pack_to_rknn_stride(input, s);
+  for (int i = 0; i < kWarmup; ++i)
+    (void)pack_to_rknn_stride(input, s);
   const auto start = std::chrono::steady_clock::now();
-  for (int i = 0; i < kSamples; ++i) (void)pack_to_rknn_stride(input, s);
+  for (int i = 0; i < kSamples; ++i)
+    (void)pack_to_rknn_stride(input, s);
   const auto end = std::chrono::steady_clock::now();
   const double us = std::chrono::duration<double, std::micro>(end - start).count() / kSamples;
   std::cout << "CPU stride-pack correctness=PASS; host preprocessing average_us=" << us << "\n";

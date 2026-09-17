@@ -138,8 +138,8 @@ void run(const char* engine_path) {
   auto* product =
       network->addElementWise(*input, *scale_layer->getOutput(0), ElementWiseOperation::kPROD);
   require(product != nullptr, "add product failed");
-  auto* sum = network->addElementWise(*product->getOutput(0), *bias_layer->getOutput(0),
-                                      ElementWiseOperation::kSUM);
+  auto* sum = network->addElementWise(
+      *product->getOutput(0), *bias_layer->getOutput(0), ElementWiseOperation::kSUM);
   require(sum != nullptr, "add sum failed");
   auto* relu = network->addActivation(*sum->getOutput(0), ActivationType::kRELU);
   require(relu != nullptr, "add activation failed");
@@ -188,8 +188,8 @@ void run(const char* engine_path) {
     require(
         output_shape.nbDims == 2 && output_shape.d[0] == batch && output_shape.d[1] == kFeatures,
         "unresolved or unexpected output shape");
-    CUDA_CHECK(cudaMemcpyAsync(device_input.value, host_input.value, bytes, cudaMemcpyHostToDevice,
-                               stream.value));
+    CUDA_CHECK(cudaMemcpyAsync(
+        device_input.value, host_input.value, bytes, cudaMemcpyHostToDevice, stream.value));
     if (measure_events)
       CUDA_CHECK(cudaEventRecord(begin.value, stream.value));
     const auto enqueue_start = Clock::now();
@@ -197,8 +197,8 @@ void run(const char* engine_path) {
     host_enqueue_ms = milliseconds(enqueue_start, Clock::now());
     if (measure_events)
       CUDA_CHECK(cudaEventRecord(end.value, stream.value));
-    CUDA_CHECK(cudaMemcpyAsync(host_output.value, device_output.value, bytes,
-                               cudaMemcpyDeviceToHost, stream.value));
+    CUDA_CHECK(cudaMemcpyAsync(
+        host_output.value, device_output.value, bytes, cudaMemcpyDeviceToHost, stream.value));
     CUDA_CHECK(cudaStreamSynchronize(stream.value));
     float gpu_ms = 0;
     if (measure_events)
@@ -255,7 +255,8 @@ void run(const char* engine_path) {
   stats("cpu_enqueue_api", enqueue);
   stats("e2e_shape_h2d_enqueue_d2h_sync", e2e);
   double total_ms = 0;
-  for (double value : e2e) total_ms += value;
+  for (double value : e2e)
+    total_ms += value;
   std::cout << "serial_requests_per_second=" << 1000.0 * e2e.size() / total_ms << '\n';
   std::cout << "single_kernel_time=NOT_MEASURED use Nsight Systems/Compute\n";
   CUDA_CHECK(cudaStreamSynchronize(stream.value));

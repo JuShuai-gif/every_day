@@ -41,7 +41,8 @@ inline void reference(const std::vector<std::uint8_t>& input, std::vector<float>
             (static_cast<float>(input[(b * plane + p) * 3 + c]) / 255.0f - mean[c]) / stddev[c];
 }
 // CPU-only check of the output-linear indexing used by the CUDA kernel.
-inline void output_linear(const std::vector<std::uint8_t>& input, std::vector<float>& output,
+inline void output_linear(const std::vector<std::uint8_t>& input,
+                          std::vector<float>& output,
                           Shape s) {
   if (input.size() != s.elements() || output.size() != input.size())
     throw std::invalid_argument("linear buffer size mismatch");
@@ -64,7 +65,8 @@ inline double percentile(std::vector<double> values, double q) {
 }
 inline double checksum(const std::vector<float>& values) {
   double sum = 0;
-  for (float v : values) sum += v;
+  for (float v : values)
+    sum += v;
   return sum;
 }
 }  // namespace practice

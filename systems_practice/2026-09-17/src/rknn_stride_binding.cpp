@@ -82,7 +82,8 @@ int main(int argc, char** argv) {
       throw std::runtime_error("bind input failed");
     // 输入源是紧凑 NHWC；逐行写入，使物理 padding 保持为零。
     std::vector<unsigned char> tight(in.dims[0] * in.dims[1] * in.dims[2] * in.dims[3]);
-    for (size_t i = 0; i < tight.size(); ++i) tight[i] = static_cast<unsigned char>(i % 251);
+    for (size_t i = 0; i < tight.size(); ++i)
+      tight[i] = static_cast<unsigned char>(i % 251);
     const uint32_t row_bytes = in.dims[2] * in.dims[3];
     const uint32_t stride_bytes = in.w_stride * in.dims[3];
     if (stride_bytes < row_bytes || in.size_with_stride < in.dims[0] * in.dims[1] * stride_bytes)
@@ -107,7 +108,8 @@ int main(int argc, char** argv) {
     const uint32_t output_row = out.dims[2] * out.dims[3],
                    output_stride = out.w_stride * out.dims[3];
     for (uint32_t y = 0; y < in.dims[1]; ++y)
-      if (!std::equal(tight.begin() + y * row_bytes, tight.begin() + (y + 1) * row_bytes,
+      if (!std::equal(tight.begin() + y * row_bytes,
+                      tight.begin() + (y + 1) * row_bytes,
                       output_bytes + y * output_stride))
         throw std::runtime_error("Identity output mismatch");
     std::cout << "bound input: logical=" << in.size << " physical=" << in.size_with_stride

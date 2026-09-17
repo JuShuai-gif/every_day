@@ -9,6 +9,11 @@ PointerAlignment: Left
 DerivePointerAlignment: false
 BreakBeforeBraces: Attach
 AllowShortIfStatementsOnASingleLine: Never
-AllowShortFunctionsOnASingleLine: Empty
+AllowShortBlocksOnASingleLine: Never
+AllowShortFunctionsOnASingleLine: None
+AllowShortLambdasOnASingleLine: None
+AllowShortLoopsOnASingleLine: false
 SortIncludes: CaseSensitive
+BinPackArguments: false
+BinPackParameters: false
 ...
