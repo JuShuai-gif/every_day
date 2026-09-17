@@ -1,0 +1,29 @@
+timestamp=2026-09-15 09:41:07 CST
+Darwin guhaorandeMacBook-Air.local 25.6.0 Darwin Kernel Version 25.6.0: Fri Jul 31 19:16:20 PDT 2026; root:xnu-12377.161.14~5/RELEASE_ARM64_T8142 arm64
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for a CUDA compiler
+-- Looking for a CUDA compiler - NOTFOUND
+-- CUDA compiler missing: only CPU reference can be verified
+-- Configuring done (0.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/2026-09-15/build
+[ 50%] Building CXX object CMakeFiles/cpu_check.dir/src/cpu_check.cpp.o
+[100%] Linking CXX executable cpu_check
+[100%] Built target cpu_check
+PASS shape=2x224x224x3 max_abs_error=0.000000
+CPU_reference_wall_ms p50=0.159875 p95=0.275375 warmups=10 repeats=50
+PASS shape=2x223x225x3 max_abs_error=0.000000
+CPU_reference_wall_ms p50=0.183875 p95=0.224208 warmups=10 repeats=50
+PASS shape=1x1x1x3 max_abs_error=0.000000
+CPU_reference_wall_ms p50=0.000042 p95=0.000042 warmups=10 repeats=50
+PASS shape=0x224x224x3 max_abs_error=0.000000
+PASS invalid_shape_rejected
+checksum=8050844.650163
+CUDA_compile=UNVERIFIED GPU_kernel_ms=UNVERIFIED GPU_e2e_ms=UNVERIFIED
+UNVERIFIED: CUDA binary unavailable; no GPU measurements.
+run_exit_code=0

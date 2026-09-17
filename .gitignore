@@ -1,0 +1,40 @@
+# macOS 与编辑器本地文件
+.DS_Store
+.idea/
+.vscode/
+
+# Python 可再生环境与缓存；保留 .py 转换、验证和工具脚本。
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# CMake/Ninja 构建产物：保留 systems_practice 的文本日志，不提交缓存和二进制。
+**/CMakeFiles/
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/Makefile
+**/build.ninja
+**/.ninja_deps
+**/.ninja_log
+**/*.dSYM/
+systems_practice/**/results/*-build/
+systems_practice/**/results/*-sanitize/
+systems_practice/**/cpu_stride_check
+systems_practice/**/rknn_stride_binding
+systems_practice/**/build/
+systems_practice/**/.tmp/
+
+# 目标设备生成或下载的模型/数据；转换命令和可复现脚本会提交。
+*.rknn
+*.onnx
+*.engine
+*.plan
+*.bin
+*.npy
+*.npz

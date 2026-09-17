@@ -1,0 +1,1257 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dynamic Shapes: Core Concepts &#8212; NVIDIA TensorRT</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/nvidia-sphinx-theme.css?v=933278ad" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=767de534" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
+
+
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript"
+  data-document-language="true" charset="UTF-8" data-domain-script="3e2b62ff-7ae7-4ac5-87c8-d5949ecafff5">
+</script>
+<script type="text/javascript">
+  function OptanonWrapper() {
+    var event = new Event('bannerLoaded');
+    window.dispatchEvent(event);
+  }
+</script>
+<script src="https://images.nvidia.com/aem-dam/Solutions/ot-js/ot-custom.js" type="text/javascript">
+</script>
+
+
+    <script rel="preload" src="../_static/modal-table.js"></script>
+    <script src="../_static/documentation_options.js?v=86fd74c3"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/external-links.js"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=65e89d2a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'inference-library/dynamic-shapes-basics';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.17.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = '../versions1.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '11.3.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/version-patch.js?v=3e13fdd2"></script>
+
+<script type="text/javascript" src="https://assets.adobedtm.com/5d4962a43b79/c1061d2c5e7b/launch-191c2462b890.min.js"></script>
+
+    <link rel="icon" href="../_static/favicon.ico"/>
+
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dynamic Shapes: Advanced Topics" href="dynamic-shapes-advanced.html" />
+    <link rel="prev" title="Working with Dynamic Shapes" href="work-with-dynamic-shapes.html" />
+
+<link rel="preload" as="image" href="https://www.nvidia.com/content/dam/1x1-00000000.png">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Sep 08, 2026"/>
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+
+    <meta name="docs_products" content="NVIDIA TensorRT">
+    <meta name="docs_version" content="11.3.0">
+    <meta name="docs_books" content="NVIDIA TensorRT 11.3.0">
+    
+
+
+  </head>
+
+  <body data-default-mode="">
+
+<img src="https://www.nvidia.com/content/dam/1x1-00000000.png" width="1" height="1" style="display:none;" alt="country_code">
+
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/nvidia-logo-horiz-rgb-blk-for-screen.svg" class="logo__image only-light" alt="NVIDIA TensorRT - Home"/>
+    <img src="../_static/nvidia-logo-horiz-rgb-wht-for-screen.svg" class="logo__image only-dark pst-js-only" alt="NVIDIA TensorRT - Home"/>
+  
+  
+    <p class="title logo__title">NVIDIA TensorRT</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+
+
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+
+<div>
+  <ul class="bd-navbar-elements navbar-nav">
+  
+    <li class="nav-item pst-header-nav-item">
+      
+      <a class="nav-link nav-external" href="https://docs.nvidia.com/tensorrt/">Documentation Home</a>
+      
+    </li>
+  
+  </ul>
+</div>
+</div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/nvidia-logo-horiz-rgb-blk-for-screen.svg" class="logo__image only-light" alt="NVIDIA TensorRT - Home"/>
+    <img src="../_static/nvidia-logo-horiz-rgb-wht-for-screen.svg" class="logo__image only-dark pst-js-only" alt="NVIDIA TensorRT - Home"/>
+  
+  
+    <p class="title logo__title">NVIDIA TensorRT</p>
+  
+</a>
+
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+
+
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+          
+        
+          
+          
+            <div class="navbar-item">
+
+
+<div>
+  <ul class="bd-navbar-elements navbar-nav">
+  
+    <li class="nav-item pst-header-nav-item">
+      
+      <a class="nav-link nav-external" href="https://docs.nvidia.com/tensorrt/">Documentation Home</a>
+      
+    </li>
+  
+  </ul>
+</div>
+</div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Table of Contents">
+  <p class="bd-links__title" role="heading" aria-level="1">Table of Contents</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../getting-started/release-notes.html">Release Notes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/release-notes-11/11.3.0.html">11.3.0 (Latest)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/release-notes-11/11.2.1.html">11.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/release-notes-11/11.1.0.html">11.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/release-notes-11/11.0.0.html">11.0.0</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/build-your-first-engine.html">Build Your First Engine</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../getting-started/quick-start-guide.html">Quick Start Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/quick-start-onnx-deployment.html">Example Deployment Using ONNX</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/quick-start-runtime-tutorial.html">Using the TensorRT Runtime API</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/support-matrix.html">Support Matrix</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Installing TensorRT</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../installing-tensorrt/overview.html">Installation Guide Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing-tensorrt/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../installing-tensorrt/installing.html">Installing TensorRT</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installing-tensorrt/install-pip.html">Method 1: Python Package Index (pip)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installing-tensorrt/install-debian.html">Method 2: Debian Package Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installing-tensorrt/install-rpm.html">Method 3: RPM Package Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installing-tensorrt/install-tar.html">Method 4: Tar File Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installing-tensorrt/install-zip.html">Method 5: Zip File Installation (Windows)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installing-tensorrt/install-container.html">Method 6: Container Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installing-tensorrt/install-alternative.html">Alternative Installation Methods</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing-tensorrt/upgrading.html">Upgrading TensorRT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing-tensorrt/uninstalling.html">Uninstalling TensorRT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../architecture/architecture-overview.html">Architecture Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/how-trt-works.html">How TensorRT Works</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Inference Library</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Inference Library Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capabilities.html">TensorRT Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="engine-compatibility.html">Engine Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c-api-docs.html">C++ API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-api-docs.html">Python API Documentation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sample-support-guide.html">Sample Support Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="sample-explorer.html">Sample Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample-cpp-building.html">Building and Running C++ Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample-python-building.html">Running Python Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample-cross-compiling.html">Cross Compiling Samples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="advanced.html">Advanced Topics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="refitting-engines.html">Refitting an Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="precision-control.html">Precision Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-formats-tensors.html">Data Formats and Tensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-format-desc.html">Data Format Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="engine-tools.html">Engine Tools and Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weight-streaming.html">Weight Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-device-inference.html">Multi-Device Inference</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="work-with-quantized-types.html">Working with Quantized Types</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="quantized-types-workflows.html">Quantization Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quantized-types-schemes.html">Quantization Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quantized-types-explicit-quantization.html">Explicit Quantization</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="accuracy-considerations.html">Accuracy Considerations</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="work-with-dynamic-shapes.html">Working with Dynamic Shapes</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Dynamic Shapes: Core Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic-shapes-advanced.html">Dynamic Shapes: Advanced Topics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="extending-custom-layers.html">Extending TensorRT with Custom Layers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="plugins-cpp.html">Adding Custom Layers Using the C++ API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins-advanced.html">Enabling Timing Caching and Using Custom Tactics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins-api-migration.html">Plugin API Description</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="work-with-loops.html">Working with Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="work-with-conditionals.html">Working with Conditionals</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="work-with-dla.html">Working with DLA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="dla-build-and-run.html">Building and Launching the Loadable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dla-layer-restrictions.html">DLA Supported Layers and Restrictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dla-runtime-configuration.html">DLA Runtime Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dla-standalone-mode.html">DLA Standalone Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dla-memory-pools.html">Customizing DLA Memory Pools</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="capture-replay.html">TensorRT API Capture and Replay</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="work-with-transformers.html">Working with Transformers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="transformers-rope.html">Rotary Position Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformers-kv-cache.html">KV Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformers-moe.html">MoE (Mixture of Experts)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformers-fused-attention.html">Fused Attention</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="transformers-multi-device.html">Multi-Device Attention</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Performance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../performance/best-practices.html">Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/benchmarking.html">Performance Benchmarking</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../performance/optimization.html">Optimizing TensorRT Performance</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../performance/fusion-catalog.html">Layer Fusion Catalog</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/tuning.html">Global Performance Tuning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../api/c-api.html">C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/python-api.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/operators.html">TensorRT Operators</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api/migration-guide.html">Migration Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/migration/tensorrt-10x-to-11x.html">Migrating from TensorRT 10.x to 11.x</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/migration/tensorrt-10x-to-11x-python-api.html">Migrating Python Code from TensorRT 10.x to 11.x</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/migration/tensorrt-10x-to-11x-python-api-patterns.html">Migrating from Weak Typing to Strong Typing</a></li>
+
+
+
+
+<li class="toctree-l3"><a class="reference internal" href="../api/migration/tensorrt-10x-to-11x-python-api-reference.html">Removed Python APIs and Replacements</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/migration/tensorrt-10x-to-11x-c-api.html">Migrating C++ Code from TensorRT 10.x to 11.x</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/migration/tensorrt-10x-to-11x-c-api-patterns.html">Migrating from Weak Typing to Strong Typing</a></li>
+
+
+
+
+<li class="toctree-l3"><a class="reference internal" href="../api/migration/tensorrt-10x-to-11x-c-api-reference.html">Removed C++ APIs and Replacements</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/migration/tensorrt-10x-to-11x-trtexec.html">Migrating <code class="docutils literal notranslate"><span class="pre">trtexec</span></code> Usage from TensorRT 10.x to 11.x</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/migration/tensorrt-10x-to-11x-safety-runtime.html">Migrating Safety Runtime Code from TensorRT 10.x to 11.x</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/migration/tensorrt-10x-to-11x-IEngineInspector.html">Migrating <code class="docutils literal notranslate"><span class="pre">IEngineInspector</span></code> Usage from TensorRT 10.x to 11.x</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/migration/tensorrt-10x-to-11x-driveos.html">Migrating TensorRT from 10.x to 11.x on NVIDIA DriveOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/migration/tensorrt-10x-to-11x-jetson.html">Migrating TensorRT from 10.x to 11.x on Jetson/JetPack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/migration/appendix.html">Appendix: Migrating from TensorRT 8.x to 10.x</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/migration/tensorrt-8x-to-10x-python-api.html">Appendix: Migrating Python Code from TensorRT 8.x to 10.x</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/migration/tensorrt-8x-to-10x-python-api-patterns.html">Migrating I/O Buffer Allocation to Named Tensors</a></li>
+
+
+<li class="toctree-l3"><a class="reference internal" href="../api/migration/tensorrt-8x-to-10x-python-api-reference.html">Python APIs Added in 10.x</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/migration/tensorrt-8x-to-10x-c-api.html">Appendix: Migrating C++ Code from TensorRT 8.x to 10.x</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/migration/tensorrt-8x-to-10x-c-api-patterns.html">Migrating from <code class="docutils literal notranslate"><span class="pre">enqueueV2</span></code> to <code class="docutils literal notranslate"><span class="pre">enqueueV3</span></code> (C++)</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../api/migration/tensorrt-8x-to-10x-c-api-reference.html">C++ APIs Added in 10.x</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/migration/tensorrt-8x-to-10x-trtexec.html">Appendix: Migrating <code class="docutils literal notranslate"><span class="pre">trtexec</span></code> Usage from TensorRT 8.x to 10.x</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/migration/tensorrt-8x-to-10x-safety-runtime.html">Appendix: Migrating Safety Runtime Code from TensorRT 8.x to 10.x</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/onnx-graphsurgeon-api.html">ONNX GraphSurgeon API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/polygraphy-api.html">Polygraphy API</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../reference/troubleshooting.html">Troubleshooting</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reference/troubleshooting-faq.html">FAQs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/troubleshooting-error-messages.html">Understanding Error Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/troubleshooting-analysis-tools.html">Code Analysis Tools</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../reference/troubleshooting-reporting.html">Reporting TensorRT Issues</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/environment-variables.html">Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/security.html">Security Considerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/onnx-opset-guide.html">ONNX Opset Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/component-versioning.html">Component Versioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/sla.html">LICENSE AGREEMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/notices.html">Notices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/glossary.html">Glossary</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="work-with-dynamic-shapes.html" class="nav-link">Working with Dynamic Shapes</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Dynamic Shapes: Core Concepts</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+<div class="header-article-item">
+  <div class="d-flex justify-content-end w-100">
+    <a href="https://surveys.hotjar.com/4904bf71-6484-47a7-83ff-4715cceabdb5" id="openPopupButton">Is this page helpful?</a>
+  </div>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="dynamic-shapes-core-concepts">
+<span id="runtime-dimensions"></span><h1>Dynamic Shapes: Core Concepts<a class="headerlink" href="#dynamic-shapes-core-concepts" title="Link to this heading">#</a></h1>
+<section id="specifying-runtime-dimensions">
+<h2>Specifying Runtime Dimensions<a class="headerlink" href="#specifying-runtime-dimensions" title="Link to this heading">#</a></h2>
+<p>When building a network, use <code class="docutils literal notranslate"><span class="pre">-1</span></code> to denote a runtime dimension for an input tensor. For example, to create a 3D input tensor named foo where the last two dimensions are specified at runtime, and the first dimension is fixed at build time, issue the following.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+C++</label><div class="sd-tab-content docutils">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">networkDefinition</span><span class="p">.</span><span class="n">addInput</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">DataType</span><span class="o">::</span><span class="n">kFLOAT</span><span class="p">,</span><span class="w"> </span><span class="n">Dims3</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">network_definition</span><span class="o">.</span><span class="n">add_input</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="n">trt</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>After choosing an optimization profile, you must set the input dimensions at run time (refer to <a class="reference internal" href="#opt-profiles"><span class="std std-ref">Optimization Profiles</span></a>). Let the input have dimensions <code class="docutils literal notranslate"><span class="pre">[3,150,250]</span></code>. After setting an optimization profile for the previous example, you would call:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+C++</label><div class="sd-tab-content docutils">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">context</span><span class="p">.</span><span class="n">setInputShape</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Dims</span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">250</span><span class="p">}})</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">context</span><span class="o">.</span><span class="n">set_input_shape</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">250</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>At runtime, asking the engine for binding dimensions returns the same dimensions used to build the network, meaning you get a <code class="docutils literal notranslate"><span class="pre">-1</span></code> for each runtime dimension. For example:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+C++</label><div class="sd-tab-content docutils">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="p">.</span><span class="n">getTensorShape</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns a <code class="docutils literal notranslate"><span class="pre">Dims</span></code> with dimensions <code class="docutils literal notranslate"><span class="pre">{3,</span> <span class="pre">-1,</span> <span class="pre">-1}</span></code>.</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">engine</span><span class="o">.</span><span class="n">get_tensor_shape</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">-1,</span> <span class="pre">-1)</span></code>.</p>
+</div>
+</div>
+<p>To get the actual dimensions, which are specific to each execution context, query the execution context:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+C++</label><div class="sd-tab-content docutils">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">context</span><span class="p">.</span><span class="n">getTensorShape</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns a <code class="docutils literal notranslate"><span class="pre">Dims</span></code> with dimensions <code class="docutils literal notranslate"><span class="pre">{3,</span> <span class="pre">150,</span> <span class="pre">250}</span></code>.</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">context</span><span class="o">.</span><span class="n">get_tensor_shape</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">150,</span> <span class="pre">250)</span></code>.</p>
+</div>
+</div>
+<p>The return value of <code class="docutils literal notranslate"><span class="pre">setInputShape</span></code> for input only indicates consistency for the optimization profile set for that input. After all input binding dimensions are specified, you can check whether the entire network is consistent with the dynamic input shapes by querying the dimensions of the output bindings of the network. Here is an example that retrieves the dimensions of an output named <code class="docutils literal notranslate"><span class="pre">bar</span></code>:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+C++</label><div class="sd-tab-content docutils">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">nvinfer1</span><span class="o">::</span><span class="n">Dims</span><span class="w"> </span><span class="n">outDims</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="o">-&gt;</span><span class="n">getTensorShape</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">);</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">outDims</span><span class="p">.</span><span class="n">nbDims</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">gLogError</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Invalid network output, this might be caused by inconsistent input shapes.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// abort inference</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">out_dims</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get_tensor_shape</span><span class="p">(</span><span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="c1"># Abort inference</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If a dimension <code class="docutils literal notranslate"><span class="pre">k</span></code> is data-dependent, such as it depends on the input of <code class="docutils literal notranslate"><span class="pre">INonZeroLayer</span></code>, <code class="docutils literal notranslate"><span class="pre">outDims.d[k]</span></code> will be <code class="docutils literal notranslate"><span class="pre">-1</span></code>. For more information on such outputs, refer to the <a class="reference internal" href="#dynamic-shaped-output"><span class="std std-ref">Dynamically Shaped Output</span></a> section.</p>
+</section>
+<section id="named-dimensions">
+<span id="id1"></span><h2>Named Dimensions<a class="headerlink" href="#named-dimensions" title="Link to this heading">#</a></h2>
+<p>Both constant and runtime dimensions can be named. Naming dimensions provides two benefits:</p>
+<ol class="arabic simple">
+<li><p>For runtime dimensions, error messages use the dimension’s name. For example, if an input tensor <code class="docutils literal notranslate"><span class="pre">foo</span></code> has dimensions <code class="docutils literal notranslate"><span class="pre">[n,10,m]</span></code>, it is more helpful to get an error message about <code class="docutils literal notranslate"><span class="pre">m</span></code> instead of <code class="docutils literal notranslate"><span class="pre">(#2</span> <span class="pre">(SHAPE</span> <span class="pre">foo))</span></code>.</p></li>
+<li><p>Dimensions with the same name are implicitly equal, which can help the optimizer generate a more efficient engine and diagnose mismatched dimensions at runtime. For example, suppose two inputs have dimensions <code class="docutils literal notranslate"><span class="pre">[n,10,m]</span></code> and <code class="docutils literal notranslate"><span class="pre">[n,13]</span></code>. In that case, the optimizer knows the lead dimensions are always equal, and accidentally using the engine with mismatched values for n will be reported as an error.</p></li>
+</ol>
+<p>You can use the same name for constant and runtime dimensions as long as they are always equal.</p>
+<p>The following syntax examples set the name of the third dimension of the tensor to <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+C++</label><div class="sd-tab-content docutils">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">tensor</span><span class="p">.</span><span class="n">setDimensionName</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;m&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tensor</span><span class="o">.</span><span class="n">set_dimension_name</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are corresponding methods to get a dimension name:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
+C++</label><div class="sd-tab-content docutils">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">tensor</span><span class="p">.</span><span class="n">getDimensionName</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c1">// returns the name of the third dimension of the tensor, or nullptr if it does not have a name.</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tensor</span><span class="o">.</span><span class="n">get_dimension_name</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># returns the name of the third dimension of the tensor, or None if it does not have a name.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When the input network is imported from an ONNX file, the ONNX parser automatically sets the dimension names using the names in the ONNX file. Therefore, if two dynamic dimensions are expected to be equal at runtime, specify the same name for these dimensions when exporting the ONNX file.</p>
+</section>
+<section id="dimension-constraint-using-iassertionlayer">
+<span id="dimension-constraint-assertion"></span><h2>Dimension Constraint using <code class="docutils literal notranslate"><span class="pre">IAssertionLayer</span></code><a class="headerlink" href="#dimension-constraint-using-iassertionlayer" title="Link to this heading">#</a></h2>
+<p>Sometimes, two dynamic dimensions are not known to be equal statically but are guaranteed equal at runtime. Letting TensorRT know they are equal can help it build a more efficient engine. There are two ways to convey the equality constraint to TensorRT:</p>
+<ol class="arabic simple">
+<li><p>Give the dimensions the same name as described in the <a class="reference internal" href="#named-dimensions"><span class="std std-ref">Named Dimensions</span></a> section.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">IAssertionLayer</span></code> to express the constraint. This technique is more general since it can convey trickier equalities.</p></li>
+</ol>
+<p>For example, if the first dimension of tensor A is guaranteed to be one more than the first dimension of tensor B, then the constraint can be established by:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-14">
+C++</label><div class="sd-tab-content docutils">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Assumes A and B are ITensor* and n is a INetworkDefinition&amp;.</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">shapeA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="n">addShape</span><span class="p">(</span><span class="o">*</span><span class="n">A</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getOutput</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">firstDimOfA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="n">addSlice</span><span class="p">(</span><span class="o">*</span><span class="n">shapeA</span><span class="p">,</span><span class="w"> </span><span class="n">Dims</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">}},</span><span class="w"> </span><span class="n">Dims</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">}},</span><span class="w"> </span><span class="n">Dims</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">}})</span><span class="o">-&gt;</span><span class="n">getOutput</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">shapeB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="n">addShape</span><span class="p">(</span><span class="o">*</span><span class="n">B</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getOutput</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">firstDimOfB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="n">addSlice</span><span class="p">(</span><span class="o">*</span><span class="n">shapeB</span><span class="p">,</span><span class="w"> </span><span class="n">Dims</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">}},</span><span class="w"> </span><span class="n">Dims</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">}},</span><span class="w"> </span><span class="n">Dims</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">}})</span><span class="o">-&gt;</span><span class="n">getOutput</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="k">static</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">oneStorage</span><span class="p">{</span><span class="mi">1</span><span class="p">};</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="n">addConstant</span><span class="p">(</span><span class="n">Dims</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">}},</span><span class="w"> </span><span class="n">Weights</span><span class="p">{</span><span class="n">DataType</span><span class="o">::</span><span class="n">kINT32</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">oneStorage</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">})</span><span class="o">-&gt;</span><span class="n">getOutput</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">firstDimOfBPlus1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="n">addElementWise</span><span class="p">(</span><span class="o">*</span><span class="n">firstDimOfB</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="n">ElementWiseOperation</span><span class="o">::</span><span class="n">kSUM</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getOutput</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">areEqual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="n">addElementWise</span><span class="p">(</span><span class="o">*</span><span class="n">firstDimOfA</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">firstDimOfBPlus1</span><span class="p">,</span><span class="w"> </span><span class="n">ElementWiseOperation</span><span class="o">::</span><span class="n">kEQUAL</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getOutput</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">n</span><span class="p">.</span><span class="n">addAssertion</span><span class="p">(</span><span class="o">*</span><span class="n">areEqual</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;oops&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-15" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-15">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assumes `a` and `b` are ITensors and `n` is an INetworkDefinition</span>
+<span class="n">shape_a</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">get_output</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">first_dim_of_a</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">add_slice</span><span class="p">(</span><span class="n">shape_a</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">))</span><span class="o">.</span><span class="n">get_output</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">shape_b</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">get_output</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">first_dim_of_b</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">add_slice</span><span class="p">(</span><span class="n">shape_b</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">))</span><span class="o">.</span><span class="n">get_output</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">one</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">add_constant</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span><span class="o">.</span><span class="n">get_output</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">first_dim_of_b_plus_1</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">add_elementwise</span><span class="p">(</span><span class="n">first_dim_of_b</span><span class="p">,</span> <span class="n">one</span><span class="p">,</span> <span class="n">trt</span><span class="o">.</span><span class="n">ElementWiseOperation</span><span class="o">.</span><span class="n">SUM</span><span class="p">)</span><span class="o">.</span><span class="n">get_output</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">are_equal</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">add_elementwise</span><span class="p">(</span><span class="n">first_dim_of_a</span><span class="p">,</span> <span class="n">first_dim_of_b_plus_1</span><span class="p">,</span> <span class="n">trt</span><span class="o">.</span><span class="n">ElementWiseOperation</span><span class="o">.</span><span class="n">EQUAL</span><span class="p">)</span><span class="o">.</span><span class="n">get_output</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">n</span><span class="o">.</span><span class="n">add_assertion</span><span class="p">(</span><span class="n">are_equal</span><span class="p">,</span> <span class="s2">&quot;oops&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the dimensions violate the assertion at runtime, TensorRT will throw an error.</p>
+</section>
+<section id="optimization-profiles">
+<span id="opt-profiles"></span><h2>Optimization Profiles<a class="headerlink" href="#optimization-profiles" title="Link to this heading">#</a></h2>
+<p>An <em>optimization profile</em> describes a range of dimensions for each network input and the dimensions the auto-tuner will use for optimization. You must create at least one optimization profile at build time when using runtime dimensions. Two profiles can specify disjoint or overlapping ranges.</p>
+<p>For example, one profile might specify a minimum size of <code class="docutils literal notranslate"><span class="pre">[3,100,200]</span></code>, a maximum size of <code class="docutils literal notranslate"><span class="pre">[3,200,300]</span></code>, and optimization dimensions of <code class="docutils literal notranslate"><span class="pre">[3,150,250]</span></code>, while another profile might specify min, max, and optimization dimensions of <code class="docutils literal notranslate"><span class="pre">[3,200,100]</span></code>, <code class="docutils literal notranslate"><span class="pre">[3,300,400]</span></code>, and <code class="docutils literal notranslate"><span class="pre">[3,250,250]</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The memory usage for different profiles can change dramatically based on the dimensions specified by the min, max, and opt parameters. Some operations have tactics that only work for <code class="docutils literal notranslate"><span class="pre">MIN=OPT=MAX</span></code>, so when these values differ, the tactic is disabled.</p>
+</div>
+<p>To create an optimization profile, first construct an <code class="docutils literal notranslate"><span class="pre">IOptimizationProfile</span></code>. Then, set the min, optimization, and max dimensions and add them to the network configuration. The shapes defined by the optimization profile must define valid input shapes for the network. Here are the calls for the first profile mentioned previously for an input <code class="docutils literal notranslate"><span class="pre">foo</span></code>:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-16">
+C++</label><div class="sd-tab-content docutils">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">IOptimizationProfile</span><span class="o">*</span><span class="w"> </span><span class="n">profile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">createOptimizationProfile</span><span class="p">();</span>
+<span class="n">profile</span><span class="o">-&gt;</span><span class="n">setDimensions</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">OptProfileSelector</span><span class="o">::</span><span class="n">kMIN</span><span class="p">,</span><span class="w"> </span><span class="n">Dims3</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">));</span>
+<span class="n">profile</span><span class="o">-&gt;</span><span class="n">setDimensions</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">OptProfileSelector</span><span class="o">::</span><span class="n">kOPT</span><span class="p">,</span><span class="w"> </span><span class="n">Dims3</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">250</span><span class="p">));</span>
+<span class="n">profile</span><span class="o">-&gt;</span><span class="n">setDimensions</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">OptProfileSelector</span><span class="o">::</span><span class="n">kMAX</span><span class="p">,</span><span class="w"> </span><span class="n">Dims3</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">300</span><span class="p">));</span>
+
+<span class="n">config</span><span class="o">-&gt;</span><span class="n">addOptimizationProfile</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-17">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">profile</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">create_optimization_profile</span><span class="p">();</span>
+<span class="n">profile</span><span class="o">.</span><span class="n">set_shape</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">250</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">))</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_optimization_profile</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>At runtime, you must set an optimization profile before setting input dimensions. Profiles are numbered in the order they were added, starting at <code class="docutils literal notranslate"><span class="pre">0</span></code>. Note that each execution context must use a separate optimization profile.</p>
+<p>To choose the first optimization profile in the example, use:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-18">
+C++</label><div class="sd-tab-content docutils">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">context</span><span class="p">.</span><span class="n">setOptimizationProfileAsync</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">stream</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-19" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-19">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">context</span><span class="o">.</span><span class="n">set_optimization_profile_async</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">stream</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The provided <code class="docutils literal notranslate"><span class="pre">stream</span></code> argument should be the same CUDA stream that will be used for the subsequent <code class="docutils literal notranslate"><span class="pre">enqueueV3()</span></code> invocation in this context. This ensures that the context executions happen after the optimization profile setup.</p>
+<p>Suppose the associated CUDA engine has dynamic inputs. In that case, the optimization profile must be set at least once with a unique profile index that is not used by other execution contexts and that is not destroyed. For the first execution context created for an engine, profile <code class="docutils literal notranslate"><span class="pre">0</span></code> is implicitly chosen.</p>
+<p><code class="docutils literal notranslate"><span class="pre">setOptimizationProfileAsync()</span></code> can be called to switch between profiles. It must be called after any <code class="docutils literal notranslate"><span class="pre">enqueueV3()</span></code> operations finish in the current context. When multiple execution contexts run concurrently, it can switch to a formerly used profile already released by another execution context with different dynamic input dimensions.</p>
+<p><code class="docutils literal notranslate"><span class="pre">setOptimizationProfileAsync()</span></code> replaces the now deprecated <code class="docutils literal notranslate"><span class="pre">setOptimizationProfile()</span></code>. Using <code class="docutils literal notranslate"><span class="pre">setOptimizationProfile()</span></code> to switch between optimization profiles can cause GPU memory copy operations in the subsequent <code class="docutils literal notranslate"><span class="pre">enqueueV3()</span></code> operations. To avoid these calls during enqueue, use the <code class="docutils literal notranslate"><span class="pre">setOptimizationProfileAsync()</span></code> API instead.</p>
+</section>
+<section id="dynamically-shaped-output">
+<span id="dynamic-shaped-output"></span><h2>Dynamically Shaped Output<a class="headerlink" href="#dynamically-shaped-output" title="Link to this heading">#</a></h2>
+<p>If the output of a network has a dynamic shape, several strategies are available to allocate the output memory.</p>
+<p>If the dimensions of the output are computable from the dimensions of inputs, use <code class="docutils literal notranslate"><span class="pre">IExecutionContext::getTensorShape()</span></code> to get the dimensions of the output after providing the dimensions of the input tensors and <a class="reference internal" href="dynamic-shapes-advanced.html#shape-tensor-io"><span class="std std-ref">input shape tensors</span></a>. Use the <code class="docutils literal notranslate"><span class="pre">IExecutionContext::inferShapes()</span></code> method to check if you forgot to supply the necessary information.</p>
+<p>Otherwise, if the dimensions of the output are not computable in advance or you are calling <code class="docutils literal notranslate"><span class="pre">enqueueV3</span></code>, associate an <code class="docutils literal notranslate"><span class="pre">IOutputAllocator</span></code> with the output. More specifically:</p>
+<ol class="arabic">
+<li><p>Derive your allocator class from <code class="docutils literal notranslate"><span class="pre">IOutputAllocator</span></code>.</p></li>
+<li><p>Override the <code class="docutils literal notranslate"><span class="pre">reallocateOutput</span></code> and <code class="docutils literal notranslate"><span class="pre">notifyShape</span></code> methods. TensorRT calls the first when it needs to allocate the output memory and the second when it knows the output dimensions. For example, the memory for the output of <code class="docutils literal notranslate"><span class="pre">INonZeroLayer</span></code> is allocated before the layer runs.</p>
+<p>Here is an example derived class:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-20">
+C++</label><div class="sd-tab-content docutils">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyOutputAllocator</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">nvinfer1</span><span class="o">::</span><span class="n">IOutputAllocator</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">reallocateOutput</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">tensorName</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">currentMemory</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">alignment</span><span class="p">)</span><span class="w"> </span><span class="k">override</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Allocate the output. Remember it for later use.</span>
+<span class="w">        </span><span class="n">outputPtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/* depends on strategy, as discussed later ...*/</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">outputPtr</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">notifyShape</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">tensorName</span><span class="p">,</span><span class="w"> </span><span class="n">Dims</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">dims</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Remember output dimensions for later use.</span>
+<span class="w">        </span><span class="n">outputDims</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dims</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Saved dimensions of the output</span>
+<span class="w">    </span><span class="n">Dims</span><span class="w"> </span><span class="n">outputDims</span><span class="p">{};</span>
+
+<span class="w">    </span><span class="c1">// nullptr if memory could not be allocated</span>
+<span class="w">    </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">outputPtr</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-21" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-21">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyOutputAllocator</span><span class="p">(</span><span class="n">trt</span><span class="o">.</span><span class="n">IOutputAllocator</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">trt</span><span class="o">.</span><span class="n">IOutputAllocator</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_dims</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_ptr</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">reallocate_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tensor_name</span><span class="p">,</span> <span class="n">current_memory</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">alignment</span><span class="p">):</span>
+        <span class="c1"># Allocate the output. Remember it for later use.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_ptr</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># depends on strategy, as discussed later</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_ptr</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">notify_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tensor_name</span><span class="p">,</span> <span class="n">dims</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_dims</span> <span class="o">=</span> <span class="n">dims</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s an example of how it might be used:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-22" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-22">
+C++</label><div class="sd-tab-content docutils">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">MyOutputAllocator</span><span class="o">&gt;</span><span class="w"> </span><span class="n">allocatorMap</span><span class="p">;</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="cm">/* names of outputs */</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Dims</span><span class="w"> </span><span class="n">extent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="o">-&gt;</span><span class="n">getTensorShape</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">engine</span><span class="o">-&gt;</span><span class="n">getTensorLocation</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">TensorLocation</span><span class="o">::</span><span class="n">kDEVICE</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="cm">/* extent.d contains -1 */</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="n">allocator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">MyOutputAllocator</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">            </span><span class="n">context</span><span class="o">-&gt;</span><span class="n">setOutputAllocator</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">allocator</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
+<span class="w">            </span><span class="n">allocatorMap</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">allocator</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/* allocate device memory per extent and format */</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/* allocate cpu memory per extent and format */</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">context</span><span class="o">-&gt;</span><span class="n">setTensorAddress</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">ptr</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-23" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-23">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">allocator_map</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">output_names</span><span class="p">:</span>
+    <span class="n">extent</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get_tensor_shape</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">engine</span><span class="o">.</span><span class="n">get_tensor_location</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="n">trt</span><span class="o">.</span><span class="n">TensorLocation</span><span class="o">.</span><span class="n">DEVICE</span><span class="p">:</span>
+        <span class="k">if</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">extent</span><span class="p">:</span>
+            <span class="n">allocator</span> <span class="o">=</span> <span class="n">MyOutputAllocator</span><span class="p">()</span>
+            <span class="n">context</span><span class="o">.</span><span class="n">set_output_allocator</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">allocator</span><span class="p">)</span>
+            <span class="n">allocator_map</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">allocator</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ptr</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># allocate device memory per extent and format</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ptr</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># allocate cpu memory per extent and format</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">set_tensor_address</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ptr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<p>Several strategies can be used for implementing <code class="docutils literal notranslate"><span class="pre">reallocateOutput</span></code>:</p>
+<dl>
+<dt><strong>A</strong></dt><dd><p>Defer allocation until the size is known. Do not call <code class="docutils literal notranslate"><span class="pre">IExecutionContext::setTensorAddress</span></code>, or call it with a <code class="docutils literal notranslate"><span class="pre">nullptr</span></code> for the tensor address.</p>
+</dd>
+<dt><strong>B</strong></dt><dd><p>Preallocate enough memory based on what <code class="docutils literal notranslate"><span class="pre">IExecutionContext::getMaxOutputSize</span></code> reports as an upper bound. This guarantees that the engine will not fail due to insufficient output memory, but the upper bound can be so high that it is useless.</p>
+</dd>
+<dt><strong>C</strong></dt><dd><p>If you have preallocated enough memory based on experience, use <code class="docutils literal notranslate"><span class="pre">IExecutionContext::setTensorAddress</span></code> to tell TensorRT about it. If the tensor does not fit, make <code class="docutils literal notranslate"><span class="pre">reallocateOutput</span></code> return <code class="docutils literal notranslate"><span class="pre">nullptr</span></code>, which will cause the engine to fail gracefully.</p>
+</dd>
+<dt><strong>D</strong></dt><dd><p>Preallocate memory as in <code class="docutils literal notranslate"><span class="pre">C</span></code>, but have <code class="docutils literal notranslate"><span class="pre">reallocateOutput</span></code> return a pointer to a bigger buffer if there is a fit problem. This increases the output buffer as needed.</p>
+</dd>
+<dt><strong>E</strong></dt><dd><p>Defer allocation until the size is known, like <code class="docutils literal notranslate"><span class="pre">A</span></code>. Then, attempt to recycle that allocation in subsequent calls until a bigger buffer is requested, and then increase it like in <code class="docutils literal notranslate"><span class="pre">D</span></code>.</p>
+<p>Here’s an example derived class that implements <code class="docutils literal notranslate"><span class="pre">E</span></code>:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-24" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-24">
+C++</label><div class="sd-tab-content docutils">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">FancyOutputAllocator</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">nvinfer1</span><span class="o">::</span><span class="n">IOutputAllocator</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">reallocateOutput</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">tensorName</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">currentMemory</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">alignment</span><span class="p">)</span><span class="w"> </span><span class="k">override</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">outputSize</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Need to reallocate</span>
+<span class="w">            </span><span class="n">cudaFree</span><span class="p">(</span><span class="n">outputPtr</span><span class="p">);</span>
+<span class="w">            </span><span class="n">outputPtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<span class="w">            </span><span class="n">outputSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cudaMalloc</span><span class="p">(</span><span class="o">&amp;</span><span class="n">outputPtr</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">cudaSuccess</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">outputSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="c1">// If the cudaMalloc fails, outputPtr=nullptr, and engine</span>
+<span class="w">        </span><span class="c1">// gracefully fails.</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">outputPtr</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">notifyShape</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">tensorName</span><span class="p">,</span><span class="w"> </span><span class="n">Dims</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">dims</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Remember output dimensions for later use.</span>
+<span class="w">        </span><span class="n">outputDims</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dims</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Saved dimensions of the output tensor</span>
+<span class="w">    </span><span class="n">Dims</span><span class="w"> </span><span class="n">outputDims</span><span class="p">{};</span>
+
+<span class="w">    </span><span class="c1">// nullptr if memory could not be allocated</span>
+<span class="w">    </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">outputPtr</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+
+<span class="w">    </span><span class="c1">// Size of allocation pointed to by output</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">outputSize</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+
+<span class="w">    </span><span class="o">~</span><span class="n">FancyOutputAllocator</span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">cudaFree</span><span class="p">(</span><span class="n">outputPtr</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-25" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-25">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">FancyOutputAllocator</span><span class="p">(</span><span class="n">trt</span><span class="o">.</span><span class="n">IOutputAllocator</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">trt</span><span class="o">.</span><span class="n">IOutputAllocator</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_dims</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_ptr</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_size</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">reallocate_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tensor_name</span><span class="p">,</span> <span class="n">current_memory</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">alignment</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">size</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_size</span><span class="p">:</span>
+            <span class="c1"># Reallocate with cudaFree / cudaMalloc as needed</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">output_ptr</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># nullptr if allocation fails</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">output_size</span> <span class="o">=</span> <span class="n">size</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_ptr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_ptr</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">notify_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tensor_name</span><span class="p">,</span> <span class="n">dims</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_dims</span> <span class="o">=</span> <span class="n">dims</span>
+</pre></div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+<p>TensorRT internally allocates memory asynchronously in the device’s current memory pool for networks with data-dependent shapes. Suppose the current device memory pool does not have a release threshold set. In that case, performance degradation between runs can occur as the memory is returned to the operating system upon stream synchronization. In these cases, it is recommended that you either provide the TensorRT runtime with a custom <code class="docutils literal notranslate"><span class="pre">IGpuAllocator</span></code> with a custom memory pool or experiment with setting the release threshold. More information about setting the release threshold can be found in <a class="reference external" href="https://developer.nvidia.com/blog/using-cuda-stream-ordered-memory-allocator-part-1/#retaining_memory_in_the_pool">Retaining Memory in the Pool</a> and the <a class="reference external" href="https://developer.nvidia.com/blog/using-cuda-stream-ordered-memory-allocator-part-2/#code_migration_guide">Code Migration Guide</a>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" id="binding-indices-opt-profiles">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Legacy binding indices (enqueueV2 only)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">If you use <code class="docutils literal notranslate"><span class="pre">enqueueV3</span></code> instead of the deprecated <code class="docutils literal notranslate"><span class="pre">enqueueV2</span></code>, you can skip this section because name-based methods such as <code class="docutils literal notranslate"><span class="pre">IExecutionContext::setTensorAddress</span></code> do not expect a profile suffix.</p>
+<p class="sd-card-text">Each profile has separate binding indices in an engine built from multiple profiles. The names of I/O tensors for the <code class="docutils literal notranslate"><span class="pre">K</span></code> profile have <code class="docutils literal notranslate"><span class="pre">[profile</span> <span class="pre">K]</span></code> appended to them, with <code class="docutils literal notranslate"><span class="pre">K</span></code> written in decimal. For example, if the <code class="docutils literal notranslate"><span class="pre">INetworkDefinition</span></code> had the name <code class="docutils literal notranslate"><span class="pre">foo</span></code>, and <code class="docutils literal notranslate"><span class="pre">bindingIndex</span></code> refers to that tensor in the optimization profile with index <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">engine.getBindingName(bindingIndex)</span></code> returns <code class="docutils literal notranslate"><span class="pre">foo</span> <span class="pre">[profile</span> <span class="pre">3]</span></code>.</p>
+<p class="sd-card-text">Likewise, if using <code class="docutils literal notranslate"><span class="pre">ICudaEngine::getBindingIndex(name)</span></code> to get the index for a profile <code class="docutils literal notranslate"><span class="pre">K</span></code> beyond the first profile (<code class="docutils literal notranslate"><span class="pre">K=0</span></code>), append <code class="docutils literal notranslate"><span class="pre">[profile</span> <span class="pre">K]</span></code> to the name used in the <code class="docutils literal notranslate"><span class="pre">INetworkDefinition</span></code>. For example, if the tensor was called <code class="docutils literal notranslate"><span class="pre">foo</span></code> in the <code class="docutils literal notranslate"><span class="pre">INetworkDefinition</span></code>, <code class="docutils literal notranslate"><span class="pre">engine.getBindingIndex(&quot;foo</span> <span class="pre">[profile</span> <span class="pre">3]&quot;)</span></code> returns the binding index of Tensor <code class="docutils literal notranslate"><span class="pre">foo</span></code> in optimization profile <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
+<p class="sd-card-text">Always omit the suffix for <code class="docutils literal notranslate"><span class="pre">K=0</span></code>.</p>
+</div>
+</details></section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="work-with-dynamic-shapes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Working with Dynamic Shapes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dynamic-shapes-advanced.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Dynamic Shapes: Advanced Topics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+
+
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-runtime-dimensions">Specifying Runtime Dimensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#named-dimensions">Named Dimensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimension-constraint-using-iassertionlayer">Dimension Constraint using <code class="docutils literal notranslate"><span class="pre">IAssertionLayer</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-profiles">Optimization Profiles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamically-shaped-output">Dynamically Shaped Output</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
+
+
+<script type="text/javascript">if (typeof _satellite !== "undefined") {_satellite.pageBottom();}</script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+<a class="footer-brand logo" href="https://www.nvidia.com">
+  <img src="../_static/nvidia-logo-horiz-rgb-1c-blk-for-screen.svg" class="logo__image only-light" alt="NVIDIA"/>
+  <img src="../_static/nvidia-logo-horiz-rgb-1c-wht-for-screen.svg" class="logo__image only-dark" alt="NVIDIA"/>
+</a></div>
+      
+        <div class="footer-item">
+
+<div class="footer-links">
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/privacy-policy/">Privacy Policy</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/privacy-center/">Your Privacy Choices</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/terms-of-service/">Terms of Service</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/accessibility/">Accessibility</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/company-policies/">Corporate Policies</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/product-security/">Product Security</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/contact/">Contact</a>
+  
+  
+  
+</div>
+</div>
+      
+        <div class="footer-item">
+
+
+
+
+  <p class="copyright">
+    
+      Copyright © 2021-2026, NVIDIA Corporation.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Sep 08, 2026.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

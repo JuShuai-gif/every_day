@@ -1,0 +1,42 @@
+UTC 2026-09-16 00:48:16
+Darwin arm64
+cmake version 4.4.3
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/2026-09-16/results/cpu-bEqMZkQH/build
+[ 25%] Building CXX object CMakeFiles/reference.dir/src/common.cpp.o
+[ 50%] Linking CXX static library libreference.a
+[ 50%] Built target reference
+[ 75%] Building CXX object CMakeFiles/cpu_check.dir/src/cpu_check.cpp.o
+[100%] Linking CXX executable cpu_check
+[100%] Built target cpu_check
+Test project /Users/guhaoran/code/EveryDay/systems_practice/2026-09-16/results/cpu-bEqMZkQH/build
+    Start 1: cpu_reference
+1/1 Test #1: cpu_reference ....................   Passed    0.51 sec
+
+100% tests passed out of 1
+
+Total Test time (real) =   0.52 sec
+CPU correctness PASS batch=1 tail_guard=PASS
+CPU correctness PASS batch=4 tail_guard=PASS
+CPU correctness PASS batch=2 tail_guard=PASS
+CPU correctness PASS batch=1 tail_guard=PASS
+CPU correctness PASS batch=3 tail_guard=PASS
+CPU correctness PASS batch=2 tail_guard=PASS
+CPU invalid batch=-1 rejected=PASS
+CPU invalid batch=0 rejected=PASS
+CPU invalid batch=5 rejected=PASS
+CPU invalid batch=2147483647 rejected=PASS
+CPU null input rejected=PASS
+CPU reference batch=2 warmup_groups=10 repeats_per_group=1000 unit=per_call
+cpu_reference samples=100 p50_ms=0.000001584 p95_ms=0.000001708
+GPU compile/execution/accuracy/performance: NOT VERIFIED on this CPU run
+EXIT_STATUS=0

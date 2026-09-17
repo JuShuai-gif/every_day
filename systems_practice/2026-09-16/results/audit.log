@@ -1,0 +1,23 @@
+FILE PASS README.md
+FILE PASS CMakeLists.txt
+FILE PASS run.sh
+FILE PASS src/common.hpp
+FILE PASS src/common.cpp
+FILE PASS src/cpu_check.cpp
+FILE PASS src/trt_dynamic.cpp
+FILE PASS results/verification.md
+HEADINGS PASS; concept Chinese characters= 372 total chars= 402
+LOCAL LINKS PASS; exactly one self-test question
+FINAL LOG PASS cpu-bEqMZkQH
+FINAL LOG PASS sanitize-eK6F5Sad
+SHELL SYNTAX PASS
+SHA256 792a7d1a7eec379f3ab2bb88510ec83f69bd25fa292c188f93161a6f37cd24a5 README.md
+SHA256 f366c378a0d5660cc6cc8f51ea9bd4f7584ac8a4735c2cab319b0d7a51691e97 CMakeLists.txt
+SHA256 687765fc5a8b44a7ed099e9e35c42c2c1041b09ad3f442863d15584a73ec9595 run.sh
+SHA256 afb9cbba6cfe6af4c10e7ae4f3c51a799bec5ecb01c5767aef3b220d785e5a9c src/common.hpp
+SHA256 9036b7ae68a94ed8fc6ab4553c2b6c3d3d4403eb7ebefd969ec27c7fa3cbd36b src/common.cpp
+SHA256 1c50da542921af7aa1f6bc5331bc2d47e68a476a9a40aa272556417f5dda0293 src/cpu_check.cpp
+SHA256 001dd38d918e42d1ff9814fdbc4392a9fa97e578834755b305c097df74167b88 src/trt_dynamic.cpp
+SHA256 feacb84192220c3bcda8ac65fd13d5c1e6a0e09b74877d0e2e0e2731864a309c results/verification.md
+UTC 2026-09-16T00:52:09.263632+00:00
+GPU: dependency-blocked; source not compiled, no GPU performance data

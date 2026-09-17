@@ -1,0 +1,21 @@
+UTC 2026-09-16 00:47:27
+Darwin arm64
+cmake version 4.4.3
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Error at /opt/homebrew/share/cmake/Modules/FindCUDAToolkit.cmake:965 (message):
+  Could not find `nvcc` executable in any searched paths, please set
+  CUDAToolkit_ROOT
+Call Stack (most recent call first):
+  /opt/homebrew/share/cmake/Modules/FindCUDAToolkit.cmake:1016 (_CUDAToolkit_find_failure_message)
+  CMakeLists.txt:21 (find_package)
+
+
+-- Configuring incomplete, errors occurred!
+EXIT_STATUS=1

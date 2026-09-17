@@ -1,0 +1,10 @@
+PASS shape=2x224x224x3 max_abs_error=0.000000
+CPU_reference_wall_ms p50=0.579167 p95=0.593833 warmups=10 repeats=50
+PASS shape=2x223x225x3 max_abs_error=0.000000
+CPU_reference_wall_ms p50=0.578500 p95=0.586958 warmups=10 repeats=50
+PASS shape=1x1x1x3 max_abs_error=0.000000
+CPU_reference_wall_ms p50=0.000000 p95=0.000042 warmups=10 repeats=50
+PASS shape=0x224x224x3 max_abs_error=0.000000
+PASS invalid_shape_rejected
+checksum=8050844.650163
+CUDA_compile=UNVERIFIED GPU_kernel_ms=UNVERIFIED GPU_e2e_ms=UNVERIFIED

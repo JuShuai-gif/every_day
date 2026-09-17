@@ -1,0 +1,13 @@
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/2026-09-17/results/mac-cpu-build
+[ 50%] Building CXX object CMakeFiles/cpu_stride_check.dir/src/preprocess_cpu.cpp.o
+[100%] Linking CXX executable cpu_stride_check
+[100%] Built target cpu_stride_check
+CPU stride-pack correctness=PASS; host preprocessing average_us=0.0856833
