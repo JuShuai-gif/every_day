@@ -6,9 +6,11 @@
 
 当前 Mac 无可用 CUDA GPU：GPU 主题照常轮换，完整保留目标代码、构建与验证命令；本机可验证部分与 Linux NVIDIA GPU / Jetson 待验证部分分别记录。
 
-轮换顺序：CUDA Kernel → TensorRT → RK3588 NPU / RKNN → PTX / CUTLASS → GPU 访存优化 → GPU 体系结构 → C++17 并发 → CPU 体系结构 → ARM SIMD / NEON → 边缘端部署 → C++ 工程知识 → 循环。
+轮换顺序：CUDA Kernel → TensorRT → RK3588 NPU / RKNN → PTX / CUTLASS → 量化 GEMM → GPU 访存优化 → GPU 体系结构 → C++17 并发 → CPU 体系结构 → ARM SIMD / NEON → 边缘端部署 → C++ 工程知识 → 循环。
 
 2026-09-16 扩展为 11 个方向：新增 RK3588 NPU / RKNN 与 ARM SIMD / NEON。NPU 主题保留完整转换和板端代码；ARM SIMD 独立选题，优先借鉴 ggml、ncnn 的 CPU 实现并在 Apple Silicon Mac 本机验证，RK3588 为可选移植场景。
+
+2026-09-18 扩展为 **12 个方向**：新增“量化 GEMM”，涵盖 W4A4/W4A16/W8A8/W8A16、SmoothQuant、离群处理、校准缩放与 QAT，代码目标仍为 Thor SM110。
 
 | 日期 / 会话 | 主主题 | 核心知识点 | 代码路径 | 验证状态 | 性能数据与证据 |
 | --- | --- | --- | --- | --- | --- |
@@ -17,6 +19,7 @@
 | [2026-09-16](2026-09-16/README.md) | TensorRT | 小 Batch 动态 Shape/Profile 与缓冲区契约；同 Shape 复用练习；分离 CPU 提交、GPU 推理区间和 E2E | [trt_dynamic.cpp](2026-09-16/src/trt_dynamic.cpp)；[cpu_check.cpp](2026-09-16/src/cpu_check.cpp) | Mac CPU Release 与 ASan/UBSan 实际编译运行通过；6次变值帧/Shape、非法输入通过。GPU 配置因缺 nvcc 失败，TensorRT 目标编译/执行/精度未验证 | CPU B=2 参考 p50 0.000001584 ms、p95 0.000001708 ms/次；10组预热+100组采样，每组1000次；GPU Kernel/E2E/功耗未验证。[日志](2026-09-16/results/cpu-bEqMZkQH/output.log)；[失败与范围](2026-09-16/results/verification.md) |
 | [2026-09-17](2026-09-17/README.md) | RK3588 NPU / RKNN | Runtime `size_with_stride`/`w_stride` 物理输入绑定；紧凑 UINT8 NHWC 逐行写入与 RAII 生命周期 | [rknn_stride_binding.cpp](2026-09-17/src/rknn_stride_binding.cpp)；[CPU 检查](2026-09-17/src/preprocess_cpu.cpp) | Mac CPU Release 与 ASan/UBSan 实际编译运行通过；RKNN 转换与 RK3588 NPU 未验证（无 Toolkit2、板卡、Runtime/驱动和 `.rknn`） | CPU 辅助 Release 平均 0.0856833 us/次（1,000 预热+10,000 次）；无 NPU 性能数据。[日志与范围](2026-09-17/results/verification.md) |
 | [2026-09-18](2026-09-18/README.md) | PTX / CUTLASS | Thor SM110 token 池化：同步→cp.async→warp 独占输出直接累加；最终优化与 ncu/PTX/SASS 工具 | [ptx_pool.cu](2026-09-18/src/ptx_pool.cu)；[CPU 契约检查](2026-09-18/src/cpu_check.cpp) | Mac Release/ASan/UBSan：640 Shape、最终 direct 同源逻辑、唯一写者及 CLI 通过；SM110 编译/执行、ncu 与真实 SASS 因缺工具/板卡未验证；官方源码读取失败 | 无 GPU/E2E/功耗实测，优化收益待 Thor 验收。[新日志](2026-09-18/results/cpu-optimized.txt)；[优化说明](2026-09-18/OPTIMIZATION.md)；[边界](2026-09-18/results/verification.md) |
+| [2026-09-18 / session-02](2026-09-18/session-02/README.md) | 量化 GEMM | Thor SM110 W4A4/W4A16/W8A8/W8A16；真实打包MAC、SmoothQuant式缩放、校准搜索、离群FP16残差、40步STE QAT；baseline/tiled对照 | [CPU与算法](2026-09-18/session-02/src/quant.hpp)；[CUDA](2026-09-18/session-02/src/quant_gemm.cu) | Mac Release/ASan/UBSan 20组比较及half/packing/尾块/独立oracle通过；Thor/ncu/ISA因缺工具未验证；源码请求失败 | W4A4 NRMSE 22.7527%→1.9250%（absmax→校准+离群）；总payload含metadata 2514 B，对FP16 2.637×；非GPU提速。[实测表](2026-09-18/session-02/results/comparison.md) |
 
 下一主主题：**GPU 访存优化**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
 

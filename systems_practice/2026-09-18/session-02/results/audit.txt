@@ -1,0 +1,12 @@
+PASS CPU Release build/run: primitive checks and 20 format/method comparisons
+PASS CPU ASan/UBSan build/run: same results, no sanitizer errors
+PASS 4 real QAT runs: 40 steps, changed master weights and packed bytes logged
+PASS README required section order, 586 Chinese concept characters, local links
+PASS scripts/format-cpp.sh exit 0; no older project source diff
+PASS run.sh/profile.sh/export-isa.sh shell syntax
+PASS non-SM110 CMake target rejected
+PASS index/spec/automation agree on 12 directions; fixed Thor SM110 retained
+PASS automation prompt string round-trip; existing ACTIVE daily 08:30 settings preserved
+PASS git diff --check
+LIMIT GitHub/primary-source body reads failed; provenance accurately marked independent
+LIMIT missing nvcc/ncu/Thor: GPU build/run, native Tensor Core performance, PTX/SASS export unverified
