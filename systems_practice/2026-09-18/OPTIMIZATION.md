@@ -1,73 +1,71 @@
-# 本次 kernel 的优化路径、ncu 与指令分析
+# Thor SM110：最终 kernel、ncu 与 PTX/SASS
 
-这是 2026-09-18 练习的补充说明，不增加第二个编码练习或自测。现有目标代码中 `pool<false>` 是同步加载基线，`pool<true>` 是完整的异步搬运优化候选；程序对同一 Shape 顺序运行并检查两者，保留基线用于验收。最终候选为 `pool<true>`，但没有 NVIDIA GPU 实测，不能断言它比基线快或应在生产中默认启用。
+**唯一编译/执行目标是 Jetson Thor SM110（`sm_110`）。** 默认最终优化版是 `pool_direct`，`pool<false>` 和 `pool<true>` 是保留的基线与中间版本。三者做相同 `[2,197,67] → [2,25,67]` 池化，不改分组/精度/输出。本机没有 Thor、nvcc 或 ncu，优化收益尚未验证。
 
-## 优化思路与可证伪假设
+## 1. 为什么最终优化要改变输出所有权
 
-1. 基线通过普通 global load 和 shared store 搬入 tile，之后执行 CTA 屏障。潜在成本是搬运指令与寄存器中转；编译器如何实际降低这些成本，需要查看生成的 SASS。
-2. 优化候选将每线程的 4 个标量搬运变成一条 16 字节 `cp.async`，由 src-size 完成尾部补零。保持同一 `[2,197,67]` 数学输出、stride、误差标准和 CTA 屏障。预期收益是减少显式搬运/中转，而不是减少逻辑输入或输出。
-3. 付出的成本是地址转换、有效长度计算、commit/wait，以及仍然存在的 shared tile 和同步。代码立即等待，**没有证明访存与计算重叠**。小 kernel 可能受启动成本和不足的并行工作量限制。
-4. 验证路径是先精度/sanitizer，再查编译输出、寄存器数和指令构成，然后检查 ncu 中访存与调度证据，最后脱离 profiler 重跑延迟。若设备时间没有稳定改善，保留同步基线为部署选择；不能只因使用了新指令就宣布成功。
+| 阶段 | 完整代码 | 改动 | 可验证的代价与风险 |
+| --- | --- | --- | --- |
+| baseline | `pool<false>` | 普通加载，先写 shared tile，再跨 warp 消费 | 每块 4 KiB shared、256 线程、CTA barrier；真实指令构成由编译器决定 |
+| async | `pool<true>` | 用 16 字节 cp.async + src-size 补零替代显式搬运 | 仍要等待与 CTA barrier；立即等待没有证明复制/计算重叠 |
+| optimized（最终默认） | `pool_direct` → `direct_lane` | 一 warp 独占一个输出组，每线程最多四个累加器，直接按连续通道读取 | 32 线程、无显式 shared tile/CTA barrier；可能受驻留块上限、依赖链或寄存器压力限制 |
 
-暂不把“双缓冲”“更大 tile”直接作为进一步优化结论：必须先看到存在可隐藏的延迟，并评估 shared/register 增长与 occupancy 的代价。对纯池化也可研究消除 shared 的直接加载路径，但它不是本次已交付或已验证的版本。
+关键推导：本池化每个输入只用于一个输出，没有跨输出的数据复用。把同一元素分交给搬运线程和求和线程，制造了 shared 中转与通信需求。最终版让同一线程从加载到写出都拥有结果，才能合法消除这段通信。不是在原算法里盲目删 barrier，也没有把 cp.async 改为没有等待的错误代码。
 
-## 如何使用 ncu 回答这个问题
+相邻 lane 读取相邻通道，槽位对应 `lane+slot*32`。K=67 时 lane 0..2 各拥有三个输出，其余 lane 拥有两个；K=128 时每 lane 四个。原始 token 加法顺序保持不变，count 只计算有效行。CPU 中执行同源 `direct_lane`，与独立 oracle 比对，另验输出唯一所有权。
 
-以下命令在 Linux NVIDIA 目标设备运行；本机没有 ncu/nvcc，命令尚未执行。每个版本的 section/metric 可用性以本机查询为准，先保存工具版本：
+源代码能确认 shared 中间数组与显式屏障被移除；不能确认编译器是否产生 local spill、各版本真实指令数、寄存器数及实际 occupancy。优化证据链必须是：正确性 → 机器码/资源 → ncu 瓶颈证据 → 未附加 profiler 的延迟复测。若最终版实测回退，可部署基线并保留结果，不能强称最终候选是最快实现。
 
-```sh
-ncu --version
-ncu --list-sections
-ncu --query-metrics
-nvcc --version
-```
+## 2. 实际可执行的 ncu 流程
 
-先完成 README 的 GPU 构建和正确性验收。CMake 已加 `-lineinfo`，用于源码关联；不要为性能分析改用 `-G`。当前程序每个变体在主测前有 6 个边界 launch、1 个主测正确性 launch、20 个预热 launch。因此以下 **按名称匹配后的 skip=27** 对准主测的第一个事件计时 launch；修改控制流后必须重新计算，不能照搬数字。
+固定使用支持 Thor SM110 的 ncu 和驱动组合。在板端记录 `ncu --version`、`nvcc --version`、JetPack/L4T、设备名/SM/runtime/driver（程序会输出后四项）及频率/功耗模式。不要仅依赖 nvidia-smi，在嵌入式软件栈中它不一定可用。
 
 ```sh
-# 先以 basic 集合确认 kernel 名和 launch 选择，报告保存在忽略的 build/ 下。
-ncu --kernel-name-base demangled --kernel-name 'regex:.*pool<false>.*' \
-  --launch-skip 27 --launch-count 1 --set basic \
-  -o systems_practice/2026-09-18/build/gpu/sync-basic \
-  systems_practice/2026-09-18/build/gpu/ptx_pool
+# 默认执行最终优化版；完整对照保持相同输入与计时边界。
+./systems_practice/2026-09-18/run.sh gpu
+./systems_practice/2026-09-18/build/gpu/ptx_pool --variant all
+./systems_practice/2026-09-18/build/gpu/ptx_pool --sweep
 
-ncu --kernel-name-base demangled --kernel-name 'regex:.*pool<true>.*' \
-  --launch-skip 27 --launch-count 1 --set basic \
-  -o systems_practice/2026-09-18/build/gpu/async-basic \
-  systems_practice/2026-09-18/build/gpu/ptx_pool
+# 脚本真实存在，自动查询版本/section/metric 并生成报告。
+./systems_practice/2026-09-18/profile.sh baseline basic
+./systems_practice/2026-09-18/profile.sh async basic
+./systems_practice/2026-09-18/profile.sh optimized basic
+./systems_practice/2026-09-18/profile.sh optimized detail
 ```
 
-检查报告：主测 grid 应是 50 个 block，block 是 256 个线程。如果 demangled 模板名采用别的形式，根据实际报告调整过滤器；零匹配不是成功。可先去掉过滤器并使用 `--launch-count 2` 查看两个边界 kernel 的真实名称，不能拿它们的小 Shape 指标代替主测。
+每次脚本新建 `build/ncu-<variant>-XXXXXX/`，保存工具版本、可用 section/metric、二进制哈希、采集日志、`report.ncu-rep` 和 `details.txt`；不会覆盖旧报告。detail 请求的 section 若缺失会明确失败，先查看 `sections.txt` 后按实际工具能力调整；不得把不存在的指标填成零。
 
-确认过滤正确后，对两个版本分别采集以下与问题相关的 sections。示例是异步版；同步版改过滤器及报告名，其他配置一致。只使用 `--list-sections` 中存在的 section，缺失项记录而不是假造指标。
+脚本核心命令如下（`REPORT` 是脚本创建的实际目录；手工使用时替换路径）：
 
 ```sh
-ncu --kernel-name-base demangled --kernel-name 'regex:.*pool<true>.*' \
-  --launch-skip 27 --launch-count 1 \
-  --section SpeedOfLight --section LaunchStats --section Occupancy \
-  --section MemoryWorkloadAnalysis --section SchedulerStats \
-  --section WarpStateStats --section SourceCounters \
-  -o systems_practice/2026-09-18/build/gpu/async-detail \
-  systems_practice/2026-09-18/build/gpu/ptx_pool
-
-ncu-ui systems_practice/2026-09-18/build/gpu/async-detail.ncu-rep
-ncu --import systems_practice/2026-09-18/build/gpu/async-detail.ncu-rep \
-  --page details > systems_practice/2026-09-18/results/ncu-async-details.txt
+ncu --profile-from-start off --kernel-name-base demangled \
+  --kernel-name 'regex:.*pool.*' --launch-count 1 --set basic \
+  -o REPORT/report systems_practice/2026-09-18/build/gpu/ptx_pool --profile optimized
+ncu-ui REPORT/report.ncu-rep
+ncu --import REPORT/report.ncu-rep --page details
 ```
 
-| 要回答的问题 | 先看什么 | 如何决定改动 |
+`--profile optimized` 只运行主测 Shape 的最终版：在采集范围外完成正确性检查及 20 次预热，随后 `cudaProfilerStart()` → 一个 kernel → stream wait → `cudaProfilerStop()`，范围外 D2H 后再次验证。`--profile baseline/async` 保持同样步骤。名称过滤不依赖 bool 模板名的具体展开形式，也不依赖旧版的 `--launch-skip 27`。确认报告只包含期望 kernel，grid=50，优化版 block=32，另外两版 block=256；零 kernel 或选错 Shape 不算成功。
+
+## 3. 看哪些指标，怎样决定下一步
+
+| 问题 | ncu section / 信息 | 证据与推断边界 |
 | --- | --- | --- |
-| 是否是访存瓶颈？ | SpeedOfLight、MemoryWorkloadAnalysis 的 DRAM/L2 吞吐及事务/请求关系 | 低有效带宽不必然说明带宽饱和；检查规模、事务利用率和依赖等待，再决定合并访问/减少数据量 |
-| 异步路径是否减少中转代价？ | LaunchStats 的寄存器资源；Source 页实际 load/store/异步复制指令及执行计数（有该指标时） | 比较同一编译器和 SM 的输出；若寄存器或总指令增加，需要重新判断净收益 |
-| shared/register 是否限制并行度？ | Occupancy 的限制因素，LaunchStats 的每块资源，实际 active warps | 高 occupancy 不是目标本身；只有足够的 ready warps 能帮助隐藏延迟 |
-| 为什么 warp 没有发射？ | SchedulerStats 的 eligible/issued warps；WarpStateStats 的依赖等待、屏障等分类 | 将停顿连回生产者、消费者与同步位置；不可仅按最大 stall 百分比删除屏障 |
-| 热点到底在哪段机器码？ | Source 页关联 CUDA、PTX、SASS；SourceCounters 中可用的行/PC 信息 | 找出读写和消费者依赖链；PC 采样仅在目标与工具支持时使用，短 kernel 样本不足须明确标记 |
+| 是否受带宽限制？ | SpeedOfLight、MemoryWorkloadAnalysis：DRAM/L2 吞吐、请求/事务、缓存命中 | 低有效带宽不必然是带宽饱和，也可能任务太小或缺乏 ready warps；先看实际事务利用率 |
+| shared 消除是否体现在机器码？ | Source 页 CUDA/PTX/SASS 对应；可用的动态指令信息 | 最终版不应有算法需要的 shared 中转/barrier；仍须查 spill/local 访问，源代码无 shared 不代表零额外访存 |
+| 是否受资源限制？ | LaunchStats、Occupancy：每块 register/shared、理论/实际 active warps 及限制因素 | 一个 warp/block 可能被最大驻留块数约束；高 occupancy 也不保证足够的 eligible warps |
+| 线程为什么没有发射？ | SchedulerStats、WarpStateStats：eligible/issued warps、依赖/屏障等待 | 把 stall 回溯到产生依赖的访存、算术或不同到达时间；不能单靠最高百分比决定删代码 |
+| 热点在哪个依赖链？ | SourceCounters、源码/SASS 视图、目标支持时的 PC 采样 | 消费者 PC 上的停顿可能来自更早的 load；短 kernel 的样本可能不足，不能假装每条指令都有可信周期 |
 
-ncu 可能 replay kernel、控制 cache 状态并增加开销，必须记录这些设置；一次采集不等同于稳定的吞吐/延迟结论。确认采样代表哪个 launch、输入和缓存状态，最终 p50/p95 使用不附加 ncu 的程序结果。若出现性能计数器权限错误，记录完整错误并由目标设备管理员按其策略处理，不把缺少指标视为没有瓶颈。
+basic 确认目标与大方向后，对相同条件的三版本分别使用 detail；只采最终版无法解释改动是否有效。CMake 使用 `-lineinfo`，不要改为 `-G` 后报告正式性能。详细指标名依 ncu/SM110 支持情况通过 `--query-metrics` 查询，不硬编码其他架构的计数器。
 
-## PTX 与 SASS：提供什么、怎样读
+ncu 的 replay、cache 控制与计数器收集会改变条件，记录其设置。正式 GPU event p50/p95 与主机 H2D+kernel+D2H+wait p50/p95 使用无 ncu 程序，预热后 100 样本，至少独立复测三轮。不能把 profiler 中的单次耗时或 CPU 测试耗时当提速证据。
 
-下面是本次 `copy_async_16` 与 `pool<true>` 中实际手写 inline PTX 的指令模板（`%0` 等是 C++ asm 操作数占位符），不是完整 `.ptx` 文件，更不是反汇编结果：
+## 4. 今天交付的 PTX 和真实 SASS 的获取
+
+[pool_direct.ptx](src/pool_direct.ptx) 是完整的**手写 PTX** 等价算法，声明 `.version 9.0`、`.target sm_110`、64 位地址，参数与 CUDA kernel 对齐。为便于阅读，它逐通道累加；CUDA 最终版交错维护四个独立累加器，因此不能把手写指令数当作 C++ 编译器的指令数。该手写文件没有被当前主程序加载，本机也没有 ptxas，汇编与执行都未验证。
+
+实际 CUDA 源中的中间版本使用以下手写 inline PTX 模板；它们不是完整模块，也不是 SASS：
 
 ```ptx
 cp.async.cg.shared.global [%0], [%1], 16, %2;
@@ -75,46 +73,46 @@ cp.async.commit_group;
 cp.async.wait_group 0;
 ```
 
-`%0` 对应转换后的 shared 地址，`%1` 是 global 源地址，`%2` 是 0/4/8/12/16 的有效字节数。三条指令在 C++ 中是独立 asm 语句；其后有 `__syncthreads()`，不能省略。完整 CUDA 源码见 `src/ptx_pool.cu`。
-
-在目标环境保留真实编译输出：
+`%0` 是转换后的 shared 地址，`%1` 是 global 源地址，`%2` 是有效字节数。三条指令后必须有 staging 算法所需的 CTA 屏障。最终 direct 没有这段搬运/等待，因为已经消除了跨线程数据交换。
 
 ```sh
-# sm_80 是本次候选目标；换架构时重新核对 Toolkit 与特性要求。
-nvcc -std=c++17 -O3 -lineinfo -arch=sm_80 --ptx \
-  systems_practice/2026-09-18/src/ptx_pool.cu \
-  -o systems_practice/2026-09-18/results/kernel-sm80.ptx
-
-cuobjdump --dump-ptx systems_practice/2026-09-18/build/gpu/ptx_pool \
-  > systems_practice/2026-09-18/results/executable-ptx.txt
-cuobjdump --dump-sass systems_practice/2026-09-18/build/gpu/ptx_pool \
-  > systems_practice/2026-09-18/results/executable-sass.txt
+# 固定 SM110，脚本拒绝其他目标，包括未经确认的专属后缀。
+./systems_practice/2026-09-18/export-isa.sh sm_110
 ```
 
-独立 `nvcc --ptx` 命令生成的模块不必与 CMake 的所有优化选项完全相同；分析已测二进制时以该二进制导出的 SASS 和其完整构建命令为准。保存编译器版本、SM、源码版本和命令，在 ncu Source 页定位 `pool<false>` / `pool<true>`，将热点源行对应到实际指令地址。当前没有真实 SASS，因此不提供猜测出来的机器码助记符、地址或寄存器编号。
+导出脚本先按 SM110 重建，再记录工具链、CMake 参数、二进制/源码哈希，并生成：
 
-| 代码/指令段 | 潜在耗时原因 | 需要的证据；不能得出的结论 |
+- `executable.ptx.txt` / `executable.sass.txt`：真实已构建 CUDA 二进制的 PTX/SASS，分析主体。
+- `generated.ptx`：另用 `nvcc -std=c++17 -O3 -lineinfo -arch=sm_110 --ptx` 生成；所有参数显式记录，不假称与 CMake 每项选项完全一致。
+- `handwritten.cubin` / `handwritten.sass.txt`：由 `ptxas -arch=sm_110` 单独汇编手写 PTX 后导出的指令；与主程序产物分开，不能声称这个模块执行过。
+
+全部进入忽略的 `build/isa-sm110-XXXXXX/`。完整源码关联在 ncu Source 页完成；归档热点文本时标明 kernel、实际 PC 地址、源行、计数器、版本、目标和哈希，不编造 SASS 地址/寄存器/助记符。当前本机没有真实 SASS 文件，只有手写 PTX 和可执行导出脚本。
+
+## 5. 哪些指令或依赖可能耗时长
+
+| 指令/代码位置 | 为什么值得关注 | 怎样确认 |
 | --- | --- | --- |
-| baseline 的 global 读取及其后续使用 | cache miss、访存事务浪费、load-use 依赖 | 结合内存与依赖等待信息；load 命中和 miss 的成本不同，不能给统一周期 |
-| `cp.async` + `wait_group 0` | 搬运仍未完成，立即等待暴露访存延迟 | 区分发出复制与等待完成；热点在 wait 不代表 wait 本身做了大量计算 |
-| `__syncthreads()` 对应的真实 SASS 同步段 | 不同 producer 到达时间不同 | 判断哪些 warp 迟到及原因；不能根据 stall 比例移除正确性屏障 |
-| shared 读取后的 8 项求和 | shared 访问、累加依赖链、可用计算并行度 | 检查编译器实际展开/调度及 shared 冲突证据；不能仅凭源循环判断瓶颈 |
-| `sum / count` 的编译输出 | 编译器可能产生倒数/乘法或其他指令序列 | 查看真实 SASS 与精度选项；不能把源代码 `/` 当成固定机器指令及固定开销 |
+| 最终版 `input[...]`；手写 PTX 的 `ld.global.f32` | cache miss、事务利用率差或 load-use 等待；实际 SASS 的具体 load 变体需导出 | 看内存事务/缓存与依赖等待，并定位后续消费者，不能赋予所有 load 一个固定周期 |
+| `sums[slot] += value`；手写 PTX 的 `add.rn.f32` | 同一输出有八步串行依赖，四个 slot 是可并行的独立链 | 查 nvcc 是否展开/交错调度、是否寄存器化，关联 eligible warps 和依赖 stall |
+| `sum/count`；手写 PTX 的 `div.rn.f32` | C++ 可能被降低为多条算术指令，或由编译器利用分母范围 | 查真实 SASS；手写 PTX 的单条除法不代表最终单条机器指令，不直接放松精度换性能 |
+| 中间版 `cp.async` → `wait_group 0` | 数据未到导致等待；发出异步操作不等于隐藏其延迟 | 联合复制路径、warp 调度与等待位置分析，不把 wait 的停顿误判为 wait 自身计算慢 |
+| staging 的 CTA barrier 对应机器码 | 不同 warp 的生产工作/到达时间差导致等待 | 确认依赖后保留必要屏障；只有改变所有权才能合法消除 |
+| 地址计算中的整除/取余 | group → batch/tile 的索引分解可能产生较长整数序列 | 查看编译器对运行时除数的处理及执行次数，只有在端到端证据支持时再调整 grid 映射 |
 
-“高延迟指令”“低吞吐执行管线”“占总时间最多的代码段”“在消费者 PC 采样到停顿”是四个不同概念。没有设备数据，本表只能列待验证热点。
+这里列的是潜在热点，不是 Thor 上的实测排名。单指令延迟、发射吞吐、动态次数、依赖链等待和 kernel 总延迟不能混成一个数。没有设备数据或明确 SM110 一手依据时，不给“这条指令固定耗时若干周期”的结论。
 
-## 本次重点架构与后续轮换
+## 6. Thor SM110 与其他架构的指令差异
 
-本次重点是 **Ampere 路径**，对照 Turing 的加载与同步路径。下面列的是待官方文档复核的后续选题路线，**本轮网络失败，不能作为已核实的具体产品支持清单**；不提供未经核实的最低 Toolkit 版本、特殊后缀兼容性或指令周期。
+当前代码只为 Thor SM110 生成 PTX/SASS，`__CUDA_ARCH__` 编译检查和运行时计算能力检查都限制为 1100 / 11.0。其他架构只用作知识对照。以下指令族的演进解释需在联网后与官方正文核对；本轮网络不可达，不冒称已经验证了 Thor 上全部特性的支持条件。
 
-| 架构方向 | 拟研究的新增/特色机制 | 与本 kernel 的关系及需要核对的边界 |
+| 对照对象 / 机制 | 特点与本次选择 | Thor 上的使用边界 |
 | --- | --- | --- |
-| Volta / Turing | Tensor Core 的 warp 级矩阵执行；Turing 的 `ldmatrix` 等矩阵加载路径 | 池化不是 GEMM，不应为展示矩阵指令而改变算法；分别核对各代指令引入时间与支持 dtype |
-| Ampere（本次） | `cp.async` 的 global → shared 搬运、分组完成与尾部补零 | 本候选直接使用；目标 SM80+ 仍需工具链、语法、数值与同步验收。后代沿用不代表它们独有 |
-| Ada | FP8 Tensor Core 路径及相应矩阵指令能力 | 需要具体 SM、PTX、dtype 核对；本 FP32 求均值不直接利用 FP8，不强行量化 |
-| Hopper | TMA / `cp.async.bulk.tensor`、`mbarrier`、`wgmma` | 描述符与同步成本可能不适合小 tile；分别核对通用 SM90 与架构专属目标要求，不统称“任意 SM90 都支持全部特性” |
-| Blackwell | 适用目标的 `tcgen05`、Tensor Memory 与新矩阵执行机制 | 数据中心、桌面和 Jetson 的产品 SM 与指令能力分别核对；不可泛化为所有 Blackwell 均支持同一指令族 |
+| 较早架构的普通加载/存储及 warp 执行 | 连续 lane 的地址映射是合并访问基础；最终版依靠所有权与访存布局，不依赖矩阵运算 | 最终实现仍编译为 SM110；不生成旧架构代码 |
+| Ampere 引入的 `cp.async` 路径 | global → shared 异步搬运、分组完成和补零，是本次中间版本 | 在 Thor 中属于沿用的机制，不应称为 Thor 独有；实际编译/设备行为待验 |
+| Hopper 的 TMA、`cp.async.bulk.tensor` / `mbarrier` 机制 | 描述符与批量搬运适合有数据复用的 tile/pipeline | 本 kernel 缺少复用，不为展示新指令强加描述符和共享中转；具体 SM110 指令/同步条件需核对 |
+| Hopper 的 `wgmma` 与 Blackwell 相关 `tcgen05` / Tensor Memory 路线 | 表示不同矩阵执行/数据放置机制，不能把 Hopper 路径直接视为 Thor 对应路径 | 本次不是 GEMM，不使用；未经 Thor 专属支持表、dtype 和目标后缀核实，不把任何一族写进可执行代码 |
+| 架构专属 `a` / 家族 `f` 特性目标 | 编译目标后缀涉及不同的特性与兼容边界 | 用户指定 `sm_110`；本次明确不切到 `sm_110a`，也不借用其他 Blackwell 产品的 SM100/SM120 能力表 |
 
-之后每次 GPU 练习选择不同重点架构，并与至少另一代对照；是否适合本次 kernel 比“指令更新”更重要。架构的特色指令不必是该代独占指令，应注明新引入、强化、沿用或受架构专属后缀约束。
+“特色”应注明是新引入、加强、沿用还是目标专属；不是所有新架构功能都适合本 kernel。之后仍固定 Thor，只轮换对照架构或分析的 Thor 特性。
 
-待复核的一手资料入口：[PTX ISA](https://docs.nvidia.com/cuda/parallel-thread-execution/)、[Nsight Compute Profiling Guide](https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html)、[Nsight Compute CLI](https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html)。本轮 web 搜索报 `connection failed: error sending request`，curl 访问 Nsight Compute 官方站点报 `Could not resolve host: docs.nvidia.com`；以上链接是后续核对入口，不代表本次读到了正文。
+工程选择 CUDA Toolkit 13.0+ 和 PTX 9.0 作为配置基线，不宣称本机已验证与某个 JetPack/L4T/驱动版本兼容。待复核官方入口：[PTX ISA](https://docs.nvidia.com/cuda/parallel-thread-execution/)、[Blackwell Tuning Guide](https://docs.nvidia.com/cuda/blackwell-tuning-guide/index.html)、[Nsight Compute CLI](https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html)、[Profiling Guide](https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html)。本轮 web 读取均报连接失败，先前 curl 报 DNS 失败，未取得正文。

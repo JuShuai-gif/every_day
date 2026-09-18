@@ -1,0 +1,9 @@
+PASS README section order, local links and concept length (570 Chinese characters)
+PASS Release and ASan/UBSan: 640 Shape contracts including final direct logic; see raw logs
+PASS single-writer/coverage, invalid Shape and CLI/profile selection checks
+PASS shell syntax for run.sh/profile.sh/export-isa.sh and invalid-argument rejection
+PASS source/build/run/export target consistency: Thor SM110, PTX 9.0
+PASS non-SM110 CMake configuration rejected; see reject-other-arch.txt
+PASS automation prompt round-trip and unchanged ACTIVE/daily 08:30 schedule
+LIMIT missing nvcc/ncu/Thor; GPU/PTX assembly/SASS/profiling/performance NOT validated
+PASS scripts/format-cpp.sh exit 0; git diff --check

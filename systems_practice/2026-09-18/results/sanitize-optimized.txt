@@ -1,0 +1,22 @@
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/2026-09-18/build/sanitize
+[ 50%] Building CXX object CMakeFiles/cpu_check.dir/src/cpu_check.cpp.o
+/Users/guhaoran/code/EveryDay/systems_practice/2026-09-18/src/cpu_check.cpp:105:21: warning: loop variable 'args' creates a copy from type 'std::vector<std::string> const' [-Wrange-loop-construct]
+  105 |     for (const auto args : {std::vector<std::string>{"--profile", "all"},
+      |                     ^
+/Users/guhaoran/code/EveryDay/systems_practice/2026-09-18/src/cpu_check.cpp:105:10: note: use reference type 'std::vector<std::string> const &' to prevent copying
+  105 |     for (const auto args : {std::vector<std::string>{"--profile", "all"},
+      |          ^~~~~~~~~~~~~~~~~
+      |                     &
+1 warning generated.
+[100%] Linking CXX executable cpu_check
+[100%] Built target cpu_check
+Test project /Users/guhaoran/code/EveryDay/systems_practice/2026-09-18/build/sanitize
+    Start 1: cpu_contract
+1/1 Test #1: cpu_contract .....................   Passed    0.80 sec
+
+100% tests passed out of 1
+
+Total Test time (real) =   0.80 sec
+PASS 640 CPU tile + final direct contracts; single-writer outputs, CLI/profile selection, poison padding, zero fill, 3 invalid shapes; GPU/PTX NOT validated

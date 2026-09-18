@@ -1,6 +1,8 @@
 #include <array>
 #include <iostream>
 
+#include "direct_pool.hpp"
+#include "options.hpp"
 #include "pooling.hpp"
 
 // 仅检验索引、有效字节与补零契约；不能模拟 CUDA 异步内存模型。
@@ -53,7 +55,32 @@ int main() {
       for (int tokens : {1, 7, 8, 9, 197}) {
         const practice::Shape s{2, tokens, channels};
         const auto input = practice::make_input(s);
-        practice::check(staged_reference(s, input), practice::reference(s, input));
+        const auto expected = practice::reference(s, input);
+        practice::check(staged_reference(s, input), expected);
+        // NaN 哨兵能发现漏写；每个逻辑输出还必须恰有一个 lane 拥有。
+        std::vector<float> direct(s.output_size(), std::numeric_limits<float>::quiet_NaN());
+        std::vector<int> owners(s.output_size(), 0);
+        for (int group = 0; group < s.batch * s.tiles(); ++group) {
+          for (int lane = 0; lane < 32; ++lane) {
+            practice::direct_lane(input.data(),
+                                  direct.data(),
+                                  s.tokens,
+                                  s.channels,
+                                  s.stride(),
+                                  s.tiles(),
+                                  group,
+                                  lane);
+            for (int column = lane; column < s.channels; column += 32) {
+              ++owners[group * s.channels + column];
+            }
+          }
+        }
+        practice::check(direct, expected);
+        if (!std::all_of(owners.begin(), owners.end(), [](int count) {
+              return count == 1;
+            })) {
+          throw std::runtime_error("direct output ownership violation");
+        }
         ++cases;
       }
     }
@@ -69,7 +96,27 @@ int main() {
         throw std::runtime_error("invalid shape accepted");
       }
     }
-    std::cout << "PASS " << cases << " CPU tile contracts; poison padding, zero fill, "
+    if (practice::parse_options({}).variants.front() != practice::Variant::Optimized ||
+        practice::parse_options({"--variant", "all"}).variants.size() != 3 ||
+        !practice::parse_options({"--profile", "optimized"}).profile ||
+        !practice::parse_options({"--sweep"}).sweep) {
+      throw std::runtime_error("variant/profile dispatch failed");
+    }
+    for (const auto args : {std::vector<std::string>{"--profile", "all"},
+                            std::vector<std::string>{"--variant", "unknown"}}) {
+      bool rejected = false;
+      try {
+        practice::parse_options(args);
+      } catch (const std::invalid_argument&) {
+        rejected = true;
+      }
+      if (!rejected) {
+        throw std::runtime_error("invalid profile mode accepted");
+      }
+    }
+    std::cout << "PASS " << cases
+              << " CPU tile + final direct contracts; single-writer outputs, CLI/profile "
+                 "selection, poison padding, zero fill, "
               << "3 invalid shapes; GPU/PTX NOT validated\n";
   } catch (const std::exception& e) {
     std::cerr << e.what() << '\n';

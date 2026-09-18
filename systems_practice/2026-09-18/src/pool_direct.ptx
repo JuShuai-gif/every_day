@@ -1,0 +1,65 @@
+// 手写 PTX 等价算法；不是 nvcc 输出。本机无 ptxas，尚未汇编或执行。
+// 与 CUDA 优化版相同的输出所有权：grid=B*tiles，block=32，slot 通道间隔32。
+// 为便于阅读按通道逐个累加；CUDA 版使用四个交错的独立累加器。
+.version 9.0
+.target sm_110
+.address_size 64
+
+.visible .entry pool_direct_handwritten(
+    .param .u64 input_ptr,
+    .param .u64 output_ptr,
+    .param .u32 tokens_param,
+    .param .u32 channels_param,
+    .param .u32 stride_param,
+    .param .u32 tiles_param
+) {
+    .reg .pred %p<4>;
+    .reg .b32 %r<20>;
+    .reg .b64 %rd<8>;
+    .reg .f32 %f<5>;
+
+    ld.param.u64 %rd0, [input_ptr];
+    ld.param.u64 %rd1, [output_ptr];
+    ld.param.u32 %r0, [tokens_param];
+    ld.param.u32 %r1, [channels_param];
+    ld.param.u32 %r2, [stride_param];
+    ld.param.u32 %r3, [tiles_param];
+    mov.u32 %r4, %ctaid.x;
+    mov.u32 %r5, %tid.x;
+    // 约束必须由调用方满足；防止超过一个 warp 的线程写重复输出。
+    setp.ge.u32 %p0, %r5, 32;
+    @%p0 bra DONE;
+    div.u32 %r6, %r4, %r3;
+    rem.u32 %r7, %r4, %r3;
+    mul.lo.u32 %r8, %r7, 8;
+    sub.u32 %r9, %r0, %r8;
+    min.u32 %r9, %r9, 8;
+    cvt.rn.f32.u32 %f2, %r9;
+
+CHANNEL:
+    setp.ge.u32 %p1, %r5, %r1;
+    @%p1 bra DONE;
+    mov.f32 %f0, 0f00000000;
+    mov.u32 %r10, 0;
+ROW:
+    // 只读取逻辑 token/通道，物理 stride padding 不参与计算。
+    mad.lo.u32 %r11, %r6, %r0, %r8;
+    add.u32 %r11, %r11, %r10;
+    mad.lo.u32 %r12, %r11, %r2, %r5;
+    mul.wide.u32 %rd2, %r12, 4;
+    add.u64 %rd3, %rd0, %rd2;
+    ld.global.f32 %f1, [%rd3];
+    add.rn.f32 %f0, %f0, %f1;
+    add.u32 %r10, %r10, 1;
+    setp.lt.u32 %p2, %r10, %r9;
+    @%p2 bra ROW;
+    div.rn.f32 %f3, %f0, %f2;
+    mad.lo.u32 %r13, %r4, %r1, %r5;
+    mul.wide.u32 %rd4, %r13, 4;
+    add.u64 %rd5, %rd1, %rd4;
+    st.global.f32 [%rd5], %f3;
+    add.u32 %r5, %r5, 32;
+    bra CHANNEL;
+DONE:
+    ret;
+}
