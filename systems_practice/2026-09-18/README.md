@@ -99,6 +99,8 @@ compute-sanitizer --tool synccheck systems_practice/2026-09-18/build/gpu/ptx_poo
 
 ## 性能分析
 
+新增 [优化路径、ncu 操作、PTX/SASS 与架构对照](OPTIMIZATION.md)：明确 `pool<false>` 基线与 `pool<true>` 最终优化候选，说明采集与指令分析步骤。候选收益尚未在 GPU 验证。
+
 GPU 事件计时：先 20 次 kernel 预热，随后 100 次独立样本，每次 event 包围单次 launch，并等待结束 event。报告最近秩 p50/p95，区间不含 H2D/D2H；微小 kernel 的 event 区间可能含 GPU 等待主机提交间隙，不能当成单条 PTX 指令延迟。
 
 主机端到端计时：另做 20 次完整链路预热和 100 次采样，`steady_clock` 覆盖 pageable host H2D + kernel + D2H + stream 等待；不含初始化、内存分配和 CPU 精度检查。不等同于完整模型、相机采集到控制动作延迟。CPU 本次仅做正确性检查，不报告微基准；NPU 不参与此练习。

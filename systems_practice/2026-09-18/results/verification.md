@@ -26,3 +26,10 @@
 ## 验收限制
 
 CPU 顺序 tile 模型只验证索引、补零契约与数值定义，无法验证 PTX 语法、设备对齐规则实现、异步完成、CTA 同步、最终机器指令或性能。源码实际阅读目标未完成。目标代码、构建/运行/诊断/分析命令已生成，均明确为待验证；不把理论字节量、CTest 总耗时或本机表现当作 GPU 数据。
+
+## 2026-09-18 用户要求补充
+
+- 增加 OPTIMIZATION.md：基线/最终优化候选、可证伪瓶颈假设、具体 ncu 过滤与报告流程、真实 inline PTX、PTX/SASS 提取命令及指令依赖分析。未修改 kernel 或重报 GPU 性能。
+- 本次架构重点为 Ampere，对照 Turing；后续 GPU 内容轮换重点。扩展架构路线表明确待官方资料复核，不作已核实产品兼容性清单。
+- web 对官方 OpenAI/CUDA/ncu 文档搜索失败：`Fatal error: connection failed: error sending request`；curl 对 ncu Profiling Guide 返回 exit 6：`Could not resolve host: docs.nvidia.com`。未声称已读正文。
+- 仅说明文档/规范及现有自动化本地 prompt 更新，GPU 验证边界不变；代码未变，无需重跑 CPU 测试。
