@@ -1,0 +1,9 @@
+PASS README 二级标题顺序及全部本地链接
+PASS 概念回顾 519 个中文字符（规范要求 450–700）
+PASS run.sh: sh -n
+PASS scripts/format-cpp.sh exit 0；历史源码无 diff
+PASS git diff --check
+PASS build/cpu/cpu_check 被现有 .gitignore 忽略
+PASS CPU Release 与 ASan/UBSan；详见原始日志
+LIMIT CUDA 配置缺少 nvcc；未编译或运行 GPU 程序
+LIMIT GitHub 源码及官方 PTX 正文读取均失败；未声称已阅读源码

@@ -1,0 +1,20 @@
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/2026-09-18/build/cpu
+[ 50%] Building CXX object CMakeFiles/cpu_check.dir/src/cpu_check.cpp.o
+[100%] Linking CXX executable cpu_check
+[100%] Built target cpu_check
+Test project /Users/guhaoran/code/EveryDay/systems_practice/2026-09-18/build/cpu
+    Start 1: cpu_contract
+1/1 Test #1: cpu_contract .....................   Passed    0.38 sec
+
+100% tests passed out of 1
+
+Total Test time (real) =   0.38 sec
+PASS 640 CPU tile contracts; poison padding, zero fill, 3 invalid shapes; GPU/PTX NOT validated
