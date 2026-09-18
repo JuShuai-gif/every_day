@@ -1,0 +1,12 @@
+PASS: Python source parses.
+PASS: 18 unique methods; next AWQ; preparation not marked completed.
+PASS: Actual clone failure retained; no fabricated commit, source reading or execution.
+PASS: CLI ['--help'] -> exit 0
+PASS: CLI ['unknown', '--record', 'systems_practice/quantization/results/not-created.json'] -> exit 2
+PASS: CLI ['awq', '--record', '/private/tmp/forbidden-quant-source.json'] -> exit 2
+PASS: CLI ['awq', '--record', 'systems_practice/quantization/results/2026-09-18-awq-source.json'] -> exit 2
+PASS: Invalid requests create no record; existing manifest not overwritten.
+PASS: Local Markdown links resolve.
+INFO: tomllib unavailable; JSON-compatible prompt string round-trip checked.
+PASS: Local automation ACTIVE at 08:30; new daily column persisted; live scheduler reload unverified.
+PASS: Source cache excluded from Git.

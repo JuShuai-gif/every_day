@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "next_method_id": "awq",
+  "last_lesson_date": null,
+  "completed_methods": [],
+  "history": [],
+  "backlog": [
+    {
+      "method": "awq",
+      "kind": "preparatory_source_fetch",
+      "date": "2026-09-18",
+      "record": "results/2026-09-18-awq-source.json",
+      "reason": "GitHub DNS resolution failed; no commit or implementation read.",
+      "source_fetched": false,
+      "source_read": false,
+      "example_delivered": false,
+      "cpu_example_run": false,
+      "thor_verified": false
+    }
+  ],
+  "policy": "One quantization lesson per Asia/Shanghai calendar day, independent of main rotation. Preparation does not advance cursor. Daily attempted lessons may advance cursor but failures stay in backlog and never enter completed_methods. Completion requires source read and concrete upstream usage example delivered; execution evidence tracked separately."
+}

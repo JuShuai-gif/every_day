@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "target": "Thor SM110",
+  "initial_method": "awq",
+  "source_status": "Candidate repository URLs and paths; verify against actual fetched commits before teaching APIs.",
+  "methods": [
+    {"id":"awq","name":"AWQ","repository":"https://github.com/mit-han-lab/llm-awq.git","paths":["README.md","LICENSE","awq/quantize/pre_quant.py","awq/quantize/quantizer.py","awq/entry.py"],"focus":"激活感知的权重缩放/裁剪与W4A16","usage_goal":"读取真实量化与推理入口，区分AWQ搜索、fake quant、packed部署及kernel"},
+    {"id":"gptq","name":"GPTQ","repository":"https://github.com/IST-DASLab/gptq.git","paths":["README.md","LICENSE.txt","gptq.py","quant.py","opt.py"],"focus":"二阶近似与逐步误差补偿","usage_goal":"以小Linear解释校准统计、damping、group size、量化与重建"},
+    {"id":"adaround","name":"AdaRound","repository":"https://github.com/quic/aimet.git","paths":["README.md","LICENSE","TrainingExtensions/torch/src/python/aimet_torch/adaround/adaround_weight.py"],"focus":"学习舍入选择","usage_goal":"按所读版本核实AdaRound接口与校准数据回调"},
+    {"id":"autoround","name":"AutoRound","repository":"https://github.com/intel/auto-round.git","paths":["README.md","LICENSE","auto_round/autoround.py"],"focus":"数据驱动的舍入和裁剪优化","usage_goal":"核实当前仓库迁移、API和导出格式后给出最小量化调用"},
+    {"id":"hqq","name":"HQQ","repository":"https://github.com/mobiusml/hqq.git","paths":["README.md","LICENSE","hqq/core/quantize.py"],"focus":"无需激活校准数据的半二次权重量化","usage_goal":"核实量化Linear、nbits、group_size与后端切换接口"},
+    {"id":"omniquant","name":"OmniQuant","repository":"https://github.com/OpenGVLab/OmniQuant.git","paths":["README.md","LICENSE","quantize/omniquant.py","quantize/quantizer.py"],"focus":"可学习裁剪与等价变换","usage_goal":"解释优化参数、校准过程及导出后与运行时的关系"},
+    {"id":"quarot","name":"QuaRot","repository":"https://github.com/spcl/QuaRot.git","paths":["README.md","LICENSE","fake_quant/rotation_utils.py","fake_quant/quant_utils.py"],"focus":"固定旋转与离群值分散","usage_goal":"验证旋转前后等价性与W4A4误差，核实融合和在线旋转边界"},
+    {"id":"spinquant","name":"SpinQuant","repository":"https://github.com/facebookresearch/SpinQuant.git","paths":["README.md","LICENSE","utils/rotation_utils.py","optimize_rotation.py"],"focus":"可学习旋转","usage_goal":"分别演示旋转优化与固定旋转推理，保留训练和运行成本"},
+    {"id":"spqr","name":"SpQR","repository":"https://github.com/Vahe1994/SpQR.git","paths":["README.md","LICENSE","spqr_engine.py","quant_groups.py"],"focus":"低位主体与稀疏高精度异常权重","usage_goal":"比较重建误差、索引/异常值开销和实际解码路径"},
+    {"id":"smoothquant","name":"SmoothQuant","repository":"https://github.com/mit-han-lab/smoothquant.git","paths":["README.md","LICENSE","smoothquant/smooth.py","smoothquant/fake_quant.py"],"focus":"激活/权重间的量化难度迁移","usage_goal":"解释官方平滑函数、alpha、校准scale和量化Linear接入"},
+    {"id":"llm_int8","name":"LLM.int8 / outlier handling","repository":"https://github.com/bitsandbytes-foundation/bitsandbytes.git","paths":["README.md","LICENSE","bitsandbytes/nn/modules.py","bitsandbytes/functional.py"],"focus":"离群特征混合精度分解","usage_goal":"核实Linear8bitLt等真实接口与阈值、权重存储和设备限制"},
+    {"id":"calibration","name":"Calibration-aware scaling","repository":"https://github.com/pytorch/pytorch.git","paths":["README.md","LICENSE","torch/ao/quantization/observer.py","torch/ao/quantization/fake_quantize.py"],"focus":"统计观察器、直方图/裁剪与输出重建目标","usage_goal":"展示具体观察器的校准/冻结流程，并与独立MSE搜索区分"},
+    {"id":"qat","name":"QAT","repository":"https://github.com/pytorch/ao.git","paths":["README.md","LICENSE","torchao/quantization/qat/api.py","torchao/quantization/qat/fake_quantizer.py"],"focus":"fake-quant前向、STE与参数更新","usage_goal":"按已读版本演示prepare、训练、convert或等价真实接口，记录实际梯度更新"},
+    {"id":"nf4_qlora","name":"NF4 / QLoRA","repository":"https://github.com/artidoro/qlora.git","paths":["README.md","LICENSE","qlora.py"],"focus":"非均匀4位码本、量化主干与低秩适配","usage_goal":"区分NF4格式、双重量化、LoRA训练和实际推理后端"},
+    {"id":"kivi","name":"KIVI / KV Cache量化","repository":"https://github.com/jy-yuan/KIVI.git","paths":["README.md","LICENSE","models/llama_kivi.py","quant/new_pack.py"],"focus":"KV Cache的粒度、残留高精度区间与注意力误差","usage_goal":"用小KV张量/注意力样例比较容量与解码延迟，不用GEMM结果代替KV评估"},
+    {"id":"optimizer_8bit","name":"8-bit optimizer states","repository":"https://github.com/bitsandbytes-foundation/bitsandbytes.git","paths":["README.md","LICENSE","bitsandbytes/optim/optimizer.py","bitsandbytes/optim/adam.py"],"focus":"优化器状态的分块量化","usage_goal":"比较FP32/8-bit状态体积和实际训练更新，区分梯度与优化器状态"},
+    {"id":"fp8_scaling","name":"FP8 scaling","repository":"https://github.com/pytorch/ao.git","paths":["README.md","LICENSE","torchao/float8/float8_linear.py","torchao/float8/config.py"],"focus":"FP8格式与静态/动态/分块缩放","usage_goal":"核实E4M3/E5M2、scale策略及Thor后端支持，不将INT8当作FP8"},
+    {"id":"block_fp4","name":"Block-scaled FP4：MXFP4 / NVFP4","repository":"https://github.com/NVIDIA/Model-Optimizer.git","paths":["README.md","LICENSE","modelopt/torch/quantization/config.py","modelopt/torch/quantization/nn/modules/tensor_quantizer.py"],"focus":"分块浮点量化、scale编码和格式差异","usage_goal":"分别核实MXFP4与NVFP4配置和SM110执行能力，不能假设同位宽即可互换"}
+  ],
+  "cross_cutting_axes": {
+    "bit_widths":["W4A4","W4A16","W8A8","W8A16"],
+    "number_formats":["INT4","INT8","FP16","BF16","FP8 E4M3/E5M2","NF4","MXFP4","NVFP4"],
+    "granularity":["per-tensor","per-channel","per-group","per-token","block-wise"],
+    "parameters":["symmetric/asymmetric","zero-point","rounding","clipping","static/dynamic scales"],
+    "objects":["weights","activations","KV cache","gradients","optimizer states"]
+  }
+}
