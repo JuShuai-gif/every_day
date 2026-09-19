@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-19",
+  "main_topic": "GPU 访存优化",
+  "target": "Thor SM110",
+  "comparison_architecture": "Hopper H100 SM90 (theory only)",
+  "source_read": true,
+  "source": "https://github.com/NVIDIA-developer-blog/code-samples/blob/master/series/cuda-cpp/transpose/transpose.cu",
+  "source_ref": "master read 2026-09-19 via web tool",
+  "cpu_release": true,
+  "cpu_asan_ubsan": true,
+  "cpu_cases": 196,
+  "cpu_configurations": 3,
+  "invalid_cases": 4,
+  "cuda_compiled": false,
+  "cuda_executed": false,
+  "gpu_correctness_verified": false,
+  "ncu_collected": false,
+  "actual_generated_ptx_sass": false,
+  "performance_measured": false,
+  "blockers": [
+    "nvcc missing",
+    "ncu missing",
+    "No Thor GPU"
+  ],
+  "evidence": [
+    "cpu.txt",
+    "sanitize.txt",
+    "gpu.txt",
+    "profile.txt",
+    "isa.txt",
+    "source-fetch.txt"
+  ]
+}

@@ -1,0 +1,10 @@
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/2026-09-19/build/sanitize
+[ 50%] Building CXX object CMakeFiles/cpu_check.dir/src/cpu_check.cpp.o
+[100%] Linking CXX executable cpu_check
+[100%] Built target cpu_check
+analytical_bank_max_multiplicity pad=0 value=32
+analytical_bank_max_multiplicity pad=1 value=1
+PASS 196 shapes x 3 tile configurations; exact oracle, unique writers, padding; 4 invalid shapes
+CPU indexing validation only; no GPU timing or race validation

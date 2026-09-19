@@ -1,0 +1,82 @@
+{
+  "repository": "https://github.com/mit-han-lab/llm-awq",
+  "commit": "d6e797a42b9ef7778de8ee2352116e0f48a78d61",
+  "read_date": "2026-09-19",
+  "transport": "web tool; NOT a successful local git clone",
+  "local_clone_succeeded": false,
+  "license": "MIT; LICENSE body checked; pyproject classifier differs",
+  "files": [
+    {
+      "path": "awq/quantize/auto_clip.py",
+      "symbols": [
+        "auto_clip_layer",
+        "auto_clip_block",
+        "apply_clip"
+      ],
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/awq/quantize/auto_clip.py",
+      "implementation_read": true
+    },
+    {
+      "path": "awq/quantize/quantizer.py",
+      "symbols": [
+        "pseudo_quantize_tensor",
+        "real_quantize_model_weight"
+      ],
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/awq/quantize/quantizer.py",
+      "implementation_read": true
+    },
+    {
+      "path": "awq/quantize/auto_scale.py",
+      "symbols": [
+        "auto_scale_block",
+        "_search_module_scale",
+        "scale_ln_fcs"
+      ],
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/awq/quantize/auto_scale.py",
+      "implementation_read": true
+    },
+    {
+      "path": "awq/quantize/qmodule.py",
+      "symbols": [
+        "pack_intweight",
+        "WQLinear.from_linear",
+        "WQLinear.forward"
+      ],
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/awq/quantize/qmodule.py",
+      "implementation_read": true
+    },
+    {
+      "path": "awq/kernels/setup.py",
+      "symbols": [
+        "CUDAExtension"
+      ],
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/awq/kernels/setup.py",
+      "implementation_read": true
+    },
+    {
+      "path": "pyproject.toml",
+      "symbols": [
+        "project.dependencies"
+      ],
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/pyproject.toml",
+      "implementation_read": false
+    },
+    {
+      "path": "README.md",
+      "symbols": [
+        "Install",
+        "Usage"
+      ],
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/README.md",
+      "implementation_read": false
+    },
+    {
+      "path": "LICENSE",
+      "symbols": [
+        "MIT License"
+      ],
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/LICENSE",
+      "implementation_read": false
+    }
+  ]
+}

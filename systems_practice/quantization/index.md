@@ -2,7 +2,7 @@
 
 每天在主知识点之外讲一个量化方法，独立于主方向轮换。主练习仍为一个 20～30 分钟编码任务；本栏目提供已写好的使用示例，不再添加第二份编码作业。主主题为量化 GEMM 时复用当日方法的材料。
 
-**下一方法：AWQ。下一主主题仍为 GPU 访存优化。** 今天已有 [真实量化 GEMM 对照实验](../2026-09-18/session-02/README.md)，它是独立实现，不是下列项目的 API 教程。
+**下一方法：GPTQ。下一主主题为 GPU 体系结构。** 2026-09-18已有 [真实量化 GEMM 对照实验](../2026-09-18/session-02/README.md)，它是独立实现，不是下列项目的 API 教程。
 
 现在可从项目根目录运行已有实验（需要 CMake 与 C++17 编译器）：
 
@@ -81,3 +81,4 @@ python3 systems_practice/quantization/fetch_source.py awq \
 | 日期 | 类型 | 方法 | 源码 / 阅读 / 示例 / CPU / Thor | 证据 |
 | --- | --- | --- | --- | --- |
 | 2026-09-18 | 配置及预备拉取，非已交付课程 | AWQ | 均未完成；GitHub DNS 失败 | [原始记录](results/2026-09-18-awq-source.json) |
+| 2026-09-19 | 当日AWQ clip子机制；本地获取/运行待补 | AWQ | 本地拉取否 / 固定commit网页阅读是 / 原生API示例是 / CPU否 / Thor否 | [课程](../2026-09-19/quantization/awq/README.md)；[五项状态](../2026-09-19/quantization/awq/verification.json) |

@@ -1,0 +1,2 @@
+usage: example.py [-h] --source SOURCE
+example.py: error: verified upstream checkout missing; see source.json and retry instructions
