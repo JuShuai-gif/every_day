@@ -1,0 +1,17 @@
+{
+  "python": "3.9.6",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "packages": {
+    "torch": false,
+    "transformers": false,
+    "numpy": false
+  },
+  "tools": {
+    "nvcc": null,
+    "ncu": null,
+    "cuobjdump": null,
+    "clang-format": null,
+    "cmake": "/opt/homebrew/bin/cmake"
+  },
+  "formatter_via_xcrun": "/Library/Developer/CommandLineTools/usr/bin/clang-format"
+}

@@ -12,7 +12,7 @@
 
 2026-09-18 扩展为 **12 个方向**：新增“量化 GEMM”，涵盖 W4A4/W4A16/W8A8/W8A16、SmoothQuant、离群处理、校准缩放与 QAT，代码目标仍为 Thor SM110。
 
-2026-09-18 起另设 **每日量化方法**：每天在主知识点之外讲一个方法，拉取源仓库、阅读实际实现并给出完整使用示例及量化前后比较。独立轮换见 [量化栏目索引](quantization/index.md)，下一方法 **GPTQ**。该栏目不取代 12 个主方向，源码获取/阅读/示例运行分别记录。
+2026-09-18 起另设 **每日量化方法**：每天在主知识点之外讲一个方法，拉取源仓库、阅读实际实现并给出完整使用示例及量化前后比较。独立轮换见 [量化栏目索引](quantization/index.md)，下一方法 **AdaRound**。该栏目不取代 12 个主方向，源码获取/阅读/示例运行分别记录。
 
 | 日期 / 会话 | 主主题 | 核心知识点 | 代码路径 | 验证状态 | 性能数据与证据 |
 | --- | --- | --- | --- | --- | --- |
@@ -23,7 +23,8 @@
 | [2026-09-18](2026-09-18/README.md) | PTX / CUTLASS | Thor SM110 token 池化：同步→cp.async→warp 独占输出直接累加；最终优化与 ncu/PTX/SASS 工具 | [ptx_pool.cu](2026-09-18/src/ptx_pool.cu)；[CPU 契约检查](2026-09-18/src/cpu_check.cpp) | Mac Release/ASan/UBSan：640 Shape、最终 direct 同源逻辑、唯一写者及 CLI 通过；SM110 编译/执行、ncu 与真实 SASS 因缺工具/板卡未验证；官方源码读取失败 | 无 GPU/E2E/功耗实测，优化收益待 Thor 验收。[新日志](2026-09-18/results/cpu-optimized.txt)；[优化说明](2026-09-18/OPTIMIZATION.md)；[边界](2026-09-18/results/verification.md) |
 | [2026-09-18 / session-02](2026-09-18/session-02/README.md) | 量化 GEMM | Thor SM110 W4A4/W4A16/W8A8/W8A16；真实打包MAC、SmoothQuant式缩放、校准搜索、离群FP16残差、40步STE QAT；baseline/tiled对照 | [CPU与算法](2026-09-18/session-02/src/quant.hpp)；[CUDA](2026-09-18/session-02/src/quant_gemm.cu) | Mac Release/ASan/UBSan 20组比较及half/packing/尾块/独立oracle通过；Thor/ncu/ISA因缺工具未验证；源码请求失败 | W4A4 NRMSE 22.7527%→1.9250%（absmax→校准+离群）；总payload含metadata 2514 B，对FP16 2.637×；非GPU提速。[实测表](2026-09-18/session-02/results/comparison.md) |
 | [2026-09-19](2026-09-19/README.md) | GPU 访存优化 | Thor SM110批次特征转置：global合并访问+shared bank布局；naive/unpadded/padded及4行候选；对照Hopper TMA；[每日AWQ](2026-09-19/quantization/awq/README.md) | [CUDA](2026-09-19/src/transpose.cu)；[CPU](2026-09-19/src/cpu_check.cpp) | Release/ASan/UBSan：196 Shape×3布局及4非法输入通过；已读NVIDIA官方实现；AWQ固定commit网页源码已读/示例已交付，本地克隆与运行待补 | 无GPU/端到端性能；缺nvcc/ncu/Thor。bank 32→1仅地址模型。[验证](2026-09-19/results/verification.json)；[日志](2026-09-19/results/cpu.txt) |
+| [2026-09-20](2026-09-20/README.md) | GPU 体系结构 | Thor SM110行归约：ILP独立累加链+寄存器/occupancy；五实例，对照Ampere整数redux；[每日GPTQ](2026-09-20/quantization/gptq/README.md) | [CUDA](2026-09-20/src/row_reduce.cu)；[CPU合同](2026-09-20/src/cpu_check.cpp) | Release/ASan/UBSan 675比较、4非法Shape通过；PyTorch/NVIDIA源码已读；GPTQ固定commit已读/示例已交付，本地获取与运行待补 | 无GPU/端到端/功耗实测；nvcc/ncu/Thor缺失。[证据](2026-09-20/results/verification.json)；[日志](2026-09-20/results/cpu.txt) |
 
-下一主主题：**GPU 体系结构**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
+下一主主题：**C++17 并发**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
 
 `2026-09-14` 为用户要求补充的历史 C++ 练习，不改变当前轮换位置。

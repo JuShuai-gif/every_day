@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-20",
+  "target": "Thor SM110",
+  "cpu_release": true,
+  "cpu_asan_ubsan": true,
+  "shapes": 45,
+  "patterns": 3,
+  "variants": 5,
+  "comparisons": 675,
+  "invalid_shapes_rejected": 4,
+  "cpu_scope": "Shared host/device partial calculation, reduction-tree oracle, NaN rejection and unique input coverage; not GPU execution",
+  "gpu_compile": false,
+  "gpu_execute": false,
+  "gpu_accuracy": false,
+  "gpu_performance": null,
+  "ptx_generated": false,
+  "sass_generated": false,
+  "inline_ptx_delivered": true,
+  "source_read": true,
+  "architecture_comparison": "Ampere A100 SM80",
+  "logs": [
+    "cpu.txt",
+    "sanitize.txt",
+    "gpu.txt",
+    "profile.txt",
+    "isa.txt",
+    "wrong-arch.txt"
+  ],
+  "blockers": [
+    "No nvcc/ncu/cuobjdump",
+    "No Thor device",
+    "Board JetPack/driver/ncu patch not measured"
+  ],
+  "toolchain_reference": "Official JetPack7.0/L4T38.2.x CUDA13.0.0; PTX9.0 sm_110; ncu2025.3+ candidate needs board validation"
+}

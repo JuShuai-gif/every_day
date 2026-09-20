@@ -1,0 +1,8 @@
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/2026-09-20/build/cpu
+[ 50%] Building CXX object CMakeFiles/cpu_check.dir/src/cpu_check.cpp.o
+[100%] Linking CXX executable cpu_check
+[100%] Built target cpu_check
+PASS shapes=45 patterns=3 variants=5 comparisons=675 invalid=4 NaN-rejected; independent FP64 oracle and unique input coverage
+CPU contract simulation only; GPU synchronization/registers/occupancy/performance UNVERIFIED

@@ -1,0 +1,2 @@
+scripts/format-cpp.sh executed; formatter resolved via xcrun: /Library/Developer/CommandLineTools/usr/bin/clang-format
+Post-format clang-format --dry-run --Werror passed for 3 lesson source files.

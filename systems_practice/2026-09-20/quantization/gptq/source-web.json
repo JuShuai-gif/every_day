@@ -1,0 +1,63 @@
+{
+  "date": "2026-09-20",
+  "repository": "https://github.com/IST-DASLab/gptq",
+  "commit": "2d65066eeb06a5c9ff5184d8cebdf33662c67faf",
+  "commit_evidence": "https://github.com/IST-DASLab/gptq/commit/2d65066eeb06a5c9ff5184d8cebdf33662c67faf",
+  "transport": "web tool: raw.githubusercontent.com pinned source",
+  "local_clone_succeeded": false,
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "path": "gptq.py",
+      "symbols": [
+        "GPTQ.__init__",
+        "GPTQ.add_batch",
+        "GPTQ.fasterquant",
+        "GPTQ.free"
+      ],
+      "permalink": "https://github.com/IST-DASLab/gptq/blob/2d65066eeb06a5c9ff5184d8cebdf33662c67faf/gptq.py",
+      "read": true
+    },
+    {
+      "path": "quant.py",
+      "symbols": [
+        "quantize",
+        "Quantizer.configure",
+        "Quantizer.find_params",
+        "Quantizer.quantize",
+        "Quant3Linear.pack",
+        "Quant3Linear.forward"
+      ],
+      "permalink": "https://github.com/IST-DASLab/gptq/blob/2d65066eeb06a5c9ff5184d8cebdf33662c67faf/quant.py",
+      "read": true
+    },
+    {
+      "path": "opt.py",
+      "symbols": [
+        "opt_sequential"
+      ],
+      "permalink": "https://github.com/IST-DASLab/gptq/blob/2d65066eeb06a5c9ff5184d8cebdf33662c67faf/opt.py",
+      "read": true
+    },
+    {
+      "path": "README.md",
+      "symbols": [
+        "Dependencies",
+        "3-bit CUDA Kernels"
+      ],
+      "permalink": "https://github.com/IST-DASLab/gptq/blob/2d65066eeb06a5c9ff5184d8cebdf33662c67faf/README.md",
+      "read": true
+    },
+    {
+      "path": "LICENSE",
+      "symbols": [
+        "Apache-2.0"
+      ],
+      "permalink": "https://github.com/IST-DASLab/gptq/blob/2d65066eeb06a5c9ff5184d8cebdf33662c67faf/LICENSE",
+      "read": true
+    }
+  ],
+  "path_correction": "LICENSE.txt candidate does not match repository; read LICENSE",
+  "original_usage": "OPT/BLOOM/LLAMA layerwise PTQ; 3-bit extension separate",
+  "relationship": "Native GPTQ API calls; independent u4 pack/evaluation container; no upstream 4-bit kernel claim"
+}

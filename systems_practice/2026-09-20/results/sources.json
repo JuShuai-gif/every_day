@@ -1,0 +1,50 @@
+{
+  "read_date": "2026-09-20",
+  "relationship": "Independent implementation inspired by actually read mechanisms; no vendored source",
+  "sources": [
+    {
+      "repository": "https://github.com/pytorch/pytorch",
+      "tag": "v2.8.0",
+      "path": "aten/src/ATen/native/cuda/Reduce.cuh",
+      "symbols": [
+        "ReduceOp.thread_reduce_impl",
+        "block_x_reduce"
+      ],
+      "url": "https://github.com/pytorch/pytorch/blob/v2.8.0/aten/src/ATen/native/cuda/Reduce.cuh",
+      "read": true,
+      "focus": "Multiple accumulators, tail and combine"
+    },
+    {
+      "repository": "https://github.com/NVIDIA/cuda-samples",
+      "tag": "v12.8",
+      "path": "Samples/2_Concepts_and_Techniques/reduction/reduction_kernel.cu",
+      "symbols": [
+        "warpReduceSum",
+        "reduce7"
+      ],
+      "url": "https://github.com/NVIDIA/cuda-samples/blob/v12.8/Samples/2_Concepts_and_Techniques/reduction/reduction_kernel.cu",
+      "read": true,
+      "license_header": "BSD-3-Clause",
+      "focus": "Warp aggregation/shared block handoff; integer specialization separate"
+    }
+  ],
+  "failed_attempts": [
+    {
+      "url": "https://github.com/NVIDIA/cuda-samples/blob/master/Samples/2_Concepts_and_Techniques/reduction/reduction_kernel.cu",
+      "error": "404 Not Found"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/NVIDIA/cuda-samples/v13.0/Samples/2_Concepts_and_Techniques/reduction/reduction_kernel.cu",
+      "error": "Cache miss"
+    }
+  ],
+  "primary_docs": [
+    "https://developer.nvidia.com/embedded/jetpack/downloads/archive-7.0",
+    "https://docs.nvidia.com/cuda/archive/13.0.0/parallel-thread-execution/index.html",
+    "https://docs.nvidia.com/cuda/ampere-tuning-guide/index.html",
+    "https://docs.nvidia.com/nsight-compute/ReleaseNotes/index.html",
+    "https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html"
+  ],
+  "execution_target": "Thor SM110",
+  "comparison": "Ampere A100 SM80 integer redux vs FP32 shuffle; no alternate execution target"
+}

@@ -1,0 +1,4 @@
+$ sh systems_practice/2026-09-20/export-isa.sh
+nvcc missing; no actual PTX/SASS generated
+
+exit_code=127

@@ -1,0 +1,6 @@
+PASS: C++17 Release and ASan/UBSan: 675 comparisons each
+PASS: required README heading order, concept629 non-whitespace characters, one self-test
+PASS: local document links, JSON parse, Python AST, shell syntax
+PASS: clang-format dry-run/Werror and git diff --check
+PASS: 2026-09-20 quant cursor advanced exactly once to AdaRound; AWQ retried once
+CUDA compile/execution/PTX/SASS and native GPTQ execution remain UNVERIFIED

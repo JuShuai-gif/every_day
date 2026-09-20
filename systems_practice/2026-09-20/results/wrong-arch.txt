@@ -1,0 +1,14 @@
+$ cmake -S systems_practice/2026-09-20 -B systems_practice/2026-09-20/build/wrong-arch -DENABLE_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=110a
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Error at CMakeLists.txt:15 (message):
+  Only Thor SM110 is permitted
+
+
+-- Configuring incomplete, errors occurred!
+
+exit_code=1

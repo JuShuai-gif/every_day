@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "next_method_id": "gptq",
-  "last_lesson_date": "2026-09-19",
+  "next_method_id": "adaround",
+  "last_lesson_date": "2026-09-20",
   "completed_methods": [],
   "history": [
     {
@@ -17,6 +17,20 @@
       "cpu_example_run": false,
       "thor_verified": false,
       "status": "partial; local checkout and execution blocked"
+    },
+    {
+      "date": "2026-09-20",
+      "method": "gptq",
+      "focus": "Native GPTQ Hessian/damping/error compensation; custom affine INT4 export and decoded FP16 inference",
+      "lesson": "../2026-09-20/quantization/gptq/README.md",
+      "verification": "../2026-09-20/quantization/gptq/verification.json",
+      "commit": "2d65066eeb06a5c9ff5184d8cebdf33662c67faf",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "status": "partial; source checkout and native execution blocked"
     }
   ],
   "backlog": [
@@ -31,8 +45,20 @@
       "example_delivered": true,
       "cpu_example_run": false,
       "thor_verified": false,
-      "last_retry_date": "2026-09-19",
-      "latest_verification": "../2026-09-19/quantization/awq/verification.json"
+      "last_retry_date": "2026-09-20",
+      "latest_verification": "../2026-09-19/quantization/awq/verification.json",
+      "latest_source_retry": "../2026-09-20/quantization/awq-retry-source.json"
+    },
+    {
+      "method": "gptq",
+      "date": "2026-09-20",
+      "reason": "GitHub clone DNS failed; pinned sources read via web, native API example delivered; dependencies and Thor execution missing",
+      "latest_verification": "../2026-09-20/quantization/gptq/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false
     }
   ],
   "policy": "One quantization lesson per Asia/Shanghai calendar day, independent of main rotation. Preparation does not advance cursor. Daily attempted lessons may advance cursor but failures stay in backlog and never enter completed_methods. Completion requires source read and concrete upstream usage example delivered; execution evidence tracked separately."

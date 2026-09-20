@@ -1,0 +1,61 @@
+{
+  "method": "gptq",
+  "date": "2026-09-20",
+  "repository": "https://github.com/IST-DASLab/gptq",
+  "commit": "2d65066eeb06a5c9ff5184d8cebdf33662c67faf",
+  "source_record": "source.json",
+  "web_source_record": "source-web.json",
+  "source_fetched": false,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": {
+    "gptq.py": [
+      "GPTQ.__init__",
+      "GPTQ.add_batch",
+      "GPTQ.fasterquant",
+      "GPTQ.free"
+    ],
+    "quant.py": [
+      "quantize",
+      "Quantizer.configure",
+      "Quantizer.find_params",
+      "Quantizer.quantize",
+      "Quant3Linear.pack",
+      "Quant3Linear.forward"
+    ],
+    "opt.py": [
+      "opt_sequential"
+    ],
+    "README.md": [
+      "Dependencies",
+      "3-bit CUDA Kernels"
+    ],
+    "LICENSE": [
+      "Apache-2.0"
+    ]
+  },
+  "evidence": [
+    "source.json",
+    "source-web.json",
+    "example.py",
+    "run.sh",
+    "results/native.txt",
+    "../../results/environment.json"
+  ],
+  "blockers": [
+    "Local Git clone failed GitHub DNS; no verified cache",
+    "Python torch/transformers/numpy absent",
+    "Native fasterquant unconditionally calls torch.cuda.synchronize; CPU unmodified run unsupported here",
+    "Thor SM110 device and CUDA13 toolchain absent",
+    "Torch2.9.0/cu130 + transformers4.56.2 + numpy1.26.4 + Python3.11 combination not executed",
+    "Native packed INT4 runtime not implemented; custom packed export is decoded before FP16 GEMM"
+  ],
+  "metrics": {
+    "error": null,
+    "storage_measured": null,
+    "gpu_ms": null,
+    "e2e_ms": null
+  }
+}

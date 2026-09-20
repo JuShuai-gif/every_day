@@ -1,0 +1,4 @@
+$ sh systems_practice/2026-09-20/quantization/gptq/run.sh
+UNVERIFIED: set GPTQ_SOURCE to verified checkout in systems_practice/.tmp/quant_sources
+
+exit_code=2
