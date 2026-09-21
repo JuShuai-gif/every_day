@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-21",
+  "theme": "C++17 并发",
+  "implementation": "BoundedQueue / Pool, C++17 CPU-only",
+  "compiler": "Apple clang 21.0.0 (clang-2100.1.1.101)",
+  "architecture": "arm64-apple-darwin25.6.0",
+  "build_and_run": {
+    "release": {
+      "passed": true,
+      "log": "cpu.txt"
+    },
+    "asan_ubsan": {
+      "passed": true,
+      "log": "sanitize.txt"
+    },
+    "tsan": {
+      "passed": true,
+      "log": "tsan.txt"
+    },
+    "contracts": "contracts.txt"
+  },
+  "contracts": {
+    "MPMC": {
+      "capacities": [
+        1,
+        7,
+        64
+      ],
+      "producers": 4,
+      "workers": 4,
+      "requests_per_capacity": 2000
+    },
+    "close_race": {
+      "rounds": 20,
+      "attempts_each": 400
+    },
+    "thread_creation_failure_injection": false
+  },
+  "performance": {
+    "device": "CPU",
+    "log": "cpu.txt",
+    "warmup_batches": 10,
+    "sample_batches": 30,
+    "requests_per_batch": 128,
+    "workers": 2,
+    "capacities": [
+      1,
+      8,
+      64
+    ],
+    "gpu_npu_e2e_power_measured": false,
+    "no_cpu_affinity_or_frequency_control": true
+  },
+  "gpu_compile": false,
+  "gpu_execute": false,
+  "GPU_scope": "not applicable to this main CPU concurrency exercise",
+  "quantization_verification": "../quantization/adaround/verification.json",
+  "format_cpp_script_passed": true,
+  "git_diff_check": "passed",
+  "created_at_utc": "2026-09-21T00:55:13.436365+00:00",
+  "static_audit": "audit.txt"
+}

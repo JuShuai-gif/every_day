@@ -1,0 +1,18 @@
+{
+  "method": "adaround",
+  "repository": "https://github.com/quic/aimet.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-09-21T00:36:18.786499+00:00",
+  "commit": null,
+  "cache": ".tmp/quant_sources/adaround-egr_e2o8",
+  "status": "failed",
+  "source_read": false,
+  "example_run": false,
+  "files": [],
+  "errors": [
+    {
+      "reason": "Cloning into '/Users/guhaoran/code/EveryDay/systems_practice/.tmp/quant_sources/adaround-egr_e2o8/repo'...\nfatal: unable to access 'https://github.com/quic/aimet.git/': Could not resolve host: github.com"
+    }
+  ],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example."
+}

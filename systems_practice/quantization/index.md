@@ -2,7 +2,7 @@
 
 每天在主知识点之外讲一个量化方法，独立于主方向轮换。主练习仍为一个 20～30 分钟编码任务；本栏目提供已写好的使用示例，不再添加第二份编码作业。主主题为量化 GEMM 时复用当日方法的材料。
 
-**下一方法：AdaRound。下一主主题为 C++17 并发。** 2026-09-18已有 [真实量化 GEMM 对照实验](../2026-09-18/session-02/README.md)，它是独立实现，不是下列项目的 API 教程。
+**下一方法：AutoRound。下一主主题为 CPU 体系结构。** 2026-09-18已有 [真实量化 GEMM 对照实验](../2026-09-18/session-02/README.md)，它是独立实现，不是下列项目的 API 教程。
 
 现在可从项目根目录运行已有实验（需要 CMake 与 C++17 编译器）：
 
@@ -30,7 +30,7 @@ sh systems_practice/2026-09-18/session-02/run.sh cpu
 | --- | --- | --- | --- |
 | 1 | AWQ | 激活感知的权重缩放/裁剪与W4A16 | [mit-han-lab/llm-awq](https://github.com/mit-han-lab/llm-awq) |
 | 2 | GPTQ | 二阶近似与逐步误差补偿 | [IST-DASLab/gptq](https://github.com/IST-DASLab/gptq) |
-| 3 | AdaRound | 学习舍入选择 | [quic/aimet](https://github.com/quic/aimet) |
+| 3 | AdaRound | 学习舍入选择 | [qualcomm/aimet（已核实迁移）](https://github.com/qualcomm/aimet) |
 | 4 | AutoRound | 数据驱动的舍入和裁剪优化 | [intel/auto-round](https://github.com/intel/auto-round) |
 | 5 | HQQ | 无需激活校准数据的半二次权重量化 | [mobiusml/hqq](https://github.com/mobiusml/hqq) |
 | 6 | OmniQuant | 可学习裁剪与等价变换 | [OpenGVLab/OmniQuant](https://github.com/OpenGVLab/OmniQuant) |
@@ -83,3 +83,4 @@ python3 systems_practice/quantization/fetch_source.py awq \
 | 2026-09-18 | 配置及预备拉取，非已交付课程 | AWQ | 均未完成；GitHub DNS 失败 | [原始记录](results/2026-09-18-awq-source.json) |
 | 2026-09-19 | 当日AWQ clip子机制；本地获取/运行待补 | AWQ | 本地拉取否 / 固定commit网页阅读是 / 原生API示例是 / CPU否 / Thor否 | [课程](../2026-09-19/quantization/awq/README.md)；[五项状态](../2026-09-19/quantization/awq/verification.json) |
 | 2026-09-20 | 当日GPTQ二阶补偿；本地获取/运行待补，AWQ重试失败 | GPTQ | 本地拉取否 / 固定commit网页阅读是 / 原生API示例是 / CPU否 / Thor否 | [课程](../2026-09-20/quantization/gptq/README.md)；[五项状态](../2026-09-20/quantization/gptq/verification.json) |
+| 2026-09-21 | 当日AdaRound学习舍入；AIMET迁移核实，AWQ重试失败 | AdaRound | 本地拉取否 / 固定commit浏览器阅读是 / 原生API示例是 / CPU否 / Thor否；独立u4检查通过 | [课程](../2026-09-21/quantization/adaround/README.md)；[五项状态](../2026-09-21/quantization/adaround/verification.json) |

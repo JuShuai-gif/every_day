@@ -1,0 +1,146 @@
+{
+  "date": "2026-09-21",
+  "recorded_at_utc": "2026-09-21T00:55:13.436365+00:00",
+  "repository": "https://github.com/qualcomm/aimet",
+  "commit": "17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b",
+  "acquisition": "GitHub blob pages via Chrome CUA; visible file content textbox. Local git clone failed; no verified cache.",
+  "redirect": {
+    "from": "https://github.com/quic/aimet",
+    "to": "https://github.com/qualcomm/aimet",
+    "observed": true
+  },
+  "license": "BSD-3-Clause",
+  "readme_read": {
+    "ref": "develop at retrieval",
+    "scope": "overview, quick start, methods, source build link; not a backend support proof"
+  },
+  "files": [
+    {
+      "path": "TrainingExtensions/torch/src/python/aimet_torch/adaround/adaround_weight.py",
+      "symbols": [
+        "Adaround",
+        "_get_quantsim",
+        "_compute_param_encodings",
+        "AdaroundWrapper"
+      ],
+      "permalink": "https://github.com/qualcomm/aimet/blob/17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b/TrainingExtensions/torch/src/python/aimet_torch/adaround/adaround_weight.py"
+    },
+    {
+      "path": "TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_weight.py",
+      "symbols": [
+        "AdaroundParameters.__init__",
+        "AdaroundBase.apply_adaround",
+        "_apply_adaround",
+        "_adaround_model (entry and no-checkpoint path)",
+        "_run_adaround_model",
+        "_export_encodings_to_json",
+        "_update_param_encodings_dict"
+      ],
+      "permalink": "https://github.com/qualcomm/aimet/blob/17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b/TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_weight.py"
+    },
+    {
+      "path": "TrainingExtensions/torch/src/python/aimet_torch/adaround/adaround_optimizer.py",
+      "symbols": [
+        "alias imports from _base"
+      ],
+      "permalink": "https://github.com/qualcomm/aimet/blob/17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b/TrainingExtensions/torch/src/python/aimet_torch/adaround/adaround_optimizer.py"
+    },
+    {
+      "path": "TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_optimizer.py",
+      "symbols": [
+        "adaround_module",
+        "_optimize_rounding",
+        "_compute_recons_metrics",
+        "_compute_output_with_adarounded_weights",
+        "_can_cache_acts_data",
+        "_place_cached_acts_data"
+      ],
+      "permalink": "https://github.com/qualcomm/aimet/blob/17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b/TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_optimizer.py"
+    },
+    {
+      "path": "TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_wrapper.py",
+      "symbols": [
+        "AdaroundWrapperBase.apply_adaround",
+        "_generate_alpha_parameter",
+        "_init_param"
+      ],
+      "permalink": "https://github.com/qualcomm/aimet/blob/17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b/TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_wrapper.py"
+    },
+    {
+      "path": "TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_loss.py",
+      "symbols": [
+        "compute_recon_loss",
+        "compute_round_loss",
+        "_compute_beta"
+      ],
+      "permalink": "https://github.com/qualcomm/aimet/blob/17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b/TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_loss.py"
+    },
+    {
+      "path": "pyproject.toml",
+      "symbols": [
+        "build-system",
+        "project",
+        "tool.scikit-build.cmake.define"
+      ],
+      "permalink": "https://github.com/qualcomm/aimet/blob/17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b/pyproject.toml"
+    },
+    {
+      "path": "packaging/plugins/local/aimet.py",
+      "symbols": [
+        "get_aimet_variant",
+        "get_aimet_dependencies",
+        "get_version"
+      ],
+      "permalink": "https://github.com/qualcomm/aimet/blob/17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b/packaging/plugins/local/aimet.py"
+    },
+    {
+      "path": "packaging/dependencies/fast-release/torch-cpu/reqs_pip_torch_cpu.txt",
+      "symbols": [
+        "symlink target ../torch-gpu/reqs_pip_torch_gpu.txt"
+      ],
+      "permalink": "https://github.com/qualcomm/aimet/blob/17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b/packaging/dependencies/fast-release/torch-cpu/reqs_pip_torch_cpu.txt"
+    },
+    {
+      "path": "packaging/dependencies/fast-release/torch-gpu/reqs_pip_torch_gpu.txt",
+      "symbols": [
+        "full dependencies; unpinned torch/numpy"
+      ],
+      "permalink": "https://github.com/qualcomm/aimet/blob/17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b/packaging/dependencies/fast-release/torch-gpu/reqs_pip_torch_gpu.txt"
+    },
+    {
+      "path": "packaging/dependencies.py",
+      "symbols": [
+        "legacy helper; not used for current install recommendations"
+      ],
+      "permalink": "https://github.com/qualcomm/aimet/blob/17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b/packaging/dependencies.py"
+    },
+    {
+      "path": "packaging/dependencies/constraints.txt",
+      "symbols": [
+        "setuptools<70"
+      ],
+      "permalink": "https://github.com/qualcomm/aimet/blob/17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b/packaging/dependencies/constraints.txt"
+    },
+    {
+      "path": "packaging/version.txt",
+      "symbols": [
+        "2.40.0"
+      ],
+      "permalink": "https://github.com/qualcomm/aimet/blob/17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b/packaging/version.txt"
+    },
+    {
+      "path": "LICENSE",
+      "symbols": [
+        "BSD-3-Clause full license"
+      ],
+      "permalink": "https://github.com/qualcomm/aimet/blob/17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b/LICENSE"
+    }
+  ],
+  "source_fetched": false,
+  "source_read": true,
+  "source_download_error_records": [
+    "source.json",
+    "source-migrated-retry.json"
+  ],
+  "note": "No repository checkout or third-party source snapshot saved through browser; no API execution inferred from reading."
+}

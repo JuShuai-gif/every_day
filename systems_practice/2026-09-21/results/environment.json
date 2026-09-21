@@ -1,0 +1,12 @@
+{
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": "3.9.6",
+  "tools": {
+    "cmake": "/opt/homebrew/bin/cmake",
+    "clang++": "/usr/bin/clang++",
+    "nvcc": null,
+    "ncu": null,
+    "cuobjdump": null
+  },
+  "date_beijing": "2026-09-21 08:56:26 CST"
+}

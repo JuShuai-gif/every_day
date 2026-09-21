@@ -1,0 +1,9 @@
+PASS Python syntax: systems_practice/2026-09-21/quantization/adaround/example.py
+PASS Python syntax: systems_practice/2026-09-21/quantization/adaround/packing.py
+PASS JSON parse
+PASS shell syntax
+PASS main README ordering; concept Chinese characters=546
+PASS Markdown local links
+PASS independent cursor advances once; partial remains backlog
+PASS clang-format dry-run; required scripts/format-cpp.sh already completed
+PASS git diff --check

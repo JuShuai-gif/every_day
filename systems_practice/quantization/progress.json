@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "next_method_id": "adaround",
-  "last_lesson_date": "2026-09-20",
+  "next_method_id": "autoround",
+  "last_lesson_date": "2026-09-21",
   "completed_methods": [],
   "history": [
     {
@@ -31,6 +31,20 @@
       "cpu_example_run": false,
       "thor_verified": false,
       "status": "partial; source checkout and native execution blocked"
+    },
+    {
+      "date": "2026-09-21",
+      "method": "adaround",
+      "focus": "Native AIMET learned rounding; soft-folded output hardened with frozen encodings, custom u4 export/reload",
+      "lesson": "../2026-09-21/quantization/adaround/README.md",
+      "verification": "../2026-09-21/quantization/adaround/verification.json",
+      "commit": "17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "status": "partial; native source checkout/build/execution blocked"
     }
   ],
   "backlog": [
@@ -45,15 +59,26 @@
       "example_delivered": true,
       "cpu_example_run": false,
       "thor_verified": false,
-      "last_retry_date": "2026-09-20",
+      "last_retry_date": "2026-09-21",
       "latest_verification": "../2026-09-19/quantization/awq/verification.json",
-      "latest_source_retry": "../2026-09-20/quantization/awq-retry-source.json"
+      "latest_source_retry": "../2026-09-21/quantization/awq-retry-source.json"
     },
     {
       "method": "gptq",
       "date": "2026-09-20",
       "reason": "GitHub clone DNS failed; pinned sources read via web, native API example delivered; dependencies and Thor execution missing",
       "latest_verification": "../2026-09-20/quantization/gptq/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false
+    },
+    {
+      "method": "adaround",
+      "date": "2026-09-21",
+      "reason": "Repository migration and pinned API verified via browser; clone DNS failure, unsupported local Python and missing dependencies prevent native execution.",
+      "latest_verification": "../2026-09-21/quantization/adaround/verification.json",
       "source_fetched": false,
       "source_read": true,
       "example_delivered": true,

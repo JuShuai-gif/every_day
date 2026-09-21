@@ -1,0 +1,61 @@
+{
+  "date": "2026-09-21",
+  "read_before_implementation": true,
+  "repository": "https://github.com/llvm/llvm-project",
+  "tag": "llvmorg-19.1.7",
+  "file": "llvm/lib/Support/ThreadPool.cpp",
+  "url": "https://github.com/llvm/llvm-project/blob/llvmorg-19.1.7/llvm/lib/Support/ThreadPool.cpp",
+  "symbols": [
+    "StdThreadPool::processTasks",
+    "StdThreadPool::workCompletedUnlocked",
+    "StdThreadPool::wait",
+    "StdThreadPool::~StdThreadPool"
+  ],
+  "license": "Apache-2.0 WITH LLVM-exception (source header)",
+  "relationship": "Independent mechanism-inspired implementation; no source copied. Bounded capacity/deadline admission are teaching additions.",
+  "failures": [
+    {
+      "route": "web.open/search",
+      "reason": "Fatal error: connection failed: error sending request",
+      "attempts": 2
+    },
+    {
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-19.1.7/llvm/lib/Support/ThreadPool.cpp",
+      "route": "curl",
+      "reason": "curl: (6) Could not resolve host: raw.githubusercontent.com",
+      "log": "source-curl-error.txt"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-19.1.7/llvm/lib/Support/ThreadPool.cpp",
+      "route": "Chrome",
+      "reason": "net::ERR_BLOCKED_BY_CLIENT"
+    }
+  ],
+  "success": "Chrome GitHub blob file content read in full",
+  "local_libcpp_version": "210106",
+  "local_primary_sources": [
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config",
+      "sha256": "10c378256384ce1aa0372d8078411d94b83ea0f30a31155e0001bbe7256f29a0"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__condition_variable/condition_variable.h",
+      "sha256": "5d3eda77a03ab8a3f3436531d03ec1205ee6619b4c7c2e2e8650eb71049feb29"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/support/pthread.h",
+      "sha256": "e0c5d97745451cf19dcd329e1b88fbf611f47ab701e5f5d7f673ccacdbdaac60"
+    }
+  ],
+  "os_implementation_trace": false,
+  "Thor_reference": {
+    "url": "https://developer.nvidia.com/embedded/jetpack/downloads/archive-7.0",
+    "read_date": "2026-09-21",
+    "JetPack": "7.0",
+    "Jetson_Linux": "38.2/38.2.1",
+    "CUDA": "13.0.0",
+    "target": "SM110",
+    "actual_board_stack_verified": false,
+    "first_attempt_404": "https://developer.nvidia.com/embedded/jetpack-sdk-70"
+  }
+}

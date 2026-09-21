@@ -1,0 +1,147 @@
+{
+  "method": "adaround",
+  "date": "2026-09-21",
+  "repository": "https://github.com/qualcomm/aimet.git",
+  "commit": "17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b",
+  "source_record": "source.json",
+  "additional_source_records": [
+    "source-migrated-retry.json",
+    "source-browser.json"
+  ],
+  "source_fetched": false,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "upstream_version": "2.40.0 source, not installed",
+  "execution_scope": "native API example is CPU-only; no low-bit CUDA kernel delivered or claimed by this column",
+  "read_symbols": [
+    {
+      "path": "TrainingExtensions/torch/src/python/aimet_torch/adaround/adaround_weight.py",
+      "symbols": [
+        "Adaround",
+        "_get_quantsim",
+        "_compute_param_encodings",
+        "AdaroundWrapper"
+      ]
+    },
+    {
+      "path": "TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_weight.py",
+      "symbols": [
+        "AdaroundParameters.__init__",
+        "AdaroundBase.apply_adaround",
+        "_apply_adaround",
+        "_adaround_model (entry and no-checkpoint path)",
+        "_run_adaround_model",
+        "_export_encodings_to_json",
+        "_update_param_encodings_dict"
+      ]
+    },
+    {
+      "path": "TrainingExtensions/torch/src/python/aimet_torch/adaround/adaround_optimizer.py",
+      "symbols": [
+        "alias imports from _base"
+      ]
+    },
+    {
+      "path": "TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_optimizer.py",
+      "symbols": [
+        "adaround_module",
+        "_optimize_rounding",
+        "_compute_recons_metrics",
+        "_compute_output_with_adarounded_weights",
+        "_can_cache_acts_data",
+        "_place_cached_acts_data"
+      ]
+    },
+    {
+      "path": "TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_wrapper.py",
+      "symbols": [
+        "AdaroundWrapperBase.apply_adaround",
+        "_generate_alpha_parameter",
+        "_init_param"
+      ]
+    },
+    {
+      "path": "TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_loss.py",
+      "symbols": [
+        "compute_recon_loss",
+        "compute_round_loss",
+        "_compute_beta"
+      ]
+    },
+    {
+      "path": "pyproject.toml",
+      "symbols": [
+        "build-system",
+        "project",
+        "tool.scikit-build.cmake.define"
+      ]
+    },
+    {
+      "path": "packaging/plugins/local/aimet.py",
+      "symbols": [
+        "get_aimet_variant",
+        "get_aimet_dependencies",
+        "get_version"
+      ]
+    },
+    {
+      "path": "packaging/dependencies/fast-release/torch-cpu/reqs_pip_torch_cpu.txt",
+      "symbols": [
+        "symlink target ../torch-gpu/reqs_pip_torch_gpu.txt"
+      ]
+    },
+    {
+      "path": "packaging/dependencies/fast-release/torch-gpu/reqs_pip_torch_gpu.txt",
+      "symbols": [
+        "full dependencies; unpinned torch/numpy"
+      ]
+    },
+    {
+      "path": "packaging/dependencies.py",
+      "symbols": [
+        "legacy helper; not used for current install recommendations"
+      ]
+    },
+    {
+      "path": "packaging/dependencies/constraints.txt",
+      "symbols": [
+        "setuptools<70"
+      ]
+    },
+    {
+      "path": "packaging/version.txt",
+      "symbols": [
+        "2.40.0"
+      ]
+    },
+    {
+      "path": "LICENSE",
+      "symbols": [
+        "BSD-3-Clause full license"
+      ]
+    }
+  ],
+  "evidence": {
+    "native_attempt": {
+      "log": "results/native.txt",
+      "exit_code": 2
+    },
+    "independent_packing": {
+      "log": "results/packing.txt",
+      "passed": true,
+      "not_upstream_execution": true
+    },
+    "example": "example.py",
+    "wrapper": "run.sh"
+  },
+  "blockers": [
+    "Both original and migrated GitHub repository clone failed DNS; no verified cache",
+    "Python 3.9.6 is below >=3.10 source requirement",
+    "torch/aimet_torch/numpy/psutil absent; AIMET_SOURCE_ROOT absent",
+    "Native source build and CPU error/storage/performance results pending",
+    "AIMET default CUDA arch list omits Thor; native SM110 extension/ABI/device execution unverified"
+  ],
+  "created_at_utc": "2026-09-21T00:55:13.436365+00:00"
+}

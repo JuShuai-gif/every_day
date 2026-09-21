@@ -1,0 +1,6 @@
+PASS queue: capacity/ownership/timeout/drain/FIFO/close wakes both wait sets
+PASS pool: exceptions/move-only/recursive guard/RAII/inflight/blocked-submit close
+PASS MPMC capacity=1 producers=4 workers=4 requests=2000
+PASS MPMC capacity=7 producers=4 workers=4 requests=2000
+PASS MPMC capacity=64 producers=4 workers=4 requests=2000
+PASS concurrent close: 20 rounds x 400 attempted requests
