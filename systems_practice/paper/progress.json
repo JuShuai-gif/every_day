@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-21T11:51:14+08:00",
+  "daily_count": 2,
+  "preferred_max_age_days": 180,
+  "fallback_max_age_days": 365,
+  "topics": [
+    "pruning",
+    "quantization",
+    "model_compression",
+    "edge_deployment"
+  ],
+  "deduplicate_by": "versionless_arxiv_id_or_doi",
+  "schedule_integration": "Existing daily 08:30 Asia/Shanghai task reads systems_practice/PRACTICE_SPEC.md; no scheduler mutation.",
+  "history": [
+    {
+      "id": "arxiv:2609.01743",
+      "title": "SCULPT: Training Edge Vision Models for Post-Training Quantization Readiness",
+      "delivered_on": "2026-09-21",
+      "first_submitted": "2026-09-01",
+      "version_read": "v1",
+      "directory": "2026-09-21/01-sculpt",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false
+    },
+    {
+      "id": "arxiv:2608.15693",
+      "title": "Large Models for Small Devices: Recent Advances and Empirical Analysis of Edge AI Deployment",
+      "delivered_on": "2026-09-21",
+      "first_submitted": "2026-08-16",
+      "version_read": "v1",
+      "directory": "2026-09-21/02-edge-deployment",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false
+    }
+  ],
+  "backlog": []
+}

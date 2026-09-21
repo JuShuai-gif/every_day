@@ -1,0 +1,29 @@
+{
+  "kind": "independent_mechanism_demo_no_training",
+  "frozen_bounds": [
+    0.0,
+    3.1334987284989277
+  ],
+  "regularizer_on_pre_activation": {
+    "skew": 4.957573238439378,
+    "kurtosis": 134.49422772149683,
+    "penalty": 173.15309456487356
+  },
+  "minmax": {
+    "mse_all": 0.0005790821944841292,
+    "mse_body_x_lt_5": 0.0005792270012344379,
+    "outside_bounds": 0,
+    "stored_bytes_including_metadata": 4016
+  },
+  "percentile_ema": {
+    "mse_all": 0.1804815847328409,
+    "mse_body_x_lt_5": 2.9369432306804496e-05,
+    "outside_bounds": 3,
+    "stored_bytes_including_metadata": 4016
+  },
+  "checks": [
+    "frozen_bounds",
+    "constant_zero",
+    "quantile_interpolation"
+  ]
+}

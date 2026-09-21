@@ -1,0 +1,48 @@
+{
+  "id": "arxiv:2609.01743",
+  "slug": "01-sculpt",
+  "title": "SCULPT: Training Edge Vision Models for Post-Training Quantization Readiness",
+  "first_submitted": "2026-09-01",
+  "version": "v1",
+  "version_date": "2026-09-01",
+  "authors": [
+    "Bharadwaj Kavuri",
+    "Sourav Babu-PK",
+    "Varadhraj Ellapan",
+    "Pullarao Maddu",
+    "Prasad Deshpande"
+  ],
+  "topics": [
+    "quantization",
+    "model_compression",
+    "edge_vision"
+  ],
+  "difficulty": "medium_to_hard",
+  "sections_read": [
+    "3.1–3.3",
+    "4",
+    "5.1–5.3",
+    "Table 1"
+  ],
+  "repository": null,
+  "repository_status": "No verified official implementation found in this search; not a claim that none exists.",
+  "publication_status": "arXiv metadata names IMVIP 2026; venue record not independently verified",
+  "omissions": [
+    "model training and parameter updates",
+    "full-network PTQ",
+    "task accuracy",
+    "device deployment"
+  ],
+  "checks": [
+    "frozen_bounds",
+    "constant_zero",
+    "quantile_interpolation"
+  ],
+  "checked_at": "2026-09-21T11:51:14+08:00",
+  "paper_url": "https://arxiv.org/abs/2609.01743v1",
+  "fulltext_url": "https://arxiv.org/html/2609.01743v1",
+  "paper_fulltext_read": true,
+  "source_implementation_read": false,
+  "source_repository_fetched": false,
+  "example_origin": "Independent mechanism illustration written locally; not author code"
+}

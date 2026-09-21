@@ -50,6 +50,8 @@ GitHub访问过程：web工具两次连接失败，curl DNS失败，raw浏览器
 
 ## 文件说明
 
+- 每日两篇论文：[SCULPT 与剪枝后的部署格式](../paper/2026-09-21/README.md)，含复现难度和已运行的独立机制示例。
+
 - [bounded_pool.hpp](src/bounded_pool.hpp)：固定容量队列、RAII 线程池、future 与入队状态。
 - [main.cpp](src/main.cpp)：门闩/MPMC/关闭竞争测试及 CPU 时间边界比较。
 - [CMakeLists.txt](CMakeLists.txt)、[run.sh](run.sh)：C++17、警告视为错误、Release/ASan+UBSan/TSan。

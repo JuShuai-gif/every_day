@@ -1,0 +1,38 @@
+{
+  "kind": "independent_custom_format_not_gguf",
+  "cases": [
+    {
+      "case": "baseline",
+      "kept_width": 1024,
+      "actual_pruned_fraction": 0.0,
+      "storage_mode": "custom_u4",
+      "payload_and_scales_bytes": 528,
+      "abs_error_vs_original": 0.7530959862874124,
+      "abs_storage_error_vs_pruned_reference": 0.7530959862874124
+    },
+    {
+      "case": "prune_target_10pct",
+      "kept_width": 922,
+      "actual_pruned_fraction": 0.099609375,
+      "storage_mode": "fp16_fallback",
+      "payload_and_scales_bytes": 1844,
+      "abs_error_vs_original": 0.8663155545474136,
+      "abs_storage_error_vs_pruned_reference": 0.0014894264829663495
+    },
+    {
+      "case": "round_down_to_aligned_width",
+      "kept_width": 768,
+      "actual_pruned_fraction": 0.25,
+      "storage_mode": "custom_u4",
+      "payload_and_scales_bytes": 396,
+      "abs_error_vs_original": 4.349408928660578,
+      "abs_storage_error_vs_pruned_reference": 0.745128933891988
+    }
+  ],
+  "checks": [
+    "zero_block",
+    "unaligned_tail",
+    "exact_nibble_roundtrip",
+    "actual_byte_lengths"
+  ]
+}

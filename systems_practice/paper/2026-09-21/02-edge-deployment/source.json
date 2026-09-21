@@ -1,0 +1,54 @@
+{
+  "id": "arxiv:2608.15693",
+  "slug": "02-edge-deployment",
+  "title": "Large Models for Small Devices: Recent Advances and Empirical Analysis of Edge AI Deployment",
+  "first_submitted": "2026-08-16",
+  "version": "v1",
+  "version_date": "2026-08-16",
+  "authors": [
+    "Subhransu Das",
+    "Jiaming Cheng",
+    "Arnav Kumar",
+    "Sadia Afrose",
+    "Mingzhe Han",
+    "Michael Silagy",
+    "Shreya Palande",
+    "Brijesh Soni",
+    "Rajiv Ramnath"
+  ],
+  "topics": [
+    "pruning",
+    "quantization",
+    "edge_deployment"
+  ],
+  "difficulty": "hard",
+  "sections_read": [
+    "4.1–4.3",
+    "5.1",
+    "6",
+    "Table 3 notes"
+  ],
+  "repository": "https://github.com/Arnavvvkumar/deployment",
+  "repository_status": "Read main README on 2026-09-21. Minimal review copy: results and HTTP client; full pruning/quantization/evaluation pipelines and raw logs omitted. Client implementation not read or run. Commit not resolved.",
+  "publication_status": "arXiv preprint; metadata says parts presented at CCNC 2026, not full-paper acceptance evidence",
+  "omissions": [
+    "GGUF implementation",
+    "DepGraph importance and coupled network pruning",
+    "LoRA recovery",
+    "full evaluation harness",
+    "hardware latency"
+  ],
+  "checks": [
+    "zero_block",
+    "unaligned_tail",
+    "exact_nibble_roundtrip",
+    "actual_byte_lengths"
+  ],
+  "checked_at": "2026-09-21T11:51:14+08:00",
+  "paper_url": "https://arxiv.org/abs/2608.15693v1",
+  "fulltext_url": "https://arxiv.org/html/2608.15693v1",
+  "paper_fulltext_read": true,
+  "source_implementation_read": false,
+  "source_repository_fetched": false,
+  "example_origin": "Independent mechanism illustration written locally; not author code"
+}

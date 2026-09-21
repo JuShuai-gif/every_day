@@ -1,0 +1,28 @@
+{
+  "verified_at": "2026-09-21T11:51:14+08:00",
+  "python": "3.9.6",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "command": "bash systems_practice/paper/2026-09-21/02-edge-deployment/run.sh",
+  "exit_code": 0,
+  "paper_read": true,
+  "example_delivered": true,
+  "independent_cpu_example_run": true,
+  "author_implementation_run": false,
+  "full_paper_reproduced": false,
+  "gpu_or_edge_device_verified": false,
+  "checks_passed": [
+    "zero_block",
+    "unaligned_tail",
+    "exact_nibble_roundtrip",
+    "actual_byte_lengths"
+  ],
+  "limitations": [
+    "GGUF implementation",
+    "DepGraph importance and coupled network pruning",
+    "LoRA recovery",
+    "full evaluation harness",
+    "hardware latency"
+  ],
+  "example_sha256": "d1b1cbe133be232525daf6bd6f3d97fb17a86486061d19d729c30223ca17208a",
+  "output_sha256": "557ae2f1d2d1f0d186896393b98914178ed5d66e29531cb46fa030ac26fe6515"
+}

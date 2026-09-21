@@ -1,0 +1,26 @@
+{
+  "verified_at": "2026-09-21T11:51:14+08:00",
+  "python": "3.9.6",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "command": "bash systems_practice/paper/2026-09-21/01-sculpt/run.sh",
+  "exit_code": 0,
+  "paper_read": true,
+  "example_delivered": true,
+  "independent_cpu_example_run": true,
+  "author_implementation_run": false,
+  "full_paper_reproduced": false,
+  "gpu_or_edge_device_verified": false,
+  "checks_passed": [
+    "frozen_bounds",
+    "constant_zero",
+    "quantile_interpolation"
+  ],
+  "limitations": [
+    "model training and parameter updates",
+    "full-network PTQ",
+    "task accuracy",
+    "device deployment"
+  ],
+  "example_sha256": "781e891411e7ff50daa3ce395c54593e5a7a9c64915c6932c559b532a5c2aa6f",
+  "output_sha256": "17528b43c61ec0ee17dfe2fb5bb92c0ed15d75116fc4e4f2d44eba414fae90f8"
+}
