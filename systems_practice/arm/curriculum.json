@@ -271,5 +271,7 @@
     "Jetson AGX Thor Developer Kit (T5000)"
   ],
   "cpu_comparison_device": "Jetson AGX Orin Developer Kit",
-  "cuda_execution_target": "Jetson Thor SM110 only"
+  "cuda_execution_target": "Jetson Thor SM110 only",
+  "implementation_language": "C/C++ only for ARM, CPU and computer architecture; default C++17",
+  "build_orchestration": "Shell/CMake only; no Python lesson implementation"
 }

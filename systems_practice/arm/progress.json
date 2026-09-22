@@ -16,7 +16,10 @@
       "observation_run": true,
       "compute_kernel_run": false,
       "target_board_verified": false,
-      "verification": "2026-09-22/verification.json"
+      "verification": "2026-09-22/verification.json",
+      "implementation_language": "C++17",
+      "program_compiled": true,
+      "program_run": true
     }
   ],
   "backlog": [],
@@ -28,6 +31,10 @@
     {
       "date": "2026-09-22",
       "reason": "Ground daily ARM lessons in actual RK3588/Jetson boards. Added BOARDS.md and per-lesson board context; Thor Neoverse distinct from Orin Cortex-A. No progress advancement."
+    },
+    {
+      "date": "2026-09-22",
+      "reason": "User mandates C/C++ for low-level ARM/CPU/architecture. Replace lesson01 Python query with C++17; preserve original evidence and lesson02 cursor."
     }
   ]
 }

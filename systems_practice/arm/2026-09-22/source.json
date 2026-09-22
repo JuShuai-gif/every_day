@@ -1,6 +1,6 @@
 {
   "read_date": "2026-09-22",
-  "implementation": "Independent stdlib Python environment query; no third-party code copied.",
+  "implementation": "Independent C++17 program: POSIX uname, sizeof(void*), compile-time feature macros. Shell/CMake build orchestration only; no Python or subprocess query in lesson implementation.",
   "sources": [
     {
       "url": "https://arm-software.github.io/acle/main/acle.html",
@@ -25,5 +25,7 @@
       "use": "Candidate reading for lesson 08, not used as a tested implementation today."
     }
   ],
-  "runtime_evidence": "results/target.json"
+  "runtime_evidence": "results/target-cpp.txt",
+  "previous_implementation": "Independent stdlib Python environment query; no third-party code copied.",
+  "historical_runtime_evidence": "results/target.json"
 }

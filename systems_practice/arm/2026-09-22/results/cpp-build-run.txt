@@ -1,0 +1,29 @@
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/arm/2026-09-22/build/cpp
+[ 50%] Building CXX object CMakeFiles/inspect_target.dir/src/inspect_target.cpp.o
+[100%] Linking CXX executable inspect_target
+[100%] Built target inspect_target
+runtime.os=Darwin
+runtime.release=25.6.0
+runtime.machine=arm64
+compiler=Clang 21.0.0 (clang-2100.1.1.101)
+compile.os=Apple
+compile.pointer_bytes=8
+__aarch64__=1
+__ARM_NEON=1
+__ARM_FEATURE_DOTPROD=1
+__ARM_FEATURE_FP16_VECTOR_ARITHMETIC=1
+__ARM_FEATURE_MATMUL_INT8=not_defined
+__ARM_FEATURE_SVE=not_defined
+__ARM_FEATURE_SVE2=not_defined
+__ARM_NEON_SVE_BRIDGE=1
+scope=compile-time features; no remote board capability query
+compute_kernel_executed=false
+performance_measured=false

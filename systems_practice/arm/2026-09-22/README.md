@@ -19,15 +19,17 @@
 
 ## 今天的现成观察
 
-项目根目录运行，无需安装依赖；需要现有 Python 3 和 Clang：
+项目根目录运行，需要 CMake 和支持 C++17 的 Clang/GCC，无 Python 依赖：
 
 ```bash
 sh systems_practice/arm/2026-09-22/run.sh
 ```
 
-脚本查询当前进程环境、`clang++ --version`、`clang++ -dumpmachine` 与默认目标的预定义宏。它不调用可选 SIMD 指令，也不读远程板卡。
+实现是 [src/inspect_target.cpp](src/inspect_target.cpp)。Shell 只构建并启动程序；C++ 直接调用 POSIX `uname` 读取运行环境，用 `sizeof(void*)` 观察当前程序 ABI，并通过 `#if defined(...)` 和预定义宏报告编译目标特性。它不通过子进程调用 Python 或编译器，也不执行被查询的可选 SIMD 指令。
 
-实际输出见 [target.json](results/target.json)。本机显示 Darwin/arm64、Apple clang 21.0.0；默认目标定义了 `__ARM_NEON`、`__ARM_FEATURE_DOTPROD` 和 `__ARM_FEATURE_FP16_VECTOR_ARITHMETIC`。未定义 `__ARM_FEATURE_MATMUL_INT8`、`__ARM_FEATURE_SVE` 和 `__ARM_FEATURE_SVE2`。
+关键是两种观察发生的时间不同：`#if` 在编译时选择代码，`uname` 在程序运行时读取当前环境。两者都不是对远程板卡的能力检测。CMake 构建入口见 [CMakeLists.txt](CMakeLists.txt)，没有自动安装或依赖下载。
+
+本次 C++ 程序实际输出见 [target-cpp.txt](results/target-cpp.txt)，编译日志见 [cpp-build-run.txt](results/cpp-build-run.txt)。本机显示 Darwin/arm64、Apple clang 21.0.0；默认目标定义了 `__ARM_NEON`、`__ARM_FEATURE_DOTPROD` 和 `__ARM_FEATURE_FP16_VECTOR_ARITHMETIC`。未定义 `__ARM_FEATURE_MATMUL_INT8`、`__ARM_FEATURE_SVE` 和 `__ARM_FEATURE_SVE2`。
 
 这些结果描述的是**这次编译器默认目标允许使用的功能**。宏缺失不能直接证明芯片完全没有该能力；宏存在也不能证明另一台部署机器支持。`__ARM_NEON_SVE_BRIDGE` 只表示桥接头文件可用，不能据此认定硬件支持 SVE。[ACLE 的特性宏与桥接宏定义](https://arm-software.github.io/acle/main/acle.html)
 
@@ -37,7 +39,11 @@ sh systems_practice/arm/2026-09-22/run.sh
 
 性能也分两步：先在同一机器、同一输入下判断改动有无收益，再在目标板重复验证。架构相同只解决一部分兼容性问题，无法保证缓存、线程调度或长时间温控表现相同。
 
-今天已运行只读查询，没有新 ARM 计算内核、推理、NEON benchmark、缓存计数器或功耗数据。[验证范围](verification.json)和[来源记录](source.json)分别归档。
+今天已实际编译并运行 C++ 环境/编译特性查询程序，没有执行张量计算内核、推理、NEON benchmark、缓存计数器或功耗测量。[验证范围](verification.json)和[来源记录](source.json)分别归档。
+
+## 语言规则与旧记录
+
+本系列涉及 ARM、CPU 和计算机体系结构的例子统一使用 C/C++，默认 C++17。第 01 节原先用 Python 编排查询，现已移除该入口并换为 C++。原 [target.json](results/target.json) 与 [旧验证记录](results/verification-python-historical.json)仅保留为历史证据，不代表当前实现；历史源代码可从 Git 查看。学习进度仍为第 01 节，没有新增一天或提前推进。
 
 ## 下一节
 

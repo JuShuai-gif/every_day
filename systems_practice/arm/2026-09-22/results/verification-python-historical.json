@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-22",
+  "lesson_id": "01",
+  "observation_command": "sh systems_practice/arm/2026-09-22/run.sh",
+  "observation_exit_code": 0,
+  "result": "results/target.json",
+  "scope": "Read-only process environment and Clang default compilation target/macros; not runtime detection of remote hardware.",
+  "compiler_target": "arm64-apple-darwin25.6.0",
+  "source_read": true,
+  "lesson_delivered": true,
+  "observation_run": true,
+  "compute_kernel_compiled": false,
+  "compute_kernel_run": false,
+  "performance_measured": false,
+  "target_board_verified": false,
+  "limitations": [
+    "No new SIMD kernel or inference executed",
+    "No cache, throughput, temperature or power measurement",
+    "Macro absence does not prove hardware absence; bridge macro does not prove SVE hardware"
+  ]
+}
