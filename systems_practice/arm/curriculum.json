@@ -31,7 +31,8 @@
       "title": "循环、依赖链与指令级并行",
       "prerequisites": [
         "03"
-      ]
+      ],
+      "cortex_focus": "以 Cortex-A55/A76 对照讲解顺序/乱序执行、依赖链与 ILP；具体流水线数据先核实官方手册。"
     },
     {
       "id": "05",
@@ -47,7 +48,8 @@
       "title": "编译目标、优化选项与反汇编",
       "prerequisites": [
         "05"
-      ]
+      ],
+      "cortex_focus": "解释 ARM 架构版本、Cortex 核型号与编译目标的关系；不把所有 Cortex-A 都当成同一指令能力。"
     },
     {
       "id": "07",
@@ -87,7 +89,8 @@
       "title": "多个累加器与寄存器压力",
       "prerequisites": [
         "10"
-      ]
+      ],
+      "cortex_focus": "结合具体 Cortex-A 核的 NEON 执行资源，分析累加器、依赖和寄存器占用。"
     },
     {
       "id": "12",
@@ -119,7 +122,8 @@
       "title": "Cache、工作集与局部性",
       "prerequisites": [
         "14"
-      ]
+      ],
+      "cortex_focus": "结合 Cortex-A 的 L1/L2 与 SoC 共享缓存配置，区分核设计和芯片实现。"
     },
     {
       "id": "16",
@@ -167,7 +171,8 @@
       "title": "大小核、线程池与任务粒度",
       "prerequisites": [
         "20"
-      ]
+      ],
+      "cortex_focus": "以 Cortex-A 大小核组合讲解线程池、任务粒度和核间迁移，目标板实测后再给性能结论。"
     },
     {
       "id": "22",
@@ -207,7 +212,8 @@
       "title": "性能工具：热点、PMU 与平台边界",
       "prerequisites": [
         "25"
-      ]
+      ],
+      "cortex_focus": "阅读具体 Cortex-A 优化手册并核实 PMU 事件，不跨核照搬 raw event。"
     },
     {
       "id": "27",
@@ -225,5 +231,9 @@
         "27"
       ]
     }
+  ],
+  "scope_notes": [
+    "重点覆盖 Cortex-A 微架构及边缘性能编程；Cortex-R/M 作实时控制、MCU 与 TinyML 用途对比，不默认支持 NEON。",
+    "2026-09-22 用户确认 Cortex 内容；在既有节点明确加入，不提前推进学习进度。"
   ]
 }

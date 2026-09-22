@@ -19,5 +19,11 @@
       "verification": "2026-09-22/verification.json"
     }
   ],
-  "backlog": []
+  "backlog": [],
+  "curriculum_adjustments": [
+    {
+      "date": "2026-09-22",
+      "reason": "User confirmed Cortex coverage; explicitly include Cortex-A at existing nodes04/06/11/15/21/26 and contrast R/M without adding days or advancing progress."
+    }
+  ]
 }

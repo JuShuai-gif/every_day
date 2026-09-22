@@ -107,6 +107,7 @@
 - 目录 `systems_practice/arm/YYYY-MM-DD/`，包含 README、来源记录和验证记录；可执行内容提供代码/脚本、运行命令与真实结果。日期目录每天最多一节，同日重跑补全或链接已有材料，不重复推进。交付进度与执行/板端验证分别记录；来源无法核实则记录失败/backlog，不把未交付课标为完成。
 - 每日主动检索并实际阅读对应的一手资料，优先 Arm Learn the Architecture、Arm Learning Paths、ACLE/NEON Reference、目标 CPU 官方优化手册和编译器文档。源码课实际阅读 ggml/ncnn/Arm Compute Library/KleidiAI 等相关文件与函数，注明版本/commit 或分支及阅读日期。教程来源与独立示例分别说明，不把检索摘要当作读过全文；基础架构课可使用官方规范，无需虚构开源模块。
 - 逐步覆盖 AArch64/A64、寄存器/指令/ABI、自动向量化、NEON 加载/FMA/归约/尾部、FP16 与 INT8 dot-product/i8mm、SVE/SVE2 的支持条件；区分 ISA、微架构、SoC、编译目标与运行时能力，不因“ARM”或品牌默认支持所有扩展。
+- **明确覆盖 Cortex**（2026-09-22 用户确认）：以 Cortex-A55/A76 等具体核讲微架构，贯穿流水线/顺序与乱序执行、依赖/NEON 执行资源、缓存/PMU 和大小核调度。区分架构版本、处理器核与 SoC 配置；Cortex-R/M 简要对比实时控制、微控制器和 TinyML 场景，不默认同一指令能力。对应节点见 arm/curriculum.json，保持逐日递进。
 - 边缘性能由问题牵引：连续访存、AoS/SoA、stride、缓存分块/packing、量化解码融合、小 Batch GEMM/GEMV、多累加器与寄存器压力、大小核/线程池、原子与伪共享、CPU–NPU/GPU 流水线、热稳定与能耗。先定位瓶颈再优化，按课程顺序逐步展开。
 - 基础课以命令、示意或已有汇编观察为主，准确记录只读查询的范围；实际 SIMD 编程课需标量参考、真实 intrinsics、尾部与精度检查、生成指令和同口径性能测量，说明普通 C++ 基线是否自动向量化。优先本机 Apple Silicon，Linux/目标板另验；不混用 CPU/GPU/NPU 性能或外推微架构结果。
 - CPU/ARM SIMD 主主题日可复用同一份实现，但每日小课仍要明确对应的连续课程节点和新收获，不能跳过学习前置或提前消耗多节。今天早先的 `ARM_EDGE.md` 保留为拓展阅读，不算完成整条课程。
