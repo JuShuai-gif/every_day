@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "cadence": "one lesson per Asia/Shanghai calendar day",
+  "after_last_lesson": "Continue with verified source kernels and integrated edge projects; do not restart automatically.",
+  "lessons": [
+    {
+      "id": "01",
+      "stage": 1,
+      "title": "区分架构、CPU 与编译目标能力",
+      "prerequisites": []
+    },
+    {
+      "id": "02",
+      "stage": 1,
+      "title": "AArch64 的 X/W 寄存器与 NEON V 寄存器",
+      "prerequisites": [
+        "01"
+      ]
+    },
+    {
+      "id": "03",
+      "stage": 1,
+      "title": "加载/存储、地址与 stride",
+      "prerequisites": [
+        "02"
+      ]
+    },
+    {
+      "id": "04",
+      "stage": 1,
+      "title": "循环、依赖链与指令级并行",
+      "prerequisites": [
+        "03"
+      ]
+    },
+    {
+      "id": "05",
+      "stage": 1,
+      "title": "函数调用、ABI 与寄存器保存",
+      "prerequisites": [
+        "04"
+      ]
+    },
+    {
+      "id": "06",
+      "stage": 1,
+      "title": "编译目标、优化选项与反汇编",
+      "prerequisites": [
+        "05"
+      ]
+    },
+    {
+      "id": "07",
+      "stage": 1,
+      "title": "公平基准：预热、计时范围与误差",
+      "prerequisites": [
+        "06"
+      ]
+    },
+    {
+      "id": "08",
+      "stage": 2,
+      "title": "普通 C++ 循环怎样自动向量化",
+      "prerequisites": [
+        "07"
+      ]
+    },
+    {
+      "id": "09",
+      "stage": 2,
+      "title": "NEON 加载/存储与尾部处理",
+      "prerequisites": [
+        "08"
+      ]
+    },
+    {
+      "id": "10",
+      "stage": 2,
+      "title": "FP32 FMA、横向归约与浮点误差",
+      "prerequisites": [
+        "09"
+      ]
+    },
+    {
+      "id": "11",
+      "stage": 2,
+      "title": "多个累加器与寄存器压力",
+      "prerequisites": [
+        "10"
+      ]
+    },
+    {
+      "id": "12",
+      "stage": 2,
+      "title": "AoS/SoA、交错加载与数据重排",
+      "prerequisites": [
+        "11"
+      ]
+    },
+    {
+      "id": "13",
+      "stage": 2,
+      "title": "FP16 存储、转换、算术与累加精度",
+      "prerequisites": [
+        "12"
+      ]
+    },
+    {
+      "id": "14",
+      "stage": 2,
+      "title": "INT8 扩宽与 dot-product 的累加契约",
+      "prerequisites": [
+        "13"
+      ]
+    },
+    {
+      "id": "15",
+      "stage": 3,
+      "title": "Cache、工作集与局部性",
+      "prerequisites": [
+        "14"
+      ]
+    },
+    {
+      "id": "16",
+      "stage": 3,
+      "title": "缓存分块与 packing 的摊销",
+      "prerequisites": [
+        "15"
+      ]
+    },
+    {
+      "id": "17",
+      "stage": 3,
+      "title": "带宽瓶颈与预取的适用条件",
+      "prerequisites": [
+        "16"
+      ]
+    },
+    {
+      "id": "18",
+      "stage": 3,
+      "title": "TLB、页与大工作集访问",
+      "prerequisites": [
+        "17"
+      ]
+    },
+    {
+      "id": "19",
+      "stage": 3,
+      "title": "ARM 内存序、原子与 LSE",
+      "prerequisites": [
+        "18"
+      ]
+    },
+    {
+      "id": "20",
+      "stage": 3,
+      "title": "多核计数、伪共享与分片",
+      "prerequisites": [
+        "19"
+      ]
+    },
+    {
+      "id": "21",
+      "stage": 3,
+      "title": "大小核、线程池与任务粒度",
+      "prerequisites": [
+        "20"
+      ]
+    },
+    {
+      "id": "22",
+      "stage": 4,
+      "title": "GEMV 与小 Batch GEMM 的瓶颈",
+      "prerequisites": [
+        "21"
+      ]
+    },
+    {
+      "id": "23",
+      "stage": 4,
+      "title": "量化块解码与乘加融合",
+      "prerequisites": [
+        "22"
+      ]
+    },
+    {
+      "id": "24",
+      "stage": 4,
+      "title": "图像预处理融合与布局转换",
+      "prerequisites": [
+        "23"
+      ]
+    },
+    {
+      "id": "25",
+      "stage": 4,
+      "title": "NEON、i8mm、SVE/SVE2 的能力分派",
+      "prerequisites": [
+        "24"
+      ]
+    },
+    {
+      "id": "26",
+      "stage": 4,
+      "title": "性能工具：热点、PMU 与平台边界",
+      "prerequisites": [
+        "25"
+      ]
+    },
+    {
+      "id": "27",
+      "stage": 4,
+      "title": "CPU–NPU/GPU 流水线与缓冲区所有权",
+      "prerequisites": [
+        "26"
+      ]
+    },
+    {
+      "id": "28",
+      "stage": 4,
+      "title": "持续负载、温控与端到端能耗验收",
+      "prerequisites": [
+        "27"
+      ]
+    }
+  ]
+}

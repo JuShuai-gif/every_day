@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Shanghai",
+  "last_delivery_date": "2026-09-22",
+  "next_lesson_id": "02",
+  "delivered_lesson_ids": [
+    "01"
+  ],
+  "history": [
+    {
+      "date": "2026-09-22",
+      "lesson_id": "01",
+      "path": "2026-09-22",
+      "source_read": true,
+      "lesson_delivered": true,
+      "observation_run": true,
+      "compute_kernel_run": false,
+      "target_board_verified": false,
+      "verification": "2026-09-22/verification.json"
+    }
+  ],
+  "backlog": []
+}
