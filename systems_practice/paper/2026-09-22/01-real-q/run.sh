@@ -1,6 +1,8 @@
 #!/bin/sh
 set -eu
-cd "$(dirname "$0")"
-# 只用 Python 标准库，现成机制例子，不下载语料或模型。
-export PYTHONDONTWRITEBYTECODE=1
-exec "${PYTHON:-python3}" example.py
+here=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+# C++17 编译日志进入 stderr，stdout 只输出实验 JSON。
+build="$here/build/cpp-${SANITIZE:-OFF}"
+cmake -S "$here" -B "$build" -DCMAKE_BUILD_TYPE=Release -DSANITIZE="${SANITIZE:-OFF}" >&2
+cmake --build "$build" --parallel 2 >&2
+exec "$build/paper_example"

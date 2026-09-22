@@ -131,9 +131,10 @@
     "independent_packing": {
       "log": "results/packing.txt",
       "passed": true,
-      "not_upstream_execution": true
+      "not_upstream_execution": true,
+      "historical_python_only": true
     },
-    "example": "example.py",
+    "example": "upstream_api.py",
     "wrapper": "run.sh"
   },
   "blockers": [
@@ -143,5 +144,20 @@
     "Native source build and CPU error/storage/performance results pending",
     "AIMET default CUDA arch list omits Thor; native SM110 extension/ABI/device execution unverified"
   ],
-  "created_at_utc": "2026-09-21T00:55:13.436365+00:00"
+  "created_at_utc": "2026-09-21T00:55:13.436365+00:00",
+  "updated_at": "2026-09-22T10:43:01.386131+08:00",
+  "language_migration": {
+    "native_api": "upstream_api.py",
+    "cpu_backend": "../../cpp/src/quant_cpu.cpp",
+    "standard": "C++17",
+    "independent_cpp_release_passed": true,
+    "independent_cpp_asan_ubsan_passed": true,
+    "synthetic_file_integration_passed": true,
+    "backend_evidence": "../../cpp/verification.json",
+    "native_bridge_with_real_upstream_tensors_run": false,
+    "native_attempt": "results/native-cpp-attempt.txt",
+    "native_exit_code": 2,
+    "previous_verification": "results/verification-before-cpp-migration.json",
+    "boundary": "Synthetic C++ checks are not native algorithm execution; no new GPU/NPU/board result."
+  }
 }

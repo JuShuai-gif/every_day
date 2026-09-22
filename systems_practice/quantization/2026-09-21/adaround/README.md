@@ -12,7 +12,7 @@
 | 格式/位宽 | 权重均匀仿射INT4；校准及主对照激活FP32，即W4A32算法实验；不是FP4/NF4 |
 | 粒度 | 遵循所读AIMET默认配置的实际导出编码，例子接受per-tensor或per-output-channel；不猜测默认group size |
 | 训练范式 | 无标签PTQ，虽然内部用梯度/Adam更新alpha，但不是训练原模型权重的QAT |
-| 推理 | u4真实打包→解码FP32→CPU `F.linear`；另有真实FP16输入/权重/输出参考；不声称原生W4A16或INT4 Tensor Core |
+| 推理 | u4真实打包→解码FP32→C++ CPU 标量参考；另有FP16存储舍入/FP32累加参考；不声称原生W4A16或INT4 Tensor Core |
 | 边界 | `K=33`非整齐维度、全零输出通道、零输入、离群/相关输入与独立分布偏移集 |
 
 上游机制：以 `floor(W/Δ)` 为下界，通过经过拉伸截断的sigmoid生成软舍入量，硬模式用`alpha>=0`决定加0还是1，再按offset和位宽裁剪、反量化。重建项是每样本输出向量的平方范数再取均值；正则是对所有权重的 `1-|2h-1|^beta` 求和乘系数。不能把这些不同归约都改成mean后仍沿用同一个正则系数。
@@ -37,11 +37,11 @@
 
 调用链：`Head + dummy + DataLoader` → `AdaroundParameters` → `Adaround.apply_adaround` → 建QuantSim并仅计算权重编码/禁用输入输出量化 → 按图顺序采样层输入和原层输出 → Adam优化alpha → 导出0.6.1参数编码 → 删除包装器并返回浮点模型 → 本期按冻结编码硬化、u4打包/重载 → 普通Linear解码推理。
 
-**关键细节**：该commit的`adaround_module`虽设为hard，后续`_run_adaround_model`折叠权重时又明确开启soft。因此返回模型权重与`.encodings`不能直接称作可部署的整数权重；例子会按导出网格再次硬化，分别记录验证集误差和与同网格RTN不同的舍入数量。没有读取完整QuantSim/kernel后端，也没有完成AIMET源码构建；不作该部分支持保证。
+**关键细节**：该commit的`adaround_module`虽设为hard，后续`_run_adaround_model`折叠权重时又明确开启soft。因此返回模型权重与`.encodings`不能直接称作可部署的整数权重；例子会按导出网格再次硬化，记录验证集误差，并交给 C++ 后端与同网格RTN比较。没有读取完整QuantSim/kernel后端，也没有完成AIMET源码构建；不作该部分支持保证。
 
 ## 如何接入我的代码
 
-完整代码：[example.py](example.py)、[run.sh](run.sh)、独立容器 [packing.py](packing.py)。工作目录是本栏目；也可从EveryDay根目录用下列命令。
+完整代码：[upstream_api.py](upstream_api.py)、[run.sh](run.sh)、独立容器 [C++ 存储后端](../../cpp/src/quant_cpu.cpp)。工作目录是本栏目；也可从EveryDay根目录用下列命令。
 
 **已经核实的依赖要求**：AIMET此commit标注2.40.0，Python>=3.10，scikit-build-core[wheels]==0.11.1、CMake>=3.26、pybind11、cython>=3.0。完整运行依赖以所读fast-release清单为准；不能把旧`packaging/dependencies.py`中仅到torch2.1.2的表当成当前包的约束。当前清单没锁torch/numpy版本，故**不存在已在本机验证的精确依赖组合**。可在预先准备好的Python3.11、PyTorch2.9.0 CPU环境试验，但这只是待验候选，不能写成兼容性结论。脚本保存实际包版本并校验安装包五个关键文件与固定commit字节一致。
 
@@ -73,29 +73,21 @@ sh systems_practice/quantization/2026-09-21/adaround/run.sh native
 1. `original.fc`替换成你自己的同形状Linear，校准前固定权重；真实模型用它自己的输入分布，合成随机输入不代表任务校准质量。
 2. 校准seed2101、256行/8批、batch32；只用此分区优化alpha。正则候选0.001/0.01，beta20→2、warm_start0.2、500步；`post_training_tf`固定量化网格。两候选使用相同优化随机种子。
 3. 验证seed2102的128行只选正则；评估seed2103及分布偏移seed2104都不参与选择。没有监督训练集、没有用评估集更新权重。
-4. 原生入口写`candidate_*.encodings`，读取`param_encodings.fc.weight`；检查位宽、scale正值和粒度，硬化后将两权重编码放入同一字节。
-5. `build/native/weights.u4.bin` + `affine.bin` + `layout.json`是**自定义**存储；`affine.bin`每记录8字节，小端float32 scale+int32 offset；逻辑flatten顺序低nibble在前，K=33时允许跨行共享字节，没有每行补齐。奇数总元素才补高nibble0。
-6. 重新从文件恢复编码和权重，再复制到`deployed.fc.weight`；保存/重载`decoded_fp32.pt`并检查输出一致。该`.pt`仍是FP32模型，不是INT4模型文件。
-7. 验收：参考权重未修改、无NaN/Inf、pack/reload逐码一致、解码权重/重载输出一致、错误与存储/时间写入`build/native/comparison.json`。算法可能退化，应保留结果，不设“必须优于基线”断言。
+4. 原生入口写`candidate_*.encodings`，读取`param_encodings.fc.weight`；检查位宽、scale正值和粒度，硬化用于候选validation。冻结后传给 C++ 后端；offset在C++中转换为zero=-offset。
+5. C++ 写出`build/native/linear.q4`，每行一组scale/zero，实际字节重载后校验；不再生成旧weights.u4.bin/affine.bin/decoded_fp32.pt。
+6. C++ 比较评估、分布偏移和零输入，记录真实文件长度与 CPU 标量计时；报告在`build/native/comparison.json`。不设“必须优于RTN”断言。
 
 已有`build/native`时脚本拒绝覆盖。需要新运行记录时复制本栏目到新session后执行；上游临时校准缓存通过TMPDIR留在本期被忽略的build/tmp。缺依赖或commit不匹配时退出2，表示没有运行量化，不是量化精度差。
 
 ## 量化前后比较
 
-对同一评估输入比较FP32、FP16输入/权重/输出、对称absmax[-7,7]、冻结AIMET同网格RTN和AdaRound硬化权重。absmax与AIMET网格可能不同，因此只有同网格RTN能更直接隔离舍入学习贡献。激活主路径FP32累加；FP16参考算子的内部累加策略由CPU后端决定，本例不将其叫作FP16累加器。
+2026-09-22 将部署侧的位操作、打包/解码、误差验证、FP16存储舍入、absmax基线和 CPU 计时迁入 [C++17 后端](../../cpp/README.md)。上游 API 的校准/优化和候选选择保留在 `upstream_api.py`，使用固定 commit；它只通过文本传递张量，不能充当 CPU 内核示例。
 
-| 结果 | 本次状态 |
-| --- | --- |
-| NRMSE、max_abs、cosine、舍入变化量、饱和率 | 未测，原生依赖与checkout缺失 |
-| 实际u4文件/scale与offset/JSON/FP32 checkpoint字节 | 未生成原生量化产物；脚本将在成功后用真实文件/字节长度记录 |
-| AdaRound离线优化、导出含IO、重载解码含IO | 未测 |
-| CPU FP32与解码FP32推理P50/P95 | 未测；脚本10次预热+50次采样，不含离线优化/导出/解码 |
-| GPU/NPU/kernel/系统端到端与功耗 | 未验证，本期没有加速器执行 |
-| 独立u4打包单元检查 | 实际通过5组往返、6组非法输入；不是AdaRound运行结果 |
+`sh run.sh check`（本课目录）只验证独立 C++ 后端；`sh run.sh native` 才运行原生方法与完整张量交接。后端写并重载 `build/linear.q4`（AdaRound 为 `build/native/linear.q4`）。Q4C1 包含16字节头、每组8字节FP32 scale/zero和低 nibble 优先 u4；与旧 Python 容器及上游模型文件不兼容，不能直接喂给原生加载器。格式、误差阈值、分组尾部与板端边界见后端说明。
 
-存储契约示例（**公式，不是实测文件大小**）：8×33权重的u4有效载荷为ceil(264/2)=132 B；二进制编码为8×编码记录数B；还需加layout JSON、框架/分配开销。不能以此推导加速比。absmax对照真正打包u4并存scale；对称零点约定写在代码中，不能与完整AIMET导出文件大小直接做公平压缩率比较。
+以 FP32 输入/权重为参考，对照 FP16存储、独立 absmax、上游 RTN、原生量化解码；对照输入先舍入为 FP16，再以 C++ FP32 标量累加。对 evaluation、shifted、全零输入记录 NRMSE/max_abs/cosine（零向量为 null）。CPU基准10次预热、50次采样，覆盖已解码 GEMM 与输出分配，排除磁盘、解码和训练，不代表 BLAS、低位kernel或GPU性能。仅记录上游校准/优化的流程用时，不把 Python 算子计时作为体系结构实验。
 
-边界：全零输出通道可能暴露编码退化；例子检查正scale和输出有限性，上游失败则保留异常，不硬改其API。分布偏移将一个特征放大4倍，可能让校准集优化失效。500步正则偏强时，权重过早硬化也可能导致重建误差升高。
+**本机已通过**共用后端的 Release、ASan/UBSan、位模式/边界检查，以及本课形状的合成数据磁盘往返。**四种原生量化算法仍未运行**：缺对应源码/依赖（GPTQ还需Thor），没有真实量化模型精度或板端性能。合成检查不推进原生完成状态。当前证据见 [verification.json](verification.json)、[新原生入口尝试](results/native-cpp-attempt.txt)；原有 results 原样保留为历史记录。
 
 ## Thor SM110 与优化
 
@@ -103,10 +95,10 @@ sh systems_practice/quantization/2026-09-21/adaround/run.sh native
 
 2026-09-21实际核实 [NVIDIA JetPack7.0归档](https://developer.nvidia.com/embedded/jetpack/downloads/archive-7.0)：支持Jetson AGX Thor/T5000，Jetson Linux38.2/38.2.1、CUDA13.0.0、Ubuntu24.04；这只是可复查参考组合，不是板端已安装状态或最新版断言。初试旧路径返回404，已记录正确来源。没有板卡、nvcc/ncu及已构建AIMET扩展，原生AIMET Thor后端兼容性未证实。
 
-需要进一步验证硬件路径时，可使用已经交付且固定SM110的独立 [GEMM baseline/tiled kernel及ncu/ISA教程](../../../daily/2026-09-18/session-02/README.md)：这里的相对链接从本栏目返回systems_practice后访问历史练习，**该实现不是AIMET后端，也不表示AdaRound权重已接入**。后续必须加读取本期u4/scale布局的适配并对比解码参考；再测kernel/传输/在线quantize和端到端，而不是拿CPU `F.linear`当GPU性能。任何新CUDA/PTX/SASS构建都必须固定`sm_110`，不得使用专属后缀。
+需要进一步验证硬件路径时，可使用已经交付且固定SM110的独立 [GEMM baseline/tiled kernel及ncu/ISA教程](../../../daily/2026-09-18/session-02/README.md)：这里的相对链接从本栏目返回systems_practice后访问历史练习，**该实现不是AIMET后端，也不表示AdaRound权重已接入**。后续必须加读取本期u4/scale布局的适配并对比解码参考；再测kernel/传输/在线quantize和端到端，而不是拿C++ CPU 标量参考当GPU性能。任何新CUDA/PTX/SASS构建都必须固定`sm_110`，不得使用专属后缀。
 
 ## 验证与待补
 
-[verification.json](verification.json)分开列状态：本地仓库获取否、固定commit网页实现阅读是、完整原生API示例交付是、CPU原生运行否、Thor验证否。网页源码阅读不等价于浅克隆成功；标准库打包测试不等价于原生量化成功。
+[verification.json](verification.json)分开列状态：本地仓库获取否、固定commit网页实现阅读是、完整原生API示例交付是、CPU原生运行否、Thor验证否。网页源码阅读不等价于浅克隆成功；独立 C++ 打包测试不等价于原生量化成功。
 
-实际 [native.txt](results/native.txt)：Python3.9.6，缺torch、aimet_torch、numpy、psutil，AIMET_SOURCE_ROOT未设置，退出2。[packing.txt](results/packing.txt)只证明独立容器正确性。没有安装依赖或下载模型。源码构建/原生运行与Thor路径进入backlog；下一自然日轮到AutoRound，同时最多重试一个待补项，不在同日重复推进。
+实际 [native.txt](results/native.txt)：Python3.9.6，缺torch、aimet_torch、numpy、psutil，AIMET_SOURCE_ROOT未设置，退出2。[packing.txt](results/packing.txt)是旧 Python 容器的历史记录；当前 C++ 检查见 verification.json。没有安装依赖或下载模型。源码构建/原生运行与Thor路径进入backlog；下一自然日轮到AutoRound，同时最多重试一个待补项，不在同日重复推进。

@@ -1,0 +1,61 @@
+{
+  "method": "autoround",
+  "date": "2026-09-22",
+  "repository": "https://github.com/intel/auto-round",
+  "commit": "8d8a1cd5daaf6e8c71d079eccaec3092fa9af4f1",
+  "source_record": "source.json",
+  "source_fetched": false,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": {
+    "auto_round/autoround.py": [
+      "AutoRound.__new__"
+    ],
+    "auto_round/wrapper.py": [
+      "WrapperLinear._init_tuning_params_and_quant_func",
+      "WrapperLinear._qdq_weight",
+      "WrapperLinear.forward",
+      "WrapperLinear.unwrapper"
+    ],
+    "auto_round/data_type/int.py": [
+      "quant_tensor_asym",
+      "quant_tensor_sym"
+    ],
+    "auto_round/data_type/utils.py": [
+      "round_ste",
+      "reshape_pad_tensor_by_group_size",
+      "revert_tensor_by_pad",
+      "get_quant_func"
+    ],
+    "auto_round/sign_sgd.py": [
+      "SignSGD.step",
+      "sgd",
+      "_single_tensor_sgd"
+    ],
+    "setup.py": [
+      "python_requires metadata"
+    ],
+    "requirements-lib.txt": [
+      "dependency constraints"
+    ],
+    "LICENSE": [
+      "Apache-2.0"
+    ]
+  },
+  "evidence": [
+    "source.json",
+    "source-web.json",
+    "example.py",
+    "results/native-attempt.txt"
+  ],
+  "blockers": [
+    "clone DNS failure; no verified cache",
+    "Python3.9.6 below upstream>=3.10",
+    "torch/auto_round/transformers/numpy absent",
+    "Thor, nvcc and ncu absent"
+  ],
+  "native_metrics": null,
+  "status": "partial: fetch and native execution backlog"
+}

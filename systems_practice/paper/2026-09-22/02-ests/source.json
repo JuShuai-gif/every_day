@@ -35,5 +35,11 @@
   ],
   "repository_code_read": true,
   "algorithm_training_pipeline_verified": false,
-  "scope": "Published inference submission; complete calibration/pruning/SFT pipeline not verified; no models downloaded"
+  "scope": "Published inference submission; complete calibration/pruning/SFT pipeline not verified; no models downloaded",
+  "local_implementation_revision": {
+    "date": "2026-09-22T10:43:01.386131+08:00",
+    "code": "src/example.cpp",
+    "standard": "C++17",
+    "scope": "Port of existing independent mechanism example, not author implementation; no new source-reading claim"
+  }
 }

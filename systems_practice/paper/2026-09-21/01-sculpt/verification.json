@@ -1,6 +1,5 @@
 {
-  "verified_at": "2026-09-21T11:51:14+08:00",
-  "python": "3.9.6",
+  "verified_at": "2026-09-22T10:44:40.598393+08:00",
   "platform": "macOS-26.6.2-arm64-arm-64bit",
   "command": "bash systems_practice/paper/2026-09-21/01-sculpt/run.sh",
   "exit_code": 0,
@@ -21,6 +20,23 @@
     "task accuracy",
     "device deployment"
   ],
-  "example_sha256": "781e891411e7ff50daa3ce395c54593e5a7a9c64915c6932c559b532a5c2aa6f",
-  "output_sha256": "17528b43c61ec0ee17dfe2fb5bb92c0ed15d75116fc4e4f2d44eba414fae90f8"
+  "example_sha256": "b783e00fe98946af82748d4bc9b3b8a7e29bb2cd61430541f7fef1c15490a46a",
+  "output_sha256": "2832e7b900942f2aad84fd9a7c9e5d3cdedd308ba228034961066d5931877508",
+  "updated_at": "2026-09-22T10:43:01.386131+08:00",
+  "language": "C++17",
+  "compiler": "AppleClang 21.0.0",
+  "host": "Darwin arm64",
+  "dependencies": "C++17 standard library and CMake",
+  "release_build_run": true,
+  "asan_ubsan_build_run": true,
+  "cpu_mechanism_example_run": true,
+  "current_result": "results/cpp-output.json",
+  "build_log": "results/cpp-build.log",
+  "sanitizer_result": "results/cpp-sanitize.json",
+  "sanitizer_log": "results/cpp-sanitize.log",
+  "historical_python_result": "results/output.json",
+  "historical_verification": "results/verification-python-historical.json",
+  "random_input_note": "C++ MT19937/Box-Muller; same partition seeds but different samples from historical Python",
+  "board_verified": false,
+  "shared_header_sha256": "976cc46572351f62fb948080262b4c783478e195fc34c939faaf3e969b657b5d"
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-22T00:56:28.756400+00:00",
+  "updated_at": "2026-09-22T10:43:01.386131+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -22,7 +22,11 @@
       "directory": "2026-09-21/01-sculpt",
       "status": "delivered",
       "cpu_mechanism_example_verified": true,
-      "full_paper_reproduced": false
+      "full_paper_reproduced": false,
+      "implementation_language": "C++17",
+      "release_verified": true,
+      "asan_ubsan_verified": true,
+      "language_migrated_at": "2026-09-22T10:43:01.386131+08:00"
     },
     {
       "id": "arxiv:2608.15693",
@@ -33,7 +37,11 @@
       "directory": "2026-09-21/02-edge-deployment",
       "status": "delivered",
       "cpu_mechanism_example_verified": true,
-      "full_paper_reproduced": false
+      "full_paper_reproduced": false,
+      "implementation_language": "C++17",
+      "release_verified": true,
+      "asan_ubsan_verified": true,
+      "language_migrated_at": "2026-09-22T10:43:01.386131+08:00"
     },
     {
       "id": "arxiv:2609.00049",
@@ -44,7 +52,11 @@
       "directory": "2026-09-22/01-real-q",
       "status": "delivered",
       "cpu_mechanism_example_verified": true,
-      "full_paper_reproduced": false
+      "full_paper_reproduced": false,
+      "implementation_language": "C++17",
+      "release_verified": true,
+      "asan_ubsan_verified": true,
+      "language_migrated_at": "2026-09-22T10:43:01.386131+08:00"
     },
     {
       "id": "arxiv:2609.12310",
@@ -55,7 +67,11 @@
       "directory": "2026-09-22/02-ests",
       "status": "delivered",
       "cpu_mechanism_example_verified": true,
-      "full_paper_reproduced": false
+      "full_paper_reproduced": false,
+      "implementation_language": "C++17",
+      "release_verified": true,
+      "asan_ubsan_verified": true,
+      "language_migrated_at": "2026-09-22T10:43:01.386131+08:00"
     }
   ],
   "backlog": [

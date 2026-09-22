@@ -20,14 +20,20 @@ MoE压缩需要决定每层保留多少专家。论文以目标任务路由质�
 
 ## 简单可运行例子
 
-[example.py](example.py) 是根据论文数学机制编写的**独立标准库实验**。3层、每层6专家、top2，总预算12；输入是人工路由分布、2维随机专家与路由权重。实现JS、封顶再分配、Hamilton取整、专家/路由同步切片，用独立64个2维输入比较输出误差。全零JS时均分是教学补充规则；无恢复训练、无MXFP4、没有语言模型或任务评分。
+[src/example.cpp](src/example.cpp) 是根据论文数学机制编写的**独立标准库实验**。3层、每层6专家、top2，总预算12；输入是人工路由分布、2维随机专家与路由权重。实现JS、封顶再分配、Hamilton取整、专家/路由同步切片，用独立64个2维输入比较输出误差。全零JS时均分是教学补充规则；无恢复训练、无MXFP4、没有语言模型或任务评分。
 
 ```bash
 sh systems_practice/paper/2026-09-22/02-ests/run.sh
 ```
 
-Python3.9.6标准库实际通过52组预算/饱和/零分歧检查、2个非法预算、JS两端、重映射与字节长度。无新增作业。
+C++17 程序实际通过52组预算/饱和/零分歧检查、2个非法预算、JS两端、重映射与字节长度。无新增作业。
 
 ## 真实结果与验证边界
 
-[原始输出](results/output.json)：容量 `[4,2,6]`；真实 FP32专家和router payload `288→192 B`（不含配置/元数据，不是论文文件格式）；每 token激活数 `[2,2]`；合成输出 MSE `0.4582996`。保留误差，不假装剪枝无损；未进行训练恢复。没有实测速度、GPU/NPU、峰值内存或功耗。阅读/运行分开记录于 [source.json](source.json) 和 [verification.json](verification.json)。
+[原始输出](results/cpp-output.json)：容量 `[4,2,6]`；真实 FP32专家和router payload `288→192 B`（不含配置/元数据，不是论文文件格式）；每 token激活数 `[2,2]`；合成输出 MSE `0.18045482`。保留误差，不假装剪枝无损；未进行训练恢复。没有实测速度、GPU/NPU、峰值内存或功耗。阅读/运行分开记录于 [source.json](source.json) 和 [verification.json](verification.json)。
+
+## C++ 迁移与历史结果
+
+2026-09-22 已将 CPU 计算与物理存储实现迁到 C++17；`run.sh` 用 CMake 编译运行，需本机 C++17 编译器与 CMake。源码有中文关键注释；公共二进制/FP16工具见 [lesson.hpp](../../../common/cpp/lesson.hpp)。默认 Release；`SANITIZE=ON sh run.sh` 开启 ASan/UBSan（从本课目录运行）。Mac arm64 的两种构建均通过；RK3588/Jetson 尚未实测。
+
+当前输出见 [cpp-output.json](results/cpp-output.json)，内存安全检查见 [cpp-sanitize.json](results/cpp-sanitize.json)。随机样本改用固定种子的 C++ MT19937 与显式 Box–Muller，分布/分区含义保留，但不与 Python 随机序列逐值相同；新误差不可当作跨语言速度或精度提升。旧 [output.json](results/output.json) 和 [原验证记录](results/verification-python-historical.json) 保留为历史证据，不能代表新实现。

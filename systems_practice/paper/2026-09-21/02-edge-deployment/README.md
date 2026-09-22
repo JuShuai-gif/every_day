@@ -22,14 +22,14 @@
 
 ## 简单代码示例
 
-[example.py](example.py) 用 Python 3.9+ 标准库模拟一行 `[1,1024]` 权重与一个输入向量。明确规定自定义格式：宽度可被 256 整除时，每块使用 128 字节 uint4 加 4 字节 scale，否则整行回退 FP16。它实际打包、读取字节并计算点积，不是只套压缩比公式。
+[src/example.cpp](src/example.cpp) 用 C++17 标准库与 CMake模拟一行 `[1,1024]` 权重与一个输入向量。明确规定自定义格式：宽度可被 256 整除时，每块使用 128 字节 uint4 加 4 字节 scale，否则整行回退 FP16。它实际打包、读取字节并计算点积，不是只套压缩比公式。
 
 ```bash
 # 从 EveryDay 仓库根目录执行；不安装依赖。
 bash systems_practice/paper/2026-09-21/02-edge-deployment/run.sh
 ```
 
-关键代码在 `serialize`。每个四位码对应 `q+8`，q 的范围是 [-7,7]；解码后以 Python 浮点计算点积。它不是 GGUF 的二级 scale 格式，不是低位加速 kernel，也没有实现 DepGraph、重要性评分或 LoRA。这里只剪掉前缀以外的通道，输入同步截取；不构成完整网络剪枝算法。产物留在内存，日志记录真实 `len(blob)`，不提交二进制。
+关键代码在 `serialize`。每个四位码对应 `q+8`，q 的范围是 [-7,7]；解码后以 C++ double计算点积。它不是 GGUF 的二级 scale 格式，不是低位加速 kernel，也没有实现 DepGraph、重要性评分或 LoRA。这里只剪掉前缀以外的通道，输入同步截取；不构成完整网络剪枝算法。产物留在内存，日志记录真实 `bytes.size()`，不提交二进制。
 
 ## 本机结果与阅读重点
 
@@ -41,4 +41,10 @@ bash systems_practice/paper/2026-09-21/02-edge-deployment/run.sh
 
 这些是**自定义格式的本机结果**，不是论文的 GGUF 尺寸。对齐方案的实际剪枝率已变为 25%，因此不能当作相同质量预算的公平胜利；本例相对原始点积的绝对误差也增大。另一种保守选择是向上对齐到 1024，此例将完全不剪。
 
-零块、未对齐尾部、可精确表示的 nibble 往返、真实字节数检查通过。完整输出还分别列出相对原始权重与已剪权重的误差，见 [results/output.json](results/output.json)；没有延迟或模型任务精度测量。阅读重点是：先确定后端允许的形状，再一起权衡大小、质量和速度。
+零块、未对齐尾部、可精确表示的 nibble 往返、真实字节数检查通过。完整输出还分别列出相对原始权重与已剪权重的误差，见 [results/cpp-output.json](results/cpp-output.json)；没有延迟或模型任务精度测量。阅读重点是：先确定后端允许的形状，再一起权衡大小、质量和速度。
+
+## C++ 迁移与历史结果
+
+2026-09-22 已将 CPU 计算与物理存储实现迁到 C++17；`run.sh` 用 CMake 编译运行，需本机 C++17 编译器与 CMake。源码有中文关键注释；公共二进制/FP16工具见 [lesson.hpp](../../../common/cpp/lesson.hpp)。默认 Release；`SANITIZE=ON sh run.sh` 开启 ASan/UBSan（从本课目录运行）。Mac arm64 的两种构建均通过；RK3588/Jetson 尚未实测。
+
+当前输出见 [cpp-output.json](results/cpp-output.json)，内存安全检查见 [cpp-sanitize.json](results/cpp-sanitize.json)。随机样本改用固定种子的 C++ MT19937 与显式 Box–Muller，分布/分区含义保留，但不与 Python 随机序列逐值相同；新误差不可当作跨语言速度或精度提升。旧 [output.json](results/output.json) 和 [原验证记录](results/verification-python-historical.json) 保留为历史证据，不能代表新实现。

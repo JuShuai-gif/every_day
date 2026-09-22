@@ -1,0 +1,12 @@
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/quantization/cpp/build/cpp-ON
+[ 50%] Building CXX object CMakeFiles/quant_cpu.dir/src/quant_cpu.cpp.o
+[100%] Linking CXX executable quant_cpu
+[100%] Built target quant_cpu

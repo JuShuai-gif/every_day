@@ -1,0 +1,12 @@
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/paper/2026-09-21/01-sculpt/build/cpp-OFF
+[ 50%] Building CXX object CMakeFiles/paper_example.dir/src/example.cpp.o
+[100%] Linking CXX executable paper_example
+[100%] Built target paper_example

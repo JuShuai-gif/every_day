@@ -13,3 +13,5 @@
 当前入口：[2026-09-22 主课](daily/2026-09-22/README.md) · [AutoRound](quantization/2026-09-22/autoround/README.md) · [ARM 第 01 节](arm/2026-09-22/README.md) · [两篇论文](paper/2026-09-22/README.md)。
 
 旧规范和旧总索引文件保留为兼容导航，正文只有一份；历史日志中的旧路径保留原样。迁移对应表见 [目录说明](docs/LAYOUT.md)。
+
+历史代码已按 C/C++ 规则回查；处理清单与验证边界见 [语言审查](docs/LANGUAGE_AUDIT.md)。

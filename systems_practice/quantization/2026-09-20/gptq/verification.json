@@ -39,7 +39,7 @@
   "evidence": [
     "source.json",
     "source-web.json",
-    "example.py",
+    "upstream_api.py",
     "run.sh",
     "results/native.txt",
     "../../../daily/2026-09-20/results/environment.json"
@@ -57,5 +57,20 @@
     "storage_measured": null,
     "gpu_ms": null,
     "e2e_ms": null
+  },
+  "updated_at": "2026-09-22T10:43:01.386131+08:00",
+  "language_migration": {
+    "native_api": "upstream_api.py",
+    "cpu_backend": "../../cpp/src/quant_cpu.cpp",
+    "standard": "C++17",
+    "independent_cpp_release_passed": true,
+    "independent_cpp_asan_ubsan_passed": true,
+    "synthetic_file_integration_passed": true,
+    "backend_evidence": "../../cpp/verification.json",
+    "native_bridge_with_real_upstream_tensors_run": false,
+    "native_attempt": "results/native-cpp-attempt.txt",
+    "native_exit_code": 2,
+    "previous_verification": "results/verification-before-cpp-migration.json",
+    "boundary": "Synthetic C++ checks are not native algorithm execution; no new GPU/NPU/board result."
   }
 }

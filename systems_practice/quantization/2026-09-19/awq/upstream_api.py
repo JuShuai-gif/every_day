@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""调用固定版本AWQ的激活感知裁剪和真实打包API；CPU重建推理，不声称低位kernel性能。"""
+"""原生 AWQ 裁剪和 WQLinear API；部署字节与 CPU 验证由 C++ 实现。"""
 import argparse
 import json
 from pathlib import Path
@@ -10,6 +10,8 @@ import time
 COMMIT = "d6e797a42b9ef7778de8ee2352116e0f48a78d61"
 HERE = Path(__file__).resolve().parent
 PRACTICE = HERE.parents[2]
+sys.path.insert(0, str(HERE.parents[1]))
+from native_bridge import evaluate_cpp
 
 
 def main():
@@ -28,7 +30,6 @@ def main():
     sys.path.insert(0, str(source))
     # qmodule原生导入要求awq_inference_engine；不能用stub冒充安装或CPU支持。
     import torch
-    import torch.nn.functional as F
     from awq.quantize.auto_clip import auto_clip_layer
     from awq.quantize.quantizer import pseudo_quantize_tensor
     from awq.quantize.qmodule import WQLinear
@@ -71,52 +72,17 @@ def main():
         for key, value in state.items():
             assert torch.equal(value, restored.state_dict()[key])
 
-        ref = F.linear(evaluation, weight)
-        half_ref = F.linear(evaluation.half().float(), weight.half().float())
-        # 独立absmax基线，明确非上游zero_point=False路径（该commit此路径有未绑定变量）。
-        step = weight.abs().amax(dim=1, keepdim=True).clamp_min(1e-5) / 7
-        absmax = (weight / step).round().clamp(-8, 7) * step
         no_clip = pseudo_quantize_tensor(weight.half(), n_bit=4, **config).float()
-        candidates = {"fp16_storage_fp32_mac": half_ref,
-                      "independent_absmax_w4": F.linear(evaluation.half().float(), absmax),
-                      "upstream_minmax_no_clip": F.linear(evaluation.half().float(), no_clip),
-                      "awq_clip_reconstruction": F.linear(evaluation.half().float(), reconstructed.float())}
-        def metrics(got, expected):
-            error = got - expected
-            return {"nrmse": float(error.norm() / expected.norm().clamp_min(1e-12)),
-                    "max_abs": float(error.abs().max()),
-                    "cosine": float(F.cosine_similarity(got.flatten(), expected.flatten(), dim=0))}
-        comparison = {key: metrics(value, ref) for key, value in candidates.items()}
-        # 故障边界：评估时突然出现未校准强激活；保持既定clip，不重新拟合。
         shifted = evaluation.clone()
         shifted[:, 0] *= 100
-        shift_metrics = metrics(F.linear(shifted.half().float(), reconstructed.float()), F.linear(shifted, weight))
-        # 只测CPU FP32解码后矩阵乘；不调用packed.forward，不当作W4A16内核吞吐。
-        decoded = reconstructed.float()
-        x = evaluation.half().float()
-        samples = []
-        for i in range(120):
-            begin = time.perf_counter_ns()
-            result = F.linear(x, decoded)
-            end = time.perf_counter_ns()
-            if i >= 20:
-                samples.append((end - begin) / 1e6)
-        assert torch.isfinite(result).all()
-        samples.sort()
-        codes = (reconstructed.reshape(64, 1, 128) / scales.reshape(64, 1, 1)
-                 + zeros.reshape(64, 1, 1)).round()
-        endpoint_fraction = float((codes.eq(0) | codes.eq(15)).float().mean())
-        report = {"commit": COMMIT, "torch": torch.__version__, "device": "cpu",
-                  "scope": "upstream AWQ clip-only + native packing/export; reconstructed FP32 MAC, no native low-bit inference",
-                  "comparison": comparison, "distribution_shift": shift_metrics,
-                  "clip_fraction": float((clipped != weight).float().mean()),
-                  "q_endpoint_fraction": endpoint_fraction,
-                  "fp32_weight_bytes": weight.numel() * 4, "fp16_weight_bytes": weight.numel() * 2,
-                  "actual_packed_buffer_bytes": payload, "packed_total_bytes": sum(payload.values()),
-                  "checkpoint_file_bytes_including_serialization": checkpoint.stat().st_size,
+        backend = evaluate_cpp(output, weight, reconstructed, no_clip, scales, zeros,
+                               evaluation, shifted, 128)
+        report = {"commit": COMMIT, "torch": torch.__version__,
+                  "scope": "native clip-only calibration and WQLinear API export; C++ CPU storage/validation",
+                  "actual_native_packed_buffer_bytes": payload,
+                  "checkpoint_file_bytes": checkpoint.stat().st_size,
                   "calibration_single_run_ms": calibration_ms,
-                  "cpu_decoded_gemm_p50_ms": samples[49], "cpu_decoded_gemm_p95_ms": samples[94],
-                  "warmup": 20, "samples": 100, "thor_verified": False}
+                  "cpp_backend": backend, "thor_verified": False}
         text = json.dumps(report, ensure_ascii=False, indent=2)
         (output / "metrics.json").write_text(text + "\n")
         print(text)

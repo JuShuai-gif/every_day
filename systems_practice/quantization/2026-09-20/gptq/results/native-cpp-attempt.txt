@@ -1,0 +1,7 @@
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/quantization/cpp/build/cpp-OFF
+[ 50%] Building CXX object CMakeFiles/quant_cpu.dir/src/quant_cpu.cpp.o
+[100%] Linking CXX executable quant_cpu
+[100%] Built target quant_cpu
+UNVERIFIED: set GPTQ_SOURCE to a verified pinned checkout

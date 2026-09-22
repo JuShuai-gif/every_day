@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-22",
+  "recorded_utc": "2026-09-22T00:56:28.756400+00:00",
+  "paper_id": "arxiv:2609.12310",
+  "primary_fulltext_read": true,
+  "example_delivered": true,
+  "cpu_mechanism_example_run": true,
+  "python": "3.9.6",
+  "dependencies": "standard library only",
+  "results": "results/output.json",
+  "full_paper_reproduced": false,
+  "gpu_verified": false,
+  "npu_verified": false,
+  "performance_measured": false,
+  "source": "source.json"
+}

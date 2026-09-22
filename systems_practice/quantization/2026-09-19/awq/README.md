@@ -24,7 +24,7 @@
 
 ## 如何接入我的代码
 
-[example.py](example.py)已经写好，不是第二个作业。工作目录EveryDay根目录。Python建议3.10；实际本机Python环境缺torch、transformers、awq、numpy，未安装。上游声明的精确依赖不等于Thor兼容组合；导入链还需要可加载的`awq_inference_engine`与tqdm等依赖。不能用假模块跳过导入并声称“原生CPU支持”。
+[upstream_api.py](upstream_api.py)已经写好，不是第二个作业。工作目录EveryDay根目录。Python建议3.10；实际本机Python环境缺torch、transformers、awq、numpy，未安装。上游声明的精确依赖不等于Thor兼容组合；导入链还需要可加载的`awq_inference_engine`与tqdm等依赖。不能用假模块跳过导入并声称“原生CPU支持”。
 
 网络恢复后可按以下命令准备**忽略目录内**的固定源码，不下载模型；本次没有执行成功：
 
@@ -44,22 +44,19 @@ sh systems_practice/quantization/2026-09-19/awq/run.sh
 2. 原生`auto_clip_layer`收到`n_sample_token=128`，避免小样本导致内部切片step=0；通道64满足上游batch限制，K128同时满足group和native pack的64对齐。
 3. 冻结阈值，将裁剪权重转FP16，调用`pseudo_quantize_tensor(..., get_scale_zp=True)`；把返回重建权重交给原生`WQLinear.from_linear`生成真实`qweight/scales/scaled_zeros`。
 4. 将state_dict导出至本栏目被忽略的`build/awq-clip-state.pt`，加载进同版本WQLinear并逐tensor检查一致。存储统计来自tensor实际numel×element_size，序列化文件字节另记。
-5. 用浮点重建权重进行CPU `F.linear`推理，对比原始FP32、FP16存储/FP32累加、独立absmax及上游无clip的minmax；这是算法输出误差，不是packed kernel推理。
+5. 将重建值、scale/zero、原始权重、上游无clip结果及评估输入交给 C++ 后端；写出独立Q4C1、重载并比较 CPU 输出。原生 WQLinear 文件与教学 Q4C1 分别统计。
 
 接入已有Linear：以你的`linear.weight.detach().cpu()`替换随机W，校准X来自真实前向hook采集，独立评估X来自留出数据；有bias时需保留并在所有比较中一致加入。本例无bias、固定尺寸，只能处理满足上游限制的层。要替换整模型层，应使用原项目block缩放及转换流程，并先验证格式与运行后端。不能直接将这个`qweight`喂给昨日独立signed-INT4 kernel，它们的码值、零点与排列不同。
 
 ## 量化前后比较
 
-| 指标 | 本次状态 |
-| --- | --- |
-| FP32/FP16/absmax/minmax/AWQ-clip NRMSE、max abs、cosine | 未运行；不填写数值 |
-| clip比例、码值端点比例 | 脚本已实现，未运行；端点比例不等于全部饱和事件 |
-| 原生packed权重/scale/zero真实字节及文件大小 | 脚本已实现，未执行打包；不把理论4倍当作真实总压缩比 |
-| 校准时间 | 未测；代码为一次流程成本，不作稳定benchmark |
-| CPU解码后FP32 GEMM P50/P95 | 已提供20预热+100采样，无本机实测 |
-| Thor native W4A16 latency/性能/功耗 | 未验证，不以CPU数据替代 |
+2026-09-22 将部署侧的位操作、打包/解码、误差验证、FP16存储舍入、absmax基线和 CPU 计时迁入 [C++17 后端](../../cpp/README.md)。上游 API 的校准/优化和候选选择保留在 `upstream_api.py`，使用固定 commit；它只通过文本传递张量，不能充当 CPU 内核示例。
 
-真实失败日志见[results/run.txt](results/run.txt)：固定checkout不存在，程序在导入前退出；另有[依赖探测](results/dependencies.txt)。尚未获得量化误差结果。实际版本的边界已经读到：`auto_clip_layer`默认512抽样token，输入更少可能产生零步长；输出通道需64或256批处理对齐。`pseudo_quantize_tensor(zero_point=False)`在此commit使用未绑定的`min_val`，本例不调用它，absmax另行明确标注独立实现。分布变化测试将评估第0通道放大100倍，保留可能退化，不重新拟合。
+`sh run.sh check`（本课目录）只验证独立 C++ 后端；`sh run.sh native` 才运行原生方法与完整张量交接。后端写并重载 `build/linear.q4`（AdaRound 为 `build/native/linear.q4`）。Q4C1 包含16字节头、每组8字节FP32 scale/zero和低 nibble 优先 u4；与旧 Python 容器及上游模型文件不兼容，不能直接喂给原生加载器。格式、误差阈值、分组尾部与板端边界见后端说明。
+
+以 FP32 输入/权重为参考，对照 FP16存储、独立 absmax、上游 RTN、原生量化解码；对照输入先舍入为 FP16，再以 C++ FP32 标量累加。对 evaluation、shifted、全零输入记录 NRMSE/max_abs/cosine（零向量为 null）。CPU基准10次预热、50次采样，覆盖已解码 GEMM 与输出分配，排除磁盘、解码和训练，不代表 BLAS、低位kernel或GPU性能。仅记录上游校准/优化的流程用时，不把 Python 算子计时作为体系结构实验。
+
+**本机已通过**共用后端的 Release、ASan/UBSan、位模式/边界检查，以及本课形状的合成数据磁盘往返。**四种原生量化算法仍未运行**：缺对应源码/依赖（GPTQ还需Thor），没有真实量化模型精度或板端性能。合成检查不推进原生完成状态。当前证据见 [verification.json](verification.json)、[新原生入口尝试](results/native-cpp-attempt.txt)；原有 results 原样保留为历史记录。
 
 ## Thor SM110 与优化
 

@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
-"""调用 AutoRound v0.9.0 原生低层 API；驱动循环和 u4 容器由本练习编写。"""
-import copy
+"""原生 AutoRound 优化 API；C++ 负责 u4 存储、解码和 CPU 验证。"""
 import importlib.util
 import json
 import os
 from pathlib import Path
 import platform
-import struct
 import subprocess
 import sys
 import time
 
 COMMIT = '8d8a1cd5daaf6e8c71d079eccaec3092fa9af4f1'
 BASE = Path(__file__).resolve().parent
+sys.path.insert(0, str(BASE.parents[1]))
+from native_bridge import evaluate_cpp
 
 
 def preflight():
@@ -117,73 +117,13 @@ def main():
     with torch.no_grad():
         qw, scales, zp = qdq(best)
         rtn, _, _ = qdq(initial())
-        s = scales.reshape(n, ng).repeat_interleave(group, dim=1)[:, :k]
-        z = zp.reshape(n, ng).repeat_interleave(group, dim=1)[:, :k]
-        codes = torch.round(qw / s + z).to(torch.int64)
-        if not ((codes >= 0) & (codes <= 15)).all():
-            raise RuntimeError('u4 range')
-        # 两个 logical codes/byte，低 nibble 在前；尾组 scales 仍保留。
-        values = codes.flatten().tolist()
-        packed = bytes(values[i] | ((values[i+1] if i+1 < len(values) else 0) << 4)
-                       for i in range(0, len(values), 2))
-        meta = struct.pack('<4sIII', b'ARU4', n, k, group)
-        meta += struct.pack('<' + 'f' * scales.numel(), *scales.flatten().tolist())
-        zbytes = bytes(int(x) for x in zp.flatten().tolist())
-        blob = meta + zbytes + packed
-        out = BASE / 'build'
-        out.mkdir(exist_ok=True)
-        path = out / 'linear.u4'
-        path.write_bytes(blob)
-        # 真正从磁盘字节恢复；不从原 float 权重取巧。
-        raw = path.read_bytes()
-        magic, rn, rk, rg = struct.unpack('<4sIII', raw[:16])
-        assert (magic, rn, rk, rg) == (b'ARU4', n, k, group)
-        rs = torch.tensor(struct.unpack('<'+'f'*(n*ng),raw[16:16+4*n*ng])).reshape(n,ng)
-        rz = torch.tensor(list(raw[16+4*n*ng:16+5*n*ng])).reshape(n,ng)
-        body = raw[16+5*n*ng:]
-        decoded_codes = [((body[i//2] >> (4*(i%2))) & 15) for i in range(n*k)]
-        decoded = (torch.tensor(decoded_codes).reshape(n,k)-rz.repeat_interleave(group,1)[:,:k]) * rs.repeat_interleave(group,1)[:,:k]
-        torch.testing.assert_close(decoded,qw,rtol=1e-6,atol=1e-6)
-        torch.testing.assert_close(decoded[0],torch.zeros(k),rtol=0,atol=0)
-        # 明确 absmax 是独立基线，使用对称 -7..7 per-row INT4 网格。
-        abs_s = w.abs().amax(1,keepdim=True).clamp_min(1e-8)/7
-        abs_w = (w/abs_s).round().clamp(-7,7)*abs_s
-        errors = {}
-        for split, x in (('evaluation', evaluation), ('shifted', shifted)):
-            ref = F.linear(x,w)
-            for name, weight in (('FP32', w), ('FP16_reference', w.half()), ('absmax', abs_w),
-                                 ('native_RTN', rtn), ('native_AutoRound', decoded)):
-                # A16 路径先量化到 FP16，再扩回 FP32 做参考累加，不宣称 native FP16 GEMM。
-                xx = x.half().float() if name in ('FP16_reference','native_AutoRound','native_RTN','absmax') else x
-                yy = F.linear(xx,weight.float())
-                diff = yy-ref
-                errors[split+'/'+name] = {'nrmse': (diff.norm()/ref.norm().clamp_min(1e-12)).item(),
-                                          'max_abs': diff.abs().max().item(),
-                                          'cosine': F.cosine_similarity(yy.flatten(),ref.flatten(),dim=0).item()}
-        # CPU 单线程已解码 F.linear 耗时，与低位 GEMM/量化调参耗时分开。
-        def bench(weight):
-            x = evaluation.half().float()
-            for _ in range(10):
-                F.linear(x,weight)
-            samples=[]
-            for _ in range(30):
-                t=time.perf_counter_ns()
-                F.linear(x,weight)
-                samples.append((time.perf_counter_ns()-t)/1000)
-            samples.sort()
-            return {'p50_us':samples[14],'p95_us':samples[28]}
-        result = {'status':'native_cpu_passed', 'torch':torch.__version__, 'commit':COMMIT,
-                  'shape':{'X':[64,k],'W':[n,k]}, 'dtype':'CPU FP32 qdq and accumulation; A16 rounded inputs for deployment comparisons',
-                  'lr':lr,'validation_mse':val_mse,'actual_changed_parameters':changed,
-                  'tuning_seconds':tune_seconds,'training_log':history,'errors':errors,
-                  'storage':{'FP32_weight_bytes':w.numel()*4,'FP16_weight_bytes':w.numel()*2,
-                             'u4_weight_bytes':len(packed),'scales_bytes':scales.numel()*4,
-                             'zero_points_bytes':len(zbytes),'header_bytes':16,'file_bytes':len(raw)},
-                  'endpoint_code_fraction':((codes==0)|(codes==15)).float().mean().item(),
-                  'clipped_fraction':None,'clipped_fraction_note':'endpoint occupation is not pre-clamp saturation; not instrumented',
-                  'cpu_decoded_linear':{'FP32':bench(w),'AutoRound':bench(decoded)},'thor_verified':False}
-        print(json.dumps(result,ensure_ascii=False,indent=2))
-        (BASE/'results/native-result.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+        backend = evaluate_cpp(BASE / 'build', w, qw, rtn, scales, zp, evaluation, shifted, group)
+        result = {'status': 'native_api_and_cpp_backend_passed', 'torch': torch.__version__, 'commit': COMMIT,
+                  'lr': lr, 'validation_mse': val_mse, 'actual_changed_parameters': changed,
+                  'tuning_seconds': tune_seconds, 'training_log': history,
+                  'cpp_backend': backend, 'thor_verified': False}
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        (BASE / 'results/native-result.json').write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     return 0
 
 

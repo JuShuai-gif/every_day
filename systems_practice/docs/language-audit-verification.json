@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-09-22T10:44:41.741727+08:00",
+  "local_links_checked": 364,
+  "json_files_parsed": 72,
+  "shell_syntax_checked": 28,
+  "active_python_files": [
+    "systems_practice/daily/2026-09-17/tools/convert_rknn.py",
+    "systems_practice/daily/2026-09-17/tools/make_identity_onnx.py",
+    "systems_practice/quantization/fetch_source.py",
+    "systems_practice/quantization/native_bridge.py",
+    "systems_practice/quantization/2026-09-22/autoround/upstream_api.py",
+    "systems_practice/quantization/2026-09-20/gptq/upstream_api.py",
+    "systems_practice/quantization/2026-09-19/awq/upstream_api.py",
+    "systems_practice/quantization/2026-09-21/adaround/upstream_api.py"
+  ],
+  "historical_files_byte_preserved": 132,
+  "learning_cursors_unchanged": true,
+  "paper_release_sanitizer_outputs_equal": true,
+  "failures": []
+}

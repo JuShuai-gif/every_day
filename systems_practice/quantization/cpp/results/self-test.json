@@ -1,0 +1,1 @@
+{"status":"cpp_self_test_passed","group_shapes":5,"finite_fp16_patterns":63488,"native_quantizer_run":false,"checks":["known_bytes","odd_tail","invalid_code","truncation","wrong_magic","trailing_bytes","invalid_scale","FP16_ties_even","known_GEMM","zero_row"]}

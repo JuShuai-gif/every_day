@@ -16,12 +16,15 @@
       "example_delivered": true,
       "cpu_example_run": false,
       "thor_verified": false,
-      "status": "partial; local checkout and execution blocked"
+      "status": "partial; local checkout and execution blocked",
+      "cpu_backend_language": "C++17",
+      "independent_cpp_backend_verified": true,
+      "native_api_language": "Python (upstream calibration/training only)"
     },
     {
       "date": "2026-09-20",
       "method": "gptq",
-      "focus": "Native GPTQ Hessian/damping/error compensation; custom affine INT4 export and decoded FP16 inference",
+      "focus": "Native GPTQ Hessian/damping/error compensation; C++ Q4C1 storage and scalar CPU reference (native run blocked)",
       "lesson": "2026-09-20/gptq/README.md",
       "verification": "2026-09-20/gptq/verification.json",
       "commit": "2d65066eeb06a5c9ff5184d8cebdf33662c67faf",
@@ -30,7 +33,10 @@
       "example_delivered": true,
       "cpu_example_run": false,
       "thor_verified": false,
-      "status": "partial; source checkout and native execution blocked"
+      "status": "partial; source checkout and native execution blocked",
+      "cpu_backend_language": "C++17",
+      "independent_cpp_backend_verified": true,
+      "native_api_language": "Python (upstream calibration/training only)"
     },
     {
       "date": "2026-09-21",
@@ -44,7 +50,10 @@
       "example_delivered": true,
       "cpu_example_run": false,
       "thor_verified": false,
-      "status": "partial; native source checkout/build/execution blocked"
+      "status": "partial; native source checkout/build/execution blocked",
+      "cpu_backend_language": "C++17",
+      "independent_cpp_backend_verified": true,
+      "native_api_language": "Python (upstream calibration/training only)"
     },
     {
       "date": "2026-09-22",
@@ -58,7 +67,10 @@
       "example_delivered": true,
       "cpu_example_run": false,
       "thor_verified": false,
-      "status": "partial; clone and native execution blocked"
+      "status": "partial; clone and native execution blocked",
+      "cpu_backend_language": "C++17",
+      "independent_cpp_backend_verified": true,
+      "native_api_language": "Python (upstream calibration/training only)"
     }
   ],
   "backlog": [
@@ -111,5 +123,6 @@
       "thor_verified": false
     }
   ],
-  "policy": "One quantization lesson per Asia/Shanghai calendar day, independent of main rotation. Preparation does not advance cursor. Daily attempted lessons may advance cursor but failures stay in backlog and never enter completed_methods. Completion requires source read and concrete upstream usage example delivered; execution evidence tracked separately."
+  "policy": "One quantization lesson per Asia/Shanghai calendar day, independent of main rotation. Preparation does not advance cursor. Daily attempted lessons may advance cursor but failures stay in backlog and never enter completed_methods. Completion requires source read and concrete upstream usage example delivered; execution evidence tracked separately.",
+  "last_language_audit": "2026-09-22T10:43:01.386131+08:00"
 }

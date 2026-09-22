@@ -39,22 +39,17 @@ AUTOROUND_SOURCE="$PWD/systems_practice/.tmp/quant_sources/autoround-v090" \
 
 `PYTHON=/已有环境/bin/python` 可选择现有解释器。安装不是 run.sh 的一部分；准备依赖时按固定源码 `setup.py` 与 requirements 选择现有 CPU 兼容栈。本机实查 Python3.9.6、torch/auto_round/transformers/numpy 均缺；没有可验证的完整依赖锁、没有已验证的 arm64 安装组合。示例在 preflight 同时报告这些缺项，并逐字比对安装核心文件与固定 git commit，避免包版本字符串相同而源代码不同。
 
-[example.py](example.py) 提供完整低层原生 API 用法。替换 `layer` 为你已有的 Linear，保持 W 行为输出通道、列为输入通道；数据替换为该层**真实输入激活**，不要将评估集用来挑 lr。两候选学习率 .005/.02 各100步，只在 calibration 更新；validation 选一个，evaluation 和 shifted 仅报告。每次记录更新前 loss，最后确认参数确实改变。冻结后从原函数 qdq/scale/zp 得到 codes，写 `build/linear.u4`，从磁盘重新解码并验证。把恢复的权重送入现有 `F.linear` 是 CPU 重建接入点；实际压缩运行时必须另写匹配格式的 Linear，而不是把自定义 u4 文件传给 auto_round/GPTQ 加载器。
-
-自定义容器：16 B magic/shape/group header；每组4 B FP32 scale、1 B zp；逻辑权重每两个 code 一字节，低 nibble 在前。尾组仍存 scale，但不保存无效权重。当前 `[8,33]` 的长度应为 268 B（132权重+96 scale+24 zp+16 header），这是**格式计算**，不是本机已导出测量。run 成功会记录实际 file_bytes 并校验。`build/` 被忽略。
+[upstream_api.py](upstream_api.py) 提供原生量化优化 API 用法。替换 `layer` 为你已有的 Linear，保持 W 行为输出通道、列为输入通道；数据替换为该层**真实输入激活**，不要将评估集用来挑 lr。两候选学习率 .005/.02 各100步，只在 calibration 更新；validation 选一个，evaluation 和 shifted 仅报告。每次记录更新前 loss，最后确认参数确实改变。冻结后把原函数返回的 qdq/scale/zp、原始权重、上游RTN和评估输入交给 C++ 后端。位打包、文件写入/重载、解码与 CPU 数值/基准验证均由 C++ 完成，文件为 `build/linear.q4`。自定义Q4C1不兼容原生AutoRound加载器；实际部署必须另行适配。
 
 ## 量化前后比较
 
-| 项目 | 本次实际状态 |
-| --- | --- |
-| FP32 / FP16参考 / absmax / 原生RTN / 原生AutoRound 输出误差、余弦 | 未运行；代码已提供同输入对照 |
-| calibration损失、真实参数改变数量、lr选择 | 未运行；不会用数学伪输出代替 |
-| UINT4 payload/scale/zp/header 与文件长度 | 编码/解码代码已交付；实际输出待运行 |
-| 端点占用率 | 代码计算；与真正 pre-clamp 饱和率不同，后者未插桩 |
-| CPU已解码F.linear P50/P95 | 未测；计划10预热+30采样，排除调参/磁盘 |
-| GPU/NPU/端到端推理与功耗 | 未验证 |
+2026-09-22 将部署侧的位操作、打包/解码、误差验证、FP16存储舍入、absmax基线和 CPU 计时迁入 [C++17 后端](../../cpp/README.md)。上游 API 的校准/优化和候选选择保留在 `upstream_api.py`，使用固定 commit；它只通过文本传递张量，不能充当 CPU 内核示例。
 
-已包括零权重行、K=33跨尾组、输入离群通道、独立分布变化评估；不保证优化总是优于 RTN。实际失败输出见 [native-attempt.txt](results/native-attempt.txt)，退出2。没有额外强制编码题。
+`sh run.sh check`（本课目录）只验证独立 C++ 后端；`sh run.sh native` 才运行原生方法与完整张量交接。后端写并重载 `build/linear.q4`（AdaRound 为 `build/native/linear.q4`）。Q4C1 包含16字节头、每组8字节FP32 scale/zero和低 nibble 优先 u4；与旧 Python 容器及上游模型文件不兼容，不能直接喂给原生加载器。格式、误差阈值、分组尾部与板端边界见后端说明。
+
+以 FP32 输入/权重为参考，对照 FP16存储、独立 absmax、上游 RTN、原生量化解码；对照输入先舍入为 FP16，再以 C++ FP32 标量累加。对 evaluation、shifted、全零输入记录 NRMSE/max_abs/cosine（零向量为 null）。CPU基准10次预热、50次采样，覆盖已解码 GEMM 与输出分配，排除磁盘、解码和训练，不代表 BLAS、低位kernel或GPU性能。仅记录上游校准/优化的流程用时，不把 Python 算子计时作为体系结构实验。
+
+**本机已通过**共用后端的 Release、ASan/UBSan、位模式/边界检查，以及本课形状的合成数据磁盘往返。**四种原生量化算法仍未运行**：缺对应源码/依赖（GPTQ还需Thor），没有真实量化模型精度或板端性能。合成检查不推进原生完成状态。当前证据见 [verification.json](verification.json)、[新原生入口尝试](results/native-cpp-attempt.txt)；原有 results 原样保留为历史记录。
 
 ## Thor SM110 与优化
 

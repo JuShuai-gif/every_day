@@ -12,16 +12,22 @@ Qian Zhang、Yaoming Li、Zhewen Tan、Yanshu Wang、Heng Lu、Kun Su、Zongwei 
 
 完整复现**难**：需要真实 LLM、校准语料、PyTorch/Transformers、聚合 Fisher 与 GPTQ 管线，且尚未找到已核实作者代码；模型量级、完整前反向和矩阵存储使本机小示例无法替代。优先先实现/验证小层梯度与冻结掩码，再在已许可本地模型上区分校准、调参和测试，最后验证真实 KL/任务指标。没有估算显存或时间收益，依赖精确版本待作者实现确定。
 
-[example.py](example.py) 为**独立实现的机制实验**：2×4权重、64×4相关输入、人工正定2×2度量。前两列按0.25网格离散并冻结，后两列做一次真实 Adam 更新，校准和评估使用独立随机种子。人工矩阵并非实际 NLL Fisher；省略 GPTQ 解析补偿、Transformer、损失滑窗、最后全量离散导出以及低位 GEMM。此例不是 QAT、不是 AutoRound，也不是全论文复现。
+[src/example.cpp](src/example.cpp) 为**独立实现的机制实验**：2×4权重、64×4相关输入、人工正定2×2度量。前两列按0.25网格离散并冻结，后两列做一次真实 Adam 更新，校准和评估使用独立随机种子。人工矩阵并非实际 NLL Fisher；省略 GPTQ 解析补偿、Transformer、损失滑窗、最后全量离散导出以及低位 GEMM。此例不是 QAT、不是 AutoRound，也不是全论文复现。
 
 ```bash
 sh systems_practice/paper/2026-09-22/01-real-q/run.sh
 ```
 
-仅 Python标准库，本机3.9.6已跑通。验收校验解析梯度与中心差分、冻结列不变、4个剩余参数真实改变、结果有限。示例不以改善损失作为普适正确性断言，允许不同输入产生退化。
+使用 C++17 标准库与 CMake，本机已编译运行。验收校验解析梯度与中心差分、冻结列不变、4个剩余参数真实改变、结果有限。示例不以改善损失作为普适正确性断言，允许不同输入产生退化。
 
 ## 真实输出与关注点
 
-[原始输出](results/output.json)：梯度最大偏差 `1.53855e-11`；校准损失 `0.0378106→0.0194614`，独立评估 `0.0397109→0.0214000`。两个同欧氏范数误差的二次型惩罚分别2.5与0.5，说明交叉通道项改变优化方向。这里的损失是人工二次型，不能叫语言模型 KL，更不能声称约49%的模型收益被复现。
+[原始输出](results/cpp-output.json)：梯度最大偏差 `2.32332e-11`；校准损失 `0.0560317→0.0292146`，独立评估 `0.0360739→0.0190235`。两个同欧氏范数误差的二次型惩罚分别2.5与0.5，说明交叉通道项改变优化方向。这里的损失是人工二次型，不能叫语言模型 KL，更不能声称约49%的模型收益被复现。
 
 未测模型准确率、压缩文件、内存峰值、性能或功耗；无 GPU代码，本期不生成 PTX/SASS。未来 CUDA 实验只允许 Thor SM110，禁止照抄其他架构执行命令。状态见 [verification.json](verification.json)。
+
+## C++ 迁移与历史结果
+
+2026-09-22 已将 CPU 计算与物理存储实现迁到 C++17；`run.sh` 用 CMake 编译运行，需本机 C++17 编译器与 CMake。源码有中文关键注释；公共二进制/FP16工具见 [lesson.hpp](../../../common/cpp/lesson.hpp)。默认 Release；`SANITIZE=ON sh run.sh` 开启 ASan/UBSan（从本课目录运行）。Mac arm64 的两种构建均通过；RK3588/Jetson 尚未实测。
+
+当前输出见 [cpp-output.json](results/cpp-output.json)，内存安全检查见 [cpp-sanitize.json](results/cpp-sanitize.json)。随机样本改用固定种子的 C++ MT19937 与显式 Box–Muller，分布/分区含义保留，但不与 Python 随机序列逐值相同；新误差不可当作跨语言速度或精度提升。旧 [output.json](results/output.json) 和 [原验证记录](results/verification-python-historical.json) 保留为历史证据，不能代表新实现。

@@ -26,28 +26,34 @@ R = a*max(0, skew)^2 + b*max(0, kurtosis-3)^2
 2. 训练只更新训练参数与范围；校准集确定量化参数，验证集选择 checkpoint，测试集只作最终评估。导出再加载后核对边界和预测一致性。
 3. 再扩展到原文模型/数据并逐项对齐超参数与 QDQ 图；最终单独在目标设备核对算子支持、任务精度、延迟和内存。
 
-小示例只需 Python 3.9+ 标准库、普通 CPU，几分钟即可阅读运行。完整复现需要深度学习环境、数据及训练设备；准备数据和调试预计数个工作日，属于工程估计，训练时间与显存未测。当前没有下载数据、训练网络或验证 Thor 部署。
+小示例只需 C++17 标准库与 CMake、普通 CPU，几分钟即可阅读运行。完整复现需要深度学习环境、数据及训练设备；准备数据和调试预计数个工作日，属于工程估计，训练时间与显存未测。当前没有下载数据、训练网络或验证 Thor 部署。
 
 ## 简单代码示例
 
-[example.py](example.py) 是独立实现的机制演示：输入为合成一维层输出，先 ReLU，再维护分位数边界并冻结；另计算预激活上的正则值。`StableBounds.observe` 对应观察边界，`uadr` 对应统计项，`encode_u8` 将 4,000 个激活实际存为 uint8 并解码。
+[src/example.cpp](src/example.cpp) 是独立实现的机制演示：输入为合成一维层输出，先 ReLU，再维护分位数边界并冻结；另计算预激活上的正则值。`Bounds::observe` 对应观察边界，`uadr` 对应统计项，`encode` 将 4,000 个激活实际存为 uint8 并解码。
 
 ```bash
 # 从 EveryDay 仓库根目录执行；不安装依赖。
 bash systems_practice/paper/2026-09-21/01-sculpt/run.sh
 ```
 
-它没有反向传播、参数更新、完整网络、作者的抽样策略或原生 PTQ 后端；仅计算正则不等于训练。浮点计算使用 Python float，自定义存储头包含两个 FP64 值，不能视作论文中的 FP32/QDQ 实验。EMA 演示参数预先固定；观察、基线校准、评估种子分别为 0–9、100、200，没有利用评估误差调参。
+它没有反向传播、参数更新、完整网络、作者的抽样策略或原生 PTQ 后端；仅计算正则不等于训练。浮点计算使用 C++ double，自定义存储头包含两个 FP64 值，不能视作论文中的 FP32/QDQ 实验。EMA 演示参数预先固定；观察、基线校准、评估种子分别为 0–9、100、200，没有利用评估误差调参。
 
 ## 本机结果与阅读重点
 
-真实输出见 [results/output.json](results/output.json)，环境和范围见 [verification.json](verification.json)。冻结、常量零值、分位数插值检查通过。
+真实输出见 [results/cpp-output.json](results/cpp-output.json)，环境和范围见 [verification.json](verification.json)。冻结、常量零值、分位数插值检查通过。
 
 | 合成评估指标 | min/max 基线 | 分位数 EMA |
 | --- | ---: | ---: |
-| 全部值 MSE | 0.000579082 | 0.180482 |
-| 主体值（x < 5）MSE | 0.000579227 | 0.0000293694 |
-| 范围外值数量 | 0 | 3 |
+| 全部值 MSE | 0.000587578212 | 0.180198099 |
+| 主体值（x < 5）MSE | 0.000587725143 | 6.46612086e-06 |
+| 范围外值数量 | 0 | 2 |
 | 实际字节数，含范围头 | 4016 | 4016 |
 
 **这个例子中裁剪使整体误差变大。** 它缩小量化步长、改善多数值，却损伤大离群值；没有训练让模型适应这种变化。应重点看为何要结合任务损失与分布训练，而不能把“去掉离群值”直接当作更高精度。这里的 MSE 是合成激活误差，不是分类准确率。
+
+## C++ 迁移与历史结果
+
+2026-09-22 已将 CPU 计算与物理存储实现迁到 C++17；`run.sh` 用 CMake 编译运行，需本机 C++17 编译器与 CMake。源码有中文关键注释；公共二进制/FP16工具见 [lesson.hpp](../../../common/cpp/lesson.hpp)。默认 Release；`SANITIZE=ON sh run.sh` 开启 ASan/UBSan（从本课目录运行）。Mac arm64 的两种构建均通过；RK3588/Jetson 尚未实测。
+
+当前输出见 [cpp-output.json](results/cpp-output.json)，内存安全检查见 [cpp-sanitize.json](results/cpp-sanitize.json)。随机样本改用固定种子的 C++ MT19937 与显式 Box–Muller，分布/分区含义保留，但不与 Python 随机序列逐值相同；新误差不可当作跨语言速度或精度提升。旧 [output.json](results/output.json) 和 [原验证记录](results/verification-python-historical.json) 保留为历史证据，不能代表新实现。

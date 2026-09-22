@@ -1,0 +1,62 @@
+{
+  "method": "awq",
+  "date": "2026-09-19",
+  "repository": "https://github.com/mit-han-lab/llm-awq",
+  "commit": "d6e797a42b9ef7778de8ee2352116e0f48a78d61",
+  "source_record": "source.json",
+  "supplemental_source_record": "source-web.json",
+  "source_fetched": false,
+  "source_read": true,
+  "source_read_transport": "pinned GitHub/raw URLs via web tool",
+  "example_delivered": true,
+  "example_scope": "original auto_clip_layer, pseudo_quantize_tensor and WQLinear packing API; clip-only, CPU reconstructed inference; not full model AWQ",
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": {
+    "awq/quantize/auto_clip.py": [
+      "auto_clip_layer",
+      "auto_clip_block",
+      "apply_clip"
+    ],
+    "awq/quantize/quantizer.py": [
+      "pseudo_quantize_tensor",
+      "real_quantize_model_weight"
+    ],
+    "awq/quantize/auto_scale.py": [
+      "auto_scale_block",
+      "_search_module_scale",
+      "scale_ln_fcs"
+    ],
+    "awq/quantize/qmodule.py": [
+      "pack_intweight",
+      "WQLinear.from_linear",
+      "WQLinear.forward"
+    ],
+    "awq/kernels/setup.py": [
+      "CUDAExtension"
+    ],
+    "pyproject.toml": [
+      "project.dependencies"
+    ],
+    "README.md": [
+      "Install",
+      "Usage"
+    ],
+    "LICENSE": [
+      "MIT License"
+    ]
+  },
+  "evidence": [
+    "source.json",
+    "source-web.json",
+    "example.py",
+    "results/run.txt",
+    "results/dependencies.txt"
+  ],
+  "blockers": [
+    "Local git clone failed DNS; no verified existing cache.",
+    "torch/transformers/awq/numpy absent in current Python.",
+    "qmodule imports awq_inference_engine even for CPU algorithm path.",
+    "Old torch2.3 pin is not a verified Thor/CUDA13 stack; native kernel baseline/optimization/ISA and runtime remain backlog."
+  ]
+}

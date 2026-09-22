@@ -34,5 +34,11 @@
     "\"REAL-Q\" \"github\" quantization"
   ],
   "search_result": "No verifiable author implementation identified; fulltext accessible",
-  "repository_code_read": false
+  "repository_code_read": false,
+  "local_implementation_revision": {
+    "date": "2026-09-22T10:43:01.386131+08:00",
+    "code": "src/example.cpp",
+    "standard": "C++17",
+    "scope": "Port of existing independent mechanism example, not author implementation; no new source-reading claim"
+  }
 }

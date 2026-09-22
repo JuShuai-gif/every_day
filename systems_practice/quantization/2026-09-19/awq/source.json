@@ -14,5 +14,11 @@
       "reason": "Cloning into '/Users/guhaoran/code/EveryDay/systems_practice/.tmp/quant_sources/awq-yqil1xsv/repo'...\nfatal: unable to access 'https://github.com/mit-han-lab/llm-awq.git/': Could not resolve host: github.com"
     }
   ],
-  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example."
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example.",
+  "local_implementation_revision": {
+    "date": "2026-09-22T10:43:01.386131+08:00",
+    "api_example": "upstream_api.py",
+    "cpp_backend": "../../cpp/src/quant_cpu.cpp",
+    "scope": "Preserves reviewed upstream API; moves independent layout/decode/CPU tests and benchmark to C++17; upstream run still blocked"
+  }
 }

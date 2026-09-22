@@ -1,13 +1,22 @@
 #!/bin/sh
 set -eu
 here=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-# 缓存源码需固定commit并真实checkout；不自动下载/安装/修改上游实现。
+mode=${1:-native}
+# check/packing 只验证独立 C++ 后端，不能证明原生量化算法运行成功。
+case "$mode" in
+  check|packing) exec sh "$here/../../cpp/run.sh" check ;;
+  native) ;;
+  *) echo 'usage: run.sh native|check' >&2; exit 2 ;;
+esac
+sh "$here/../../cpp/run.sh" build
+export QUANT_CPP="$here/../../cpp/build/cpp-${SANITIZE:-OFF}/quant_cpu"
+mkdir -p "$here/build/tmp"
+export TMPDIR="$here/build/tmp"
+export PYTHONDONTWRITEBYTECODE=1
+export HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_DATASETS_OFFLINE=1
 if [ -z "${GPTQ_SOURCE:-}" ]; then
-  echo 'UNVERIFIED: set GPTQ_SOURCE to verified checkout in systems_practice/.tmp/quant_sources' >&2
+  echo 'UNVERIFIED: set GPTQ_SOURCE to a verified pinned checkout' >&2
   exit 2
 fi
-export PYTHONDONTWRITEBYTECODE=1
 export TORCH_CUDA_ARCH_LIST=11.0
-export HF_HUB_OFFLINE=1
-export TRANSFORMERS_OFFLINE=1
-exec python3 "$here/example.py" --source "$GPTQ_SOURCE" "$@"
+exec "${PYTHON:-python3}" "$here/upstream_api.py" --source "$GPTQ_SOURCE"

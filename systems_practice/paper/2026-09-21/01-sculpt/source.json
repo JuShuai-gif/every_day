@@ -44,5 +44,11 @@
   "paper_fulltext_read": true,
   "source_implementation_read": false,
   "source_repository_fetched": false,
-  "example_origin": "Independent mechanism illustration written locally; not author code"
+  "example_origin": "Independent mechanism illustration written locally; not author code",
+  "local_implementation_revision": {
+    "date": "2026-09-22T10:43:01.386131+08:00",
+    "code": "src/example.cpp",
+    "standard": "C++17",
+    "scope": "Port of existing independent mechanism example, not author implementation; no new source-reading claim"
+  }
 }
