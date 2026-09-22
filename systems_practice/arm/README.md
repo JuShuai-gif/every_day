@@ -4,6 +4,10 @@
 
 [今天第 01 节](2026-09-22/README.md) · [课程历史](index.md) · [完整顺序](curriculum.json) · [当前进度](progress.json)
 
+## 以哪些板卡为主线
+
+重点使用 **RK3588（以 ROCK 5B 为教学参照）与 Jetson AGX Thor** 的实际任务，Jetson AGX Orin 作为 Cortex-A/CPU 对照。每节从板上的一个问题进入架构、代码与验证。[板卡对应关系与阶段实例](BOARDS.md)说明了设备、CPU 和验证边界。Thor 使用 Neoverse-V3AE，Orin 使用 Cortex-A78AE，课程会区分两者。
+
 ## 首轮路线
 
 编号是学习顺序，不是必须赶完的日历日期。缺资料时先补齐；不跳过前置，不因日期变化自动标记完成。
@@ -19,7 +23,7 @@
 
 ## Cortex 会怎样讲
 
-重点讲 **Cortex-A 微架构**，先以 Cortex-A55、Cortex-A76 为对照，再按目标设备需要扩展。Cortex 是处理器核系列名称；Armv8-A 等是架构版本，不能混为一谈。
+Cortex 部分重点讲 **RK3588 的 Cortex-A55/A76**，并联系 Orin 的 Cortex-A78AE；Thor 的 Neoverse-V3AE 单独讲清，按实际设备选取机制。Cortex 是处理器核系列名称；Armv8-A 等是架构版本，不能混为一谈。
 
 - 第 04、06 节：顺序/乱序执行、指令依赖，以及核型号和编译目标的关系。
 - 第 11、15 节：NEON 执行资源、寄存器压力、L1/L2 与 SoC 缓存配置，解释为什么相同代码在不同核上表现不同。

@@ -24,6 +24,10 @@
     {
       "date": "2026-09-22",
       "reason": "User confirmed Cortex coverage; explicitly include Cortex-A at existing nodes04/06/11/15/21/26 and contrast R/M without adding days or advancing progress."
+    },
+    {
+      "date": "2026-09-22",
+      "reason": "Ground daily ARM lessons in actual RK3588/Jetson boards. Added BOARDS.md and per-lesson board context; Thor Neoverse distinct from Orin Cortex-A. No progress advancement."
     }
   ]
 }
