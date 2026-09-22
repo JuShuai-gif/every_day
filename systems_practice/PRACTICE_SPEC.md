@@ -98,6 +98,15 @@
 - 转换工具、板端 Runtime 与内核 NPU 驱动分别记录版本，并核实相互兼容性。区分 RKNN-Toolkit2（转换等工具）、RKNN-Toolkit-Lite2（板端 Python 接口）和 RKNN Runtime（板端 C/C++ 接口）。不默认 Mac 可原生运行 RKNN 转换工具，也不默认 PC 生成模型已经在板端通过精度测试。
 - 每次只围绕一个机制设置一个编码练习；NPU 和 SIMD 独立选题，只有确实有帮助时才共享部署背景，不把完整模型转换、量化、流水线和 SIMD 优化全部塞进同一天。
 
+### CPU 主题必须补充 ARM 架构与边缘端高性能编程
+
+- 2026-09-22 用户要求：以后介绍 CPU 时，额外结合 ARM 架构的实际使用，包含 SIMD 指令集和边缘端高性能编程。适用于 CPU 体系结构及涉及 CPU 执行机制的课程，不仅在独立 ARM SIMD / NEON 轮换日出现。
+- 按当期机制逐步覆盖：AArch64 与具体微架构的区别、NEON 向量宽度和数据类型、加载/存储/FMA/归约、INT8 dot-product/i8mm、FP16 运算及 SVE/SVE2。区分编译期特性宏和目标设备运行时能力，不从“ARM”或芯片品牌直接推断可选扩展；无需每天重复全部指令。
+- 落实到特征点积、小 Batch GEMM、量化/反量化、图像处理或推理服务调度。解释连续访问、AoS/SoA、stride、尾部、分块/packing、缓存复用、减少中间张量、多累加器与寄存器压力、大小核与线程池、伪共享及功耗/温控中与当期有关的取舍。先定位端到端瓶颈，再决定自动向量化、intrinsics、多核或 CPU–加速器分工。
+- 结合真实源码与生成指令解释机制。例如 ARM 原子 `ldadd` 与 NEON `fmla` 解决不同问题，向量加载/存储不能替代并发原子语义。实际 SIMD 练习仍提供标量参考、真实 intrinsics、尾部/精度验证、编译与反汇编、同口径性能比较；说明普通 C++ 基线是否已自动向量化。
+- 优先在 Apple Silicon Mac 验证；移植至 RK3588、其他 ARM Linux 或 Jetson CPU 时单独记录 CPU/OS/编译器/扩展、数据规模、线程数和计时范围。本机性能不外推到目标板，未测的功耗、温控及端到端收益保留待验。
+- 补充可放在 `ARM_EDGE.md` 并由主 README 链接，保持当期一个必做练习、一个自测题及原有标题/字数规范。同日补充不推进轮换游标。
+
 ## 文件与 README
 
 每次至少包含 README.md、src/ 下真实代码、CMakeLists.txt/Makefile/build.sh 之一和 run.sh。CUDA 用 .cu，C++ 用 .cpp/.hpp，TensorRT 可用 .cpp/.py/.sh，RKNN 用转换 .py 和板端 .cpp/.hpp，ARM SIMD 用含真实 intrinsics 的 .cpp/.hpp，PTX 用 .cu/.ptx，部署可用 Dockerfile/CMake/Shell/配置。涉及 Roofline、访存、流水线、时间线或性能比较时可以额外生成无在线依赖、可直接打开的 index.html；不强制生成。

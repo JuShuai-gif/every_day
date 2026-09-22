@@ -2,6 +2,8 @@
 
 每天北京时间 **08:30** 在 EveryDay 项目运行。完整要求见 [练习规范](PRACTICE_SPEC.md)。同一天追加内容使用独立 session 目录，历史文件不覆盖。
 
+2026-09-22 起，CPU 主题固定补充 ARM 架构、SIMD 指令集与边缘端高性能编程；结合当期机制讲解，不增加轮换次数。[今日 ARM 补充](2026-09-22/ARM_EDGE.md)。
+
 2026-09-18 起 CUDA/PTX/SASS 代码与分析固定针对 **Jetson Thor SM110**，其他架构仅作理论对照，不改变目标。
 
 当前 Mac 无可用 CUDA GPU：GPU 主题照常轮换，完整保留目标代码、构建与验证命令；本机可验证部分与 Linux NVIDIA GPU / Jetson 待验证部分分别记录。

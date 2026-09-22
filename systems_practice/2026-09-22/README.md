@@ -40,6 +40,7 @@ flowchart LR
 - [hot_loop.cpp](src/hot_loop.cpp)：所有版本共用的递增函数。
 - [main.cpp](src/main.cpp)：启动/结束门闩、RAII join、检查和基准。
 - [源码记录](results/source.json)、[验证](results/verification.json)、[真实 ARM 汇编](results/hot_loop.s)。
+- [ARM 架构与边缘端高性能编程补充](ARM_EDGE.md)：NEON/SIMD、数据布局、编译分析与多核调度，衔接本期原子计数与缓存争用。
 - [每日 AutoRound 原生 API 栏目](quantization/autoround/README.md)。
 - [今日两篇论文与现成示例](../paper/2026-09-22/README.md)：REAL-Q 与 ESTS。
 
