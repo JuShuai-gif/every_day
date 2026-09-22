@@ -1,0 +1,87 @@
+{
+  "date": "2026-09-22",
+  "repository": "https://github.com/intel/auto-round",
+  "commit": "8d8a1cd5daaf6e8c71d079eccaec3092fa9af4f1",
+  "tag": "v0.9.0",
+  "resolution": "GitHub blob y permalink observed",
+  "repository_migration": "No redirect observed",
+  "license": "Apache-2.0; SignSGD includes PyTorch attribution/license",
+  "local_checkout": false,
+  "source_read": true,
+  "transport": "web raw v0.9.0 entry/wrapper; Chrome fixed commit int/utils/SignSGD/packaging/license",
+  "files": [
+    {
+      "path": "auto_round/autoround.py",
+      "symbols": [
+        "AutoRound.__new__"
+      ],
+      "permalink": "https://github.com/intel/auto-round/blob/8d8a1cd5daaf6e8c71d079eccaec3092fa9af4f1/auto_round/autoround.py"
+    },
+    {
+      "path": "auto_round/wrapper.py",
+      "symbols": [
+        "WrapperLinear._init_tuning_params_and_quant_func",
+        "WrapperLinear._qdq_weight",
+        "WrapperLinear.forward",
+        "WrapperLinear.unwrapper"
+      ],
+      "permalink": "https://github.com/intel/auto-round/blob/8d8a1cd5daaf6e8c71d079eccaec3092fa9af4f1/auto_round/wrapper.py"
+    },
+    {
+      "path": "auto_round/data_type/int.py",
+      "symbols": [
+        "quant_tensor_asym",
+        "quant_tensor_sym"
+      ],
+      "permalink": "https://github.com/intel/auto-round/blob/8d8a1cd5daaf6e8c71d079eccaec3092fa9af4f1/auto_round/data_type/int.py"
+    },
+    {
+      "path": "auto_round/data_type/utils.py",
+      "symbols": [
+        "round_ste",
+        "reshape_pad_tensor_by_group_size",
+        "revert_tensor_by_pad",
+        "get_quant_func"
+      ],
+      "permalink": "https://github.com/intel/auto-round/blob/8d8a1cd5daaf6e8c71d079eccaec3092fa9af4f1/auto_round/data_type/utils.py"
+    },
+    {
+      "path": "auto_round/sign_sgd.py",
+      "symbols": [
+        "SignSGD.step",
+        "sgd",
+        "_single_tensor_sgd"
+      ],
+      "permalink": "https://github.com/intel/auto-round/blob/8d8a1cd5daaf6e8c71d079eccaec3092fa9af4f1/auto_round/sign_sgd.py"
+    },
+    {
+      "path": "setup.py",
+      "symbols": [
+        "python_requires metadata"
+      ],
+      "permalink": "https://github.com/intel/auto-round/blob/8d8a1cd5daaf6e8c71d079eccaec3092fa9af4f1/setup.py"
+    },
+    {
+      "path": "requirements-lib.txt",
+      "symbols": [
+        "dependency constraints"
+      ],
+      "permalink": "https://github.com/intel/auto-round/blob/8d8a1cd5daaf6e8c71d079eccaec3092fa9af4f1/requirements-lib.txt"
+    },
+    {
+      "path": "LICENSE",
+      "symbols": [
+        "Apache-2.0"
+      ],
+      "permalink": "https://github.com/intel/auto-round/blob/8d8a1cd5daaf6e8c71d079eccaec3092fa9af4f1/LICENSE"
+    }
+  ],
+  "scope": "Selected functions read, not whole compressor/inference backend",
+  "environment_reference": {
+    "url": "https://developer.nvidia.com/embedded/jetpack/downloads",
+    "JetPack": "7.2.1",
+    "L4T": "39.2.1",
+    "CUDA": "13.2.1",
+    "board_tested": false
+  }
+}

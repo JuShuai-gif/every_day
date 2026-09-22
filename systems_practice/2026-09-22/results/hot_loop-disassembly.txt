@@ -1,0 +1,12 @@
+
+systems_practice/2026-09-22/build/cpu/CMakeFiles/cache_counters.dir/src/hot_loop.cpp.o:	file format mach-o arm64
+
+Disassembly of section __TEXT,__text:
+
+0000000000000000 <ltmp0>:
+       0: b40000a1     	cbz	x1, 0x14 <ltmp0+0x14>
+       4: 52800028     	mov	w8, #0x1                ; =1
+       8: f8280009     	ldadd	x8, x9, [x0]
+       c: f1000421     	subs	x1, x1, #0x1
+      10: 54ffffc1     	b.ne	0x8 <ltmp0+0x8>
+      14: d65f03c0     	ret

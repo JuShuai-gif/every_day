@@ -1,0 +1,29 @@
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/2026-09-22/build/tsan
+[ 33%] Building CXX object CMakeFiles/cache_counters.dir/src/main.cpp.o
+[ 66%] Building CXX object CMakeFiles/cache_counters.dir/src/hot_loop.cpp.o
+[100%] Linking CXX executable cache_counters
+[100%] Built target cache_counters
+layout slot_bytes=8 object_bytes=256 offsets=0,
+layout slot_bytes=64 object_bytes=768 offsets=0,
+layout slot_bytes=128 object_bytes=1280 offsets=0,
+layout slot_bytes=256 object_bytes=2304 offsets=0,
+layout slot_bytes=8 object_bytes=256 offsets=0,8,
+layout slot_bytes=64 object_bytes=768 offsets=0,64,
+layout slot_bytes=128 object_bytes=1280 offsets=0,128,
+layout slot_bytes=256 object_bytes=2304 offsets=0,256,
+layout slot_bytes=8 object_bytes=256 offsets=0,8,16,24,32,40,48,56,
+layout slot_bytes=64 object_bytes=768 offsets=0,64,128,192,256,320,384,448,
+layout slot_bytes=128 object_bytes=1280 offsets=0,128,256,384,512,640,768,896,
+layout slot_bytes=256 object_bytes=2304 offsets=0,256,512,768,1024,1280,1536,1792,
+PASS 45 trials: zero/single/tail iterations, private/shared counts, alignment; invalid bounds/reset/wrap

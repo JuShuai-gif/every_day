@@ -1,0 +1,45 @@
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Configuring done (0.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/2026-09-22/build/cpu
+[ 66%] Building CXX object CMakeFiles/cache_counters.dir/src/main.cpp.o
+[ 66%] Building CXX object CMakeFiles/cache_counters.dir/src/hot_loop.cpp.o
+[100%] Linking CXX executable cache_counters
+[100%] Built target cache_counters
+layout slot_bytes=8 object_bytes=256 offsets=0,
+layout slot_bytes=64 object_bytes=768 offsets=0,
+layout slot_bytes=128 object_bytes=1280 offsets=0,
+layout slot_bytes=256 object_bytes=2304 offsets=0,
+layout slot_bytes=8 object_bytes=256 offsets=0,8,
+layout slot_bytes=64 object_bytes=768 offsets=0,64,
+layout slot_bytes=128 object_bytes=1280 offsets=0,128,
+layout slot_bytes=256 object_bytes=2304 offsets=0,256,
+layout slot_bytes=8 object_bytes=256 offsets=0,8,16,24,32,40,48,56,
+layout slot_bytes=64 object_bytes=768 offsets=0,64,128,192,256,320,384,448,
+layout slot_bytes=128 object_bytes=1280 offsets=0,128,256,384,512,640,768,896,
+layout slot_bytes=256 object_bytes=2304 offsets=0,256,512,768,1024,1280,1536,1792,
+PASS 45 trials: zero/single/tail iterations, private/shared counts, alignment; invalid bounds/reset/wrap
+CPU wall us: release gate -> all done; excludes create/join; no affinity; warmup=5 samples=30 n_per_worker=200000
+packed workers=1 p50_us=408.833 p95_us=535.833 ns_per_increment=2.04417
+pad64 workers=1 p50_us=408.834 p95_us=555.375 ns_per_increment=2.04417
+pad128 workers=1 p50_us=408.417 p95_us=468.416 ns_per_increment=2.04209
+pad256 workers=1 p50_us=409.292 p95_us=464.875 ns_per_increment=2.04646
+true_shared workers=1 p50_us=407 p95_us=466.75 ns_per_increment=2.035
+packed workers=2 p50_us=1923.83 p95_us=2341.33 ns_per_increment=4.80959
+pad64 workers=2 p50_us=330.75 p95_us=344.25 ns_per_increment=0.826875
+pad128 workers=2 p50_us=336.292 p95_us=348.833 ns_per_increment=0.84073
+pad256 workers=2 p50_us=335.917 p95_us=343.834 ns_per_increment=0.839793
+true_shared workers=2 p50_us=1937.25 p95_us=2206.71 ns_per_increment=4.84312
+packed workers=4 p50_us=7872.88 p95_us=9150.75 ns_per_increment=9.84109
+pad64 workers=4 p50_us=358.917 p95_us=664.042 ns_per_increment=0.448646
+pad128 workers=4 p50_us=343.417 p95_us=410.834 ns_per_increment=0.429271
+pad256 workers=4 p50_us=344.208 p95_us=406.375 ns_per_increment=0.43026
+true_shared workers=4 p50_us=5773.25 p95_us=9308.17 ns_per_increment=7.21656

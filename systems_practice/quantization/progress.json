@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "next_method_id": "autoround",
-  "last_lesson_date": "2026-09-21",
+  "next_method_id": "hqq",
+  "last_lesson_date": "2026-09-22",
   "completed_methods": [],
   "history": [
     {
@@ -45,6 +45,20 @@
       "cpu_example_run": false,
       "thor_verified": false,
       "status": "partial; native source checkout/build/execution blocked"
+    },
+    {
+      "date": "2026-09-22",
+      "method": "autoround",
+      "focus": "Native quant_tensor_asym and SignSGD: learned rounding/range; custom real u4 export and CPU decoded Linear",
+      "lesson": "../2026-09-22/quantization/autoround/README.md",
+      "verification": "../2026-09-22/quantization/autoround/verification.json",
+      "commit": "8d8a1cd5daaf6e8c71d079eccaec3092fa9af4f1",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "status": "partial; clone and native execution blocked"
     }
   ],
   "backlog": [
@@ -59,9 +73,9 @@
       "example_delivered": true,
       "cpu_example_run": false,
       "thor_verified": false,
-      "last_retry_date": "2026-09-21",
+      "last_retry_date": "2026-09-22",
       "latest_verification": "../2026-09-19/quantization/awq/verification.json",
-      "latest_source_retry": "../2026-09-21/quantization/awq-retry-source.json"
+      "latest_source_retry": "../2026-09-22/quantization/awq-retry-source.json"
     },
     {
       "method": "gptq",
@@ -79,6 +93,17 @@
       "date": "2026-09-21",
       "reason": "Repository migration and pinned API verified via browser; clone DNS failure, unsupported local Python and missing dependencies prevent native execution.",
       "latest_verification": "../2026-09-21/quantization/adaround/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false
+    },
+    {
+      "method": "autoround",
+      "date": "2026-09-22",
+      "reason": "Local clone DNS failed; selected v0.9.0 implementations read and low-level native API example delivered; dependencies/Thor missing",
+      "latest_verification": "../2026-09-22/quantization/autoround/verification.json",
       "source_fetched": false,
       "source_read": true,
       "example_delivered": true,

@@ -1,0 +1,33 @@
+SHELL PASS systems_practice/2026-09-22/run.sh
+LINKS PASS systems_practice/2026-09-22/README.md
+JSON PASS systems_practice/2026-09-22/quantization/awq-retry-source.json
+JSON PASS systems_practice/2026-09-22/quantization/autoround/source.json
+SHELL PASS systems_practice/2026-09-22/quantization/autoround/run.sh
+LINKS PASS systems_practice/2026-09-22/quantization/autoround/README.md
+AST PASS systems_practice/2026-09-22/quantization/autoround/example.py
+JSON PASS systems_practice/2026-09-22/quantization/autoround/source-web.json
+JSON PASS systems_practice/2026-09-22/quantization/autoround/verification.json
+JSON PASS systems_practice/2026-09-22/results/source.json
+JSON PASS systems_practice/2026-09-22/results/verification.json
+LINKS PASS systems_practice/paper/2026-09-22/README.md
+JSON PASS systems_practice/paper/2026-09-22/02-ests/source.json
+SHELL PASS systems_practice/paper/2026-09-22/02-ests/run.sh
+LINKS PASS systems_practice/paper/2026-09-22/02-ests/README.md
+AST PASS systems_practice/paper/2026-09-22/02-ests/example.py
+JSON PASS systems_practice/paper/2026-09-22/02-ests/verification.json
+JSON PASS systems_practice/paper/2026-09-22/02-ests/results/output.json
+JSON PASS systems_practice/paper/2026-09-22/01-real-q/source.json
+SHELL PASS systems_practice/paper/2026-09-22/01-real-q/run.sh
+LINKS PASS systems_practice/paper/2026-09-22/01-real-q/README.md
+AST PASS systems_practice/paper/2026-09-22/01-real-q/example.py
+JSON PASS systems_practice/paper/2026-09-22/01-real-q/verification.json
+JSON PASS systems_practice/paper/2026-09-22/01-real-q/results/output.json
+HEADERS/concept PASS 551
+QUANT cursor once/day PASS
+PAPER count/dedup PASS
+SOURCE SHA256 hot_loop.cpp cf67483ceec29330cd11cef82470137ac8683c0205fb1ff1cd826883b862eaea
+SOURCE SHA256 counters.hpp fe656ca4031dbb5e929c9d87dd1f00bcfe2ce680ac7205a761875cc9bec8a9f0
+SOURCE SHA256 main.cpp d181dee0deb8987df1b91ded6b36bfafde758dd76998dd9092d51ed3363bbf67
+git diff --check PASS
+format script exit0; final dry-run Werror PASS
+IGNORE build/cache/packed artifacts PASS

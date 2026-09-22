@@ -1,0 +1,38 @@
+{
+  "paper_id": "arxiv:2609.00049",
+  "title": "REAL-Q: E2E LLM Quantization via Dynamic Gradient Descent",
+  "first_submitted": "2026-08-30",
+  "version_read": "v1",
+  "version_date": "2026-08-30",
+  "read_date": "2026-09-22",
+  "metadata": "https://arxiv.org/abs/2609.00049",
+  "fulltext": "https://arxiv.org/html/2609.00049v1",
+  "fulltext_sections_read": [
+    "3",
+    "4.1-4.4",
+    "6.3 Table2"
+  ],
+  "source_relation": "independent mechanism example; not upstream algorithm reproduction",
+  "authors": [
+    "Qian Zhang",
+    "Yaoming Li",
+    "Zhewen Tan",
+    "Yanshu Wang",
+    "Heng Lu",
+    "Kun Su",
+    "Zongwei Lv",
+    "Wenhan Yu",
+    "Yongge Ma",
+    "Yinjun Han",
+    "Ruikuang Liu",
+    "Tong Yang"
+  ],
+  "latest_metadata_version": "v2 2026-09-10",
+  "publication_status": "arXiv preprint; peer review not verified",
+  "author_repository": null,
+  "search_queries": [
+    "\"REAL-Q\" \"github\" quantization"
+  ],
+  "search_result": "No verifiable author implementation identified; fulltext accessible",
+  "repository_code_read": false
+}

@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-22",
+  "recorded_utc": "2026-09-22T00:51:25.704594+00:00",
+  "theme": "CPU体系结构",
+  "cpu_release": true,
+  "asan_ubsan": true,
+  "tsan": true,
+  "trials_per_build": 45,
+  "source_read": true,
+  "cpu_performance": "results/cpu.txt; 5 warmups +30 samples; no affinity",
+  "isa": [
+    "hot_loop.s",
+    "hot_loop-disassembly.txt"
+  ],
+  "cacheline_query": "sysctl hw.cachelinesize failed: Operation not permitted",
+  "hardware_counters_measured": false,
+  "thread_creation_failure_injected": false,
+  "gpu_verified": false,
+  "npu_verified": false,
+  "gpu_not_applicable": "CPU-only main topic; no replacement of GPU content",
+  "tools_missing": {
+    "nvcc": true,
+    "ncu": true,
+    "cuobjdump": true
+  },
+  "evidence": [
+    "cpu.txt",
+    "sanitize.txt",
+    "tsan.txt",
+    "source.json"
+  ]
+}

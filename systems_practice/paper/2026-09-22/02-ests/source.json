@@ -1,0 +1,39 @@
+{
+  "paper_id": "arxiv:2609.12310",
+  "title": "ESTS at WMT26: Routing-Informed Expert Pruning for Model Compression",
+  "first_submitted": "2026-09-11",
+  "version_read": "v1",
+  "version_date": "2026-09-11",
+  "read_date": "2026-09-22",
+  "metadata": "https://arxiv.org/abs/2609.12310",
+  "fulltext": "https://arxiv.org/html/2609.12310v1",
+  "fulltext_sections_read": [
+    "2-3",
+    "Table2",
+    "5-6",
+    "Appendix A/B"
+  ],
+  "source_relation": "independent mechanism example; not upstream algorithm reproduction",
+  "authors": [
+    "Liu O. Martin",
+    "Lucas Bandarkar",
+    "Nanyun Peng"
+  ],
+  "publication_status": "arXiv comments: to appear WMT2026; proceedings not independently verified",
+  "author_repository": "https://github.com/oceanusm/wmt26-ests-model-compression",
+  "commit": "cff2c9fd3d63942b267df9b6be39cb42f90999c9",
+  "repository_read": [
+    "root README",
+    "submissions listing",
+    "submissions/ests-gptoss-zho-k26/README.md",
+    "submissions/ests-gptoss-zho-k26/prepare_model.py"
+  ],
+  "symbols_read": [
+    "resolve_model_source",
+    "expose_model",
+    "main"
+  ],
+  "repository_code_read": true,
+  "algorithm_training_pipeline_verified": false,
+  "scope": "Published inference submission; complete calibration/pruning/SFT pipeline not verified; no models downloaded"
+}

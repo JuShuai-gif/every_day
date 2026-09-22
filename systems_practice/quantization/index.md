@@ -2,7 +2,7 @@
 
 每天在主知识点之外讲一个量化方法，独立于主方向轮换。主练习仍为一个 20～30 分钟编码任务；本栏目提供已写好的使用示例，不再添加第二份编码作业。主主题为量化 GEMM 时复用当日方法的材料。
 
-**下一方法：AutoRound。下一主主题为 CPU 体系结构。** 2026-09-18已有 [真实量化 GEMM 对照实验](../2026-09-18/session-02/README.md)，它是独立实现，不是下列项目的 API 教程。
+**下一方法：HQQ。下一主主题为 ARM SIMD / NEON。** 2026-09-18已有 [真实量化 GEMM 对照实验](../2026-09-18/session-02/README.md)，它是独立实现，不是下列项目的 API 教程。
 
 现在可从项目根目录运行已有实验（需要 CMake 与 C++17 编译器）：
 
@@ -84,3 +84,4 @@ python3 systems_practice/quantization/fetch_source.py awq \
 | 2026-09-19 | 当日AWQ clip子机制；本地获取/运行待补 | AWQ | 本地拉取否 / 固定commit网页阅读是 / 原生API示例是 / CPU否 / Thor否 | [课程](../2026-09-19/quantization/awq/README.md)；[五项状态](../2026-09-19/quantization/awq/verification.json) |
 | 2026-09-20 | 当日GPTQ二阶补偿；本地获取/运行待补，AWQ重试失败 | GPTQ | 本地拉取否 / 固定commit网页阅读是 / 原生API示例是 / CPU否 / Thor否 | [课程](../2026-09-20/quantization/gptq/README.md)；[五项状态](../2026-09-20/quantization/gptq/verification.json) |
 | 2026-09-21 | 当日AdaRound学习舍入；AIMET迁移核实，AWQ重试失败 | AdaRound | 本地拉取否 / 固定commit浏览器阅读是 / 原生API示例是 / CPU否 / Thor否；独立u4检查通过 | [课程](../2026-09-21/quantization/adaround/README.md)；[五项状态](../2026-09-21/quantization/adaround/verification.json) |
+| 2026-09-22 | AutoRound原生低层舍入/范围优化；AWQ重试失败 | AutoRound | 本地拉取否 / 固定commit实现阅读是 / 原生API示例是 / CPU否 / Thor否 | [课程](../2026-09-22/quantization/autoround/README.md)；[状态](../2026-09-22/quantization/autoround/verification.json) |

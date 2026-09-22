@@ -12,9 +12,9 @@
 
 2026-09-18 扩展为 **12 个方向**：新增“量化 GEMM”，涵盖 W4A4/W4A16/W8A8/W8A16、SmoothQuant、离群处理、校准缩放与 QAT，代码目标仍为 Thor SM110。
 
-2026-09-18 起另设 **每日量化方法**：每天在主知识点之外讲一个方法，拉取源仓库、阅读实际实现并给出完整使用示例及量化前后比较。独立轮换见 [量化栏目索引](quantization/index.md)，下一方法 **AutoRound**。该栏目不取代 12 个主方向，源码获取/阅读/示例运行分别记录。
+2026-09-18 起另设 **每日量化方法**：每天在主知识点之外讲一个方法，拉取源仓库、阅读实际实现并给出完整使用示例及量化前后比较。独立轮换见 [量化栏目索引](quantization/index.md)，下一方法 **HQQ**。该栏目不取代 12 个主方向，源码获取/阅读/示例运行分别记录。
 
-2026-09-21 起新增 **每日两篇论文**：[paper 栏目](paper/README.md) · [历史索引](paper/index.md) · [今天两篇](paper/2026-09-21/README.md)。覆盖剪枝、量化、模型压缩和边缘部署，包含核心思想、复现难度、简单代码及真实验证记录；优先近 180 天首发，独立去重。
+2026-09-21 起新增 **每日两篇论文**：[paper 栏目](paper/README.md) · [历史索引](paper/index.md) · [今天两篇](paper/2026-09-22/README.md)。覆盖剪枝、量化、模型压缩和边缘部署，包含核心思想、复现难度、简单代码及真实验证记录；优先近 180 天首发，独立去重。
 
 | 日期 / 会话 | 主主题 | 核心知识点 | 代码路径 | 验证状态 | 性能数据与证据 |
 | --- | --- | --- | --- | --- | --- |
@@ -27,7 +27,8 @@
 | [2026-09-19](2026-09-19/README.md) | GPU 访存优化 | Thor SM110批次特征转置：global合并访问+shared bank布局；naive/unpadded/padded及4行候选；对照Hopper TMA；[每日AWQ](2026-09-19/quantization/awq/README.md) | [CUDA](2026-09-19/src/transpose.cu)；[CPU](2026-09-19/src/cpu_check.cpp) | Release/ASan/UBSan：196 Shape×3布局及4非法输入通过；已读NVIDIA官方实现；AWQ固定commit网页源码已读/示例已交付，本地克隆与运行待补 | 无GPU/端到端性能；缺nvcc/ncu/Thor。bank 32→1仅地址模型。[验证](2026-09-19/results/verification.json)；[日志](2026-09-19/results/cpu.txt) |
 | [2026-09-20](2026-09-20/README.md) | GPU 体系结构 | Thor SM110行归约：ILP独立累加链+寄存器/occupancy；五实例，对照Ampere整数redux；[每日GPTQ](2026-09-20/quantization/gptq/README.md) | [CUDA](2026-09-20/src/row_reduce.cu)；[CPU合同](2026-09-20/src/cpu_check.cpp) | Release/ASan/UBSan 675比较、4非法Shape通过；PyTorch/NVIDIA源码已读；GPTQ固定commit已读/示例已交付，本地获取与运行待补 | 无GPU/端到端/功耗实测；nvcc/ncu/Thor缺失。[证据](2026-09-20/results/verification.json)；[日志](2026-09-20/results/cpu.txt) |
 | [2026-09-21](2026-09-21/README.md) | C++17 并发 | 有界背压+谓词等待/关闭排空；LLVM线程池机制；[每日AdaRound](2026-09-21/quantization/adaround/README.md) | [线程池](2026-09-21/src/bounded_pool.hpp)；[测试/基准](2026-09-21/src/main.cpp) | Release/ASan/UBSan/TSan实际通过；3容量×2000请求及20轮关闭竞争；AIMET迁移/固定commit已读、原生API交付，克隆/运行待补 | CPU容量8批次P50 501.458us、请求P95 43.75us；容量64为473.292/247.333us。无加速器数据。[验证](2026-09-21/results/verification.json)；[日志](2026-09-21/results/cpu.txt) |
+| [2026-09-22](2026-09-22/README.md) | CPU 体系结构 | 统计计数器伪共享+relaxed原子语义；folly对齐源码；[AutoRound](2026-09-22/quantization/autoround/README.md)；[两篇论文](paper/2026-09-22/README.md) | [布局](2026-09-22/src/counters.hpp)；[基准](2026-09-22/src/main.cpp) | Release/ASan/UBSan/TSan各45并发试验通过；真实ARM ldadd汇编；AutoRound源码已读/示例交付但本地运行受阻；论文CPU例子通过 | 4worker、20万次/worker：packed P50 7872.88us，pad128 343.417us；仅CPU微基准，无硬件事件/加速器数据。[日志](2026-09-22/results/cpu.txt)；[验证](2026-09-22/results/verification.json) |
 
-下一主主题：**CPU 体系结构**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
+下一主主题：**ARM SIMD / NEON**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
 
 `2026-09-14` 为用户要求补充的历史 C++ 练习，不改变当前轮换位置。

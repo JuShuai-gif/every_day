@@ -1,0 +1,14 @@
+{
+  "scope": "stdlib CPU mechanism only; no GPTQ compensation, real NLL Fisher, sliding transformer window, packed GEMM or full paper reproduction",
+  "calibration_loss_before": 0.03781062423997851,
+  "calibration_loss_after": 0.019461380564454483,
+  "evaluation_loss_before": 0.03971089697565905,
+  "evaluation_loss_after": 0.02140003282862109,
+  "max_gradient_check_error": 1.538547067525542e-11,
+  "locked_columns_unchanged": true,
+  "actual_updated_parameters": 4,
+  "same_euclidean_norm_penalty": {
+    "aligned": 2.5,
+    "opposed": 0.5
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "read_date": "2026-09-22",
+  "repository": "https://github.com/facebook/folly",
+  "ref": "main read 2026-09-22 (commit unresolved)",
+  "source_read": true,
+  "relationship": "mechanism-inspired independent implementation",
+  "files": [
+    {
+      "path": "folly/lang/Aligned.h",
+      "symbols": [
+        "aligned<T,Align>",
+        "cacheline_aligned"
+      ]
+    },
+    {
+      "path": "folly/lang/Align.h",
+      "symbols": [
+        "has_extended_alignment",
+        "hardware_destructive_interference_size",
+        "cacheline_align_v"
+      ]
+    }
+  ],
+  "license": "Apache-2.0 source headers",
+  "read_transport": "GitHub blob and raw via web",
+  "failed_attempts": [
+    {
+      "url": "https://github.com/facebook/folly/blob/v2024.11.18.00/folly/ProducerConsumerQueue.h",
+      "error": "web Internal Error"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/facebook/folly/v2024.11.18.00/folly/lang/Aligned.h",
+      "error": "web Cache miss"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/facebook/folly/main/folly/lang/Aligned.h",
+      "error": "curl (6) Could not resolve host: raw.githubusercontent.com"
+    }
+  ]
+}
