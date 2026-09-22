@@ -4,7 +4,7 @@
 
 本期只深入GPTQ。它是权重PTQ算法，不是INT4格式，也不是QAT训练范式。应用于已有视觉/语言Linear：希望同样4-bit存储下，更好保持校准分布的输出。与只对权重做absmax相比，它利用输入通道相关性处理舍入误差；代价是校准、K×K矩阵与分解成本。没有梯度训练、没有LoRA更新，不保证评估误差一定改善。
 
-最小例子：权重 `[N=32,K=128]`，激活 `[M=128,K=128]`，输出 `[128,32]`，`Y=X W^T`。原生GPTQ在FP32权重上处理，Hessian近似为FP32；部署参考将激活舍入FP16，再由 C++ 标量FP32累加。逻辑位宽W4A16，格式为0..15 affine整数码，per-output-channel scale/zero，group=-1代表整行K=128共用参数。`torch.round`后饱和，反量化为`(q-zero)*scale`；没有量化激活，不能称W4A4。
+最小例子：权重 `[N=32,K=128]`，激活 `[M=128,K=128]`，输出 `[128,32]`，`Y=X W^T`。原生GPTQ在FP32权重上处理，Hessian近似为FP32；部署参考将激活舍入FP16，再由PyTorch FP32算子计算。逻辑位宽W4A16，格式为0..15 affine整数码，per-output-channel scale/zero，group=-1代表整行K=128共用参数。`torch.round`后饱和，反量化为`(q-zero)*scale`；没有量化激活，不能称W4A4。
 
 ## 原仓库与实际读过的实现
 
@@ -52,25 +52,33 @@ GPTQ_SOURCE="$PWD/systems_practice/.tmp/quant_sources/gptq-20260920" \
 
 1. seed30生成FP32 W，首输出行置零；seed31生成256条校准输入，通道1与0相关，通道7恒零。seed32的128条validation只用于在0.01/0.1两个阻尼值间选型；seed33的128条evaluation只做最终报告。无训练集/训练更新，评估不参与选择。
 2. `engine=GPTQ(layer)`、`Quantizer.configure(4,perchannel=True,sym=False,mse=False)`、`add_batch`、`fasterquant(blocksize=32,percdamp=...,groupsize=-1,actorder=False,static_groups=False)`。32是算法处理块大小，不是量化group size。关闭act-order避免本期引入额外排列/分组主题。
-3. 固定网格下选择最佳validation结果，将量化权重、scale/zero、原生RTN和评估输入交给 C++ 后端。
-4. C++ 写出 Q4C1、重载并校验码值及数值；在 CPU 上对照 FP32/FP16存储/absmax/RTN/量化解码。接入已有无bias Linear时替换随机权重，校准必须使用其真实输入；有bias需扩展两侧一致的契约。
-5. JSON在 `results/measured.json`，C++明细在 `build/cpp-result.json`。二进制只在被忽略的build中保存。原生GPTQ仍要求Thor SM110；本次移除了Python GPU/E2E基准，未新增或声称完成GPU推理后端。
+3. 固定网格下选择最佳validation结果，用PyTorch对照原始、FP16存储、absmax、上游RTN与量化重建；评估集不用于调参。
+4. torch保存/重载FP32重建检查点，再接入无bias Linear验证输出；原生GPTQ仍要求Thor SM110。CUDA框架级计时使用同步主机边界，不代表packed INT4性能。
+5. 总报告在 `results/measured.json`，torch明细在 `build/torch-result.json`；可选native-cpp才写出独立Q4C1并记录 `build/cpp-result.json`。
 
 ## 量化前后比较
 
-2026-09-22 将部署侧的位操作、打包/解码、误差验证、FP16存储舍入、absmax基线和 CPU 计时迁入 [C++17 后端](../../cpp/README.md)。上游 API 的校准/优化和候选选择保留在 `upstream_api.py`，使用固定 commit；它只通过文本传递张量，不能充当 CPU 内核示例。
+**主流程使用 Python/PyTorch。** `upstream_api.py` 调用原生算法并使用 [torch_evaluation.py](../../torch_evaluation.py) 完成张量误差对比、重建模型接入、torch检查点保存/重载和框架级计时。校准/训练、validation选型、evaluation分区不变；不因为在CPU上运行就迁移成C++。
 
-`sh run.sh check`（本课目录）只验证独立 C++ 后端；`sh run.sh native` 才运行原生方法与完整张量交接。后端写并重载 `build/linear.q4`（AdaRound 为 `build/native/linear.q4`）。Q4C1 包含16字节头、每组8字节FP32 scale/zero和低 nibble 优先 u4；与旧 Python 容器及上游模型文件不兼容，不能直接喂给原生加载器。格式、误差阈值、分组尾部与板端边界见后端说明。
+从本课目录运行（已有对应上游依赖和固定源码时）：
 
-以 FP32 输入/权重为参考，对照 FP16存储、独立 absmax、上游 RTN、原生量化解码；对照输入先舍入为 FP16，再以 C++ FP32 标量累加。对 evaluation、shifted、全零输入记录 NRMSE/max_abs/cosine（零向量为 null）。CPU基准10次预热、50次采样，覆盖已解码 GEMM 与输出分配，排除磁盘、解码和训练，不代表 BLAS、低位kernel或GPU性能。仅记录上游校准/优化的流程用时，不把 Python 算子计时作为体系结构实验。
+```sh
+sh run.sh native      # 默认路径；不构建教学C++后端
+sh run.sh native-cpp  # 上述流程 + 可选C++物理布局/CPU内核实验
+sh run.sh check       # 只检查独立C++后端，不运行原生算法
+```
 
-**本机已通过**共用后端的 Release、ASan/UBSan、位模式/边界检查，以及本课形状的合成数据磁盘往返。**四种原生量化算法仍未运行**：缺对应源码/依赖（GPTQ还需Thor），没有真实量化模型精度或板端性能。合成检查不推进原生完成状态。当前证据见 [verification.json](verification.json)、[新原生入口尝试](results/native-cpp-attempt.txt)；原有 results 原样保留为历史记录。
+torch使用FP32原始输入/权重作参考；对比FP16存储、独立absmax、上游RTN和原生量化重建，覆盖evaluation、shifted和全零输入。对照输入先舍入FP16再转FP32算子，累加细节由torch后端决定；报告NRMSE/max_abs/cosine，零向量余弦记null。保存的 `build/torch-reconstructed.pt` 是FP32重建权重与元数据，不能当作INT4压缩文件；报告为 `build/torch-result.json`（AdaRound均在`build/native/`）。这是小Linear实验，不是完整模型任务精度。
+
+框架计时10次预热、50次采样，记录同步主机wall time，包含F.linear调度/分配；CUDA设备在计时边界同步。排除校准、文件IO和重载，不能称单个kernel时间，也不能证明packed低位内核提速。Python可调用原生后端测框架性能；专门研究指令、缓存或内核时另用C++/CUDA实现。
+
+显式选择 `native-cpp` 才将张量交给 [C++补充实验](../../cpp/README.md)，写出/重载Q4C1，检查字节、码值和标量CPU参考。Q4C1不是上游模型格式。此前C++ Release/ASan/UBSan与合成数据检查已通过；**新torch评估与四种原生算法仍未运行**，缺对应源码/依赖（GPTQ还需Thor）。入口尝试见 [最新日志](results/native-torch-attempt.txt)，状态见 [verification.json](verification.json)。不安装依赖、不下载模型。
 
 ## Thor SM110 与优化
 
 `GPTQ.fasterquant`无条件 `torch.cuda.synchronize()`，不能在无CUDA机器上原样执行；本例没有monkey patch或伪造CPU成功。`quant.py`捕获缺失quant_cuda导入，本期不调用它的Quant3Linear；该类限制单token且为3-bit，不适配本期4-bit矩阵。原仓库历史A100/CUDA11验证不能证明Thor支持。
 
-本例不构建上游扩展；运行仅限CC11.0且PyTorch含sm_110。`TORCH_CUDA_ARCH_LIST=11.0`只约束未来显式扩展编译，不会把已安装torch二进制变成兼容。CUDA13编译器/JetPack参考与诊断见[主课优化说明](../../../daily/2026-09-20/OPTIMIZATION.md)。当前部署参考为 C++ CPU 标量实现；GPU 推理接入和性能仍待后续 CUDA C++ 后端验收。
+本例不构建上游扩展；运行仅限CC11.0且PyTorch含sm_110。`TORCH_CUDA_ARCH_LIST=11.0`只约束未来显式扩展编译，不会把已安装torch二进制变成兼容。CUDA13编译器/JetPack参考与诊断见[主课优化说明](../../../daily/2026-09-20/OPTIMIZATION.md)。当前默认验证使用PyTorch重建张量算子；原生packed低位GPU内核的接入和验收仍待补。
 
 已有[Thor packed SIMT GEMM基线/共享内存候选](../../../daily/2026-09-18/session-02/src/quant_gemm.cu)及[ncu/ISA流程](../../../daily/2026-09-18/session-02/README.md)可作为后续集成材料。它的signed/group16和本例unsigned/per-channel affine格式不同，**不能直接读取本例文件**。接入时必须实现u4解码减zero、scale广播并复测，当前并未完成该后端适配。今天主课提供完整Thor归约基线/优化及ISA教程，但不是GPTQ GEMM性能证明。
 

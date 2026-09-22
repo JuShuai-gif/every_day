@@ -1,0 +1,15 @@
+BLOCKED: 需要 Python>=3.10、AIMET/torch 依赖及 AIMET_SOURCE_ROOT；未执行安装
+{
+  "python": "3.9.6",
+  "required_python": ">=3.10",
+  "missing_modules": [
+    "torch",
+    "aimet_torch",
+    "numpy",
+    "psutil"
+  ],
+  "source_root": null,
+  "expected_commit": "17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b",
+  "execution_device": "cpu",
+  "thor_verified": false
+}

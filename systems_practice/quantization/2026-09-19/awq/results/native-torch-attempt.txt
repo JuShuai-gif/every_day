@@ -1,0 +1,2 @@
+usage: upstream_api.py [-h] --source SOURCE
+upstream_api.py: error: verified upstream checkout missing; see source.json and retry instructions

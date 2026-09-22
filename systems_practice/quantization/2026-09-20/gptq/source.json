@@ -16,9 +16,10 @@
   ],
   "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example.",
   "local_implementation_revision": {
-    "date": "2026-09-22T10:43:01.386131+08:00",
+    "date": "2026-09-22T15:00:05.092039+08:00",
     "api_example": "upstream_api.py",
-    "cpp_backend": "../../cpp/src/quant_cpu.cpp",
-    "scope": "Preserves reviewed upstream API; moves independent layout/decode/CPU tests and benchmark to C++17; upstream run still blocked"
+    "evaluation": "../../torch_evaluation.py",
+    "optional_cpp_backend": "../../cpp/src/quant_cpu.cpp",
+    "scope": "User correction: torch algorithm/evaluation default, independent C++ storage/kernel optional; no new upstream-source reading or runtime claim"
   }
 }

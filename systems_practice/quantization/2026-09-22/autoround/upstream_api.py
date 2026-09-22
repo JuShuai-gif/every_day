@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""原生 AutoRound 优化 API；C++ 负责 u4 存储、解码和 CPU 验证。"""
+"""原生量化算法与 PyTorch 评估主流程；底层 C++ 实验可选。"""
 import importlib.util
 import json
 import os
@@ -12,7 +12,7 @@ import time
 COMMIT = '8d8a1cd5daaf6e8c71d079eccaec3092fa9af4f1'
 BASE = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE.parents[1]))
-from native_bridge import evaluate_cpp
+from torch_evaluation import evaluate_torch
 
 
 def preflight():
@@ -117,11 +117,11 @@ def main():
     with torch.no_grad():
         qw, scales, zp = qdq(best)
         rtn, _, _ = qdq(initial())
-        backend = evaluate_cpp(BASE / 'build', w, qw, rtn, scales, zp, evaluation, shifted, group)
-        result = {'status': 'native_api_and_cpp_backend_passed', 'torch': torch.__version__, 'commit': COMMIT,
+        evaluation_report = evaluate_torch(BASE / 'build', w, qw, rtn, scales, zp, evaluation, shifted, group)
+        result = {'status': 'native_api_and_torch_evaluation_passed', 'torch': torch.__version__, 'commit': COMMIT,
                   'lr': lr, 'validation_mse': val_mse, 'actual_changed_parameters': changed,
                   'tuning_seconds': tune_seconds, 'training_log': history,
-                  'cpp_backend': backend, 'thor_verified': False}
+                  'torch_evaluation': evaluation_report, 'thor_verified': False}
         print(json.dumps(result, ensure_ascii=False, indent=2))
         (BASE / 'results/native-result.json').write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     return 0

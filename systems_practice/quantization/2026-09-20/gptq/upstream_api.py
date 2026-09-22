@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""固定原仓库 GPTQ 校准；C++ 独立 INT4 容器与 CPU 部署参考。"""
+"""原生量化算法与 PyTorch 评估主流程；底层 C++ 实验可选。"""
 import argparse
 import json
 import os
@@ -11,7 +11,7 @@ import time
 COMMIT = "2d65066eeb06a5c9ff5184d8cebdf33662c67faf"
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[1]))
-from native_bridge import evaluate_cpp
+from torch_evaluation import evaluate_torch
 
 
 def main():
@@ -106,14 +106,14 @@ def main():
         nearest = rtn.quantize(original)
         shifted = evaluation.clone()
         shifted[:, 7] = 8
-        backend = evaluate_cpp(build, original, quantized, nearest, scale, zero,
+        evaluation_report = evaluate_torch(build, original, quantized, nearest, scale, zero,
                                evaluation, shifted, 128)
         report = {"commit": COMMIT, "target": "sm_110", "selected_damping": selected["damping"],
                   "candidates": [{k: v for k, v in c.items() if k not in ("weight", "scale", "zero")}
                                  for c in candidates],
-                  "cpp_backend": backend,
-                  "gpu_inference_benchmark_verified": False,
-                  "note": "Native GPTQ requires Thor; exported storage and CPU scalar reference run in C++17. No GPU performance claim."}
+                  "torch_evaluation": evaluation_report,
+                  "packed_gpu_kernel_verified": False,
+                  "note": "Native GPTQ requires Thor; PyTorch evaluates reconstructed tensors; C++ layout experiment is optional. No packed GPU performance claim."}
         (results / "measured.json").write_text(json.dumps(report, indent=2)+"\n")
         print(json.dumps(report, indent=2))
 

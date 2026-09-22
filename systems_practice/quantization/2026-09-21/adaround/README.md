@@ -37,7 +37,7 @@
 
 调用链：`Head + dummy + DataLoader` → `AdaroundParameters` → `Adaround.apply_adaround` → 建QuantSim并仅计算权重编码/禁用输入输出量化 → 按图顺序采样层输入和原层输出 → Adam优化alpha → 导出0.6.1参数编码 → 删除包装器并返回浮点模型 → 本期按冻结编码硬化、u4打包/重载 → 普通Linear解码推理。
 
-**关键细节**：该commit的`adaround_module`虽设为hard，后续`_run_adaround_model`折叠权重时又明确开启soft。因此返回模型权重与`.encodings`不能直接称作可部署的整数权重；例子会按导出网格再次硬化，记录验证集误差，并交给 C++ 后端与同网格RTN比较。没有读取完整QuantSim/kernel后端，也没有完成AIMET源码构建；不作该部分支持保证。
+**关键细节**：该commit的`adaround_module`虽设为hard，后续`_run_adaround_model`折叠权重时又明确开启soft。因此返回模型权重与`.encodings`不能直接称作可部署的整数权重；例子会按导出网格再次硬化，记录验证集误差，并用PyTorch与同网格RTN比较。没有读取完整QuantSim/kernel后端，也没有完成AIMET源码构建；不作该部分支持保证。
 
 ## 如何接入我的代码
 
@@ -73,21 +73,29 @@ sh systems_practice/quantization/2026-09-21/adaround/run.sh native
 1. `original.fc`替换成你自己的同形状Linear，校准前固定权重；真实模型用它自己的输入分布，合成随机输入不代表任务校准质量。
 2. 校准seed2101、256行/8批、batch32；只用此分区优化alpha。正则候选0.001/0.01，beta20→2、warm_start0.2、500步；`post_training_tf`固定量化网格。两候选使用相同优化随机种子。
 3. 验证seed2102的128行只选正则；评估seed2103及分布偏移seed2104都不参与选择。没有监督训练集、没有用评估集更新权重。
-4. 原生入口写`candidate_*.encodings`，读取`param_encodings.fc.weight`；检查位宽、scale正值和粒度，硬化用于候选validation。冻结后传给 C++ 后端；offset在C++中转换为zero=-offset。
-5. C++ 写出`build/native/linear.q4`，每行一组scale/zero，实际字节重载后校验；不再生成旧weights.u4.bin/affine.bin/decoded_fp32.pt。
-6. C++ 比较评估、分布偏移和零输入，记录真实文件长度与 CPU 标量计时；报告在`build/native/comparison.json`。不设“必须优于RTN”断言。
+4. 原生入口写`candidate_*.encodings`，读取`param_encodings.fc.weight`，检查位宽、scale和粒度；torch硬化并完成候选validation。
+5. 默认用torch保存/重载FP32重建检查点、接入Linear，对比评估、分布偏移与零输入，并记录框架耗时；总报告仍在`build/native/comparison.json`。
+6. 选native-cpp时额外进行Q4C1字节存储/CPU实验，C++转换zero=-offset。两部分验证分别记录，不设“必须优于RTN”断言。
 
 已有`build/native`时脚本拒绝覆盖。需要新运行记录时复制本栏目到新session后执行；上游临时校准缓存通过TMPDIR留在本期被忽略的build/tmp。缺依赖或commit不匹配时退出2，表示没有运行量化，不是量化精度差。
 
 ## 量化前后比较
 
-2026-09-22 将部署侧的位操作、打包/解码、误差验证、FP16存储舍入、absmax基线和 CPU 计时迁入 [C++17 后端](../../cpp/README.md)。上游 API 的校准/优化和候选选择保留在 `upstream_api.py`，使用固定 commit；它只通过文本传递张量，不能充当 CPU 内核示例。
+**主流程使用 Python/PyTorch。** `upstream_api.py` 调用原生算法并使用 [torch_evaluation.py](../../torch_evaluation.py) 完成张量误差对比、重建模型接入、torch检查点保存/重载和框架级计时。校准/训练、validation选型、evaluation分区不变；不因为在CPU上运行就迁移成C++。
 
-`sh run.sh check`（本课目录）只验证独立 C++ 后端；`sh run.sh native` 才运行原生方法与完整张量交接。后端写并重载 `build/linear.q4`（AdaRound 为 `build/native/linear.q4`）。Q4C1 包含16字节头、每组8字节FP32 scale/zero和低 nibble 优先 u4；与旧 Python 容器及上游模型文件不兼容，不能直接喂给原生加载器。格式、误差阈值、分组尾部与板端边界见后端说明。
+从本课目录运行（已有对应上游依赖和固定源码时）：
 
-以 FP32 输入/权重为参考，对照 FP16存储、独立 absmax、上游 RTN、原生量化解码；对照输入先舍入为 FP16，再以 C++ FP32 标量累加。对 evaluation、shifted、全零输入记录 NRMSE/max_abs/cosine（零向量为 null）。CPU基准10次预热、50次采样，覆盖已解码 GEMM 与输出分配，排除磁盘、解码和训练，不代表 BLAS、低位kernel或GPU性能。仅记录上游校准/优化的流程用时，不把 Python 算子计时作为体系结构实验。
+```sh
+sh run.sh native      # 默认路径；不构建教学C++后端
+sh run.sh native-cpp  # 上述流程 + 可选C++物理布局/CPU内核实验
+sh run.sh check       # 只检查独立C++后端，不运行原生算法
+```
 
-**本机已通过**共用后端的 Release、ASan/UBSan、位模式/边界检查，以及本课形状的合成数据磁盘往返。**四种原生量化算法仍未运行**：缺对应源码/依赖（GPTQ还需Thor），没有真实量化模型精度或板端性能。合成检查不推进原生完成状态。当前证据见 [verification.json](verification.json)、[新原生入口尝试](results/native-cpp-attempt.txt)；原有 results 原样保留为历史记录。
+torch使用FP32原始输入/权重作参考；对比FP16存储、独立absmax、上游RTN和原生量化重建，覆盖evaluation、shifted和全零输入。对照输入先舍入FP16再转FP32算子，累加细节由torch后端决定；报告NRMSE/max_abs/cosine，零向量余弦记null。保存的 `build/torch-reconstructed.pt` 是FP32重建权重与元数据，不能当作INT4压缩文件；报告为 `build/torch-result.json`（AdaRound均在`build/native/`）。这是小Linear实验，不是完整模型任务精度。
+
+框架计时10次预热、50次采样，记录同步主机wall time，包含F.linear调度/分配；CUDA设备在计时边界同步。排除校准、文件IO和重载，不能称单个kernel时间，也不能证明packed低位内核提速。Python可调用原生后端测框架性能；专门研究指令、缓存或内核时另用C++/CUDA实现。
+
+显式选择 `native-cpp` 才将张量交给 [C++补充实验](../../cpp/README.md)，写出/重载Q4C1，检查字节、码值和标量CPU参考。Q4C1不是上游模型格式。此前C++ Release/ASan/UBSan与合成数据检查已通过；**新torch评估与四种原生算法仍未运行**，缺对应源码/依赖（GPTQ还需Thor）。入口尝试见 [最新日志](results/native-torch-attempt.txt)，状态见 [verification.json](verification.json)。不安装依赖、不下载模型。
 
 ## Thor SM110 与优化
 

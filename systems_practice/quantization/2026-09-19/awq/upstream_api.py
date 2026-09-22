@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""原生 AWQ 裁剪和 WQLinear API；部署字节与 CPU 验证由 C++ 实现。"""
+"""原生量化算法与 PyTorch 评估主流程；底层 C++ 实验可选。"""
 import argparse
 import json
 from pathlib import Path
@@ -11,7 +11,7 @@ COMMIT = "d6e797a42b9ef7778de8ee2352116e0f48a78d61"
 HERE = Path(__file__).resolve().parent
 PRACTICE = HERE.parents[2]
 sys.path.insert(0, str(HERE.parents[1]))
-from native_bridge import evaluate_cpp
+from torch_evaluation import evaluate_torch
 
 
 def main():
@@ -75,14 +75,14 @@ def main():
         no_clip = pseudo_quantize_tensor(weight.half(), n_bit=4, **config).float()
         shifted = evaluation.clone()
         shifted[:, 0] *= 100
-        backend = evaluate_cpp(output, weight, reconstructed, no_clip, scales, zeros,
+        evaluation_report = evaluate_torch(output, weight, reconstructed, no_clip, scales, zeros,
                                evaluation, shifted, 128)
         report = {"commit": COMMIT, "torch": torch.__version__,
-                  "scope": "native clip-only calibration and WQLinear API export; C++ CPU storage/validation",
+                  "scope": "native clip-only calibration and WQLinear API export; PyTorch evaluation; optional C++ storage experiment",
                   "actual_native_packed_buffer_bytes": payload,
                   "checkpoint_file_bytes": checkpoint.stat().st_size,
                   "calibration_single_run_ms": calibration_ms,
-                  "cpp_backend": backend, "thor_verified": False}
+                  "torch_evaluation": evaluation_report, "thor_verified": False}
         text = json.dumps(report, ensure_ascii=False, indent=2)
         (output / "metrics.json").write_text(text + "\n")
         print(text)

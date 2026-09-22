@@ -1,6 +1,6 @@
 # 量化课程共用 C++17 存储与 CPU 参考
 
-AWQ、GPTQ、AdaRound、AutoRound 的上游校准/优化接口留在各课 `upstream_api.py`；自写的 nibble 打包、解码、存储验证、FP16 舍入、标量 CPU GEMM 和计时均在 [quant_cpu.cpp](src/quant_cpu.cpp)。[公共字节工具](../../common/cpp/lesson.hpp) 显式处理端序、长度与尾部。这里是独立教学后端，不是上游部署文件格式或低位加速内核。
+AWQ、GPTQ、AdaRound、AutoRound 的上游校准/优化接口留在各课 `upstream_api.py`；可选底层实验中的 nibble 打包、解码、存储验证、FP16 舍入、标量 CPU GEMM 和计时均在 [quant_cpu.cpp](src/quant_cpu.cpp)。[公共字节工具](../../common/cpp/lesson.hpp) 显式处理端序、长度与尾部。这里是独立教学后端，不是上游部署文件格式或低位加速内核。
 
 从仓库根目录运行：
 
@@ -16,7 +16,7 @@ c++ -std=c++17 -O3 -ffp-contract=off -S \
   -o systems_practice/.tmp/quant-cpp-fixtures/quant_cpu.s
 ```
 
-每课 `sh run.sh check` 同样运行独立后端检查；`sh run.sh native` 则先构建 C++，再调用固定版本上游 API，经 [native_bridge.py](../native_bridge.py) 传入张量。桥接脚本只作文本传输和进程编排，没有位操作、解码、计算内核或 CPU 基准。AdaRound 的 Torch 硬化/validation 和 AutoRound 的 autograd 属于训练/校准过程；它们不能代替这里的 C++ 部署验证。
+每课 `sh run.sh check` 同样运行独立后端检查；默认 `sh run.sh native` 只走Python/PyTorch算法/评估。显式选择 `sh run.sh native-cpp` 才先构建 C++，再调用固定版本上游 API，经 [native_bridge.py](../native_bridge.py) 传入张量。桥接脚本只作文本传输和进程编排，没有位操作、解码、计算内核或 CPU 基准。AdaRound 的 Torch 硬化/validation 和 AutoRound 的 autograd 属于训练/校准过程；它们不能代替这里的 C++ 部署验证。
 
 ## 格式与数值契约
 

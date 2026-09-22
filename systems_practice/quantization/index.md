@@ -12,4 +12,4 @@
 | 2026-09-21 | 当日AdaRound学习舍入；AIMET迁移核实，AWQ重试失败 | AdaRound | 本地拉取否 / 固定commit浏览器阅读是 / 原生API示例是 / CPU否 / Thor否；独立u4检查通过 | [课程](2026-09-21/adaround/README.md)；[五项状态](2026-09-21/adaround/verification.json) |
 | 2026-09-22 | AutoRound原生低层舍入/范围优化；AWQ重试失败 | AutoRound | 本地拉取否 / 固定commit实现阅读是 / 原生API示例是 / CPU否 / Thor否 | [课程](2026-09-22/autoround/README.md)；[状态](2026-09-22/autoround/verification.json) |
 
-2026-09-22 历史四课已将独立存储/CPU验证迁入 [共用 C++17 后端](cpp/README.md)，Release/ASan/UBSan及合成协议检查通过；上表CPU状态仍指原生方法运行，保持否。上游Python仅用于校准/训练API；下一方法HQQ不变。
+2026-09-22 用户纠正：四课默认使用 Python/PyTorch 完成原生算法、模型精度、重载和框架级耗时对比；C++位布局/CPU内核为可选补充（native-cpp），不再强制主流程构建。现有C++独立检查通过；原生方法/新torch评估仍因依赖缺失而未运行，HQQ游标不变。

@@ -15,3 +15,5 @@
 旧规范和旧总索引文件保留为兼容导航，正文只有一份；历史日志中的旧路径保留原样。迁移对应表见 [目录说明](docs/LAYOUT.md)。
 
 历史代码已按 C/C++ 规则回查；处理清单与验证边界见 [语言审查](docs/LANGUAGE_AUDIT.md)。
+
+语言按教学目标选择：量化算法/模型实验优先Python/PyTorch，ARM/CPU底层机制使用C/C++。参见 [最新规范](docs/PRACTICE_SPEC.md)。

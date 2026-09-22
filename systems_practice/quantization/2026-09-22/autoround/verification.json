@@ -71,6 +71,19 @@
     "native_attempt": "results/native-cpp-attempt.txt",
     "native_exit_code": 2,
     "previous_verification": "results/verification-before-cpp-migration.json",
-    "boundary": "Synthetic C++ checks are not native algorithm execution; no new GPU/NPU/board result."
+    "boundary": "Synthetic C++ checks are not native algorithm execution; no new GPU/NPU/board result.",
+    "superseded_by": "language_policy_revision: torch-first default; C++ optional"
+  },
+  "language_policy_revision": {
+    "updated_at": "2026-09-22T15:00:05.092039+08:00",
+    "default": "Python/PyTorch algorithm, model and framework evaluation",
+    "entry": "run.sh native",
+    "torch_evaluation": "../../torch_evaluation.py",
+    "default_requires_lesson_cpp_build": false,
+    "optional_cpp_entry": "run.sh native-cpp",
+    "torch_evaluation_run": false,
+    "native_attempt": "results/native-torch-attempt.txt",
+    "native_exit_code": 2,
+    "reason": "Missing pinned source/dependencies; GPTQ also requires Thor; no installation performed"
   }
 }

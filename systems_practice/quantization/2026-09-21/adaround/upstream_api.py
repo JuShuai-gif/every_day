@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""原生 AIMET AdaRound 训练/校准；C++ 负责部署存储和 CPU 验证。"""
+"""原生量化算法与 PyTorch 评估主流程；底层 C++ 实验可选。"""
 import copy
 import hashlib
 import importlib.metadata
@@ -17,7 +17,7 @@ import time
 COMMIT = '17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b'
 BASE = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE.parents[1]))
-from native_bridge import evaluate_cpp
+from torch_evaluation import evaluate_torch
 OUT = BASE / 'build' / 'native'
 
 
@@ -153,13 +153,13 @@ def main():
     best = min(candidates, key=lambda item: item['validation']['nrmse'])
     assert torch.equal(original.fc.weight.detach(), original_weights), 'reference weights changed'
     _, rtn, _ = grid(original_weights, best['scales'], best['offsets'])
-    backend = evaluate_cpp(OUT, original_weights, best['hard'], rtn, best['scales'], best['offsets'],
+    evaluation_report = evaluate_torch(OUT, original_weights, best['hard'], rtn, best['scales'], best['offsets'],
                            evaluation, shifted, k, offset_convention=True)
     report = {'method': 'native AIMET AdaRound', 'commit': COMMIT,
               'selected_regularizer': best['regularizer'],
               'candidates': [{key: item[key] for key in ('regularizer', 'optimization_seconds', 'validation')}
                              for item in candidates],
-              'cpp_backend': backend, 'thor_verified': False,
+              'torch_evaluation': evaluation_report, 'thor_verified': False,
               'native_lowbit_kernel': False}
     (OUT / 'comparison.json').write_text(json.dumps(report, indent=2, allow_nan=False))
     print(json.dumps(report, indent=2, allow_nan=False))
