@@ -1,0 +1,926 @@
+{
+  "directory_rules": [
+    [
+      "systems_practice/quantization/LESSON_TEMPLATE.md",
+      "systems_practice/docs/quantization/LESSON_TEMPLATE.md"
+    ],
+    [
+      "systems_practice/2026-09-19/quantization",
+      "systems_practice/quantization/2026-09-19"
+    ],
+    [
+      "systems_practice/2026-09-20/quantization",
+      "systems_practice/quantization/2026-09-20"
+    ],
+    [
+      "systems_practice/2026-09-21/quantization",
+      "systems_practice/quantization/2026-09-21"
+    ],
+    [
+      "systems_practice/2026-09-22/quantization",
+      "systems_practice/quantization/2026-09-22"
+    ],
+    [
+      "systems_practice/PRACTICE_SPEC.md",
+      "systems_practice/docs/PRACTICE_SPEC.md"
+    ],
+    [
+      "systems_practice/paper/README.md",
+      "systems_practice/docs/paper/README.md"
+    ],
+    [
+      "systems_practice/arm/README.md",
+      "systems_practice/docs/arm/README.md"
+    ],
+    [
+      "systems_practice/arm/BOARDS.md",
+      "systems_practice/docs/arm/BOARDS.md"
+    ],
+    [
+      "systems_practice/2026-09-14",
+      "systems_practice/daily/2026-09-14"
+    ],
+    [
+      "systems_practice/2026-09-15",
+      "systems_practice/daily/2026-09-15"
+    ],
+    [
+      "systems_practice/2026-09-16",
+      "systems_practice/daily/2026-09-16"
+    ],
+    [
+      "systems_practice/2026-09-17",
+      "systems_practice/daily/2026-09-17"
+    ],
+    [
+      "systems_practice/2026-09-18",
+      "systems_practice/daily/2026-09-18"
+    ],
+    [
+      "systems_practice/2026-09-19",
+      "systems_practice/daily/2026-09-19"
+    ],
+    [
+      "systems_practice/2026-09-20",
+      "systems_practice/daily/2026-09-20"
+    ],
+    [
+      "systems_practice/2026-09-21",
+      "systems_practice/daily/2026-09-21"
+    ],
+    [
+      "systems_practice/2026-09-22",
+      "systems_practice/daily/2026-09-22"
+    ],
+    [
+      "systems_practice/references",
+      "systems_practice/docs/references"
+    ],
+    [
+      "systems_practice/index.md",
+      "systems_practice/daily/index.md"
+    ]
+  ],
+  "preserved_files": [
+    {
+      "old": "systems_practice/2026-09-14/CMakeLists.txt",
+      "new": "systems_practice/daily/2026-09-14/CMakeLists.txt",
+      "sha256_before": "8caa1638b1322bce7f38a4604452e10d3e5275521b57b0c82e0c6179f8548495",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-14/results/mac-release-run/output.log",
+      "new": "systems_practice/daily/2026-09-14/results/mac-release-run/output.log",
+      "sha256_before": "cb746d0405880e822e6f305eb37ad5436dcfd219406d3610f09d480794f54ece",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-14/results/mac-release-run/sanitize.log",
+      "new": "systems_practice/daily/2026-09-14/results/mac-release-run/sanitize.log",
+      "sha256_before": "3643b9431258d6fa190c42a208b5a59a4b8858957d71d4fdba6d33344fd7038d",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-14/src/frame_arena.hpp",
+      "new": "systems_practice/daily/2026-09-14/src/frame_arena.hpp",
+      "sha256_before": "dd48d261282c9445262eea2197728f049fccaed1061b86d13a9d8e0bb3271e48",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-14/src/main.cpp",
+      "new": "systems_practice/daily/2026-09-14/src/main.cpp",
+      "sha256_before": "e31364312d76640cc7770117e298c8105a76770d47ee8f0bd48c8faaca78741d",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-15/CMakeLists.txt",
+      "new": "systems_practice/daily/2026-09-15/CMakeLists.txt",
+      "sha256_before": "35a8417e1532e34ea53329e78f3d25bbc6a073f19ac96a024e5021508e09b241",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-15/results/run-2m3zbaM3/output.log",
+      "new": "systems_practice/daily/2026-09-15/results/run-2m3zbaM3/output.log",
+      "sha256_before": "2d857b387f0709967a6d18edaaad374dc25ace04e5ec6306ab7ff1c192253137",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-15/results/run-LX9wlVeI/output.log",
+      "new": "systems_practice/daily/2026-09-15/results/run-LX9wlVeI/output.log",
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-15/results/run-Tu4RJPbO/output.log",
+      "new": "systems_practice/daily/2026-09-15/results/run-Tu4RJPbO/output.log",
+      "sha256_before": "9893ddddcaf8b1a1adc3727eb6c63f80aefd87c8eb54fc0f886f694318e2dbf2",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-15/results/run-sJMtFJmo/output.log",
+      "new": "systems_practice/daily/2026-09-15/results/run-sJMtFJmo/output.log",
+      "sha256_before": "9893ddddcaf8b1a1adc3727eb6c63f80aefd87c8eb54fc0f886f694318e2dbf2",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-15/results/sanitizers.log",
+      "new": "systems_practice/daily/2026-09-15/results/sanitizers.log",
+      "sha256_before": "10baa106527a3d203169f81eaf7826cbc6cf46d8e204b393fdb732e64abee90e",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-15/src/common.hpp",
+      "new": "systems_practice/daily/2026-09-15/src/common.hpp",
+      "sha256_before": "6a6f191e95ca9f44b867e9ca6a74cb9f9b213bd4064703bdb630443874af031d",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-15/src/cpu_check.cpp",
+      "new": "systems_practice/daily/2026-09-15/src/cpu_check.cpp",
+      "sha256_before": "bcb3798cc9ea79a77a629088d71a2182fa82efb14a03b68ed90ebdace453f2b0",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-15/src/preprocess.cu",
+      "new": "systems_practice/daily/2026-09-15/src/preprocess.cu",
+      "sha256_before": "802002895c9b242141ca01dd69687af2f4b6ce52755432c3bd10d636b1550caf",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-16/CMakeLists.txt",
+      "new": "systems_practice/daily/2026-09-16/CMakeLists.txt",
+      "sha256_before": "f366c378a0d5660cc6cc8f51ea9bd4f7584ac8a4735c2cab319b0d7a51691e97",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-16/results/audit.log",
+      "new": "systems_practice/daily/2026-09-16/results/audit.log",
+      "sha256_before": "3f5170f1607302f63bb70976c79819a26dd0009aa467411a33495b68c913e345",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-16/results/cpu-L6rYfWcG/output.log",
+      "new": "systems_practice/daily/2026-09-16/results/cpu-L6rYfWcG/output.log",
+      "sha256_before": "ff0eebaaca6044fb8dfe93e9ce6b5abecc75617364f018b65bde8ecee200fd18",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-16/results/cpu-bEqMZkQH/output.log",
+      "new": "systems_practice/daily/2026-09-16/results/cpu-bEqMZkQH/output.log",
+      "sha256_before": "12322087a4b1bef6a04e8f78ff1d5cbe6c559b1b9539c7325bf7c99dc5606d42",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-16/results/gpu-L9qxckGK/output.log",
+      "new": "systems_practice/daily/2026-09-16/results/gpu-L9qxckGK/output.log",
+      "sha256_before": "a40bac799f64347fecfe899d46d225f9b3f4b9f86a8a0cedc5f3bc40bcc6aeb7",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-16/results/sanitize-TFz1rBHp/output.log",
+      "new": "systems_practice/daily/2026-09-16/results/sanitize-TFz1rBHp/output.log",
+      "sha256_before": "f73e838e4f03a065b0a23604ecc02f57a3be1cb3887c5e875a4477e560e11345",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-16/results/sanitize-eK6F5Sad/output.log",
+      "new": "systems_practice/daily/2026-09-16/results/sanitize-eK6F5Sad/output.log",
+      "sha256_before": "31a76f3b779e2b7d23f3c2cd24ca270a94b205e6bdf6d481ea24511164e2cf5f",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-16/results/sources/c-api.html",
+      "new": "systems_practice/daily/2026-09-16/results/sources/c-api.html",
+      "sha256_before": "10d435a58ab535898b8a065b5e69b1228b7f699a8a7ed6ce5a53f198217a6d4d",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-16/results/sources/c-api.txt",
+      "new": "systems_practice/daily/2026-09-16/results/sources/c-api.txt",
+      "sha256_before": "da68531b2660cdbf75e5b067e9b71b9512190c2396580db965fad43a06caf2b0",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-16/results/sources/dynamic-shapes.html",
+      "new": "systems_practice/daily/2026-09-16/results/sources/dynamic-shapes.html",
+      "sha256_before": "c3fc32bf97ed57c040607607916dd03f235156e594beab99d02ad3a0eb393ec6",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-16/results/sources/dynamic-shapes.txt",
+      "new": "systems_practice/daily/2026-09-16/results/sources/dynamic-shapes.txt",
+      "sha256_before": "d50fa5797a5f2ee8d103e83a79504a955e87d2bc13396079bab391f83b368c2c",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-16/results/sources/support-matrix.html",
+      "new": "systems_practice/daily/2026-09-16/results/sources/support-matrix.html",
+      "sha256_before": "2d613751097bd22b503de5e9842ce0591de243ee8bfd9e305371103f07b67628",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-16/results/sources/support-matrix.txt",
+      "new": "systems_practice/daily/2026-09-16/results/sources/support-matrix.txt",
+      "sha256_before": "627de15bf5d14eb61f5bd7b569a858f50823642c01601299a2eaff5f06ebe203",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-16/src/common.cpp",
+      "new": "systems_practice/daily/2026-09-16/src/common.cpp",
+      "sha256_before": "f7d7b7ccda619c025d7dd27b9c78b6059afc960362f5acce76b9542977d3ed0d",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-16/src/common.hpp",
+      "new": "systems_practice/daily/2026-09-16/src/common.hpp",
+      "sha256_before": "360cc475943fe9a1283cb54d1861555be7a89389fddf79c17f94bba73860f51f",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-16/src/cpu_check.cpp",
+      "new": "systems_practice/daily/2026-09-16/src/cpu_check.cpp",
+      "sha256_before": "ea230b405ab63888ce0d8fecb291022756762c386d8fb29631141ce446d297a9",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-16/src/trt_dynamic.cpp",
+      "new": "systems_practice/daily/2026-09-16/src/trt_dynamic.cpp",
+      "sha256_before": "866b6a40299c0efe0ef6725202b6d629dacb8685e380d371c4fcffdeb2ed55e9",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-17/CMakeLists.txt",
+      "new": "systems_practice/daily/2026-09-17/CMakeLists.txt",
+      "sha256_before": "feb51c42f3ed8c13184b3b9f88f6666d18c1228bbeed8ac71a783ae8ca3c8161",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-17/results/mac-cpu-run/output.log",
+      "new": "systems_practice/daily/2026-09-17/results/mac-cpu-run/output.log",
+      "sha256_before": "59a4e53cc461b7737ed63d5ac81192ae768583ae0a8fe0daa6fe62dea632202c",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-17/results/mac-cpu-run/sanitize.log",
+      "new": "systems_practice/daily/2026-09-17/results/mac-cpu-run/sanitize.log",
+      "sha256_before": "ccaa44960217c9d941f974e9998d8e08e7a4c5e94b17cdb093bc3ba87df090a9",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-17/src/preprocess_cpu.cpp",
+      "new": "systems_practice/daily/2026-09-17/src/preprocess_cpu.cpp",
+      "sha256_before": "69a9546e62c279e094456647035bd7261b4371d68dc00d4eafef6a7976de0885",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-17/src/rknn_stride_binding.cpp",
+      "new": "systems_practice/daily/2026-09-17/src/rknn_stride_binding.cpp",
+      "sha256_before": "75ae8a2fc5da52a960e97eee0ea8a1eb0ebf14ab076df470131c16f19e809c55",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-18/CMakeLists.txt",
+      "new": "systems_practice/daily/2026-09-18/CMakeLists.txt",
+      "sha256_before": "da92226fdc6db47e7a12846749fc38596e23f247bd428d5822b54a5f0e6e6b96",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-18/results/audit-optimized.txt",
+      "new": "systems_practice/daily/2026-09-18/results/audit-optimized.txt",
+      "sha256_before": "f578a5ba7112f8d1db5f528a97f21d9a555ad17592834c5e5dba5314ed165992",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/results/audit.txt",
+      "new": "systems_practice/daily/2026-09-18/results/audit.txt",
+      "sha256_before": "ed47cd8c108bde0a66bf5516037c56f8d60c3e253be254f3de121c171d1ab64f",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/results/cpu-optimized.txt",
+      "new": "systems_practice/daily/2026-09-18/results/cpu-optimized.txt",
+      "sha256_before": "4db34a206e5a65253164bb65e34baf4c03793b620aa6dc0af61d434075aa9eff",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/results/cpu.txt",
+      "new": "systems_practice/daily/2026-09-18/results/cpu.txt",
+      "sha256_before": "114cbd653fb52a4149fdbb75b9c597052f28850f306277457b1ea1705fad5dbc",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/results/format-optimized.txt",
+      "new": "systems_practice/daily/2026-09-18/results/format-optimized.txt",
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/results/format.txt",
+      "new": "systems_practice/daily/2026-09-18/results/format.txt",
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/results/gpu-configure.txt",
+      "new": "systems_practice/daily/2026-09-18/results/gpu-configure.txt",
+      "sha256_before": "da257b646fd37ece5e2cfe4a9915c7f4900cfb18c504c95a3352ff73841e2eb4",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/results/gpu-optimized.txt",
+      "new": "systems_practice/daily/2026-09-18/results/gpu-optimized.txt",
+      "sha256_before": "4ec5db2233ec2d32800edb615e0b8f1361894544bd90b26a2835b9cbf24d07d6",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/results/isa-optimized.txt",
+      "new": "systems_practice/daily/2026-09-18/results/isa-optimized.txt",
+      "sha256_before": "7473ba54e4edcc129397bcabecb16ea50160a5b04a8a206d3c99ccf61388d201",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/results/ncu-optimized.txt",
+      "new": "systems_practice/daily/2026-09-18/results/ncu-optimized.txt",
+      "sha256_before": "08518c25ed2db4843849ba7fb6ca8bced78db6ce26138c94bd8a57a59412705a",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/results/reject-other-arch.txt",
+      "new": "systems_practice/daily/2026-09-18/results/reject-other-arch.txt",
+      "sha256_before": "bec00502f7de74c6fdb183a95c16d66004541df07881bb1bef99ca81e1f1566e",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/results/sanitize-optimized.txt",
+      "new": "systems_practice/daily/2026-09-18/results/sanitize-optimized.txt",
+      "sha256_before": "82ff1eba68406cc97fa8ccb6d974a78768eff9586164ce1a1b0a62db8a0b32cb",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/results/sanitize.txt",
+      "new": "systems_practice/daily/2026-09-18/results/sanitize.txt",
+      "sha256_before": "5729afa0c9160c9f1c13dfcfc10a0114b98fa70d0bee6c7c9da42a67351fd76d",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/session-02/CMakeLists.txt",
+      "new": "systems_practice/daily/2026-09-18/session-02/CMakeLists.txt",
+      "sha256_before": "27e87279b4afa6072e97b2e500864df750cd994b078b5b5c5d9a342655faa74b",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-18/session-02/results/audit.txt",
+      "new": "systems_practice/daily/2026-09-18/session-02/results/audit.txt",
+      "sha256_before": "bead6b148b77cf78ca12fa4af0d3cc2dca6e07ce3cb0180df4331fba02a94687",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/session-02/results/cpu.txt",
+      "new": "systems_practice/daily/2026-09-18/session-02/results/cpu.txt",
+      "sha256_before": "fa08dd6b298da21a94cf00ed789320852b266bd9fc39bbeb94cea88a29f1cac7",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/session-02/results/format.txt",
+      "new": "systems_practice/daily/2026-09-18/session-02/results/format.txt",
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/session-02/results/gpu-configure.txt",
+      "new": "systems_practice/daily/2026-09-18/session-02/results/gpu-configure.txt",
+      "sha256_before": "da257b646fd37ece5e2cfe4a9915c7f4900cfb18c504c95a3352ff73841e2eb4",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/session-02/results/isa.txt",
+      "new": "systems_practice/daily/2026-09-18/session-02/results/isa.txt",
+      "sha256_before": "d3f6033fbf49b57d5edf628fc225aeff41aec8c7ebfa1d9705fac0662ae26239",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/session-02/results/ncu.txt",
+      "new": "systems_practice/daily/2026-09-18/session-02/results/ncu.txt",
+      "sha256_before": "39713fe3a2c5974efab8b4ef29d87fa1a80c55734bd3a513dd2f09382c5d0015",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/session-02/results/reject-other-arch.txt",
+      "new": "systems_practice/daily/2026-09-18/session-02/results/reject-other-arch.txt",
+      "sha256_before": "d61a4da5057766c92d2ac24dd596ffdc03b23a020c1a4d6b0c0f92a8ec26cedf",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/session-02/results/sanitize.txt",
+      "new": "systems_practice/daily/2026-09-18/session-02/results/sanitize.txt",
+      "sha256_before": "83d19c0b17d49c7aa23e056c861f23c013bc4ce1d8b3ed177250cc4b4aa4d62d",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/session-02/results/source-read.txt",
+      "new": "systems_practice/daily/2026-09-18/session-02/results/source-read.txt",
+      "sha256_before": "79f8c0815408e7d6376807c62df62b5707ed2c226f4b7592d248c330fe80d911",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-18/session-02/src/main.cpp",
+      "new": "systems_practice/daily/2026-09-18/session-02/src/main.cpp",
+      "sha256_before": "815165c591bc0692fc6e70a0fe508912a3fd8372040f4116d43dc6edfc9f7b7c",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-18/session-02/src/quant.hpp",
+      "new": "systems_practice/daily/2026-09-18/session-02/src/quant.hpp",
+      "sha256_before": "a62b2ef275ab1b36a61fc16b4f8ed946d2142473bbeebfe1465ef2190c39274e",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-18/session-02/src/quant_gemm.cu",
+      "new": "systems_practice/daily/2026-09-18/session-02/src/quant_gemm.cu",
+      "sha256_before": "448886663efa98a7212481e957c0aef302398dab6148002c39cef3f1b3113766",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-18/src/cpu_check.cpp",
+      "new": "systems_practice/daily/2026-09-18/src/cpu_check.cpp",
+      "sha256_before": "f06fb7d73b3ab8f08f9e8c345eeba2578cf24faf6d914aad5532b3f488f3de6f",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-18/src/direct_pool.hpp",
+      "new": "systems_practice/daily/2026-09-18/src/direct_pool.hpp",
+      "sha256_before": "ba1119bfceefea60b9e7114dc5c8bcc6424fac41e56a096326d577fbacf6b992",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-18/src/options.hpp",
+      "new": "systems_practice/daily/2026-09-18/src/options.hpp",
+      "sha256_before": "19e3369b8059a4fcad1a738f905525ebe50a375c38a04b105fa9c393ff77bc71",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-18/src/pool_direct.ptx",
+      "new": "systems_practice/daily/2026-09-18/src/pool_direct.ptx",
+      "sha256_before": "e16274f81708c32049b51bdcaa04141d5e008086ef4560e1ee5687879784ea66",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-18/src/pooling.hpp",
+      "new": "systems_practice/daily/2026-09-18/src/pooling.hpp",
+      "sha256_before": "deae72dce9f10472e2e8dc15e0c95c5d64b19c7319553b3f2af9178a7539a0a5",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-18/src/ptx_pool.cu",
+      "new": "systems_practice/daily/2026-09-18/src/ptx_pool.cu",
+      "sha256_before": "5ddc42ad34024ca069e06c7642adacb5cff39403ed7224b551f38b42d963df4e",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-19/CMakeLists.txt",
+      "new": "systems_practice/daily/2026-09-19/CMakeLists.txt",
+      "sha256_before": "6a047697125663c126c4e2ac945bf9e7bf504326731b5005d96ddc636e29c9b4",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-19/quantization/awq/results/dependencies.txt",
+      "new": "systems_practice/quantization/2026-09-19/awq/results/dependencies.txt",
+      "sha256_before": "99d00b2df0028ef4b8aa3a697d842d850032ed84e2c173d24dc0f8deb30aff78",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-19/quantization/awq/results/run.txt",
+      "new": "systems_practice/quantization/2026-09-19/awq/results/run.txt",
+      "sha256_before": "a1276b1c898d35a884b390987c9627b975d73be494f0fe90d8bd65bfae53808d",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-19/results/audit.txt",
+      "new": "systems_practice/daily/2026-09-19/results/audit.txt",
+      "sha256_before": "b13c517b1ee66c781c7ff27d2292dd02a7854fbe457f06791810a69f986f5443",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-19/results/cpu.txt",
+      "new": "systems_practice/daily/2026-09-19/results/cpu.txt",
+      "sha256_before": "852407dd76637927fa490d1c33545a6aada25e2331235138424648632c7afdd5",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-19/results/gpu.txt",
+      "new": "systems_practice/daily/2026-09-19/results/gpu.txt",
+      "sha256_before": "da257b646fd37ece5e2cfe4a9915c7f4900cfb18c504c95a3352ff73841e2eb4",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-19/results/isa.txt",
+      "new": "systems_practice/daily/2026-09-19/results/isa.txt",
+      "sha256_before": "ee68f925efc293cae3ef2b611cc0717493ba7e043c4b201cef7f688e2a25dd36",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-19/results/profile.txt",
+      "new": "systems_practice/daily/2026-09-19/results/profile.txt",
+      "sha256_before": "4b3b1fd9fc2c39cbfdb3791458d697354848b2a046011922e3e663ab66419468",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-19/results/sanitize.txt",
+      "new": "systems_practice/daily/2026-09-19/results/sanitize.txt",
+      "sha256_before": "618b77bb149a28e65029bb8b2fc67bb13288aef56870caf267eaaecb68258873",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-19/results/source-fetch.txt",
+      "new": "systems_practice/daily/2026-09-19/results/source-fetch.txt",
+      "sha256_before": "79f8c0815408e7d6376807c62df62b5707ed2c226f4b7592d248c330fe80d911",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-19/results/verification.json",
+      "new": "systems_practice/daily/2026-09-19/results/verification.json",
+      "sha256_before": "6fe41f7f76de4becbf79454cf4ff076f122e8c49e93354c4fa1d4312e22499af",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-19/src/cpu_check.cpp",
+      "new": "systems_practice/daily/2026-09-19/src/cpu_check.cpp",
+      "sha256_before": "5a1b8a00e69814574e96b304220d5adf21c4ed3bc5462065c68469aee0492c3a",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-19/src/layout.hpp",
+      "new": "systems_practice/daily/2026-09-19/src/layout.hpp",
+      "sha256_before": "86be97d23841029f59bc1b6872cb259406e8fe0e7a42dde91f2884a6fa4fc954",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-19/src/transpose.cu",
+      "new": "systems_practice/daily/2026-09-19/src/transpose.cu",
+      "sha256_before": "31daf5699389dbc3c2c21fa36718afcddde2177edf796d76a4b3d57380fba9dc",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-20/CMakeLists.txt",
+      "new": "systems_practice/daily/2026-09-20/CMakeLists.txt",
+      "sha256_before": "c312c8835183477716cf4eeeef7acfa82fadf40d2bd988eb956eebd022999b6f",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-20/quantization/gptq/results/native.txt",
+      "new": "systems_practice/quantization/2026-09-20/gptq/results/native.txt",
+      "sha256_before": "9e9e2fa48d07f8dab19f284f4644fc6c99d87af4f57959edb010a142b9c1a0be",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-20/results/cpu.txt",
+      "new": "systems_practice/daily/2026-09-20/results/cpu.txt",
+      "sha256_before": "8b438aa4d6c25b1ff21077e53f9753990550b49dc6be5d686fde6684d2a91c83",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-20/results/environment.json",
+      "new": "systems_practice/daily/2026-09-20/results/environment.json",
+      "sha256_before": "2fdeda0d58b8242e312ab8ba642d8d8e2e32d5fde746632c44575fe1e7634bec",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-20/results/format.txt",
+      "new": "systems_practice/daily/2026-09-20/results/format.txt",
+      "sha256_before": "17a66e75457476daa4b0839c14e77e3ba65a60b4164ed7b7b76f2e0e6e92a4d5",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-20/results/gpu.txt",
+      "new": "systems_practice/daily/2026-09-20/results/gpu.txt",
+      "sha256_before": "42f61d536ceb86f51434a1ab07f105dffb56ee141b8fd8b7cd133a4c8245c9f0",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-20/results/isa.txt",
+      "new": "systems_practice/daily/2026-09-20/results/isa.txt",
+      "sha256_before": "58848f6be83a6ed1d14a427b15d68500b5e3c53159b964cbed230872b8a4f00b",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-20/results/profile.txt",
+      "new": "systems_practice/daily/2026-09-20/results/profile.txt",
+      "sha256_before": "bdb29f68909ae6e6d9b5e3c136b39e6685f9e89de865e0a839db7c8a4baef4f7",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-20/results/qa.txt",
+      "new": "systems_practice/daily/2026-09-20/results/qa.txt",
+      "sha256_before": "1fdeb7dc5b4a2355ee87c798c4798ca86ed54c5d053a7477d33a8ec4b6f2f03e",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-20/results/sanitize.txt",
+      "new": "systems_practice/daily/2026-09-20/results/sanitize.txt",
+      "sha256_before": "1c8706e03e48b4334ae5a5f25ef7ec78361c97a10e45d543ceda9aca864ee66c",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-20/results/sources.json",
+      "new": "systems_practice/daily/2026-09-20/results/sources.json",
+      "sha256_before": "7c9fd7f775ad3ff42e6bdaf9273607dafd14841cc9af0114859343d0ef4742c5",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-20/results/verification.json",
+      "new": "systems_practice/daily/2026-09-20/results/verification.json",
+      "sha256_before": "3a1a98209baf55e358aaafce9eb64f5123824c843a2c7bb98d6da31d33be869b",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-20/results/wrong-arch.txt",
+      "new": "systems_practice/daily/2026-09-20/results/wrong-arch.txt",
+      "sha256_before": "fb43956c3391a4b55dde2cdeef97af605091491fe7e24ad76e2251dde939d464",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-20/src/cpu_check.cpp",
+      "new": "systems_practice/daily/2026-09-20/src/cpu_check.cpp",
+      "sha256_before": "401549250926e6b6d7e3c24887680e39c15d0c5ce1c21c8d79f869d25e3ce2f2",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-20/src/reduce.hpp",
+      "new": "systems_practice/daily/2026-09-20/src/reduce.hpp",
+      "sha256_before": "013d7cec4ac8ab12272a51e0dff2525e1ddaf96fab64ca3bd9201a2c01806c2a",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-20/src/row_reduce.cu",
+      "new": "systems_practice/daily/2026-09-20/src/row_reduce.cu",
+      "sha256_before": "819ee0e2c57bd8bde01c034315afc8610350935e962425b245a49e3dcb1e0ee1",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-21/CMakeLists.txt",
+      "new": "systems_practice/daily/2026-09-21/CMakeLists.txt",
+      "sha256_before": "c4934178beb8dcafcb586b8b7ff2895ff104d4efdc18c0f7aaa1e3d618ea29f5",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-21/quantization/adaround/results/native.txt",
+      "new": "systems_practice/quantization/2026-09-21/adaround/results/native.txt",
+      "sha256_before": "6ac63a1d81043680bbb0ce149575f68723e339ad80514313d28754dbe36c5d21",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-21/quantization/adaround/results/packing.txt",
+      "new": "systems_practice/quantization/2026-09-21/adaround/results/packing.txt",
+      "sha256_before": "7e8bfd153e1b993fdbd32fbb51fe75e3b20c18edc48c59c199ae39778c18763f",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-21/results/audit.txt",
+      "new": "systems_practice/daily/2026-09-21/results/audit.txt",
+      "sha256_before": "9c730a3137b1ae72e3d08ed8ec06f02df122abadce37d8da68c6050affc85728",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-21/results/contracts.txt",
+      "new": "systems_practice/daily/2026-09-21/results/contracts.txt",
+      "sha256_before": "778b7e835fa24418f747ac18b0d7683b1eb2a8cf784bfcb8ba438be2d3b209e1",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-21/results/cpu.txt",
+      "new": "systems_practice/daily/2026-09-21/results/cpu.txt",
+      "sha256_before": "d14b792a7cafe0f5c26a11ea115212d5751803ee01dfd7287ea1244b86fd8041",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-21/results/environment.json",
+      "new": "systems_practice/daily/2026-09-21/results/environment.json",
+      "sha256_before": "88200c55e2f17f7fcd13f7cf2b08e21cf8fa9a1f5f644b20166b7146d1d90871",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-21/results/format.txt",
+      "new": "systems_practice/daily/2026-09-21/results/format.txt",
+      "sha256_before": "371164db94ab0d1fc0b484ba316d36b444978bc68e6db96915c96ddffaa272a8",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-21/results/sanitize.txt",
+      "new": "systems_practice/daily/2026-09-21/results/sanitize.txt",
+      "sha256_before": "6a375fcddd7e23df93973c71b1a1c05dc44c641c3b6d21359527d983796c401d",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-21/results/source-curl-error.txt",
+      "new": "systems_practice/daily/2026-09-21/results/source-curl-error.txt",
+      "sha256_before": "79f8c0815408e7d6376807c62df62b5707ed2c226f4b7592d248c330fe80d911",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-21/results/source-reading.json",
+      "new": "systems_practice/daily/2026-09-21/results/source-reading.json",
+      "sha256_before": "d1f035920b150caf9dae0d909d8aad6127e89c5a63cc4da00ecd0b3caff74ad1",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-21/results/tsan.txt",
+      "new": "systems_practice/daily/2026-09-21/results/tsan.txt",
+      "sha256_before": "52d26c39c1f530519c4a5f2f64129b6f776629676fa6596f9b731d9f0edff4c6",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-21/results/verification.json",
+      "new": "systems_practice/daily/2026-09-21/results/verification.json",
+      "sha256_before": "5900466451484caa328d3de3302dca746c95a0c937e78555abf288ab24883cba",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-21/src/bounded_pool.hpp",
+      "new": "systems_practice/daily/2026-09-21/src/bounded_pool.hpp",
+      "sha256_before": "b3f58f3b874b849e76e10a6c59a1a25e152d87bb24c49b40428fd593c3f2606e",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-21/src/main.cpp",
+      "new": "systems_practice/daily/2026-09-21/src/main.cpp",
+      "sha256_before": "05855cfb7a00cb3b2555f4a3d4f65e964b0e5258af4cd95ffbd20480241bf10a",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-22/CMakeLists.txt",
+      "new": "systems_practice/daily/2026-09-22/CMakeLists.txt",
+      "sha256_before": "fb0765bf4645fabebea7c588d0de129091598c75db236a1ed190fbc7291a39b8",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-22/quantization/autoround/results/native-attempt.txt",
+      "new": "systems_practice/quantization/2026-09-22/autoround/results/native-attempt.txt",
+      "sha256_before": "113ff3b05a7b923c34b728e0e46d1949a851ea8df1b6096a17a1ec391d88d959",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-22/results/audit.txt",
+      "new": "systems_practice/daily/2026-09-22/results/audit.txt",
+      "sha256_before": "474c6318185aa79cdbb2c1d82017729b2d3521b3603ae734818769bee2d94485",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-22/results/cpu.txt",
+      "new": "systems_practice/daily/2026-09-22/results/cpu.txt",
+      "sha256_before": "e33f6313318de61979938212dbeff501e800b748c992e6386098d6297f76b586",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-22/results/final-check.txt",
+      "new": "systems_practice/daily/2026-09-22/results/final-check.txt",
+      "sha256_before": "e25c5a6081c7f200691979fd1dc0b02559cfdf83fcac826bba4825d4a5a8e8fc",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-22/results/format.txt",
+      "new": "systems_practice/daily/2026-09-22/results/format.txt",
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-22/results/hot_loop-disassembly.txt",
+      "new": "systems_practice/daily/2026-09-22/results/hot_loop-disassembly.txt",
+      "sha256_before": "89ad379a7200516d4e589e7268b10d776cbfeab68f2a9cc49cc1b4c3756a7f92",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-22/results/hot_loop.s",
+      "new": "systems_practice/daily/2026-09-22/results/hot_loop.s",
+      "sha256_before": "44036f5b1ad3cc29475a1d91784fea5bf1def9e2625fc4bd8e8712ce03704070",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-22/results/sanitize.txt",
+      "new": "systems_practice/daily/2026-09-22/results/sanitize.txt",
+      "sha256_before": "49c857233933c4cea23223d9314cd00072bb793e50a367f55d29dde103171a2d",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-22/results/source.json",
+      "new": "systems_practice/daily/2026-09-22/results/source.json",
+      "sha256_before": "3a7984ed38d0c5ca2bc114ed87bc4b2cb31a8f95971f575d50727b20fdcbc335",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-22/results/tsan.txt",
+      "new": "systems_practice/daily/2026-09-22/results/tsan.txt",
+      "sha256_before": "fd87437de33c42b37f687492888835f829f7403e971b96444c2799e9d876f796",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-22/results/verification.json",
+      "new": "systems_practice/daily/2026-09-22/results/verification.json",
+      "sha256_before": "ba67c2d9b701b1bd5673e875d8a9359b0e3dcf6baa1b5338657627b45aef69f3",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/2026-09-22/src/counters.hpp",
+      "new": "systems_practice/daily/2026-09-22/src/counters.hpp",
+      "sha256_before": "fe656ca4031dbb5e929c9d87dd1f00bcfe2ce680ac7205a761875cc9bec8a9f0",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-22/src/hot_loop.cpp",
+      "new": "systems_practice/daily/2026-09-22/src/hot_loop.cpp",
+      "sha256_before": "cf67483ceec29330cd11cef82470137ac8683c0205fb1ff1cd826883b862eaea",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/2026-09-22/src/main.cpp",
+      "new": "systems_practice/daily/2026-09-22/src/main.cpp",
+      "sha256_before": "d181dee0deb8987df1b91ded6b36bfafde758dd76998dd9092d51ed3363bbf67",
+      "immutable_evidence": false
+    },
+    {
+      "old": "systems_practice/arm/2026-09-22/results/target.json",
+      "new": "systems_practice/arm/2026-09-22/results/target.json",
+      "sha256_before": "ec0a0776a22178cd144aee5568f5bdf038de16a4e3550a93aa0ce41560d80165",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/paper/2026-09-21/01-sculpt/results/output.json",
+      "new": "systems_practice/paper/2026-09-21/01-sculpt/results/output.json",
+      "sha256_before": "17528b43c61ec0ee17dfe2fb5bb92c0ed15d75116fc4e4f2d44eba414fae90f8",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/paper/2026-09-21/02-edge-deployment/results/output.json",
+      "new": "systems_practice/paper/2026-09-21/02-edge-deployment/results/output.json",
+      "sha256_before": "557ae2f1d2d1f0d186896393b98914178ed5d66e29531cb46fa030ac26fe6515",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/paper/2026-09-22/01-real-q/results/output.json",
+      "new": "systems_practice/paper/2026-09-22/01-real-q/results/output.json",
+      "sha256_before": "1008a9a8f7b0368ce0000bea2cfcf0cd843d2cceb890722af090273e04b7dfb6",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/paper/2026-09-22/02-ests/results/output.json",
+      "new": "systems_practice/paper/2026-09-22/02-ests/results/output.json",
+      "sha256_before": "58974be11856e0deda5cd5c6daa7e4ea5787039b3a9f761b8d93307e6073258c",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/quantization/results/2026-09-18-awq-source.json",
+      "new": "systems_practice/quantization/results/2026-09-18-awq-source.json",
+      "sha256_before": "7f038dac942506d1b0726e4e3167819ac69c4ea49b7b415503cd652f967d06ec",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/quantization/results/2026-09-18-workflow-checks.txt",
+      "new": "systems_practice/quantization/results/2026-09-18-workflow-checks.txt",
+      "sha256_before": "036fb1b4265e14b39ff9e3d589b7bb5de69dc4c0faa1e7b8fd3852259353cc52",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/references/rk3588-arm/arm-acle-README.md",
+      "new": "systems_practice/docs/references/rk3588-arm/arm-acle-README.md",
+      "sha256_before": "2c60c53906e7b12e4c5ccc2af8c52087ea63eb1bb7efb8930b1b2b054e0943f9",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/references/rk3588-arm/ggml-README.md",
+      "new": "systems_practice/docs/references/rk3588-arm/ggml-README.md",
+      "sha256_before": "359c498c79a326f621323e44fd3d3470a1ec635b0031206f35ad5e85a4b830c7",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/references/rk3588-arm/ncnn-README.md",
+      "new": "systems_practice/docs/references/rk3588-arm/ncnn-README.md",
+      "sha256_before": "c2c82d74af40c50b29e59e6ef8102a34b0bfd5776100feda76797b3328c1f20f",
+      "immutable_evidence": true
+    },
+    {
+      "old": "systems_practice/references/rk3588-arm/rknn-toolkit2-README.md",
+      "new": "systems_practice/docs/references/rk3588-arm/rknn-toolkit2-README.md",
+      "sha256_before": "ee5e13be34a4cdc98b08b9124434d4dc27fb69c7dd9ed71f411f564011272e75",
+      "immutable_evidence": true
+    }
+  ]
+}

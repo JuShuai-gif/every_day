@@ -1,0 +1,14 @@
+{
+  "authored_local_links_checked": 321,
+  "raw_upstream_readme_snapshots_excluded": [
+    "systems_practice/docs/references/rk3588-arm/arm-acle-README.md",
+    "systems_practice/docs/references/rk3588-arm/rknn-toolkit2-README.md",
+    "systems_practice/docs/references/rk3588-arm/ggml-README.md",
+    "systems_practice/docs/references/rk3588-arm/ncnn-README.md"
+  ],
+  "progress_preserved": true,
+  "all_original_files_present": true,
+  "raw_evidence_and_cpp_cmake_hashes_match": true,
+  "old_root_date_directories": 0,
+  "nested_daily_quantization_directories": 0
+}

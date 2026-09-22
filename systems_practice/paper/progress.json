@@ -11,7 +11,7 @@
     "edge_deployment"
   ],
   "deduplicate_by": "versionless_arxiv_id_or_doi",
-  "schedule_integration": "Existing daily 08:30 Asia/Shanghai task reads systems_practice/PRACTICE_SPEC.md; no scheduler mutation.",
+  "schedule_integration": "Existing daily 08:30 Asia/Shanghai task reads systems_practice/docs/PRACTICE_SPEC.md; no scheduler mutation.",
   "history": [
     {
       "id": "arxiv:2609.01743",

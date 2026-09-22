@@ -1,0 +1,11 @@
+{
+  "status": "blocked",
+  "errors": [
+    "Python >=3.10 required; actual=3.9.6",
+    "missing package: torch",
+    "missing package: auto_round",
+    "missing package: transformers",
+    "missing package: numpy",
+    "missing pinned checkout; set AUTOROUND_SOURCE"
+  ]
+}

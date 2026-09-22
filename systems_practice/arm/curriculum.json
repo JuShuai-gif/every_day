@@ -265,7 +265,7 @@
     "2026-09-22 用户确认 Cortex 内容；在既有节点明确加入，不提前推进学习进度。",
     "2026-09-22 用户要求实际板卡贯穿；优先 RK3588/Jetson，Cortex-R/M 仅作相关场景对比；每日仍按序推进。"
   ],
-  "board_reference": "BOARDS.md",
+  "board_reference": "../docs/arm/BOARDS.md",
   "primary_devices": [
     "Radxa ROCK 5B (RK3588)",
     "Jetson AGX Thor Developer Kit (T5000)"

@@ -1,0 +1,205 @@
+{
+  "date": "2026-09-22",
+  "operation": "directory reorganization only; no curriculum advancement",
+  "main_engineering_runs": [
+    {
+      "path": "daily/2026-09-14",
+      "command": [
+        "sh",
+        "/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-09-14/run.sh",
+        "cpu"
+      ],
+      "exit_code": 0,
+      "seconds": 2.431,
+      "log": "results/daily-2026-09-14.txt"
+    },
+    {
+      "path": "daily/2026-09-15",
+      "command": [
+        "bash",
+        "/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-09-15/run.sh",
+        "cpu"
+      ],
+      "exit_code": 0,
+      "seconds": 1.161,
+      "log": "results/daily-2026-09-15.txt"
+    },
+    {
+      "path": "daily/2026-09-16",
+      "command": [
+        "bash",
+        "/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-09-16/run.sh",
+        "cpu"
+      ],
+      "exit_code": 0,
+      "seconds": 1.322,
+      "log": "results/daily-2026-09-16.txt"
+    },
+    {
+      "path": "daily/2026-09-17",
+      "command": [
+        "sh",
+        "/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-09-17/run.sh",
+        "cpu"
+      ],
+      "exit_code": 0,
+      "seconds": 1.003,
+      "log": "results/daily-2026-09-17.txt"
+    },
+    {
+      "path": "daily/2026-09-18",
+      "command": [
+        "sh",
+        "/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-09-18/run.sh",
+        "cpu"
+      ],
+      "exit_code": 0,
+      "seconds": 1.111,
+      "log": "results/daily-2026-09-18.txt"
+    },
+    {
+      "path": "daily/2026-09-18/session-02",
+      "command": [
+        "sh",
+        "/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-09-18/session-02/run.sh",
+        "cpu"
+      ],
+      "exit_code": 0,
+      "seconds": 1.54,
+      "log": "results/daily-2026-09-18-session-02.txt"
+    },
+    {
+      "path": "daily/2026-09-19",
+      "command": [
+        "sh",
+        "/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-09-19/run.sh",
+        "cpu"
+      ],
+      "exit_code": 0,
+      "seconds": 1.05,
+      "log": "results/daily-2026-09-19.txt"
+    },
+    {
+      "path": "daily/2026-09-20",
+      "command": [
+        "sh",
+        "/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-09-20/run.sh",
+        "cpu"
+      ],
+      "exit_code": 0,
+      "seconds": 1.16,
+      "log": "results/daily-2026-09-20.txt"
+    },
+    {
+      "path": "daily/2026-09-21",
+      "command": [
+        "sh",
+        "/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-09-21/run.sh",
+        "cpu"
+      ],
+      "exit_code": 0,
+      "seconds": 1.75,
+      "log": "results/daily-2026-09-21.txt"
+    },
+    {
+      "path": "daily/2026-09-22",
+      "command": [
+        "sh",
+        "/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-09-22/run.sh",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 1.171,
+      "log": "results/daily-2026-09-22.txt"
+    }
+  ],
+  "auxiliary_runs": [
+    {
+      "name": "arm-query",
+      "command": [
+        "sh",
+        "systems_practice/arm/2026-09-22/run.sh"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "results/arm-query.txt"
+    },
+    {
+      "name": "quant-fetch-help",
+      "command": [
+        "python3",
+        "systems_practice/quantization/fetch_source.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "results/quant-fetch-help.txt"
+    },
+    {
+      "name": "adaround-packing",
+      "command": [
+        "python3",
+        "systems_practice/quantization/2026-09-21/adaround/packing.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "results/adaround-packing.txt"
+    },
+    {
+      "name": "awq-entry",
+      "command": [
+        "sh",
+        "systems_practice/quantization/2026-09-19/awq/run.sh"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "log": "results/awq-entry.txt"
+    },
+    {
+      "name": "gptq-entry",
+      "command": [
+        "sh",
+        "systems_practice/quantization/2026-09-20/gptq/run.sh"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "log": "results/gptq-entry.txt"
+    },
+    {
+      "name": "adaround-entry",
+      "command": [
+        "sh",
+        "systems_practice/quantization/2026-09-21/adaround/run.sh"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "log": "results/adaround-entry.txt"
+    },
+    {
+      "name": "autoround-entry",
+      "command": [
+        "sh",
+        "systems_practice/quantization/2026-09-22/autoround/run.sh"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "log": "results/autoround-entry.txt"
+    }
+  ],
+  "native_quantization_status": "entry points reached existing missing-source/dependency preflight; no native algorithm run",
+  "historical_evidence_files_preserved": 99,
+  "source_and_cmake_bytes_unchanged": true,
+  "immutable_hash_checks": 140,
+  "retired_cache_roots": 16,
+  "retired_cache_location": "systems_practice/.tmp/layout-migration/old-builds",
+  "gpu_npu_board_tests": false,
+  "format_cpp": "No C/C++/CUDA/CMake content changed; not reformatted",
+  "pathmap": "pathmap.json",
+  "progress": {
+    "main_next": "ARM SIMD / NEON",
+    "quantization_next": "hqq",
+    "arm_next": "02",
+    "paper_new_selection": false
+  },
+  "navigation_check": "authored Markdown links validated; raw upstream README snapshots preserve their original upstream-relative links"
+}

@@ -1,0 +1,10 @@
+usage: fetch_source.py [-h] --record RECORD method
+
+拉取选定方法的浅仓库和少量真实源码；不安装、不运行第三方代码。
+
+positional arguments:
+  method           catalog.json中的方法id，例如awq/gptq/hqq
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --record RECORD  新的source.json路径，必须位于systems_practice内
