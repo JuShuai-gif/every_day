@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-23",
+  "generated_at_utc": "2026-09-23T00:51:26.492500+00:00",
+  "host": "Darwin25.6.0 arm64 / AppleClang21.0.0",
+  "release_compiled": true,
+  "release_run": true,
+  "asan_ubsan_run": true,
+  "armv8_base_run": true,
+  "dotprod_native_compiled": true,
+  "dotprod_base_compiled": false,
+  "correctness_comparisons_per_build": 1218,
+  "invalid_cases_per_build": 10,
+  "source_read": true,
+  "assembly_generated": true,
+  "assembly_scope": "actual clang -S output; not instruction latency measurements",
+  "thor_verified": false,
+  "rk3588_verified": false,
+  "gpu_tested": false,
+  "npu_tested": false,
+  "performance": {
+    "boundary": "CPU single-thread repeated GEMV shape M1 N64 K1027; includes calls and scale checking; excludes quantization/allocation/I/O",
+    "warmups": 20,
+    "samples": 100,
+    "scalar_p50_p95_us": [
+      36.458,
+      39.583
+    ],
+    "neon_p50_p95_us": [
+      9.541,
+      10.917
+    ],
+    "dot_p50_p95_us": [
+      8.833,
+      10.375
+    ]
+  },
+  "evidence": [
+    "cpu.txt",
+    "sanitize.txt",
+    "base.txt",
+    "neon.s",
+    "scalar.s",
+    "final-cpu-check.txt"
+  ],
+  "limitations": [
+    "No fixed clock/core or PMU observation",
+    "No NVIDIA GPU/nvcc/ncu present",
+    "No board OS/SDK or execution evidence",
+    "No GPU architecture comparison cursor advanced on CPU lesson"
+  ],
+  "format_cpp_exit_code": 0,
+  "scoped_clang_format_dry_run_exit_code": 0,
+  "final_formatted_release_check": true,
+  "static_audit": "audit-final.json"
+}

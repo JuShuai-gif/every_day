@@ -1,0 +1,62 @@
+{
+  "method": "hqq",
+  "date": "2026-09-23",
+  "repository": "https://github.com/dropbox/hqq",
+  "commit": "d88a488ec8aa2d58362ef2038a52bca862db2e74",
+  "source_record": "source.json",
+  "source_fetched": false,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": [
+    "Quantizer.quantize/dequantize",
+    "HQQLinear.initialize/quantize/dequantize/forward_pytorch/state_dict/load_state_dict",
+    "BaseQuantizeConfig",
+    "optimize_weights_proximal_legacy",
+    "optimize_weights_proximal_legacy_step",
+    "shrink_lp_op",
+    "optimize_weights_proximal alias",
+    "BitPack.pack_4bit_u8/unpack_4bit_u8",
+    "encode_safetensor_type/decode_safetensor_type",
+    "is_divisible",
+    "setup version0.2.8.post1",
+    "DISABLE_CUDA install hook",
+    "Basic Usage",
+    "Installation",
+    "Backends",
+    "Apache-2.0"
+  ],
+  "evidence": [
+    "source-fetch.json",
+    "source-migrated-fetch.json",
+    "upstream_api.py",
+    "results/native-attempt.txt"
+  ],
+  "blockers": [
+    "GitHub local git DNS failure, no verifiable cached checkout",
+    "Python3.9.6 below chosen example floor3.10",
+    "torch/numpy/termcolor missing",
+    "Thor/nvcc/ncu unavailable; no GPU backend verified"
+  ],
+  "language": "Python/PyTorch",
+  "native_backend": "PYTORCH_FORWARD on CPU, FP32 dequantization+matmul",
+  "no_dependency_install": true,
+  "no_model_download": true,
+  "performance_measured": false,
+  "compatibility_source": {
+    "url": "https://developer.nvidia.com/embedded/jetpack/downloads",
+    "read_on": "2026-09-23",
+    "official_combination": [
+      "JetPack7.2.1",
+      "Jetson Linux39.2.1",
+      "CUDA13.2.1",
+      "AGX Thor/T5000 listed"
+    ],
+    "does_not_verify": [
+      "PyTorch SM110 wheel",
+      "HQQ CUDA/GemLite backend",
+      "actual driver or ncu version"
+    ]
+  }
+}

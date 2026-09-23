@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/Users/guhaoran/code/EveryDay/systems_practice/paper/2026-09-23/01-qah/example.py", line 97, in <module>
+    main()
+  File "/Users/guhaoran/code/EveryDay/systems_practice/paper/2026-09-23/01-qah/example.py", line 82, in main
+    w, trace, delta = train(recovered, scales, train_x, targets, 150)
+  File "/Users/guhaoran/code/EveryDay/systems_practice/paper/2026-09-23/01-qah/example.py", line 55, in train
+    trace.append({'step': step+1, 'train_kl': evaluate(w, scales, data, targets)})
+  File "/Users/guhaoran/code/EveryDay/systems_practice/paper/2026-09-23/01-qah/example.py", line 33, in evaluate
+    total += sum(kl(p, forward(quant, x[:4]))
+  File "/Users/guhaoran/code/EveryDay/systems_practice/paper/2026-09-23/01-qah/example.py", line 33, in <genexpr>
+    total += sum(kl(p, forward(quant, x[:4]))
+  File "/Users/guhaoran/code/EveryDay/systems_practice/paper/2026-09-23/01-qah/example.py", line 25, in kl
+    return sum(a * math.log(a / max(b, 1e-30)) for a, b in zip(p, q))
+  File "/Users/guhaoran/code/EveryDay/systems_practice/paper/2026-09-23/01-qah/example.py", line 25, in <genexpr>
+    return sum(a * math.log(a / max(b, 1e-30)) for a, b in zip(p, q))
+ValueError: math domain error

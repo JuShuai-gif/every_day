@@ -10,7 +10,7 @@
 
 每课的 README 与代码、运行脚本和结果放在一起。学习路线、栏目规则等通用说明集中在 docs/。
 
-当前入口：[2026-09-22 主课](daily/2026-09-22/README.md) · [AutoRound](quantization/2026-09-22/autoround/README.md) · [ARM 第 01 节](arm/2026-09-22/README.md) · [两篇论文](paper/2026-09-22/README.md)。
+当前入口：[2026-09-23 主课](daily/2026-09-23/README.md) · [HQQ](quantization/2026-09-23/hqq/README.md) · [ARM 第 02 节](arm/2026-09-23/README.md) · [两篇论文](paper/2026-09-23/README.md)。
 
 旧规范和旧总索引文件保留为兼容导航，正文只有一份；历史日志中的旧路径保留原样。迁移对应表见 [目录说明](docs/LAYOUT.md)。
 

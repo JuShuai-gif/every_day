@@ -1,0 +1,90 @@
+{
+  "status": "independent mechanism only",
+  "format": "INT4 symmetric fake quant, FP64 Python arithmetic; NOT MXFP4 or packed storage",
+  "train_validation_test": [
+    37,
+    19,
+    41
+  ],
+  "teacher_student_parameters": [
+    24,
+    16
+  ],
+  "test_kl_before": 0.2811980949477728,
+  "recovery_trace": [
+    {
+      "step": 1,
+      "train_kl": 0.14523432409250026
+    },
+    {
+      "step": 50,
+      "train_kl": 0.11500845113985497
+    },
+    {
+      "step": 80,
+      "train_kl": 0.1148093626531008
+    }
+  ],
+  "runs": {
+    "original_teacher": {
+      "train_trace": [
+        {
+          "step": 1,
+          "train_kl": 0.11567803398599542
+        },
+        {
+          "step": 50,
+          "train_kl": 0.11695003061335844
+        },
+        {
+          "step": 150,
+          "train_kl": 0.11636705143030057
+        }
+      ],
+      "max_parameter_update": 0.045614416132355395,
+      "validation_kl": 0.21538705780262832,
+      "test_kl": 0.27642792737980737,
+      "chunk_vs_dense_abs": 5.551115123125783e-17
+    },
+    "recovered_teacher": {
+      "train_trace": [
+        {
+          "step": 1,
+          "train_kl": 0.0009643723871246481
+        },
+        {
+          "step": 50,
+          "train_kl": 0.0006770886523784571
+        },
+        {
+          "step": 150,
+          "train_kl": 0.002023176651528201
+        }
+      ],
+      "max_parameter_update": 0.04489942193287466,
+      "validation_kl": 0.21385885084483386,
+      "test_kl": 0.2732913826625933,
+      "chunk_vs_dense_abs": 1.1102230246251565e-16
+    },
+    "hard_labels": {
+      "train_trace": [
+        {
+          "step": 1,
+          "train_kl": 0.861221635068987
+        },
+        {
+          "step": 50,
+          "train_kl": 0.7705295481122232
+        },
+        {
+          "step": 150,
+          "train_kl": 0.7652160055552839
+        }
+      ],
+      "max_parameter_update": 0.5043165370854491,
+      "validation_kl": 0.26861221309755373,
+      "test_kl": 0.34974108943914567,
+      "chunk_vs_dense_abs": 5.551115123125783e-17
+    }
+  }
+}

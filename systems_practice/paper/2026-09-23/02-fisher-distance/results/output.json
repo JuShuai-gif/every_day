@@ -1,0 +1,109 @@
+{
+  "status": "independent mechanism only; no network retraining or sparse kernel",
+  "calibration_test_shapes": [
+    [
+      64,
+      3
+    ],
+    [
+      128,
+      3
+    ]
+  ],
+  "gradient_max_abs": 2.052780168071422e-11,
+  "path_comparison": [
+    {
+      "coordinate": 0,
+      "nodes": 3,
+      "paper_rms": 0.11587303965221092,
+      "trapezoid_length": 0.11596435353046608
+    },
+    {
+      "coordinate": 0,
+      "nodes": 9,
+      "paper_rms": 0.11601037328860951,
+      "trapezoid_length": 0.11605008020531188
+    },
+    {
+      "coordinate": 0,
+      "nodes": 33,
+      "paper_rms": 0.1160447412446495,
+      "trapezoid_length": 0.11605542688735257
+    },
+    {
+      "coordinate": 1,
+      "nodes": 3,
+      "paper_rms": 0.3018268401685903,
+      "trapezoid_length": 0.30360483315340486
+    },
+    {
+      "coordinate": 1,
+      "nodes": 9,
+      "paper_rms": 0.30457493254522416,
+      "trapezoid_length": 0.3053094440809105
+    },
+    {
+      "coordinate": 1,
+      "nodes": 33,
+      "paper_rms": 0.30526868044396444,
+      "trapezoid_length": 0.30541466572333786
+    },
+    {
+      "coordinate": 2,
+      "nodes": 3,
+      "paper_rms": 0.3174575312568348,
+      "trapezoid_length": 0.31862884521515256
+    },
+    {
+      "coordinate": 2,
+      "nodes": 9,
+      "paper_rms": 0.3194840964755565,
+      "trapezoid_length": 0.3199412353099796
+    },
+    {
+      "coordinate": 2,
+      "nodes": 33,
+      "paper_rms": 0.3199905611465045,
+      "trapezoid_length": 0.3200228729942565
+    }
+  ],
+  "pruning": {
+    "magnitude": {
+      "scores": [
+        1.5,
+        0.2,
+        0.7
+      ],
+      "removed_coordinate": 1,
+      "heldout_kl": 0.041801300940917725
+    },
+    "fisher_only": {
+      "scores": [
+        0.005900505561415119,
+        2.0639087341937015,
+        0.18325226171106862
+      ],
+      "removed_coordinate": 0,
+      "heldout_kl": 0.005015367848404694
+    },
+    "one_shot": {
+      "scores": [
+        0.11522212249904101,
+        0.28732620724143504,
+        0.2996558162933328
+      ],
+      "removed_coordinate": 0,
+      "heldout_kl": 0.005015367848404694
+    },
+    "coordinate_path": {
+      "scores": [
+        0.11601037328860951,
+        0.30457493254522416,
+        0.3194840964755565
+      ],
+      "removed_coordinate": 0,
+      "heldout_kl": 0.005015367848404694
+    }
+  },
+  "boundary_checks": "PASS"
+}

@@ -1,0 +1,87 @@
+{
+  "method": "hqq",
+  "date": "2026-09-23",
+  "read_at_utc": "2026-09-23T00:51:26.492500+00:00",
+  "repository": "https://github.com/dropbox/hqq",
+  "original_repository": "https://github.com/mobiusml/hqq",
+  "migration_verified": true,
+  "commit": "d88a488ec8aa2d58362ef2038a52bca862db2e74",
+  "license": "Apache-2.0",
+  "author_attribution": "Dr. Hicham Badri / Mobius Labs GmbH",
+  "source_fetched": false,
+  "source_read": true,
+  "local_cache_verified": false,
+  "fetch_records": [
+    "source-fetch.json",
+    "source-migrated-fetch.json"
+  ],
+  "cache_audit": "rg --files --hidden systems_practice/.tmp/quant_sources returned no files",
+  "files": [
+    {
+      "path": "hqq/core/quantize.py",
+      "symbols": [
+        "Quantizer.quantize/dequantize",
+        "HQQLinear.initialize/quantize/dequantize/forward_pytorch/state_dict/load_state_dict",
+        "BaseQuantizeConfig"
+      ],
+      "permalink": "https://github.com/dropbox/hqq/blob/d88a488ec8aa2d58362ef2038a52bca862db2e74/hqq/core/quantize.py"
+    },
+    {
+      "path": "hqq/core/optimize.py",
+      "symbols": [
+        "optimize_weights_proximal_legacy",
+        "optimize_weights_proximal_legacy_step",
+        "shrink_lp_op",
+        "optimize_weights_proximal alias"
+      ],
+      "permalink": "https://github.com/dropbox/hqq/blob/d88a488ec8aa2d58362ef2038a52bca862db2e74/hqq/core/optimize.py"
+    },
+    {
+      "path": "hqq/core/bitpack.py",
+      "symbols": [
+        "BitPack.pack_4bit_u8/unpack_4bit_u8"
+      ],
+      "permalink": "https://github.com/dropbox/hqq/blob/d88a488ec8aa2d58362ef2038a52bca862db2e74/hqq/core/bitpack.py"
+    },
+    {
+      "path": "hqq/core/utils.py",
+      "symbols": [
+        "encode_safetensor_type/decode_safetensor_type",
+        "is_divisible"
+      ],
+      "permalink": "https://github.com/dropbox/hqq/blob/d88a488ec8aa2d58362ef2038a52bca862db2e74/hqq/core/utils.py"
+    },
+    {
+      "path": "setup.py",
+      "symbols": [
+        "setup version0.2.8.post1",
+        "DISABLE_CUDA install hook"
+      ],
+      "permalink": "https://github.com/dropbox/hqq/blob/d88a488ec8aa2d58362ef2038a52bca862db2e74/setup.py"
+    },
+    {
+      "path": "Readme.md",
+      "symbols": [
+        "Basic Usage",
+        "Installation",
+        "Backends"
+      ],
+      "permalink": "https://github.com/dropbox/hqq/blob/d88a488ec8aa2d58362ef2038a52bca862db2e74/Readme.md"
+    },
+    {
+      "path": "LICENSE",
+      "symbols": [
+        "Apache-2.0"
+      ],
+      "permalink": "https://github.com/dropbox/hqq/blob/d88a488ec8aa2d58362ef2038a52bca862db2e74/LICENSE"
+    }
+  ],
+  "call_chain": [
+    "BaseQuantizeConfig -> HQQLinear.initialize -> Quantizer.quantize",
+    "minmax/group reshape -> legacy proximal solver -> BitPack.pack_4bit_u8",
+    "state_dict encoded metadata -> load_state_dict -> dequantize -> forward_pytorch matmul"
+  ],
+  "relationship": "native upstream API calls; independent PyTorch evaluation, no rewritten algorithm claiming upstream use",
+  "source_transport": "GitHub pinned browser/source pages; raw bitpack web open failed, pinned GitHub browser content read succeeded",
+  "native_run": false
+}

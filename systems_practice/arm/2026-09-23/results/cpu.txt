@@ -1,0 +1,8 @@
+input=0x0 write_W_read_X=0x0
+input=0xffff000012345678 write_W_read_X=0x12345678
+input=0xffffffffffffffff write_W_read_X=0xffffffff
+lane0=11
+lane1=22
+lane2=33
+lane3=0
+PASS 3 W/X cases + 4 V lanes; CPU observation only

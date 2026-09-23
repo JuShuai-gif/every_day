@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-23",
+  "lesson_id": "02",
+  "read_at_utc": "2026-09-23T00:51:26.492500+00:00",
+  "source_read": true,
+  "sources": [
+    {
+      "url": "https://developer.arm.com/-/media/Arm%20Developer%20Community/PDF/Learn%20the%20Architecture/Armv8-A%20Instruction%20Set%20Architecture.pdf",
+      "version": "Issue1.1 July2020",
+      "read_sections": [
+        "6.1/6.2 Registers in AArch64"
+      ],
+      "facts": [
+        "W write zeroes high32 of corresponding X",
+        "separate 128-bit SIMD/FP bank"
+      ]
+    },
+    {
+      "url": "https://github.com/ARM-software/abi-aa/blob/main/aapcs64/aapcs64.rst",
+      "ref": "main, read2026-09-23",
+      "read_sections": [
+        "Machine Registers",
+        "General-purpose Registers",
+        "SIMD and Floating-point Registers"
+      ]
+    },
+    {
+      "url": "https://docs.radxa.com/en/rock5/rock5b/getting-started/introduction",
+      "read_scope": "ROCK5B/RK3588 CPU topology product documentation"
+    }
+  ],
+  "relationship": "independent C++17 observer, no upstream copied source",
+  "board_anchor": "Radxa ROCK5B / RK3588, Cortex-A76/A55",
+  "board_os_sdk": "not observed"
+}

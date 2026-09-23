@@ -1,0 +1,16 @@
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/daily/2026-09-23/build/base
+[ 50%] Building CXX object CMakeFiles/q8_dot.dir/src/scalar.cpp.o
+[ 50%] Building CXX object CMakeFiles/q8_dot.dir/src/main.cpp.o
+[ 75%] Building CXX object CMakeFiles/q8_dot.dir/src/neon.cpp.o
+[100%] Linking CXX executable q8_dot
+[100%] Built target q8_dot
+system=Darwin 25.6.0 arm64 compiler=Apple LLVM 21.0.0 (clang-2100.1.1.101) dotprod_compiled=0
+correctness_cases=1218 invalid_cases=10 PASS

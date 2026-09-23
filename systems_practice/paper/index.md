@@ -6,9 +6,11 @@
 | --- | --- | --- | --- | --- |
 | 2026-09-21 | [SCULPT](2026-09-21/01-sculpt/README.md) / 2026-09-01 | 量化：在微调时改善后续 PTQ 的激活分布 | 中到难：未找到可核实的官方实现 | C++17机制示例通过；无训练/任务精度复现 |
 | 2026-09-21 | [Large Models for Small Devices](2026-09-21/02-edge-deployment/README.md) / 2026-08-16 | 剪枝与部署：通道对齐、量化格式回退 | 难：公开仓库缺完整处理与评分流程 | C++17真实字节打包示例通过；非 GGUF/板端复现 |
-
 | 2026-09-22 | [REAL-Q](2026-09-22/01-real-q/README.md) / 2026-08-30 | 量化：完整二次型与未量化列动态修正 | 难：作者完整实现未找到 | C++17梯度校验/4参数真实Adam更新通过；非全模型复现 |
 | 2026-09-22 | [ESTS at WMT26](2026-09-22/02-ests/README.md) / 2026-09-11 | 剪枝：路由分歧、容量预算与专家重映射 | 难：公开推理提交，完整训练链未核实 | C++17的52容量案例通过；FP32 payload288→192B；无任务/设备性能 |
+| 2026-09-23 | [Quantization-Aware Healing](2026-09-23/01-qah/README.md) / 2026-08-21 | 量化恢复：原始教师KL与真实STE更新 | 难：训练/导出源码未找到 | Python标准库3分支真实更新、chunk KL/零概率边界通过；非MXFP4复现 |
+| 2026-09-23 | [Fisher Information Distances](2026-09-23/02-fisher-distance/README.md) / 2026-09-14 | 剪枝：局部Fisher、坐标路径与RMS分数 | 中到难：长扫描与作者依赖/许可待核验 | Python解析Fisher有限差分、独立heldout和边界通过；无稀疏加速 |
+
 
 下一期继续检索新论文；不重复已归档 arXiv ID。完整进度见 [progress.json](progress.json)。
 

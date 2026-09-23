@@ -1,0 +1,30 @@
+{
+  "id": "arxiv:2608.20953",
+  "date": "2026-09-23",
+  "paper_fulltext_read": true,
+  "fulltext_read_scope": [
+    "3 Method",
+    "4 Experimental setup",
+    "5 Results / Figure3",
+    "6 Deployment lessons / Table1",
+    "7 Limitations"
+  ],
+  "example_delivered": true,
+  "cpu_example_run": true,
+  "python": "3.9.6",
+  "implementation_language": "Python standard library mathematical experiment",
+  "full_paper_reproduced": false,
+  "upstream_code_run": false,
+  "thor_verified": false,
+  "npu_verified": false,
+  "performance_claim": "no device or E2E performance measured",
+  "evidence": [
+    "results/output.json",
+    "results/initial-attempt.txt"
+  ],
+  "checks": [
+    "real80stepFP recovery and150stepSTE parameter updates",
+    "zero-probability KL boundary fixed",
+    "non-divisible chunk length KL check"
+  ]
+}

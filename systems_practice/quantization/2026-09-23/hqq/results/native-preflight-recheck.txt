@@ -1,0 +1,10 @@
+{
+  "status": "blocked",
+  "errors": [
+    "Example environment requires Python >=3.10; actual=3.9.6",
+    "missing package: torch",
+    "missing package: numpy",
+    "missing package: termcolor",
+    "missing pinned checkout; set HQQ_SOURCE"
+  ]
+}
