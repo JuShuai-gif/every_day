@@ -18,4 +18,8 @@ sh systems_practice/arm/2026-09-28/run.sh
 
 页、cache miss、访存合并和内存屏障尚未进入本节；正确地址也不意味着缓存友好。下一节 **04：循环、依赖链与指令级并行**，从连续求和为何形成依赖链讲起，联系 Cortex-A55/A76。
 
-[来源](source.json) · [验证边界](verification.json)
+## 来源与验证
+
+上述Arm指南版本为102374_0102_02_en（1.2 Issue02，2024-12-02），实际读取2026-09-28的§15–18及Radxa板卡规格；本例为独立实现。首次访问[章节地址](https://developer.arm.com/documentation/102374/latest/Loads-and-stores---addressing)报tool internal error；PDF无查询参数地址报400 timeout，正文所链带查询参数地址读取成功。
+
+实际运行时间2026-09-28T01:36:46.095597+00:00，Apple clang21.0.0，目标 `arm64-apple-darwin25.6.0`。Release与ASan/UBSan验证36组有效输入和4种非法描述通过，已生成汇编；未测性能，缺ROCK5B/Jetson设备，板端OS/SDK/拓扑及执行未验证。

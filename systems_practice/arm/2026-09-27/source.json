@@ -1,6 +1,0 @@
-{
-  "read_at": "2026-09-28",
-  "url": "https://clang.llvm.org/docs/CrossCompilation.html",
-  "scope": "Clang官方Target Triple、Toolchain Options、Target-Specific Libraries，读取2026-09-28。",
-  "relationship": "independent teaching implementation"
-}

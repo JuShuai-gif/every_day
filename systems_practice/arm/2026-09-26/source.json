@@ -1,6 +1,0 @@
-{
-  "read_at": "2026-09-28",
-  "url": "https://github.com/ARM-software/abi-aa/blob/main/aapcs64/aapcs64.rst",
-  "scope": "AAPCS64通用寄存器表和参数传递章节，main读取2026-09-28；独立C++例子。",
-  "relationship": "independent teaching implementation"
-}

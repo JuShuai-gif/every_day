@@ -17,6 +17,8 @@
 
 ## 来源、验证与历史记录保留（2026-09-22 用户明确要求）
 
+**2026-09-28最新例外：用户要求删除ARM各日期小项目的JSON记录。`arm/YYYY-MM-DD/`（含results）不再生成或保留source/verification/结果快照等JSON记录；必要来源、读取范围、验证结果和未验证边界直接写在该课README，实际文本日志与汇编仍保留。既有17个JSON已删除，可从Git历史追溯；不将其换名复制为新的附属记录文件。此例外优先于下列旧保留规则，仅适用于ARM日期小项目。栏目根目录的curriculum.json与progress.json继续维护，progress中的验证入口指向README；其他栏目规则不变。**
+
 - **已有和以后产生的来源、验证、实验结果及历史记录都保留**，包括 source*.json、verification.json、results 中的 JSON/日志、失败与重试记录、迁移前验证快照，以及栏目 progress/catalog/curriculum 等状态文件。
 - 不为精简目录而删除这些记录，不仅保留 README 摘要或用 Git 历史替代现有原始证据。新运行另存结果，纠正当前状态时保留旧版本并标明时间与适用范围，避免将旧验证冒充新验证。
 - README 提供简短结果说明与记录入口；原始输出/历史快照放在 results/ 或既有归档目录，栏目级进度留在栏目层，兼顾阅读和追溯。
@@ -133,7 +135,7 @@
 - **每天讲一点 ARM**，随既有北京时间 08:30 任务交付，不再仅限 CPU 或 ARM SIMD 主主题日。此要求取代之前“CPU 日补充、SIMD 日深入、其他日可不讲”的安排。主主题仍按 12 方向轮换；每日量化与两篇论文继续交付，ARM 保持独立栏目，新增 OS 后共五个栏目。
 - 默认阅读/观察约 5～10 分钟，每天只推进一个小知识点：先承接上一节，再讲机制、边缘场景和一个现成小例子或观察命令，说明结果及局限，最后预告下一节。不额外增加第二个必做编码练习或自测；基础课不必硬塞完整性能内核。
 - 读取 `docs/arm/README.md`、`arm/curriculum.json`、`arm/index.md` 与 `arm/progress.json`；按前置知识顺序推进，不能每日随机选题或重复概述。阶段为架构/工具链 → NEON/数值与布局 → 缓存/微架构/多核 → 边缘推理/部署/端到端性能。完成首轮后从进度继续进入源码与综合案例，不自动回到第一课。
-- 目录 `systems_practice/arm/YYYY-MM-DD/`，包含 README、来源记录和验证记录；可执行内容提供代码/脚本、运行命令与真实结果。日期目录每天最多一节，同日重跑补全或链接已有材料，不重复推进。交付进度与执行/板端验证分别记录；来源无法核实则记录失败/backlog，不把未交付课标为完成。
+- 目录 `systems_practice/arm/YYYY-MM-DD/`，包含 README（直接记录来源与验证，不另建JSON记录文件）；可执行内容提供代码/脚本、运行命令与真实文本结果。日期目录每天最多一节，同日重跑补全或链接已有材料，不重复推进。交付进度与执行/板端验证分别记录；来源无法核实则记录失败/backlog，不把未交付课标为完成。
 - 每日主动检索并实际阅读对应的一手资料，优先 Arm Learn the Architecture、Arm Learning Paths、ACLE/NEON Reference、目标 CPU 官方优化手册和编译器文档。源码课实际阅读 ggml/ncnn/Arm Compute Library/KleidiAI 等相关文件与函数，注明版本/commit 或分支及阅读日期。教程来源与独立示例分别说明，不把检索摘要当作读过全文；基础架构课可使用官方规范，无需虚构开源模块。
 - 逐步覆盖 AArch64/A64、寄存器/指令/ABI、自动向量化、NEON 加载/FMA/归约/尾部、FP16 与 INT8 dot-product/i8mm、SVE/SVE2 的支持条件；区分 ISA、微架构、SoC、编译目标与运行时能力，不因“ARM”或品牌默认支持所有扩展。
 - **以实际边缘板卡为主线**（2026-09-22 最新要求）：每日按 `docs/arm/BOARDS.md` 选择具体设备与任务，重点 RK3588 板卡（教学参照 ROCK 5B）和 Jetson（主要 AGX Thor/T5000，Orin 为 Cortex-A/CPU 对照）。讲架构必须联系板上输入、数据流、代码/观察命令和测量；不泛讲芯片名或把 Mac 性能当板端结果。区分 RK3588 的 Cortex-A76/A55、Orin 的 Cortex-A78AE、Thor 的 Neoverse-V3AE。每期核实板卡/模块/OS/SDK/核拓扑，不硬编码 CPU ID、扩展或 PMU 事件；CUDA 执行继续固定 Thor SM110。

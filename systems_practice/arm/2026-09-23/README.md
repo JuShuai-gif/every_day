@@ -17,4 +17,8 @@ CXX=g++ ./systems_practice/arm/2026-09-23/run.sh
 
 Mac实际输出：[cpu.txt](results/cpu.txt)。`0xffff000012345678 → 0x12345678`，全1输入变成`0xffffffff`；向量结果`11,22,33,0`，最后一项是UINT32模2^32加法，不是饱和。3个X/W样本与4个lane检查通过。[真实汇编](results/registers.s)显示`mov w0,w0`与`add.4s`。误将64位帧号保存到W路径会丢高位；若是地址则可能破坏访问，诊断先看操作数宽度，不能只看十六进制低位相同。
 
-未测性能、未运行RK3588/Jetson，未检查NPU或GPU；没有增加必做编码任务。下一节：**03 加载/存储、地址与stride**，将这些寄存器连接到图像/张量内存。来源与状态见[source.json](source.json)、[verification.json](verification.json)。
+未测性能、未运行RK3588/Jetson，未检查NPU或GPU；没有增加必做编码任务。下一节：**03 加载/存储、地址与stride**，将这些寄存器连接到图像/张量内存。来源与验证范围见下文。
+
+## 来源与验证
+
+来源读取于2026-09-23：上述Arm ISA文档Issue1.1（2020-07）§6.1/6.2、AAPCS64 main的通用/SIMD/浮点寄存器章节，以及Radxa产品规格。本例为独立实现，无上游代码复制。Mac C++17程序已编译运行，3个X/W样本及4个lane检查通过并生成汇编；未测性能，目标板OS/SDK及运行情况未验证。
