@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-28",
+  "run_time": "2026-09-28T01:38:33.741733+00:00",
+  "source_read": true,
+  "implementation_language": "C++17",
+  "compiler": "Apple clang21.0.0",
+  "host": "macOS arm64",
+  "release_verified": true,
+  "asan_ubsan_verified": true,
+  "tsan_verified": true,
+  "concurrent_requests": 20000,
+  "publications": 1000,
+  "invalid_artifact_cases": 7,
+  "checks": [
+    "stale/replayed ticket",
+    "failed stage retains active model",
+    "request shape and nonfinite values",
+    "retired lifetime",
+    "close and reject resurrection"
+  ],
+  "performance": {
+    "scope": "CPU acquire plus synchronous 8-element fixture; no publishing contention",
+    "p50_us": 0.00725,
+    "p95_us": 0.007292,
+    "warmup_batches": 20,
+    "samples": 100,
+    "requests_per_batch": 1000
+  },
+  "target_board_verified": false,
+  "gpu_verified": false,
+  "npu_verified": false,
+  "end_to_end_measured": false,
+  "device_kernel_present": false,
+  "format_script_exit": 0,
+  "evidence": [
+    "results/release.txt",
+    "results/sanitize.txt",
+    "results/tsan.txt",
+    "results/final-release.txt",
+    "results/final-sanitize.txt",
+    "results/final-tsan.txt"
+  ],
+  "blockers": [
+    "No Thor/RK3588 devices or actual backend integration; no nvcc/ncu"
+  ]
+}

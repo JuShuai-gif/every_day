@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-23T00:51:26.492500+00:00",
+  "updated_at": "2026-09-28T01:36:46.095597+00:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -96,6 +96,30 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.29029",
+      "title": "Exploiting answer-invariant redundancies in satellite imagery for efficient VLM inference on edge",
+      "delivered_on": "2026-09-28",
+      "first_submitted": "2026-09-24",
+      "version_read": "v1",
+      "directory": "2026-09-28/01-rift",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.02107",
+      "title": "A Unified Rate-Distortion Perspective on Vector, Product, and Scalar Quantization",
+      "delivered_on": "2026-09-28",
+      "first_submitted": "2026-09-02",
+      "version_read": "v1",
+      "directory": "2026-09-28/02-rate-distortion",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
     }
   ],
   "backlog": [
@@ -116,6 +140,18 @@
       "date": "2026-09-23",
       "kind": "author_implementation_audit",
       "reason": "Readme/tree accessible, core implementation reading and license discrepancy still pending"
+    },
+    {
+      "id": "arxiv:2609.29029",
+      "date": "2026-09-28",
+      "kind": "author_source_availability",
+      "reason": "No verified official repository found in fulltext and title+GitHub search"
+    },
+    {
+      "id": "arxiv:2609.02107",
+      "date": "2026-09-28",
+      "kind": "author_implementation_audit",
+      "reason": "README/tree only; implementation directory requests cache miss"
     }
   ]
 }

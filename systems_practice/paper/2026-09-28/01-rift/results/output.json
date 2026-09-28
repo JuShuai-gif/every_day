@@ -1,0 +1,20 @@
+{
+  "selected_tokens": [
+    16,
+    16,
+    64,
+    64
+  ],
+  "kept": [
+    1,
+    2,
+    3
+  ],
+  "synthetic_recall": 1.0,
+  "shifted_recall": 0.6666666666666666,
+  "monotone_cases": 4,
+  "rejected": 2,
+  "real_energy_measured": false,
+  "predictor_trained": false,
+  "full_paper_reproduced": false
+}

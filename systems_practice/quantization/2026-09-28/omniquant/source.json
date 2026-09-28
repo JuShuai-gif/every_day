@@ -1,0 +1,18 @@
+{
+  "method": "omniquant",
+  "repository": "https://github.com/OpenGVLab/OmniQuant.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-09-28T01:21:58.745823+00:00",
+  "commit": null,
+  "cache": ".tmp/quant_sources/omniquant-zkf84qhx",
+  "status": "failed",
+  "source_read": false,
+  "example_run": false,
+  "files": [],
+  "errors": [
+    {
+      "reason": "Cloning into '/Users/guhaoran/code/EveryDay/systems_practice/.tmp/quant_sources/omniquant-zkf84qhx/repo'...\nfatal: unable to access 'https://github.com/OpenGVLab/OmniQuant.git/': Could not resolve host: github.com"
+    }
+  ],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example."
+}

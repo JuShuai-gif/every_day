@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-28",
+  "run_time": "2026-09-28T01:36:46.095597+00:00",
+  "python": "3.9.6",
+  "example_run": true,
+  "exit_code": 0,
+  "evidence": [
+    "results/output.json"
+  ],
+  "full_paper_reproduced": false,
+  "thor_verified": false,
+  "dependencies": "Python standard library",
+  "author_code_executed": false,
+  "training_updates": "Lloyd centroid updates observed",
+  "blockers": [
+    "Author implementation audit pending",
+    "No full models/data/target device"
+  ]
+}

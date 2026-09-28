@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "next_method_id": "omniquant",
-  "last_lesson_date": "2026-09-23",
+  "next_method_id": "quarot",
+  "last_lesson_date": "2026-09-28",
   "completed_methods": [],
   "history": [
     {
@@ -95,6 +95,22 @@
       "status": "partial; native checkout/dependencies and execution blocked",
       "native_api_language": "Python/PyTorch",
       "torch_evaluation_run": false
+    },
+    {
+      "date": "2026-09-28",
+      "method": "omniquant",
+      "commit": "feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "focus": "Native LWC clipping parameter updates on small Linear; FP32 QDQ export, not packed INT4",
+      "lesson": "2026-09-28/omniquant/README.md",
+      "verification": "2026-09-28/omniquant/verification.json",
+      "status": "partial; checkout/dependencies/native runtime and backend compatibility pending",
+      "native_api_language": "Python/PyTorch",
+      "torch_evaluation_run": false
     }
   ],
   "backlog": [
@@ -109,9 +125,9 @@
       "example_delivered": true,
       "cpu_example_run": false,
       "thor_verified": false,
-      "last_retry_date": "2026-09-23",
+      "last_retry_date": "2026-09-28",
       "latest_verification": "2026-09-19/awq/verification.json",
-      "latest_source_retry": "2026-09-23/awq-retry-source.json"
+      "latest_source_retry": "2026-09-28/awq-retry-source.json"
     },
     {
       "method": "gptq",
@@ -151,6 +167,17 @@
       "date": "2026-09-23",
       "reason": "Migrated repository verified and pinned implementation read; local clones fail DNS, required Python/torch packages missing",
       "latest_verification": "2026-09-23/hqq/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false
+    },
+    {
+      "method": "omniquant",
+      "date": "2026-09-28",
+      "reason": "Local clone DNS failure; pinned API read and example delivered, native deps missing, packaging/license and packed Thor backend remain pending",
+      "latest_verification": "2026-09-28/omniquant/verification.json",
       "source_fetched": false,
       "source_read": true,
       "example_delivered": true,

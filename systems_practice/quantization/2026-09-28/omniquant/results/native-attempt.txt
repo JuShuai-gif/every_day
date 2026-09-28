@@ -1,0 +1,3 @@
+requires Python >=3.10; current=3.9.6
+missing dependencies: torch, numpy, tqdm
+missing source checkout: /Users/guhaoran/code/EveryDay/systems_practice/.tmp/quant_sources/omniquant-pinned

@@ -1,0 +1,11 @@
+{
+  "date": "2026-09-28",
+  "python": "3.9.6",
+  "torch": false,
+  "numpy": false,
+  "tqdm": false,
+  "nvcc": false,
+  "ncu": false,
+  "device": "Mac arm64; no NVIDIA GPU",
+  "source_checkout": false
+}

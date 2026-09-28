@@ -1,0 +1,52 @@
+{
+  "date": "2026-09-28",
+  "run_time": "2026-09-28T01:36:46.095597+00:00",
+  "method": "omniquant",
+  "repository": "https://github.com/OpenGVLab/OmniQuant",
+  "commit": "feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14",
+  "source_record": "source.json",
+  "source_read_record": "source-read.json",
+  "source_fetched": false,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": {
+    "quantize/int_linear.py": [
+      "QuantLinear.__init__",
+      "QuantLinear.forward",
+      "QuantLinear.set_quant_state"
+    ],
+    "quantize/quantizer.py": [
+      "UniformAffineQuantizer",
+      "per_token_dynamic_calibration",
+      "fake_quant",
+      "round_ste"
+    ],
+    "quantize/omniquant.py": [
+      "omniquant",
+      "get_named_linears",
+      "add_new_module"
+    ]
+  },
+  "evidence": [
+    "results/native-attempt.txt"
+  ],
+  "native_exit_code": 2,
+  "python": "3.9.6",
+  "missing_dependencies": [
+    "torch",
+    "numpy",
+    "tqdm"
+  ],
+  "blockers": [
+    "GitHub clone DNS failure; no verified cache",
+    "Python<3.10 chosen example floor; torch/numpy/tqdm absent",
+    "Pinned packaging/LICENSE verification incomplete",
+    "No Thor; AutoGPTQ backend compatibility unverified"
+  ],
+  "native_parameter_updates_observed": false,
+  "packed_int4_export": false,
+  "checkpoint_format": "FP32 QDQ reconstructed tensor (generated only upon successful run)",
+  "performance_results": null
+}

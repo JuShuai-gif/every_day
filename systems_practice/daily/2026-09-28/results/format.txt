@@ -1,0 +1,2 @@
+scripts/format-cpp.sh exit=0
+No tracked historical code changed.

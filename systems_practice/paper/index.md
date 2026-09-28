@@ -10,6 +10,8 @@
 | 2026-09-22 | [ESTS at WMT26](2026-09-22/02-ests/README.md) / 2026-09-11 | 剪枝：路由分歧、容量预算与专家重映射 | 难：公开推理提交，完整训练链未核实 | C++17的52容量案例通过；FP32 payload288→192B；无任务/设备性能 |
 | 2026-09-23 | [Quantization-Aware Healing](2026-09-23/01-qah/README.md) / 2026-08-21 | 量化恢复：原始教师KL与真实STE更新 | 难：训练/导出源码未找到 | Python标准库3分支真实更新、chunk KL/零概率边界通过；非MXFP4复现 |
 | 2026-09-23 | [Fisher Information Distances](2026-09-23/02-fisher-distance/README.md) / 2026-09-14 | 剪枝：局部Fisher、坐标路径与RMS分数 | 中到难：长扫描与作者依赖/许可待核验 | Python解析Fisher有限差分、独立heldout和边界通过；无稀疏加速 |
+| 2026-09-28 | [Rift](2026-09-28/01-rift/README.md) / 2026-09-24 | 图块剪枝与条件准确率/能耗预算 | 难：作者仓库未核实 | Python合成决策/偏移召回/边界通过；无设备数据 |
+| 2026-09-28 | [Rate-Distortion Perspective](2026-09-28/02-rate-distortion/README.md) / 2026-09-02 | 固定分布与码率的VQ/PQ/SQ比较 | 中到难：实现审查待补 | Python真实Lloyd更新、训练目标/空簇检查通过；非作者训练 |
 
 
 下一期继续检索新论文；不重复已归档 arXiv ID。完整进度见 [progress.json](progress.json)。

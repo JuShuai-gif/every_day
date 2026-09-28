@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-28",
+  "id": "arxiv:2609.29029",
+  "title": "Exploiting answer-invariant redundancies in satellite imagery for efficient VLM inference on edge",
+  "authors": [
+    "Ishani Janveja",
+    "Davis Zhang",
+    "Seoyul Oh",
+    "Deepak Vasisht"
+  ],
+  "first_submitted": "2026-09-24",
+  "version": "v1",
+  "version_date": "2026-09-24",
+  "metadata_url": "https://arxiv.org/abs/2609.29029",
+  "fulltext_url": "https://arxiv.org/html/2609.29029v1",
+  "fulltext_sections_read": [
+    "2.2",
+    "2.3",
+    "3/Figure3",
+    "AppendixA/B"
+  ],
+  "fulltext_read": true,
+  "publication_status": "arXiv preprint; peer-review acceptance not independently confirmed",
+  "repository": null,
+  "repository_implementation_read": false,
+  "repository_scope": "No verified official repository found in fulltext and title+GitHub search",
+  "relation": "Independent standard-library mechanism example, not author implementation or full reproduction"
+}

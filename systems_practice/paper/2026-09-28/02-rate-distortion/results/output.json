@@ -1,0 +1,43 @@
+{
+  "SQ": {
+    "train": {
+      "mse_per_vector": 1.1920686745114468,
+      "utilization": 0.375
+    },
+    "heldout": {
+      "mse_per_vector": 1.3598638176859614,
+      "utilization": 0.1875
+    }
+  },
+  "PQ": {
+    "train": {
+      "mse_per_vector": 0.41483799647045627,
+      "utilization": 0.375
+    },
+    "heldout": {
+      "mse_per_vector": 0.45134901827860263,
+      "utilization": 0.375
+    }
+  },
+  "VQ": {
+    "train": {
+      "mse_per_vector": 0.13480702181038148,
+      "utilization": 0.375
+    },
+    "heldout": {
+      "mse_per_vector": 0.14715052276227372,
+      "utilization": 0.375
+    }
+  },
+  "bits_per_vector": 4.0,
+  "heldout_nominal_bits": 512,
+  "codebook_float_count": {
+    "SQ": 8,
+    "PQ": 16,
+    "VQ": 64
+  },
+  "vq_center_updates": 33,
+  "serialized_packed_stream": false,
+  "zero_empty_cluster_check": true,
+  "full_paper_reproduced": false
+}

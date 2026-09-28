@@ -6,6 +6,7 @@
 | --- | --- | --- | --- |
 | [2026-09-22](2026-09-22/README.md) | 01 | 区分架构、CPU 与编译目标能力 | C++17 程序已编译运行；8 项宏与编译器核对一致；未测计算内核或板端性能 |
 | [2026-09-23](2026-09-23/README.md) | 02 | X/W别名与V的lane视图 | Mac C++17实际编译执行3个W/X与4个lane检查，真实mov/add.4s汇编；ROCK5B/Jetson未测 |
+| [2026-09-28](2026-09-28/README.md) | 03 | 加载/存储、地址与stride | Mac Release/ASan/UBSan 36形状+4非法输入通过；真实LDRH后索引汇编；板端未验 |
 
 
-下一节：**03 — 加载/存储、地址与stride**。从寄存器连接到张量内存。机器进度见 [progress.json](progress.json)。
+下一节：**04 — 循环、依赖链与指令级并行**。联系Cortex-A55/A76。机器进度见 [progress.json](progress.json)。

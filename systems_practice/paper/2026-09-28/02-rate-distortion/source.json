@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-28",
+  "id": "arxiv:2609.02107",
+  "title": "A Unified Rate-Distortion Perspective on Vector, Product, and Scalar Quantization",
+  "authors": [
+    "Xianghong Fang",
+    "Wenlong Mou",
+    "Yuan Yuan",
+    "Dehan Kong",
+    "Tim G. J. Rudner"
+  ],
+  "first_submitted": "2026-09-02",
+  "version": "v1",
+  "version_date": "2026-09-02",
+  "metadata_url": "https://arxiv.org/abs/2609.02107",
+  "fulltext_url": "https://arxiv.org/html/2609.02107v1",
+  "fulltext_sections_read": [
+    "2-5",
+    "Table2",
+    "AppendixG/H",
+    "Table8"
+  ],
+  "fulltext_read": true,
+  "publication_status": "arXiv preprint; peer-review acceptance not independently confirmed",
+  "repository": "https://github.com/VQ-Research/Rate-Distortion-Perspective",
+  "repository_implementation_read": false,
+  "repository_scope": "README/tree only; implementation directory requests cache miss",
+  "relation": "Independent standard-library mechanism example, not author implementation or full reproduction"
+}
