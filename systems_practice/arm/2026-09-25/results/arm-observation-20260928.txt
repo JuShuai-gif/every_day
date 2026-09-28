@@ -1,0 +1,66 @@
+PASS 1025 lengths with tails and modulo overflow; no board performance claim
+PASS 1025 lengths with tails and modulo overflow; no board performance claim
+
+serial/four：A64寄存器依赖
+__Z6serialPKym:                         ; @_Z6serialPKym
+	.cfi_startproc
+; %bb.0:
+	mov	x8, #0                          ; =0x0
+	cbz	x1, LBB0_2
+LBB0_1:                                 ; =>This Inner Loop Header: Depth=1
+	ldr	x9, [x0], #8
+	add	x8, x9, x8
+	subs	x1, x1, #1
+	b.ne	LBB0_1
+LBB0_2:
+	mov	x0, x8
+	ret
+	.cfi_endproc
+__Z4fourPKym:                           ; @_Z4fourPKym
+	.cfi_startproc
+; %bb.0:
+	cmp	x1, #4
+	b.lo	LBB1_4
+; %bb.1:
+	mov	x9, #0                          ; =0x0
+	mov	x11, #0                         ; =0x0
+	mov	x10, #0                         ; =0x0
+	mov	x8, #0                          ; =0x0
+	add	x12, x0, #16
+	mov	x13, x1
+LBB1_2:                                 ; =>This Inner Loop Header: Depth=1
+	ldp	x14, x15, [x12, #-16]
+	add	x8, x14, x8
+	add	x10, x15, x10
+	ldp	x14, x15, [x12], #32
+	add	x11, x14, x11
+	add	x9, x15, x9
+	sub	x13, x13, #4
+	cmp	x13, #3
+	b.hi	LBB1_2
+; %bb.3:
+	and	x13, x1, #0xfffffffffffffffc
+	subs	x12, x1, x13
+	b.hi	LBB1_5
+	b	LBB1_7
+LBB1_4:
+	mov	x8, #0                          ; =0x0
+	mov	x10, #0                         ; =0x0
+	mov	x11, #0                         ; =0x0
+	mov	x9, #0                          ; =0x0
+	mov	x13, #0                         ; =0x0
+	subs	x12, x1, x13
+	b.ls	LBB1_7
+LBB1_5:
+	add	x13, x0, x13, lsl #3
+LBB1_6:                                 ; =>This Inner Loop Header: Depth=1
+	ldr	x14, [x13], #8
+	add	x8, x14, x8
+	subs	x12, x12, #1
+	b.ne	LBB1_6
+LBB1_7:
+	add	x10, x11, x10
+	add	x9, x10, x9
+	add	x0, x9, x8
+	ret
+	.cfi_endproc

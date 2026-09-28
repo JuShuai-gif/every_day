@@ -26,6 +26,20 @@ caller出现bl _combine；x19/x20承载跨调用活值，stp保存、ldp恢复�
 
 现成例子只验证数值及编译器实际生成内容；输入长度边界、unsigned算术与对象寿命明确。若看到与文档不同的寄存器编号，先定位函数及工具链，寄存器分配并非源码合同。下一节06，从当前机制继续按课程表推进。
 
+## 这个例子具体观察什么 ARM 机制
+
+本例C++只负责构造跨函数调用；真正要学的是**AArch64参数寄存器、栈参数和被调用者保存寄存器**。run.sh直接打印caller的本次生成汇编，按下面顺序对照[归档文本](results/native-arm64.s)：
+
+1. `sub sp, sp, #48`分配48字节栈帧；48为16的倍数。`stp x20, x19`保存caller将要改写的被调用者保存寄存器。
+2. seed保留在x0，同时`mov x19, x0`为跨调用使用保留副本；常量2–8写入w1–w7，对应x1–x7中的参数。第九参数9由`str x8, [sp]`写到调用时栈顶。
+3. `bl _combine`调用另一翻译单元。返回值在x0；之后`madd x0, x19, x20, x0`用跨调用保留的seed和19合成结果。
+4. LDP恢复x19/x20和帧/返回地址寄存器，恢复SP后RET。若手写callee破坏需保存的寄存器，调用后的计算可能出错。
+
+1000个seed的数值检查是正确性证据，寄存器/栈布局来自真实汇编。这里是Darwin的九个uint64参数观察；一般规则对照[AAPCS64寄存器与参数传递章节](https://github.com/ARM-software/abi-aa/blob/main/aapcs64/aapcs64.rst)，不能推广为Darwin与Linux全部ABI细节相同。
+
 ## 来源与验证
 
 上述AAPCS64 main通用寄存器及参数传递章节实际读取于2026-09-28，未固定commit；本例为独立教学实现。Mac实际编译、运行及ASan/UBSan通过；格式化后重新验证通过，见[输出](results/formatted-cpu.txt)。均为2026-09-28的验证，目标板未验证。
+
+2026-09-28新增观察入口实际复验：Release、ASan/UBSan均通过，目标函数的AArch64汇编已直接输出；[本次完整输出](results/arm-observation-20260928.txt)。本次未测性能或验证目标板。
+本次重新核对AAPCS64 main通用寄存器表（页面标示2025Q4），仍只将Darwin实测归为本机证据。

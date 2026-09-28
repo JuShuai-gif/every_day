@@ -26,6 +26,21 @@ C++17、无外部依赖，输入在程序生成；[源码](src/example.cpp) · [
 
 现成例子只验证数值及编译器实际生成内容；输入长度边界、unsigned算术与对象寿命明确。若看到与文档不同的寄存器编号，先定位函数及工具链，寄存器分配并非源码合同。下一节07，从当前机制继续按课程表推进。
 
+## 这个例子具体观察什么 ARM 机制
+
+编译选项属于通用工具链知识；本课用它观察**同一C++求和在AArch64通用寄存器与NEON寄存器中的不同实现**。脚本现在会打印禁向量化与O3两份checksum函数体，不再只打印PASS和宏名。
+
+| 对照 | 本次真实指令 | 要看什么 |
+| --- | --- | --- |
+| [O2禁向量化](results/native-arm64.s) | `ldr w9, [x0], #4`、`add w8, w9, w8` | 一次取一个uint32，W寄存器标量累加 |
+| [O3向量主循环](results/vectorized-arm64.s) | `ldp q4, q5`、`ldp q6, q7`及四条`add.4s` | Q是128位视图，4s表示四个32位lane；该循环共处理16个元素 |
+| O3归约 | `addv.4s s0, v0`、`fmov w8, s0` | 横向归约后把结果位从SIMD/FP寄存器转移到通用寄存器，不是浮点数值转换 |
+| O3尾部 | `ldr w11, [x9], #4`、`add w8, w11, w8` | 剩余不足向量宽度的元素走标量路径 |
+
+观察时从checksum标签开始，避免把main或iostream中的向量指令误认成目标循环。比较的是两组实际编译参数的生成结果，不能仅凭宏存在断言执行了NEON，也不能将向量化或O3自动等同于提速。完整自动向量化机制留到第08节；[LLVM向量化文档](https://llvm.org/docs/Vectorizers.html)的诊断与reduction说明为后续阅读依据（2026-09-28读取）。
+
 ## 来源与验证
 
 上述Clang官方文档实际读取于2026-09-28，范围为Target Triple、Toolchain Options、Target-Specific Libraries；本例为独立教学实现。Mac实际编译、运行及ASan/UBSan通过；格式化后重新验证通过，见[输出](results/formatted-cpu.txt)。均为2026-09-28的验证，目标板未验证。
+
+2026-09-28新增观察入口实际复验：Release、ASan/UBSan均通过，目标函数的AArch64汇编已直接输出；[本次完整输出](results/arm-observation-20260928.txt)。第06节另包含O3运行与向量汇编，其他课不据此新增性能结论。
