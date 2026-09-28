@@ -1,0 +1,17 @@
+{
+  "alpha": [
+    1.6968534938244006,
+    4.149082688439194,
+    2.061633772642998
+  ],
+  "bits": [
+    4,
+    2,
+    4
+  ],
+  "payload_budget_bits": 96,
+  "used_bits": 96,
+  "objective": 0.0390239412069643,
+  "uniform3_objective": 0.06292906717498943,
+  "scope": "nominal bit budget only; no packed model or inference"
+}

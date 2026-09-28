@@ -1,0 +1,21 @@
+{
+  "id": "arxiv:2608.19239",
+  "title": "BASC: Behavior-Aligned Quantization and Pruning for Low-Bit Spiking Neural Networks",
+  "authors": [
+    "Linliang Chen",
+    "Yan Zhong",
+    "Xin Liu",
+    "Sai Li",
+    "Wang Kang"
+  ],
+  "first_submitted": "2026-08-12",
+  "version": "v1",
+  "read_on": "2026-09-28",
+  "fulltext": "https://arxiv.org/html/2608.19239v1",
+  "metadata": "https://arxiv.org/abs/2608.19239v1",
+  "sections_read": "§3.1–3.3、§4.1与图2扫描",
+  "author_repository": null,
+  "source_availability": "全文与标题GitHub搜索未确认官方仓库；不编造训练API。",
+  "relationship": "independent mechanism example; not upstream reproduction",
+  "publication_status": "arXiv record; conference acceptance only where explicitly noted"
+}

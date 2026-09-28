@@ -1,0 +1,19 @@
+{
+  "id": "arxiv:2608.16010",
+  "title": "Breaking the Compression Barrier: Cross-Architecture Compression Boundary Learning via Reverse Regrowth",
+  "authors": [
+    "Zhaocen Liu",
+    "Satvik Praveen",
+    "Yi Sheng"
+  ],
+  "first_submitted": "2026-08-17",
+  "version": "v1",
+  "read_on": "2026-09-28",
+  "fulltext": "https://arxiv.org/html/2608.16010v1",
+  "metadata": "https://arxiv.org/abs/2608.16010v1",
+  "sections_read": "§3.1–3.3，§4及表2",
+  "author_repository": "https://github.com/EnumaCaliber/BRIDGE",
+  "source_availability": "仓库树确认训练/剪枝/恢复脚本存在；regrowth_greedy.py raw请求internal error，未读到核心实现，许可证/精确commit待核实。",
+  "relationship": "independent mechanism example; not upstream reproduction",
+  "publication_status": "arXiv record; conference acceptance only where explicitly noted"
+}

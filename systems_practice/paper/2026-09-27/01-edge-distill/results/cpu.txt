@@ -1,0 +1,7 @@
+{
+  "distance_mse_rotated": 0.0,
+  "teacher_anchored_nce_rotated": 1.6265233750364456,
+  "teacher_anchored_nce_aligned": 0.6265233750364456,
+  "training_updates": 0,
+  "scope": "loss invariance counterexample; no QAT or cross-attention training"
+}

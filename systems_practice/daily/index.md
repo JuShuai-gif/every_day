@@ -14,7 +14,7 @@
 
 2026-09-18 扩展为 **12 个方向**：新增“量化 GEMM”，涵盖 W4A4/W4A16/W8A8/W8A16、SmoothQuant、离群处理、校准缩放与 QAT，代码目标仍为 Thor SM110。
 
-2026-09-18 起另设 **每日量化方法**：每天在主知识点之外讲一个方法，拉取源仓库、阅读实际实现并给出完整使用示例及量化前后比较。独立轮换见 [量化栏目索引](../quantization/index.md)，下一方法 **QuaRot**。该栏目不取代 12 个主方向，源码获取/阅读/示例运行分别记录。
+2026-09-18 起另设 **每日量化方法**：每天在主知识点之外讲一个方法，拉取源仓库、阅读实际实现并给出完整使用示例及量化前后比较。独立轮换见 [量化栏目索引](../quantization/index.md)，下一方法 **SmoothQuant**。该栏目不取代 12 个主方向，源码获取/阅读/示例运行分别记录。
 
 2026-09-21 起新增 **每日两篇论文**：[paper 栏目](../docs/paper/README.md) · [历史索引](../paper/index.md) · [今天两篇](../paper/2026-09-22/README.md)。覆盖剪枝、量化、模型压缩和边缘部署，包含核心思想、复现难度、简单代码及真实验证记录；优先近 180 天首发，独立去重。
 
@@ -31,9 +31,15 @@
 | [2026-09-21](2026-09-21/README.md) | C++17 并发 | 有界背压+谓词等待/关闭排空；LLVM线程池机制；[每日AdaRound](../quantization/2026-09-21/adaround/README.md) | [线程池](2026-09-21/src/bounded_pool.hpp)；[测试/基准](2026-09-21/src/main.cpp) | Release/ASan/UBSan/TSan实际通过；3容量×2000请求及20轮关闭竞争；AIMET迁移/固定commit已读、原生API交付，克隆/运行待补 | CPU容量8批次P50 501.458us、请求P95 43.75us；容量64为473.292/247.333us。无加速器数据。[验证](2026-09-21/results/verification.json)；[日志](2026-09-21/results/cpu.txt) |
 | [2026-09-22](2026-09-22/README.md) | CPU 体系结构 | 统计计数器伪共享+relaxed原子语义；folly对齐源码；[AutoRound](../quantization/2026-09-22/autoround/README.md)；[两篇论文](../paper/2026-09-22/README.md) | [布局](2026-09-22/src/counters.hpp)；[基准](2026-09-22/src/main.cpp) | Release/ASan/UBSan/TSan各45并发试验通过；真实ARM ldadd汇编；AutoRound源码已读/示例交付但本地运行受阻；论文CPU例子通过 | 4worker、20万次/worker：packed P50 7872.88us，pad128 343.417us；仅CPU微基准，无硬件事件/加速器数据。[日志](2026-09-22/results/cpu.txt)；[验证](2026-09-22/results/verification.json) |
 | [2026-09-23](2026-09-23/README.md) | ARM SIMD / NEON | INT8块点积：安全扩宽归约+每块scale；ggml实际源码；[HQQ](../quantization/2026-09-23/hqq/README.md)；[ARM02](../arm/2026-09-23/README.md)；[两篇论文](../paper/2026-09-23/README.md) | [标量](2026-09-23/src/scalar.cpp)、[NEON](2026-09-23/src/neon.cpp) | Release/ASan/UBSan/base各1218比较与10非法输入通过；真实A64汇编；HQQ阅读/交付是，克隆/原生运行待补；ARM/论文小例子实际通过 | Mac CPU P50 scalar36.458us、NEON9.541us、SDOT8.833us；20预热100采样，无板端/加速器数据。[日志](2026-09-23/results/cpu.txt)；[状态](2026-09-23/results/verification.json) |
-| [2026-09-28](2026-09-28/README.md) | 边缘端部署 | 发布代次+请求共享快照，失败保留旧版；[OmniQuant](../quantization/2026-09-28/omniquant/README.md)；[ARM03](../arm/2026-09-28/README.md)；[论文](../paper/2026-09-28/README.md) | [控制面](2026-09-28/src/deployment.hpp)、[验证](2026-09-28/src/main.cpp) | Release/ASan/UBSan/TSan通过；2万请求/1000更新；量化原生运行因依赖/克隆缺失待补 | CPU控制面P50/P95 0.00725/0.007292us；[最终记录](2026-09-28/results/verification.json)；无GPU/NPU/E2E性能 |
+| [2026-09-24](2026-09-24/README.md) | 边缘端部署（顺序补课） | 发布代次与请求共享快照；[OmniQuant](../quantization/2026-09-24/omniquant/README.md)；[ARM03](../arm/2026-09-24/README.md)；[两篇论文](../paper/2026-09-24/README.md) | [代码](2026-09-24/src/deployment.hpp) | Release/ASan/UBSan/TSan 通过；2万请求/1000更新；量化原生运行待补 | CPU控制面P50/P95 0.007291/0.007333us；[验证](2026-09-24/results/verification.json) |
+| [2026-09-25](2026-09-25/README.md) | C++ 工程知识（顺序补课） | 异常回滚与移动所有权；[QuaRot](../quantization/2026-09-25/quarot/README.md)；[ARM04](../arm/2026-09-25/README.md)；[两篇论文](../paper/2026-09-25/README.md) | [代码](2026-09-25/src/main.cpp) | Release/ASan/UBSan 通过；2000失败注入/1000移动/容量边界；量化原生运行待补 | 无GPU/NPU/端到端实测；[验证](2026-09-25/results/verification.json) |
+| [2026-09-26](2026-09-26/README.md) | CUDA Kernel（顺序补课） | 稳定 softmax 与 warp 寄存器归约；[SpinQuant](../quantization/2026-09-26/spinquant/README.md)；[ARM05](../arm/2026-09-26/README.md)；[两篇论文](../paper/2026-09-26/README.md) | [代码](2026-09-26/src/softmax.cu) | CPU Release/ASan/UBSan 96组+非法输入通过；Thor缺nvcc未编译；量化原生运行待补 | 无GPU/NPU/端到端实测；[验证](2026-09-26/results/verification.json) |
+| [2026-09-27](2026-09-27/README.md) | TensorRT（顺序补课） | 输入消费事件与输出完成事件；[SpQR](../quantization/2026-09-27/spqr/README.md)；[ARM06](../arm/2026-09-27/README.md)；[两篇论文](../paper/2026-09-27/README.md) | [代码](2026-09-27/src/trt.cpp) | CPU所有权状态模型通过；TensorRT/Thor缺工具未编译；量化原生运行待补 | 无GPU/NPU/端到端实测；[验证](2026-09-27/results/verification.json) |
+| [2026-09-28](2026-09-28/README.md) | 边缘端部署（保留为补充，不重复推进） | 发布代次+请求共享快照，失败保留旧版；[OmniQuant](../quantization/2026-09-28/omniquant/README.md)；[ARM03](../arm/2026-09-28/README.md)；[论文](../paper/2026-09-28/README.md) | [控制面](2026-09-28/src/deployment.hpp)、[验证](2026-09-28/src/main.cpp) | Release/ASan/UBSan/TSan通过；2万请求/1000更新；量化原生运行因依赖/克隆缺失待补 | CPU控制面P50/P95 0.00725/0.007292us；[最终记录](2026-09-28/results/verification.json)；无GPU/NPU/E2E性能 |
 
 
-下一主主题：**C++ 工程知识**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
+下一主主题：**RK3588 NPU / RKNN**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
 
 `2026-09-14` 为用户要求补充的历史 C++ 练习，不改变当前轮换位置。
+
+2026-09-28 应用户要求按日期补齐 24–27 日；此前已交付的 28 日同题保留为补充。轮换从补课后的 27 日 TensorRT 继续，不能按最后显示的补充行再次选 C++。详见[补课总览](../docs/BACKFILL_2026-09-24_27.md)。

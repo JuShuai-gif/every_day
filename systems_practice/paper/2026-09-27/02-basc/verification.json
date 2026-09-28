@@ -1,0 +1,13 @@
+{
+  "lesson_date": "2026-09-27",
+  "actual_run_date": "2026-09-28",
+  "fulltext_read": true,
+  "example_run": true,
+  "exit_code": 0,
+  "full_paper_reproduced": false,
+  "thor_verified": false,
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "scope": "独立LIF轨迹和scale扫描，校准/评估拆开；无可学习scale更新、TET训练或BIC剪枝。"
+}

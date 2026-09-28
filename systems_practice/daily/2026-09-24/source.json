@@ -1,0 +1,40 @@
+{
+  "read_date": "2026-09-28",
+  "repository": "https://github.com/triton-inference-server/core",
+  "ref": "main",
+  "commit": null,
+  "source_read": true,
+  "license": "BSD-3-Clause NVIDIA file header",
+  "files": [
+    {
+      "path": "src/model_repository_manager/model_lifecycle.cc",
+      "url": "https://github.com/triton-inference-server/core/blob/main/src/model_repository_manager/model_lifecycle.cc",
+      "symbols": [
+        "GetModel",
+        "AsyncLoad",
+        "OnLoadComplete",
+        "OnLoadFinal",
+        "ModelDeleter"
+      ]
+    }
+  ],
+  "relation": "Independent implementation inspired by lifecycle publication and ownership; no source copied",
+  "failures": [
+    {
+      "url": "https://raw.githubusercontent.com/triton-inference-server/core/main/src/model_lifecycle.cc",
+      "error": "404 Not Found; corrected to model_repository_manager/model_lifecycle.cc"
+    }
+  ],
+  "toolchain_source": "https://developer.nvidia.com/embedded/jetpack/downloads",
+  "toolchain": {
+    "JetPack": "7.2.1",
+    "L4T": "39.2.1",
+    "CUDA": "13.2.2",
+    "TensorRT": "10.16.2",
+    "hardware": "Thor/T5000",
+    "actual_device_verified": false,
+    "ncu_compatibility": "not established",
+    "target": "sm_110 only"
+  },
+  "cuda_kernel_in_lesson": false
+}

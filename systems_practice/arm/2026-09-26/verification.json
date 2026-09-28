@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-26",
+  "actual_run_date": "2026-09-28",
+  "lesson_id": "05",
+  "source_read": true,
+  "program_compiled": true,
+  "program_run": true,
+  "asan_ubsan_verified": true,
+  "target_board_verified": false,
+  "evidence": [
+    "results/cpu.txt",
+    "results/native-arm64.s"
+  ],
+  "formatted_cpu_rerun": {
+    "passed": true,
+    "evidence": "results/formatted-cpu.txt",
+    "actual_date": "2026-09-28"
+  }
+}

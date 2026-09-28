@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-28T01:36:46.095597+00:00",
+  "updated_at": "2026-09-28T05:01:42.757980+00:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -98,6 +98,110 @@
       "implementation_language": "Python standard library"
     },
     {
+      "id": "arxiv:2608.16010",
+      "title": "Breaking the Compression Barrier: Cross-Architecture Compression Boundary Learning via Reverse Regrowth",
+      "delivered_on": "2026-09-24",
+      "actual_delivery_date": "2026-09-28",
+      "first_submitted": "2026-08-17",
+      "version_read": "v1",
+      "directory": "2026-09-24/01-bridge",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2607.17855",
+      "title": "A Hardware-oriented Approach for Efficient Bayesian Inference Computation and Deployment",
+      "delivered_on": "2026-09-24",
+      "actual_delivery_date": "2026-09-28",
+      "first_submitted": "2026-07-20",
+      "version_read": "v1",
+      "directory": "2026-09-24/02-bayes",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "C++17"
+    },
+    {
+      "id": "arxiv:2608.06901",
+      "title": "Prune Once: Retraining-Free Task-Agnostic Pruning for Vision-Language Models",
+      "delivered_on": "2026-09-25",
+      "actual_delivery_date": "2026-09-28",
+      "first_submitted": "2026-08-07",
+      "version_read": "v1",
+      "directory": "2026-09-25/01-porta",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2606.01556",
+      "title": "TwinQuant: Learnable Subspace Decomposition for 4-Bit LLM Quantization",
+      "delivered_on": "2026-09-25",
+      "actual_delivery_date": "2026-09-28",
+      "first_submitted": "2026-06-01",
+      "version_read": "v1",
+      "directory": "2026-09-25/02-twinquant",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2606.04980",
+      "title": "AlphaQ: Calibration-Free Bit Allocation for Mixture-of-Experts Quantization",
+      "delivered_on": "2026-09-26",
+      "actual_delivery_date": "2026-09-28",
+      "first_submitted": "2026-06-03",
+      "version_read": "v1",
+      "directory": "2026-09-26/01-alphaq",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.24042",
+      "title": "Q-DEQ: Discrete Solving and Quantization for Deep Equilibrium Models in Time Series Forecasting under Edge Deployment Coding Constraints",
+      "delivered_on": "2026-09-26",
+      "actual_delivery_date": "2026-09-28",
+      "first_submitted": "2026-09-21",
+      "version_read": "v1",
+      "directory": "2026-09-26/02-qdeq",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.16689",
+      "title": "Efficient Quantization-Aware Distillation with Cross-Modal Alignment for Edge Vision–Language Models",
+      "delivered_on": "2026-09-27",
+      "actual_delivery_date": "2026-09-28",
+      "first_submitted": "2026-09-15",
+      "version_read": "v1",
+      "directory": "2026-09-27/01-edge-distill",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2608.19239",
+      "title": "BASC: Behavior-Aligned Quantization and Pruning for Low-Bit Spiking Neural Networks",
+      "delivered_on": "2026-09-27",
+      "actual_delivery_date": "2026-09-28",
+      "first_submitted": "2026-08-12",
+      "version_read": "v1",
+      "directory": "2026-09-27/02-basc",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
       "id": "arxiv:2609.29029",
       "title": "Exploiting answer-invariant redundancies in satellite imagery for efficient VLM inference on edge",
       "delivered_on": "2026-09-28",
@@ -152,6 +256,54 @@
       "date": "2026-09-28",
       "kind": "author_implementation_audit",
       "reason": "README/tree only; implementation directory requests cache miss"
+    },
+    {
+      "id": "arxiv:2608.16010",
+      "date": "2026-09-24",
+      "kind": "author_source_or_full_reproduction",
+      "reason": "仓库树确认训练/剪枝/恢复脚本存在；regrowth_greedy.py raw请求internal error，未读到核心实现，许可证/精确commit待核实。"
+    },
+    {
+      "id": "arxiv:2607.17855",
+      "date": "2026-09-24",
+      "kind": "author_source_or_full_reproduction",
+      "reason": "v1明确双盲阶段不公开链接；不能宣称已读作者实现。v2日期2026-07-21，本课只读v1。"
+    },
+    {
+      "id": "arxiv:2608.06901",
+      "date": "2026-09-25",
+      "kind": "author_source_or_full_reproduction",
+      "reason": "仓库树和prune.py请求可达；核心pruners算法阅读待补，示例只从论文公式独立实现，未声称调用上游。"
+    },
+    {
+      "id": "arxiv:2606.01556",
+      "date": "2026-09-25",
+      "kind": "author_source_or_full_reproduction",
+      "reason": "全文与标题GitHub检索未确认作者官方仓库，不虚构代码链接。"
+    },
+    {
+      "id": "arxiv:2606.04980",
+      "date": "2026-09-26",
+      "kind": "author_source_or_full_reproduction",
+      "reason": "树确认quant/models/评估目录；categories.py raw请求internal error，核心算法/许可证/commit待核实。"
+    },
+    {
+      "id": "arxiv:2609.24042",
+      "date": "2026-09-26",
+      "kind": "author_source_or_full_reproduction",
+      "reason": "全文及标题GitHub搜索未确认官方实现；不调用未知Kaiwu接口。"
+    },
+    {
+      "id": "arxiv:2609.16689",
+      "date": "2026-09-27",
+      "kind": "author_source_or_full_reproduction",
+      "reason": "全文及标题GitHub检索未核实官方训练代码，不把其他EdgeVL仓库当本文实现。"
+    },
+    {
+      "id": "arxiv:2608.19239",
+      "date": "2026-09-27",
+      "kind": "author_source_or_full_reproduction",
+      "reason": "全文与标题GitHub搜索未确认官方仓库；不编造训练API。"
     }
   ]
 }

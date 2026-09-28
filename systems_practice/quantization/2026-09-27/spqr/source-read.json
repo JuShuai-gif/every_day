@@ -1,0 +1,34 @@
+{
+  "method": "spqr",
+  "repository": "https://github.com/Vahe1994/SpQR",
+  "read_at": "2026-09-28",
+  "commit": null,
+  "branch": "main",
+  "license": "Apache-2.0",
+  "license_url": "https://github.com/Vahe1994/SpQR/blob/main/LICENSE",
+  "source_read": true,
+  "source_fetched": false,
+  "files": [
+    {
+      "path": "spqr_engine.py",
+      "symbols": "SPQRUtil.add_batch / quantize / QuantizationResult",
+      "url": "https://github.com/Vahe1994/SpQR/blob/main/spqr_engine.py"
+    },
+    {
+      "path": "quant_groups.py",
+      "symbols": "Quantizer.configure / find_params / quantize",
+      "url": "https://github.com/Vahe1994/SpQR/blob/main/quant_groups.py"
+    }
+  ],
+  "relationship": "native API calls with independent small-layer driver",
+  "migration": "No relocation observed; canonical repository pages accessible",
+  "commit_resolution": "commits/main and /commits returned 429/internal error; exact commit/permalinks pending",
+  "errors": [
+    "local clone DNS failure; see source.json",
+    {
+      "url": "https://github.com/Vahe1994/SpQR/commits/main.atom",
+      "reason": "web cache miss",
+      "attempted_at": "2026-09-28"
+    }
+  ]
+}

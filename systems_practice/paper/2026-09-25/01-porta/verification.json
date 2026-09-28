@@ -1,0 +1,13 @@
+{
+  "lesson_date": "2026-09-25",
+  "actual_run_date": "2026-09-28",
+  "fulltext_read": true,
+  "example_run": true,
+  "exit_code": 0,
+  "full_paper_reproduced": false,
+  "thor_verified": false,
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "scope": "独立三通道方差/均值幅度选择，保留丢弃常数偏置的反例；没有模型级稀疏分配或重训。"
+}

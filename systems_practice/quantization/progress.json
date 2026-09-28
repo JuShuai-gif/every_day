@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "next_method_id": "quarot",
+  "next_method_id": "smoothquant",
   "last_lesson_date": "2026-09-28",
   "completed_methods": [],
   "history": [
@@ -97,6 +97,70 @@
       "torch_evaluation_run": false
     },
     {
+      "date": "2026-09-24",
+      "actual_delivery_date": "2026-09-28",
+      "method": "omniquant",
+      "rotation_role": "canonical_backfill",
+      "commit": "feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14",
+      "lesson": "2026-09-24/omniquant/README.md",
+      "verification": "2026-09-24/omniquant/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "status": "partial; local clone/native execution/Thor verification pending",
+      "native_api_language": "Python/PyTorch"
+    },
+    {
+      "date": "2026-09-25",
+      "actual_delivery_date": "2026-09-28",
+      "method": "quarot",
+      "rotation_role": "canonical_backfill",
+      "commit": "5008669b08c1f11f9b64d52d16fddd47ca754c5a",
+      "lesson": "2026-09-25/quarot/README.md",
+      "verification": "2026-09-25/quarot/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "status": "partial; local clone/native execution/Thor verification pending",
+      "native_api_language": "Python/PyTorch"
+    },
+    {
+      "date": "2026-09-26",
+      "actual_delivery_date": "2026-09-28",
+      "method": "spinquant",
+      "rotation_role": "canonical_backfill",
+      "commit": null,
+      "lesson": "2026-09-26/spinquant/README.md",
+      "verification": "2026-09-26/spinquant/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "status": "partial; local clone/native execution/Thor verification pending",
+      "native_api_language": "Python/PyTorch"
+    },
+    {
+      "date": "2026-09-27",
+      "actual_delivery_date": "2026-09-28",
+      "method": "spqr",
+      "rotation_role": "canonical_backfill",
+      "commit": null,
+      "lesson": "2026-09-27/spqr/README.md",
+      "verification": "2026-09-27/spqr/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "status": "partial; local clone/native execution/Thor verification pending",
+      "native_api_language": "Python/PyTorch"
+    },
+    {
       "date": "2026-09-28",
       "method": "omniquant",
       "commit": "feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14",
@@ -110,7 +174,9 @@
       "verification": "2026-09-28/omniquant/verification.json",
       "status": "partial; checkout/dependencies/native runtime and backend compatibility pending",
       "native_api_language": "Python/PyTorch",
-      "torch_evaluation_run": false
+      "torch_evaluation_run": false,
+      "rotation_role": "supplemental_out_of_order_delivery",
+      "canonical_lesson": "2026-09-24/omniquant/README.md"
     }
   ],
   "backlog": [
@@ -183,9 +249,64 @@
       "example_delivered": true,
       "cpu_example_run": false,
       "thor_verified": false
+    },
+    {
+      "method": "omniquant",
+      "date": "2026-09-24",
+      "actual_attempt_date": "2026-09-28",
+      "kind": "backfill_verification",
+      "reason": "GitHub clone DNS failure; no verified cache; Python<3.10 chosen example floor; torch/numpy/tqdm absent; Pinned packaging/LICENSE verification incomplete; No Thor; AutoGPTQ backend compatibility unverified",
+      "latest_verification": "2026-09-24/omniquant/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false
+    },
+    {
+      "method": "quarot",
+      "date": "2026-09-25",
+      "actual_attempt_date": "2026-09-28",
+      "kind": "backfill_verification",
+      "reason": "No local checkout or torch; Native API run/accuracy/storage/timing not verified; Thor backend compatibility unverified",
+      "latest_verification": "2026-09-25/quarot/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false
+    },
+    {
+      "method": "spinquant",
+      "date": "2026-09-26",
+      "actual_attempt_date": "2026-09-28",
+      "kind": "backfill_verification",
+      "reason": "No local checkout or torch; Native API run/accuracy/storage/timing not verified; Thor backend compatibility unverified; Exact commit and permanent URLs unresolved",
+      "latest_verification": "2026-09-26/spinquant/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false
+    },
+    {
+      "method": "spqr",
+      "date": "2026-09-27",
+      "actual_attempt_date": "2026-09-28",
+      "kind": "backfill_verification",
+      "reason": "No local checkout or torch; Native API run/accuracy/storage/timing not verified; Thor backend compatibility unverified; Exact commit and permanent URLs unresolved",
+      "latest_verification": "2026-09-27/spqr/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false
     }
   ],
   "policy": "One quantization lesson per Asia/Shanghai calendar day, independent of main rotation. Preparation does not advance cursor. Daily attempted lessons may advance cursor but failures stay in backlog and never enter completed_methods. Completion requires source read and concrete upstream usage example delivered; execution evidence tracked separately.",
   "last_language_audit": "2026-09-22T10:43:01.386131+08:00",
-  "language_policy": "Torch-first for algorithms/models/precision/framework timing; C++ optional for explicit layout/CPU kernel studies"
+  "language_policy": "Torch-first for algorithms/models/precision/framework timing; C++ optional for explicit layout/CPU kernel studies",
+  "last_canonical_lesson_date": "2026-09-27",
+  "backfill_reconciled_at": "2026-09-28T05:01:42.754872+00:00",
+  "reconciliation_note": "24–27 filled by explicit user request; existing 28 OmniQuant retained as supplemental, not counted twice. Failed native validations remain backlog. No second old backlog retry on actual run day."
 }

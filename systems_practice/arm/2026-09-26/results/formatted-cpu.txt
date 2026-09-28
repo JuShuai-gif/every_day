@@ -1,0 +1,2 @@
+PASS 1000 calls, nine uint64 args, live value across call; native Darwin ABI
+PASS 1000 calls, nine uint64 args, live value across call; native Darwin ABI

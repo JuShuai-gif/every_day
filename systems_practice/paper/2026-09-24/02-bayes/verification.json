@@ -1,0 +1,13 @@
+{
+  "lesson_date": "2026-09-24",
+  "actual_run_date": "2026-09-28",
+  "fulltext_read": true,
+  "example_run": true,
+  "exit_code": 0,
+  "full_paper_reproduced": false,
+  "thor_verified": false,
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "scope": "C++17小块对角布局与原始两次矩阵向量乘比较，是真实CPU布局检查，不是GPU复现。"
+}

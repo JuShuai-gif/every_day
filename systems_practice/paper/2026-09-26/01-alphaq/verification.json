@@ -1,0 +1,13 @@
+{
+  "lesson_date": "2026-09-26",
+  "actual_run_date": "2026-09-28",
+  "fulltext_read": true,
+  "example_run": true,
+  "exit_code": 0,
+  "full_paper_reproduced": false,
+  "thor_verified": false,
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "scope": "合成谱Hill估计+三层穷举预算；gamma固定1，无FARMS、GPTQ、打包或模型推理。"
+}

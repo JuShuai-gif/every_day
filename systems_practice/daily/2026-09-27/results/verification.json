@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-27",
+  "backfilled_at": "2026-09-28",
+  "source_read": true,
+  "release_verified": true,
+  "asan_ubsan_verified": true,
+  "cuda_compiled": false,
+  "thor_verified": false,
+  "gpu_performance": null,
+  "scope": "CPU所有权状态机Release/ASan/UBSan通过；CUDA配置缺nvcc失败，TensorRT编译、事件生命周期、结果与性能均未验证。",
+  "formatted_cpu_rerun": {
+    "passed": true,
+    "evidence": "results/formatted-cpu.txt",
+    "actual_date": "2026-09-28"
+  }
+}

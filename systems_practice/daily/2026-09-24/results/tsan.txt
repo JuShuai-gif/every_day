@@ -1,0 +1,18 @@
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/daily/2026-09-24/build/tsan
+[ 50%] Building CXX object CMakeFiles/edge_deployment.dir/src/main.cpp.o
+[100%] Linking CXX executable edge_deployment
+[100%] Built target edge_deployment
+contracts: invalid=7 stale/replay/failure/close/lifetime PASS
+concurrency: 20000 requests / 1000 publications PASS
+CPU acquire+fixture us/request p50=0.359167 p95=0.386542 warmup=20 samples=100 batch=1000

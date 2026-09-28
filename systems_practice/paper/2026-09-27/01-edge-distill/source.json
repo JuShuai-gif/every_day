@@ -1,0 +1,23 @@
+{
+  "id": "arxiv:2609.16689",
+  "title": "Efficient Quantization-Aware Distillation with Cross-Modal Alignment for Edge Vision–Language Models",
+  "authors": [
+    "Jinwoo Jeon",
+    "GyuYeop Do",
+    "Yubin Lim",
+    "Nam-Joon Kim",
+    "Hyun Gon Ryu",
+    "Hyuk-Jae Lee",
+    "Byung-Jun Lee"
+  ],
+  "first_submitted": "2026-09-15",
+  "version": "v1",
+  "read_on": "2026-09-28",
+  "fulltext": "https://arxiv.org/html/2609.16689v1",
+  "metadata": "https://arxiv.org/abs/2609.16689v1",
+  "sections_read": "§3.1/3.2，§4.1和表1/3",
+  "author_repository": null,
+  "source_availability": "全文及标题GitHub检索未核实官方训练代码，不把其他EdgeVL仓库当本文实现。",
+  "relationship": "independent mechanism example; not upstream reproduction",
+  "publication_status": "arXiv record; conference acceptance only where explicitly noted"
+}

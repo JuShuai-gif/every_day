@@ -1,0 +1,7 @@
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/daily/2026-09-24/build/release
+[100%] Built target edge_deployment
+contracts: invalid=7 stale/replay/failure/close/lifetime PASS
+concurrency: 20000 requests / 1000 publications PASS
+CPU acquire+fixture us/request p50=0.007333 p95=0.007375 warmup=20 samples=100 batch=1000

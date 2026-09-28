@@ -1,0 +1,13 @@
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/daily/2026-09-26/build/cpu
+[ 50%] Building CXX object CMakeFiles/cpu.dir/src/cpu.cpp.o
+[100%] Linking CXX executable cpu
+[100%] Built target cpu
+CPU oracle PASS 96 shapes/patterns, translation invariance, 4 invalid; GPU untested

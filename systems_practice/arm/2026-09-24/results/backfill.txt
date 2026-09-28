@@ -1,0 +1,2 @@
+stride cases=36 invalid=4 PASS
+stride cases=36 invalid=4 PASS

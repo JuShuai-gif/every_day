@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-09-28T05:38:23.336591+00:00",
+  "main_dates": [
+    "2026-09-24",
+    "2026-09-25",
+    "2026-09-26",
+    "2026-09-27"
+  ],
+  "main_readme_h2_count": [
+    12,
+    12,
+    12,
+    12
+  ],
+  "concept_cjk_count": [
+    592,
+    550,
+    515,
+    549
+  ],
+  "local_lesson_links_valid": true,
+  "json_python_shell_syntax_valid": true,
+  "main_cpu_rerun_passed": true,
+  "arm_cpp_rerun_passed": true,
+  "paper_cpu_examples_passed": 8,
+  "native_quantization_runs": 0,
+  "gpu_compilation_or_run": false,
+  "user_output_directory_untouched": true,
+  "format_script_final_exit_code": 0,
+  "notes": "Before snapshots preserve original relative links verbatim; use live indices for navigation. No native quant/GPU performance fabricated.",
+  "scoped_format_check_exit_code": 0
+}

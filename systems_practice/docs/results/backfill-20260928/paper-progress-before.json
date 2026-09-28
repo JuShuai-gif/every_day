@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-28T01:36:46.095597+00:00",
+  "daily_count": 2,
+  "preferred_max_age_days": 180,
+  "fallback_max_age_days": 365,
+  "topics": [
+    "pruning",
+    "quantization",
+    "model_compression",
+    "edge_deployment"
+  ],
+  "deduplicate_by": "versionless_arxiv_id_or_doi",
+  "schedule_integration": "Existing daily 08:30 Asia/Shanghai task reads systems_practice/docs/PRACTICE_SPEC.md; no scheduler mutation.",
+  "history": [
+    {
+      "id": "arxiv:2609.01743",
+      "title": "SCULPT: Training Edge Vision Models for Post-Training Quantization Readiness",
+      "delivered_on": "2026-09-21",
+      "first_submitted": "2026-09-01",
+      "version_read": "v1",
+      "directory": "2026-09-21/01-sculpt",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "C++17",
+      "release_verified": true,
+      "asan_ubsan_verified": true,
+      "language_migrated_at": "2026-09-22T10:43:01.386131+08:00"
+    },
+    {
+      "id": "arxiv:2608.15693",
+      "title": "Large Models for Small Devices: Recent Advances and Empirical Analysis of Edge AI Deployment",
+      "delivered_on": "2026-09-21",
+      "first_submitted": "2026-08-16",
+      "version_read": "v1",
+      "directory": "2026-09-21/02-edge-deployment",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "C++17",
+      "release_verified": true,
+      "asan_ubsan_verified": true,
+      "language_migrated_at": "2026-09-22T10:43:01.386131+08:00"
+    },
+    {
+      "id": "arxiv:2609.00049",
+      "title": "REAL-Q: E2E LLM Quantization via Dynamic Gradient Descent",
+      "delivered_on": "2026-09-22",
+      "first_submitted": "2026-08-30",
+      "version_read": "v1",
+      "directory": "2026-09-22/01-real-q",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "C++17",
+      "release_verified": true,
+      "asan_ubsan_verified": true,
+      "language_migrated_at": "2026-09-22T10:43:01.386131+08:00"
+    },
+    {
+      "id": "arxiv:2609.12310",
+      "title": "ESTS at WMT26: Routing-Informed Expert Pruning for Model Compression",
+      "delivered_on": "2026-09-22",
+      "first_submitted": "2026-09-11",
+      "version_read": "v1",
+      "directory": "2026-09-22/02-ests",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "C++17",
+      "release_verified": true,
+      "asan_ubsan_verified": true,
+      "language_migrated_at": "2026-09-22T10:43:01.386131+08:00"
+    },
+    {
+      "id": "arxiv:2608.20953",
+      "title": "Quantization-Aware Healing: A Practical Recipe for Recovering Compressed, 4-Bit LLMs",
+      "delivered_on": "2026-09-23",
+      "first_submitted": "2026-08-21",
+      "version_read": "v1",
+      "directory": "2026-09-23/01-qah",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.16129",
+      "title": "Optimal Pruning for Neural Architectures using Fisher Information Distances",
+      "delivered_on": "2026-09-23",
+      "first_submitted": "2026-09-14",
+      "version_read": "v1",
+      "directory": "2026-09-23/02-fisher-distance",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.29029",
+      "title": "Exploiting answer-invariant redundancies in satellite imagery for efficient VLM inference on edge",
+      "delivered_on": "2026-09-28",
+      "first_submitted": "2026-09-24",
+      "version_read": "v1",
+      "directory": "2026-09-28/01-rift",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.02107",
+      "title": "A Unified Rate-Distortion Perspective on Vector, Product, and Scalar Quantization",
+      "delivered_on": "2026-09-28",
+      "first_submitted": "2026-09-02",
+      "version_read": "v1",
+      "directory": "2026-09-28/02-rate-distortion",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    }
+  ],
+  "backlog": [
+    {
+      "id": "arxiv:2609.00049",
+      "date": "2026-09-22",
+      "kind": "author_source_availability",
+      "reason": "Primary fulltext and independent example delivered; no verifiable official code found"
+    },
+    {
+      "id": "arxiv:2608.20953",
+      "date": "2026-09-23",
+      "kind": "author_training_source",
+      "reason": "Full QAH training/export repository not verified; paper and toy experiment delivered"
+    },
+    {
+      "id": "arxiv:2609.16129",
+      "date": "2026-09-23",
+      "kind": "author_implementation_audit",
+      "reason": "Readme/tree accessible, core implementation reading and license discrepancy still pending"
+    },
+    {
+      "id": "arxiv:2609.29029",
+      "date": "2026-09-28",
+      "kind": "author_source_availability",
+      "reason": "No verified official repository found in fulltext and title+GitHub search"
+    },
+    {
+      "id": "arxiv:2609.02107",
+      "date": "2026-09-28",
+      "kind": "author_implementation_audit",
+      "reason": "README/tree only; implementation directory requests cache miss"
+    }
+  ]
+}

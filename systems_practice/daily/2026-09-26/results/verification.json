@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-26",
+  "backfilled_at": "2026-09-28",
+  "source_read": true,
+  "release_verified": true,
+  "asan_ubsan_verified": true,
+  "cuda_compiled": false,
+  "thor_verified": false,
+  "gpu_performance": null,
+  "scope": "CPU参考96形状/模式及4非法输入通过Release与ASan/UBSan；GPU配置实际失败：缺nvcc。GPU精度、事件耗时和优化收益未验证。",
+  "formatted_cpu_rerun": {
+    "passed": true,
+    "evidence": "results/formatted-cpu.txt",
+    "actual_date": "2026-09-28"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "arxiv:2608.06901",
+  "title": "Prune Once: Retraining-Free Task-Agnostic Pruning for Vision-Language Models",
+  "authors": [
+    "Minseok Kang",
+    "Hyunwoo Kim",
+    "Chanyoung Kim",
+    "Minwoo Kim",
+    "Jaekoo Lee",
+    "Dahuin Jung"
+  ],
+  "first_submitted": "2026-08-07",
+  "version": "v1",
+  "read_on": "2026-09-28",
+  "fulltext": "https://arxiv.org/html/2608.06901v1",
+  "metadata": "https://arxiv.org/abs/2608.06901v1",
+  "sections_read": "§3.1–3.3，表1/2",
+  "author_repository": "https://github.com/cau-hai-lab/PORTA",
+  "source_availability": "仓库树和prune.py请求可达；核心pruners算法阅读待补，示例只从论文公式独立实现，未声称调用上游。",
+  "relationship": "independent mechanism example; not upstream reproduction",
+  "publication_status": "arXiv record; conference acceptance only where explicitly noted"
+}

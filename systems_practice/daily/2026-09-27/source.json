@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/NVIDIA/TensorRT",
+  "read_at": "2026-09-28",
+  "branch": "main",
+  "commit": null,
+  "file": "samples/sampleNonZeroPlugin/sampleNonZeroPlugin.cpp",
+  "symbols": "SampleNonZeroPlugin::build / infer",
+  "url": "https://github.com/NVIDIA/TensorRT/blob/main/samples/sampleNonZeroPlugin/sampleNonZeroPlugin.cpp",
+  "license": "Apache-2.0",
+  "source_read": true,
+  "local_clone": false,
+  "relationship": "independent teaching implementation inspired by the explicitly read mechanisms; not copied source",
+  "scope": "See README for retained mechanism and simplifications",
+  "additional_read": {
+    "file": "include/NvInferRuntime.h",
+    "symbols": "IExecutionContext::setInputConsumedEvent / enqueueV3",
+    "url": "https://github.com/NVIDIA/TensorRT/blob/main/include/NvInferRuntime.h"
+  }
+}

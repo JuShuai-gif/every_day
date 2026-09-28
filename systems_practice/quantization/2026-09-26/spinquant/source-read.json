@@ -1,0 +1,34 @@
+{
+  "method": "spinquant",
+  "repository": "https://github.com/facebookresearch/SpinQuant",
+  "read_at": "2026-09-28",
+  "commit": null,
+  "branch": "main",
+  "license": "CC-BY-NC-4.0",
+  "license_url": "https://github.com/facebookresearch/SpinQuant/blob/main/LICENSE",
+  "source_read": true,
+  "source_fetched": false,
+  "files": [
+    {
+      "path": "train_utils/optimizer.py",
+      "symbols": "SGDG.step / Cayley_loop",
+      "url": "https://github.com/facebookresearch/SpinQuant/blob/main/train_utils/optimizer.py"
+    },
+    {
+      "path": "train_utils/quant_linear.py",
+      "symbols": "QuantizeLinear.forward",
+      "url": "https://github.com/facebookresearch/SpinQuant/blob/main/train_utils/quant_linear.py"
+    }
+  ],
+  "relationship": "native API calls with independent small-layer driver",
+  "migration": "No relocation observed; canonical repository pages accessible",
+  "commit_resolution": "commits/main and /commits returned 429/internal error; exact commit/permalinks pending",
+  "errors": [
+    "local clone DNS failure; see source.json",
+    {
+      "url": "https://github.com/facebookresearch/SpinQuant/commits/main.atom",
+      "reason": "Unsupported application/atom+xml",
+      "attempted_at": "2026-09-28"
+    }
+  ]
+}

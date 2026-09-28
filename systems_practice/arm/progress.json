@@ -2,11 +2,14 @@
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
   "last_delivery_date": "2026-09-28",
-  "next_lesson_id": "04",
+  "next_lesson_id": "07",
   "delivered_lesson_ids": [
     "01",
     "02",
-    "03"
+    "03",
+    "04",
+    "05",
+    "06"
   ],
   "history": [
     {
@@ -39,6 +42,74 @@
       "program_run": true
     },
     {
+      "date": "2026-09-24",
+      "actual_delivery_date": "2026-09-28",
+      "lesson_id": "03",
+      "path": "2026-09-24",
+      "rotation_role": "canonical_backfill",
+      "source_read": true,
+      "lesson_delivered": true,
+      "observation_run": true,
+      "compute_kernel_run": true,
+      "compute_kernel_benchmarked": false,
+      "target_board_verified": false,
+      "verification": "2026-09-24/verification.json",
+      "implementation_language": "C++17",
+      "program_compiled": true,
+      "program_run": true
+    },
+    {
+      "date": "2026-09-25",
+      "actual_delivery_date": "2026-09-28",
+      "lesson_id": "04",
+      "path": "2026-09-25",
+      "rotation_role": "canonical_backfill",
+      "source_read": true,
+      "lesson_delivered": true,
+      "observation_run": true,
+      "compute_kernel_run": true,
+      "compute_kernel_benchmarked": false,
+      "target_board_verified": false,
+      "verification": "2026-09-25/verification.json",
+      "implementation_language": "C++17",
+      "program_compiled": true,
+      "program_run": true
+    },
+    {
+      "date": "2026-09-26",
+      "actual_delivery_date": "2026-09-28",
+      "lesson_id": "05",
+      "path": "2026-09-26",
+      "rotation_role": "canonical_backfill",
+      "source_read": true,
+      "lesson_delivered": true,
+      "observation_run": true,
+      "compute_kernel_run": true,
+      "compute_kernel_benchmarked": false,
+      "target_board_verified": false,
+      "verification": "2026-09-26/verification.json",
+      "implementation_language": "C++17",
+      "program_compiled": true,
+      "program_run": true
+    },
+    {
+      "date": "2026-09-27",
+      "actual_delivery_date": "2026-09-28",
+      "lesson_id": "06",
+      "path": "2026-09-27",
+      "rotation_role": "canonical_backfill",
+      "source_read": true,
+      "lesson_delivered": true,
+      "observation_run": true,
+      "compute_kernel_run": true,
+      "compute_kernel_benchmarked": false,
+      "target_board_verified": false,
+      "verification": "2026-09-27/verification.json",
+      "implementation_language": "C++17",
+      "program_compiled": true,
+      "program_run": true
+    },
+    {
       "date": "2026-09-28",
       "lesson_id": "03",
       "path": "2026-09-28",
@@ -51,7 +122,9 @@
       "verification": "2026-09-28/verification.json",
       "implementation_language": "C++17",
       "program_compiled": true,
-      "program_run": true
+      "program_run": true,
+      "rotation_role": "supplemental_out_of_order_delivery",
+      "canonical_lesson": "2026-09-24"
     }
   ],
   "backlog": [],
@@ -67,6 +140,11 @@
     {
       "date": "2026-09-22",
       "reason": "User mandates C/C++ for low-level ARM/CPU/architecture. Replace lesson01 Python query with C++17; preserve original evidence and lesson02 cursor."
+    },
+    {
+      "date": "2026-09-28",
+      "reason": "User-requested chronological backfill24–27 delivers03–06; existing28 lesson03 retained as supplemental and not counted twice."
     }
-  ]
+  ],
+  "last_canonical_lesson_date": "2026-09-27"
 }

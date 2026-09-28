@@ -1,0 +1,2 @@
+max_error=0 original_values=10 merged_values=20 padding_values=10
+max_error=0 original_values=10 merged_values=20 padding_values=10

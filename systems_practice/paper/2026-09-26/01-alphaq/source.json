@@ -1,0 +1,23 @@
+{
+  "id": "arxiv:2606.04980",
+  "title": "AlphaQ: Calibration-Free Bit Allocation for Mixture-of-Experts Quantization",
+  "authors": [
+    "Wanqi Yang",
+    "Yuexiao Ma",
+    "Alexander Conzelmann",
+    "Xiawu Zheng",
+    "Michael W. Mahoney",
+    "T. Konstantin Rusch",
+    "Shiwei Liu"
+  ],
+  "first_submitted": "2026-06-03",
+  "version": "v1",
+  "read_on": "2026-09-28",
+  "fulltext": "https://arxiv.org/html/2606.04980v1",
+  "metadata": "https://arxiv.org/abs/2606.04980v1",
+  "sections_read": "§3.2/3.3，§4.1和结果表",
+  "author_repository": "https://github.com/Superone77/AlphaQ",
+  "source_availability": "树确认quant/models/评估目录；categories.py raw请求internal error，核心算法/许可证/commit待核实。",
+  "relationship": "independent mechanism example; not upstream reproduction",
+  "publication_status": "arXiv record; conference acceptance only where explicitly noted"
+}

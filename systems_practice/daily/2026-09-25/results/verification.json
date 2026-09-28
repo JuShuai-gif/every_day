@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-25",
+  "backfilled_at": "2026-09-28",
+  "source_read": true,
+  "release_verified": true,
+  "asan_ubsan_verified": true,
+  "cuda_compiled": false,
+  "thor_verified": false,
+  "gpu_performance": null,
+  "scope": "本机 Release 与 ASan/UBSan 通过2000失败注入、1000成功/移动和容量耗尽检查。未做性能基准，无GPU/NPU时间。",
+  "formatted_cpu_rerun": {
+    "passed": true,
+    "evidence": "results/formatted-cpu.txt",
+    "actual_date": "2026-09-28"
+  }
+}

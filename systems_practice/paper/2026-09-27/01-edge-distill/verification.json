@@ -1,0 +1,13 @@
+{
+  "lesson_date": "2026-09-27",
+  "actual_run_date": "2026-09-28",
+  "fulltext_read": true,
+  "example_run": true,
+  "exit_code": 0,
+  "full_paper_reproduced": false,
+  "thor_verified": false,
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "scope": "四个二维向量的整体旋转反例，计算真实对称InfoNCE和关系误差；无参数更新或QAT。"
+}

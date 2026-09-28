@@ -10,6 +10,14 @@
 | 2026-09-22 | [ESTS at WMT26](2026-09-22/02-ests/README.md) / 2026-09-11 | 剪枝：路由分歧、容量预算与专家重映射 | 难：公开推理提交，完整训练链未核实 | C++17的52容量案例通过；FP32 payload288→192B；无任务/设备性能 |
 | 2026-09-23 | [Quantization-Aware Healing](2026-09-23/01-qah/README.md) / 2026-08-21 | 量化恢复：原始教师KL与真实STE更新 | 难：训练/导出源码未找到 | Python标准库3分支真实更新、chunk KL/零概率边界通过；非MXFP4复现 |
 | 2026-09-23 | [Fisher Information Distances](2026-09-23/02-fisher-distance/README.md) / 2026-09-14 | 剪枝：局部Fisher、坐标路径与RMS分数 | 中到难：长扫描与作者依赖/许可待核验 | Python解析Fisher有限差分、独立heldout和边界通过；无稀疏加速 |
+| 2026-09-24 | [Breaking the Compression Barrier: Cross-Architecture Compression Boundary Learning via Reverse Regrowth](2026-09-24/01-bridge/README.md) / 2026-08-17 | 先越过剪枝崩溃点，再从损坏严重的层恢复关键连接 | 中→难：作者完整复现待补 | Python标准库机制小例子实际通过；非整篇复现 |
+| 2026-09-24 | [A Hardware-oriented Approach for Efficient Bayesian Inference Computation and Deployment](2026-09-24/02-bayes/README.md) / 2026-07-20 | 把不同形状的张量收缩并成规则批次，或展平并放入块对角矩阵 | 中：作者完整复现待补 | C++17 Release/ASan/UBSan机制小例子实际通过；非整篇复现 |
+| 2026-09-25 | [Prune Once: Retraining-Free Task-Agnostic Pruning for Vision-Language Models](2026-09-25/01-porta/README.md) / 2026-08-07 | 用校准特征方差而非单看均值幅度衡量通道信息，权重分数Sij=Var(Xj)*abs(Wij)，结合输出方差分配层稀疏率。 | 中：作者完整复现待补 | Python标准库机制小例子实际通过；非整篇复现 |
+| 2026-09-25 | [TwinQuant: Learnable Subspace Decomposition for 4-Bit LLM Quantization](2026-09-25/02-twinquant/README.md) / 2026-06-01 | 把W拆成UV+R，并用可逆G以及全局正交Q重新参数化，使两个分支和激活的量化误差共同下降 | 难：作者完整复现待补 | Python标准库机制小例子实际通过；非整篇复现 |
+| 2026-09-26 | [AlphaQ: Calibration-Free Bit Allocation for Mixture-of-Experts Quantization](2026-09-26/01-alphaq/README.md) / 2026-06-03 | 从权重谱估计Hill指数，构造重要性加权噪声eta=(median(alpha)/alpha)^gamma*Var(W)*2^(-2b)，在全局位预算内选择各层位宽。免校准指位分配，论文后续GPTQ仍用了校准样本。 | 中→难：作者完整复现待补 | Python标准库机制小例子实际通过；非整篇复现 |
+| 2026-09-26 | [Q-DEQ: Discrete Solving and Quantization for Deep Equilibrium Models in Time Series Forecasting under Edge Deployment Coding Constraints](2026-09-26/02-qdeq/README.md) / 2026-09-21 | 在DEQ固定点附近用有限差分近似残差方向变化，编码局部系数为二进制，最小化二次能量。固定点求解保持连续精度，W8A8只加在re-forward，是另一阶段。 | 难：作者完整复现待补 | Python标准库机制小例子实际通过；非整篇复现 |
+| 2026-09-27 | [Efficient Quantization-Aware Distillation with Cross-Modal Alignment for Edge Vision–Language Models](2026-09-27/01-edge-distill/README.md) / 2026-09-15 | 以冻结教师作为量化学生的语义锚，联合关系蒸馏与对称InfoNCE | 难：作者完整复现待补 | Python标准库机制小例子实际通过；非整篇复现 |
+| 2026-09-27 | [BASC: Behavior-Aligned Quantization and Pruning for Low-Bit Spiking Neural Networks](2026-09-27/02-basc/README.md) / 2026-08-12 | LIF膜电位的阈值使小权重变化改变放电时间。TSC用时间任务损失学习scale，BIC重评剪枝边界附近通道间的相互作用。权重误差最小不一定对应行为误差最小。 | 中→难：作者完整复现待补 | Python标准库机制小例子实际通过；非整篇复现 |
 | 2026-09-28 | [Rift](2026-09-28/01-rift/README.md) / 2026-09-24 | 图块剪枝与条件准确率/能耗预算 | 难：作者仓库未核实 | Python合成决策/偏移召回/边界通过；无设备数据 |
 | 2026-09-28 | [Rate-Distortion Perspective](2026-09-28/02-rate-distortion/README.md) / 2026-09-02 | 固定分布与码率的VQ/PQ/SQ比较 | 中到难：实现审查待补 | Python真实Lloyd更新、训练目标/空簇检查通过；非作者训练 |
 

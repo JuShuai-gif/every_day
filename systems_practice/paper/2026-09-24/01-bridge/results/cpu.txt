@@ -1,0 +1,42 @@
+{
+  "path": [
+    {
+      "restored": 5,
+      "kept": 1,
+      "cal_mse": 24.43033562712139,
+      "heldout_mse": 14.562779731714143
+    },
+    {
+      "restored": 4,
+      "kept": 2,
+      "cal_mse": 10.80283015217998,
+      "heldout_mse": 6.095272844279125
+    },
+    {
+      "restored": 2,
+      "kept": 3,
+      "cal_mse": 5.1778573024165695,
+      "heldout_mse": 6.236198985415327
+    },
+    {
+      "restored": 1,
+      "kept": 4,
+      "cal_mse": 0.21404865459352798,
+      "heldout_mse": 0.3138364568591224
+    },
+    {
+      "restored": 3,
+      "kept": 5,
+      "cal_mse": 0.045513214591232,
+      "heldout_mse": 0.03850620801332547
+    },
+    {
+      "restored": 0,
+      "kept": 6,
+      "cal_mse": 0.0,
+      "heldout_mse": 0.0
+    }
+  ],
+  "training_updates": 0,
+  "scope": "greedy restoration only; not BRIDGE policy"
+}

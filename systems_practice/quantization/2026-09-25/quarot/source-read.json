@@ -1,0 +1,29 @@
+{
+  "method": "quarot",
+  "repository": "https://github.com/spcl/QuaRot",
+  "read_at": "2026-09-28",
+  "commit": "5008669b08c1f11f9b64d52d16fddd47ca754c5a",
+  "branch": "main",
+  "license": "Apache-2.0",
+  "license_url": "https://github.com/spcl/QuaRot/blob/main/LICENSE",
+  "source_read": true,
+  "source_fetched": false,
+  "files": [
+    {
+      "path": "fake_quant/rotation_utils.py",
+      "symbols": "register_online_rotation / online_rotate",
+      "url": "https://github.com/spcl/QuaRot/blob/5008669b08c1f11f9b64d52d16fddd47ca754c5a/fake_quant/rotation_utils.py"
+    },
+    {
+      "path": "fake_quant/quant_utils.py",
+      "symbols": "ActQuantizer / pack_i4 / unpack_i4",
+      "url": "https://github.com/spcl/QuaRot/blob/5008669b08c1f11f9b64d52d16fddd47ca754c5a/fake_quant/quant_utils.py"
+    }
+  ],
+  "relationship": "native API calls with independent small-layer driver",
+  "migration": "No relocation observed; canonical repository pages accessible",
+  "commit_resolution": "pinned source read",
+  "errors": [
+    "local clone DNS failure; see source.json"
+  ]
+}

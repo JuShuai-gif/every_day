@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-28",
+  "lesson_id": "03",
+  "sources": [
+    {
+      "url": "https://documentation-service.arm.com/static/674d8b61c7fc0d1f211dc776?token=",
+      "document": "102374_0102_02_en; version1.2 Issue02,2024-12-02",
+      "read_sections": "15-18, printed pages30-37",
+      "read": true
+    },
+    {
+      "url": "https://docs.radxa.com/en/rock5/rock5b/getting-started/introduction",
+      "read": true,
+      "scope": "board and CPU specification"
+    }
+  ],
+  "attempts": [
+    {
+      "url": "https://developer.arm.com/documentation/102374/latest/Loads-and-stores---addressing",
+      "error": "tool internal error"
+    },
+    {
+      "url": "https://documentation-service.arm.com/static/674d8b61c7fc0d1f211dc776",
+      "error": "400 timeout; query URL succeeded"
+    }
+  ],
+  "relation": "Independent C++17 stride exercise from ISA semantics",
+  "board": "ROCK5B/RK3588 Cortex-A76/A55",
+  "board_os": null,
+  "board_sdk": null,
+  "board_verified": false
+}

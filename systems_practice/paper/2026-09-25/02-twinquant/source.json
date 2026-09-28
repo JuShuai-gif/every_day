@@ -1,0 +1,23 @@
+{
+  "id": "arxiv:2606.01556",
+  "title": "TwinQuant: Learnable Subspace Decomposition for 4-Bit LLM Quantization",
+  "authors": [
+    "Haodong Wang",
+    "Junjie Liu",
+    "Zicong Hong",
+    "Qianli Liu",
+    "Jian Lin",
+    "Song Guo",
+    "Xu Chen"
+  ],
+  "first_submitted": "2026-06-01",
+  "version": "v1",
+  "read_on": "2026-09-28",
+  "fulltext": "https://arxiv.org/html/2606.01556v1",
+  "metadata": "https://arxiv.org/abs/2606.01556v1",
+  "sections_read": "§3、§4.1，表2",
+  "author_repository": null,
+  "source_availability": "全文与标题GitHub检索未确认作者官方仓库，不虚构代码链接。",
+  "relationship": "independent mechanism example; not upstream reproduction",
+  "publication_status": "arXiv record; conference acceptance only where explicitly noted"
+}

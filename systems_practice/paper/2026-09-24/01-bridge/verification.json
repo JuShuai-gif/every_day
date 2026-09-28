@@ -1,0 +1,13 @@
+{
+  "lesson_date": "2026-09-24",
+  "actual_run_date": "2026-09-28",
+  "fulltext_read": true,
+  "example_run": true,
+  "exit_code": 0,
+  "full_paper_reproduced": false,
+  "thor_verified": false,
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "scope": "独立贪心恢复小线性模型，保留校准误差和heldout检查；没有SSIM、REINFORCE或微调。"
+}

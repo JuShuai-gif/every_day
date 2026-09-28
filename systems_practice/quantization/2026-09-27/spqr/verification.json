@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-27",
+  "actual_run_date": "2026-09-28",
+  "method": "spqr",
+  "repository": "https://github.com/Vahe1994/SpQR",
+  "commit": null,
+  "source_record": "source.json",
+  "source_fetched": false,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": [
+    "SPQRUtil.add_batch / quantize / QuantizationResult",
+    "Quantizer.configure / find_params / quantize"
+  ],
+  "evidence": [
+    "source-read.json",
+    "results/native-attempt.txt"
+  ],
+  "blockers": [
+    "No local checkout or torch",
+    "Native API run/accuracy/storage/timing not verified",
+    "Thor backend compatibility unverified",
+    "Exact commit and permanent URLs unresolved"
+  ],
+  "final_environment_check": {
+    "exit_code": 2,
+    "evidence": "results/final-native-attempt.txt",
+    "native_run": false
+  }
+}

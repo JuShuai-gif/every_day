@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-28",
+  "repository": "https://github.com/OpenGVLab/OmniQuant",
+  "commit": "feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14",
+  "commit_resolution_url": "https://github.com/OpenGVLab/OmniQuant/commit/feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14",
+  "local_checkout": false,
+  "verified_cache_found": false,
+  "source_read": true,
+  "files": [
+    {
+      "path": "quantize/int_linear.py",
+      "symbols": [
+        "QuantLinear.__init__",
+        "QuantLinear.forward",
+        "QuantLinear.set_quant_state"
+      ],
+      "permalink": "https://github.com/OpenGVLab/OmniQuant/blob/feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14/quantize/int_linear.py"
+    },
+    {
+      "path": "quantize/quantizer.py",
+      "symbols": [
+        "UniformAffineQuantizer",
+        "per_token_dynamic_calibration",
+        "fake_quant",
+        "round_ste"
+      ],
+      "permalink": "https://github.com/OpenGVLab/OmniQuant/blob/feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14/quantize/quantizer.py"
+    },
+    {
+      "path": "quantize/omniquant.py",
+      "symbols": [
+        "omniquant",
+        "get_named_linears",
+        "add_new_module"
+      ],
+      "permalink": "https://github.com/OpenGVLab/OmniQuant/blob/feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14/quantize/omniquant.py"
+    }
+  ],
+  "branch_only_reads": [
+    "README.md",
+    "LICENCE",
+    "pyproject.toml"
+  ],
+  "license": "main LICENCE: MIT, Copyright2024 Mengzhao Chen; pyproject classifier says Apache (metadata discrepancy)",
+  "dependencies": "main pyproject version0.1.0 Python>=3.8 torch>=2.0.0 transformers>=4.31.0; README recommends Python3.10",
+  "failure_urls": [
+    "https://github.com/OpenGVLab/OmniQuant/blob/feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14/setup.py",
+    "https://raw.githubusercontent.com/OpenGVLab/OmniQuant/main/requirements.txt",
+    "https://github.com/OpenGVLab/OmniQuant/blob/feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14/pyproject.toml",
+    "https://github.com/OpenGVLab/OmniQuant/blob/feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14/LICENCE"
+  ],
+  "failures": "404/cache miss/internal errors; pinned packaging/license not independently verified",
+  "relation": "Original QuantLinear/UniformAffineQuantizer APIs invoked by independent single-Linear LWC calibration and evaluation driver; no copied implementation"
+}

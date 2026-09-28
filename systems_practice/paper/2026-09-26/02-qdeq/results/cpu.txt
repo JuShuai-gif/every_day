@@ -1,0 +1,12 @@
+{
+  "coefficients": [
+    1.0,
+    -0.19999999999999996
+  ],
+  "local_energy": 0.0009999999999955609,
+  "actual_energy": 0.0010000000000000018,
+  "initial_energy": 0.32499999999999996,
+  "codes_enumerated": 256,
+  "training_updates": 0,
+  "scope": "one local step; no implicit backward or W8A8 training"
+}

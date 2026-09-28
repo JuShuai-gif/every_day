@@ -1,0 +1,23 @@
+{
+  "id": "arxiv:2607.17855",
+  "title": "A Hardware-oriented Approach for Efficient Bayesian Inference Computation and Deployment",
+  "authors": [
+    "Nikola Pižurica",
+    "Matteo Risso",
+    "Nikola Milović",
+    "Alessio Burrello",
+    "Igor Jovančević",
+    "Conor Heins",
+    "Miguel de Prado"
+  ],
+  "first_submitted": "2026-07-20",
+  "version": "v1",
+  "read_on": "2026-09-28",
+  "fulltext": "https://arxiv.org/html/2607.17855v1",
+  "metadata": "https://arxiv.org/abs/2607.17855v1",
+  "sections_read": "§III-C/D，§IV/V，770配置实验说明",
+  "author_repository": null,
+  "source_availability": "v1明确双盲阶段不公开链接；不能宣称已读作者实现。v2日期2026-07-21，本课只读v1。",
+  "relationship": "independent mechanism example; not upstream reproduction",
+  "publication_status": "arXiv record; conference acceptance only where explicitly noted"
+}

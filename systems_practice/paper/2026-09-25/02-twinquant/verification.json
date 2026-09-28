@@ -1,0 +1,13 @@
+{
+  "lesson_date": "2026-09-25",
+  "actual_run_date": "2026-09-28",
+  "fulltext_read": true,
+  "example_run": true,
+  "exit_code": 0,
+  "full_paper_reproduced": false,
+  "thor_verified": false,
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "scope": "独立2×2因子缩放和离散网格搜索，无SVD/全局Q/流形训练；共享量化组是教学简化。"
+}

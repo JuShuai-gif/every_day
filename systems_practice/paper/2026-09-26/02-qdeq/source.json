@@ -1,0 +1,22 @@
+{
+  "id": "arxiv:2609.24042",
+  "title": "Q-DEQ: Discrete Solving and Quantization for Deep Equilibrium Models in Time Series Forecasting under Edge Deployment Coding Constraints",
+  "authors": [
+    "Ruotong Yang",
+    "Hongdong Zhu",
+    "Qi Gao",
+    "Yin Ma",
+    "Hai Wei",
+    "Kai Wen"
+  ],
+  "first_submitted": "2026-09-21",
+  "version": "v1",
+  "read_on": "2026-09-28",
+  "fulltext": "https://arxiv.org/html/2609.24042v1",
+  "metadata": "https://arxiv.org/abs/2609.24042v1",
+  "sections_read": "§3.1–3.4，§4/5.1–5.3，表2–5",
+  "author_repository": null,
+  "source_availability": "全文及标题GitHub搜索未确认官方实现；不调用未知Kaiwu接口。",
+  "relationship": "independent mechanism example; not upstream reproduction",
+  "publication_status": "arXiv record; conference acceptance only where explicitly noted"
+}

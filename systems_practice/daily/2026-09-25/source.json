@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/llvm/llvm-project",
+  "read_at": "2026-09-28",
+  "branch": "main",
+  "commit": null,
+  "file": "llvm/include/llvm/ADT/ScopeExit.h",
+  "symbols": "scope_exit / make_scope_exit",
+  "url": "https://github.com/llvm/llvm-project/blob/main/llvm/include/llvm/ADT/ScopeExit.h",
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "source_read": true,
+  "local_clone": false,
+  "relationship": "independent teaching implementation inspired by the explicitly read mechanisms; not copied source",
+  "scope": "See README for retained mechanism and simplifications"
+}

@@ -1,0 +1,49 @@
+{
+  "sweep": [
+    {
+      "alpha": 0.25,
+      "weight_mse": 0.030270720498001138,
+      "cal_spike_mismatch": 11,
+      "test_spike_mismatch": 14
+    },
+    {
+      "alpha": 0.35,
+      "weight_mse": 0.013275978533980456,
+      "cal_spike_mismatch": 16,
+      "test_spike_mismatch": 15
+    },
+    {
+      "alpha": 0.45,
+      "weight_mse": 0.0030230889942722476,
+      "cal_spike_mismatch": 4,
+      "test_spike_mismatch": 6
+    },
+    {
+      "alpha": 0.55,
+      "weight_mse": 0.0017529944713588232,
+      "cal_spike_mismatch": 7,
+      "test_spike_mismatch": 7
+    },
+    {
+      "alpha": 0.65,
+      "weight_mse": 0.008615381160641323,
+      "cal_spike_mismatch": 7,
+      "test_spike_mismatch": 8
+    },
+    {
+      "alpha": 0.75,
+      "weight_mse": 0.0059295865476774075,
+      "cal_spike_mismatch": 4,
+      "test_spike_mismatch": 6
+    },
+    {
+      "alpha": 0.85,
+      "weight_mse": 0.00684659929216619,
+      "cal_spike_mismatch": 4,
+      "test_spike_mismatch": 9
+    }
+  ],
+  "selected_on_calibration": 0.45,
+  "training_updates": 0,
+  "scope": "scale sweep only; no TSC surrogate-gradient training or BIC pruning"
+}

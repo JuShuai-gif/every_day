@@ -1,0 +1,7 @@
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/daily/2026-09-25/build/release
+[ 50%] Building CXX object CMakeFiles/rollback.dir/src/main.cpp.o
+[100%] Linking CXX executable rollback
+[100%] Built target rollback
+PASS 2000 injected failures, 1000 success/move, guard move/commit, pool saturation
