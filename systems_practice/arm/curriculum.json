@@ -8,7 +8,10 @@
       "stage": 1,
       "title": "区分架构、CPU 与编译目标能力",
       "prerequisites": [],
-      "board_anchor": "识别 ROCK 5B/RK3588 与 Jetson Orin/Thor：CPU、SoC、编译目标分别记录。"
+      "board_anchor": "识别 ROCK 5B/RK3588 与 Jetson Orin/Thor：CPU、SoC、编译目标分别记录。",
+      "arm_mechanism": "编译期AArch64/NEON特性与实际运行环境的区别",
+      "prepared_comparison": "对照编译目标宏、程序ABI与系统报告，指出每项不能证明什么",
+      "arm_evidence_required": "特性查询及解释；不能只输出设备名称"
     },
     {
       "id": "02",
@@ -17,7 +20,10 @@
       "prerequisites": [
         "01"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "arm_mechanism": "W写入后的X高位与V寄存器lane视图",
+      "prepared_comparison": "同一64位输入经过W写入和X保留路径；向量lane输入输出逐项对应",
+      "arm_evidence_required": "真实MOV/NEON指令及寄存器位图"
     },
     {
       "id": "03",
@@ -26,7 +32,10 @@
       "prerequisites": [
         "02"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "arm_mechanism": "A64加载宽度、零扩展与后索引地址更新",
+      "prepared_comparison": "无padding/有padding输入；沿行指针和列指针追踪地址",
+      "arm_evidence_required": "C++下标到LDRH及地址递增的逐项对应"
     },
     {
       "id": "04",
@@ -36,7 +45,10 @@
         "03"
       ],
       "cortex_focus": "以 Cortex-A55/A76 对照讲解顺序/乱序执行、依赖链与 ILP；具体流水线数据先核实官方手册。",
-      "board_anchor": "以 RK3588 的 A55/A76 对照循环依赖；Orin/Thor 的核型号另行区分。"
+      "board_anchor": "以 RK3588 的 A55/A76 对照循环依赖；Orin/Thor 的核型号另行区分。",
+      "arm_mechanism": "A64累加寄存器的跨迭代依赖",
+      "prepared_comparison": "同一输入的一条链与四条链，区分通用ILP与A64指令实现",
+      "arm_evidence_required": "标出ADD读写依赖与LDR/LDP；不靠指令数推断性能"
     },
     {
       "id": "05",
@@ -45,7 +57,10 @@
       "prerequisites": [
         "04"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "arm_mechanism": "AArch64调用参数、栈参数与保存寄存器",
+      "prepared_comparison": "比较参数寄存器和溢出到栈的参数，跟踪跨调用活值",
+      "arm_evidence_required": "caller/callee对应，解释BL、SP与保存/恢复"
     },
     {
       "id": "06",
@@ -55,7 +70,10 @@
         "05"
       ],
       "cortex_focus": "解释 ARM 架构版本、Cortex 核型号与编译目标的关系；不把所有 Cortex-A 都当成同一指令能力。",
-      "board_anchor": "ROCK 5B Linux 与 Jetson Linux 的目标工具链、ABI 和实际特性。"
+      "board_anchor": "ROCK 5B Linux 与 Jetson Linux 的目标工具链、ABI 和实际特性。",
+      "arm_mechanism": "AArch64标量与NEON编译结果",
+      "prepared_comparison": "同一函数禁向量化与开启优化的真实函数体对照",
+      "arm_evidence_required": "目标选项、真实指令和CPU能力分开"
     },
     {
       "id": "07",
@@ -67,7 +85,10 @@
       "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
       "job_skill": "区分墙钟时间、线程CPU时间、预热与P95；先定义测量范围",
       "os_bridge": "线程运行/等待和调度干扰的直观区别；深入调度留到21",
-      "evidence_target": "带环境和同步边界的可复现基准记录"
+      "evidence_target": "带环境和同步边界的可复现基准记录",
+      "arm_mechanism": "已有A64累加循环的公平测量",
+      "prepared_comparison": "复用04的一链/四链，以相同输入、精度、预热与批量调用测量",
+      "arm_evidence_required": "先确认目标函数未被消除和实际A64形态，再报告时间分布；不只演示chrono"
     },
     {
       "id": "08",
@@ -79,7 +100,10 @@
       "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
       "job_skill": "定位编译器为何没有向量化",
       "os_bridge": "编译选项属于构建目标，OS运行能力另验",
-      "evidence_target": "优化诊断报告与真实汇编"
+      "evidence_target": "优化诊断报告与真实汇编",
+      "arm_mechanism": "C++循环到NEON的编译转换",
+      "prepared_comparison": "同一循环向量化开启/关闭，定位成功或未成功的具体原因",
+      "arm_evidence_required": "编译诊断与目标函数真实NEON指令对应"
     },
     {
       "id": "09",
@@ -91,7 +115,10 @@
       "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
       "job_skill": "安全处理非整向量长度",
       "os_bridge": "虚拟地址合法不等于尾部越界合法",
-      "evidence_target": "尾部/对齐/非法长度与Sanitizer"
+      "evidence_target": "尾部/对齐/非法长度与Sanitizer",
+      "arm_mechanism": "NEON向量宽度与安全尾部",
+      "prepared_comparison": "标量/NEON对照，长度跨过向量边界且保留哨兵",
+      "arm_evidence_required": "加载、lane与尾部索引图；错误示例不执行越界访问"
     },
     {
       "id": "10",
@@ -103,7 +130,10 @@
       "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
       "job_skill": "建立模型前后处理精度合同",
       "os_bridge": "只在相关时补充浮点环境边界",
-      "evidence_target": "标量参考、容限与误差记录"
+      "evidence_target": "标量参考、容限与误差记录",
+      "arm_mechanism": "NEON FMA和横向归约的数值语义",
+      "prepared_comparison": "比较明确的融合/非融合及归约顺序，固定输入与容限",
+      "arm_evidence_required": "真实指令与误差来源对应，不能把FP误差泛称ARM误差"
     },
     {
       "id": "11",
@@ -116,7 +146,10 @@
       "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
       "job_skill": "用依赖与寄存器解释热点",
       "os_bridge": "线程并行与单线程ILP区别",
-      "evidence_target": "多累加器同口径比较和spill观察"
+      "evidence_target": "多累加器同口径比较和spill观察",
+      "arm_mechanism": "NEON累加寄存器与spill",
+      "prepared_comparison": "对同一内核改变累加器数量，观察依赖和栈访存变化",
+      "arm_evidence_required": "真实累加链、寄存器占用和spill证据；允许未发生spill"
     },
     {
       "id": "12",
@@ -128,7 +161,10 @@
       "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
       "job_skill": "减少布局转换和复制",
       "os_bridge": "用户态缓冲区所有权，零拷贝需后续同步合同",
-      "evidence_target": "AoS/SoA和含转换成本对照"
+      "evidence_target": "AoS/SoA和含转换成本对照",
+      "arm_mechanism": "NEON交错访存与lane重排",
+      "prepared_comparison": "同一数据AoS/SoA及对应加载方案，计入转换成本",
+      "arm_evidence_required": "具体intrinsic到实际加载/重排指令与lane映射"
     },
     {
       "id": "13",
@@ -140,7 +176,10 @@
       "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
       "job_skill": "核对低精度存储与算术",
       "os_bridge": "能力宏/运行时检测区分",
-      "evidence_target": "转换、累加精度及存储证据"
+      "evidence_target": "转换、累加精度及存储证据",
+      "arm_mechanism": "ARM FP16转换与算术路径",
+      "prepared_comparison": "明确FP16存储、FP32累加和可用FP16算术的对照",
+      "arm_evidence_required": "先核实扩展；指令、溢出/舍入与误差证据"
     },
     {
       "id": "14",
@@ -152,7 +191,10 @@
       "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
       "job_skill": "核对量化点积溢出和scale",
       "os_bridge": "可选扩展必须运行时核验",
-      "evidence_target": "标量/NEON、尾部、溢出和尺度验证"
+      "evidence_target": "标量/NEON、尾部、溢出和尺度验证",
+      "arm_mechanism": "NEON扩宽乘加与可选整数点积",
+      "prepared_comparison": "标量、扩宽路径与设备支持时的dot路径，同一scale合同",
+      "arm_evidence_required": "实际指令、累加宽度、尾部与最坏输入；不执行未支持扩展"
     },
     {
       "id": "15",
@@ -165,7 +207,10 @@
       "board_anchor": "RK3588 CPU 工作集与缓存；Thor 的 CPU/系统缓存参数单独核实。",
       "job_skill": "按工作集定位缓存瓶颈",
       "os_bridge": "地址空间/页与Cache分层；为18虚拟内存打底",
-      "evidence_target": "工作集扫描及受支持计数器"
+      "evidence_target": "工作集扫描及受支持计数器",
+      "arm_mechanism": "具体ARM核的缓存层级与工作集",
+      "prepared_comparison": "相同内核改变工作集，结合核实过的缓存信息观察",
+      "arm_evidence_required": "区分工作集效应与PMU证据，不以耗时跳变独自认定缓存容量"
     },
     {
       "id": "16",
@@ -177,7 +222,10 @@
       "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
       "job_skill": "算清packing成本与复用次数",
       "os_bridge": "内存分配/缓冲池生命周期",
-      "evidence_target": "含packing/不含packing两组边界"
+      "evidence_target": "含packing/不含packing两组边界",
+      "arm_mechanism": "NEON微内核与缓存分块的数据供给",
+      "prepared_comparison": "固定同一NEON内核，比较未打包与打包及复用次数",
+      "arm_evidence_required": "块内加载模式和packing成本一起解释"
     },
     {
       "id": "17",
@@ -189,7 +237,10 @@
       "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
       "job_skill": "区分带宽受限和计算受限",
       "os_bridge": "预取不保证缺页或I/O一定消失",
-      "evidence_target": "可复现带宽实验和对照"
+      "evidence_target": "可复现带宽实验和对照",
+      "arm_mechanism": "ARM访存及预取候选的适用边界",
+      "prepared_comparison": "相同访问流有/无预取或改变预取距离，允许无收益",
+      "arm_evidence_required": "核实真实预取指令及输入流，不能用带宽数字代替机制解释"
     },
     {
       "id": "18",
@@ -201,7 +252,10 @@
       "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
       "job_skill": "解释大模型首次访问与稳态差异",
       "os_bridge": "虚拟内存、页表、缺页、TLB；概念分课/主课补足",
-      "evidence_target": "地址/页大小及缺页观测，不把TLB等同Cache"
+      "evidence_target": "地址/页大小及缺页观测，不把TLB等同Cache",
+      "arm_mechanism": "ARM地址翻译、TLB与页内偏移",
+      "prepared_comparison": "固定访问量改变页跨度，同时控制缓存/缺页等混杂因素",
+      "arm_evidence_required": "实际页大小、访问图和可用TLB事件；仅计时不算证明TLB miss"
     },
     {
       "id": "19",
@@ -213,7 +267,10 @@
       "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
       "job_skill": "定位并发数据错误",
       "os_bridge": "锁、原子、等待唤醒和内存序；xv6与Linux对照",
-      "evidence_target": "竞态复现与修复依据；不称TSan证明无竞态"
+      "evidence_target": "竞态复现与修复依据；不称TSan证明无竞态",
+      "arm_mechanism": "AArch64 acquire/release和原子指令路径",
+      "prepared_comparison": "以安全并发例子观察不同内存序及可用原子实现",
+      "arm_evidence_required": "对应LDAR/STLR、LL/SC或LSE实际生成路径；不强求全部出现"
     },
     {
       "id": "20",
@@ -225,7 +282,10 @@
       "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
       "job_skill": "减少共享统计开销",
       "os_bridge": "一致性与线程同步职责区别",
-      "evidence_target": "伪共享基线、布局和线程数扫描"
+      "evidence_target": "伪共享基线、布局和线程数扫描",
+      "arm_mechanism": "ARM多核一致性与伪共享",
+      "prepared_comparison": "同一原子操作比较共享行/分离行布局，核实目标缓存行",
+      "arm_evidence_required": "地址布局、原子指令与线程条件；对齐大小不跨核硬编码"
     },
     {
       "id": "21",
@@ -238,7 +298,10 @@
       "board_anchor": "RK3588 A76/A55 任务划分；Jetson 核拓扑与线程池另验，不套用大小核假设。",
       "job_skill": "排查线程过量/尾延迟",
       "os_bridge": "进程/线程、调度、上下文切换、亲和性与背压",
-      "evidence_target": "队列等待和CPU执行分别测量"
+      "evidence_target": "队列等待和CPU执行分别测量",
+      "arm_mechanism": "具体Cortex核拓扑与单任务指令流",
+      "prepared_comparison": "同一ARM内核在经核实的核组与任务粒度上比较",
+      "arm_evidence_required": "亲和性/迁移与运行时间、排队时间分开；无板卡保留待验"
     },
     {
       "id": "22",
@@ -250,7 +313,10 @@
       "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
       "job_skill": "选择合理的小Batch实现",
       "os_bridge": "线程启动/唤醒成本纳入请求",
-      "evidence_target": "GEMV/GEMM同shape同精度基准"
+      "evidence_target": "GEMV/GEMM同shape同精度基准",
+      "arm_mechanism": "NEON小矩阵微内核的寄存器与加载复用",
+      "prepared_comparison": "同shape标量/NEON及不同小块，计入调用与尾部成本",
+      "arm_evidence_required": "从真实开源ARM函数提取小核，逐项解释加载和乘加"
     },
     {
       "id": "23",
@@ -262,7 +328,10 @@
       "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
       "job_skill": "把量化精度和部署格式连接",
       "os_bridge": "加载/解码的内存生命周期",
-      "evidence_target": "含metadata存储、解码/乘加边界"
+      "evidence_target": "含metadata存储、解码/乘加边界",
+      "arm_mechanism": "NEON量化解包、扩展与累加融合",
+      "prepared_comparison": "真实打包数据的分离解码/融合路径，固定scale语义",
+      "arm_evidence_required": "位图、lane图及移位/扩展/乘加指令对应"
     },
     {
       "id": "24",
@@ -274,7 +343,10 @@
       "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
       "job_skill": "减少实际预处理开销",
       "os_bridge": "I/O缓冲区和布局契约",
-      "evidence_target": "输入输出一致性和融合前后对照"
+      "evidence_target": "输入输出一致性和融合前后对照",
+      "arm_mechanism": "NEON图像输入重排与数值转换",
+      "prepared_comparison": "分步/融合相同预处理，包含奇数尺寸与stride",
+      "arm_evidence_required": "输入字节到lane再到输出布局的完整小样本追踪"
     },
     {
       "id": "25",
@@ -286,7 +358,10 @@
       "board_anchor": "分别查询 RK3588、Orin 和 Thor 的 OS/CPU 扩展能力，选择已验证实现。",
       "job_skill": "避免目标机器非法指令",
       "os_bridge": "运行时能力检测与动态库/ABI边界",
-      "evidence_target": "可选扩展分派和标量回退"
+      "evidence_target": "可选扩展分派和标量回退",
+      "arm_mechanism": "ARM扩展编译与运行时分派",
+      "prepared_comparison": "强制基础路径与受支持的扩展路径；不支持时安全回退",
+      "arm_evidence_required": "核实OS能力接口、实际指令及路径选择，宏不冒充运行能力"
     },
     {
       "id": "26",
@@ -299,7 +374,10 @@
       "board_anchor": "分别核实 RK3588 与 Jetson 的 PMU、工具及采集权限。",
       "job_skill": "用Linux工具排查真实热点",
       "os_bridge": "GDB/core/strace/perf按问题择一；区分等待/运行",
-      "evidence_target": "符号化现场、采集条件和根因报告"
+      "evidence_target": "符号化现场、采集条件和根因报告",
+      "arm_mechanism": "具体ARM PMU事件与A64热点",
+      "prepared_comparison": "围绕已学内核的一项瓶颈假设采样并关联源码",
+      "arm_evidence_required": "确认事件含义/权限/多路复用；不能只列perf命令"
     },
     {
       "id": "27",
@@ -311,7 +389,10 @@
       "board_anchor": "RK3588 的 CPU–RKNN/NPU 或 Thor 的 CPU–TensorRT/CUDA 流水线，择一深入。",
       "job_skill": "保证异构流水线并发正确",
       "os_bridge": "IPC/队列/背压、系统调用、FD生命周期；DMA一致性另核",
-      "evidence_target": "错误恢复、关闭排空、端到端分段时序"
+      "evidence_target": "错误恢复、关闭排空、端到端分段时序",
+      "arm_mechanism": "ARM CPU访存顺序与设备缓冲区可见性边界",
+      "prepared_comparison": "追踪一个缓冲区从CPU写入到SDK提交和回收的所有权",
+      "arm_evidence_required": "区分C++同步、CPU屏障和驱动DMA同步；用户态不凭空补DMB代替SDK合同"
     },
     {
       "id": "28",
@@ -323,7 +404,10 @@
       "board_anchor": "ROCK 5B 或 AGX Thor 持续推理，记录温度、功耗条件与完整请求延迟。",
       "job_skill": "交付可长期运行的板端程序",
       "os_bridge": "资源泄漏、超时、热限制和故障恢复",
-      "evidence_target": "稳定性报告、P50/P95、功耗条件与限制"
+      "evidence_target": "稳定性报告、P50/P95、功耗条件与限制",
+      "arm_mechanism": "具体ARM SoC持续负载下的频率与吞吐",
+      "prepared_comparison": "固定已学CPU内核和整条推理负载，比较初始与稳态",
+      "arm_evidence_required": "核实频率/温度/功耗来源及采样条件，无板卡不生成模拟验收"
     }
   ],
   "scope_notes": [
@@ -371,5 +455,13 @@
       "target-specific primary-source verification"
     ],
     "daily_workload_change": false
+  },
+  "mechanism_teaching_policy": {
+    "updated": "2026-09-28",
+    "priority": "ARM机制为每课主线；C++语法和板卡背景只为解释机制服务",
+    "plan_status": "下列目标与对照是生成计划，非已读源码、已实现或已验证的声明；逐课核实",
+    "template": "docs/arm/LESSON_TEMPLATE.md",
+    "scope": "每天一个小机制，默认5–10分钟阅读观察；提供现成对照，不增加第二个必做作业",
+    "acceptance": "ARM目标、数据/状态图、局部代码解释、真实证据、现成对照、故障与就业用途必须对应；证据缺失明确待验"
   }
 }
