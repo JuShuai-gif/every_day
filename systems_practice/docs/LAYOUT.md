@@ -16,11 +16,15 @@ systems_practice/
 ├── paper/                        每日两篇论文
 │   ├── index.md、progress.json
 │   └── YYYY-MM-DD/论文目录/
+├── os/                           每日两个OS主题（2026-09-28新增）
+│   ├── index.md、curriculum.json、progress.json
+│   └── YYYY-MM-DD/
 └── docs/                         通用说明
     ├── PRACTICE_SPEC.md
     ├── daily/
     ├── quantization/             栏目说明与模板
     ├── arm/                      学习路线与板卡说明
+    ├── os/                        OS路线与模板
     ├── paper/
     ├── references/               已归档参考资料
     └── migrations/               目录整理的验证记录
@@ -56,3 +60,7 @@ systems_practice/
 旧 CMake 缓存包含绝对源码路径，16 个缓存根目录已保留到忽略目录 `.tmp/layout-migration/old-builds/`，没有删除；当前课程可以按新路径重新构建。历史日志里出现旧目录是运行时的原始事实，不回写成新的路径。
 
 [验证记录](migrations/2026-09-22/verification.json) · [路径映射与原始文件哈希](migrations/2026-09-22/pathmap.json) · [运行日志](migrations/2026-09-22/results/) · [返回总入口](../README.md)
+
+## 2026-09-28 新增 OS
+
+按用户要求新增os/独立栏目，随原任务每日交付两个相关主题；原四栏目保留。该新增不改变上面的2026-09-22迁移统计和历史记录。[OS入口](../os/index.md)。

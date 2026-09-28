@@ -35,6 +35,8 @@ flowchart LR
 
 ## 文件说明
 
+- 新增[OS01：系统调用边界与FD共享状态](../../os/2026-09-28/README.md)，独立栏目、现成观察例子。
+
 - [deployment.hpp](src/deployment.hpp)：候选构建、原子入口、写者控制。
 - [main.cpp](src/main.cpp)：失败注入、并发请求及 CPU 控制面基准。
 - [CMakeLists.txt](CMakeLists.txt)、[run.sh](run.sh)：编译与 sanitizer。

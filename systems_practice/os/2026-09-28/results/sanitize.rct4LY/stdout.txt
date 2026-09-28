@@ -1,0 +1,6 @@
+PASS shared_offset first=AB dup=CD independent_open=AB
+PASS close_one_keeps_duplicate=EF
+PASS move_ownership_and_EOF
+PASS invalid_fd_EBADF
+PASS exception_cleanup_and_surviving_owner
+ALL CHECKS PASSED; host OS semantics only; no performance claim

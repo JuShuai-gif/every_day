@@ -1,0 +1,42 @@
+{
+  "date": "2026-09-28",
+  "lesson_id": "01",
+  "topic_ids": [
+    "01a",
+    "01b"
+  ],
+  "source_read": true,
+  "version_pinned": false,
+  "lesson_delivered": true,
+  "host_compiled": true,
+  "host_run": true,
+  "host_platform": "macOS arm64",
+  "release_log": "results/release.mRSv4z/stdout.txt",
+  "asan_ubsan_log": "results/sanitize.CaoZg6/stdout.txt",
+  "checks": [
+    "shared versus independent offset",
+    "duplicate survives close",
+    "move and EOF",
+    "invalid FD",
+    "exception cleanup"
+  ],
+  "xv6_compiled": false,
+  "qemu_run": false,
+  "linux_run": false,
+  "target_board_verified": false,
+  "missing_tools": [
+    "qemu-system-riscv64",
+    "riscv64-unknown-elf-gcc/riscv64-linux-gnu-gcc"
+  ],
+  "performance_measured": false,
+  "formatter_status": "passed",
+  "formatter_exit_code": 0,
+  "post_format": {
+    "release_log": "results/release.z8aKIs/stdout.txt",
+    "release_exit_code": 0,
+    "asan_ubsan_log": "results/sanitize.rct4LY/stdout.txt",
+    "asan_ubsan_exit_code": 0
+  },
+  "checked_at": "2026-09-28T07:15:57.691111+00:00",
+  "source_sha256": "89c195b3ef0380e23855a642a161afb721139f0cfdfd008ba4989d6c4ceda14c"
+}

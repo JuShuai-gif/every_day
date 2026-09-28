@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-09-28T07:15:57.692613+00:00",
+  "lessons": 28,
+  "distinct_topics": 56,
+  "topics_per_day": 2,
+  "prerequisite_order_checked": true,
+  "delivered_lesson_ids": [
+    "01"
+  ],
+  "next_lesson_id": "02",
+  "other_progress_unchanged": true,
+  "arm_lessons_unchanged": true,
+  "arm_metadata_change": "os_scope updated to point to independent OS column",
+  "local_links_and_json_passed": true,
+  "bash_syntax_passed": true,
+  "formatter_exit_code": 0,
+  "post_format_release_exit_code": 0,
+  "post_format_asan_ubsan_exit_code": 0,
+  "xv6_compiled": false,
+  "qemu_run": false,
+  "linux_run": false,
+  "target_board_verified": false,
+  "git_diff_check_passed": true,
+  "scheduler_prompt_updated": false,
+  "scheduler_failure_record": "automation.json"
+}

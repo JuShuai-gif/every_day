@@ -1,0 +1,738 @@
+{
+  "schema_version": 1,
+  "created_on": "2026-09-28",
+  "timezone": "Asia/Shanghai",
+  "cadence": "one lesson with two coupled topics per calendar day",
+  "daily_topics": 2,
+  "reading_minutes_estimate": "10–15; estimate, not measured completion time",
+  "primary_repository": "https://github.com/mit-pdos/xv6-riscv",
+  "historical_repository": "https://github.com/mit-pdos/xv6-public",
+  "primary_reference_policy": "Use matching xv6-riscv course version; x86 historical comparison only; Linux/ARM differences explicit",
+  "after_last_lesson": "Continue verified Linux/edge source case studies based on backlog; do not reset automatically",
+  "lessons": [
+    {
+      "id": "01",
+      "stage": 1,
+      "title": "系统调用与文件描述符",
+      "topics": [
+        {
+          "id": "01a",
+          "title": "用户态/内核态调用边界"
+        },
+        {
+          "id": "01b",
+          "title": "FD表与共享文件偏移"
+        }
+      ],
+      "prerequisites": [],
+      "source_candidates": [
+        "kernel/syscall.c",
+        "kernel/sysfile.c",
+        "kernel/file.c"
+      ],
+      "source_status": "Read2026-09-28 via web; exact commit pending; see2026-09-28/source.json",
+      "basis": "xv6",
+      "edge_problem": "模型文件由多个读取器共享时出现错位",
+      "evidence_target": "dup与重新open的读取位置对照"
+    },
+    {
+      "id": "02",
+      "stage": 1,
+      "title": "进程创建与程序加载",
+      "topics": [
+        {
+          "id": "02a",
+          "title": "fork复制哪些状态"
+        },
+        {
+          "id": "02b",
+          "title": "exec替换程序映像"
+        }
+      ],
+      "prerequisites": [
+        "01"
+      ],
+      "source_candidates": [
+        "kernel/proc.c",
+        "kernel/exec.c",
+        "user/sh.c"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "xv6",
+      "edge_problem": "启动推理worker并传递参数",
+      "evidence_target": "父子PID与exec前后状态"
+    },
+    {
+      "id": "03",
+      "stage": 1,
+      "title": "退出与父子进程回收",
+      "topics": [
+        {
+          "id": "03a",
+          "title": "exit资源回收"
+        },
+        {
+          "id": "03b",
+          "title": "wait与僵尸进程"
+        }
+      ],
+      "prerequisites": [
+        "02"
+      ],
+      "source_candidates": [
+        "kernel/proc.c"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "xv6",
+      "edge_problem": "推理worker异常后可靠回收",
+      "evidence_target": "退出状态、等待与FD清理记录"
+    },
+    {
+      "id": "04",
+      "stage": 1,
+      "title": "异常入口与返回",
+      "topics": [
+        {
+          "id": "04a",
+          "title": "trapframe保存现场"
+        },
+        {
+          "id": "04b",
+          "title": "系统调用返回用户态"
+        }
+      ],
+      "prerequisites": [
+        "03"
+      ],
+      "source_candidates": [
+        "kernel/trap.c",
+        "kernel/trampoline.S",
+        "user/usys.pl"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "xv6",
+      "edge_problem": "区分用户崩溃与系统调用失败",
+      "evidence_target": "一条调用的寄存器/错误返回路径"
+    },
+    {
+      "id": "05",
+      "stage": 2,
+      "title": "物理页与资源寿命",
+      "topics": [
+        {
+          "id": "05a",
+          "title": "页分配器空闲链表"
+        },
+        {
+          "id": "05b",
+          "title": "分配失败与释放责任"
+        }
+      ],
+      "prerequisites": [
+        "04"
+      ],
+      "source_candidates": [
+        "kernel/kalloc.c"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "xv6",
+      "edge_problem": "模型加载峰值内存与失败回滚",
+      "evidence_target": "分配/失败/释放计数"
+    },
+    {
+      "id": "06",
+      "stage": 2,
+      "title": "虚拟地址与页表",
+      "topics": [
+        {
+          "id": "06a",
+          "title": "walk和多级索引"
+        },
+        {
+          "id": "06b",
+          "title": "映射权限与解除映射"
+        }
+      ],
+      "prerequisites": [
+        "05"
+      ],
+      "source_candidates": [
+        "kernel/vm.c"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "xv6",
+      "edge_problem": "理解Tensor指针与物理页不是同一概念",
+      "evidence_target": "手算小地址翻译并对照代码"
+    },
+    {
+      "id": "07",
+      "stage": 2,
+      "title": "用户指针与内核拷贝",
+      "topics": [
+        {
+          "id": "07a",
+          "title": "copyin/copyout"
+        },
+        {
+          "id": "07b",
+          "title": "跨页访问与边界检查"
+        }
+      ],
+      "prerequisites": [
+        "06"
+      ],
+      "source_candidates": [
+        "kernel/vm.c",
+        "kernel/syscall.c"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "xv6",
+      "edge_problem": "数据入口越界及错误返回",
+      "evidence_target": "跨页与无效地址的可验证边界"
+    },
+    {
+      "id": "08",
+      "stage": 2,
+      "title": "堆增长与缺页",
+      "topics": [
+        {
+          "id": "08a",
+          "title": "地址空间增长"
+        },
+        {
+          "id": "08b",
+          "title": "首次触页与延迟分配"
+        }
+      ],
+      "prerequisites": [
+        "07"
+      ],
+      "source_candidates": [
+        "kernel/sysproc.c",
+        "kernel/vm.c",
+        "kernel/trap.c"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "xv6",
+      "edge_problem": "模型第一次请求耗时异常",
+      "evidence_target": "分清分配请求、驻留与触页；固定版本核实"
+    },
+    {
+      "id": "09",
+      "stage": 2,
+      "title": "写时复制扩展",
+      "topics": [
+        {
+          "id": "09a",
+          "title": "共享只读页"
+        },
+        {
+          "id": "09b",
+          "title": "写故障与引用计数"
+        }
+      ],
+      "prerequisites": [
+        "08"
+      ],
+      "source_candidates": [
+        "MIT同学年COW实验",
+        "kernel/vm.c",
+        "kernel/trap.c"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "course_extension",
+      "edge_problem": "多进程模型内存成本",
+      "evidence_target": "明确是课程扩展还是上游已有机制，检查复制次数"
+    },
+    {
+      "id": "10",
+      "stage": 3,
+      "title": "自旋锁与中断",
+      "topics": [
+        {
+          "id": "10a",
+          "title": "原子互斥与可见性"
+        },
+        {
+          "id": "10b",
+          "title": "关中断与嵌套状态"
+        }
+      ],
+      "prerequisites": [
+        "09"
+      ],
+      "source_candidates": [
+        "kernel/spinlock.c"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "xv6",
+      "edge_problem": "忙等增加CPU占用且不等于高吞吐",
+      "evidence_target": "临界区、锁持有时间与可抢占边界"
+    },
+    {
+      "id": "11",
+      "stage": 3,
+      "title": "等待条件与唤醒",
+      "topics": [
+        {
+          "id": "11a",
+          "title": "登记等待到睡眠的原子关系"
+        },
+        {
+          "id": "11b",
+          "title": "谓词复查与丢失唤醒"
+        }
+      ],
+      "prerequisites": [
+        "10"
+      ],
+      "source_candidates": [
+        "kernel/proc.c",
+        "kernel/pipe.c"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "xv6",
+      "edge_problem": "采集/推理队列偶发卡死",
+      "evidence_target": "固定版本核实sleep接口并构造时序"
+    },
+    {
+      "id": "12",
+      "stage": 3,
+      "title": "调度与上下文切换",
+      "topics": [
+        {
+          "id": "12a",
+          "title": "可运行/运行/睡眠状态"
+        },
+        {
+          "id": "12b",
+          "title": "swtch与内核栈"
+        }
+      ],
+      "prerequisites": [
+        "11"
+      ],
+      "source_candidates": [
+        "kernel/proc.c",
+        "kernel/swtch.S"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "xv6",
+      "edge_problem": "CPU利用率不高但请求等待",
+      "evidence_target": "等待时间与运行时间分开"
+    },
+    {
+      "id": "13",
+      "stage": 3,
+      "title": "管道与背压",
+      "topics": [
+        {
+          "id": "13a",
+          "title": "空/满条件与有界容量"
+        },
+        {
+          "id": "13b",
+          "title": "端点关闭与唤醒"
+        }
+      ],
+      "prerequisites": [
+        "12"
+      ],
+      "source_candidates": [
+        "kernel/pipe.c",
+        "kernel/file.c"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "xv6",
+      "edge_problem": "摄像头产生速度超过消费速度",
+      "evidence_target": "队列上界、关闭与慢消费者行为"
+    },
+    {
+      "id": "14",
+      "stage": 3,
+      "title": "睡眠锁与锁顺序",
+      "topics": [
+        {
+          "id": "14a",
+          "title": "自旋锁和睡眠锁分工"
+        },
+        {
+          "id": "14b",
+          "title": "嵌套锁与死锁路径"
+        }
+      ],
+      "prerequisites": [
+        "13"
+      ],
+      "source_candidates": [
+        "kernel/sleeplock.c",
+        "kernel/bio.c"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "xv6",
+      "edge_problem": "持锁阻塞导致流水线停顿",
+      "evidence_target": "锁顺序图与阻塞边界"
+    },
+    {
+      "id": "15",
+      "stage": 4,
+      "title": "文件与inode",
+      "topics": [
+        {
+          "id": "15a",
+          "title": "FD/file/inode层级"
+        },
+        {
+          "id": "15b",
+          "title": "引用与路径名生命周期"
+        }
+      ],
+      "prerequisites": [
+        "14"
+      ],
+      "source_candidates": [
+        "kernel/file.c",
+        "kernel/fs.c",
+        "kernel/sysfile.c"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "xv6",
+      "edge_problem": "模型文件替换后旧请求仍在读取",
+      "evidence_target": "打开对象与路径名分离的观察"
+    },
+    {
+      "id": "16",
+      "stage": 4,
+      "title": "块缓存与并发访问",
+      "topics": [
+        {
+          "id": "16a",
+          "title": "缓存查找和引用"
+        },
+        {
+          "id": "16b",
+          "title": "每块互斥与复用"
+        }
+      ],
+      "prerequisites": [
+        "15"
+      ],
+      "source_candidates": [
+        "kernel/bio.c"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "xv6",
+      "edge_problem": "缓存命中与资源争用混淆",
+      "evidence_target": "缓存持有者与等待链"
+    },
+    {
+      "id": "17",
+      "stage": 4,
+      "title": "日志与崩溃一致性",
+      "topics": [
+        {
+          "id": "17a",
+          "title": "日志事务与提交"
+        },
+        {
+          "id": "17b",
+          "title": "恢复与持久化边界"
+        }
+      ],
+      "prerequisites": [
+        "16"
+      ],
+      "source_candidates": [
+        "kernel/log.c",
+        "kernel/fs.c"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "xv6",
+      "edge_problem": "模型发布遇到掉电或半写文件",
+      "evidence_target": "区分教学日志与Linux持久化协议"
+    },
+    {
+      "id": "18",
+      "stage": 4,
+      "title": "设备请求与中断完成",
+      "topics": [
+        {
+          "id": "18a",
+          "title": "virtio请求队列"
+        },
+        {
+          "id": "18b",
+          "title": "中断唤醒等待者"
+        }
+      ],
+      "prerequisites": [
+        "17"
+      ],
+      "source_candidates": [
+        "kernel/virtio_disk.c",
+        "kernel/trap.c"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "xv6",
+      "edge_problem": "提交成功不等于设备完成",
+      "evidence_target": "提交/完成/回收时间线"
+    },
+    {
+      "id": "19",
+      "stage": 5,
+      "title": "Linux映射与缺页观察",
+      "topics": [
+        {
+          "id": "19a",
+          "title": "mmap与驻留"
+        },
+        {
+          "id": "19b",
+          "title": "首次触页和预热"
+        }
+      ],
+      "prerequisites": [
+        "18"
+      ],
+      "source_candidates": [
+        "Linux man-pages mmap/getrusage",
+        "kernel/vm.c作机制对照"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "linux_edge_bridge",
+      "edge_problem": "冷启动抖动",
+      "evidence_target": "Linux页错误计数与CPU/墙钟边界"
+    },
+    {
+      "id": "20",
+      "stage": 5,
+      "title": "Linux线程与调度证据",
+      "topics": [
+        {
+          "id": "20a",
+          "title": "亲和性与核拓扑"
+        },
+        {
+          "id": "20b",
+          "title": "上下文切换和运行队列"
+        }
+      ],
+      "prerequisites": [
+        "19"
+      ],
+      "source_candidates": [
+        "Linux sched/perf官方文档",
+        "kernel/proc.c作对照"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "linux_edge_bridge",
+      "edge_problem": "大小核与过量线程影响P95",
+      "evidence_target": "核拓扑核实、调度证据与可复现负载"
+    },
+    {
+      "id": "21",
+      "stage": 5,
+      "title": "条件变量与futex边界",
+      "topics": [
+        {
+          "id": "21a",
+          "title": "C++谓词等待"
+        },
+        {
+          "id": "21b",
+          "title": "Linux阻塞实现与退出协议"
+        }
+      ],
+      "prerequisites": [
+        "20"
+      ],
+      "source_candidates": [
+        "C++标准库实际实现",
+        "Linux futex文档",
+        "kernel/pipe.c作对照"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "linux_edge_bridge",
+      "edge_problem": "关闭时仍有在途任务",
+      "evidence_target": "有界队列的异常/关闭/排空结果"
+    },
+    {
+      "id": "22",
+      "stage": 5,
+      "title": "就绪通知与非阻塞I/O",
+      "topics": [
+        {
+          "id": "22a",
+          "title": "epoll就绪含义"
+        },
+        {
+          "id": "22b",
+          "title": "短读写与状态机"
+        }
+      ],
+      "prerequisites": [
+        "21"
+      ],
+      "source_candidates": [
+        "Linux epoll/read/write官方文档及源码"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "linux_edge_bridge",
+      "edge_problem": "网络/摄像头输入造成尾延迟",
+      "evidence_target": "Linux实际事件与分段读取记录"
+    },
+    {
+      "id": "23",
+      "stage": 5,
+      "title": "DMA与设备地址",
+      "topics": [
+        {
+          "id": "23a",
+          "title": "CPU/物理/DMA地址区分"
+        },
+        {
+          "id": "23b",
+          "title": "方向、同步与所有权"
+        }
+      ],
+      "prerequisites": [
+        "22"
+      ],
+      "source_candidates": [
+        "Linux DMA API指南及目标SDK源码"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "linux_edge_bridge",
+      "edge_problem": "CPU–NPU共享输入不一致",
+      "evidence_target": "明确coherent/streaming及目标平台合同"
+    },
+    {
+      "id": "24",
+      "stage": 5,
+      "title": "异步完成与缓冲区复用",
+      "topics": [
+        {
+          "id": "24a",
+          "title": "主机提交与设备完成"
+        },
+        {
+          "id": "24b",
+          "title": "租约/事件与回收"
+        }
+      ],
+      "prerequisites": [
+        "23"
+      ],
+      "source_candidates": [
+        "目标RKNN/TensorRT SDK实现和文档",
+        "不声称xv6具备该后端"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "linux_edge_bridge",
+      "edge_problem": "提前复用输入造成结果错误",
+      "evidence_target": "端到端所有权图；设备未测保持待验"
+    },
+    {
+      "id": "25",
+      "stage": 6,
+      "title": "模型加载与文件生命周期",
+      "topics": [
+        {
+          "id": "25a",
+          "title": "映射/读取的选择"
+        },
+        {
+          "id": "25b",
+          "title": "文件更新与读者寿命"
+        }
+      ],
+      "prerequisites": [
+        "24"
+      ],
+      "source_candidates": [
+        "Linux mmap/rename/fsync原始资料",
+        "kernel/file.c机制对照"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "linux_edge_bridge",
+      "edge_problem": "模型热更新与峰值内存",
+      "evidence_target": "小文件更新实验及明确持久化边界"
+    },
+    {
+      "id": "26",
+      "stage": 6,
+      "title": "端到端延迟归因",
+      "topics": [
+        {
+          "id": "26a",
+          "title": "计算/等待/复制分段"
+        },
+        {
+          "id": "26b",
+          "title": "分位数与跟踪扰动"
+        }
+      ],
+      "prerequisites": [
+        "25"
+      ],
+      "source_candidates": [
+        "Linux perf/trace官方文档及真实推理调用"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "linux_edge_bridge",
+      "edge_problem": "设备耗时稳定但P95恶化",
+      "evidence_target": "同负载时间线与未附加跟踪的基准"
+    },
+    {
+      "id": "27",
+      "stage": 6,
+      "title": "长期运行与故障恢复",
+      "topics": [
+        {
+          "id": "27a",
+          "title": "FD/内存/队列上界"
+        },
+        {
+          "id": "27b",
+          "title": "错误注入和有序关闭"
+        }
+      ],
+      "prerequisites": [
+        "26"
+      ],
+      "source_candidates": [
+        "真实C++服务组件",
+        "Linux资源观测文档"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "linux_edge_bridge",
+      "edge_problem": "运行数小时后卡死或资源耗尽",
+      "evidence_target": "持续运行、失败恢复与资源曲线"
+    },
+    {
+      "id": "28",
+      "stage": 6,
+      "title": "综合部署验收",
+      "topics": [
+        {
+          "id": "28a",
+          "title": "采集到推理的有界流水线"
+        },
+        {
+          "id": "28b",
+          "title": "正确性/延迟/恢复共同验收"
+        }
+      ],
+      "prerequisites": [
+        "27"
+      ],
+      "source_candidates": [
+        "已读xv6机制+Linux/板端具体SDK资料"
+      ],
+      "source_status": "planned; verify exact version and symbols when delivered",
+      "basis": "linux_edge_bridge",
+      "edge_problem": "形成可复现就业作品",
+      "evidence_target": "真实端到端报告；无板不标完整验收"
+    }
+  ]
+}

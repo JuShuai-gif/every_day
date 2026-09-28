@@ -1,0 +1,12 @@
+{
+  "id": "cuda-c-edge-ai",
+  "existing_status": "ACTIVE",
+  "existing_schedule": "daily08:30 Asia/Shanghai",
+  "existing_prompt_requires_spec": true,
+  "management_view": "blocked",
+  "raw_error": "MCP tool call requires approval, but approval policy is never",
+  "prompt_modified": false,
+  "schedule_modified": false,
+  "effective_rule_location": "docs/PRACTICE_SPEC.md mandatory on each existing run",
+  "duplicate_automation_created": false
+}

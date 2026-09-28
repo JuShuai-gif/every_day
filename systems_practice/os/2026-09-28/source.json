@@ -1,0 +1,75 @@
+{
+  "repository": "https://github.com/mit-pdos/xv6-riscv",
+  "branch": "riscv",
+  "read_date": "2026-09-28",
+  "commit": null,
+  "version_pinned": false,
+  "license": "MIT",
+  "license_url": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/LICENSE",
+  "license_read": true,
+  "read_via": "web raw source",
+  "local_checkout_acquired": false,
+  "implementation_read": true,
+  "files": [
+    {
+      "file": "kernel/syscall.c",
+      "symbols": [
+        "syscall",
+        "syscalls"
+      ],
+      "scope": "dispatch table and syscall function"
+    },
+    {
+      "file": "kernel/sysfile.c",
+      "symbols": [
+        "argfd",
+        "fdalloc",
+        "sys_dup",
+        "sys_read",
+        "sys_close",
+        "sys_open"
+      ],
+      "scope": "FD helpers and relevant entrypoints"
+    },
+    {
+      "file": "kernel/file.c",
+      "symbols": [
+        "filedup",
+        "fileclose",
+        "fileread"
+      ],
+      "scope": "reference and read-offset paths"
+    }
+  ],
+  "call_chains": [
+    "syscall -> sys_read -> argfd -> fileread",
+    "syscall -> sys_dup -> argfd/fdalloc/filedup",
+    "syscall -> sys_close -> argfd/fileclose"
+  ],
+  "original_context": "Teaching kernel file interfaces",
+  "relationship": "Independent C++ host observation inspired by verified sharing/lifetime mechanism; not copied kernel code",
+  "omitted": [
+    "filesystem implementation",
+    "inode synchronization",
+    "device drivers",
+    "trap entry assembly",
+    "scheduler"
+  ],
+  "linux_contract": "https://man7.org/linux/man-pages/man2/dup.2.html",
+  "git_attempt": {
+    "command": [
+      "git",
+      "ls-remote",
+      "https://github.com/mit-pdos/xv6-riscv.git",
+      "refs/heads/riscv"
+    ],
+    "exit_code": 128,
+    "stdout": "",
+    "stderr": "fatal: unable to access 'https://github.com/mit-pdos/xv6-riscv.git/': Could not resolve host: github.com\n"
+  },
+  "limitations": [
+    "branch links only",
+    "xv6 not compiled or run",
+    "host result is macOS, not Linux/board"
+  ]
+}
