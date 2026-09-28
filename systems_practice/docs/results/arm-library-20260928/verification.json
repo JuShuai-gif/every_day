@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-09-28T06:41:09.486654+00:00",
+  "formatter_command": "sh scripts/format-cpp.sh",
+  "formatter_exit_code": 0,
+  "git_diff_check_passed": true,
+  "json_and_local_links_passed": true,
+  "all_28_lessons_and_prerequisites_unchanged": true,
+  "progress_unchanged": true,
+  "original_pdf_hashes_rechecked": 33,
+  "pdf_files_copied_to_archive": 0,
+  "change_scope": "Documentation and reference policy only",
+  "compile_run": "Not applicable; no lesson code changed",
+  "scheduler_prompt_modified": false,
+  "generation_effect": "Existing automation reads updated PRACTICE_SPEC on each run"
+}

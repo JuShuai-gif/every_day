@@ -355,21 +355,9 @@
       "preferred": "https://github.com/mit-pdos/xv6-riscv",
       "historical": "https://github.com/mit-pdos/xv6-public",
       "supplementary_candidate": "https://github.com/vivekgit84/VivekPublicRepo",
-      "candidate_status": "Local PDF bodies sampled; four confirmed technical errors; outline only, primary-source verification required; license unverified"
+      "candidate_status": "Directory and file metadata verified in browser; PDF content, license and runnable implementation pending"
     },
     "os_scope": "Integrated bridge, not another daily assignment or new rotation",
     "completed_by_this_change": false
-  },
-  "local_reference_policy": {
-    "path": "/Users/guhaoran/书籍资料/ARM/VivekPublicRepo",
-    "guide": "../docs/arm/LOCAL_LIBRARY.md",
-    "role": "Topic outline only; never sole authority or implementation-source evidence",
-    "required_checks": [
-      "commit or SHA256",
-      "PDF page and actual reading scope",
-      "known errata",
-      "target-specific primary-source verification"
-    ],
-    "daily_workload_change": false
   }
 }

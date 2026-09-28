@@ -1,0 +1,167 @@
+[
+  {
+    "file": "ARM-MMU/MMU Descriptor Bit‑Level Summary.pdf",
+    "pages": 4,
+    "sha256": "4a3cd32afeb34d21c1f606b6591f634ef91731d9f9bc30853208d6ae50b45446"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/00-MMU-Chapter 14 FULL TRANSLATION.pdf",
+    "pages": 18,
+    "sha256": "47278def4e41c7f652244d8d91d7eb09b6e397a67c16034affbb9c5b05b2eb71"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/01 - MMU-Index.pdf",
+    "pages": 7,
+    "sha256": "550d737e6f8800c64e4497194b210d68192442956836afa4f0983fe598d01790"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 01 ARCHITECTURE OVERVIEW.pdf",
+    "pages": 12,
+    "sha256": "8a0b504c0a73807e96ffdb242661c5df276a8decdab98d7c589041b5f65dc63f"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 02 ADDRESSING & VIRTUAL ADDRESS STRUCTURE.pdf",
+    "pages": 13,
+    "sha256": "6f93407532061c5c0ef398ffb538ef6fa65382cc20107afe1fbf4aa5d9830358"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 03 TTBR, ASID, AND PROCESS ISOLATION.pdf",
+    "pages": 17,
+    "sha256": "41f4569d9c02a34a862020aaabd127bfe6414f21446b36f2fc2b53c95a63e754"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 04 TCR, MAIR, AND MEMORY ATTRIBUTE CONTROL.pdf",
+    "pages": 18,
+    "sha256": "82b6ff993afcb64f26a7c7ae6185bb30b5871d5eddbee068f23edb588063c855"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 05 PAGE TABLE LEVELS AND DESCRIPTOR FORMATS.pdf",
+    "pages": 18,
+    "sha256": "9f5d73354fd147afe02a5101fb3e7a313da2aa8465635fac1ffa1fc87d63e187"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 06 STAGE-1 TRANSLATION.pdf",
+    "pages": 18,
+    "sha256": "70ed02d8162e8a9dbbe534a546751a307dfa8b90a908140523db539f94e995ed"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 07 STAGE-2 TRANSLATION.pdf",
+    "pages": 20,
+    "sha256": "9b22bb670dc3a7c777faf0ad449bd78aa61acba43c4939122cf988a0f8376216"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 08 TLB ARCHITECTURE.pdf",
+    "pages": 17,
+    "sha256": "ba217b3daae3d91ca988075091602574f073dd9b2cc1b0bee36ebaf78cea784b"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 09 MEMORY BARRIERS.pdf",
+    "pages": 18,
+    "sha256": "ab0afec6d28a52e584d7b04ec47eff46911f0cd0eba2f1ab6450a811ec473c7b"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 10 BREAK-BEFORE-MAKE.pdf",
+    "pages": 19,
+    "sha256": "2fcb3d6e1dee2636b40dc9a4dbf2e4b5abb7888e876ded180d854c301eee7838"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 11 VIRTUALIZATION PIPELINE.pdf",
+    "pages": 18,
+    "sha256": "11be5baed667d4b023d4b2749a0f9db81318d8e65db05e2c5e3f24f6b903c678"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 12 DEBUGGING MMU FAULTS.pdf",
+    "pages": 24,
+    "sha256": "b5636cb19f6f71db5de58bd2c684678cea6e96be37c39b39e0b0bb157938f9ee"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 13 BEST PRACTICES FOR MMU.pdf",
+    "pages": 20,
+    "sha256": "c68a91f26405a77bcc5d5a0690cc5da98c1f402349d63b48d620779e7a49a3de"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 15 MEMORY TYPES AND CACHEABILITY.pdf",
+    "pages": 20,
+    "sha256": "6884e77082808af8a0e32625049aee664ce2e470b1ac7d562cfcd8ed01e4bd6e"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 16 SHAREABILITY AND COHERENCY.pdf",
+    "pages": 19,
+    "sha256": "69439d1103179f949b9c2d675673f350b24f43ea57000abbf48aab34e8bf6987"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 17 Memory Ordering AND BARRIERS(Advanced).pdf",
+    "pages": 20,
+    "sha256": "e43ffdca1a052d305307b77c5b20d51f25524b36bf0b858c5a9805ed1d9167dc"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 18 Cache Maintenance & MMU Interaction (Advanced).pdf",
+    "pages": 21,
+    "sha256": "b6d28526dc9988afaf3af550f9dc51f6affdc06a56623d51c7b8302c83958605"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 19 MMU Performance Optimization Techniques.pdf",
+    "pages": 21,
+    "sha256": "bec29c5ba1ab2ac0169b26c61d789d9d7861b4ff889d5bf9f22b892d89740279"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 20 Advanced Virtualization Techniques.pdf",
+    "pages": 17,
+    "sha256": "9b33668bda38b53a138b950933bbe0047477a476d8eede3169e0f722bf06b0e1"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 21 MMU Design Patterns for Real Systems.pdf",
+    "pages": 18,
+    "sha256": "44976ca33144de34f5bbbd5024fd26c86c4b7aed6ed690de8196ddb89e23130b"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 22 Device Mapping & IO Virtualization.pdf",
+    "pages": 19,
+    "sha256": "ae386274cb0695650a76895a1973d76f0dfff457832ee8225abdc693f42fe609"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 24 Boot Process & MMU Bring‑Up (EL3 → EL2 → EL1).pdf",
+    "pages": 20,
+    "sha256": "b0bba300d3dae0f6dff01cac3bd376b7607655d23669cb932fdc29e853317536"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 25 Security Architecture & MMU Hardening.pdf",
+    "pages": 21,
+    "sha256": "d72641b477d80cb1421615cc9dfdca6d4bbfb1f941ff22de8fa458f68ba01dc6"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 26 Debugging Tools, Tracing & Instrumentation.pdf",
+    "pages": 18,
+    "sha256": "08f5044cf5d890eca5d746d85887aeed505000d58aebd2c0919f5203764bb0b5"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 27 Common MMU Bugs & Failure Modes.pdf",
+    "pages": 20,
+    "sha256": "480d039267b21bb446d9545106e9191c11abbea0c97730160f4597815f6e60b7"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 28 Full System Case Studies.pdf",
+    "pages": 18,
+    "sha256": "732144ddeeb9b9bdb15ef2d611ee6838d3ecaf990b03072c5b73b1ca11d0da03"
+  },
+  {
+    "file": "ARM-MMU/MMUAdvanced/MMU-Chapter 29 Complete MMU Checklist & Reference Tables.pdf",
+    "pages": 18,
+    "sha256": "9c185b3069aede50121b4632d0a6612853b4cc9d28773c1d600de01835da8e17"
+  },
+  {
+    "file": "ARMInterruptExceptionWorkflow.pdf",
+    "pages": 5,
+    "sha256": "14b19d4fe2230ec60c6be00f6313ce6ff378e0a4e4b18c1d6ddf8b0b7a144af4"
+  },
+  {
+    "file": "CheatSheet-InterruptExceptionARMQNXBSP.pdf",
+    "pages": 4,
+    "sha256": "652678a6e00675a6d67f601b5dec70c2020d6d0823ff1fd1953059da22b9edfe"
+  },
+  {
+    "file": "Memory Barrier/ARM64 Memory Barriers..pdf",
+    "pages": 11,
+    "sha256": "570c3452d3e58e9258b86759f0bc3a76328e44e9fb5a5ffab3fae0dfd11c9776"
+  }
+]

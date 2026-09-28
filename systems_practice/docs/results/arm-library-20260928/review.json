@@ -1,0 +1,28 @@
+{
+  "review_date": "2026-09-28",
+  "adopted_at": "2026-09-28T06:37:20.163178+00:00",
+  "repository": "https://github.com/vivekgit84/VivekPublicRepo",
+  "local_path": "/Users/guhaoran/书籍资料/ARM/VivekPublicRepo",
+  "commit": "03210a2b0b24626540eead73a8759973c94dd53b",
+  "pdf_count": 33,
+  "pages": 551,
+  "read_scope": "Index and selected full documents/pages listed in LOCAL_LIBRARY.md; not an exhaustive audit",
+  "confirmed_errata": [
+    "ARM-PDF-01",
+    "ARM-PDF-02",
+    "ARM-PDF-03",
+    "ARM-PDF-04"
+  ],
+  "visual_checks": [
+    "Descriptor summary PDF page3",
+    "Chapter19 PDF page5",
+    "Barrier workbook PDF page8"
+  ],
+  "license_verified": false,
+  "implementation_project_found": false,
+  "originals_modified": false,
+  "hashes_rechecked": true,
+  "prior_web_record_preserved": "../career-os-20260928/sources.json",
+  "primary_sources_status": "Actually read in preceding local-library review in this conversation; no new web read claimed in policy-edit turn",
+  "full_audit_completed": false
+}
