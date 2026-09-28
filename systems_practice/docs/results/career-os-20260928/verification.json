@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-09-28T06:19:08.806679+00:00",
+  "lesson_count": 28,
+  "existing_lesson_order_and_prerequisites_unchanged": true,
+  "existing_history_and_next07_unchanged": true,
+  "new_job_os_evidence_fields": 22,
+  "markdown_local_links_passed": true,
+  "json_parse_passed": true,
+  "code_changes": false,
+  "compilation_tests": "not applicable: documentation and curriculum metadata only",
+  "automation_prompt_updated": false,
+  "reason": "tool requires approval but current approval policy is never; existing prompt already requires updated specification",
+  "formatter_status": "passed",
+  "formatter_exit_code": 0,
+  "formatter_command": "sh scripts/format-cpp.sh"
+}

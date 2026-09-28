@@ -64,7 +64,10 @@
       "prerequisites": [
         "06"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "job_skill": "区分墙钟时间、线程CPU时间、预热与P95；先定义测量范围",
+      "os_bridge": "线程运行/等待和调度干扰的直观区别；深入调度留到21",
+      "evidence_target": "带环境和同步边界的可复现基准记录"
     },
     {
       "id": "08",
@@ -73,7 +76,10 @@
       "prerequisites": [
         "07"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "job_skill": "定位编译器为何没有向量化",
+      "os_bridge": "编译选项属于构建目标，OS运行能力另验",
+      "evidence_target": "优化诊断报告与真实汇编"
     },
     {
       "id": "09",
@@ -82,7 +88,10 @@
       "prerequisites": [
         "08"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "job_skill": "安全处理非整向量长度",
+      "os_bridge": "虚拟地址合法不等于尾部越界合法",
+      "evidence_target": "尾部/对齐/非法长度与Sanitizer"
     },
     {
       "id": "10",
@@ -91,7 +100,10 @@
       "prerequisites": [
         "09"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "job_skill": "建立模型前后处理精度合同",
+      "os_bridge": "只在相关时补充浮点环境边界",
+      "evidence_target": "标量参考、容限与误差记录"
     },
     {
       "id": "11",
@@ -101,7 +113,10 @@
         "10"
       ],
       "cortex_focus": "结合具体 Cortex-A 核的 NEON 执行资源，分析累加器、依赖和寄存器占用。",
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "job_skill": "用依赖与寄存器解释热点",
+      "os_bridge": "线程并行与单线程ILP区别",
+      "evidence_target": "多累加器同口径比较和spill观察"
     },
     {
       "id": "12",
@@ -110,7 +125,10 @@
       "prerequisites": [
         "11"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "job_skill": "减少布局转换和复制",
+      "os_bridge": "用户态缓冲区所有权，零拷贝需后续同步合同",
+      "evidence_target": "AoS/SoA和含转换成本对照"
     },
     {
       "id": "13",
@@ -119,7 +137,10 @@
       "prerequisites": [
         "12"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "job_skill": "核对低精度存储与算术",
+      "os_bridge": "能力宏/运行时检测区分",
+      "evidence_target": "转换、累加精度及存储证据"
     },
     {
       "id": "14",
@@ -128,7 +149,10 @@
       "prerequisites": [
         "13"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "job_skill": "核对量化点积溢出和scale",
+      "os_bridge": "可选扩展必须运行时核验",
+      "evidence_target": "标量/NEON、尾部、溢出和尺度验证"
     },
     {
       "id": "15",
@@ -138,7 +162,10 @@
         "14"
       ],
       "cortex_focus": "结合 Cortex-A 的 L1/L2 与 SoC 共享缓存配置，区分核设计和芯片实现。",
-      "board_anchor": "RK3588 CPU 工作集与缓存；Thor 的 CPU/系统缓存参数单独核实。"
+      "board_anchor": "RK3588 CPU 工作集与缓存；Thor 的 CPU/系统缓存参数单独核实。",
+      "job_skill": "按工作集定位缓存瓶颈",
+      "os_bridge": "地址空间/页与Cache分层；为18虚拟内存打底",
+      "evidence_target": "工作集扫描及受支持计数器"
     },
     {
       "id": "16",
@@ -147,7 +174,10 @@
       "prerequisites": [
         "15"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "job_skill": "算清packing成本与复用次数",
+      "os_bridge": "内存分配/缓冲池生命周期",
+      "evidence_target": "含packing/不含packing两组边界"
     },
     {
       "id": "17",
@@ -156,7 +186,10 @@
       "prerequisites": [
         "16"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "job_skill": "区分带宽受限和计算受限",
+      "os_bridge": "预取不保证缺页或I/O一定消失",
+      "evidence_target": "可复现带宽实验和对照"
     },
     {
       "id": "18",
@@ -165,7 +198,10 @@
       "prerequisites": [
         "17"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "job_skill": "解释大模型首次访问与稳态差异",
+      "os_bridge": "虚拟内存、页表、缺页、TLB；概念分课/主课补足",
+      "evidence_target": "地址/页大小及缺页观测，不把TLB等同Cache"
     },
     {
       "id": "19",
@@ -174,7 +210,10 @@
       "prerequisites": [
         "18"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "job_skill": "定位并发数据错误",
+      "os_bridge": "锁、原子、等待唤醒和内存序；xv6与Linux对照",
+      "evidence_target": "竞态复现与修复依据；不称TSan证明无竞态"
     },
     {
       "id": "20",
@@ -183,7 +222,10 @@
       "prerequisites": [
         "19"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "job_skill": "减少共享统计开销",
+      "os_bridge": "一致性与线程同步职责区别",
+      "evidence_target": "伪共享基线、布局和线程数扫描"
     },
     {
       "id": "21",
@@ -193,7 +235,10 @@
         "20"
       ],
       "cortex_focus": "以 Cortex-A 大小核组合讲解线程池、任务粒度和核间迁移，目标板实测后再给性能结论。",
-      "board_anchor": "RK3588 A76/A55 任务划分；Jetson 核拓扑与线程池另验，不套用大小核假设。"
+      "board_anchor": "RK3588 A76/A55 任务划分；Jetson 核拓扑与线程池另验，不套用大小核假设。",
+      "job_skill": "排查线程过量/尾延迟",
+      "os_bridge": "进程/线程、调度、上下文切换、亲和性与背压",
+      "evidence_target": "队列等待和CPU执行分别测量"
     },
     {
       "id": "22",
@@ -202,7 +247,10 @@
       "prerequisites": [
         "21"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "job_skill": "选择合理的小Batch实现",
+      "os_bridge": "线程启动/唤醒成本纳入请求",
+      "evidence_target": "GEMV/GEMM同shape同精度基准"
     },
     {
       "id": "23",
@@ -211,7 +259,10 @@
       "prerequisites": [
         "22"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "job_skill": "把量化精度和部署格式连接",
+      "os_bridge": "加载/解码的内存生命周期",
+      "evidence_target": "含metadata存储、解码/乘加边界"
     },
     {
       "id": "24",
@@ -220,7 +271,10 @@
       "prerequisites": [
         "23"
       ],
-      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。",
+      "job_skill": "减少实际预处理开销",
+      "os_bridge": "I/O缓冲区和布局契约",
+      "evidence_target": "输入输出一致性和融合前后对照"
     },
     {
       "id": "25",
@@ -229,7 +283,10 @@
       "prerequisites": [
         "24"
       ],
-      "board_anchor": "分别查询 RK3588、Orin 和 Thor 的 OS/CPU 扩展能力，选择已验证实现。"
+      "board_anchor": "分别查询 RK3588、Orin 和 Thor 的 OS/CPU 扩展能力，选择已验证实现。",
+      "job_skill": "避免目标机器非法指令",
+      "os_bridge": "运行时能力检测与动态库/ABI边界",
+      "evidence_target": "可选扩展分派和标量回退"
     },
     {
       "id": "26",
@@ -239,7 +296,10 @@
         "25"
       ],
       "cortex_focus": "阅读具体 Cortex-A 优化手册并核实 PMU 事件，不跨核照搬 raw event。",
-      "board_anchor": "分别核实 RK3588 与 Jetson 的 PMU、工具及采集权限。"
+      "board_anchor": "分别核实 RK3588 与 Jetson 的 PMU、工具及采集权限。",
+      "job_skill": "用Linux工具排查真实热点",
+      "os_bridge": "GDB/core/strace/perf按问题择一；区分等待/运行",
+      "evidence_target": "符号化现场、采集条件和根因报告"
     },
     {
       "id": "27",
@@ -248,7 +308,10 @@
       "prerequisites": [
         "26"
       ],
-      "board_anchor": "RK3588 的 CPU–RKNN/NPU 或 Thor 的 CPU–TensorRT/CUDA 流水线，择一深入。"
+      "board_anchor": "RK3588 的 CPU–RKNN/NPU 或 Thor 的 CPU–TensorRT/CUDA 流水线，择一深入。",
+      "job_skill": "保证异构流水线并发正确",
+      "os_bridge": "IPC/队列/背压、系统调用、FD生命周期；DMA一致性另核",
+      "evidence_target": "错误恢复、关闭排空、端到端分段时序"
     },
     {
       "id": "28",
@@ -257,13 +320,17 @@
       "prerequisites": [
         "27"
       ],
-      "board_anchor": "ROCK 5B 或 AGX Thor 持续推理，记录温度、功耗条件与完整请求延迟。"
+      "board_anchor": "ROCK 5B 或 AGX Thor 持续推理，记录温度、功耗条件与完整请求延迟。",
+      "job_skill": "交付可长期运行的板端程序",
+      "os_bridge": "资源泄漏、超时、热限制和故障恢复",
+      "evidence_target": "稳定性报告、P50/P95、功耗条件与限制"
     }
   ],
   "scope_notes": [
     "重点覆盖 Cortex-A 微架构及边缘性能编程；Cortex-R/M 作实时控制、MCU 与 TinyML 用途对比，不默认支持 NEON。",
     "2026-09-22 用户确认 Cortex 内容；在既有节点明确加入，不提前推进学习进度。",
-    "2026-09-22 用户要求实际板卡贯穿；优先 RK3588/Jetson，Cortex-R/M 仅作相关场景对比；每日仍按序推进。"
+    "2026-09-22 用户要求实际板卡贯穿；优先 RK3588/Jetson，Cortex-R/M 仅作相关场景对比；每日仍按序推进。",
+    "2026-09-28 用户要求加入就业导向；增加Linux工程、OS机制与证据映射，未改课程顺序、未推进游标。"
   ],
   "board_reference": "../docs/arm/BOARDS.md",
   "primary_devices": [
@@ -273,5 +340,24 @@
   "cpu_comparison_device": "Jetson AGX Orin Developer Kit",
   "cuda_execution_target": "Jetson Thor SM110 only",
   "implementation_language": "C/C++ only for ARM, CPU and computer architecture; default C++17",
-  "build_orchestration": "Shell/CMake only; no Python lesson implementation"
+  "build_orchestration": "Shell/CMake only; no Python lesson implementation",
+  "career_policy": {
+    "added_on": "2026-09-28",
+    "primary_track": "Embedded Linux / edge AI inference engineering",
+    "advanced_track": "ARM CPU kernel and performance optimization",
+    "guide": "../docs/arm/CAREER_OS.md",
+    "per_lesson": "One relevant job skill, board problem and evidence target; preserve 5–10min scope and prerequisite order",
+    "projects": [
+      "End-to-end board inference with accuracy/recovery/stability and stage timings",
+      "ARM CPU baseline/NEON/layout-or-parallel optimization with correctness/assembly/fair benchmarks"
+    ],
+    "os_sources": {
+      "preferred": "https://github.com/mit-pdos/xv6-riscv",
+      "historical": "https://github.com/mit-pdos/xv6-public",
+      "supplementary_candidate": "https://github.com/vivekgit84/VivekPublicRepo",
+      "candidate_status": "Directory and file metadata verified in browser; PDF content, license and runnable implementation pending"
+    },
+    "os_scope": "Integrated bridge, not another daily assignment or new rotation",
+    "completed_by_this_change": false
+  }
 }

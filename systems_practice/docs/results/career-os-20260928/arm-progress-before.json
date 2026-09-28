@@ -144,10 +144,6 @@
     {
       "date": "2026-09-28",
       "reason": "User-requested chronological backfill24–27 delivers03–06; existing28 lesson03 retained as supplemental and not counted twice."
-    },
-    {
-      "date": "2026-09-28",
-      "reason": "Explicit user request: integrate employment-oriented C++/Linux/debug/deployment/performance evidence and OS bridge; lessons01–28 and next07 unchanged. xv6-riscv preferred teaching source; VivekPublicRepo directory verified; PDF content/license pending, supplementary candidate only."
     }
   ],
   "last_canonical_lesson_date": "2026-09-27"

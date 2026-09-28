@@ -1,0 +1,132 @@
+{
+  "read_at": "2026-09-28T06:13:21.008878+00:00",
+  "purpose": "career generation requirements and OS source assessment; not a delivered lesson",
+  "xv6_public": {
+    "repository": "https://github.com/mit-pdos/xv6-public",
+    "branch": "master",
+    "commit": null,
+    "read": [
+      "README maintenance, architecture, build prerequisites"
+    ],
+    "implementation_read": false,
+    "finding": "x86 version stopped maintenance; upstream points to xv6-riscv"
+  },
+  "xv6_riscv": {
+    "repository": "https://github.com/mit-pdos/xv6-riscv",
+    "branch": "riscv",
+    "commit": null,
+    "license": "MIT",
+    "license_url": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/LICENSE",
+    "read": [
+      {
+        "file": "README",
+        "scope": "teaching role and toolchain requirements"
+      },
+      {
+        "file": "kernel/pipe.c",
+        "symbols": [
+          "pipewrite",
+          "piperead",
+          "pipeclose"
+        ]
+      },
+      {
+        "file": "kernel/proc.c",
+        "symbols": [
+          "scheduler",
+          "sched",
+          "sleep_prepare",
+          "sleep",
+          "wakeup"
+        ]
+      }
+    ],
+    "read_via_web": true,
+    "cloned": false,
+    "compiled": false,
+    "qemu_run": false,
+    "commit_pinned": false,
+    "git_attempt": {
+      "url": "https://github.com/mit-pdos/xv6-riscv.git",
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: unable to access 'https://github.com/mit-pdos/xv6-riscv.git/': Could not resolve host: github.com\n"
+    }
+  },
+  "vivek": {
+    "repository": "https://github.com/vivekgit84/VivekPublicRepo",
+    "source_read": false,
+    "license": null,
+    "commit": "03210a2b0b24626540eead73a8759973c94dd53b",
+    "status": "browser directory and metadata verified; PDF content/license pending",
+    "web_attempts": [
+      {
+        "url": "https://github.com/vivekgit84/VivekPublicRepo",
+        "error": "cache miss"
+      },
+      {
+        "url": "https://github.com/vivekgit84/VivekPublicRepo/tree/master",
+        "error": "internal error"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/vivekgit84/VivekPublicRepo/master/README.md",
+        "error": "internal error"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/vivekgit84/VivekPublicRepo/main/README.md",
+        "error": "internal error"
+      },
+      {
+        "url": "https://api.github.com/repos/vivekgit84/VivekPublicRepo",
+        "error": "internal error"
+      },
+      {
+        "url": "https://api.github.com/repos/vivekgit84/VivekPublicRepo/contents",
+        "error": "not accessible via web tool"
+      },
+      {
+        "url": "https://github.com/vivekgit84",
+        "error": "cache miss"
+      }
+    ],
+    "search_queries": [
+      "\"VivekPublicRepo\"",
+      "\"vivekgit84\""
+    ],
+    "search_result": "empty",
+    "git_attempt": {
+      "url": "https://github.com/vivekgit84/VivekPublicRepo.git",
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: unable to access 'https://github.com/vivekgit84/VivekPublicRepo.git/': Could not resolve host: github.com\n"
+    },
+    "branch": "main",
+    "directory_read": true,
+    "implementation_read": false,
+    "pdf_content_read": false,
+    "cloned": false,
+    "compiled": false,
+    "browser_resolution": "IAB successful after web/git failures; PDF preview remained loading",
+    "license_note": "No license file visible in inspected root listing; no reuse permission inferred",
+    "files_observed": [
+      "ARM-MMU/MMUAdvanced/",
+      "ARM-MMU/MMU Descriptor Bit‑Level Summary.pdf",
+      "Memory Barrier/ARM64 Memory Barriers..pdf",
+      "Memory Barrier/MB.md (0 lines, 1 Byte)",
+      "ARMInterruptExceptionWorkflow.pdf",
+      "CheatSheet-InterruptExceptionARMQNXBSP.pdf",
+      "README.md (short description only)"
+    ],
+    "commit_observation": "root latest commit link and PDF preview commit",
+    "permalink": "https://github.com/vivekgit84/VivekPublicRepo/blob/03210a2b0b24626540eead73a8759973c94dd53b/Memory%20Barrier/ARM64%20Memory%20Barriers..pdf"
+  },
+  "automation": {
+    "id": "cuda-c-edge-ai",
+    "management_view": "blocked",
+    "raw_error": "MCP tool call requires approval, but approval policy is never",
+    "prompt_updated": false,
+    "schedule_changed": false,
+    "fallback": "existing prompt already mandates reading PRACTICE_SPEC.md; repository requirement updated without bypassing blocked tool"
+  },
+  "updated_at": "2026-09-28T06:19:08.806316+00:00"
+}

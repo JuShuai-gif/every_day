@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "cadence": "one lesson per Asia/Shanghai calendar day",
+  "after_last_lesson": "Continue with verified source kernels and integrated edge projects; do not restart automatically.",
+  "lessons": [
+    {
+      "id": "01",
+      "stage": 1,
+      "title": "区分架构、CPU 与编译目标能力",
+      "prerequisites": [],
+      "board_anchor": "识别 ROCK 5B/RK3588 与 Jetson Orin/Thor：CPU、SoC、编译目标分别记录。"
+    },
+    {
+      "id": "02",
+      "stage": 1,
+      "title": "AArch64 的 X/W 寄存器与 NEON V 寄存器",
+      "prerequisites": [
+        "01"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "03",
+      "stage": 1,
+      "title": "加载/存储、地址与 stride",
+      "prerequisites": [
+        "02"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "04",
+      "stage": 1,
+      "title": "循环、依赖链与指令级并行",
+      "prerequisites": [
+        "03"
+      ],
+      "cortex_focus": "以 Cortex-A55/A76 对照讲解顺序/乱序执行、依赖链与 ILP；具体流水线数据先核实官方手册。",
+      "board_anchor": "以 RK3588 的 A55/A76 对照循环依赖；Orin/Thor 的核型号另行区分。"
+    },
+    {
+      "id": "05",
+      "stage": 1,
+      "title": "函数调用、ABI 与寄存器保存",
+      "prerequisites": [
+        "04"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "06",
+      "stage": 1,
+      "title": "编译目标、优化选项与反汇编",
+      "prerequisites": [
+        "05"
+      ],
+      "cortex_focus": "解释 ARM 架构版本、Cortex 核型号与编译目标的关系；不把所有 Cortex-A 都当成同一指令能力。",
+      "board_anchor": "ROCK 5B Linux 与 Jetson Linux 的目标工具链、ABI 和实际特性。"
+    },
+    {
+      "id": "07",
+      "stage": 1,
+      "title": "公平基准：预热、计时范围与误差",
+      "prerequisites": [
+        "06"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "08",
+      "stage": 2,
+      "title": "普通 C++ 循环怎样自动向量化",
+      "prerequisites": [
+        "07"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "09",
+      "stage": 2,
+      "title": "NEON 加载/存储与尾部处理",
+      "prerequisites": [
+        "08"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "10",
+      "stage": 2,
+      "title": "FP32 FMA、横向归约与浮点误差",
+      "prerequisites": [
+        "09"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "11",
+      "stage": 2,
+      "title": "多个累加器与寄存器压力",
+      "prerequisites": [
+        "10"
+      ],
+      "cortex_focus": "结合具体 Cortex-A 核的 NEON 执行资源，分析累加器、依赖和寄存器占用。",
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "12",
+      "stage": 2,
+      "title": "AoS/SoA、交错加载与数据重排",
+      "prerequisites": [
+        "11"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "13",
+      "stage": 2,
+      "title": "FP16 存储、转换、算术与累加精度",
+      "prerequisites": [
+        "12"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "14",
+      "stage": 2,
+      "title": "INT8 扩宽与 dot-product 的累加契约",
+      "prerequisites": [
+        "13"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "15",
+      "stage": 3,
+      "title": "Cache、工作集与局部性",
+      "prerequisites": [
+        "14"
+      ],
+      "cortex_focus": "结合 Cortex-A 的 L1/L2 与 SoC 共享缓存配置，区分核设计和芯片实现。",
+      "board_anchor": "RK3588 CPU 工作集与缓存；Thor 的 CPU/系统缓存参数单独核实。"
+    },
+    {
+      "id": "16",
+      "stage": 3,
+      "title": "缓存分块与 packing 的摊销",
+      "prerequisites": [
+        "15"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "17",
+      "stage": 3,
+      "title": "带宽瓶颈与预取的适用条件",
+      "prerequisites": [
+        "16"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "18",
+      "stage": 3,
+      "title": "TLB、页与大工作集访问",
+      "prerequisites": [
+        "17"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "19",
+      "stage": 3,
+      "title": "ARM 内存序、原子与 LSE",
+      "prerequisites": [
+        "18"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "20",
+      "stage": 3,
+      "title": "多核计数、伪共享与分片",
+      "prerequisites": [
+        "19"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "21",
+      "stage": 3,
+      "title": "大小核、线程池与任务粒度",
+      "prerequisites": [
+        "20"
+      ],
+      "cortex_focus": "以 Cortex-A 大小核组合讲解线程池、任务粒度和核间迁移，目标板实测后再给性能结论。",
+      "board_anchor": "RK3588 A76/A55 任务划分；Jetson 核拓扑与线程池另验，不套用大小核假设。"
+    },
+    {
+      "id": "22",
+      "stage": 4,
+      "title": "GEMV 与小 Batch GEMM 的瓶颈",
+      "prerequisites": [
+        "21"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "23",
+      "stage": 4,
+      "title": "量化块解码与乘加融合",
+      "prerequisites": [
+        "22"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "24",
+      "stage": 4,
+      "title": "图像预处理融合与布局转换",
+      "prerequisites": [
+        "23"
+      ],
+      "board_anchor": "优先选 ROCK 5B/RK3588 或 AGX Thor 的一个 CPU 数据处理问题；注明实际板型、输入与验证状态。"
+    },
+    {
+      "id": "25",
+      "stage": 4,
+      "title": "NEON、i8mm、SVE/SVE2 的能力分派",
+      "prerequisites": [
+        "24"
+      ],
+      "board_anchor": "分别查询 RK3588、Orin 和 Thor 的 OS/CPU 扩展能力，选择已验证实现。"
+    },
+    {
+      "id": "26",
+      "stage": 4,
+      "title": "性能工具：热点、PMU 与平台边界",
+      "prerequisites": [
+        "25"
+      ],
+      "cortex_focus": "阅读具体 Cortex-A 优化手册并核实 PMU 事件，不跨核照搬 raw event。",
+      "board_anchor": "分别核实 RK3588 与 Jetson 的 PMU、工具及采集权限。"
+    },
+    {
+      "id": "27",
+      "stage": 4,
+      "title": "CPU–NPU/GPU 流水线与缓冲区所有权",
+      "prerequisites": [
+        "26"
+      ],
+      "board_anchor": "RK3588 的 CPU–RKNN/NPU 或 Thor 的 CPU–TensorRT/CUDA 流水线，择一深入。"
+    },
+    {
+      "id": "28",
+      "stage": 4,
+      "title": "持续负载、温控与端到端能耗验收",
+      "prerequisites": [
+        "27"
+      ],
+      "board_anchor": "ROCK 5B 或 AGX Thor 持续推理，记录温度、功耗条件与完整请求延迟。"
+    }
+  ],
+  "scope_notes": [
+    "重点覆盖 Cortex-A 微架构及边缘性能编程；Cortex-R/M 作实时控制、MCU 与 TinyML 用途对比，不默认支持 NEON。",
+    "2026-09-22 用户确认 Cortex 内容；在既有节点明确加入，不提前推进学习进度。",
+    "2026-09-22 用户要求实际板卡贯穿；优先 RK3588/Jetson，Cortex-R/M 仅作相关场景对比；每日仍按序推进。"
+  ],
+  "board_reference": "../docs/arm/BOARDS.md",
+  "primary_devices": [
+    "Radxa ROCK 5B (RK3588)",
+    "Jetson AGX Thor Developer Kit (T5000)"
+  ],
+  "cpu_comparison_device": "Jetson AGX Orin Developer Kit",
+  "cuda_execution_target": "Jetson Thor SM110 only",
+  "implementation_language": "C/C++ only for ARM, CPU and computer architecture; default C++17",
+  "build_orchestration": "Shell/CMake only; no Python lesson implementation"
+}

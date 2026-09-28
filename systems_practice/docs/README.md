@@ -9,3 +9,5 @@
 - [RK3588 与 ARM 参考资料](references/rk3588-arm/README.md)。
 
 [返回学习总入口](../README.md)。每日文章与代码保留在各自栏目，通用说明统一维护在这里。
+
+- [就业与操作系统衔接路线](arm/CAREER_OS.md)：ARM、Linux、xv6 的学习分工及作品验收。
