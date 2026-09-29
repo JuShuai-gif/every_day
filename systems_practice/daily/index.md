@@ -36,7 +36,7 @@
 | [2026-09-26](2026-09-26/README.md) | CUDA Kernel（顺序补课） | 稳定 softmax 与 warp 寄存器归约；[SpinQuant](../quantization/2026-09-26/spinquant/README.md)；[ARM05](../arm/2026-09-26/README.md)；[两篇论文](../paper/2026-09-26/README.md) | [代码](2026-09-26/src/softmax.cu) | CPU Release/ASan/UBSan 96组+非法输入通过；Thor缺nvcc未编译；量化原生运行待补 | 无GPU/NPU/端到端实测；[验证](2026-09-26/results/verification.json) |
 | [2026-09-27](2026-09-27/README.md) | TensorRT（顺序补课） | 输入消费事件与输出完成事件；[SpQR](../quantization/2026-09-27/spqr/README.md)；[ARM06](../arm/2026-09-27/README.md)；[两篇论文](../paper/2026-09-27/README.md) | [代码](2026-09-27/src/trt.cpp) | CPU所有权状态模型通过；TensorRT/Thor缺工具未编译；量化原生运行待补 | 无GPU/NPU/端到端实测；[验证](2026-09-27/results/verification.json) |
 | [2026-09-28](2026-09-28/README.md) | 边缘端部署（保留为补充，不重复推进） | 发布代次+请求共享快照，失败保留旧版；[OmniQuant](../quantization/2026-09-28/omniquant/README.md)；[ARM03](../arm/2026-09-28/README.md)；[论文](../paper/2026-09-28/README.md) | [控制面](2026-09-28/src/deployment.hpp)、[验证](2026-09-28/src/main.cpp) | Release/ASan/UBSan/TSan通过；2万请求/1000更新；量化原生运行因依赖/克隆缺失待补 | CPU控制面P50/P95 0.00725/0.007292us；[最终记录](2026-09-28/results/verification.json)；无GPU/NPU/E2E性能 |
-| [2026-09-29](2026-09-29/README.md) | RK3588 NPU / RKNN | INT8输出解释+RAII输出租约；[SmoothQuant](../quantization/2026-09-29/smoothquant/README.md) · [ARM07](../arm/2026-09-29/README.md) · [论文两篇](../paper/2026-09-29/README.md) · [OS02](../os/2026-09-29/README.md) | [RKNN](2026-09-29/src/rknn_output.cpp)、[CPU契约](2026-09-29/src/cpu_check.cpp) | CPU Release/ASan/UBSan 1024数值+6非法+1000租约通过；模型/转换/板端因依赖设备未验 | 无NPU/GPU/E2E实测；ARM独立Mac基准P50 serial/four=1.74544/0.663734us；[记录](2026-09-29/results/verification.json) |
+| [2026-09-29](2026-09-29/README.md) | RK3588 NPU / RKNN | INT8输出解释+RAII输出租约；[SmoothQuant](../quantization/2026-09-29/smoothquant/README.md) · [ARM07](../arm/2026-09-29/README.md) · [论文两篇](../paper/2026-09-29/README.md) · [OS02](../os/2026-09-29/README.md) · [C++17 01](../cpp17/2026-09-29/README.md) | [RKNN](2026-09-29/src/rknn_output.cpp)、[CPU契约](2026-09-29/src/cpu_check.cpp) | CPU Release/ASan/UBSan 1024数值+6非法+1000租约通过；模型/转换/板端因依赖设备未验 | 无NPU/GPU/E2E实测；ARM独立Mac基准P50 serial/four=1.74544/0.663734us；[记录](2026-09-29/results/verification.json) |
 
 
 下一主主题：**PTX / CUTLASS**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
@@ -49,3 +49,5 @@
 2026-09-28 用户新增[就业与 OS 衔接要求](../docs/arm/CAREER_OS.md)：主课和ARM小课围绕工程问题积累验证证据，不增加每日编码任务或改变12方向游标。
 
 2026-09-28 起新增[每日OS独立栏目](../os/index.md)：每天两个相关小主题，首节[系统调用与FD共享状态](../os/2026-09-28/README.md)，Mac Release/ASan/UBSan通过，xv6/QEMU、Linux/板端待验；不推进主方向游标。
+
+2026-09-29 补齐[每日独立C++17栏目](../cpp17/index.md)：[第01课配置状态与失败回滚](../cpp17/2026-09-29/README.md)。每天一节、首轮28课，独立游标，不推进主方向或其他栏目；附加现成代码不增加必做作业。

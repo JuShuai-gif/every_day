@@ -19,12 +19,16 @@ systems_practice/
 ├── os/                           每日两个OS主题（2026-09-28新增）
 │   ├── index.md、curriculum.json、progress.json
 │   └── YYYY-MM-DD/
+├── cpp17/                        每日独立C++17（2026-09-29补齐）
+│   ├── index.md、curriculum.json、progress.json
+│   └── YYYY-MM-DD/
 └── docs/                         通用说明
     ├── PRACTICE_SPEC.md
     ├── daily/
     ├── quantization/             栏目说明与模板
     ├── arm/                      学习路线与板卡说明
     ├── os/                        OS路线与模板
+    ├── cpp17/                     C++17路线与模板
     ├── paper/
     ├── references/               已归档参考资料
     └── migrations/               目录整理的验证记录
@@ -64,3 +68,7 @@ systems_practice/
 ## 2026-09-28 新增 OS
 
 按用户要求新增os/独立栏目，随原任务每日交付两个相关主题；原四栏目保留。该新增不改变上面的2026-09-22迁移统计和历史记录。[OS入口](../os/index.md)。
+
+## 2026-09-29 补齐独立 C++17
+
+新增cpp17/，独立课号与游标；随既有每日任务交付，当前六栏目并行。此前C++主课继续保留在daily，未倒填为本栏目已交付记录。[入口](../cpp17/index.md)。

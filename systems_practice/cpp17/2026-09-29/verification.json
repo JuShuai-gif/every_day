@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-29",
+  "recorded_at": "2026-09-29T11:29:02.578865+08:00",
+  "source_read": true,
+  "source_version_pinned": false,
+  "host": "macOS arm64; actual compiler in results/environment.txt",
+  "standard": "C++17",
+  "checks": {
+    "release": {
+      "exit_code": 0,
+      "passed": true,
+      "log": "results/release.txt"
+    },
+    "sanitize": {
+      "exit_code": 0,
+      "passed": true,
+      "log": "results/sanitize.txt"
+    }
+  },
+  "coverage": [
+    "empty value() exception",
+    "failed initial configuration remains empty",
+    "failed emplace destroys old configuration",
+    "seven invalid updates preserve old value",
+    "batch1/16 threshold0/1 boundaries",
+    "successful commit",
+    "idempotent reset"
+  ],
+  "not_tested": [
+    "allocation failure injection",
+    "LLVM project compilation",
+    "cross-thread publication",
+    "Linux/Jetson/RK3588 devices",
+    "performance"
+  ],
+  "format": "scripts/format-cpp.sh executed in scoped mirror; copied only new main.cpp back"
+}

@@ -15,3 +15,5 @@
 - [本地ARM资料与勘误](arm/LOCAL_LIBRARY.md)：引用流程、4处已确认错误和就业阅读优先级。
 
 - [每日OS路线](os/README.md)与[交付模板](os/LESSON_TEMPLATE.md)：xv6拆分为28节/56主题，独立按日推进。
+
+- [每日C++17路线](cpp17/README.md)与[交付模板](cpp17/LESSON_TEMPLATE.md)：独立28课，随08:30任务按日推进。

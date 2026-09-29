@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Shanghai",
+  "created_on": "2026-09-29",
+  "last_delivery_date": "2026-09-29",
+  "next_lesson_id": "02",
+  "delivered_lesson_ids": [
+    "01"
+  ],
+  "history": [
+    {
+      "date": "2026-09-29",
+      "lesson_id": "01",
+      "path": "2026-09-29",
+      "source_read": true,
+      "lesson_delivered": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "version_pinned": false,
+      "target_board_verified": false,
+      "verification": "2026-09-29/verification.json"
+    }
+  ],
+  "backlog": [
+    {
+      "lesson_id": "01",
+      "kind": "source_commit_pin",
+      "status": "pending",
+      "reason": "Source read on release/18.x; tag direct requests returned Cache miss, exact commit unresolved",
+      "record": "2026-09-29/source.json"
+    }
+  ]
+}

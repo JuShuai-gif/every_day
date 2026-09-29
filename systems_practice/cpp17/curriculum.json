@@ -1,0 +1,370 @@
+{
+  "schema_version": 1,
+  "created_on": "2026-09-29",
+  "standard": "C++17",
+  "mode": "sequential_independent_daily",
+  "lessons": [
+    {
+      "id": "01",
+      "title": "可选配置与失败回滚",
+      "mechanisms": [
+        "std::optional",
+        "候选构造后提交"
+      ],
+      "standard_scope": "17新增optional；异常安全是既有基础",
+      "prerequisites": [],
+      "source_status": "read; see 2026-09-29/source.json"
+    },
+    {
+      "id": "02",
+      "title": "对象寿命与RAII",
+      "mechanisms": [
+        "作用域",
+        "Rule of Zero"
+      ],
+      "standard_scope": "既有基础",
+      "prerequisites": [
+        "01"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "03",
+      "title": "唯一所有权与移动",
+      "mechanisms": [
+        "unique_ptr",
+        "move后状态"
+      ],
+      "standard_scope": "C++11基础",
+      "prerequisites": [
+        "02"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "04",
+      "title": "移动成本与容器扩容",
+      "mechanisms": [
+        "noexcept",
+        "vector重分配"
+      ],
+      "standard_scope": "C++11基础",
+      "prerequisites": [
+        "03"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "05",
+      "title": "字符串视图与借用",
+      "mechanisms": [
+        "string_view",
+        "悬空边界"
+      ],
+      "standard_scope": "17新增string_view",
+      "prerequisites": [
+        "04"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "06",
+      "title": "结构化绑定与引用",
+      "mechanisms": [
+        "拷贝绑定",
+        "引用绑定"
+      ],
+      "standard_scope": "17新增结构化绑定",
+      "prerequisites": [
+        "05"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "07",
+      "title": "初始化语句与查找作用域",
+      "mechanisms": [
+        "if初始化",
+        "map查找"
+      ],
+      "standard_scope": "17新增if初始化",
+      "prerequisites": [
+        "06"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "08",
+      "title": "联合结果与状态机",
+      "mechanisms": [
+        "variant",
+        "visit"
+      ],
+      "standard_scope": "17新增variant与visit",
+      "prerequisites": [
+        "07"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "09",
+      "title": "类型擦除与动态值",
+      "mechanisms": [
+        "any",
+        "any_cast失败"
+      ],
+      "standard_scope": "17新增any",
+      "prerequisites": [
+        "08"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "10",
+      "title": "数值解析与输入边界",
+      "mechanisms": [
+        "from_chars",
+        "部分解析和溢出"
+      ],
+      "standard_scope": "17新增from_chars；核实库实现支持",
+      "prerequisites": [
+        "09"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "11",
+      "title": "哈希表插入成本",
+      "mechanisms": [
+        "try_emplace",
+        "insert_or_assign"
+      ],
+      "standard_scope": "17新增两个插入接口",
+      "prerequisites": [
+        "10"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "12",
+      "title": "节点句柄与键变更",
+      "mechanisms": [
+        "extract",
+        "insert所有权"
+      ],
+      "standard_scope": "17新增node handle",
+      "prerequisites": [
+        "11"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "13",
+      "title": "模板分支",
+      "mechanisms": [
+        "if constexpr",
+        "被丢弃语句"
+      ],
+      "standard_scope": "17新增if constexpr",
+      "prerequisites": [
+        "12"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "14",
+      "title": "参数包与求值顺序",
+      "mechanisms": [
+        "fold expression",
+        "逗号折叠"
+      ],
+      "standard_scope": "17新增折叠表达式",
+      "prerequisites": [
+        "13"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "15",
+      "title": "类型推导边界",
+      "mechanisms": [
+        "CTAD",
+        "deduction guide"
+      ],
+      "standard_scope": "17新增类模板实参推导",
+      "prerequisites": [
+        "14"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "16",
+      "title": "可调用对象组合",
+      "mechanisms": [
+        "invoke",
+        "apply"
+      ],
+      "standard_scope": "17新增invoke与apply",
+      "prerequisites": [
+        "15"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "17",
+      "title": "静态配置与链接",
+      "mechanisms": [
+        "inline变量",
+        "ODR"
+      ],
+      "standard_scope": "17新增inline变量",
+      "prerequisites": [
+        "16"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "18",
+      "title": "返回值与对象构造",
+      "mechanisms": [
+        "prvalue直接构造",
+        "可选NRVO"
+      ],
+      "standard_scope": "17保证特定copy elision；NRVO不保证",
+      "prerequisites": [
+        "17"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "19",
+      "title": "对齐与对象存储",
+      "mechanisms": [
+        "alignas",
+        "over-aligned分配"
+      ],
+      "standard_scope": "alignas是11基础；17扩展对齐分配",
+      "prerequisites": [
+        "18"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "20",
+      "title": "多态内存资源",
+      "mechanisms": [
+        "pmr",
+        "resource寿命"
+      ],
+      "standard_scope": "17新增pmr",
+      "prerequisites": [
+        "19"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "21",
+      "title": "文件系统与错误",
+      "mechanisms": [
+        "filesystem",
+        "error_code与TOCTOU"
+      ],
+      "standard_scope": "17新增filesystem",
+      "prerequisites": [
+        "20"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "22",
+      "title": "互斥与多锁管理",
+      "mechanisms": [
+        "scoped_lock",
+        "死锁顺序"
+      ],
+      "standard_scope": "17新增scoped_lock；mutex是11基础",
+      "prerequisites": [
+        "21"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "23",
+      "title": "读多写少的共享状态",
+      "mechanisms": [
+        "shared_mutex",
+        "读者寿命"
+      ],
+      "standard_scope": "17新增shared_mutex；共享锁基础来自14",
+      "prerequisites": [
+        "22"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "24",
+      "title": "条件变量与退出协议",
+      "mechanisms": [
+        "谓词等待",
+        "关闭排空"
+      ],
+      "standard_scope": "C++11基础，结合17接口工程化",
+      "prerequisites": [
+        "23"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "25",
+      "title": "异步结果与异常传播",
+      "mechanisms": [
+        "future",
+        "promise所有权"
+      ],
+      "standard_scope": "C++11基础",
+      "prerequisites": [
+        "24"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "26",
+      "title": "原子与发布可见性",
+      "mechanisms": [
+        "release-acquire",
+        "数据竞争"
+      ],
+      "standard_scope": "C++11内存模型基础",
+      "prerequisites": [
+        "25"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "27",
+      "title": "构建与库边界",
+      "mechanisms": [
+        "ABI",
+        "sanitizers与编译特性"
+      ],
+      "standard_scope": "C++17工程实践，平台相关",
+      "prerequisites": [
+        "26"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    },
+    {
+      "id": "28",
+      "title": "综合配置与推理服务",
+      "mechanisms": [
+        "生命周期",
+        "有界并发和验收"
+      ],
+      "standard_scope": "综合复用，不新增语法清单",
+      "prerequisites": [
+        "27"
+      ],
+      "source_status": "planned; verify repository, version and symbols before delivery"
+    }
+  ]
+}

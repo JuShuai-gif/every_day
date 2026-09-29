@@ -1,0 +1,44 @@
+{
+  "read_date": "2026-09-29",
+  "repository": "https://github.com/llvm/llvm-project",
+  "ref": "release/18.x",
+  "commit": null,
+  "version_pinned": false,
+  "source_read": true,
+  "file": "libcxx/include/optional",
+  "symbols": [
+    "__optional_destruct_base::reset",
+    "__optional_storage_base::__construct",
+    "optional::emplace",
+    "optional::swap"
+  ],
+  "url": "https://github.com/llvm/llvm-project/blob/release/18.x/libcxx/include/optional",
+  "read_url": "https://raw.githubusercontent.com/llvm/llvm-project/release/18.x/libcxx/include/optional",
+  "line_ranges_read": [
+    [
+      263,
+      345
+    ],
+    [
+      686,
+      724
+    ]
+  ],
+  "cross_check": "main/libcxx/include/__optional/optional.h",
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "relationship": "Independent business example using host std::optional; no LLVM source copied; retained state and construction/commit semantics",
+  "failed_attempts": [
+    {
+      "url": "https://github.com/llvm/llvm-project/blob/llvmorg-18.1.8/libcxx/include/optional",
+      "error": "Failed to fetch: Cache miss"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-18.1.8/libcxx/include/optional",
+      "error": "Failed to fetch: Cache miss"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/main/libcxx/include/__optional/optional_base.h",
+      "error": "Internal Error"
+    }
+  ]
+}

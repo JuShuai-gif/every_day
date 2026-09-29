@@ -36,7 +36,7 @@ Runtime get成功 → OutputLease → decode或copy → 自有vector → release
 - [rknn_output.cpp](src/rknn_output.cpp)：完整目标程序，两种输出路径、属性拒绝、计时与正确性门。
 - [make_model.py](make_model.py)、[convert.py](convert.py)：生成ONNX与32个小校准张量并转换。无外部模型。
 - [运行结果与状态](results/verification.json)。运行脚本不安装依赖。
-- 额外现成阅读：[SmoothQuant](../../quantization/2026-09-29/smoothquant/README.md)、[ARM07](../../arm/2026-09-29/README.md)、[两篇论文](../../paper/2026-09-29/README.md)、[OS02](../../os/2026-09-29/README.md)。它们不增加必做作业或自测。
+- 额外现成阅读：[SmoothQuant](../../quantization/2026-09-29/smoothquant/README.md)、[ARM07](../../arm/2026-09-29/README.md)、[两篇论文](../../paper/2026-09-29/README.md)、[OS02](../../os/2026-09-29/README.md)、[C++17 第01课](../../cpp17/2026-09-29/README.md)。它们不增加必做作业或自测。
 
 ## 编译与运行
 

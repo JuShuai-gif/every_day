@@ -7,11 +7,12 @@
 | arm/ | 每天一点 ARM，结合 RK3588 与 Jetson 逐步深入 | [ARM 索引](arm/index.md) |
 | paper/ | 每天两篇剪枝、量化、模型压缩与边缘部署论文 | [论文索引](paper/index.md) |
 | os/ | 每日两个 OS 小主题，从 xv6 到 Linux/边缘推理 | [OS 索引](os/index.md) |
+| cpp17/ | 每日独立 C++17：对象、标准库、模板、并发与工程 | [C++17 索引](cpp17/index.md) |
 | docs/ | 规范、学习路线、板卡说明、模板及参考资料 | [说明总览](docs/README.md) |
 
 每课的 README 与代码、运行脚本和结果放在一起。学习路线、栏目规则等通用说明集中在 docs/。
 
-当前入口：[2026-09-29 主课](daily/2026-09-29/README.md) · [SmoothQuant](quantization/2026-09-29/smoothquant/README.md) · [ARM07](arm/2026-09-29/README.md) · [论文两篇](paper/2026-09-29/README.md) · [OS02](os/2026-09-29/README.md)。
+当前入口：[2026-09-29 主课](daily/2026-09-29/README.md) · [SmoothQuant](quantization/2026-09-29/smoothquant/README.md) · [ARM07](arm/2026-09-29/README.md) · [论文两篇](paper/2026-09-29/README.md) · [OS02](os/2026-09-29/README.md) · [C++17 第01课](cpp17/2026-09-29/README.md)。
 
 旧规范和旧总索引文件保留为兼容导航，正文只有一份；历史日志中的旧路径保留原样。迁移对应表见 [目录说明](docs/LAYOUT.md)。
 
