@@ -103,7 +103,17 @@
       "evidence_target": "优化诊断报告与真实汇编",
       "arm_mechanism": "C++循环到NEON的编译转换",
       "prepared_comparison": "同一循环向量化开启/关闭，定位成功或未成功的具体原因",
-      "arm_evidence_required": "编译诊断与目标函数真实NEON指令对应"
+      "arm_evidence_required": "编译诊断与目标函数真实NEON指令对应",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "定位编译器为何没有向量化",
+        "google_query": "普通 C++ 循环怎样自动向量化 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 普通 C++ 循环怎样自动向量化 实现 分析",
+        "github_reading_lead": "LLVM向量化分析/测试、实际ARM循环：别名如何影响向量化",
+        "counterexample_or_regression": "合法重叠输入不能靠错误的无别名承诺“优化”；诊断对应到具体循环",
+        "required_evidence": "编译诊断与目标函数真实NEON指令对应",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "09",
@@ -118,7 +128,17 @@
       "evidence_target": "尾部/对齐/非法长度与Sanitizer",
       "arm_mechanism": "NEON向量宽度与安全尾部",
       "prepared_comparison": "标量/NEON对照，长度跨过向量边界且保留哨兵",
-      "arm_evidence_required": "加载、lane与尾部索引图；错误示例不执行越界访问"
+      "arm_evidence_required": "加载、lane与尾部索引图；错误示例不执行越界访问",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "安全处理非整向量长度",
+        "google_query": "NEON 加载/存储与尾部处理 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com NEON 加载/存储与尾部处理 实现 分析",
+        "github_reading_lead": "Arm字符串例程或ncnn数据搬运：非整向量长度",
+        "counterexample_or_regression": "n=0、W−1/W/W+1及紧边界；不能把分配内padding当有效输入",
+        "required_evidence": "加载、lane与尾部索引图；错误示例不执行越界访问",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "10",
@@ -133,7 +153,17 @@
       "evidence_target": "标量参考、容限与误差记录",
       "arm_mechanism": "NEON FMA和横向归约的数值语义",
       "prepared_comparison": "比较明确的融合/非融合及归约顺序，固定输入与容限",
-      "arm_evidence_required": "真实指令与误差来源对应，不能把FP误差泛称ARM误差"
+      "arm_evidence_required": "真实指令与误差来源对应，不能把FP误差泛称ARM误差",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "建立模型前后处理精度合同",
+        "google_query": "FP32 FMA、横向归约与浮点误差 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com FP32 FMA、横向归约与浮点误差 实现 分析",
+        "github_reading_lead": "ggml/ncnn浮点点积与ACLE：融合、归约次序",
+        "counterexample_or_regression": "大小量抵消、溢出、非有限值合同；不要求错误的逐位一致",
+        "required_evidence": "真实指令与误差来源对应，不能把FP误差泛称ARM误差",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "11",
@@ -149,7 +179,17 @@
       "evidence_target": "多累加器同口径比较和spill观察",
       "arm_mechanism": "NEON累加寄存器与spill",
       "prepared_comparison": "对同一内核改变累加器数量，观察依赖和栈访存变化",
-      "arm_evidence_required": "真实累加链、寄存器占用和spill证据；允许未发生spill"
+      "arm_evidence_required": "真实累加链、寄存器占用和spill证据；允许未发生spill",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "用依赖与寄存器解释热点",
+        "google_query": "多个累加器与寄存器压力 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 多个累加器与寄存器压力 实现 分析",
+        "github_reading_lead": "KleidiAI/Arm内核的独立累加器",
+        "counterexample_or_regression": "小N、过度展开、spill；多寄存器不保证更快",
+        "required_evidence": "真实累加链、寄存器占用和spill证据；允许未发生spill",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "12",
@@ -164,7 +204,17 @@
       "evidence_target": "AoS/SoA和含转换成本对照",
       "arm_mechanism": "NEON交错访存与lane重排",
       "prepared_comparison": "同一数据AoS/SoA及对应加载方案，计入转换成本",
-      "arm_evidence_required": "具体intrinsic到实际加载/重排指令与lane映射"
+      "arm_evidence_required": "具体intrinsic到实际加载/重排指令与lane映射",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "减少布局转换和复制",
+        "google_query": "AoS/SoA、交错加载与数据重排 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com AoS/SoA、交错加载与数据重排 实现 分析",
+        "github_reading_lead": "ncnn图像/packing路径：AoS/SoA与lane",
+        "counterexample_or_regression": "RGB/BGR、stride/尾部和转换成本；核内收益可能被转换抵消",
+        "required_evidence": "具体intrinsic到实际加载/重排指令与lane映射",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "13",
@@ -179,7 +229,17 @@
       "evidence_target": "转换、累加精度及存储证据",
       "arm_mechanism": "ARM FP16转换与算术路径",
       "prepared_comparison": "明确FP16存储、FP32累加和可用FP16算术的对照",
-      "arm_evidence_required": "先核实扩展；指令、溢出/舍入与误差证据"
+      "arm_evidence_required": "先核实扩展；指令、溢出/舍入与误差证据",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "核对低精度存储与算术",
+        "google_query": "FP16 存储、转换、算术与累加精度 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com FP16 存储、转换、算术与累加精度 实现 分析",
+        "github_reading_lead": "ggml/ncnn转换与累加路径",
+        "counterexample_or_regression": "存储/转换/算术支持分别核验；范围、舍入与累加精度",
+        "required_evidence": "先核实扩展；指令、溢出/舍入与误差证据",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "14",
@@ -194,7 +254,17 @@
       "evidence_target": "标量/NEON、尾部、溢出和尺度验证",
       "arm_mechanism": "NEON扩宽乘加与可选整数点积",
       "prepared_comparison": "标量、扩宽路径与设备支持时的dot路径，同一scale合同",
-      "arm_evidence_required": "实际指令、累加宽度、尾部与最坏输入；不执行未支持扩展"
+      "arm_evidence_required": "实际指令、累加宽度、尾部与最坏输入；不执行未支持扩展",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "核对量化点积溢出和scale",
+        "google_query": "INT8 扩宽与 dot-product 的累加契约 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com INT8 扩宽与 dot-product 的累加契约 实现 分析",
+        "github_reading_lead": "ggml ARM点积、ACLE：扩宽与dot",
+        "counterexample_or_regression": "极端值、长K溢出、块scale和尾部；可选扩展缺失",
+        "required_evidence": "实际指令、累加宽度、尾部与最坏输入；不执行未支持扩展",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "15",
@@ -210,7 +280,17 @@
       "evidence_target": "工作集扫描及受支持计数器",
       "arm_mechanism": "具体ARM核的缓存层级与工作集",
       "prepared_comparison": "相同内核改变工作集，结合核实过的缓存信息观察",
-      "arm_evidence_required": "区分工作集效应与PMU证据，不以耗时跳变独自认定缓存容量"
+      "arm_evidence_required": "区分工作集效应与PMU证据，不以耗时跳变独自认定缓存容量",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "按工作集定位缓存瓶颈",
+        "google_query": "Cache、工作集与局部性 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com Cache、工作集与局部性 实现 分析",
+        "github_reading_lead": "Arm benchmark与目标CPU手册：工作集扫描",
+        "counterexample_or_regression": "首次触页、频率和缓存效应混杂；时间拐点不等于缓存容量",
+        "required_evidence": "区分工作集效应与PMU证据，不以耗时跳变独自认定缓存容量",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "16",
@@ -225,7 +305,17 @@
       "evidence_target": "含packing/不含packing两组边界",
       "arm_mechanism": "NEON微内核与缓存分块的数据供给",
       "prepared_comparison": "固定同一NEON内核，比较未打包与打包及复用次数",
-      "arm_evidence_required": "块内加载模式和packing成本一起解释"
+      "arm_evidence_required": "块内加载模式和packing成本一起解释",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "算清packing成本与复用次数",
+        "google_query": "缓存分块与 packing 的摊销 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 缓存分块与 packing 的摊销 实现 分析",
+        "github_reading_lead": "成熟GEMM面板消费端与生产端；承接BBuf案例",
+        "counterexample_or_regression": "非方阵、不同stride、权重/activation复用差异、含pack总耗时",
+        "required_evidence": "块内加载模式和packing成本一起解释",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "17",
@@ -240,7 +330,17 @@
       "evidence_target": "可复现带宽实验和对照",
       "arm_mechanism": "ARM访存及预取候选的适用边界",
       "prepared_comparison": "相同访问流有/无预取或改变预取距离，允许无收益",
-      "arm_evidence_required": "核实真实预取指令及输入流，不能用带宽数字代替机制解释"
+      "arm_evidence_required": "核实真实预取指令及输入流，不能用带宽数字代替机制解释",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "区分带宽受限和计算受限",
+        "google_query": "带宽瓶颈与预取的适用条件 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 带宽瓶颈与预取的适用条件 实现 分析",
+        "github_reading_lead": "Arm成熟访存循环及优化手册",
+        "counterexample_or_regression": "距离过近/过远、带宽饱和、工作集变化；允许负收益",
+        "required_evidence": "核实真实预取指令及输入流，不能用带宽数字代替机制解释",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "18",
@@ -255,7 +355,17 @@
       "evidence_target": "地址/页大小及缺页观测，不把TLB等同Cache",
       "arm_mechanism": "ARM地址翻译、TLB与页内偏移",
       "prepared_comparison": "固定访问量改变页跨度，同时控制缓存/缺页等混杂因素",
-      "arm_evidence_required": "实际页大小、访问图和可用TLB事件；仅计时不算证明TLB miss"
+      "arm_evidence_required": "实际页大小、访问图和可用TLB事件；仅计时不算证明TLB miss",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "解释大模型首次访问与稳态差异",
+        "google_query": "TLB、页与大工作集访问 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com TLB、页与大工作集访问 实现 分析",
+        "github_reading_lead": "Linux ARM64内存管理、目标PMU说明",
+        "counterexample_or_regression": "页跨度与cache/缺页混杂；THP只是请求不一定生效",
+        "required_evidence": "实际页大小、访问图和可用TLB事件；仅计时不算证明TLB miss",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "19",
@@ -270,7 +380,17 @@
       "evidence_target": "竞态复现与修复依据；不称TSan证明无竞态",
       "arm_mechanism": "AArch64 acquire/release和原子指令路径",
       "prepared_comparison": "以安全并发例子观察不同内存序及可用原子实现",
-      "arm_evidence_required": "对应LDAR/STLR、LL/SC或LSE实际生成路径；不强求全部出现"
+      "arm_evidence_required": "对应LDAR/STLR、LL/SC或LSE实际生成路径；不强求全部出现",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "定位并发数据错误",
+        "google_query": "ARM 内存序、原子与 LSE 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com ARM 内存序、原子与 LSE 实现 分析",
+        "github_reading_lead": "LLVM或Linux ARM64原子实现",
+        "counterexample_or_regression": "编译/运行分派、发布与观察合同；TSan通过不是内存序证明",
+        "required_evidence": "对应LDAR/STLR、LL/SC或LSE实际生成路径；不强求全部出现",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "20",
@@ -285,7 +405,17 @@
       "evidence_target": "伪共享基线、布局和线程数扫描",
       "arm_mechanism": "ARM多核一致性与伪共享",
       "prepared_comparison": "同一原子操作比较共享行/分离行布局，核实目标缓存行",
-      "arm_evidence_required": "地址布局、原子指令与线程条件；对齐大小不跨核硬编码"
+      "arm_evidence_required": "地址布局、原子指令与线程条件；对齐大小不跨核硬编码",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "减少共享统计开销",
+        "google_query": "多核计数、伪共享与分片 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 多核计数、伪共享与分片 实现 分析",
+        "github_reading_lead": "Folly布局与ARM原子路径",
+        "counterexample_or_regression": "真共享/伪共享、核迁移和线程数；不硬编码跨平台行大小",
+        "required_evidence": "地址布局、原子指令与线程条件；对齐大小不跨核硬编码",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "21",
@@ -301,7 +431,17 @@
       "evidence_target": "队列等待和CPU执行分别测量",
       "arm_mechanism": "具体Cortex核拓扑与单任务指令流",
       "prepared_comparison": "同一ARM内核在经核实的核组与任务粒度上比较",
-      "arm_evidence_required": "亲和性/迁移与运行时间、排队时间分开；无板卡保留待验"
+      "arm_evidence_required": "亲和性/迁移与运行时间、排队时间分开；无板卡保留待验",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "排查线程过量/尾延迟",
+        "google_query": "大小核、线程池与任务粒度 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 大小核、线程池与任务粒度 实现 分析",
+        "github_reading_lead": "推理线程池与Linux亲和性接口",
+        "counterexample_or_regression": "过度线程、嵌套线程池、队列等待、核迁移；不用核数预测收益",
+        "required_evidence": "亲和性/迁移与运行时间、排队时间分开；无板卡保留待验",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "22",
@@ -316,7 +456,17 @@
       "evidence_target": "GEMV/GEMM同shape同精度基准",
       "arm_mechanism": "NEON小矩阵微内核的寄存器与加载复用",
       "prepared_comparison": "同shape标量/NEON及不同小块，计入调用与尾部成本",
-      "arm_evidence_required": "从真实开源ARM函数提取小核，逐项解释加载和乘加"
+      "arm_evidence_required": "从真实开源ARM函数提取小核，逐项解释加载和乘加",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "选择合理的小Batch实现",
+        "google_query": "GEMV 与小 Batch GEMM 的瓶颈 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com GEMV 与小 Batch GEMM 的瓶颈 实现 分析",
+        "github_reading_lead": "KleidiAI/ggml/ncnn调用端至微内核",
+        "counterexample_or_regression": "M=1、尾块、启动/唤醒/packing；避免只测理想大方阵",
+        "required_evidence": "从真实开源ARM函数提取小核，逐项解释加载和乘加",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "23",
@@ -331,7 +481,17 @@
       "evidence_target": "含metadata存储、解码/乘加边界",
       "arm_mechanism": "NEON量化解包、扩展与累加融合",
       "prepared_comparison": "真实打包数据的分离解码/融合路径，固定scale语义",
-      "arm_evidence_required": "位图、lane图及移位/扩展/乘加指令对应"
+      "arm_evidence_required": "位图、lane图及移位/扩展/乘加指令对应",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "把量化精度和部署格式连接",
+        "google_query": "量化块解码与乘加融合 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 量化块解码与乘加融合 实现 分析",
+        "github_reading_lead": "ggml块格式与对应ARM点积",
+        "counterexample_or_regression": "nibble符号、metadata、块scale、尾块；fake quant不是真实存储",
+        "required_evidence": "位图、lane图及移位/扩展/乘加指令对应",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "24",
@@ -346,7 +506,17 @@
       "evidence_target": "输入输出一致性和融合前后对照",
       "arm_mechanism": "NEON图像输入重排与数值转换",
       "prepared_comparison": "分步/融合相同预处理，包含奇数尺寸与stride",
-      "arm_evidence_required": "输入字节到lane再到输出布局的完整小样本追踪"
+      "arm_evidence_required": "输入字节到lane再到输出布局的完整小样本追踪",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "减少实际预处理开销",
+        "google_query": "图像预处理融合与布局转换 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 图像预处理融合与布局转换 实现 分析",
+        "github_reading_lead": "ncnn像素转换与归一化",
+        "counterexample_or_regression": "奇数宽、通道顺序、stride、舍入；含分配/转换端到端对照",
+        "required_evidence": "输入字节到lane再到输出布局的完整小样本追踪",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "25",
@@ -361,7 +531,17 @@
       "evidence_target": "可选扩展分派和标量回退",
       "arm_mechanism": "ARM扩展编译与运行时分派",
       "prepared_comparison": "强制基础路径与受支持的扩展路径；不支持时安全回退",
-      "arm_evidence_required": "核实OS能力接口、实际指令及路径选择，宏不冒充运行能力"
+      "arm_evidence_required": "核实OS能力接口、实际指令及路径选择，宏不冒充运行能力",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "避免目标机器非法指令",
+        "google_query": "NEON、i8mm、SVE/SVE2 的能力分派 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com NEON、i8mm、SVE/SVE2 的能力分派 实现 分析",
+        "github_reading_lead": "ggml/KleidiAI分派与Linux能力接口",
+        "counterexample_or_regression": "基础回退、扩展缺失、构建宏与运行能力不同；不执行非法指令",
+        "required_evidence": "核实OS能力接口、实际指令及路径选择，宏不冒充运行能力",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "26",
@@ -377,7 +557,17 @@
       "evidence_target": "符号化现场、采集条件和根因报告",
       "arm_mechanism": "具体ARM PMU事件与A64热点",
       "prepared_comparison": "围绕已学内核的一项瓶颈假设采样并关联源码",
-      "arm_evidence_required": "确认事件含义/权限/多路复用；不能只列perf命令"
+      "arm_evidence_required": "确认事件含义/权限/多路复用；不能只列perf命令",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "用Linux工具排查真实热点",
+        "google_query": "性能工具：热点、PMU 与平台边界 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 性能工具：热点、PMU 与平台边界 实现 分析",
+        "github_reading_lead": "Linux perf实现/文档、目标CPU事件定义",
+        "counterexample_or_regression": "事件权限、复用、符号缺失和计量域；不同核不照搬raw事件",
+        "required_evidence": "确认事件含义/权限/多路复用；不能只列perf命令",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "27",
@@ -392,7 +582,17 @@
       "evidence_target": "错误恢复、关闭排空、端到端分段时序",
       "arm_mechanism": "ARM CPU访存顺序与设备缓冲区可见性边界",
       "prepared_comparison": "追踪一个缓冲区从CPU写入到SDK提交和回收的所有权",
-      "arm_evidence_required": "区分C++同步、CPU屏障和驱动DMA同步；用户态不凭空补DMB代替SDK合同"
+      "arm_evidence_required": "区分C++同步、CPU屏障和驱动DMA同步；用户态不凭空补DMB代替SDK合同",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "保证异构流水线并发正确",
+        "google_query": "CPU–NPU/GPU 流水线与缓冲区所有权 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com CPU–NPU/GPU 流水线与缓冲区所有权 实现 分析",
+        "github_reading_lead": "RKNN或TensorRT/CUDA官方提交与回收路径",
+        "counterexample_or_regression": "提前复用、关闭排空、SDK失败；C++屏障不替代设备同步",
+        "required_evidence": "区分C++同步、CPU屏障和驱动DMA同步；用户态不凭空补DMB代替SDK合同",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "28",
@@ -407,7 +607,17 @@
       "evidence_target": "稳定性报告、P50/P95、功耗条件与限制",
       "arm_mechanism": "具体ARM SoC持续负载下的频率与吞吐",
       "prepared_comparison": "固定已学CPU内核和整条推理负载，比较初始与稳态",
-      "arm_evidence_required": "核实频率/温度/功耗来源及采样条件，无板卡不生成模拟验收"
+      "arm_evidence_required": "核实频率/温度/功耗来源及采样条件，无板卡不生成模拟验收",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "交付可长期运行的板端程序",
+        "google_query": "持续负载、温控与端到端能耗验收 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 持续负载、温控与端到端能耗验收 实现 分析",
+        "github_reading_lead": "板端官方遥测与既有真实推理路径",
+        "counterexample_or_regression": "频率/温控、首帧/稳态、超时泄漏、功耗采样边界",
+        "required_evidence": "核实频率/温度/功耗来源及采样条件，无板卡不生成模拟验收",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     }
   ],
   "scope_notes": [
@@ -461,7 +671,21 @@
     "priority": "ARM机制为每课主线；C++语法和板卡背景只为解释机制服务",
     "plan_status": "下列目标与对照是生成计划，非已读源码、已实现或已验证的声明；逐课核实",
     "template": "docs/arm/LESSON_TEMPLATE.md",
-    "scope": "每天一个小机制，默认5–10分钟阅读观察；提供现成对照，不增加第二个必做作业",
+    "scope": "每天一个核心机制；5–10分钟仅作速览，正文完整覆盖推导、源码、故障与验收；不增加第二个必做作业",
     "acceptance": "ARM目标、数据/状态图、局部代码解释、真实证据、现成对照、故障与就业用途必须对应；证据缺失明确待验"
+  },
+  "source_depth_policy": {
+    "updated_on": "2026-09-29",
+    "guide": "../docs/FUTURE_DEPTH_PLAN.md",
+    "status": "planning only; not source-reading, implementation or validation evidence",
+    "required_channels": [
+      "Google",
+      "知乎原作者/工程博客",
+      "GitHub具体实现",
+      "官方规范核查"
+    ],
+    "failure_rule": "记录实际查询/URL与失败；无合适资料不硬凑，不把候选写成已读；沿栏目backlog规则处理",
+    "delivery_gate": "工作合同→真实源码与调用链→机制推导→现成对照/反例→至少两个故障链→公平测量/迁移验收→4–8追问",
+    "workload": "附加示例已写好；不增加第二个必做编码任务或自测"
   }
 }

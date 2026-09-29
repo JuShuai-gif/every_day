@@ -40,3 +40,5 @@
 ## 2026-09-29博客与真实源码回补
 
 全部8个旧课入口加入针对性源码研读：[Google检索、知乎原文与GitHub实现分析](../docs/arm/SOURCE_STUDIES.md)。包含固定提交的GEMM步幅反例、packing成本与复用、Arm memcpy的尺寸分派/叶函数/流水，以及真实benchmark的输入分布与统计陷阱。[现成C++17反例](2026-09-24/source-study/README.md)有独立oracle和Release/Sanitizer运行记录；上游内核只读未跑，不声明其性能已复现。游标仍为08。
+
+2026-09-29用户确认[后续规划同标准](../docs/FUTURE_DEPTH_PLAN.md)：08–28逐课补充源码研究、失效对照和证据目标，详见课程表research_plan。只更新规划，下一节仍08，未提前阅读或验收未来实现。

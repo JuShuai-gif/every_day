@@ -85,7 +85,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "xv6",
       "edge_problem": "推理worker异常后可靠回收",
-      "evidence_target": "退出状态、等待与FD清理记录"
+      "evidence_target": "退出状态、等待与FD清理记录",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "推理worker异常后可靠回收",
+        "google_query": "退出与父子进程回收 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 退出与父子进程回收 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：kernel/proc.c；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对推理worker异常后可靠回收区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "退出状态、等待与FD清理记录",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "04",
@@ -112,7 +122,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "xv6",
       "edge_problem": "区分用户崩溃与系统调用失败",
-      "evidence_target": "一条调用的寄存器/错误返回路径"
+      "evidence_target": "一条调用的寄存器/错误返回路径",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "区分用户崩溃与系统调用失败",
+        "google_query": "异常入口与返回 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 异常入口与返回 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：kernel/trap.c；kernel/trampoline.S；user/usys.pl；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对区分用户崩溃与系统调用失败区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "一条调用的寄存器/错误返回路径",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "05",
@@ -137,7 +157,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "xv6",
       "edge_problem": "模型加载峰值内存与失败回滚",
-      "evidence_target": "分配/失败/释放计数"
+      "evidence_target": "分配/失败/释放计数",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "模型加载峰值内存与失败回滚",
+        "google_query": "物理页与资源寿命 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 物理页与资源寿命 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：kernel/kalloc.c；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对模型加载峰值内存与失败回滚区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "分配/失败/释放计数",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "06",
@@ -162,7 +192,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "xv6",
       "edge_problem": "理解Tensor指针与物理页不是同一概念",
-      "evidence_target": "手算小地址翻译并对照代码"
+      "evidence_target": "手算小地址翻译并对照代码",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "理解Tensor指针与物理页不是同一概念",
+        "google_query": "虚拟地址与页表 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 虚拟地址与页表 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：kernel/vm.c；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对理解Tensor指针与物理页不是同一概念区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "手算小地址翻译并对照代码",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "07",
@@ -188,7 +228,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "xv6",
       "edge_problem": "数据入口越界及错误返回",
-      "evidence_target": "跨页与无效地址的可验证边界"
+      "evidence_target": "跨页与无效地址的可验证边界",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "数据入口越界及错误返回",
+        "google_query": "用户指针与内核拷贝 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 用户指针与内核拷贝 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：kernel/vm.c；kernel/syscall.c；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对数据入口越界及错误返回区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "跨页与无效地址的可验证边界",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "08",
@@ -215,7 +265,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "xv6",
       "edge_problem": "模型第一次请求耗时异常",
-      "evidence_target": "分清分配请求、驻留与触页；固定版本核实"
+      "evidence_target": "分清分配请求、驻留与触页；固定版本核实",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "模型第一次请求耗时异常",
+        "google_query": "堆增长与缺页 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 堆增长与缺页 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：kernel/sysproc.c；kernel/vm.c；kernel/trap.c；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对模型第一次请求耗时异常区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "分清分配请求、驻留与触页；固定版本核实",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "09",
@@ -242,7 +302,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "course_extension",
       "edge_problem": "多进程模型内存成本",
-      "evidence_target": "明确是课程扩展还是上游已有机制，检查复制次数"
+      "evidence_target": "明确是课程扩展还是上游已有机制，检查复制次数",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "多进程模型内存成本",
+        "google_query": "写时复制扩展 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 写时复制扩展 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：MIT同学年COW实验；kernel/vm.c；kernel/trap.c；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对多进程模型内存成本区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "明确是课程扩展还是上游已有机制，检查复制次数",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "10",
@@ -267,7 +337,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "xv6",
       "edge_problem": "忙等增加CPU占用且不等于高吞吐",
-      "evidence_target": "临界区、锁持有时间与可抢占边界"
+      "evidence_target": "临界区、锁持有时间与可抢占边界",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "忙等增加CPU占用且不等于高吞吐",
+        "google_query": "自旋锁与中断 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 自旋锁与中断 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：kernel/spinlock.c；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对忙等增加CPU占用且不等于高吞吐区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "临界区、锁持有时间与可抢占边界",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "11",
@@ -293,7 +373,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "xv6",
       "edge_problem": "采集/推理队列偶发卡死",
-      "evidence_target": "固定版本核实sleep接口并构造时序"
+      "evidence_target": "固定版本核实sleep接口并构造时序",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "采集/推理队列偶发卡死",
+        "google_query": "等待条件与唤醒 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 等待条件与唤醒 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：kernel/proc.c；kernel/pipe.c；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对采集/推理队列偶发卡死区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "固定版本核实sleep接口并构造时序",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "12",
@@ -319,7 +409,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "xv6",
       "edge_problem": "CPU利用率不高但请求等待",
-      "evidence_target": "等待时间与运行时间分开"
+      "evidence_target": "等待时间与运行时间分开",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "CPU利用率不高但请求等待",
+        "google_query": "调度与上下文切换 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 调度与上下文切换 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：kernel/proc.c；kernel/swtch.S；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对CPU利用率不高但请求等待区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "等待时间与运行时间分开",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "13",
@@ -345,7 +445,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "xv6",
       "edge_problem": "摄像头产生速度超过消费速度",
-      "evidence_target": "队列上界、关闭与慢消费者行为"
+      "evidence_target": "队列上界、关闭与慢消费者行为",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "摄像头产生速度超过消费速度",
+        "google_query": "管道与背压 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 管道与背压 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：kernel/pipe.c；kernel/file.c；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对摄像头产生速度超过消费速度区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "队列上界、关闭与慢消费者行为",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "14",
@@ -371,7 +481,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "xv6",
       "edge_problem": "持锁阻塞导致流水线停顿",
-      "evidence_target": "锁顺序图与阻塞边界"
+      "evidence_target": "锁顺序图与阻塞边界",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "持锁阻塞导致流水线停顿",
+        "google_query": "睡眠锁与锁顺序 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 睡眠锁与锁顺序 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：kernel/sleeplock.c；kernel/bio.c；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对持锁阻塞导致流水线停顿区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "锁顺序图与阻塞边界",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "15",
@@ -398,7 +518,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "xv6",
       "edge_problem": "模型文件替换后旧请求仍在读取",
-      "evidence_target": "打开对象与路径名分离的观察"
+      "evidence_target": "打开对象与路径名分离的观察",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "模型文件替换后旧请求仍在读取",
+        "google_query": "文件与inode 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 文件与inode 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：kernel/file.c；kernel/fs.c；kernel/sysfile.c；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对模型文件替换后旧请求仍在读取区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "打开对象与路径名分离的观察",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "16",
@@ -423,7 +553,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "xv6",
       "edge_problem": "缓存命中与资源争用混淆",
-      "evidence_target": "缓存持有者与等待链"
+      "evidence_target": "缓存持有者与等待链",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "缓存命中与资源争用混淆",
+        "google_query": "块缓存与并发访问 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 块缓存与并发访问 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：kernel/bio.c；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对缓存命中与资源争用混淆区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "缓存持有者与等待链",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "17",
@@ -449,7 +589,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "xv6",
       "edge_problem": "模型发布遇到掉电或半写文件",
-      "evidence_target": "区分教学日志与Linux持久化协议"
+      "evidence_target": "区分教学日志与Linux持久化协议",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "模型发布遇到掉电或半写文件",
+        "google_query": "日志与崩溃一致性 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 日志与崩溃一致性 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：kernel/log.c；kernel/fs.c；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对模型发布遇到掉电或半写文件区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "区分教学日志与Linux持久化协议",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "18",
@@ -475,7 +625,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "xv6",
       "edge_problem": "提交成功不等于设备完成",
-      "evidence_target": "提交/完成/回收时间线"
+      "evidence_target": "提交/完成/回收时间线",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "提交成功不等于设备完成",
+        "google_query": "设备请求与中断完成 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 设备请求与中断完成 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：kernel/virtio_disk.c；kernel/trap.c；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对提交成功不等于设备完成区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "提交/完成/回收时间线",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "19",
@@ -501,7 +661,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "linux_edge_bridge",
       "edge_problem": "冷启动抖动",
-      "evidence_target": "Linux页错误计数与CPU/墙钟边界"
+      "evidence_target": "Linux页错误计数与CPU/墙钟边界",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "冷启动抖动",
+        "google_query": "Linux映射与缺页观察 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com Linux映射与缺页观察 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：Linux man-pages mmap/getrusage；kernel/vm.c作机制对照；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对冷启动抖动区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "Linux页错误计数与CPU/墙钟边界",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "20",
@@ -527,7 +697,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "linux_edge_bridge",
       "edge_problem": "大小核与过量线程影响P95",
-      "evidence_target": "核拓扑核实、调度证据与可复现负载"
+      "evidence_target": "核拓扑核实、调度证据与可复现负载",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "大小核与过量线程影响P95",
+        "google_query": "Linux线程与调度证据 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com Linux线程与调度证据 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：Linux sched/perf官方文档；kernel/proc.c作对照；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对大小核与过量线程影响P95区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "核拓扑核实、调度证据与可复现负载",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "21",
@@ -554,7 +734,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "linux_edge_bridge",
       "edge_problem": "关闭时仍有在途任务",
-      "evidence_target": "有界队列的异常/关闭/排空结果"
+      "evidence_target": "有界队列的异常/关闭/排空结果",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "关闭时仍有在途任务",
+        "google_query": "条件变量与futex边界 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 条件变量与futex边界 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：C++标准库实际实现；Linux futex文档；kernel/pipe.c作对照；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对关闭时仍有在途任务区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "有界队列的异常/关闭/排空结果",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "22",
@@ -579,7 +769,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "linux_edge_bridge",
       "edge_problem": "网络/摄像头输入造成尾延迟",
-      "evidence_target": "Linux实际事件与分段读取记录"
+      "evidence_target": "Linux实际事件与分段读取记录",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "网络/摄像头输入造成尾延迟",
+        "google_query": "就绪通知与非阻塞I/O 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 就绪通知与非阻塞I/O 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：Linux epoll/read/write官方文档及源码；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对网络/摄像头输入造成尾延迟区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "Linux实际事件与分段读取记录",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "23",
@@ -604,7 +804,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "linux_edge_bridge",
       "edge_problem": "CPU–NPU共享输入不一致",
-      "evidence_target": "明确coherent/streaming及目标平台合同"
+      "evidence_target": "明确coherent/streaming及目标平台合同",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "CPU–NPU共享输入不一致",
+        "google_query": "DMA与设备地址 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com DMA与设备地址 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：Linux DMA API指南及目标SDK源码；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对CPU–NPU共享输入不一致区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "明确coherent/streaming及目标平台合同",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "24",
@@ -630,7 +840,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "linux_edge_bridge",
       "edge_problem": "提前复用输入造成结果错误",
-      "evidence_target": "端到端所有权图；设备未测保持待验"
+      "evidence_target": "端到端所有权图；设备未测保持待验",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "提前复用输入造成结果错误",
+        "google_query": "异步完成与缓冲区复用 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 异步完成与缓冲区复用 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：目标RKNN/TensorRT SDK实现和文档；不声称xv6具备该后端；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对提前复用输入造成结果错误区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "端到端所有权图；设备未测保持待验",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "25",
@@ -656,7 +876,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "linux_edge_bridge",
       "edge_problem": "模型热更新与峰值内存",
-      "evidence_target": "小文件更新实验及明确持久化边界"
+      "evidence_target": "小文件更新实验及明确持久化边界",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "模型热更新与峰值内存",
+        "google_query": "模型加载与文件生命周期 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 模型加载与文件生命周期 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：Linux mmap/rename/fsync原始资料；kernel/file.c机制对照；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对模型热更新与峰值内存区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "小文件更新实验及明确持久化边界",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "26",
@@ -681,7 +911,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "linux_edge_bridge",
       "edge_problem": "设备耗时稳定但P95恶化",
-      "evidence_target": "同负载时间线与未附加跟踪的基准"
+      "evidence_target": "同负载时间线与未附加跟踪的基准",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "设备耗时稳定但P95恶化",
+        "google_query": "端到端延迟归因 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 端到端延迟归因 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：Linux perf/trace官方文档及真实推理调用；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对设备耗时稳定但P95恶化区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "同负载时间线与未附加跟踪的基准",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "27",
@@ -707,7 +947,17 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "linux_edge_bridge",
       "edge_problem": "运行数小时后卡死或资源耗尽",
-      "evidence_target": "持续运行、失败恢复与资源曲线"
+      "evidence_target": "持续运行、失败恢复与资源曲线",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "运行数小时后卡死或资源耗尽",
+        "google_query": "长期运行与故障恢复 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 长期运行与故障恢复 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：真实C++服务组件；Linux资源观测文档；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对运行数小时后卡死或资源耗尽区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "持续运行、失败恢复与资源曲线",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "28",
@@ -732,7 +982,31 @@
       "source_status": "planned; verify exact version and symbols when delivered",
       "basis": "linux_edge_bridge",
       "edge_problem": "形成可复现就业作品",
-      "evidence_target": "真实端到端报告；无板不标完整验收"
+      "evidence_target": "真实端到端报告；无板不标完整验收",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "形成可复现就业作品",
+        "google_query": "综合部署验收 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 综合部署验收 实现 分析",
+        "github_reading_lead": "优先核查既有source_candidates：已读xv6机制+Linux/板端具体SDK资料；按basis选择对应上游并核实版本/函数",
+        "counterexample_or_regression": "针对形成可复现就业作品区分资源、同步与接口失败；至少两条故障链，不将宿主演示当作xv6/Linux/板端验证",
+        "required_evidence": "真实端到端报告；无板不标完整验收",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     }
-  ]
+  ],
+  "source_depth_policy": {
+    "updated_on": "2026-09-29",
+    "guide": "../docs/FUTURE_DEPTH_PLAN.md",
+    "status": "planning only; not source-reading, implementation or validation evidence",
+    "required_channels": [
+      "Google",
+      "知乎原作者/工程博客",
+      "GitHub具体实现",
+      "官方规范核查"
+    ],
+    "failure_rule": "记录实际查询/URL与失败；无合适资料不硬凑，不把候选写成已读；沿栏目backlog规则处理",
+    "delivery_gate": "工作合同→真实源码与调用链→机制推导→现成对照/反例→至少两个故障链→公平测量/迁移验收→4–8追问",
+    "workload": "附加示例已写好；不增加第二个必做编码任务或自测"
+  }
 }

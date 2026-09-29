@@ -26,7 +26,17 @@
       "prerequisites": [
         "01"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释作用域 / Rule of Zero",
+        "google_query": "对象寿命与RAII 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 对象寿命与RAII 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕作用域 / Rule of Zero构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "03",
@@ -39,7 +49,17 @@
       "prerequisites": [
         "02"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释unique_ptr / move后状态",
+        "google_query": "唯一所有权与移动 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 唯一所有权与移动 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕unique_ptr / move后状态构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "04",
@@ -52,7 +72,17 @@
       "prerequisites": [
         "03"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释noexcept / vector重分配",
+        "google_query": "移动成本与容器扩容 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 移动成本与容器扩容 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕noexcept / vector重分配构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "05",
@@ -65,7 +95,17 @@
       "prerequisites": [
         "04"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释string_view / 悬空边界",
+        "google_query": "字符串视图与借用 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 字符串视图与借用 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕string_view / 悬空边界构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "06",
@@ -78,7 +118,17 @@
       "prerequisites": [
         "05"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释拷贝绑定 / 引用绑定",
+        "google_query": "结构化绑定与引用 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 结构化绑定与引用 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕拷贝绑定 / 引用绑定构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "07",
@@ -91,7 +141,17 @@
       "prerequisites": [
         "06"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释if初始化 / map查找",
+        "google_query": "初始化语句与查找作用域 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 初始化语句与查找作用域 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕if初始化 / map查找构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "08",
@@ -104,7 +164,17 @@
       "prerequisites": [
         "07"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释variant / visit",
+        "google_query": "联合结果与状态机 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 联合结果与状态机 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕variant / visit构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "09",
@@ -117,7 +187,17 @@
       "prerequisites": [
         "08"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释any / any_cast失败",
+        "google_query": "类型擦除与动态值 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 类型擦除与动态值 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕any / any_cast失败构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "10",
@@ -130,7 +210,17 @@
       "prerequisites": [
         "09"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释from_chars / 部分解析和溢出",
+        "google_query": "数值解析与输入边界 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 数值解析与输入边界 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕from_chars / 部分解析和溢出构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "11",
@@ -143,7 +233,17 @@
       "prerequisites": [
         "10"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释try_emplace / insert_or_assign",
+        "google_query": "哈希表插入成本 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 哈希表插入成本 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕try_emplace / insert_or_assign构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "12",
@@ -156,7 +256,17 @@
       "prerequisites": [
         "11"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释extract / insert所有权",
+        "google_query": "节点句柄与键变更 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 节点句柄与键变更 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕extract / insert所有权构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "13",
@@ -169,7 +279,17 @@
       "prerequisites": [
         "12"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释if constexpr / 被丢弃语句",
+        "google_query": "模板分支 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 模板分支 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕if constexpr / 被丢弃语句构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "14",
@@ -182,7 +302,17 @@
       "prerequisites": [
         "13"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释fold expression / 逗号折叠",
+        "google_query": "参数包与求值顺序 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 参数包与求值顺序 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕fold expression / 逗号折叠构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "15",
@@ -195,7 +325,17 @@
       "prerequisites": [
         "14"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释CTAD / deduction guide",
+        "google_query": "类型推导边界 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 类型推导边界 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕CTAD / deduction guide构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "16",
@@ -208,7 +348,17 @@
       "prerequisites": [
         "15"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释invoke / apply",
+        "google_query": "可调用对象组合 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 可调用对象组合 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕invoke / apply构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "17",
@@ -221,7 +371,17 @@
       "prerequisites": [
         "16"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释inline变量 / ODR",
+        "google_query": "静态配置与链接 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 静态配置与链接 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕inline变量 / ODR构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "18",
@@ -234,7 +394,17 @@
       "prerequisites": [
         "17"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释prvalue直接构造 / 可选NRVO",
+        "google_query": "返回值与对象构造 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 返回值与对象构造 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕prvalue直接构造 / 可选NRVO构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "19",
@@ -247,7 +417,17 @@
       "prerequisites": [
         "18"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释alignas / over-aligned分配",
+        "google_query": "对齐与对象存储 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 对齐与对象存储 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕alignas / over-aligned分配构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "20",
@@ -260,7 +440,17 @@
       "prerequisites": [
         "19"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释pmr / resource寿命",
+        "google_query": "多态内存资源 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 多态内存资源 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕pmr / resource寿命构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "21",
@@ -273,7 +463,17 @@
       "prerequisites": [
         "20"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释filesystem / error_code与TOCTOU",
+        "google_query": "文件系统与错误 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 文件系统与错误 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕filesystem / error_code与TOCTOU构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "22",
@@ -286,7 +486,17 @@
       "prerequisites": [
         "21"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释scoped_lock / 死锁顺序",
+        "google_query": "互斥与多锁管理 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 互斥与多锁管理 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕scoped_lock / 死锁顺序构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "23",
@@ -299,7 +509,17 @@
       "prerequisites": [
         "22"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释shared_mutex / 读者寿命",
+        "google_query": "读多写少的共享状态 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 读多写少的共享状态 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕shared_mutex / 读者寿命构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "24",
@@ -312,7 +532,17 @@
       "prerequisites": [
         "23"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释谓词等待 / 关闭排空",
+        "google_query": "条件变量与退出协议 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 条件变量与退出协议 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕谓词等待 / 关闭排空构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "25",
@@ -325,7 +555,17 @@
       "prerequisites": [
         "24"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释future / promise所有权",
+        "google_query": "异步结果与异常传播 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 异步结果与异常传播 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕future / promise所有权构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "26",
@@ -338,7 +578,17 @@
       "prerequisites": [
         "25"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释release-acquire / 数据竞争",
+        "google_query": "原子与发布可见性 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 原子与发布可见性 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕release-acquire / 数据竞争构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "27",
@@ -351,7 +601,17 @@
       "prerequisites": [
         "26"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释ABI / sanitizers与编译特性",
+        "google_query": "构建与库边界 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 构建与库边界 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕ABI / sanitizers与编译特性构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     },
     {
       "id": "28",
@@ -364,7 +624,31 @@
       "prerequisites": [
         "27"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery"
+      "source_status": "planned; verify repository, version and symbols before delivery",
+      "research_plan": {
+        "status": "planned; verify sources and implementation before delivery",
+        "work_question": "在业务输入与资源生命周期中解释生命周期 / 有界并发和验收",
+        "google_query": "综合配置与推理服务 原理 性能 源码 工程案例",
+        "zhihu_query": "site:zhihu.com 综合配置与推理服务 实现 分析",
+        "github_reading_lead": "从LLVM/libc++、Abseil、Folly等适用实现检索本课机制；先核实C++版本和实际文件/函数，不假定每个仓库都使用这些接口",
+        "counterexample_or_regression": "围绕生命周期 / 有界并发和验收构造正常、边界和失败路径；区分语言保证/库实现，禁止用UB作为验证手段",
+        "required_evidence": "C++17构建、独立结果或状态oracle、适用的Sanitizer/故障注入、真实日志；未测性能不写收益",
+        "record_when_delivered": "填写真实版本/日期、文件、符号、调用链、许可、原场景与保留/简化机制；阅读/本机运行/目标验证分别记录"
+      }
     }
-  ]
+  ],
+  "source_depth_policy": {
+    "updated_on": "2026-09-29",
+    "guide": "../docs/FUTURE_DEPTH_PLAN.md",
+    "status": "planning only; not source-reading, implementation or validation evidence",
+    "required_channels": [
+      "Google",
+      "知乎原作者/工程博客",
+      "GitHub具体实现",
+      "官方规范核查"
+    ],
+    "failure_rule": "记录实际查询/URL与失败；无合适资料不硬凑，不把候选写成已读；沿栏目backlog规则处理",
+    "delivery_gate": "工作合同→真实源码与调用链→机制推导→现成对照/反例→至少两个故障链→公平测量/迁移验收→4–8追问",
+    "workload": "附加示例已写好；不增加第二个必做编码任务或自测"
+  }
 }

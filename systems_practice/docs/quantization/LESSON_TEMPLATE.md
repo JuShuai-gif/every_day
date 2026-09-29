@@ -36,3 +36,8 @@
 verification.json 至少记录 method、date、repository、commit、source_record、source_fetched、source_read、example_delivered、cpu_example_run、thor_verified、read_symbols、evidence、blockers。布尔状态必须有文件/函数或日志证据；缺硬件不标成功。source.json 保留获取时的事实，不把下载脚本的初始 false 当作之后阅读/运行的状态。
 
 拉取失败时附原始日志与重试命令，原项目用法留待补。源码已读取、完整示例已提供但依赖缺失时，可记录已交付/未运行。同步更新独立索引、progress.json 的 history/backlog 和主索引的栏目链接。保持主练习唯一无答案自测，不新增第二个强制作业。
+
+
+## 后续生成前必须执行的源码研究
+
+按[后续深度规划](../FUTURE_DEPTH_PLAN.md)与当节research_plan（如有）实际检索Google、知乎原作者/工程博客，并读取GitHub具体实现；用官方规范核查技术结论，记录版本、文件/符号、调用链、许可和阅读范围。检索失败如实记录，计划不是证据。正文把工作问题、机制推导、已写好的对照/边界反例、至少两个故障链、迁移验收和4–8追问连起来；说明无收益或退化条件，不靠链接列表充数。论文围绕方法与复现分析落实，量化仍以原生实现和原定验证要求为准。短时长仅作速览，不增加第二个强制任务；阅读、本机运行与目标设备验证分别记录。
