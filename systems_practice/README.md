@@ -21,3 +21,5 @@
 语言按教学目标选择：量化算法/模型实验优先Python/PyTorch，ARM/CPU底层机制使用C/C++。参见 [最新规范](docs/PRACTICE_SPEC.md)。
 
 2026-09-28 新增独立[OS课程](docs/os/README.md)，首轮28节/56主题；[首节：系统调用与FD](os/2026-09-28/README.md)。随既有08:30任务执行。
+
+2026-09-29 已为全部既有ARM课补充工程深度：[回补清单](arm/index.md#2026-09-29历史课深度回补)，以后按[高性能计算深度要求](docs/arm/HPC_DEPTH.md)交付。

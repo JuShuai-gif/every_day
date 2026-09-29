@@ -1,0 +1,29 @@
+Command: clang++ -std=c++17 -O3 -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize -S src/example.cpp -o build/hpc-vectorized.s
+Exit: 0
+src/example.cpp:7:3: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]
+    7 |   for (std::size_t i = 0; i < n; ++i) {
+      |   ^
+In file included from src/example.cpp:2:
+In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream:45:
+In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/ios:228:
+In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__locale:20:
+In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__mutex/once_flag.h:22:
+In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple:1438:
+In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/exception:97:
+In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/new:94:
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__new/allocate.h:61:28: remark: loop not vectorized: Loop contains an unsupported terminator [-Rpass-analysis=loop-vectorize]
+   61 |   return static_cast<_Tp*>(__builtin_operator_new(__size _LIBCPP_ADD_TYPE_DESCRIPTOR(_Tp)));
+      |                            ^
+In file included from src/example.cpp:2:
+In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream:45:
+In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/ios:228:
+In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__locale:28:
+In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/string:611:
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/allocator.h:153:5: remark: loop not vectorized: call instruction cannot be vectorized [-Rpass-analysis=loop-vectorize]
+  153 |     ::new ((void*)__p) _Up(std::forward<_Args>(__args)...);
+      |     ^
+src/example.cpp:14:5: remark: loop not vectorized: Cannot vectorize early exit loop with more than one early exit [-Rpass-analysis=loop-vectorize]
+   14 |     for (std::size_t n = 0; n < 1025; ++n) {
+      |     ^
+src/example.cpp:14:5: remark: loop not vectorized: instruction cannot be vectorized [-Rpass-analysis=loop-vectorize]
+src/example.cpp:14:5: remark: loop not vectorized [-Rpass-missed=loop-vectorize]

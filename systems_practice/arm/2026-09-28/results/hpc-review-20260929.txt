@@ -1,0 +1,99 @@
+Command: sh systems_practice/arm/2026-09-28/run.sh
+Exit: 0
+stride cases=36 invalid=4 PASS
+stride cases=36 invalid=4 PASS
+
+sum_rows：A64加载与寻址
+__Z8sum_rowsPKtmmmm:                    ; @_Z8sum_rowsPKtmmmm
+Lfunc_begin0:
+	.cfi_startproc
+	.cfi_personality 155, ___gxx_personality_v0
+	.cfi_lsda 16, Lexception0
+; %bb.0:
+	stp	x20, x19, [sp, #-32]!           ; 16-byte Folded Spill
+	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
+	add	x29, sp, #16
+	.cfi_def_cfa w29, 16
+	.cfi_offset w30, -8
+	.cfi_offset w29, -16
+	.cfi_offset w19, -24
+	.cfi_offset w20, -32
+	cmp	x2, x3
+	b.hi	LBB0_12
+; %bb.1:
+	cbz	x1, LBB0_10
+; %bb.2:
+	umulh	x8, x1, x3
+	cmp	xzr, x8
+	b.ne	LBB0_12
+; %bb.3:
+	mul	x8, x3, x1
+	cmp	x8, x4
+	b.hi	LBB0_12
+; %bb.4:
+	cbnz	x0, LBB0_6
+; %bb.5:
+	cbnz	x2, LBB0_12
+LBB0_6:
+	mov	x9, #0                          ; =0x0
+	mov	x8, #0                          ; =0x0
+	lsl	x10, x3, #1
+	b	LBB0_8
+LBB0_7:                                 ;   in Loop: Header=BB0_8 Depth=1
+	add	x9, x9, #1
+	add	x0, x0, x10
+	cmp	x9, x1
+	b.eq	LBB0_11
+LBB0_8:                                 ; =>This Loop Header: Depth=1
+                                        ;     Child Loop BB0_9 Depth 2
+	mov	x11, x0
+	mov	x12, x2
+	cbz	x2, LBB0_7
+LBB0_9:                                 ;   Parent Loop BB0_8 Depth=1
+                                        ; =>  This Inner Loop Header: Depth=2
+	ldrh	w13, [x11], #2
+	add	x8, x8, x13
+	subs	x12, x12, #1
+	b.ne	LBB0_9
+	b	LBB0_7
+LBB0_10:
+	mov	x8, #0                          ; =0x0
+LBB0_11:
+	mov	x0, x8
+	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
+	ldp	x20, x19, [sp], #32             ; 16-byte Folded Reload
+	ret
+LBB0_12:
+	mov	w0, #16                         ; =0x10
+	bl	___cxa_allocate_exception
+	mov	x19, x0
+Ltmp0:
+Lloh0:
+	adrp	x1, l_.str@PAGE
+Lloh1:
+	add	x1, x1, l_.str@PAGEOFF
+	bl	__ZNSt16invalid_argumentC1B9nqe210106EPKc
+Ltmp1:
+; %bb.13:
+Lloh2:
+	adrp	x1, __ZTISt16invalid_argument@GOTPAGE
+Lloh3:
+	ldr	x1, [x1, __ZTISt16invalid_argument@GOTPAGEOFF]
+Lloh4:
+	adrp	x2, __ZNSt16invalid_argumentD1Ev@GOTPAGE
+Lloh5:
+	ldr	x2, [x2, __ZNSt16invalid_argumentD1Ev@GOTPAGEOFF]
+	mov	x0, x19
+	bl	___cxa_throw
+LBB0_14:
+Ltmp2:
+	mov	x20, x0
+	mov	x0, x19
+	bl	___cxa_free_exception
+	mov	x0, x20
+	bl	__Unwind_Resume
+	.loh AdrpAdd	Lloh0, Lloh1
+	.loh AdrpLdrGot	Lloh4, Lloh5
+	.loh AdrpLdrGot	Lloh2, Lloh3
+Lfunc_end0:
+	.cfi_endproc
