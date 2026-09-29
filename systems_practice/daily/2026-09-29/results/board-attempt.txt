@@ -1,0 +1,2 @@
+原始输出以JSON字符串编码，完整保留换行和尾空格：
+"exit=1\n-- The CXX compiler identification is AppleClang 21.0.0.21000101\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Configuring incomplete, errors occurred!\nCMake Error at CMakeLists.txt:14 (find_path):\n  Could not find RKNN_INCLUDE using the following files: rknn_api.h\n\n\n"

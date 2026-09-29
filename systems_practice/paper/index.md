@@ -20,6 +20,8 @@
 | 2026-09-27 | [BASC: Behavior-Aligned Quantization and Pruning for Low-Bit Spiking Neural Networks](2026-09-27/02-basc/README.md) / 2026-08-12 | LIF膜电位的阈值使小权重变化改变放电时间。TSC用时间任务损失学习scale，BIC重评剪枝边界附近通道间的相互作用。权重误差最小不一定对应行为误差最小。 | 中→难：作者完整复现待补 | Python标准库机制小例子实际通过；非整篇复现 |
 | 2026-09-28 | [Rift](2026-09-28/01-rift/README.md) / 2026-09-24 | 图块剪枝与条件准确率/能耗预算 | 难：作者仓库未核实 | Python合成决策/偏移召回/边界通过；无设备数据 |
 | 2026-09-28 | [Rate-Distortion Perspective](2026-09-28/02-rate-distortion/README.md) / 2026-09-02 | 固定分布与码率的VQ/PQ/SQ比较 | 中到难：实现审查待补 | Python真实Lloyd更新、训练目标/空簇检查通过；非作者训练 |
+| 2026-09-29 | [Train Overcomplete, Deploy Compact: Scaling Recovery Capacity for Structured LLM Pruning](2026-09-29/01-overrep/README.md) / 2026-09-07 | 训练增容与退火后精确合并 | 完整复现难：作者实现未公开 | CPU独立小例子240次实际更新、合并检查通过；非模型复现 |
+| 2026-09-29 | [Fine-Tuning Low-Bit Models with Gradient in Quantized Code Space](2026-09-29/02-gradcodes/README.md) / 2026-08-31 | 梯度引导离散候选、真实损失接纳 | 中到难：核心实现/环境待审计 | CPU小例子80次scale更新、2次码更新；非原生低位kernel |
 
 
 下一期继续检索新论文；不重复已归档 arXiv ID。完整进度见 [progress.json](progress.json)。

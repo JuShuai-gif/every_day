@@ -1,0 +1,29 @@
+{
+  "read_date": "2026-09-29",
+  "arxiv_id": "2609.06974",
+  "title": "Train Overcomplete, Deploy Compact: Scaling Recovery Capacity for Structured LLM Pruning",
+  "authors": [
+    "Seungmin Oh",
+    "Donggeon Lee",
+    "Jongbin Ryu"
+  ],
+  "first_submitted": "2026-09-07",
+  "version": "v1",
+  "version_date": "2026-09-07",
+  "primary_fulltext": "https://arxiv.org/html/2609.06974",
+  "sections_read": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "B.5",
+    "Table11"
+  ],
+  "fulltext_available": true,
+  "entire_appendix_audited": false,
+  "repository": "https://github.com/MMAI-Laboratory/OverRep",
+  "commit": null,
+  "author_code_read": false,
+  "author_source_scope": "root tree/LICENSE only",
+  "source_limit": "repository tree contains only LICENSE, no implementation verified",
+  "relationship": "independent mathematical mechanism example; not author API or full paper reproduction"
+}

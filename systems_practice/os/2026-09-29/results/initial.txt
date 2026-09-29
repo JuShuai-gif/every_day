@@ -1,0 +1,6 @@
+PASS exec_success parent=48928 child=48940 before=99 after=7 errno=0 parent_state=7
+PASS exec_failure parent=48928 child=48941 before=99 after=99 errno=2 parent_state=7
+POSIX host observation only; xv6/QEMU/Linux board not tested
+PASS exec_success parent=48942 child=48943 before=99 after=7 errno=0 parent_state=7
+PASS exec_failure parent=48942 child=48944 before=99 after=99 errno=2 parent_state=7
+POSIX host observation only; xv6/QEMU/Linux board not tested

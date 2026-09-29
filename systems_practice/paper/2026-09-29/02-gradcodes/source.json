@@ -1,0 +1,30 @@
+{
+  "read_date": "2026-09-29",
+  "arxiv_id": "2608.30908",
+  "title": "Fine-Tuning Low-Bit Models with Gradient in Quantized Code Space",
+  "authors": [
+    "Shiguang Wu",
+    "Zhouchen Lin",
+    "Quanming Yao"
+  ],
+  "first_submitted": "2026-08-31",
+  "version": "v1",
+  "version_date": "2026-08-31",
+  "primary_fulltext": "https://arxiv.org/html/2608.30908v1",
+  "sections_read": [
+    "3",
+    "4",
+    "Algorithm1",
+    "5.1",
+    "5.2",
+    "Table1"
+  ],
+  "fulltext_available": true,
+  "entire_appendix_audited": false,
+  "repository": "https://github.com/ovo67/GradCodes",
+  "commit": null,
+  "author_code_read": true,
+  "author_source_scope": "src/train_gradcodes.py imports/entry/parse_args; README/tree",
+  "source_limit": "training entry read only; core implementation, dependencies/license and commit pending",
+  "relationship": "independent mathematical mechanism example; not author API or full paper reproduction"
+}

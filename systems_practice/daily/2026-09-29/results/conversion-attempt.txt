@@ -1,0 +1,5 @@
+exit=1
+Traceback (most recent call last):
+  File "/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-09-29/convert.py", line 4, in <module>
+    from rknn.api import RKNN
+ModuleNotFoundError: No module named 'rknn'

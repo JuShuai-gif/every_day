@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-29",
+  "repository": "https://github.com/mit-pdos/xv6-riscv",
+  "branch": "riscv",
+  "commit": null,
+  "license": "MIT",
+  "source_read": true,
+  "version_pinned": false,
+  "relationship": "independent POSIX host observation inspired by xv6 fork/exec mechanisms",
+  "files": [
+    {
+      "path": "kernel/proc.c",
+      "symbols": [
+        "kfork"
+      ],
+      "scope": "allocation/uvmcopy/trapframe/filedup/cwd/RUNNABLE"
+    },
+    {
+      "path": "kernel/exec.c",
+      "symbols": [
+        "kexec"
+      ],
+      "scope": "ELF load, stack/argv, commit new image, cleanup"
+    },
+    {
+      "path": "user/sh.c",
+      "symbols": [
+        "runcmd EXEC branch"
+      ],
+      "scope": "exec/failure exit"
+    },
+    {
+      "path": "LICENSE",
+      "symbols": []
+    }
+  ],
+  "call_chain": "shell fork1 -> fork/kfork -> runcmd EXEC -> exec/kexec; inner uvmcopy not audited",
+  "failure": "git ls-remote DNS failure; exact commit pending"
+}

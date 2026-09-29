@@ -1,0 +1,14 @@
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/daily/2026-09-29/build/sanitize
+[ 50%] Building CXX object CMakeFiles/cpu_check.dir/src/cpu_check.cpp.o
+[100%] Linking CXX executable cpu_check
+[100%] Built target cpu_check
+PASS affine=1024 invalid=6 lease=1000 (500 exception unwinds) frames=16
+CPU contract only; no NPU performance measured

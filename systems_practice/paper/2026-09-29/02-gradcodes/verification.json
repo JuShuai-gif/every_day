@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-29",
+  "example_delivered": true,
+  "cpu_mechanism_example_run": true,
+  "language": "Python3 standard library",
+  "actual_training_updates": 80,
+  "full_paper_reproduced": false,
+  "author_native_code_run": false,
+  "thor_verified": false,
+  "performance_measured": false,
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "blockers": [
+    "training entry read only; core implementation, dependencies/license and commit pending",
+    "full model/data/dependencies/GPU not acquired"
+  ]
+}

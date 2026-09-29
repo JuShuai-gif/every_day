@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-29",
+  "example_delivered": true,
+  "cpu_mechanism_example_run": true,
+  "language": "Python3 standard library",
+  "actual_training_updates": 240,
+  "full_paper_reproduced": false,
+  "author_native_code_run": false,
+  "thor_verified": false,
+  "performance_measured": false,
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "blockers": [
+    "repository tree contains only LICENSE, no implementation verified",
+    "full model/data/dependencies/GPU not acquired"
+  ]
+}

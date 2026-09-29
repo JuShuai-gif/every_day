@@ -1,15 +1,16 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
-  "last_delivery_date": "2026-09-28",
-  "next_lesson_id": "07",
+  "last_delivery_date": "2026-09-29",
+  "next_lesson_id": "08",
   "delivered_lesson_ids": [
     "01",
     "02",
     "03",
     "04",
     "05",
-    "06"
+    "06",
+    "07"
   ],
   "history": [
     {
@@ -125,6 +126,21 @@
       "program_run": true,
       "rotation_role": "supplemental_out_of_order_delivery",
       "canonical_lesson": "2026-09-24"
+    },
+    {
+      "date": "2026-09-29",
+      "lesson_id": "07",
+      "path": "2026-09-29",
+      "source_read": true,
+      "lesson_delivered": true,
+      "observation_run": true,
+      "compute_kernel_run": true,
+      "compute_kernel_benchmarked": true,
+      "target_board_verified": false,
+      "verification": "2026-09-29/README.md#来源验证与下一节",
+      "implementation_language": "C++17",
+      "program_compiled": true,
+      "program_run": true
     }
   ],
   "backlog": [],
@@ -150,5 +166,5 @@
       "reason": "Explicit user request: integrate employment-oriented C++/Linux/debug/deployment/performance evidence and OS bridge; lessons01–28 and next07 unchanged. xv6-riscv preferred teaching source; VivekPublicRepo directory verified; PDF content/license pending, supplementary candidate only."
     }
   ],
-  "last_canonical_lesson_date": "2026-09-27"
+  "last_canonical_lesson_date": "2026-09-29"
 }

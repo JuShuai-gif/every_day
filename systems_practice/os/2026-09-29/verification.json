@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-29",
+  "lesson_id": "02",
+  "topic_ids": [
+    "02a",
+    "02b"
+  ],
+  "source_read": true,
+  "version_pinned": false,
+  "host_compiled": true,
+  "host_run": true,
+  "asan_ubsan": true,
+  "xv6_compiled": false,
+  "qemu_run": false,
+  "linux_run": false,
+  "target_board_verified": false,
+  "performance": null,
+  "evidence": [
+    "results/initial.txt",
+    "results/final.txt"
+  ],
+  "blockers": [
+    "exact source commit unresolved",
+    "no QEMU/RISC-V toolchain",
+    "no Linux/board verification"
+  ]
+}

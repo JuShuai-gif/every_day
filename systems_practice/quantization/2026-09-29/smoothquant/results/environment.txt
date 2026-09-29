@@ -1,0 +1,2 @@
+原始输出以JSON字符串编码，完整保留换行和尾空格：
+"3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]\n{\"torch\": false, \"numpy\": false, \"onnx\": false, \"transformers\": false}\n"

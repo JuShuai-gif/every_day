@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-29",
+  "repository": "https://github.com/airockchip/rknn_model_zoo",
+  "branch": "main",
+  "commit": null,
+  "source_read": true,
+  "source_fetched": false,
+  "relationship": "independent implementation inspired by read API lifecycle, not copied source",
+  "license": "repository Apache-2.0; SDK header separate proprietary notice; header not redistributed",
+  "read_scope": [
+    {
+      "file": "examples/mobilenet/cpp/rknpu2/mobilenet.cc",
+      "symbols": [
+        "init_mobilenet_model",
+        "inference_mobilenet_model",
+        "release_mobilenet_model"
+      ],
+      "url": "https://github.com/airockchip/rknn_model_zoo/blob/main/examples/mobilenet/cpp/rknpu2/mobilenet.cc"
+    },
+    {
+      "file": "3rdparty/rknpu2/include/rknn_api.h",
+      "symbols": [
+        "rknn_output",
+        "rknn_outputs_get",
+        "rknn_outputs_release",
+        "rknn_tensor_attr"
+      ],
+      "url": "https://github.com/airockchip/rknn_model_zoo/blob/main/3rdparty/rknpu2/include/rknn_api.h"
+    },
+    {
+      "file": "examples/mobilenet/python/mobilenet.py",
+      "symbols": [
+        "config/load_onnx/build/export_rknn"
+      ],
+      "url": "https://github.com/airockchip/rknn_model_zoo/blob/main/examples/mobilenet/python/mobilenet.py"
+    }
+  ],
+  "failures": [
+    "git ls-remote: Could not resolve host: github.com",
+    "examples/mobilenet/python/convert.py HTTP404; actual entry mobilenet.py read"
+  ],
+  "target": "RK3588 Linux; toolkit/runtime/driver combination unverified"
+}

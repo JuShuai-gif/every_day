@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-28T05:01:42.757980+00:00",
+  "updated_at": "2026-09-29T01:19:27.833341+00:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -224,6 +224,30 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.06974",
+      "title": "Train Overcomplete, Deploy Compact: Scaling Recovery Capacity for Structured LLM Pruning",
+      "delivered_on": "2026-09-29",
+      "first_submitted": "2026-09-07",
+      "version_read": "v1",
+      "directory": "2026-09-29/01-overrep",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2608.30908",
+      "title": "Fine-Tuning Low-Bit Models with Gradient in Quantized Code Space",
+      "delivered_on": "2026-09-29",
+      "first_submitted": "2026-08-31",
+      "version_read": "v1",
+      "directory": "2026-09-29/02-gradcodes",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
     }
   ],
   "backlog": [
@@ -304,6 +328,18 @@
       "date": "2026-09-27",
       "kind": "author_source_or_full_reproduction",
       "reason": "全文与标题GitHub搜索未确认官方仓库；不编造训练API。"
+    },
+    {
+      "id": "arxiv:2609.06974",
+      "date": "2026-09-29",
+      "kind": "author_source_or_full_reproduction",
+      "reason": "Author repository tree only LICENSE; recovery/export/training implementation unavailable"
+    },
+    {
+      "id": "arxiv:2608.30908",
+      "date": "2026-09-29",
+      "kind": "author_source_or_full_reproduction",
+      "reason": "Training entry read; core code/license/dependencies/commit audit pending"
     }
   ]
 }

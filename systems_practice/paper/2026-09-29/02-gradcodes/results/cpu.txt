@@ -1,0 +1,5 @@
+step 0 codes [2, 1] scale [0.9846741533352393, 0.9944937392811624] train_loss 0.18458170402849633
+step 19 codes [3, 0] scale [0.810123849322342, 0.7857670181300025] train_loss 0.007036167318618355
+step 79 codes [3, 0] scale [0.705676192062973, 0.70035340139386] train_loss 9.377167595691626e-06
+PASS changes 2 initial_eval 0.5218869950664743 final_eval 1.1091441591050055e-05 code_bytes 1 metadata_bytes 24
+80 scale updates; guided local Bernoulli candidates, not author sampler; no low-bit kernel speed claim

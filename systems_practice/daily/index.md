@@ -14,7 +14,7 @@
 
 2026-09-18 扩展为 **12 个方向**：新增“量化 GEMM”，涵盖 W4A4/W4A16/W8A8/W8A16、SmoothQuant、离群处理、校准缩放与 QAT，代码目标仍为 Thor SM110。
 
-2026-09-18 起另设 **每日量化方法**：每天在主知识点之外讲一个方法，拉取源仓库、阅读实际实现并给出完整使用示例及量化前后比较。独立轮换见 [量化栏目索引](../quantization/index.md)，下一方法 **SmoothQuant**。该栏目不取代 12 个主方向，源码获取/阅读/示例运行分别记录。
+2026-09-18 起另设 **每日量化方法**：每天在主知识点之外讲一个方法，拉取源仓库、阅读实际实现并给出完整使用示例及量化前后比较。独立轮换见 [量化栏目索引](../quantization/index.md)，下一方法 **LLM.int8 离群处理**。该栏目不取代 12 个主方向，源码获取/阅读/示例运行分别记录。
 
 2026-09-21 起新增 **每日两篇论文**：[paper 栏目](../docs/paper/README.md) · [历史索引](../paper/index.md) · [今天两篇](../paper/2026-09-22/README.md)。覆盖剪枝、量化、模型压缩和边缘部署，包含核心思想、复现难度、简单代码及真实验证记录；优先近 180 天首发，独立去重。
 
@@ -36,9 +36,10 @@
 | [2026-09-26](2026-09-26/README.md) | CUDA Kernel（顺序补课） | 稳定 softmax 与 warp 寄存器归约；[SpinQuant](../quantization/2026-09-26/spinquant/README.md)；[ARM05](../arm/2026-09-26/README.md)；[两篇论文](../paper/2026-09-26/README.md) | [代码](2026-09-26/src/softmax.cu) | CPU Release/ASan/UBSan 96组+非法输入通过；Thor缺nvcc未编译；量化原生运行待补 | 无GPU/NPU/端到端实测；[验证](2026-09-26/results/verification.json) |
 | [2026-09-27](2026-09-27/README.md) | TensorRT（顺序补课） | 输入消费事件与输出完成事件；[SpQR](../quantization/2026-09-27/spqr/README.md)；[ARM06](../arm/2026-09-27/README.md)；[两篇论文](../paper/2026-09-27/README.md) | [代码](2026-09-27/src/trt.cpp) | CPU所有权状态模型通过；TensorRT/Thor缺工具未编译；量化原生运行待补 | 无GPU/NPU/端到端实测；[验证](2026-09-27/results/verification.json) |
 | [2026-09-28](2026-09-28/README.md) | 边缘端部署（保留为补充，不重复推进） | 发布代次+请求共享快照，失败保留旧版；[OmniQuant](../quantization/2026-09-28/omniquant/README.md)；[ARM03](../arm/2026-09-28/README.md)；[论文](../paper/2026-09-28/README.md) | [控制面](2026-09-28/src/deployment.hpp)、[验证](2026-09-28/src/main.cpp) | Release/ASan/UBSan/TSan通过；2万请求/1000更新；量化原生运行因依赖/克隆缺失待补 | CPU控制面P50/P95 0.00725/0.007292us；[最终记录](2026-09-28/results/verification.json)；无GPU/NPU/E2E性能 |
+| [2026-09-29](2026-09-29/README.md) | RK3588 NPU / RKNN | INT8输出解释+RAII输出租约；[SmoothQuant](../quantization/2026-09-29/smoothquant/README.md) · [ARM07](../arm/2026-09-29/README.md) · [论文两篇](../paper/2026-09-29/README.md) · [OS02](../os/2026-09-29/README.md) | [RKNN](2026-09-29/src/rknn_output.cpp)、[CPU契约](2026-09-29/src/cpu_check.cpp) | CPU Release/ASan/UBSan 1024数值+6非法+1000租约通过；模型/转换/板端因依赖设备未验 | 无NPU/GPU/E2E实测；ARM独立Mac基准P50 serial/four=1.74544/0.663734us；[记录](2026-09-29/results/verification.json) |
 
 
-下一主主题：**RK3588 NPU / RKNN**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
+下一主主题：**PTX / CUTLASS**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
 
 `2026-09-14` 为用户要求补充的历史 C++ 练习，不改变当前轮换位置。
 

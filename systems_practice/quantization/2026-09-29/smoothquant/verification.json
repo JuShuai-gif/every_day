@@ -1,0 +1,44 @@
+{
+  "method": "smoothquant",
+  "date": "2026-09-29",
+  "repository": "https://github.com/mit-han-lab/smoothquant",
+  "commit": null,
+  "branch_read": "main",
+  "source_record": "source.json",
+  "source_fetched": false,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": [
+    "smooth_ln_fcs",
+    "smooth_lm OPT branch",
+    "W8A8Linear.from_float",
+    "W8A8Linear.forward",
+    "quantize_weight_per_channel_absmax",
+    "quantize_activation_per_token_absmax"
+  ],
+  "license_read": "MIT",
+  "read_urls": [
+    "https://github.com/mit-han-lab/smoothquant/blob/main/smoothquant/smooth.py",
+    "https://github.com/mit-han-lab/smoothquant/blob/main/smoothquant/fake_quant.py",
+    "https://github.com/mit-han-lab/smoothquant/blob/main/README.md",
+    "https://github.com/mit-han-lab/smoothquant/blob/main/setup.py",
+    "https://github.com/mit-han-lab/smoothquant/blob/main/LICENSE"
+  ],
+  "call_chain": "calibration LN output -> smooth_ln_fcs -> W8A8Linear.from_float -> activation QDQ -> F.linear",
+  "evidence": [
+    "results/environment.txt",
+    "results/cache-search.txt",
+    "results/native-attempt.txt",
+    "example.py"
+  ],
+  "blockers": [
+    "clone DNS failure; no verified cache",
+    "full commit/permanent URL unresolved (API and short-ref requests failed)",
+    "missing torch/numpy/transformers",
+    "native environment and CPU run not verified",
+    "torch-int/Thor backend and board toolchain combination not verified"
+  ],
+  "performance": null
+}

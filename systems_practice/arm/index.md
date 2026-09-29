@@ -11,9 +11,10 @@
 | [2026-09-26](2026-09-26/README.md) | 05（顺序补课） | 函数调用、ABI与寄存器保存 | Mac C++17 Release/ASan/UBSan通过；真实A64汇编归档；板端未验 |
 | [2026-09-27](2026-09-27/README.md) | 06（顺序补课） | 编译目标、优化选项与反汇编 | Mac C++17 Release/ASan/UBSan通过；真实A64汇编归档；板端未验 |
 | [2026-09-28](2026-09-28/README.md) | 03（保留补充，不重复推进） | 加载/存储、地址与stride | Mac Release/ASan/UBSan 36形状+4非法输入通过；真实LDRH后索引汇编；板端未验 |
+| [2026-09-29](2026-09-29/README.md) | 07 | A64一链/四链公平基准，墙钟与线程CPU时间 | Release/ASan/UBSan通过；真实LDR/LDP/ADD；Mac P50 1.74544/0.663734us，板端未验 |
 
 
-下一节：**07 — 公平基准：预热、计时范围与误差**。联系Cortex-A55/A76。机器进度见 [progress.json](progress.json)。
+下一节：**08 — 自动向量化与编译器诊断**。机器进度见 [progress.json](progress.json)。
 
 
 2026-09-28 生成要求增加[就业与操作系统衔接](../docs/arm/CAREER_OS.md)：工程调试、完整推理和性能证据融入原路线；本次不推进课程。

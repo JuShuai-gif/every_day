@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "next_method_id": "smoothquant",
-  "last_lesson_date": "2026-09-28",
+  "next_method_id": "llm_int8",
+  "last_lesson_date": "2026-09-29",
   "completed_methods": [],
   "history": [
     {
@@ -177,6 +177,21 @@
       "torch_evaluation_run": false,
       "rotation_role": "supplemental_out_of_order_delivery",
       "canonical_lesson": "2026-09-24/omniquant/README.md"
+    },
+    {
+      "date": "2026-09-29",
+      "method": "smoothquant",
+      "commit": null,
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "focus": "Native LN/Linear smoothing, W8A8 QDQ and separate real INT8 export/reload candidate",
+      "lesson": "2026-09-29/smoothquant/README.md",
+      "verification": "2026-09-29/smoothquant/verification.json",
+      "status": "partial; exact commit/local checkout/dependencies/native CPU execution and Thor backend pending",
+      "native_api_language": "Python/PyTorch"
     }
   ],
   "backlog": [
@@ -191,9 +206,9 @@
       "example_delivered": true,
       "cpu_example_run": false,
       "thor_verified": false,
-      "last_retry_date": "2026-09-28",
+      "last_retry_date": "2026-09-29",
       "latest_verification": "2026-09-19/awq/verification.json",
-      "latest_source_retry": "2026-09-28/awq-retry-source.json"
+      "latest_source_retry": "2026-09-29/awq-retry-source.json"
     },
     {
       "method": "gptq",
@@ -301,12 +316,23 @@
       "example_delivered": true,
       "cpu_example_run": false,
       "thor_verified": false
+    },
+    {
+      "method": "smoothquant",
+      "date": "2026-09-29",
+      "reason": "Clone DNS failed; branch source read, full commit and native execution pending; no torch or verified backend",
+      "latest_verification": "2026-09-29/smoothquant/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false
     }
   ],
   "policy": "One quantization lesson per Asia/Shanghai calendar day, independent of main rotation. Preparation does not advance cursor. Daily attempted lessons may advance cursor but failures stay in backlog and never enter completed_methods. Completion requires source read and concrete upstream usage example delivered; execution evidence tracked separately.",
   "last_language_audit": "2026-09-22T10:43:01.386131+08:00",
   "language_policy": "Torch-first for algorithms/models/precision/framework timing; C++ optional for explicit layout/CPU kernel studies",
-  "last_canonical_lesson_date": "2026-09-27",
+  "last_canonical_lesson_date": "2026-09-29",
   "backfill_reconciled_at": "2026-09-28T05:01:42.754872+00:00",
   "reconciliation_note": "24–27 filled by explicit user request; existing 28 OmniQuant retained as supplemental, not counted twice. Failed native validations remain backlog. No second old backlog retry on actual run day."
 }

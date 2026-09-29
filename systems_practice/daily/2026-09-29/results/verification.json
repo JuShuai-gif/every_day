@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-29",
+  "source_read": true,
+  "version_pinned": false,
+  "host_release": true,
+  "host_asan_ubsan": true,
+  "checks": {
+    "affine_pairs": 1024,
+    "invalid_parameters": 6,
+    "lease_scopes": 1000,
+    "exception_unwinds": 500,
+    "reference_frames": 16
+  },
+  "model_generation": false,
+  "model_conversion": false,
+  "rknn_target_compiled": false,
+  "rknn_run": false,
+  "rknn_accuracy": false,
+  "npu_performance": false,
+  "e2e_performance": false,
+  "blockers": [
+    "numpy/onnx absent",
+    "rknn module absent",
+    "rknn_api.h/runtime absent",
+    "no RK3588 board"
+  ],
+  "performance": null,
+  "evidence": [
+    "cpu.txt",
+    "sanitize.txt",
+    "model-attempt.txt",
+    "conversion-attempt.txt",
+    "board-attempt.txt",
+    "final-cpu.txt",
+    "final-sanitize.txt",
+    "format.txt",
+    "audit.json"
+  ]
+}

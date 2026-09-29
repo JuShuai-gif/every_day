@@ -1,0 +1,1 @@
+fatal: unable to access 'https://github.com/airockchip/rknn_model_zoo.git/': Could not resolve host: github.com

@@ -1,0 +1,2 @@
+exit=1
+systems_practice/quantization/2026-09-29/smoothquant/run.sh: line 5: SMOOTHQUANT_SOURCE: Set SMOOTHQUANT_SOURCE to your verified clean checkout

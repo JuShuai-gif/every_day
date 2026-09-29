@@ -1,0 +1,88 @@
+Apple clang version 21.0.0 (clang-2100.1.1.101)
+Target: arm64-apple-darwin25.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+Darwin arm64
+PASS 1025 lengths; N=4096 uint64, warmup=20 samples=101 calls/sample=128
+serial wall p50_us=1.74544 p95_us=2.22298
+four wall p50_us=0.663734 p95_us=0.839195
+serial threadCPU p50_us=1.74707 p95_us=2.22559
+four threadCPU p50_us=0.665687 p95_us=0.841469
+scope=CPU cached kernel+call; no board/GPU/NPU claim; sink=33340784640
+	.build_version macos, 26, 0	sdk_version 26, 5
+	.section	__TEXT,__text,regular,pure_instructions
+	.globl	__Z6serialPKym                  ; -- Begin function _Z6serialPKym
+	.p2align	2
+__Z6serialPKym:                         ; @_Z6serialPKym
+	.cfi_startproc
+; %bb.0:
+	mov	x8, #0                          ; =0x0
+	cbz	x1, LBB0_2
+LBB0_1:                                 ; =>This Inner Loop Header: Depth=1
+	ldr	x9, [x0], #8
+	add	x8, x9, x8
+	subs	x1, x1, #1
+	b.ne	LBB0_1
+LBB0_2:
+	mov	x0, x8
+	ret
+	.cfi_endproc
+                                        ; -- End function
+	.globl	__Z4fourPKym                    ; -- Begin function _Z4fourPKym
+	.p2align	2
+__Z4fourPKym:                           ; @_Z4fourPKym
+	.cfi_startproc
+; %bb.0:
+	cmp	x1, #4
+	b.lo	LBB1_4
+; %bb.1:
+	mov	x9, #0                          ; =0x0
+	mov	x11, #0                         ; =0x0
+	mov	x10, #0                         ; =0x0
+	mov	x8, #0                          ; =0x0
+	add	x12, x0, #16
+	mov	x13, x1
+LBB1_2:                                 ; =>This Inner Loop Header: Depth=1
+	ldp	x14, x15, [x12, #-16]
+	add	x8, x14, x8
+	add	x10, x15, x10
+	ldp	x14, x15, [x12], #32
+	add	x11, x14, x11
+	add	x9, x15, x9
+	sub	x13, x13, #4
+	cmp	x13, #3
+	b.hi	LBB1_2
+; %bb.3:
+	and	x13, x1, #0xfffffffffffffffc
+	subs	x12, x1, x13
+	b.hi	LBB1_5
+	b	LBB1_7
+LBB1_4:
+	mov	x8, #0                          ; =0x0
+	mov	x10, #0                         ; =0x0
+	mov	x11, #0                         ; =0x0
+	mov	x9, #0                          ; =0x0
+	mov	x13, #0                         ; =0x0
+	subs	x12, x1, x13
+	b.ls	LBB1_7
+LBB1_5:
+	add	x13, x0, x13, lsl #3
+LBB1_6:                                 ; =>This Inner Loop Header: Depth=1
+	ldr	x14, [x13], #8
+	add	x8, x14, x8
+	subs	x12, x12, #1
+	b.ne	LBB1_6
+LBB1_7:
+	add	x10, x11, x10
+	add	x9, x10, x9
+	add	x0, x9, x8
+	ret
+	.cfi_endproc
+                                        ; -- End function
+.subsections_via_symbols
+PASS 1025 lengths; N=4096 uint64, warmup=20 samples=101 calls/sample=128
+serial wall p50_us=2.84375 p95_us=3.25391
+four wall p50_us=2.16179 p95_us=2.45736
+serial threadCPU p50_us=2.84473 p95_us=3.25488
+four threadCPU p50_us=2.16309 p95_us=2.45833
+scope=CPU cached kernel+call; no board/GPU/NPU claim; sink=33340784640
