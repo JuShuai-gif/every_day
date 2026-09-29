@@ -80,3 +80,12 @@ uint64模加法允许重新分组；若业务改成FP32归约，结合顺序会�
 ### 2026-09-29深化复验
 
 本机原有Release与ASan/UBSan入口均退出0；该结果不替代目标板验收。[本次完整输出](results/hpc-review-20260929.txt)。原有日志与源码保持原字节，本次只增补文档和新结果。为核对入口完整性，多个课程构建并行执行；07课此次输出中的时间受并行任务干扰，仅作正确性复验，不用于新的性能收益结论。未验证Linux perf、目标板、温控或实际业务E2E。
+
+
+## 真实项目源码研读（2026-09-29补充）
+
+读[Arm矩阵乘博客的Scheduling与matrix_mul_float](https://developer.arm.com/community/arm-community-blogs/b/architectures-and-processors-blog/posts/coding-for-neon---part-3-matrix-multiplication)：多个输出累加器之间没有同一条结果依赖，交错计算可以填充等待窗口。再对照[Arm memcpy.S的loop64](https://github.com/ARM-software/optimized-routines/blob/master/string/aarch64/memcpy.S)：这里是存上一批、载下一批的软件流水，不能统称为“拆四条加法链”。
+
+本课把一个uint64 reduction拆链，Arm博客则调度多个输出；两者都增加独立工作，但数值合同与瓶颈不同。评审优化时画“谁读谁写”的依赖图，再检查寄存器压力、额外尾部与实际指令；最后用相同输入测量。博客Cortex-A8的历史近2倍不作为本机预测，原本机serial/four差异也不能全部归因ILP。
+
+来源版本、许可、精确阅读范围与完整分析统一见[本轮源码研读](../../docs/arm/SOURCE_STUDIES.md)。这是对本课的补充解释；历史运行和上游阅读不是同一种验证。

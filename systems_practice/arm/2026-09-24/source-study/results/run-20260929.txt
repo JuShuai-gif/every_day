@@ -1,0 +1,15 @@
+Apple clang version 21.0.0 (clang-2100.1.1.101)
+Target: arm64-apple-darwin25.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+Darwin arm64
+rectangular expected: 58 64 139 154
+rectangular wrong: 3027 5008 6078 11032
+rectangular corrected: 58 64 139 154
+square equal-stride control: wrong candidate also passes
+PASS: semantic bug detected without out-of-bounds access; zero-depth/invalid-stride checked
+rectangular expected: 58 64 139 154
+rectangular wrong: 3027 5008 6078 11032
+rectangular corrected: 58 64 139 154
+square equal-stride control: wrong candidate also passes
+PASS: semantic bug detected without out-of-bounds access; zero-depth/invalid-stride checked

@@ -96,3 +96,12 @@ lscpu
 ### 2026-09-29深化复验
 
 本机C++环境查询编译运行通过，未新增Sanitizer或性能验收。[本次完整输出](results/hpc-review-20260929.txt)。原有日志与源码保持原字节，本次只增补文档和新结果。为核对入口完整性，多个课程构建并行执行；07课此次输出中的时间受并行任务干扰，仅作正确性复验，不用于新的性能收益结论。未验证Linux perf、目标板、温控或实际业务E2E。
+
+
+## 真实项目源码研读（2026-09-29补充）
+
+先对读两份真实材料：[Arm AArch32矩阵乘博客](https://developer.arm.com/community/arm-community-blogs/b/architectures-and-processors-blog/posts/coding-for-neon---part-3-matrix-multiplication)与[AArch64 memcpy.S](https://github.com/ARM-software/optimized-routines/blob/master/string/aarch64/memcpy.S)。前者的r/q/d指令写法和列主序图形场景，不能直接套到本课A64编译命令；后者文件开头明确AArch64与非对齐访问前提。给定一个外部优化方案，先做“源ISA、目标ISA、数据布局、ABI、可选扩展、编译器”的兼容表，再开始移植。
+
+工作中的典型误判是“A53支持ARMv8，所以armv7a目录下的代码就是A64”。CPU能力不决定进程执行状态，更不决定源码汇编语法。这里不改变原探测程序；它仍只报告本机构建事实，不替你验证博客目标。阅读完成的验收是能指出哪些代码可重新编译、哪些必须重写、哪些性能结论需要重测。
+
+来源版本、许可、精确阅读范围与完整分析统一见[本轮源码研读](../../docs/arm/SOURCE_STUDIES.md)。这是对本课的补充解释；历史运行和上游阅读不是同一种验证。

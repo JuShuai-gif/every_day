@@ -90,3 +90,12 @@ sed -n '/^__Z8checksum/,/cfi_endproc/p' build/hpc-vectorized.s
 本机原有Release与ASan/UBSan入口均退出0；该结果不替代目标板验收。[本次完整输出](results/hpc-review-20260929.txt)。原有日志与源码保持原字节，本次只增补文档和新结果。为核对入口完整性，多个课程构建并行执行；07课此次输出中的时间受并行任务干扰，仅作正确性复验，不用于新的性能收益结论。未验证Linux perf、目标板、温控或实际业务E2E。
 
 新增向量化诊断命令也实际退出0：[诊断记录](results/hpc-vectorizer-20260929.txt)。`src/example.cpp:7`报告vectorization width=4、interleaved count=4，对应4lane及4组交错；库头和main的其他未向量化诊断不是checksum失败，必须按函数与源行筛选。此记录不增加性能结论或推进08课。
+
+
+## 真实项目源码研读（2026-09-29补充）
+
+真实项目有三个不同优化层：本课普通C++由LLVM自动向量化；[BBuf AddDot4x4](https://github.com/BBuf/how-to-optimize-gemm/blob/2cd87c4b462baed8e0c896fc34f272604ee4894b/armv7a/src/MMult_4x4_13.h)显式写NEON intrinsics；[Arm memcpy.S](https://github.com/ARM-software/optimized-routines/blob/master/string/aarch64/memcpy.S)直接给出汇编。不能对后两种情况都期待出现“loop vectorized”诊断。
+
+本课真实width=4/interleave=4只回答该C++循环的编译器决策。迁移intrinsics时还要看实际乘加是否融合、载入顺序、寄存器spill与尾块；读取手写汇编时则先审ISA、ABI与加载边界。原教学GEMM还含运行期长度栈数组，这不能作为严格C++17可移植代码直接交付。编译通过、向量化成功、算子更快应分别给证据，本轮没有编译上游GEMM。
+
+来源版本、许可、精确阅读范围与完整分析统一见[本轮源码研读](../../docs/arm/SOURCE_STUDIES.md)。这是对本课的补充解释；历史运行和上游阅读不是同一种验证。

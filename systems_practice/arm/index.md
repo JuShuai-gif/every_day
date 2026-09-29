@@ -35,3 +35,8 @@
 | [2026-09-29](2026-09-29/README.md) | 07 | 批均值P95、带宽口径、Amdahl、perf计量域 |
 
 [后续统一深度要求](../docs/arm/HPC_DEPTH.md) · [模板](../docs/arm/LESSON_TEMPLATE.md)
+
+
+## 2026-09-29博客与真实源码回补
+
+全部8个旧课入口加入针对性源码研读：[Google检索、知乎原文与GitHub实现分析](../docs/arm/SOURCE_STUDIES.md)。包含固定提交的GEMM步幅反例、packing成本与复用、Arm memcpy的尺寸分派/叶函数/流水，以及真实benchmark的输入分布与统计陷阱。[现成C++17反例](2026-09-24/source-study/README.md)有独立oracle和Release/Sanitizer运行记录；上游内核只读未跑，不声明其性能已复现。游标仍为08。

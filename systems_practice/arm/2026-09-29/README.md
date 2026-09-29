@@ -123,3 +123,12 @@ taskset -c "$CPU_ID" perf stat -r 5 \
 ### 2026-09-29深化复验
 
 本机原有Release与ASan/UBSan入口均退出0；该结果不替代目标板验收。[本次完整输出](results/hpc-review-20260929.txt)。原有日志与源码保持原字节，本次只增补文档和新结果。为核对入口完整性，多个课程构建并行执行；07课此次输出中的时间受并行任务干扰，仅作正确性复验，不用于新的性能收益结论。未验证Linux perf、目标板、温控或实际业务E2E。
+
+
+## 真实项目源码研读（2026-09-29补充）
+
+本轮对照两个真实测试入口：[BBuf test_matrix_multiply.cpp](https://github.com/BBuf/how-to-optimize-gemm/blob/2cd87c4b462baed8e0c896fc34f272604ee4894b/armv7a/src/test_matrix_multiply.cpp)与[Arm memcpy benchmark](https://github.com/ARM-software/optimized-routines/blob/master/string/bench/memcpy.c)。前者只覆盖特定方阵并取20次最短，还存在错误分支exit(0)；后者组织尺寸、对齐和working set分布。退出码、数据覆盖、统计量必须分开审查。
+
+用这套评审检查本课：N固定4096、热数据、128次一批，P95是批均值分位数。它不能回答单请求尾延迟、冷数据或大矩阵收益。下一步应先定义业务输入分布，再补对应入口；当前run.sh没有任意N/对齐/冷启动参数，不要伪造这些调用。总体吞吐按总字节/总时间汇总，不能平均每种shape的GB/s；案例D中等字节1与9GB/s合并仅1.8GB/s。
+
+来源版本、许可、精确阅读范围与完整分析统一见[本轮源码研读](../../docs/arm/SOURCE_STUDIES.md)。这是对本课的补充解释；历史运行和上游阅读不是同一种验证。
