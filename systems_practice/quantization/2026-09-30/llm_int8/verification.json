@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-30",
+  "source_fetched": false,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "source_commit": "7e16503e403de460d4ed7dfd6c90a656628f5149",
+  "source_tag": "0.48.1",
+  "native_api": "bitsandbytes.nn.Linear8bitLt",
+  "native_attempt": {
+    "command": "sh run.sh cpu",
+    "exit_code": 1,
+    "log": "results/native-attempt.txt",
+    "reason": "ModuleNotFoundError: No module named 'torch'"
+  },
+  "cpu_performance": null,
+  "gpu_performance": null,
+  "actual_error_metrics": null,
+  "actual_storage_metrics": null,
+  "status": "partial",
+  "unverified": [
+    "local clone/cache",
+    "native CPU API execution/export/reload",
+    "Thor backend build/runtime correctness",
+    "kernel optimization/profile/real ISA and device performance"
+  ],
+  "target": "sm_110",
+  "cuda_build_parameter": "COMPUTE_CAPABILITY=110; TORCH_CUDA_ARCH_LIST=11.0",
+  "backend_note": "Native source supports architecture selection; no claim of tested Jetson wheel/library. CPU default GEMM may use FP32 fallback.",
+  "training_updates": 0
+}

@@ -1,0 +1,15 @@
+{
+  "steps": 60,
+  "reference_final": 0.6,
+  "naive_final": 0.0,
+  "feedback_final": 0.5714285714285714,
+  "feedback_residual": 0.028571428571429136,
+  "naive_writes": 0,
+  "feedback_writes": 4,
+  "naive_rmse": 0.35073731861133156,
+  "feedback_rmse": 0.04052797807444532,
+  "one_state_actual_payload_bytes": 5,
+  "logical_bits_per_state_plus_residual": 36,
+  "training_updates": 0,
+  "scope": "scalar recurrence, no GRU/task/hardware performance"
+}

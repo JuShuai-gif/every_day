@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-30",
+  "command": "sh run.sh",
+  "exit_code": 0,
+  "log": "results/cpu.txt",
+  "cpu_mechanism_example_verified": true,
+  "implementation_language": "Python standard library",
+  "checks": [
+    "60-step recurrence",
+    "zero/alternating/rail/ties",
+    "nibble decode",
+    "real 1-byte state + 4-byte residual"
+  ],
+  "training_updates": 0,
+  "full_paper_reproduced": false,
+  "author_code_run": false,
+  "target_board_verified": false,
+  "hardware_performance": null
+}

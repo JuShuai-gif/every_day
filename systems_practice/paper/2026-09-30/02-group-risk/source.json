@@ -1,0 +1,17 @@
+{
+  "arxiv_id": "2608.02940",
+  "title": "When Compression Scores Cannot Decide: Information Boundaries for Group-Robust LLM Pruning",
+  "version_read": "v2",
+  "first_submitted": "2026-08-03",
+  "read_date": "2026-09-30",
+  "primary_urls": [
+    "https://arxiv.org/abs/2608.02940",
+    "https://arxiv.org/html/2608.02940v2"
+  ],
+  "license": "CC BY 4.0",
+  "read_scope": "Sections 2–3/table1, 4–6, 7.1–7.2, Appendix C selection/evaluation split",
+  "author_code_read": false,
+  "author_repository": null,
+  "author_code_status": "No official code verified in body or exact-title GitHub search",
+  "relationship": "Original independent scalar/synthetic mechanism example derived from primary paper; not author API or full model reproduction"
+}

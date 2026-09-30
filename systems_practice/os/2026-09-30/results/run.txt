@@ -1,0 +1,10 @@
+Apple clang version 21.0.0 (clang-2100.1.1.101)
+Target: arm64-apple-darwin25.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+before reap: pid=41322 si_code=1 si_status=37 pipe_EOF=true
+before reap: pid=41323 si_code=2 si_status=9 pipe_EOF=true
+PASS normal exit37, signal9, EOF before reap, WNOWAIT, ECHILD
+before reap: pid=41325 si_code=1 si_status=37 pipe_EOF=true
+before reap: pid=41328 si_code=2 si_status=9 pipe_EOF=true
+PASS normal exit37, signal9, EOF before reap, WNOWAIT, ECHILD

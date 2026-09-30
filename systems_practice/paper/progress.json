@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-29T01:19:27.833341+00:00",
+  "updated_at": "2026-09-30T01:38:06.253709+00:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -248,6 +248,30 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.04490",
+      "title": "When Quantization Breaks Memory: Recurrent-State Write-Back in Low-Precision Temporal Inference",
+      "delivered_on": "2026-09-30",
+      "first_submitted": "2026-09-03",
+      "version_read": "v1",
+      "directory": "2026-09-30/01-writeback",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2608.02940",
+      "title": "When Compression Scores Cannot Decide: Information Boundaries for Group-Robust LLM Pruning",
+      "delivered_on": "2026-09-30",
+      "first_submitted": "2026-08-03",
+      "version_read": "v2",
+      "directory": "2026-09-30/02-group-risk",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
     }
   ],
   "backlog": [
@@ -340,6 +364,18 @@
       "date": "2026-09-29",
       "kind": "author_source_or_full_reproduction",
       "reason": "Training entry read; core code/license/dependencies/commit audit pending"
+    },
+    {
+      "id": "arxiv:2609.04490",
+      "date": "2026-09-30",
+      "kind": "author_source_or_full_reproduction",
+      "reason": "S11 explicitly withholds repository until acceptance"
+    },
+    {
+      "id": "arxiv:2608.02940",
+      "date": "2026-09-30",
+      "kind": "author_source_or_full_reproduction",
+      "reason": "No official code verified in body or exact-title GitHub search"
     }
   ]
 }

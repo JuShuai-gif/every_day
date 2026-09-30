@@ -1,0 +1,1 @@
+profile.sh: line 7: ncu: command not found

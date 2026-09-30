@@ -1,0 +1,66 @@
+{
+  "repository": "https://github.com/NVIDIA/cutlass",
+  "ref": "main",
+  "commit": null,
+  "read_date": "2026-09-30",
+  "license": "BSD-3-Clause",
+  "relationship": "Independent teaching implementation inspired by group completion and shared stage ownership; no Tensor Core/MMA or performance reproduction",
+  "implementation_read": true,
+  "files": [
+    {
+      "path": "include/cutlass/arch/memory_sm80.h",
+      "symbols": [
+        "cp_async_zfill",
+        "cp_async_fence",
+        "cp_async_wait"
+      ],
+      "url": "https://github.com/NVIDIA/cutlass/blob/main/include/cutlass/arch/memory_sm80.h"
+    },
+    {
+      "path": "include/cutlass/gemm/threadblock/mma_multistage.h",
+      "symbols": [
+        "MmaMultistage::prologue",
+        "gmem_wait",
+        "advance_smem_read_stage",
+        "advance_smem_write_stage",
+        "copy_tiles_and_advance",
+        "gemm_iters"
+      ],
+      "url": "https://github.com/NVIDIA/cutlass/blob/main/include/cutlass/gemm/threadblock/mma_multistage.h"
+    }
+  ],
+  "original_context": "Multistage Tensor Core GEMM; selected methods read through raw GitHub, exact commit unresolved",
+  "first_party_docs": [
+    "https://docs.nvidia.com/cuda/parallel-thread-execution/",
+    "https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html",
+    "https://docs.nvidia.com/cutlass/4.4.0/overview.html",
+    "https://developer.nvidia.com/embedded/jetpack/downloads/archive-7.0",
+    "https://developer.nvidia.com/blog/whats-new-and-important-in-cuda-toolkit-13-0/"
+  ],
+  "search_attempts": [
+    {
+      "url": "https://www.google.com/search?q=CUTLASS+cp.async+double+buffer+site%3Azhihu.com",
+      "status": "web open inaccessible; no verified article body read"
+    },
+    {
+      "url": "https://www.google.com/search?q=LLVM+loop+vectorization+alias+site%3Azhihu.com",
+      "status": "web open inaccessible; no verified article body read"
+    },
+    {
+      "url": "https://www.google.com/search?q=LLM.int8+outlier+bitsandbytes+site%3Azhihu.com",
+      "status": "web open inaccessible; no verified article body read"
+    },
+    {
+      "url": "https://www.google.com/search?q=xv6+exit+wait+site%3Azhihu.com",
+      "status": "web open inaccessible; no verified article body read"
+    },
+    {
+      "url": "https://www.google.com/search?q=C%2B%2B+RAII+Rule+of+Zero+site%3Azhihu.com",
+      "status": "web open inaccessible; no verified article body read"
+    }
+  ],
+  "failed_doc_attempt": {
+    "url": "https://developer.nvidia.com/embedded/jetpack-sdk-70",
+    "error": "Internal Error; used official archive-7.0 instead"
+  }
+}

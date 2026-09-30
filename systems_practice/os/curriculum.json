@@ -82,7 +82,7 @@
       "source_candidates": [
         "kernel/proc.c"
       ],
-      "source_status": "planned; verify exact version and symbols when delivered",
+      "source_status": "Selected implementation read 2026-09-30; see 2026-09-30/source.json; exact commit pending",
       "basis": "xv6",
       "edge_problem": "推理worker异常后可靠回收",
       "evidence_target": "退出状态、等待与FD清理记录",

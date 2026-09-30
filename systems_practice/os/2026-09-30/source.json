@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/mit-pdos/xv6-riscv",
+  "ref": "riscv",
+  "commit": null,
+  "read_date": "2026-09-30",
+  "license": "MIT",
+  "relationship": "Independent POSIX observation; does not build or run xv6",
+  "implementation_read": true,
+  "files": [
+    {
+      "path": "kernel/proc.c",
+      "symbols": [
+        "kexit",
+        "kwait",
+        "reparent",
+        "sleep_prepare",
+        "sleep"
+      ],
+      "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/proc.c"
+    }
+  ],
+  "original_context": "xv6 process exit, adoption and zombie reaping under wait_lock/process locks",
+  "first_party_docs": [
+    "https://man7.org/linux/man-pages/man2/waitpid.2.html"
+  ],
+  "version_pin": "Local git DNS failure; branch/date recorded, no exact commit claim"
+}

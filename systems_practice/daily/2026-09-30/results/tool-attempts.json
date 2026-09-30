@@ -1,0 +1,27 @@
+[
+  {
+    "command": [
+      "sh",
+      "run.sh",
+      "gpu"
+    ],
+    "returncode": 127,
+    "log": "results/gpu-attempt.txt"
+  },
+  {
+    "command": [
+      "sh",
+      "profile.sh"
+    ],
+    "returncode": 127,
+    "log": "results/profile-attempt.txt"
+  },
+  {
+    "command": [
+      "sh",
+      "export-isa.sh"
+    ],
+    "returncode": 127,
+    "log": "results/isa-attempt.txt"
+  }
+]

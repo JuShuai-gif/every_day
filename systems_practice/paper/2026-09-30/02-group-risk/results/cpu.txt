@@ -1,0 +1,23 @@
+{
+  "pooled_observations": [
+    [
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0
+    ]
+  ],
+  "opposite_winners": [
+    1,
+    0
+  ],
+  "slack_identity_checks": 729,
+  "separable_upper_bound": 6,
+  "complete_mask_worst": 3,
+  "selected_on_tune": 1,
+  "heldout_risk": 0.9,
+  "training_updates": 0,
+  "scope": "synthetic risk tables, no LLM inference or speedup"
+}

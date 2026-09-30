@@ -12,9 +12,10 @@
 | [2026-09-27](2026-09-27/README.md) | 06（顺序补课） | 编译目标、优化选项与反汇编 | Mac C++17 Release/ASan/UBSan通过；真实A64汇编归档；板端未验 |
 | [2026-09-28](2026-09-28/README.md) | 03（保留补充，不重复推进） | 加载/存储、地址与stride | Mac Release/ASan/UBSan 36形状+4非法输入通过；真实LDRH后索引汇编；板端未验 |
 | [2026-09-29](2026-09-29/README.md) | 07 | A64一链/四链公平基准，墙钟与线程CPU时间 | Release/ASan/UBSan通过；真实LDR/LDP/ADD；Mac P50 1.74544/0.663734us，板端未验 |
+| [2026-09-30](2026-09-30/README.md) | 08 | 自动向量化、别名依赖与运行时地址检查；工作部署闭环 | Mac Release/ASan/UBSan 4104重叠+1026独立输入通过；真实NEON汇编/CPU微基准；Linux交叉构建与板端待验 |
 
 
-下一节：**08 — 自动向量化与编译器诊断**。机器进度见 [progress.json](progress.json)。
+下一节：**09 — NEON向量加载与尾部处理**。机器进度见 [progress.json](progress.json)。
 
 
 2026-09-28 生成要求增加[就业与操作系统衔接](../docs/arm/CAREER_OS.md)：工程调试、完整推理和性能证据融入原路线；本次不推进课程。
@@ -42,3 +43,5 @@
 全部8个旧课入口加入针对性源码研读：[Google检索、知乎原文与GitHub实现分析](../docs/arm/SOURCE_STUDIES.md)。包含固定提交的GEMM步幅反例、packing成本与复用、Arm memcpy的尺寸分派/叶函数/流水，以及真实benchmark的输入分布与统计陷阱。[现成C++17反例](2026-09-24/source-study/README.md)有独立oracle和Release/Sanitizer运行记录；上游内核只读未跑，不声明其性能已复现。游标仍为08。
 
 2026-09-29用户确认[后续规划同标准](../docs/FUTURE_DEPTH_PLAN.md)：08–28逐课补充源码研究、失效对照和证据目标，详见课程表research_plan。只更新规划，下一节仍08，未提前阅读或验收未来实现。
+
+2026-09-30新增[四层工作落地目标](../docs/arm/README.md)：部署、硬件约束、证据优化、产品交付，已映射28课；历史记录不改。

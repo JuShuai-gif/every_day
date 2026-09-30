@@ -1,0 +1,1 @@
+export-isa.sh: line 5: nvcc: command not found

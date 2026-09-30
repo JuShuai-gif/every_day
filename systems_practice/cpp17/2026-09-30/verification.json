@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-30",
+  "source_read": true,
+  "host_compile": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "checks": {
+    "partial_construction_failures": 1000,
+    "moves_and_repeated_reset": 1000,
+    "opened": 2000,
+    "closed": 2000,
+    "close_errors": 0
+  },
+  "logs": [
+    "results/run.txt",
+    "results/final-run.txt"
+  ],
+  "final_source_note": "Controlled build/tmp file replaces initial anonymous tmpfile; original run evidence retained",
+  "version_pinned": false,
+  "target_board_verified": false,
+  "unverified": [
+    "bad_alloc injection",
+    "fclose failure injection",
+    "Linux/board"
+  ],
+  "performance": null
+}

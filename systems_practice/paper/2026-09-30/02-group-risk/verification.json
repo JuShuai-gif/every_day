@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-30",
+  "command": "sh run.sh",
+  "exit_code": 0,
+  "log": "results/cpu.txt",
+  "cpu_mechanism_example_verified": true,
+  "implementation_language": "Python standard library",
+  "checks": [
+    "opposite group winners with identical pooled observations",
+    "729 slack identities",
+    "sum-max bound",
+    "tuning/heldout split"
+  ],
+  "training_updates": 0,
+  "full_paper_reproduced": false,
+  "author_code_run": false,
+  "target_board_verified": false,
+  "hardware_performance": null
+}

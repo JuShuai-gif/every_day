@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-30",
+  "source_read": true,
+  "host_compile": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "checks": [
+    "normal exit37",
+    "self SIGKILL9",
+    "pipe EOF before reap",
+    "WNOWAIT retains wait state",
+    "second waitpid ECHILD"
+  ],
+  "logs": [
+    "results/run.txt",
+    "results/final-run.txt"
+  ],
+  "linux_run": false,
+  "xv6_compiled": false,
+  "qemu_run": false,
+  "target_board_verified": false,
+  "version_pinned": false,
+  "scope": "macOS POSIX semantics; not Linux task_struct or xv6 execution",
+  "performance": null
+}

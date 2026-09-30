@@ -1,0 +1,1 @@
+PASS 400 tiled comparisons, 5 invalid shapes, hand oracle, zero input

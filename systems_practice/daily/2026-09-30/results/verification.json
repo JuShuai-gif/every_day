@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-30",
+  "checked_at_utc": "2026-09-30T01:36:27.991064+00:00",
+  "target": "Jetson Thor SM110 only",
+  "compiler": "Apple clang 21 arm64-apple-darwin25.6.0",
+  "source_read": true,
+  "host_release_passed": true,
+  "host_asan_ubsan_passed": true,
+  "cases": {
+    "tiled_comparisons": 400,
+    "invalid_shapes": 5,
+    "hand_oracle": true,
+    "zero_input": true
+  },
+  "final_logs": [
+    "final-run.txt",
+    "final-sanitize.txt"
+  ],
+  "gpu_compiled": false,
+  "gpu_run": false,
+  "ncu_collected": false,
+  "ptx_generated": false,
+  "sass_generated": false,
+  "reason": "nvcc/ncu and Thor unavailable; actual commands failed exit127",
+  "tool_attempts": "tool-attempts.json",
+  "gpu_performance": null,
+  "host_check_boundary": "Math/tails only; no evidence about GPU synchronization/compilation",
+  "format": "Repository scripts/format-cpp.sh on scoped mirror, 7 new sources; existing user files untouched"
+}

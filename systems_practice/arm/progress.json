@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
-  "last_delivery_date": "2026-09-29",
-  "next_lesson_id": "08",
+  "last_delivery_date": "2026-09-30",
+  "next_lesson_id": "09",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -10,7 +10,8 @@
     "04",
     "05",
     "06",
-    "07"
+    "07",
+    "08"
   ],
   "history": [
     {
@@ -141,6 +142,21 @@
       "implementation_language": "C++17",
       "program_compiled": true,
       "program_run": true
+    },
+    {
+      "date": "2026-09-30",
+      "lesson_id": "08",
+      "path": "2026-09-30",
+      "source_read": true,
+      "lesson_delivered": true,
+      "target_board_verified": false,
+      "observation_run": true,
+      "compute_kernel_run": true,
+      "compute_kernel_benchmarked": true,
+      "verification": "2026-09-30/README.md",
+      "implementation_language": "C++17",
+      "program_compiled": true,
+      "program_run": true
     }
   ],
   "backlog": [],
@@ -164,7 +180,11 @@
     {
       "date": "2026-09-28",
       "reason": "Explicit user request: integrate employment-oriented C++/Linux/debug/deployment/performance evidence and OS bridge; lessons01–28 and next07 unchanged. xv6-riscv preferred teaching source; VivekPublicRepo directory verified; PDF content/license pending, supplementary candidate only."
+    },
+    {
+      "date": "2026-09-30",
+      "reason": "User requested four working/deployment capability layers; mapped existing 28 lessons, preserved order and historical progress. Actual delivery08 advances to09 separately."
     }
   ],
-  "last_canonical_lesson_date": "2026-09-29"
+  "last_canonical_lesson_date": "2026-09-30"
 }

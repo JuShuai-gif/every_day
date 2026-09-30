@@ -1,0 +1,105 @@
+{
+  "method": "llm_int8",
+  "repository": "https://github.com/bitsandbytes-foundation/bitsandbytes.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-09-30T01:08:32.024917+00:00",
+  "commit": null,
+  "cache": ".tmp/quant_sources/llm_int8-7e0ny25j",
+  "status": "failed",
+  "source_read": false,
+  "example_run": false,
+  "files": [],
+  "errors": [
+    {
+      "reason": "Cloning into '/Users/guhaoran/code/EveryDay/systems_practice/.tmp/quant_sources/llm_int8-7e0ny25j/repo'...\nfatal: unable to access 'https://github.com/bitsandbytes-foundation/bitsandbytes.git/': Could not resolve host: github.com"
+    }
+  ],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example.",
+  "subsequent_web_review": {
+    "repository": "https://github.com/bitsandbytes-foundation/bitsandbytes",
+    "ref": "0.48.1",
+    "commit": "7e16503e403de460d4ed7dfd6c90a656628f5149",
+    "read_date": "2026-09-30",
+    "license": "MIT",
+    "relationship": "Complete native Linear8bitLt usage example; no independent math stand-in",
+    "implementation_read": true,
+    "files": [
+      {
+        "path": "bitsandbytes/nn/modules.py",
+        "symbols": [
+          "Int8Params._quantize",
+          "Int8Params.to",
+          "Linear8bitLt.forward",
+          "_save_to_state_dict",
+          "_load_from_state_dict"
+        ],
+        "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/0.48.1/bitsandbytes/nn/modules.py",
+        "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/7e16503e403de460d4ed7dfd6c90a656628f5149/bitsandbytes/nn/modules.py"
+      },
+      {
+        "path": "bitsandbytes/autograd/_functions.py",
+        "symbols": [
+          "matmul",
+          "MatMul8bitLt.forward"
+        ],
+        "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/0.48.1/bitsandbytes/autograd/_functions.py",
+        "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/7e16503e403de460d4ed7dfd6c90a656628f5149/bitsandbytes/autograd/_functions.py"
+      },
+      {
+        "path": "bitsandbytes/backends/default/ops.py",
+        "symbols": [
+          "int8_mixed_scaled_mm",
+          "int8_vectorwise_quant"
+        ],
+        "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/0.48.1/bitsandbytes/backends/default/ops.py",
+        "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/7e16503e403de460d4ed7dfd6c90a656628f5149/bitsandbytes/backends/default/ops.py"
+      },
+      {
+        "path": "bitsandbytes/backends/cuda/ops.py",
+        "symbols": [
+          "int8_linear_matmul",
+          "int8_vectorwise_quant"
+        ],
+        "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/0.48.1/bitsandbytes/backends/cuda/ops.py",
+        "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/7e16503e403de460d4ed7dfd6c90a656628f5149/bitsandbytes/backends/cuda/ops.py"
+      },
+      {
+        "path": "bitsandbytes/backends/cpu/ops.py",
+        "symbols": [
+          "int8_linear_matmul"
+        ],
+        "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/0.48.1/bitsandbytes/backends/cpu/ops.py",
+        "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/7e16503e403de460d4ed7dfd6c90a656628f5149/bitsandbytes/backends/cpu/ops.py"
+      },
+      {
+        "path": "pyproject.toml",
+        "symbols": [
+          "dependencies"
+        ],
+        "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/0.48.1/pyproject.toml",
+        "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/7e16503e403de460d4ed7dfd6c90a656628f5149/pyproject.toml"
+      },
+      {
+        "path": "CMakeLists.txt",
+        "symbols": [
+          "COMPUTE_CAPABILITY",
+          "CMAKE_CUDA_ARCHITECTURES"
+        ],
+        "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/0.48.1/CMakeLists.txt",
+        "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/7e16503e403de460d4ed7dfd6c90a656628f5149/CMakeLists.txt"
+      },
+      {
+        "path": "LICENSE",
+        "symbols": [
+          "MIT"
+        ],
+        "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/0.48.1/LICENSE",
+        "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/7e16503e403de460d4ed7dfd6c90a656628f5149/LICENSE"
+      }
+    ],
+    "commit_evidence": "https://github.com/bitsandbytes-foundation/bitsandbytes/commit/7e16503e403de460d4ed7dfd6c90a656628f5149",
+    "read_scope": "Implementation bodies read at tag 0.48.1; release tag points to recorded full commit. Raw full-hash requests returned Cache miss; main README read after tag README failed.",
+    "call_chain": "Linear8bitLt.forward -> bnb.matmul -> MatMul8bitLt.forward -> int8_vectorwise_quant + int8_mixed_scaled_mm -> integer GEMM + FP16 outlier residual from reconstructed INT8 weights"
+  },
+  "fetch_fields_preserved": true
+}

@@ -12,7 +12,7 @@
 
 每课的 README 与代码、运行脚本和结果放在一起。学习路线、栏目规则等通用说明集中在 docs/。
 
-当前入口：[2026-09-29 主课](daily/2026-09-29/README.md) · [SmoothQuant](quantization/2026-09-29/smoothquant/README.md) · [ARM07](arm/2026-09-29/README.md) · [论文两篇](paper/2026-09-29/README.md) · [OS02](os/2026-09-29/README.md) · [C++17 第01课](cpp17/2026-09-29/README.md)。
+当前入口：[2026-09-30 主课](daily/2026-09-30/README.md) · [LLM.int8](quantization/2026-09-30/llm_int8/README.md) · [ARM08](arm/2026-09-30/README.md) · [论文两篇](paper/2026-09-30/README.md) · [OS03](os/2026-09-30/README.md) · [C++17 第02课](cpp17/2026-09-30/README.md)。
 
 旧规范和旧总索引文件保留为兼容导航，正文只有一份；历史日志中的旧路径保留原样。迁移对应表见 [目录说明](docs/LAYOUT.md)。
 

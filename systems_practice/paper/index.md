@@ -22,6 +22,8 @@
 | 2026-09-28 | [Rate-Distortion Perspective](2026-09-28/02-rate-distortion/README.md) / 2026-09-02 | 固定分布与码率的VQ/PQ/SQ比较 | 中到难：实现审查待补 | Python真实Lloyd更新、训练目标/空簇检查通过；非作者训练 |
 | 2026-09-29 | [Train Overcomplete, Deploy Compact: Scaling Recovery Capacity for Structured LLM Pruning](2026-09-29/01-overrep/README.md) / 2026-09-07 | 训练增容与退火后精确合并 | 完整复现难：作者实现未公开 | CPU独立小例子240次实际更新、合并检查通过；非模型复现 |
 | 2026-09-29 | [Fine-Tuning Low-Bit Models with Gradient in Quantized Code Space](2026-09-29/02-gradcodes/README.md) / 2026-08-31 | 梯度引导离散候选、真实损失接纳 | 中到难：核心实现/环境待审计 | CPU小例子80次scale更新、2次码更新；非原生低位kernel |
+| 2026-09-30 | [When Quantization Breaks Memory: Recurrent-State Write-Back in Low-Precision Temporal Inference](2026-09-30/01-writeback/README.md) / 2026-09-03 | 状态回写量化吞掉小更新；误差反馈与真实状态存储 | 完整复现难：作者实现未核实/未公开 | Python独立机制检查通过；无模型/硬件复现 |
+| 2026-09-30 | [When Compression Scores Cannot Decide: Information Boundaries for Group-Robust LLM Pruning](2026-09-30/02-group-risk/README.md) / 2026-08-03 | 同局部分数可对应相反最差组决策；完整mask风险边界 | 完整复现难：作者实现未核实/未公开 | Python独立机制检查通过；无模型/硬件复现 |
 
 
 下一期继续检索新论文；不重复已归档 arXiv ID。完整进度见 [progress.json](progress.json)。
