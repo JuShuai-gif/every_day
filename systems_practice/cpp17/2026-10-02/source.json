@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-02",
+  "repository": "https://github.com/llvm/llvm-project",
+  "ref": "release/18.x",
+  "commit": null,
+  "source_read": true,
+  "files": [
+    {
+      "path": "libcxx/include/__memory/unique_ptr.h",
+      "symbols": [
+        "unique_ptr move constructor",
+        "operator=",
+        "release",
+        "reset",
+        "~unique_ptr"
+      ],
+      "url": "https://github.com/llvm/llvm-project/blob/release/18.x/libcxx/include/__memory/unique_ptr.h"
+    }
+  ],
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "relationship": "independent teaching example; no upstream implementation copied",
+  "search_attempts": [
+    {
+      "url": "https://www.google.com/search?q=NEON+尾部+量化+GEMM+校准",
+      "status": "tool inaccessible / Internal Error"
+    },
+    {
+      "url": "https://zhuanlan.zhihu.com/p/701361665",
+      "status": "403 Forbidden; no body read"
+    }
+  ]
+}

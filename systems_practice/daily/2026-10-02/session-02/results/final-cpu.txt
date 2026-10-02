@@ -1,0 +1,9 @@
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-02/session-02/build/cpu
+[ 50%] Building CXX object CMakeFiles/cpu.dir/src/cpu.cpp.o
+[100%] Linking CXX executable cpu
+[100%] Built target cpu
+PASS mapping_cases=196 invalid=4 CPU correctness only
+
+exit_code=0

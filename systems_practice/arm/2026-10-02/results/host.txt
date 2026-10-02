@@ -1,0 +1,48 @@
+Apple clang version 21.0.0 (clang-2100.1.1.101)
+Target: arm64-apple-darwin25.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+scalar CPU batch_mean_us p50=0.963547 p95=0.983078
+neon CPU batch_mean_us p50=0.0686797 p95=0.0758516
+PASS 4128 offset/length cases, 8 guard-page tails, invalid capacity; checksum=7710720
+scalar CPU batch_mean_us p50=4.80957 p95=4.92123
+neon CPU batch_mean_us p50=0.339187 p95=0.345383
+PASS 4128 offset/length cases, 8 guard-page tails, invalid capacity; checksum=7710720
+_neon:                                  ; @neon
+	.cfi_startproc
+; %bb.0:
+	cmp	x2, #16
+	b.lo	LBB2_4
+; %bb.1:
+	mov	x8, #0                          ; =0x0
+	movi.16b	v0, #1
+	mov	x9, x2
+LBB2_2:                                 ; =>This Inner Loop Header: Depth=1
+	ldr	q1, [x0, x8]
+	add.16b	v1, v1, v0
+	str	q1, [x1, x8]
+	add	x8, x8, #16
+	sub	x9, x9, #16
+	cmp	x9, #15
+	b.hi	LBB2_2
+; %bb.3:
+	subs	x9, x2, x8
+	b.hi	LBB2_5
+	b	LBB2_7
+LBB2_4:
+	mov	x8, #0                          ; =0x0
+	subs	x9, x2, x8
+	b.ls	LBB2_7
+LBB2_5:
+	add	x10, x1, x8
+	add	x8, x0, x8
+LBB2_6:                                 ; =>This Inner Loop Header: Depth=1
+	ldrb	w11, [x8], #1
+	add	w11, w11, #1
+	strb	w11, [x10], #1
+	subs	x9, x9, #1
+	b.ne	LBB2_6
+LBB2_7:
+	ret
+	.cfi_endproc
+                                        ; -- End function

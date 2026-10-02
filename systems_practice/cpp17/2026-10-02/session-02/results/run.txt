@@ -1,0 +1,12 @@
+Apple clang version 21.0.0 (clang-2100.1.1.101)
+Target: arm64-apple-darwin25.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+noexcept=1 copies=0 moves=4
+noexcept=0 copies=4 moves=0
+PASS copy_failures=4 no_leaks=1
+noexcept=1 copies=0 moves=4
+noexcept=0 copies=4 moves=0
+PASS copy_failures=4 no_leaks=1
+
+exit_code=0

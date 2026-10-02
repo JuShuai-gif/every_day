@@ -2,12 +2,13 @@
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
   "created_on": "2026-09-29",
-  "last_delivery_date": "2026-10-01",
-  "next_lesson_id": "04",
+  "last_delivery_date": "2026-10-02",
+  "next_lesson_id": "05",
   "delivered_lesson_ids": [
     "01",
     "02",
-    "03"
+    "03",
+    "04"
   ],
   "history": [
     {
@@ -48,6 +49,37 @@
       "verification": "2026-10-01/verification.json",
       "host_compile": true,
       "sanitize_passed": true
+    },
+    {
+      "date": "2026-10-02",
+      "lesson_id": "03",
+      "path": "2026-10-02",
+      "source_read": true,
+      "lesson_delivered": true,
+      "target_board_verified": false,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "version_pinned": false,
+      "verification": "2026-10-02/verification.json",
+      "status": "supplemental_out_of_order",
+      "counts_toward_daily_progress": false,
+      "reconciled_at": "2026-10-02T10:35:43.289388+08:00",
+      "reason": "Oct1 lesson registration overlapped this run; records preserved, canonical Oct2 lesson is session-02"
+    },
+    {
+      "date": "2026-10-02",
+      "lesson_id": "04",
+      "path": "2026-10-02/session-02",
+      "source_read": true,
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "version_pinned": false,
+      "verification": "2026-10-02/session-02/verification.json"
     }
   ],
   "backlog": [
@@ -70,6 +102,12 @@
       "lesson_id": "03",
       "reason": "Exact source commit and target-board verification pending",
       "verification": "2026-10-01/verification.json"
+    },
+    {
+      "date": "2026-10-02",
+      "lesson_id": "04",
+      "reason": "Exact upstream commit and Linux/target-board validation pending",
+      "verification": "2026-10-02/session-02/verification.json"
     }
   ]
 }

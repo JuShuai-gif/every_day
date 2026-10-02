@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-02",
+  "lesson": "05",
+  "topics": [
+    "05a",
+    "05b"
+  ],
+  "source_read": true,
+  "host_compile": true,
+  "host_run": true,
+  "asan_ubsan": true,
+  "gets": 8014,
+  "puts": 8014,
+  "allocation_failures": 1,
+  "xv6_qemu": false,
+  "linux": false,
+  "board": false,
+  "performance": null,
+  "evidence": [
+    "results/run.txt",
+    "results/final-run.txt"
+  ],
+  "blockers": [
+    "no fixed upstream checkout or target runtime"
+  ],
+  "formatter": "actual scripts/format-cpp.sh executed in scoped mirror; only new files copied back"
+}

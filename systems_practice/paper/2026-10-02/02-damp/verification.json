@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-02",
+  "paper_fulltext_accessed": true,
+  "paper_sections_read": [
+    "main sections 1-7",
+    "equations 6-10",
+    "Table 1",
+    "Appendix A.3-A.5",
+    "Appendix E/F"
+  ],
+  "author_implementation_read": false,
+  "example_delivered": true,
+  "cpu_example_run": true,
+  "full_paper_reproduced": false,
+  "model_accuracy_verified": false,
+  "thor_verified": false,
+  "evidence": [
+    "results/cpu.json"
+  ],
+  "blockers": [
+    "author implementation/commit/license audit pending",
+    "No models/datasets or target device run"
+  ]
+}

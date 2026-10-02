@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-02",
+  "source_read": true,
+  "cpu_release": true,
+  "cpu_asan_ubsan": true,
+  "mapping_comparisons": 196,
+  "invalid_contracts": 4,
+  "cuda_compile": false,
+  "cuda_execution": false,
+  "gpu_correctness": false,
+  "ncu": false,
+  "real_ptx_sass": false,
+  "performance": null,
+  "evidence": [
+    "results/cpu.txt",
+    "results/sanitize.txt",
+    "results/gpu.txt",
+    "results/profile.txt",
+    "results/export-isa.txt",
+    "results/final-cpu.txt",
+    "results/final-sanitize.txt"
+  ],
+  "blockers": [
+    "no nvcc/ncu/Thor device"
+  ],
+  "scope": "CPU address oracle does not validate GPU synchronization or performance",
+  "formatter": "actual scripts/format-cpp.sh executed in scoped mirror; only new files copied back"
+}

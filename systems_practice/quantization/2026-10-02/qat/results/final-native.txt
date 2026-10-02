@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-02/qat/example.py", line 9, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+exit_code=1

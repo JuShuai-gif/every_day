@@ -273,7 +273,8 @@
           "Linux/目标板验证缺口",
           "采用或回滚条件"
         ]
-      }
+      },
+      "source_status": "Selected implementation read 2026-10-02; see 2026-10-02/session-02/README.md; exact commit pending"
     },
     {
       "id": "11",

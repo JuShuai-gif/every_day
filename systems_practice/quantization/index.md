@@ -2,7 +2,7 @@
 
 [栏目说明](../docs/quantization/README.md) · [交付模板](../docs/quantization/LESSON_TEMPLATE.md) · [方法目录](catalog.json) · [进度](progress.json)
 
-下一方法：**QAT**。每日一个方法，按日期独立归档。
+下一方法：**NF4 / QLoRA**（nf4_qlora）。QAT原生运行与源码获取待补，不记为完成。
 
 | 日期 | 类型 | 方法 | 源码 / 阅读 / 示例 / CPU / Thor | 证据 |
 | --- | --- | --- | --- | --- |
@@ -24,3 +24,5 @@
 2026-09-22 用户纠正：四课默认使用 Python/PyTorch 完成原生算法、模型精度、重载和框架级耗时对比；C++位布局/CPU内核为可选补充（native-cpp），不再强制主流程构建。现有C++独立检查通过；原生方法/新torch评估仍因依赖缺失而未运行，HQQ游标不变。
 
 补课失败均单独进入 backlog；24–27是历史课程日期，源码实际读取和尝试日期为2026-09-28，不伪造历史运行。原28日OmniQuant保留。
+
+2026-10-02：[QAT正式栏目](2026-10-02/qat/README.md)：v0.13.0实现已读、原生训练/导出示例已交付；获取否/CPU否/Thor否，完整commit与tag许可待补。[五项状态](2026-10-02/qat/verification.json)。早期[calibration](2026-10-02/calibration/README.md)仅补充；当日只计QAT，旧AWQ仅重试一次。

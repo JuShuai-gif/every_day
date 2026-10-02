@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-02",
+  "source_read": true,
+  "version_pinned": false,
+  "host_compile": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "target_board_verified": false,
+  "evidence": [
+    "results/host.txt",
+    "results/final-host.txt"
+  ],
+  "blockers": [
+    "Exact upstream commit pending",
+    "Linux / target board not run"
+  ],
+  "performance_measured": false
+}

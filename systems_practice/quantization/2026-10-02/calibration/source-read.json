@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-02",
+  "repository": "https://github.com/pytorch/pytorch",
+  "tag": "v2.8.0",
+  "commit": "ba56102387ef21a3b04b357e5b183d48f0afefc7",
+  "commit_evidence": "https://github.com/pytorch/pytorch/releases/tag/v2.8.0",
+  "source_fetched": false,
+  "source_read": true,
+  "local_cache_verified": false,
+  "cache_check": "No observer.py in systems_practice/.tmp/quant_sources",
+  "license": "BSD-style multi-contributor LICENSE",
+  "files": [
+    {
+      "path": "torch/ao/quantization/observer.py",
+      "symbols": [
+        "MinMaxObserver",
+        "HistogramObserver.forward",
+        "_combine_histograms",
+        "_compute_quantization_error",
+        "_non_linear_param_search",
+        "calculate_qparams"
+      ],
+      "read_url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.8.0/torch/ao/quantization/observer.py",
+      "permalink": "https://github.com/pytorch/pytorch/blob/ba56102387ef21a3b04b357e5b183d48f0afefc7/torch/ao/quantization/observer.py"
+    },
+    {
+      "path": "torch/ao/quantization/fake_quantize.py",
+      "symbols": [
+        "FakeQuantize.forward",
+        "disable_observer",
+        "enable_fake_quant"
+      ],
+      "read_url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.8.0/torch/ao/quantization/fake_quantize.py",
+      "permalink": "https://github.com/pytorch/pytorch/blob/ba56102387ef21a3b04b357e5b183d48f0afefc7/torch/ao/quantization/fake_quantize.py"
+    },
+    {
+      "path": "LICENSE",
+      "symbols": [],
+      "read_url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.8.0/LICENSE",
+      "permalink": "https://github.com/pytorch/pytorch/blob/ba56102387ef21a3b04b357e5b183d48f0afefc7/LICENSE"
+    }
+  ],
+  "failed_full_commit_raw": "fake_quantize.py Internal Error; implementation read using release tag URL",
+  "relationship": "Native public API call; independent data, export and evaluation harness",
+  "search_attempts": [
+    {
+      "url": "https://www.google.com/search?q=NEON+尾部+量化+GEMM+校准",
+      "status": "tool inaccessible / Internal Error"
+    },
+    {
+      "url": "https://zhuanlan.zhihu.com/p/701361665",
+      "status": "403 Forbidden; no body read"
+    }
+  ]
+}

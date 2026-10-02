@@ -1,0 +1,10 @@
+Apple clang version 21.0.0 (clang-2100.1.1.101)
+Target: arm64-apple-darwin25.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+cancel sequential=1 neon_tree=0 double_oracle=2
+PASS cases=774 worst_abs_error=8.38486e-07 separate=0 fma=-1.42109e-14 invalid=3
+cancel sequential=1 neon_tree=0 double_oracle=2
+PASS cases=774 worst_abs_error=8.38486e-07 separate=0 fma=-1.42109e-14 invalid=3
+
+exit_code=0

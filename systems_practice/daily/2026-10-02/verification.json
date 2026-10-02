@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-02",
+  "source_read": true,
+  "source_commit_pinned": false,
+  "cpu_compile": true,
+  "cpu_run": true,
+  "sanitizers_passed": true,
+  "gpu_compile": false,
+  "gpu_run": false,
+  "gpu_accuracy": false,
+  "gpu_performance": false,
+  "ncu": false,
+  "generated_ptx": false,
+  "generated_sass": false,
+  "inline_ptx_delivered": true,
+  "thor_verified": false,
+  "format_script": "scripts/format-cpp.sh via scoped mirror, 6 sources; no old user files formatted",
+  "evidence": [
+    "results/cpu.txt",
+    "results/sanitize.txt",
+    "results/final-cpu.txt",
+    "results/final-sanitize.txt",
+    "results/gpu.txt",
+    "results/ncu.txt",
+    "results/isa.txt"
+  ],
+  "blockers": [
+    "No nvcc / NVIDIA GPU / ncu / cuobjdump on host",
+    "Exact CUTLASS/SmoothQuant commit unresolved",
+    "Full-tree diff --check finds preexisting arm/2026-09-23/src/registers.cpp:26 whitespace; untouched"
+  ],
+  "performance_boundary": "CPU scalar numeric/layout reference only; no GPU/NPU/E2E performance measured",
+  "qat": "40 actual STE updates per format, validation selects initial checkpoint in all four modes; no improvement claim",
+  "storage": "deployment tensor payload+metadata bytes, excludes master weights/output/allocator/runtime",
+  "toolchain": "NVIDIA official Thor CUDA13/JetPack7.0 baseline read; installed target driver/L4T/ncu combination unverified"
+}

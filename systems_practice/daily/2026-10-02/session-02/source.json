@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-02",
+  "repository": "https://github.com/NVIDIA/cuda-samples",
+  "ref": "master/read date",
+  "commit": null,
+  "files": [
+    "cpp/6_Performance/transpose/transpose.cu"
+  ],
+  "symbols": [
+    "transposeNaive",
+    "transposeCoalesced",
+    "transposeNoBankConflicts"
+  ],
+  "read_scope": "kernel bodies and host timing loop",
+  "source_read": true,
+  "source_fetched": false,
+  "license": "NVIDIA BSD-3-clause-style header",
+  "relationship": "independent inspired implementation; generalized independent strides/tails; no source copied",
+  "failed_urls": [
+    "https://raw.githubusercontent.com/NVIDIA/cuda-samples/master/Samples/6_Performance/transpose/transpose.cu"
+  ],
+  "failure": "404; resolved cpp/ relocation",
+  "execution_target": "sm_110",
+  "architecture_comparison": "Ampere"
+}

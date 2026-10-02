@@ -1,0 +1,3 @@
+PASS mapping_cases=196 invalid=4 CPU correctness only
+
+exit_code=0

@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-02",
+  "repository": "https://github.com/mit-pdos/xv6-riscv",
+  "ref": "riscv",
+  "commit": null,
+  "source_read": true,
+  "files": [
+    {
+      "path": "kernel/trap.c",
+      "symbols": [
+        "usertrap",
+        "prepare_return"
+      ],
+      "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/trap.c"
+    },
+    {
+      "path": "kernel/trampoline.S",
+      "symbols": [
+        "uservec",
+        "userret"
+      ],
+      "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/trampoline.S"
+    }
+  ],
+  "license": "MIT",
+  "relationship": "independent teaching example; no upstream implementation copied",
+  "search_attempts": [
+    {
+      "url": "https://www.google.com/search?q=NEON+尾部+量化+GEMM+校准",
+      "status": "tool inaccessible / Internal Error"
+    },
+    {
+      "url": "https://zhuanlan.zhihu.com/p/701361665",
+      "status": "403 Forbidden; no body read"
+    }
+  ]
+}

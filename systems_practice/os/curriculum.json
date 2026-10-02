@@ -154,7 +154,7 @@
       "source_candidates": [
         "kernel/kalloc.c"
       ],
-      "source_status": "planned; verify exact version and symbols when delivered",
+      "source_status": "Selected implementation read 2026-10-02; see 2026-10-02/session-02/README.md; exact commit pending",
       "basis": "xv6",
       "edge_problem": "模型加载峰值内存与失败回滚",
       "evidence_target": "分配/失败/释放计数",

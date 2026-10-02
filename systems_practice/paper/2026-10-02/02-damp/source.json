@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-02",
+  "title": "DAMP: Decay-Aware Mixed-Precision Recurrent-State Quantization",
+  "authors": [
+    "Tao Zhang",
+    "Jianchao Tan",
+    "Pingwei Sun",
+    "Yanqi Yu",
+    "Zixu Jiang",
+    "Yuchen Xie",
+    "Xunliang Cai",
+    "Ziqian Zeng"
+  ],
+  "arxiv_id": "2608.27513",
+  "version": "v1",
+  "first_submitted": "2026-08-27",
+  "version_date": "2026-08-27",
+  "url": "https://arxiv.org/html/2608.27513v1",
+  "license": "CC BY 4.0 paper",
+  "read_sections": [
+    "main sections 1-7",
+    "equations 6-10",
+    "Table 1",
+    "Appendix A.3-A.5",
+    "Appendix E/F"
+  ],
+  "publication_status": "preprint; peer review not verified",
+  "author_repository": null,
+  "author_implementation_read": false,
+  "code_license": null,
+  "source_failure": "No author implementation link verified after paper/link/search inspection",
+  "local_example": "independent standard-library mechanism example, not author algorithm reproduction"
+}

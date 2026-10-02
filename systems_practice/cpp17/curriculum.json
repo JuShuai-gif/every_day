@@ -72,7 +72,7 @@
       "prerequisites": [
         "03"
       ],
-      "source_status": "planned; verify repository, version and symbols before delivery",
+      "source_status": "Selected implementation read 2026-10-02; see 2026-10-02/session-02/README.md; exact commit pending",
       "research_plan": {
         "status": "planned; verify sources and implementation before delivery",
         "work_question": "在业务输入与资源生命周期中解释noexcept / vector重分配",

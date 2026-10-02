@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-02",
+  "title": "Debias-SparseGPT: Bias-Aware Pruning for Large Language Models",
+  "authors": [
+    "Irina Proskurina",
+    "Guillaume Metzler",
+    "Antoine Gourru",
+    "Julien Velcin"
+  ],
+  "arxiv_id": "2609.02496",
+  "version": "v1",
+  "first_submitted": "2026-09-02",
+  "version_date": "2026-09-02",
+  "url": "https://arxiv.org/html/2609.02496v1",
+  "license": "CC BY 4.0 paper",
+  "read_sections": [
+    "main sections 1-6",
+    "Algorithm 1",
+    "Tables 2-5",
+    "Limitations",
+    "Appendix C"
+  ],
+  "publication_status": "Author repository claims EMNLP2026; venue proceedings not independently verified",
+  "author_repository": "https://github.com/upunaprosk/debias-llm-compressor",
+  "author_implementation_read": false,
+  "code_license": null,
+  "source_failure": "raw/blob patch Internal Error",
+  "local_example": "independent standard-library mechanism example, not author algorithm reproduction"
+}

@@ -1,0 +1,3 @@
+nvcc missing; no generated PTX/SASS
+
+exit_code=127

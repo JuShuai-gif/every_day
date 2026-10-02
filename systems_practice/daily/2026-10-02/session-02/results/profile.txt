@@ -1,0 +1,3 @@
+ncu missing; Thor profiling not performed
+
+exit_code=127

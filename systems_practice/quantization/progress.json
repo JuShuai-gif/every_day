@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "next_method_id": "qat",
-  "last_lesson_date": "2026-10-01",
+  "next_method_id": "nf4_qlora",
+  "last_lesson_date": "2026-10-02",
   "completed_methods": [],
   "history": [
     {
@@ -222,6 +222,39 @@
       "verification": "2026-10-01/calibration/verification.json",
       "status": "partial; clone DNS, missing torch, Thor backend unverified",
       "native_api_language": "Python/PyTorch"
+    },
+    {
+      "date": "2026-10-02",
+      "method": "calibration",
+      "commit": "ba56102387ef21a3b04b357e5b183d48f0afefc7",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "native_api_language": "Python/PyTorch",
+      "lesson": "2026-10-02/calibration/README.md",
+      "verification": "2026-10-02/calibration/verification.json",
+      "status": "supplemental_out_of_order; does not advance cursor",
+      "counts_toward_daily_progress": false,
+      "reconciled_at": "2026-10-02T10:35:43.289388+08:00"
+    },
+    {
+      "date": "2026-10-02",
+      "method": "qat",
+      "tag": "v0.13.0",
+      "commit": null,
+      "verified_commit_abbrev": "e318546",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "native_api_language": "Python/PyTorch",
+      "lesson": "2026-10-02/qat/README.md",
+      "verification": "2026-10-02/qat/verification.json",
+      "counts_toward_daily_progress": true,
+      "status": "partial; clone DNS and missing torch; full commit/license/Thor pending"
     }
   ],
   "backlog": [
@@ -236,9 +269,9 @@
       "example_delivered": true,
       "cpu_example_run": false,
       "thor_verified": false,
-      "last_retry_date": "2026-10-01",
+      "last_retry_date": "2026-10-02",
       "latest_verification": "2026-09-19/awq/verification.json",
-      "latest_source_retry": "2026-10-01/awq-retry-source.json"
+      "latest_source_retry": "2026-10-02/awq-retry-source.json"
     },
     {
       "method": "gptq",
@@ -384,12 +417,34 @@
       "status": "partial; clone DNS, missing torch, Thor backend unverified",
       "native_api_language": "Python/PyTorch",
       "reason": "Native clone/runtime and Thor verification pending"
+    },
+    {
+      "method": "calibration",
+      "date": "2026-10-02",
+      "reason": "clone DNS; no cached checkout; native torch missing; Thor backend unverified",
+      "latest_verification": "2026-10-02/calibration/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false
+    },
+    {
+      "method": "qat",
+      "date": "2026-10-02",
+      "reason": "clone DNS; no verified cache; torch missing; full hash and tag LICENSE pending; Thor backend unverified",
+      "latest_verification": "2026-10-02/qat/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false
     }
   ],
   "policy": "One quantization lesson per Asia/Shanghai calendar day, independent of main rotation. Preparation does not advance cursor. Daily attempted lessons may advance cursor but failures stay in backlog and never enter completed_methods. Completion requires source read and concrete upstream usage example delivered; execution evidence tracked separately.",
   "last_language_audit": "2026-09-22T10:43:01.386131+08:00",
   "language_policy": "Torch-first for algorithms/models/precision/framework timing; C++ optional for explicit layout/CPU kernel studies",
-  "last_canonical_lesson_date": "2026-10-01",
+  "last_canonical_lesson_date": "2026-10-02",
   "backfill_reconciled_at": "2026-09-28T05:01:42.754872+00:00",
-  "reconciliation_note": "24–27 filled by explicit user request; existing 28 OmniQuant retained as supplemental, not counted twice. Failed native validations remain backlog. No second old backlog retry on actual run day."
+  "reconciliation_note": "2026-10-02 concurrent Oct1 registration corrected: calibration draft retained as supplemental; QAT canonical. One old backlog retry AWQ only. Earlier backfill history preserved."
 }

@@ -30,3 +30,5 @@
 下一期继续检索新论文；不重复已归档 arXiv ID。完整进度见 [progress.json](progress.json)。
 
 2026-09-22 历史四例均已迁移为 C++17，并通过 Release 与 ASan/UBSan；旧 Python 输出保留为历史，新结果在各课 cpp-output.json。未新增论文或推进游标。详见 [语言审查](../docs/LANGUAGE_AUDIT.md)。
+
+2026-10-02：[DAMP：衰减感知状态精度](2026-10-02/02-damp/README.md) + [GSQ：Gumbel网格优化](2026-10-02/03-gsq/README.md)。主文选段已读，两个标准库机制例实际通过；GSQ核心源码已读，均未复现原模型。Debias重复材料保留为补充，不计新论文。[当日入口](2026-10-02/README.md)。

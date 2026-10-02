@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-02",
+  "read_at": "2026-10-02T01:20:19.560529+00:00",
+  "source_read": true,
+  "sources": [
+    {
+      "repository": "https://github.com/NVIDIA/cutlass",
+      "ref": "main",
+      "commit": null,
+      "file": "include/cutlass/numeric_conversion.h",
+      "symbols": [
+        "NumericArrayConverter<half_t,int4b_t,N>",
+        "to_reg",
+        "packed_convert",
+        "convert"
+      ],
+      "read_range": "INT4 to half specialization; no full repository review",
+      "license": "BSD-3-Clause",
+      "relationship": "inspiration; independent simple signed bit extraction and tiled kernel"
+    },
+    {
+      "repository": "https://github.com/mit-han-lab/smoothquant",
+      "ref": "main",
+      "commit": null,
+      "file": "smoothquant/smooth.py",
+      "symbols": [
+        "smooth_ln_fcs",
+        "smooth_lm"
+      ],
+      "license": "MIT (project)",
+      "relationship": "independent explicit activation/weight scaling; not upstream model transformation"
+    }
+  ],
+  "search_attempts": [
+    {
+      "url": "https://www.google.com/search?q=NEON+尾部+量化+GEMM+校准",
+      "status": "tool inaccessible / Internal Error"
+    },
+    {
+      "url": "https://zhuanlan.zhihu.com/p/701361665",
+      "status": "403 Forbidden; no body read"
+    }
+  ],
+  "code_origin": "2026-10-01 unarchived local drafts copied without modifying originals; reviewed, formatted and freshly tested on 2026-10-02",
+  "official_docs": [
+    "https://developer.nvidia.com/blog/whats-new-in-cuda-toolkit-13-0-for-jetson-thor-unified-arm-ecosystem-and-more/",
+    "https://docs.nvidia.com/cuda/archive/13.0.0/parallel-thread-execution/index.html",
+    "https://docs.nvidia.com/cuda/archive/13.0.0/turing-tuning-guide/index.html"
+  ],
+  "failed_docs": [
+    "https://developer.nvidia.com/embedded/jetpack-sdk-70",
+    "https://docs.nvidia.com/cuda/parallel-thread-execution/index.html"
+  ],
+  "target": "sm_110",
+  "comparison": "Turing SM75 theory only",
+  "exact_commits_pending": true
+}

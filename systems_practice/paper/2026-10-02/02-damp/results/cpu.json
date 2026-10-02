@@ -1,0 +1,32 @@
+{
+  "injection_energy": [
+    4.0,
+    1.0,
+    0.1,
+    0.05
+  ],
+  "retention": [
+    0.1,
+    0.99,
+    0.8,
+    0.5
+  ],
+  "risk": [
+    4.040404040404041,
+    50.25125628140696,
+    0.2777777777777779,
+    0.06666666666666667
+  ],
+  "finite_impulse_energy": [
+    4.04040404040404,
+    50.25125628140685,
+    0.27777777777777773,
+    0.06666666666666665
+  ],
+  "protect_energy": 0,
+  "protect_risk": 1,
+  "remaining_energy_only": 50.59570072585141,
+  "remaining_risk": 4.384848484848485,
+  "common_decay_and_unit_boundary": "PASS",
+  "scope": "CPU scalar proxy; no measured compression or model accuracy"
+}

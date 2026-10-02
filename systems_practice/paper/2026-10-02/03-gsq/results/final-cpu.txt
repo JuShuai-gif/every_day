@@ -1,0 +1,18 @@
+{
+  "steps": 600,
+  "initial_scale": 0.8,
+  "final_scale": 0.8009117152290245,
+  "finite_difference_max_error": 7.633824128383537e-13,
+  "hard_codes": [
+    1,
+    1,
+    2,
+    3
+  ],
+  "hard_mse": 0.04055503720289447,
+  "payload_bytes": 5,
+  "fp32_weights_bytes": 16,
+  "boundary": "four weights only; stochastic soft training and real 2-bit packing; no model reconstruction or native kernel"
+}
+
+exit_code=0

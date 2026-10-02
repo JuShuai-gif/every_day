@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-02",
+  "repository": "https://github.com/llvm/llvm-project",
+  "ref": "release/18.x",
+  "commit": null,
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "files": [
+    "libcxx/include/vector",
+    "libcxx/include/__memory/uninitialized_algorithms.h"
+  ],
+  "symbols": [
+    "reserve",
+    "__swap_out_circular_buffer",
+    "__uninitialized_allocator_move_if_noexcept"
+  ],
+  "source_read": true,
+  "relationship": "independent instrumented C++17 test; host Apple libc++ not asserted identical upstream build"
+}

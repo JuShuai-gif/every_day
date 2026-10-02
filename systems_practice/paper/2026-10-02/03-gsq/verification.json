@@ -1,0 +1,21 @@
+{
+  "id": "arxiv:2604.18556",
+  "date": "2026-10-02",
+  "primary_fulltext_read": true,
+  "author_core_source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": true,
+  "training_updates": 600,
+  "finite_difference_checked": true,
+  "actual_payload_bytes": 5,
+  "original_model_reproduction": false,
+  "thor_verified": false,
+  "performance": null,
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "blockers": [
+    "full commit/dependency/training/export/eval audit pending",
+    "no author model or target hardware run"
+  ]
+}

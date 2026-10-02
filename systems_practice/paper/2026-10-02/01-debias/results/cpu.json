@@ -1,0 +1,44 @@
+{
+  "results": [
+    {
+      "alpha": 0.0,
+      "hessian": [
+        [
+          10.1,
+          0.0
+        ],
+        [
+          0.0,
+          10.1
+        ]
+      ],
+      "scores": [
+        5.05,
+        3.2320000000000007
+      ],
+      "pruned": 1,
+      "objective": 3.2320000000000015
+    },
+    {
+      "alpha": 1.0,
+      "hessian": [
+        [
+          10.1,
+          0.0
+        ],
+        [
+          0.0,
+          50.1
+        ]
+      ],
+      "scores": [
+        5.05,
+        16.032000000000004
+      ],
+      "pruned": 0,
+      "objective": 5.05
+    }
+  ],
+  "identical_pair_and_singular_checks": "PASS",
+  "scope": "CPU independent 2D quadratic model"
+}

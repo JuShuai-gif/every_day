@@ -1,0 +1,199 @@
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-02/build/sanitize
+[ 50%] Building CXX object CMakeFiles/quant_cpu.dir/src/main.cpp.o
+[100%] Linking CXX executable quant_cpu
+[100%] Built target quant_cpu
+PASS group32 two-tile flush oracle=42 wrong-global-scale=330
+PASS half finite roundtrip/ties, signed INT4/8 packing, odd tails, K boundaries, zero scale, independent dequant GEMM
+BASELINE FP32 cpu_gemm_p50_ms=0.073125 input_weight_bytes=13260
+BASELINE FP16_rounding_reference_expanded_FP32_accumulate nrmse=0.000298685306 cpu_gemm_p50_ms=0.07425 input_weight_bytes=6630
+| Format | Method | NRMSE | MaxAbs | Cosine | Shift NRMSE | Clip fraction | W payload B | Metadata B | A payload B | Total B | FP16/total | CPU packed GEMM p50 ms | Alpha | Aclip | Wclip | QAT step | Train MSE before/after |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| W4A4 | absmax | 0.227617825 | 3.31598687 | 0.973801694 | 0.185885636 | 0.000480769231 | 618 | 492 | 1040 | 2150 | 3.08372093 | 0.339375 | -1 | 1 | 1 | 0 | 0 / 0 |
+| W4A4 | smoothquant | 0.113882121 | 1.6962204 | 0.993521032 | 0.532580358 | 0.000480769231 | 618 | 492 | 1040 | 2150 | 3.08372093 | 0.422833 | 0.5 | 1 | 1 | 0 | 0 / 0 |
+| W4A4 | calibrated | 0.107532623 | 1.69710898 | 0.994214634 | 0.529237429 | 0.00144230769 | 618 | 492 | 1040 | 2150 | 3.08372093 | 0.4245 | 0.5 | 0.949999988 | 1 | 0 | 0 / 0 |
+| W4A4 | outlier | 0.0197030417 | 0.295658112 | 0.999806279 | 0.639042277 | 0.0446428571 | 694 | 500 | 1168 | 2362 | 2.80694327 | 0.450459 | 0.5 | 0.949999988 | 0.949999988 | 0 | 0 / 0 |
+| W4A4 | qat | 0.0197030417 | 0.295658112 | 0.999806279 | 0.639042277 | 0.0446428571 | 694 | 500 | 1168 | 2362 | 2.80694327 | 0.451625 | 0.5 | 0.949999988 | 0.949999988 | 0 | 0.00742905293 / 0.00742905293 |
+QAT_TRACE W4A4 steps=40 changed_master_updates=46461 changed_final_packed_bytes=291 train_last=0.00746907375 selected_step=0
+TRAIN 4/4 step=0 mse=0.00742905293
+TRAIN 4/4 step=1 mse=0.00602546047
+TRAIN 4/4 step=2 mse=0.00568032612
+TRAIN 4/4 step=3 mse=0.00542955728
+TRAIN 4/4 step=4 mse=0.00533462007
+TRAIN 4/4 step=5 mse=0.00536436102
+TRAIN 4/4 step=6 mse=0.00530698557
+TRAIN 4/4 step=7 mse=0.00561350627
+TRAIN 4/4 step=8 mse=0.0051967304
+TRAIN 4/4 step=9 mse=0.00575415289
+TRAIN 4/4 step=10 mse=0.00551274399
+TRAIN 4/4 step=11 mse=0.00561357659
+TRAIN 4/4 step=12 mse=0.00582241059
+TRAIN 4/4 step=13 mse=0.0060017344
+TRAIN 4/4 step=14 mse=0.00552154069
+TRAIN 4/4 step=15 mse=0.00569273779
+TRAIN 4/4 step=16 mse=0.00631686439
+TRAIN 4/4 step=17 mse=0.00597308234
+TRAIN 4/4 step=18 mse=0.00652645495
+TRAIN 4/4 step=19 mse=0.00663561834
+TRAIN 4/4 step=20 mse=0.00651399738
+TRAIN 4/4 step=21 mse=0.00623627621
+TRAIN 4/4 step=22 mse=0.00661528491
+TRAIN 4/4 step=23 mse=0.0060370477
+TRAIN 4/4 step=24 mse=0.00659207483
+TRAIN 4/4 step=25 mse=0.00664647225
+TRAIN 4/4 step=26 mse=0.00645596474
+TRAIN 4/4 step=27 mse=0.00664053436
+TRAIN 4/4 step=28 mse=0.00633313613
+TRAIN 4/4 step=29 mse=0.00632790161
+TRAIN 4/4 step=30 mse=0.00730072057
+TRAIN 4/4 step=31 mse=0.00688003463
+TRAIN 4/4 step=32 mse=0.00680906622
+TRAIN 4/4 step=33 mse=0.00686223506
+TRAIN 4/4 step=34 mse=0.00766699838
+TRAIN 4/4 step=35 mse=0.00809459361
+TRAIN 4/4 step=36 mse=0.00756108278
+TRAIN 4/4 step=37 mse=0.0079086713
+TRAIN 4/4 step=38 mse=0.00717016722
+TRAIN 4/4 step=39 mse=0.00769289501
+| W4A16 | absmax | 0.0708170329 | 0.921419144 | 0.997491869 | 0.0670337937 | 0 | 618 | 492 | 4160 | 5270 | 1.25806452 | 0.228792 | -1 | 1 | 1 | 0 | 0 / 0 |
+| W4A16 | smoothquant | 0.0550575072 | 0.943455696 | 0.998514271 | 0.155485345 | 0 | 618 | 492 | 4160 | 5270 | 1.25806452 | 0.229542 | 0.5 | 1 | 1 | 0 | 0 / 0 |
+| W4A16 | calibrated | 0.0426062808 | 0.601123333 | 0.999093439 | 0.0903694229 | 0 | 618 | 492 | 4160 | 5270 | 1.25806452 | 0.224209 | 0.25 | 1 | 1 | 0 | 0 / 0 |
+| W4A16 | outlier | 0.0136085656 | 0.215077758 | 0.999907401 | 0.0476765138 | 0 | 694 | 500 | 4288 | 5482 | 1.20941262 | 0.231709 | 0.5 | 1 | 1 | 0 | 0 / 0 |
+| W4A16 | qat | 0.0136085656 | 0.215077758 | 0.999907401 | 0.0476765138 | 0 | 694 | 500 | 4288 | 5482 | 1.20941262 | 0.225791 | 0.5 | 1 | 1 | 0 | 0.00347819907 / 0.00347819907 |
+QAT_TRACE W4A16 steps=40 changed_master_updates=47716 changed_final_packed_bytes=196 train_last=0.00851817367 selected_step=0
+TRAIN 4/16 step=0 mse=0.00347819907
+TRAIN 4/16 step=1 mse=0.00307506796
+TRAIN 4/16 step=2 mse=0.00335330603
+TRAIN 4/16 step=3 mse=0.00363192559
+TRAIN 4/16 step=4 mse=0.00414032446
+TRAIN 4/16 step=5 mse=0.0044573164
+TRAIN 4/16 step=6 mse=0.00477872738
+TRAIN 4/16 step=7 mse=0.00445610534
+TRAIN 4/16 step=8 mse=0.00495112099
+TRAIN 4/16 step=9 mse=0.00535731733
+TRAIN 4/16 step=10 mse=0.00574372545
+TRAIN 4/16 step=11 mse=0.00488028839
+TRAIN 4/16 step=12 mse=0.00554878371
+TRAIN 4/16 step=13 mse=0.00553360754
+TRAIN 4/16 step=14 mse=0.00583283072
+TRAIN 4/16 step=15 mse=0.00638780145
+TRAIN 4/16 step=16 mse=0.00722563896
+TRAIN 4/16 step=17 mse=0.0072680243
+TRAIN 4/16 step=18 mse=0.00726786155
+TRAIN 4/16 step=19 mse=0.00621003297
+TRAIN 4/16 step=20 mse=0.00639273495
+TRAIN 4/16 step=21 mse=0.00728886761
+TRAIN 4/16 step=22 mse=0.00745655015
+TRAIN 4/16 step=23 mse=0.00650957532
+TRAIN 4/16 step=24 mse=0.00700480404
+TRAIN 4/16 step=25 mse=0.00763465113
+TRAIN 4/16 step=26 mse=0.00747886102
+TRAIN 4/16 step=27 mse=0.00677893859
+TRAIN 4/16 step=28 mse=0.00656729975
+TRAIN 4/16 step=29 mse=0.00760235596
+TRAIN 4/16 step=30 mse=0.00761302389
+TRAIN 4/16 step=31 mse=0.00848188137
+TRAIN 4/16 step=32 mse=0.00739090876
+TRAIN 4/16 step=33 mse=0.00754867947
+TRAIN 4/16 step=34 mse=0.00763488941
+TRAIN 4/16 step=35 mse=0.00816141693
+TRAIN 4/16 step=36 mse=0.00843574669
+TRAIN 4/16 step=37 mse=0.00736774446
+TRAIN 4/16 step=38 mse=0.00721200282
+TRAIN 4/16 step=39 mse=0.00766512457
+| W8A8 | absmax | 0.0192324483 | 0.321383357 | 0.999815048 | 0.0744010828 | 0.000480769231 | 1235 | 492 | 2080 | 3807 | 1.74152876 | 0.438083 | -1 | 1 | 1 | 0 | 0 / 0 |
+| W8A8 | smoothquant | 0.00616795483 | 0.0862436891 | 0.9999811 | 0.525954159 | 0.000480769231 | 1235 | 492 | 2080 | 3807 | 1.74152876 | 0.427125 | 0.5 | 1 | 1 | 0 | 0 / 0 |
+| W8A8 | calibrated | 0.00616795483 | 0.0862436891 | 0.9999811 | 0.525954159 | 0.000480769231 | 1235 | 492 | 2080 | 3807 | 1.74152876 | 0.428209 | 0.5 | 1 | 1 | 0 | 0 / 0 |
+| W8A8 | outlier | 0.00120564742 | 0.0147137642 | 0.999999274 | 0.636911725 | 0 | 1311 | 500 | 2208 | 4019 | 1.6496641 | 0.429875 | -1 | 1 | 1 | 0 | 0 / 0 |
+| W8A8 | qat | 0.00120564742 | 0.0147137642 | 0.999999274 | 0.636911725 | 0 | 1311 | 500 | 2208 | 4019 | 1.6496641 | 0.430917 | -1 | 1 | 1 | 0 | 2.53093346e-05 / 2.53093346e-05 |
+QAT_TRACE W8A8 steps=40 changed_master_updates=47596 changed_final_packed_bytes=351 train_last=2.43920853e-05 selected_step=0
+TRAIN 8/8 step=0 mse=2.53093346e-05
+TRAIN 8/8 step=1 mse=2.20628902e-05
+TRAIN 8/8 step=2 mse=1.87318308e-05
+TRAIN 8/8 step=3 mse=1.93658934e-05
+TRAIN 8/8 step=4 mse=1.9591664e-05
+TRAIN 8/8 step=5 mse=1.88024785e-05
+TRAIN 8/8 step=6 mse=1.83482387e-05
+TRAIN 8/8 step=7 mse=2.02263876e-05
+TRAIN 8/8 step=8 mse=2.02557877e-05
+TRAIN 8/8 step=9 mse=2.06308464e-05
+TRAIN 8/8 step=10 mse=2.00789733e-05
+TRAIN 8/8 step=11 mse=1.99936293e-05
+TRAIN 8/8 step=12 mse=1.97709135e-05
+TRAIN 8/8 step=13 mse=2.09989774e-05
+TRAIN 8/8 step=14 mse=2.1243942e-05
+TRAIN 8/8 step=15 mse=2.13084644e-05
+TRAIN 8/8 step=16 mse=2.2376123e-05
+TRAIN 8/8 step=17 mse=2.26574677e-05
+TRAIN 8/8 step=18 mse=2.29106435e-05
+TRAIN 8/8 step=19 mse=2.10595065e-05
+TRAIN 8/8 step=20 mse=2.14380874e-05
+TRAIN 8/8 step=21 mse=2.27347483e-05
+TRAIN 8/8 step=22 mse=2.44754534e-05
+TRAIN 8/8 step=23 mse=2.19939786e-05
+TRAIN 8/8 step=24 mse=2.05860396e-05
+TRAIN 8/8 step=25 mse=2.22507507e-05
+TRAIN 8/8 step=26 mse=2.28328056e-05
+TRAIN 8/8 step=27 mse=2.33446038e-05
+TRAIN 8/8 step=28 mse=2.29073968e-05
+TRAIN 8/8 step=29 mse=2.72845174e-05
+TRAIN 8/8 step=30 mse=2.60346926e-05
+TRAIN 8/8 step=31 mse=2.47341361e-05
+TRAIN 8/8 step=32 mse=2.42607293e-05
+TRAIN 8/8 step=33 mse=2.21094206e-05
+TRAIN 8/8 step=34 mse=2.40037851e-05
+TRAIN 8/8 step=35 mse=2.64461432e-05
+TRAIN 8/8 step=36 mse=2.76289481e-05
+TRAIN 8/8 step=37 mse=2.53805662e-05
+TRAIN 8/8 step=38 mse=2.36450577e-05
+TRAIN 8/8 step=39 mse=2.35558862e-05
+| W8A16 | absmax | 0.00352344979 | 0.0542254448 | 0.999993914 | 0.0033329952 | 0 | 1235 | 492 | 4160 | 5887 | 1.12621029 | 0.209542 | -1 | 1 | 1 | 0 | 0 / 0 |
+| W8A16 | smoothquant | 0.00301672782 | 0.0420160294 | 0.999995473 | 0.00856525433 | 0 | 1235 | 492 | 4160 | 5887 | 1.12621029 | 0.205875 | 0.5 | 1 | 1 | 0 | 0 / 0 |
+| W8A16 | calibrated | 0.00236252183 | 0.0304412842 | 0.999997257 | 0.00488014165 | 0 | 1235 | 492 | 4160 | 5887 | 1.12621029 | 0.211 | 0.25 | 1 | 1 | 0 | 0 / 0 |
+| W8A16 | outlier | 0.000846424686 | 0.0125310421 | 0.999999648 | 0.00234442658 | 0 | 1311 | 500 | 4288 | 6099 | 1.08706345 | 0.2125 | 0 | 1 | 1 | 0 | 0 / 0 |
+| W8A16 | qat | 0.000846424686 | 0.0125310421 | 0.999999648 | 0.00234442658 | 0 | 1311 | 500 | 4288 | 6099 | 1.08706345 | 0.210208 | 0 | 1 | 1 | 0 | 1.29869039e-05 / 1.29869039e-05 |
+QAT_TRACE W8A16 steps=40 changed_master_updates=47585 changed_final_packed_bytes=210 train_last=2.12977911e-05 selected_step=0
+TRAIN 8/16 step=0 mse=1.29869039e-05
+TRAIN 8/16 step=1 mse=1.03799721e-05
+TRAIN 8/16 step=2 mse=1.18412314e-05
+TRAIN 8/16 step=3 mse=1.21714275e-05
+TRAIN 8/16 step=4 mse=1.24121724e-05
+TRAIN 8/16 step=5 mse=1.33415686e-05
+TRAIN 8/16 step=6 mse=1.42239833e-05
+TRAIN 8/16 step=7 mse=1.59273057e-05
+TRAIN 8/16 step=8 mse=1.55004163e-05
+TRAIN 8/16 step=9 mse=1.70176871e-05
+TRAIN 8/16 step=10 mse=1.63051478e-05
+TRAIN 8/16 step=11 mse=1.64693269e-05
+TRAIN 8/16 step=12 mse=1.70863036e-05
+TRAIN 8/16 step=13 mse=1.80438415e-05
+TRAIN 8/16 step=14 mse=1.88094406e-05
+TRAIN 8/16 step=15 mse=1.85856101e-05
+TRAIN 8/16 step=16 mse=1.82993885e-05
+TRAIN 8/16 step=17 mse=2.04653085e-05
+TRAIN 8/16 step=18 mse=1.92009096e-05
+TRAIN 8/16 step=19 mse=1.8981135e-05
+TRAIN 8/16 step=20 mse=1.84678385e-05
+TRAIN 8/16 step=21 mse=1.96121752e-05
+TRAIN 8/16 step=22 mse=2.03521263e-05
+TRAIN 8/16 step=23 mse=2.23204427e-05
+TRAIN 8/16 step=24 mse=2.12842965e-05
+TRAIN 8/16 step=25 mse=2.10380237e-05
+TRAIN 8/16 step=26 mse=1.93898635e-05
+TRAIN 8/16 step=27 mse=2.18034731e-05
+TRAIN 8/16 step=28 mse=1.92253054e-05
+TRAIN 8/16 step=29 mse=1.98959359e-05
+TRAIN 8/16 step=30 mse=2.08107067e-05
+TRAIN 8/16 step=31 mse=2.11127194e-05
+TRAIN 8/16 step=32 mse=2.2921512e-05
+TRAIN 8/16 step=33 mse=2.16816577e-05
+TRAIN 8/16 step=34 mse=2.09561634e-05
+TRAIN 8/16 step=35 mse=2.2862608e-05
+TRAIN 8/16 step=36 mse=2.28429642e-05
+TRAIN 8/16 step=37 mse=2.41890948e-05
+TRAIN 8/16 step=38 mse=2.28334728e-05
+TRAIN 8/16 step=39 mse=2.16685716e-05
+PASS 20 format/method comparisons; scales/checkpoints fitted without evaluation samples; CPU only, Thor NOT validated
+
+exit_code=0

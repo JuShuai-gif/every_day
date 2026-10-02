@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-02",
+  "repository": "https://github.com/mit-pdos/xv6-riscv",
+  "ref": "riscv/read date",
+  "commit": null,
+  "license": "MIT",
+  "files": [
+    "kernel/kalloc.c"
+  ],
+  "symbols": [
+    "kinit",
+    "freerange",
+    "kfree",
+    "kalloc"
+  ],
+  "read_scope": "complete 78-line allocator",
+  "source_read": true,
+  "relationship": "independent single-thread lifetime model; not a kernel port"
+}

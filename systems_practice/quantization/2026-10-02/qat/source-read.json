@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-02",
+  "repository": "https://github.com/pytorch/ao",
+  "tag": "v0.13.0",
+  "commit": null,
+  "verified_commit_abbrev": "e318546",
+  "read_via": "web raw tag source",
+  "files": [
+    "torchao/quantization/qat/linear.py",
+    "torchao/quantization/qat/fake_quantizer.py",
+    "torchao/quantization/qat/fake_quantize_config.py"
+  ],
+  "symbols": [
+    "FakeQuantizedLinear.from_linear",
+    "FakeQuantizedLinear.forward",
+    "FakeQuantizedLinear.to_linear",
+    "IntxFakeQuantizer.forward",
+    "IntxFakeQuantizer._per_channel_or_group_forward",
+    "IntxFakeQuantizeConfig"
+  ],
+  "call_chain": "from_linear -> FakeQuantizedLinear.forward -> weight_fake_quantizer -> per_group qparams/QDQ -> float linear -> backward/SGD in example",
+  "license": "main LICENSE BSD3 read; tag LICENSE body pending",
+  "source_fetched": false,
+  "source_read": true,
+  "full_commit_permalink_verified": false,
+  "relationship": "native API call; independent training and raw export; not torchao integer deployment backend"
+}

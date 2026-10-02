@@ -1,0 +1,38 @@
+{
+  "method": "calibration",
+  "date": "2026-10-02",
+  "repository": "https://github.com/pytorch/pytorch",
+  "commit": "ba56102387ef21a3b04b357e5b183d48f0afefc7",
+  "source_record": "source.json",
+  "reading_record": "source-read.json",
+  "source_fetched": false,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": [
+    "MinMaxObserver",
+    "HistogramObserver.forward",
+    "_combine_histograms",
+    "_compute_quantization_error",
+    "_non_linear_param_search",
+    "calculate_qparams",
+    "FakeQuantize.forward",
+    "disable_observer",
+    "enable_fake_quant"
+  ],
+  "evidence": [
+    "results/native.txt",
+    "example.py",
+    "source-read.json"
+  ],
+  "blockers": [
+    "git clone failed DNS",
+    "No verified checkout cache",
+    "ModuleNotFoundError: torch",
+    "No Thor; torch2.8 Thor backend compatibility not verified"
+  ],
+  "native_api_language": "Python/PyTorch",
+  "independent_main_cpu_run": true,
+  "independent_main_does_not_verify_native_api": true
+}

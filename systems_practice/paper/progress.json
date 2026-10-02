@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-02T09:19:37.789650+08:00",
+  "updated_at": "2026-10-02T10:35:43.289388+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -296,6 +296,30 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2608.27513",
+      "title": "DAMP: Decay-Aware Mixed-Precision Recurrent-State Quantization",
+      "delivered_on": "2026-10-02",
+      "first_submitted": "2026-08-27",
+      "version_read": "v1",
+      "directory": "2026-10-02/02-damp",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2604.18556",
+      "title": "GSQ: Highly-Accurate Low-Precision Scalar Quantization for LLMs via Gumbel-Softmax Sampling",
+      "delivered_on": "2026-10-02",
+      "first_submitted": "2026-04-20",
+      "version_read": "v1",
+      "directory": "2026-10-02/03-gsq",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
     }
   ],
   "backlog": [
@@ -412,6 +436,18 @@
       "date": "2026-10-01",
       "kind": "author_source_or_full_reproduction",
       "reason": "Master patch implementation read; exact commit, LICENSE body and full model run pending"
+    },
+    {
+      "id": "arxiv:2608.27513",
+      "date": "2026-10-02",
+      "kind": "author_source_or_full_reproduction",
+      "reason": "No author implementation verified"
+    },
+    {
+      "id": "arxiv:2604.18556",
+      "date": "2026-10-02",
+      "kind": "author_source_or_full_reproduction",
+      "reason": "Core source read; full commit and complete training/export/eval audit or model reproduction pending"
     }
   ]
 }

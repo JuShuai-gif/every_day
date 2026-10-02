@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-02",
+  "lesson": "04",
+  "source_read": true,
+  "host_compile": true,
+  "host_run": true,
+  "asan_ubsan": true,
+  "copy_failure_positions": 4,
+  "noexcept_moves": 4,
+  "throwing_move_copies": 4,
+  "board": false,
+  "performance": null,
+  "evidence": [
+    "results/run.txt",
+    "results/final-run.txt"
+  ],
+  "formatter": "actual scripts/format-cpp.sh executed in scoped mirror; only new files copied back"
+}

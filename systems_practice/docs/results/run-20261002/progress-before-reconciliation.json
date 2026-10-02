@@ -1,0 +1,1329 @@
+{
+  "at": "2026-10-02T10:35:43.289388+08:00",
+  "reason": "Concurrent Oct1 completed after initial Oct2 selection; retain pre-correction evidence",
+  "progress": {
+    "arm": {
+      "schema_version": 1,
+      "timezone": "Asia/Shanghai",
+      "last_delivery_date": "2026-10-02",
+      "next_lesson_id": "10",
+      "delivered_lesson_ids": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09"
+      ],
+      "history": [
+        {
+          "date": "2026-09-22",
+          "lesson_id": "01",
+          "path": "2026-09-22",
+          "source_read": true,
+          "lesson_delivered": true,
+          "observation_run": true,
+          "compute_kernel_run": false,
+          "target_board_verified": false,
+          "verification": "2026-09-22/README.md#来源与验证",
+          "implementation_language": "C++17",
+          "program_compiled": true,
+          "program_run": true
+        },
+        {
+          "date": "2026-09-23",
+          "lesson_id": "02",
+          "path": "2026-09-23",
+          "source_read": true,
+          "lesson_delivered": true,
+          "observation_run": true,
+          "compute_kernel_run": true,
+          "compute_kernel_benchmarked": false,
+          "target_board_verified": false,
+          "verification": "2026-09-23/README.md#来源与验证",
+          "implementation_language": "C++17",
+          "program_compiled": true,
+          "program_run": true
+        },
+        {
+          "date": "2026-09-24",
+          "actual_delivery_date": "2026-09-28",
+          "lesson_id": "03",
+          "path": "2026-09-24",
+          "rotation_role": "canonical_backfill",
+          "source_read": true,
+          "lesson_delivered": true,
+          "observation_run": true,
+          "compute_kernel_run": true,
+          "compute_kernel_benchmarked": false,
+          "target_board_verified": false,
+          "verification": "2026-09-24/README.md#来源与验证",
+          "implementation_language": "C++17",
+          "program_compiled": true,
+          "program_run": true
+        },
+        {
+          "date": "2026-09-25",
+          "actual_delivery_date": "2026-09-28",
+          "lesson_id": "04",
+          "path": "2026-09-25",
+          "rotation_role": "canonical_backfill",
+          "source_read": true,
+          "lesson_delivered": true,
+          "observation_run": true,
+          "compute_kernel_run": true,
+          "compute_kernel_benchmarked": false,
+          "target_board_verified": false,
+          "verification": "2026-09-25/README.md#来源与验证",
+          "implementation_language": "C++17",
+          "program_compiled": true,
+          "program_run": true
+        },
+        {
+          "date": "2026-09-26",
+          "actual_delivery_date": "2026-09-28",
+          "lesson_id": "05",
+          "path": "2026-09-26",
+          "rotation_role": "canonical_backfill",
+          "source_read": true,
+          "lesson_delivered": true,
+          "observation_run": true,
+          "compute_kernel_run": true,
+          "compute_kernel_benchmarked": false,
+          "target_board_verified": false,
+          "verification": "2026-09-26/README.md#来源与验证",
+          "implementation_language": "C++17",
+          "program_compiled": true,
+          "program_run": true
+        },
+        {
+          "date": "2026-09-27",
+          "actual_delivery_date": "2026-09-28",
+          "lesson_id": "06",
+          "path": "2026-09-27",
+          "rotation_role": "canonical_backfill",
+          "source_read": true,
+          "lesson_delivered": true,
+          "observation_run": true,
+          "compute_kernel_run": true,
+          "compute_kernel_benchmarked": false,
+          "target_board_verified": false,
+          "verification": "2026-09-27/README.md#来源与验证",
+          "implementation_language": "C++17",
+          "program_compiled": true,
+          "program_run": true
+        },
+        {
+          "date": "2026-09-28",
+          "lesson_id": "03",
+          "path": "2026-09-28",
+          "source_read": true,
+          "lesson_delivered": true,
+          "observation_run": true,
+          "compute_kernel_run": true,
+          "compute_kernel_benchmarked": false,
+          "target_board_verified": false,
+          "verification": "2026-09-28/README.md#来源与验证",
+          "implementation_language": "C++17",
+          "program_compiled": true,
+          "program_run": true,
+          "rotation_role": "supplemental_out_of_order_delivery",
+          "canonical_lesson": "2026-09-24"
+        },
+        {
+          "date": "2026-09-29",
+          "lesson_id": "07",
+          "path": "2026-09-29",
+          "source_read": true,
+          "lesson_delivered": true,
+          "observation_run": true,
+          "compute_kernel_run": true,
+          "compute_kernel_benchmarked": true,
+          "target_board_verified": false,
+          "verification": "2026-09-29/README.md#来源验证与下一节",
+          "implementation_language": "C++17",
+          "program_compiled": true,
+          "program_run": true
+        },
+        {
+          "date": "2026-09-30",
+          "lesson_id": "08",
+          "path": "2026-09-30",
+          "source_read": true,
+          "lesson_delivered": true,
+          "target_board_verified": false,
+          "observation_run": true,
+          "compute_kernel_run": true,
+          "compute_kernel_benchmarked": true,
+          "verification": "2026-09-30/README.md",
+          "implementation_language": "C++17",
+          "program_compiled": true,
+          "program_run": true
+        },
+        {
+          "date": "2026-10-01",
+          "lesson_id": "09",
+          "path": "2026-10-01",
+          "source_read": true,
+          "lesson_delivered": true,
+          "target_board_verified": false,
+          "observation_run": true,
+          "compute_kernel_run": true,
+          "compute_kernel_benchmarked": true,
+          "verification": "2026-10-01/README.md",
+          "implementation_language": "C++17",
+          "program_compiled": true,
+          "program_run": true
+        },
+        {
+          "date": "2026-10-02",
+          "lesson_id": "09",
+          "path": "2026-10-02",
+          "source_read": true,
+          "lesson_delivered": true,
+          "target_board_verified": false,
+          "observation_run": true,
+          "compute_kernel_run": true,
+          "compute_kernel_benchmarked": true,
+          "program_compiled": true,
+          "program_run": true,
+          "implementation_language": "C++17",
+          "verification": "2026-10-02/README.md"
+        }
+      ],
+      "backlog": [
+        {
+          "date": "2026-10-01",
+          "lesson_id": "09",
+          "reason": "Exact source commit and target-board verification pending",
+          "verification": "2026-10-01/README.md"
+        }
+      ],
+      "curriculum_adjustments": [
+        {
+          "date": "2026-09-22",
+          "reason": "User confirmed Cortex coverage; explicitly include Cortex-A at existing nodes04/06/11/15/21/26 and contrast R/M without adding days or advancing progress."
+        },
+        {
+          "date": "2026-09-22",
+          "reason": "Ground daily ARM lessons in actual RK3588/Jetson boards. Added BOARDS.md and per-lesson board context; Thor Neoverse distinct from Orin Cortex-A. No progress advancement."
+        },
+        {
+          "date": "2026-09-22",
+          "reason": "User mandates C/C++ for low-level ARM/CPU/architecture. Replace lesson01 Python query with C++17; preserve original evidence and lesson02 cursor."
+        },
+        {
+          "date": "2026-09-28",
+          "reason": "User-requested chronological backfill24–27 delivers03–06; existing28 lesson03 retained as supplemental and not counted twice."
+        },
+        {
+          "date": "2026-09-28",
+          "reason": "Explicit user request: integrate employment-oriented C++/Linux/debug/deployment/performance evidence and OS bridge; lessons01–28 and next07 unchanged. xv6-riscv preferred teaching source; VivekPublicRepo directory verified; PDF content/license pending, supplementary candidate only."
+        },
+        {
+          "date": "2026-09-30",
+          "reason": "User requested four working/deployment capability layers; mapped existing 28 lessons, preserved order and historical progress. Actual delivery08 advances to09 separately."
+        }
+      ],
+      "last_canonical_lesson_date": "2026-10-02"
+    },
+    "os": {
+      "schema_version": 1,
+      "timezone": "Asia/Shanghai",
+      "created_on": "2026-09-28",
+      "topics_per_day": 2,
+      "next_lesson_id": "05",
+      "last_delivery_date": "2026-10-02",
+      "delivered_lesson_ids": [
+        "01",
+        "02",
+        "03",
+        "04"
+      ],
+      "delivered_topic_ids": [
+        "01a",
+        "01b",
+        "02a",
+        "02b",
+        "03a",
+        "03b",
+        "04a",
+        "04b",
+        "04a",
+        "04b"
+      ],
+      "history": [
+        {
+          "date": "2026-09-28",
+          "lesson_id": "01",
+          "topic_ids": [
+            "01a",
+            "01b"
+          ],
+          "path": "2026-09-28",
+          "source_read": true,
+          "lesson_delivered": true,
+          "version_pinned": false,
+          "host_run": true,
+          "xv6_compiled": false,
+          "qemu_run": false,
+          "linux_run": false,
+          "target_board_verified": false,
+          "verification": "2026-09-28/verification.json"
+        },
+        {
+          "date": "2026-09-29",
+          "lesson_id": "02",
+          "topic_ids": [
+            "02a",
+            "02b"
+          ],
+          "path": "2026-09-29",
+          "source_read": true,
+          "lesson_delivered": true,
+          "version_pinned": false,
+          "host_run": true,
+          "xv6_compiled": false,
+          "qemu_run": false,
+          "linux_run": false,
+          "target_board_verified": false,
+          "verification": "2026-09-29/verification.json"
+        },
+        {
+          "date": "2026-09-30",
+          "lesson_id": "03",
+          "path": "2026-09-30",
+          "source_read": true,
+          "lesson_delivered": true,
+          "target_board_verified": false,
+          "topic_ids": [
+            "03a",
+            "03b"
+          ],
+          "version_pinned": false,
+          "host_run": true,
+          "xv6_compiled": false,
+          "qemu_run": false,
+          "linux_run": false,
+          "verification": "2026-09-30/verification.json"
+        },
+        {
+          "date": "2026-10-01",
+          "lesson_id": "04",
+          "path": "2026-10-01",
+          "source_read": true,
+          "lesson_delivered": true,
+          "target_board_verified": false,
+          "version_pinned": false,
+          "host_run": true,
+          "verification": "2026-10-01/verification.json",
+          "topic_ids": [
+            "04a",
+            "04b"
+          ],
+          "xv6_compiled": false,
+          "qemu_run": false,
+          "linux_run": false
+        },
+        {
+          "date": "2026-10-02",
+          "lesson_id": "04",
+          "path": "2026-10-02",
+          "source_read": true,
+          "lesson_delivered": true,
+          "target_board_verified": false,
+          "host_compile": true,
+          "host_run": true,
+          "sanitize_passed": true,
+          "version_pinned": false,
+          "verification": "2026-10-02/verification.json",
+          "topic_ids": [
+            "04a",
+            "04b"
+          ],
+          "xv6_compiled": false,
+          "qemu_run": false,
+          "linux_run": false
+        }
+      ],
+      "backlog": [
+        {
+          "lesson_id": "01",
+          "kind": "version_pin",
+          "status": "pending",
+          "reason": "git ls-remote DNS failure; source bodies read via web, exact commit unresolved",
+          "record": "2026-09-28/source.json"
+        },
+        {
+          "lesson_id": "01",
+          "kind": "target_validation",
+          "status": "pending",
+          "reason": "No RISC-V toolchain/QEMU or Linux/target board; macOS observations only",
+          "record": "2026-09-28/verification.json"
+        },
+        {
+          "lesson_id": "02",
+          "kind": "version_pin",
+          "status": "pending",
+          "reason": "git ls-remote DNS failure; branch implementation read via web",
+          "record": "2026-09-29/source.json"
+        },
+        {
+          "lesson_id": "02",
+          "kind": "target_validation",
+          "status": "pending",
+          "reason": "No QEMU/toolchain/Linux/board; Mac POSIX only",
+          "record": "2026-09-29/verification.json"
+        },
+        {
+          "lesson_id": "03",
+          "kind": "version_pin",
+          "status": "pending",
+          "reason": "Source read on riscv branch; exact commit unresolved",
+          "record": "2026-09-30/source.json"
+        },
+        {
+          "lesson_id": "03",
+          "kind": "target_validation",
+          "status": "pending",
+          "reason": "Mac POSIX only; no xv6/QEMU/Linux/target board",
+          "record": "2026-09-30/verification.json"
+        },
+        {
+          "date": "2026-10-01",
+          "lesson_id": "04",
+          "reason": "Exact source commit and target-board verification pending",
+          "verification": "2026-10-01/verification.json"
+        }
+      ]
+    },
+    "cpp17": {
+      "schema_version": 1,
+      "timezone": "Asia/Shanghai",
+      "created_on": "2026-09-29",
+      "last_delivery_date": "2026-10-02",
+      "next_lesson_id": "04",
+      "delivered_lesson_ids": [
+        "01",
+        "02",
+        "03"
+      ],
+      "history": [
+        {
+          "date": "2026-09-29",
+          "lesson_id": "01",
+          "path": "2026-09-29",
+          "source_read": true,
+          "lesson_delivered": true,
+          "host_compile": true,
+          "host_run": true,
+          "sanitize_passed": true,
+          "version_pinned": false,
+          "target_board_verified": false,
+          "verification": "2026-09-29/verification.json"
+        },
+        {
+          "date": "2026-09-30",
+          "lesson_id": "02",
+          "path": "2026-09-30",
+          "source_read": true,
+          "lesson_delivered": true,
+          "target_board_verified": false,
+          "host_compile": true,
+          "host_run": true,
+          "sanitize_passed": true,
+          "version_pinned": false,
+          "verification": "2026-09-30/verification.json"
+        },
+        {
+          "date": "2026-10-01",
+          "lesson_id": "03",
+          "path": "2026-10-01",
+          "source_read": true,
+          "lesson_delivered": true,
+          "target_board_verified": false,
+          "version_pinned": false,
+          "host_run": true,
+          "verification": "2026-10-01/verification.json",
+          "host_compile": true,
+          "sanitize_passed": true
+        },
+        {
+          "date": "2026-10-02",
+          "lesson_id": "03",
+          "path": "2026-10-02",
+          "source_read": true,
+          "lesson_delivered": true,
+          "target_board_verified": false,
+          "host_compile": true,
+          "host_run": true,
+          "sanitize_passed": true,
+          "version_pinned": false,
+          "verification": "2026-10-02/verification.json"
+        }
+      ],
+      "backlog": [
+        {
+          "lesson_id": "01",
+          "kind": "source_commit_pin",
+          "status": "pending",
+          "reason": "Source read on release/18.x; tag direct requests returned Cache miss, exact commit unresolved",
+          "record": "2026-09-29/source.json"
+        },
+        {
+          "lesson_id": "02",
+          "kind": "source_commit_pin",
+          "status": "pending",
+          "reason": "release/18.x source read; exact commit pending",
+          "record": "2026-09-30/source.json"
+        },
+        {
+          "date": "2026-10-01",
+          "lesson_id": "03",
+          "reason": "Exact source commit and target-board verification pending",
+          "verification": "2026-10-01/verification.json"
+        }
+      ]
+    },
+    "quantization": {
+      "schema_version": 1,
+      "next_method_id": "qat",
+      "last_lesson_date": "2026-10-02",
+      "completed_methods": [],
+      "history": [
+        {
+          "date": "2026-09-19",
+          "method": "awq",
+          "focus": "Upstream activation-aware clipping, native WQLinear packing/export; CPU reconstruction only",
+          "lesson": "2026-09-19/awq/README.md",
+          "verification": "2026-09-19/awq/verification.json",
+          "commit": "d6e797a42b9ef7778de8ee2352116e0f48a78d61",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false,
+          "status": "partial; local checkout and execution blocked",
+          "cpu_backend_language": "C++17",
+          "independent_cpp_backend_verified": true,
+          "native_api_language": "Python/PyTorch algorithm and evaluation",
+          "cpp_backend_optional": true,
+          "torch_evaluation_run": false
+        },
+        {
+          "date": "2026-09-20",
+          "method": "gptq",
+          "focus": "Native GPTQ Hessian/damping/error compensation; PyTorch model evaluation; optional C++ layout experiment",
+          "lesson": "2026-09-20/gptq/README.md",
+          "verification": "2026-09-20/gptq/verification.json",
+          "commit": "2d65066eeb06a5c9ff5184d8cebdf33662c67faf",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false,
+          "status": "partial; source checkout and native execution blocked",
+          "cpu_backend_language": "C++17",
+          "independent_cpp_backend_verified": true,
+          "native_api_language": "Python/PyTorch algorithm and evaluation",
+          "cpp_backend_optional": true,
+          "torch_evaluation_run": false
+        },
+        {
+          "date": "2026-09-21",
+          "method": "adaround",
+          "focus": "Native AIMET learned rounding; soft-folded output hardened with frozen encodings, custom u4 export/reload",
+          "lesson": "2026-09-21/adaround/README.md",
+          "verification": "2026-09-21/adaround/verification.json",
+          "commit": "17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false,
+          "status": "partial; native source checkout/build/execution blocked",
+          "cpu_backend_language": "C++17",
+          "independent_cpp_backend_verified": true,
+          "native_api_language": "Python/PyTorch algorithm and evaluation",
+          "cpp_backend_optional": true,
+          "torch_evaluation_run": false
+        },
+        {
+          "date": "2026-09-22",
+          "method": "autoround",
+          "focus": "Native quant_tensor_asym and SignSGD: learned rounding/range; custom real u4 export and CPU decoded Linear",
+          "lesson": "2026-09-22/autoround/README.md",
+          "verification": "2026-09-22/autoround/verification.json",
+          "commit": "8d8a1cd5daaf6e8c71d079eccaec3092fa9af4f1",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false,
+          "status": "partial; clone and native execution blocked",
+          "cpu_backend_language": "C++17",
+          "independent_cpp_backend_verified": true,
+          "native_api_language": "Python/PyTorch algorithm and evaluation",
+          "cpp_backend_optional": true,
+          "torch_evaluation_run": false
+        },
+        {
+          "date": "2026-09-23",
+          "method": "hqq",
+          "commit": "d88a488ec8aa2d58362ef2038a52bca862db2e74",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false,
+          "focus": "Native HQQ legacy proximal weight optimization and packed HQQLinear state; PyTorch evaluation",
+          "lesson": "2026-09-23/hqq/README.md",
+          "verification": "2026-09-23/hqq/verification.json",
+          "status": "partial; native checkout/dependencies and execution blocked",
+          "native_api_language": "Python/PyTorch",
+          "torch_evaluation_run": false
+        },
+        {
+          "date": "2026-09-24",
+          "actual_delivery_date": "2026-09-28",
+          "method": "omniquant",
+          "rotation_role": "canonical_backfill",
+          "commit": "feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14",
+          "lesson": "2026-09-24/omniquant/README.md",
+          "verification": "2026-09-24/omniquant/verification.json",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false,
+          "status": "partial; local clone/native execution/Thor verification pending",
+          "native_api_language": "Python/PyTorch"
+        },
+        {
+          "date": "2026-09-25",
+          "actual_delivery_date": "2026-09-28",
+          "method": "quarot",
+          "rotation_role": "canonical_backfill",
+          "commit": "5008669b08c1f11f9b64d52d16fddd47ca754c5a",
+          "lesson": "2026-09-25/quarot/README.md",
+          "verification": "2026-09-25/quarot/verification.json",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false,
+          "status": "partial; local clone/native execution/Thor verification pending",
+          "native_api_language": "Python/PyTorch"
+        },
+        {
+          "date": "2026-09-26",
+          "actual_delivery_date": "2026-09-28",
+          "method": "spinquant",
+          "rotation_role": "canonical_backfill",
+          "commit": null,
+          "lesson": "2026-09-26/spinquant/README.md",
+          "verification": "2026-09-26/spinquant/verification.json",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false,
+          "status": "partial; local clone/native execution/Thor verification pending",
+          "native_api_language": "Python/PyTorch"
+        },
+        {
+          "date": "2026-09-27",
+          "actual_delivery_date": "2026-09-28",
+          "method": "spqr",
+          "rotation_role": "canonical_backfill",
+          "commit": null,
+          "lesson": "2026-09-27/spqr/README.md",
+          "verification": "2026-09-27/spqr/verification.json",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false,
+          "status": "partial; local clone/native execution/Thor verification pending",
+          "native_api_language": "Python/PyTorch"
+        },
+        {
+          "date": "2026-09-28",
+          "method": "omniquant",
+          "commit": "feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false,
+          "focus": "Native LWC clipping parameter updates on small Linear; FP32 QDQ export, not packed INT4",
+          "lesson": "2026-09-28/omniquant/README.md",
+          "verification": "2026-09-28/omniquant/verification.json",
+          "status": "partial; checkout/dependencies/native runtime and backend compatibility pending",
+          "native_api_language": "Python/PyTorch",
+          "torch_evaluation_run": false,
+          "rotation_role": "supplemental_out_of_order_delivery",
+          "canonical_lesson": "2026-09-24/omniquant/README.md"
+        },
+        {
+          "date": "2026-09-29",
+          "method": "smoothquant",
+          "commit": null,
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false,
+          "focus": "Native LN/Linear smoothing, W8A8 QDQ and separate real INT8 export/reload candidate",
+          "lesson": "2026-09-29/smoothquant/README.md",
+          "verification": "2026-09-29/smoothquant/verification.json",
+          "status": "partial; exact commit/local checkout/dependencies/native CPU execution and Thor backend pending",
+          "native_api_language": "Python/PyTorch"
+        },
+        {
+          "date": "2026-09-30",
+          "method": "llm_int8",
+          "commit": "7e16503e403de460d4ed7dfd6c90a656628f5149",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false,
+          "focus": "Native Linear8bitLt outlier decomposition, real INT8 state/export/reload and heldout evaluation",
+          "lesson": "2026-09-30/llm_int8/README.md",
+          "verification": "2026-09-30/llm_int8/verification.json",
+          "status": "partial; clone DNS and missing torch; Thor backend/metrics unverified",
+          "native_api_language": "Python/PyTorch"
+        },
+        {
+          "date": "2026-10-01",
+          "method": "calibration",
+          "commit": "ba56102387ef21a3b04b357e5b183d48f0afefc7",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false,
+          "focus": "Native HistogramObserver range search; real INT8 export and heldout Linear evaluation candidate",
+          "lesson": "2026-10-01/calibration/README.md",
+          "verification": "2026-10-01/calibration/verification.json",
+          "status": "partial; clone DNS, missing torch, Thor backend unverified",
+          "native_api_language": "Python/PyTorch"
+        },
+        {
+          "date": "2026-10-02",
+          "method": "calibration",
+          "commit": "ba56102387ef21a3b04b357e5b183d48f0afefc7",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false,
+          "native_api_language": "Python/PyTorch",
+          "lesson": "2026-10-02/calibration/README.md",
+          "verification": "2026-10-02/calibration/verification.json",
+          "status": "partial; clone DNS and missing torch; Thor backend unverified"
+        }
+      ],
+      "backlog": [
+        {
+          "method": "awq",
+          "kind": "preparatory_source_fetch",
+          "date": "2026-09-18",
+          "record": "results/2026-09-18-awq-source.json",
+          "reason": "Local clone still fails DNS; pinned implementations/license read via web and clip/packing API example delivered; dependencies/native Thor backend remain unverified.",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false,
+          "last_retry_date": "2026-10-02",
+          "latest_verification": "2026-09-19/awq/verification.json",
+          "latest_source_retry": "2026-10-02/awq-retry-source.json"
+        },
+        {
+          "method": "gptq",
+          "date": "2026-09-20",
+          "reason": "GitHub clone DNS failed; pinned sources read via web, native API example delivered; dependencies and Thor execution missing",
+          "latest_verification": "2026-09-20/gptq/verification.json",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false
+        },
+        {
+          "method": "adaround",
+          "date": "2026-09-21",
+          "reason": "Repository migration and pinned API verified via browser; clone DNS failure, unsupported local Python and missing dependencies prevent native execution.",
+          "latest_verification": "2026-09-21/adaround/verification.json",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false
+        },
+        {
+          "method": "autoround",
+          "date": "2026-09-22",
+          "reason": "Local clone DNS failed; selected v0.9.0 implementations read and low-level native API example delivered; dependencies/Thor missing",
+          "latest_verification": "2026-09-22/autoround/verification.json",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false
+        },
+        {
+          "method": "hqq",
+          "date": "2026-09-23",
+          "reason": "Migrated repository verified and pinned implementation read; local clones fail DNS, required Python/torch packages missing",
+          "latest_verification": "2026-09-23/hqq/verification.json",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false
+        },
+        {
+          "method": "omniquant",
+          "date": "2026-09-28",
+          "reason": "Local clone DNS failure; pinned API read and example delivered, native deps missing, packaging/license and packed Thor backend remain pending",
+          "latest_verification": "2026-09-28/omniquant/verification.json",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false
+        },
+        {
+          "method": "omniquant",
+          "date": "2026-09-24",
+          "actual_attempt_date": "2026-09-28",
+          "kind": "backfill_verification",
+          "reason": "GitHub clone DNS failure; no verified cache; Python<3.10 chosen example floor; torch/numpy/tqdm absent; Pinned packaging/LICENSE verification incomplete; No Thor; AutoGPTQ backend compatibility unverified",
+          "latest_verification": "2026-09-24/omniquant/verification.json",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false
+        },
+        {
+          "method": "quarot",
+          "date": "2026-09-25",
+          "actual_attempt_date": "2026-09-28",
+          "kind": "backfill_verification",
+          "reason": "No local checkout or torch; Native API run/accuracy/storage/timing not verified; Thor backend compatibility unverified",
+          "latest_verification": "2026-09-25/quarot/verification.json",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false
+        },
+        {
+          "method": "spinquant",
+          "date": "2026-09-26",
+          "actual_attempt_date": "2026-09-28",
+          "kind": "backfill_verification",
+          "reason": "No local checkout or torch; Native API run/accuracy/storage/timing not verified; Thor backend compatibility unverified; Exact commit and permanent URLs unresolved",
+          "latest_verification": "2026-09-26/spinquant/verification.json",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false
+        },
+        {
+          "method": "spqr",
+          "date": "2026-09-27",
+          "actual_attempt_date": "2026-09-28",
+          "kind": "backfill_verification",
+          "reason": "No local checkout or torch; Native API run/accuracy/storage/timing not verified; Thor backend compatibility unverified; Exact commit and permanent URLs unresolved",
+          "latest_verification": "2026-09-27/spqr/verification.json",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false
+        },
+        {
+          "method": "smoothquant",
+          "date": "2026-09-29",
+          "reason": "Clone DNS failed; branch source read, full commit and native execution pending; no torch or verified backend",
+          "latest_verification": "2026-09-29/smoothquant/verification.json",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false
+        },
+        {
+          "method": "llm_int8",
+          "date": "2026-09-30",
+          "reason": "Local clone DNS failure; release/tag implementation read via web, native example delivered; no torch or Thor, profile/ISA pending",
+          "latest_verification": "2026-09-30/llm_int8/verification.json",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false
+        },
+        {
+          "date": "2026-10-01",
+          "method": "calibration",
+          "commit": "ba56102387ef21a3b04b357e5b183d48f0afefc7",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false,
+          "focus": "Native HistogramObserver range search; real INT8 export and heldout Linear evaluation candidate",
+          "lesson": "2026-10-01/calibration/README.md",
+          "verification": "2026-10-01/calibration/verification.json",
+          "status": "partial; clone DNS, missing torch, Thor backend unverified",
+          "native_api_language": "Python/PyTorch",
+          "reason": "Native clone/runtime and Thor verification pending"
+        },
+        {
+          "method": "calibration",
+          "date": "2026-10-02",
+          "reason": "clone DNS; no cached checkout; native torch missing; Thor backend unverified",
+          "latest_verification": "2026-10-02/calibration/verification.json",
+          "source_fetched": false,
+          "source_read": true,
+          "example_delivered": true,
+          "cpu_example_run": false,
+          "thor_verified": false
+        }
+      ],
+      "policy": "One quantization lesson per Asia/Shanghai calendar day, independent of main rotation. Preparation does not advance cursor. Daily attempted lessons may advance cursor but failures stay in backlog and never enter completed_methods. Completion requires source read and concrete upstream usage example delivered; execution evidence tracked separately.",
+      "last_language_audit": "2026-09-22T10:43:01.386131+08:00",
+      "language_policy": "Torch-first for algorithms/models/precision/framework timing; C++ optional for explicit layout/CPU kernel studies",
+      "last_canonical_lesson_date": "2026-10-02",
+      "backfill_reconciled_at": "2026-09-28T05:01:42.754872+00:00",
+      "reconciliation_note": "24–27 filled by explicit user request; existing 28 OmniQuant retained as supplemental, not counted twice. Failed native validations remain backlog. No second old backlog retry on actual run day."
+    },
+    "paper": {
+      "schema_version": 1,
+      "updated_at": "2026-10-02T09:19:37.789650+08:00",
+      "daily_count": 2,
+      "preferred_max_age_days": 180,
+      "fallback_max_age_days": 365,
+      "topics": [
+        "pruning",
+        "quantization",
+        "model_compression",
+        "edge_deployment"
+      ],
+      "deduplicate_by": "versionless_arxiv_id_or_doi",
+      "schedule_integration": "Existing daily 08:30 Asia/Shanghai task reads systems_practice/docs/PRACTICE_SPEC.md; no scheduler mutation.",
+      "history": [
+        {
+          "id": "arxiv:2609.01743",
+          "title": "SCULPT: Training Edge Vision Models for Post-Training Quantization Readiness",
+          "delivered_on": "2026-09-21",
+          "first_submitted": "2026-09-01",
+          "version_read": "v1",
+          "directory": "2026-09-21/01-sculpt",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "C++17",
+          "release_verified": true,
+          "asan_ubsan_verified": true,
+          "language_migrated_at": "2026-09-22T10:43:01.386131+08:00"
+        },
+        {
+          "id": "arxiv:2608.15693",
+          "title": "Large Models for Small Devices: Recent Advances and Empirical Analysis of Edge AI Deployment",
+          "delivered_on": "2026-09-21",
+          "first_submitted": "2026-08-16",
+          "version_read": "v1",
+          "directory": "2026-09-21/02-edge-deployment",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "C++17",
+          "release_verified": true,
+          "asan_ubsan_verified": true,
+          "language_migrated_at": "2026-09-22T10:43:01.386131+08:00"
+        },
+        {
+          "id": "arxiv:2609.00049",
+          "title": "REAL-Q: E2E LLM Quantization via Dynamic Gradient Descent",
+          "delivered_on": "2026-09-22",
+          "first_submitted": "2026-08-30",
+          "version_read": "v1",
+          "directory": "2026-09-22/01-real-q",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "C++17",
+          "release_verified": true,
+          "asan_ubsan_verified": true,
+          "language_migrated_at": "2026-09-22T10:43:01.386131+08:00"
+        },
+        {
+          "id": "arxiv:2609.12310",
+          "title": "ESTS at WMT26: Routing-Informed Expert Pruning for Model Compression",
+          "delivered_on": "2026-09-22",
+          "first_submitted": "2026-09-11",
+          "version_read": "v1",
+          "directory": "2026-09-22/02-ests",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "C++17",
+          "release_verified": true,
+          "asan_ubsan_verified": true,
+          "language_migrated_at": "2026-09-22T10:43:01.386131+08:00"
+        },
+        {
+          "id": "arxiv:2608.20953",
+          "title": "Quantization-Aware Healing: A Practical Recipe for Recovering Compressed, 4-Bit LLMs",
+          "delivered_on": "2026-09-23",
+          "first_submitted": "2026-08-21",
+          "version_read": "v1",
+          "directory": "2026-09-23/01-qah",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "Python standard library"
+        },
+        {
+          "id": "arxiv:2609.16129",
+          "title": "Optimal Pruning for Neural Architectures using Fisher Information Distances",
+          "delivered_on": "2026-09-23",
+          "first_submitted": "2026-09-14",
+          "version_read": "v1",
+          "directory": "2026-09-23/02-fisher-distance",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "Python standard library"
+        },
+        {
+          "id": "arxiv:2608.16010",
+          "title": "Breaking the Compression Barrier: Cross-Architecture Compression Boundary Learning via Reverse Regrowth",
+          "delivered_on": "2026-09-24",
+          "actual_delivery_date": "2026-09-28",
+          "first_submitted": "2026-08-17",
+          "version_read": "v1",
+          "directory": "2026-09-24/01-bridge",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "Python standard library"
+        },
+        {
+          "id": "arxiv:2607.17855",
+          "title": "A Hardware-oriented Approach for Efficient Bayesian Inference Computation and Deployment",
+          "delivered_on": "2026-09-24",
+          "actual_delivery_date": "2026-09-28",
+          "first_submitted": "2026-07-20",
+          "version_read": "v1",
+          "directory": "2026-09-24/02-bayes",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "C++17"
+        },
+        {
+          "id": "arxiv:2608.06901",
+          "title": "Prune Once: Retraining-Free Task-Agnostic Pruning for Vision-Language Models",
+          "delivered_on": "2026-09-25",
+          "actual_delivery_date": "2026-09-28",
+          "first_submitted": "2026-08-07",
+          "version_read": "v1",
+          "directory": "2026-09-25/01-porta",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "Python standard library"
+        },
+        {
+          "id": "arxiv:2606.01556",
+          "title": "TwinQuant: Learnable Subspace Decomposition for 4-Bit LLM Quantization",
+          "delivered_on": "2026-09-25",
+          "actual_delivery_date": "2026-09-28",
+          "first_submitted": "2026-06-01",
+          "version_read": "v1",
+          "directory": "2026-09-25/02-twinquant",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "Python standard library"
+        },
+        {
+          "id": "arxiv:2606.04980",
+          "title": "AlphaQ: Calibration-Free Bit Allocation for Mixture-of-Experts Quantization",
+          "delivered_on": "2026-09-26",
+          "actual_delivery_date": "2026-09-28",
+          "first_submitted": "2026-06-03",
+          "version_read": "v1",
+          "directory": "2026-09-26/01-alphaq",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "Python standard library"
+        },
+        {
+          "id": "arxiv:2609.24042",
+          "title": "Q-DEQ: Discrete Solving and Quantization for Deep Equilibrium Models in Time Series Forecasting under Edge Deployment Coding Constraints",
+          "delivered_on": "2026-09-26",
+          "actual_delivery_date": "2026-09-28",
+          "first_submitted": "2026-09-21",
+          "version_read": "v1",
+          "directory": "2026-09-26/02-qdeq",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "Python standard library"
+        },
+        {
+          "id": "arxiv:2609.16689",
+          "title": "Efficient Quantization-Aware Distillation with Cross-Modal Alignment for Edge Vision–Language Models",
+          "delivered_on": "2026-09-27",
+          "actual_delivery_date": "2026-09-28",
+          "first_submitted": "2026-09-15",
+          "version_read": "v1",
+          "directory": "2026-09-27/01-edge-distill",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "Python standard library"
+        },
+        {
+          "id": "arxiv:2608.19239",
+          "title": "BASC: Behavior-Aligned Quantization and Pruning for Low-Bit Spiking Neural Networks",
+          "delivered_on": "2026-09-27",
+          "actual_delivery_date": "2026-09-28",
+          "first_submitted": "2026-08-12",
+          "version_read": "v1",
+          "directory": "2026-09-27/02-basc",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "Python standard library"
+        },
+        {
+          "id": "arxiv:2609.29029",
+          "title": "Exploiting answer-invariant redundancies in satellite imagery for efficient VLM inference on edge",
+          "delivered_on": "2026-09-28",
+          "first_submitted": "2026-09-24",
+          "version_read": "v1",
+          "directory": "2026-09-28/01-rift",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "Python standard library"
+        },
+        {
+          "id": "arxiv:2609.02107",
+          "title": "A Unified Rate-Distortion Perspective on Vector, Product, and Scalar Quantization",
+          "delivered_on": "2026-09-28",
+          "first_submitted": "2026-09-02",
+          "version_read": "v1",
+          "directory": "2026-09-28/02-rate-distortion",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "Python standard library"
+        },
+        {
+          "id": "arxiv:2609.06974",
+          "title": "Train Overcomplete, Deploy Compact: Scaling Recovery Capacity for Structured LLM Pruning",
+          "delivered_on": "2026-09-29",
+          "first_submitted": "2026-09-07",
+          "version_read": "v1",
+          "directory": "2026-09-29/01-overrep",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "Python standard library"
+        },
+        {
+          "id": "arxiv:2608.30908",
+          "title": "Fine-Tuning Low-Bit Models with Gradient in Quantized Code Space",
+          "delivered_on": "2026-09-29",
+          "first_submitted": "2026-08-31",
+          "version_read": "v1",
+          "directory": "2026-09-29/02-gradcodes",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "Python standard library"
+        },
+        {
+          "id": "arxiv:2609.04490",
+          "title": "When Quantization Breaks Memory: Recurrent-State Write-Back in Low-Precision Temporal Inference",
+          "delivered_on": "2026-09-30",
+          "first_submitted": "2026-09-03",
+          "version_read": "v1",
+          "directory": "2026-09-30/01-writeback",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "Python standard library"
+        },
+        {
+          "id": "arxiv:2608.02940",
+          "title": "When Compression Scores Cannot Decide: Information Boundaries for Group-Robust LLM Pruning",
+          "delivered_on": "2026-09-30",
+          "first_submitted": "2026-08-03",
+          "version_read": "v2",
+          "directory": "2026-09-30/02-group-risk",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "Python standard library"
+        },
+        {
+          "id": "arxiv:2606.04063",
+          "title": "LLM Compression with Jointly Optimizing Architectural and Quantization choices",
+          "delivered_on": "2026-10-01",
+          "first_submitted": "2026-06-02",
+          "version_read": "v1",
+          "directory": "2026-10-01/01-joint-search",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "Python standard library"
+        },
+        {
+          "id": "arxiv:2609.02496",
+          "title": "Debias-SparseGPT: Bias-Aware Pruning for Large Language Models",
+          "delivered_on": "2026-10-01",
+          "first_submitted": "2026-09-02",
+          "version_read": "v1",
+          "directory": "2026-10-01/02-debias",
+          "status": "delivered",
+          "cpu_mechanism_example_verified": true,
+          "full_paper_reproduced": false,
+          "implementation_language": "Python standard library"
+        }
+      ],
+      "backlog": [
+        {
+          "id": "arxiv:2609.00049",
+          "date": "2026-09-22",
+          "kind": "author_source_availability",
+          "reason": "Primary fulltext and independent example delivered; no verifiable official code found"
+        },
+        {
+          "id": "arxiv:2608.20953",
+          "date": "2026-09-23",
+          "kind": "author_training_source",
+          "reason": "Full QAH training/export repository not verified; paper and toy experiment delivered"
+        },
+        {
+          "id": "arxiv:2609.16129",
+          "date": "2026-09-23",
+          "kind": "author_implementation_audit",
+          "reason": "Readme/tree accessible, core implementation reading and license discrepancy still pending"
+        },
+        {
+          "id": "arxiv:2609.29029",
+          "date": "2026-09-28",
+          "kind": "author_source_availability",
+          "reason": "No verified official repository found in fulltext and title+GitHub search"
+        },
+        {
+          "id": "arxiv:2609.02107",
+          "date": "2026-09-28",
+          "kind": "author_implementation_audit",
+          "reason": "README/tree only; implementation directory requests cache miss"
+        },
+        {
+          "id": "arxiv:2608.16010",
+          "date": "2026-09-24",
+          "kind": "author_source_or_full_reproduction",
+          "reason": "仓库树确认训练/剪枝/恢复脚本存在；regrowth_greedy.py raw请求internal error，未读到核心实现，许可证/精确commit待核实。"
+        },
+        {
+          "id": "arxiv:2607.17855",
+          "date": "2026-09-24",
+          "kind": "author_source_or_full_reproduction",
+          "reason": "v1明确双盲阶段不公开链接；不能宣称已读作者实现。v2日期2026-07-21，本课只读v1。"
+        },
+        {
+          "id": "arxiv:2608.06901",
+          "date": "2026-09-25",
+          "kind": "author_source_or_full_reproduction",
+          "reason": "仓库树和prune.py请求可达；核心pruners算法阅读待补，示例只从论文公式独立实现，未声称调用上游。"
+        },
+        {
+          "id": "arxiv:2606.01556",
+          "date": "2026-09-25",
+          "kind": "author_source_or_full_reproduction",
+          "reason": "全文与标题GitHub检索未确认作者官方仓库，不虚构代码链接。"
+        },
+        {
+          "id": "arxiv:2606.04980",
+          "date": "2026-09-26",
+          "kind": "author_source_or_full_reproduction",
+          "reason": "树确认quant/models/评估目录；categories.py raw请求internal error，核心算法/许可证/commit待核实。"
+        },
+        {
+          "id": "arxiv:2609.24042",
+          "date": "2026-09-26",
+          "kind": "author_source_or_full_reproduction",
+          "reason": "全文及标题GitHub搜索未确认官方实现；不调用未知Kaiwu接口。"
+        },
+        {
+          "id": "arxiv:2609.16689",
+          "date": "2026-09-27",
+          "kind": "author_source_or_full_reproduction",
+          "reason": "全文及标题GitHub检索未核实官方训练代码，不把其他EdgeVL仓库当本文实现。"
+        },
+        {
+          "id": "arxiv:2608.19239",
+          "date": "2026-09-27",
+          "kind": "author_source_or_full_reproduction",
+          "reason": "全文与标题GitHub搜索未确认官方仓库；不编造训练API。"
+        },
+        {
+          "id": "arxiv:2609.06974",
+          "date": "2026-09-29",
+          "kind": "author_source_or_full_reproduction",
+          "reason": "Author repository tree only LICENSE; recovery/export/training implementation unavailable"
+        },
+        {
+          "id": "arxiv:2608.30908",
+          "date": "2026-09-29",
+          "kind": "author_source_or_full_reproduction",
+          "reason": "Training entry read; core code/license/dependencies/commit audit pending"
+        },
+        {
+          "id": "arxiv:2609.04490",
+          "date": "2026-09-30",
+          "kind": "author_source_or_full_reproduction",
+          "reason": "S11 explicitly withholds repository until acceptance"
+        },
+        {
+          "id": "arxiv:2608.02940",
+          "date": "2026-09-30",
+          "kind": "author_source_or_full_reproduction",
+          "reason": "No official code verified in body or exact-title GitHub search"
+        },
+        {
+          "id": "arxiv:2606.04063",
+          "date": "2026-10-01",
+          "kind": "author_source_or_full_reproduction",
+          "reason": "Official code unverified"
+        },
+        {
+          "id": "arxiv:2609.02496",
+          "date": "2026-10-01",
+          "kind": "author_source_or_full_reproduction",
+          "reason": "Master patch implementation read; exact commit, LICENSE body and full model run pending"
+        }
+      ]
+    }
+  }
+}
