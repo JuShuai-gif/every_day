@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-30T01:38:06.253709+00:00",
+  "updated_at": "2026-10-02T09:19:37.789650+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -272,6 +272,30 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2606.04063",
+      "title": "LLM Compression with Jointly Optimizing Architectural and Quantization choices",
+      "delivered_on": "2026-10-01",
+      "first_submitted": "2026-06-02",
+      "version_read": "v1",
+      "directory": "2026-10-01/01-joint-search",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.02496",
+      "title": "Debias-SparseGPT: Bias-Aware Pruning for Large Language Models",
+      "delivered_on": "2026-10-01",
+      "first_submitted": "2026-09-02",
+      "version_read": "v1",
+      "directory": "2026-10-01/02-debias",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
     }
   ],
   "backlog": [
@@ -376,6 +400,18 @@
       "date": "2026-09-30",
       "kind": "author_source_or_full_reproduction",
       "reason": "No official code verified in body or exact-title GitHub search"
+    },
+    {
+      "id": "arxiv:2606.04063",
+      "date": "2026-10-01",
+      "kind": "author_source_or_full_reproduction",
+      "reason": "Official code unverified"
+    },
+    {
+      "id": "arxiv:2609.02496",
+      "date": "2026-10-01",
+      "kind": "author_source_or_full_reproduction",
+      "reason": "Master patch implementation read; exact commit, LICENSE body and full model run pending"
     }
   ]
 }

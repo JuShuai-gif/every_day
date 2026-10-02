@@ -2,7 +2,7 @@
 
 [栏目说明](../docs/quantization/README.md) · [交付模板](../docs/quantization/LESSON_TEMPLATE.md) · [方法目录](catalog.json) · [进度](progress.json)
 
-下一方法：**校准感知缩放**。每日一个方法，按日期独立归档。
+下一方法：**QAT**。每日一个方法，按日期独立归档。
 
 | 日期 | 类型 | 方法 | 源码 / 阅读 / 示例 / CPU / Thor | 证据 |
 | --- | --- | --- | --- | --- |
@@ -19,6 +19,7 @@
 | 2026-09-28 | 保留补充：OmniQuant LWC；不重复推进，AWQ重试失败 | OmniQuant | 本地获取否 / 固定commit阅读是 / 示例是 / CPU否 / Thor否 | [课程](2026-09-28/omniquant/README.md)；[状态](2026-09-28/omniquant/verification.json) |
 | 2026-09-29 | 当日SmoothQuant；AWQ仅重试一次 | SmoothQuant | 获取否 / main实现阅读是（commit待补） / 示例是 / CPU否 / Thor否 | [课程](2026-09-29/smoothquant/README.md)；[状态](2026-09-29/smoothquant/verification.json) |
 | 2026-09-30 | LLM.int8；AWQ仅重试一次失败 | LLM.int8离群混合分解 | 获取否 / 0.48.1源码阅读是 / 原生示例是 / CPU否 / Thor否 | [课程](2026-09-30/llm_int8/README.md)；[状态](2026-09-30/llm_int8/verification.json) |
+| 2026-10-01 | HistogramObserver校准；AWQ单次重试失败 | 校准感知缩放 | 获取否 / 固定commit实现阅读是 / 原生API交付是 / CPU否 / Thor否 | [课程](2026-10-01/calibration/README.md)；[状态](2026-10-01/calibration/verification.json) |
 
 2026-09-22 用户纠正：四课默认使用 Python/PyTorch 完成原生算法、模型精度、重载和框架级耗时对比；C++位布局/CPU内核为可选补充（native-cpp），不再强制主流程构建。现有C++独立检查通过；原生方法/新torch评估仍因依赖缺失而未运行，HQQ游标不变。
 

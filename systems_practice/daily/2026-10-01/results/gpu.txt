@@ -1,0 +1,20 @@
+$ sh systems_practice/daily/2026-10-01/run.sh gpu --check
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring incomplete, errors occurred!
+CMake Error at /opt/homebrew/share/cmake/Modules/Internal/CMakeCUDAFindToolkit.cmake:104 (message):
+  Failed to find nvcc.
+
+  Compiler requires the CUDA toolkit.  Please set the CUDAToolkit_ROOT
+  variable.
+Call Stack (most recent call first):
+  /opt/homebrew/share/cmake/Modules/CMakeDetermineCUDACompiler.cmake:109 (cmake_cuda_find_toolkit)
+  CMakeLists.txt:18 (enable_language)
+
+
+
+exit_code=1

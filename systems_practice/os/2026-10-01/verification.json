@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-01",
+  "recorded_at": "2026-10-02T09:19:37.789650+08:00",
+  "source_read": true,
+  "version_pinned": false,
+  "host_compile": true,
+  "host_run": true,
+  "release_passed": true,
+  "sanitize_passed": true,
+  "linux_run": false,
+  "target_board_verified": false,
+  "evidence": [
+    "results/initial.txt",
+    "results/final.txt"
+  ],
+  "runs": [
+    {
+      "column": "os",
+      "name": "final",
+      "command": [
+        "sh",
+        "systems_practice/os/2026-10-01/run.sh"
+      ],
+      "exit_code": 0,
+      "log": "systems_practice/os/2026-10-01/results/final.txt",
+      "time": "2026-10-02T09:11:56.302743+08:00"
+    }
+  ],
+  "blockers": [
+    "Exact source commit not pinned",
+    "No Linux or target board run"
+  ],
+  "xv6_compiled": false,
+  "qemu_run": false
+}

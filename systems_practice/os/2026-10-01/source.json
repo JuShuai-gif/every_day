@@ -1,0 +1,52 @@
+{
+  "repository": "https://github.com/mit-pdos/xv6-riscv",
+  "branch": "riscv",
+  "commit": null,
+  "read_date": "2026-10-01",
+  "license": "MIT",
+  "source_read": true,
+  "files": [
+    {
+      "path": "kernel/trap.c",
+      "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/trap.c"
+    },
+    {
+      "path": "kernel/trampoline.S",
+      "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/trampoline.S"
+    },
+    {
+      "path": "kernel/syscall.c",
+      "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/syscall.c"
+    },
+    {
+      "path": "user/usys.pl",
+      "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/user/usys.pl"
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/LICENSE"
+    }
+  ],
+  "symbols": [
+    "usertrap",
+    "prepare_return",
+    "uservec",
+    "userret",
+    "syscall",
+    "argraw",
+    "entry"
+  ],
+  "relationship": "Independent teaching example using mechanism, not copied upstream implementation",
+  "search": {
+    "date": "2026-10-01",
+    "google": {
+      "query": "NEON tail / xv6 trap return / unique_ptr ownership / calibration HistogramObserver engineering",
+      "status": "Direct Google search request failed Internal Error; no Google article claimed read"
+    },
+    "zhihu": {
+      "query": "site:zhihu.com NEON tail; xv6 trap return; unique_ptr move; quantization calibration",
+      "status": "No relevant verified original article adopted; no article reading claimed"
+    },
+    "primary": "GitHub implementations and official references read; details per lesson"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "read_date": "2026-10-01",
+  "repository": "https://github.com/mit-han-lab/smoothquant",
+  "branch": "main",
+  "commit": null,
+  "license": "MIT",
+  "files": [
+    "smoothquant/smooth.py",
+    "LICENSE"
+  ],
+  "symbols": [
+    "smooth_ln_fcs",
+    "smooth_ln_fcs_llama_like",
+    "smooth_lm"
+  ],
+  "source_read": true,
+  "relationship": "Independent mechanism-inspired C++ implementation; adapted own 2026-09-18/session-02 framework",
+  "retained": [
+    "A/s and sW equivalence",
+    "channel activation/weight scale balancing"
+  ],
+  "simplified": [
+    "single Linear",
+    "no model norm folding",
+    "SIMT kernels, no Tensor Core"
+  ],
+  "quantization_native": "../../quantization/2026-10-01/calibration/source-read.json",
+  "search": {
+    "date": "2026-10-01",
+    "google": {
+      "query": "NEON tail / xv6 trap return / unique_ptr ownership / calibration HistogramObserver engineering",
+      "status": "Direct Google search request failed Internal Error; no Google article claimed read"
+    },
+    "zhihu": {
+      "query": "site:zhihu.com NEON tail; xv6 trap return; unique_ptr move; quantization calibration",
+      "status": "No relevant verified original article adopted; no article reading claimed"
+    },
+    "primary": "GitHub implementations and official references read; details per lesson"
+  }
+}

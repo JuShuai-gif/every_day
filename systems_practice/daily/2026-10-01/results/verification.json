@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-01",
+  "recorded_at": "2026-10-02T09:19:37.789650+08:00",
+  "platform": "macOS arm64 / Apple clang 21.0.0",
+  "release_passed": true,
+  "asan_ubsan_passed": true,
+  "source_read": true,
+  "cuda_target": "sm_110",
+  "cuda_compiled": false,
+  "thor_verified": false,
+  "ncu_collected": false,
+  "ptx_generated": false,
+  "sass_generated": false,
+  "performance_scope": "CPU auxiliary packed GEMM only; no GPU/NPU/E2E performance",
+  "cases": [
+    "finite binary16 roundtrip",
+    "signed INT4/INT8 packing and odd tail",
+    "K=1,15,16,17,31,32,33,63,64,65",
+    "20 method/format comparisons",
+    "group32 hand oracle42 vs incorrect330",
+    "40 actual QAT master update steps per format"
+  ],
+  "cuda_candidate_checks": "320 comparisons delivered, not run",
+  "runs": [
+    {
+      "column": "daily",
+      "name": "cpu",
+      "command": [
+        "sh",
+        "systems_practice/daily/2026-10-01/run.sh",
+        "cpu"
+      ],
+      "exit_code": 0,
+      "log": "systems_practice/daily/2026-10-01/results/cpu.txt",
+      "time": "2026-10-02T09:11:49.214653+08:00"
+    },
+    {
+      "column": "daily",
+      "name": "sanitize",
+      "command": [
+        "sh",
+        "systems_practice/daily/2026-10-01/run.sh",
+        "sanitize"
+      ],
+      "exit_code": 0,
+      "log": "systems_practice/daily/2026-10-01/results/sanitize.txt",
+      "time": "2026-10-02T09:11:51.887526+08:00"
+    },
+    {
+      "column": "daily",
+      "name": "gpu",
+      "command": [
+        "sh",
+        "systems_practice/daily/2026-10-01/run.sh",
+        "gpu",
+        "--check"
+      ],
+      "exit_code": 1,
+      "log": "systems_practice/daily/2026-10-01/results/gpu.txt",
+      "time": "2026-10-02T09:11:58.019036+08:00"
+    },
+    {
+      "column": "daily",
+      "name": "ncu",
+      "command": [
+        "sh",
+        "systems_practice/daily/2026-10-01/profile.sh"
+      ],
+      "exit_code": 127,
+      "log": "systems_practice/daily/2026-10-01/results/ncu.txt",
+      "time": "2026-10-02T09:11:58.025256+08:00"
+    },
+    {
+      "column": "daily",
+      "name": "isa",
+      "command": [
+        "sh",
+        "systems_practice/daily/2026-10-01/export-isa.sh"
+      ],
+      "exit_code": 127,
+      "log": "systems_practice/daily/2026-10-01/results/isa.txt",
+      "time": "2026-10-02T09:11:58.030971+08:00"
+    }
+  ],
+  "format": "format.txt",
+  "blockers": [
+    "No nvcc",
+    "No ncu",
+    "No Thor hardware",
+    "native PyTorch missing; separate quantization verification"
+  ]
+}

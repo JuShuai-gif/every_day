@@ -1,0 +1,34 @@
+{
+  "repository": "https://github.com/pytorch/pytorch",
+  "tag": "v2.8.0",
+  "commit": "ba56102387ef21a3b04b357e5b183d48f0afefc7",
+  "read_date": "2026-10-01",
+  "license": "BSD-style, LICENSE includes third-party notices",
+  "source_read": true,
+  "files": [
+    "torch/ao/quantization/observer.py",
+    "torch/ao/quantization/fake_quantize.py",
+    "LICENSE"
+  ],
+  "read_symbols": [
+    "HistogramObserver.__init__",
+    "HistogramObserver.forward",
+    "_compute_quantization_error",
+    "_non_linear_param_search",
+    "calculate_qparams",
+    "FakeQuantize.forward"
+  ],
+  "relationship": "Native upstream API plus original evaluation/export wrapper",
+  "search": {
+    "date": "2026-10-01",
+    "google": {
+      "query": "NEON tail / xv6 trap return / unique_ptr ownership / calibration HistogramObserver engineering",
+      "status": "Direct Google search request failed Internal Error; no Google article claimed read"
+    },
+    "zhihu": {
+      "query": "site:zhihu.com NEON tail; xv6 trap return; unique_ptr move; quantization calibration",
+      "status": "No relevant verified original article adopted; no article reading claimed"
+    },
+    "primary": "GitHub implementations and official references read; details per lesson"
+  }
+}

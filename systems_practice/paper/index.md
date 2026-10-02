@@ -24,6 +24,7 @@
 | 2026-09-29 | [Fine-Tuning Low-Bit Models with Gradient in Quantized Code Space](2026-09-29/02-gradcodes/README.md) / 2026-08-31 | 梯度引导离散候选、真实损失接纳 | 中到难：核心实现/环境待审计 | CPU小例子80次scale更新、2次码更新；非原生低位kernel |
 | 2026-09-30 | [When Quantization Breaks Memory: Recurrent-State Write-Back in Low-Precision Temporal Inference](2026-09-30/01-writeback/README.md) / 2026-09-03 | 状态回写量化吞掉小更新；误差反馈与真实状态存储 | 完整复现难：作者实现未核实/未公开 | Python独立机制检查通过；无模型/硬件复现 |
 | 2026-09-30 | [When Compression Scores Cannot Decide: Information Boundaries for Group-Robust LLM Pruning](2026-09-30/02-group-risk/README.md) / 2026-08-03 | 同局部分数可对应相反最差组决策；完整mask风险边界 | 完整复现难：作者实现未核实/未公开 | Python独立机制检查通过；无模型/硬件复现 |
+| 2026-10-01 | [Joint Architectural/Quantization Search](2026-10-01/01-joint-search/README.md) / 2026-06-02；[Debias-SparseGPT](2026-10-01/02-debias/README.md) / 2026-09-02 | 联合选择/离散预算；成对Hessian与OBS | 官方实现缺口/全模型难；Debias master补丁已读 | 两个独立Python例子通过，无完整训练/GPU复现 |
 
 
 下一期继续检索新论文；不重复已归档 arXiv ID。完整进度见 [progress.json](progress.json)。

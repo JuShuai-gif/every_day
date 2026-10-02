@@ -1,0 +1,38 @@
+{
+  "repository": "https://github.com/llvm/llvm-project",
+  "branch": "release/18.x",
+  "commit": null,
+  "read_date": "2026-10-01",
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "source_read": true,
+  "files": [
+    {
+      "path": "libcxx/include/__memory/unique_ptr.h",
+      "url": "https://github.com/llvm/llvm-project/blob/release/18.x/libcxx/include/__memory/unique_ptr.h"
+    },
+    {
+      "path": "LICENSE.TXT",
+      "url": "https://github.com/llvm/llvm-project/blob/release/18.x/LICENSE.TXT"
+    }
+  ],
+  "symbols": [
+    "unique_ptr move constructor",
+    "operator=",
+    "release",
+    "reset",
+    "~unique_ptr"
+  ],
+  "relationship": "Independent teaching example using mechanism, not copied upstream implementation",
+  "search": {
+    "date": "2026-10-01",
+    "google": {
+      "query": "NEON tail / xv6 trap return / unique_ptr ownership / calibration HistogramObserver engineering",
+      "status": "Direct Google search request failed Internal Error; no Google article claimed read"
+    },
+    "zhihu": {
+      "query": "site:zhihu.com NEON tail; xv6 trap return; unique_ptr move; quantization calibration",
+      "status": "No relevant verified original article adopted; no article reading claimed"
+    },
+    "primary": "GitHub implementations and official references read; details per lesson"
+  }
+}

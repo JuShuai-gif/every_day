@@ -1,0 +1,36 @@
+{
+  "id": "arxiv:2609.02496",
+  "title": "Debias-SparseGPT: Bias-Aware Pruning for Large Language Models",
+  "version": "v1",
+  "read_date": "2026-10-01",
+  "paper_url": "https://arxiv.org/html/2609.02496v1",
+  "read_sections": [
+    "Sections 1-6",
+    "Limitations",
+    "Equations 2-5",
+    "Algorithm 1",
+    "Tables 2-5",
+    "Appendix C selected setup"
+  ],
+  "relationship": "Independent minimal mechanism example; no full model reproduction",
+  "official_code_read": true,
+  "commit": null,
+  "repository": "https://github.com/upunaprosk/debias-llm-compressor",
+  "branch": "master",
+  "files": [
+    "patches/llm_compressor_0.8.1_stereoset.patch",
+    "pyproject.toml",
+    "README.md"
+  ],
+  "read_symbols": [
+    "format_calibration_data",
+    "accumulate_hessian",
+    "sparsify_weight original copy"
+  ],
+  "license": "Repository page says Apache-2.0; LICENSE body fetch failed Cache miss",
+  "failed_attempts": [
+    "main branch patch/source/pyproject requests failed; corrected to master after reading tree",
+    "master/LICENSE: Cache miss"
+  ],
+  "implementation_followup_read_date": "2026-10-02"
+}

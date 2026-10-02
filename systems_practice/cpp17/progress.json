@@ -2,11 +2,12 @@
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
   "created_on": "2026-09-29",
-  "last_delivery_date": "2026-09-30",
-  "next_lesson_id": "03",
+  "last_delivery_date": "2026-10-01",
+  "next_lesson_id": "04",
   "delivered_lesson_ids": [
     "01",
-    "02"
+    "02",
+    "03"
   ],
   "history": [
     {
@@ -34,6 +35,19 @@
       "sanitize_passed": true,
       "version_pinned": false,
       "verification": "2026-09-30/verification.json"
+    },
+    {
+      "date": "2026-10-01",
+      "lesson_id": "03",
+      "path": "2026-10-01",
+      "source_read": true,
+      "lesson_delivered": true,
+      "target_board_verified": false,
+      "version_pinned": false,
+      "host_run": true,
+      "verification": "2026-10-01/verification.json",
+      "host_compile": true,
+      "sanitize_passed": true
     }
   ],
   "backlog": [
@@ -50,6 +64,12 @@
       "status": "pending",
       "reason": "release/18.x source read; exact commit pending",
       "record": "2026-09-30/source.json"
+    },
+    {
+      "date": "2026-10-01",
+      "lesson_id": "03",
+      "reason": "Exact source commit and target-board verification pending",
+      "verification": "2026-10-01/verification.json"
     }
   ]
 }

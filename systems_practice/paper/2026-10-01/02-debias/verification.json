@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-01",
+  "paper_read": true,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": true,
+  "evidence": [
+    "results/cpu.txt",
+    "example.py"
+  ],
+  "full_paper_reproduced": false,
+  "training_run": false,
+  "thor_verified": false,
+  "blockers": [
+    "No full model/data/runtime experiment",
+    "No Thor",
+    "Exact author code commit/license pending"
+  ]
+}

@@ -1,0 +1,1 @@
+{"joint": ["wide", 4, 3.0, 0.15], "sequential": ["narrow", 4, 2.0, 0.8], "mask_equivalence": true, "expected_cost": 3.2, "discrete_cost": 4, "cost_unit": "synthetic, not latency", "training_updates": 0}

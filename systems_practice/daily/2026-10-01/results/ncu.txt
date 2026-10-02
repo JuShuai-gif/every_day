@@ -1,0 +1,4 @@
+$ sh systems_practice/daily/2026-10-01/profile.sh
+ncu missing; no Thor measurements
+
+exit_code=127

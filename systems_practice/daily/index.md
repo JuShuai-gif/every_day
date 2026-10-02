@@ -14,9 +14,9 @@
 
 2026-09-18 扩展为 **12 个方向**：新增“量化 GEMM”，涵盖 W4A4/W4A16/W8A8/W8A16、SmoothQuant、离群处理、校准缩放与 QAT，代码目标仍为 Thor SM110。
 
-2026-09-18 起另设 **每日量化方法**：每天在主知识点之外讲一个方法，拉取源仓库、阅读实际实现并给出完整使用示例及量化前后比较。独立轮换见 [量化栏目索引](../quantization/index.md)，下一方法 **校准感知缩放**。该栏目不取代 12 个主方向，源码获取/阅读/示例运行分别记录。
+2026-09-18 起另设 **每日量化方法**：每天在主知识点之外讲一个方法，拉取源仓库、阅读实际实现并给出完整使用示例及量化前后比较。独立轮换见 [量化栏目索引](../quantization/index.md)，下一方法 **QAT**。该栏目不取代 12 个主方向，源码获取/阅读/示例运行分别记录。
 
-2026-09-21 起新增 **每日两篇论文**：[paper 栏目](../docs/paper/README.md) · [历史索引](../paper/index.md) · [今天两篇](../paper/2026-09-30/README.md)。覆盖剪枝、量化、模型压缩和边缘部署，包含核心思想、复现难度、简单代码及真实验证记录；优先近 180 天首发，独立去重。
+2026-09-21 起新增 **每日两篇论文**：[paper 栏目](../docs/paper/README.md) · [历史索引](../paper/index.md) · [本期两篇](../paper/2026-10-01/README.md)。覆盖剪枝、量化、模型压缩和边缘部署，包含核心思想、复现难度、简单代码及真实验证记录；优先近 180 天首发，独立去重。
 
 | 日期 / 会话 | 主主题 | 核心知识点 | 代码路径 | 验证状态 | 性能数据与证据 |
 | --- | --- | --- | --- | --- | --- |
@@ -38,9 +38,10 @@
 | [2026-09-28](2026-09-28/README.md) | 边缘端部署（保留为补充，不重复推进） | 发布代次+请求共享快照，失败保留旧版；[OmniQuant](../quantization/2026-09-28/omniquant/README.md)；[ARM03](../arm/2026-09-28/README.md)；[论文](../paper/2026-09-28/README.md) | [控制面](2026-09-28/src/deployment.hpp)、[验证](2026-09-28/src/main.cpp) | Release/ASan/UBSan/TSan通过；2万请求/1000更新；量化原生运行因依赖/克隆缺失待补 | CPU控制面P50/P95 0.00725/0.007292us；[最终记录](2026-09-28/results/verification.json)；无GPU/NPU/E2E性能 |
 | [2026-09-29](2026-09-29/README.md) | RK3588 NPU / RKNN | INT8输出解释+RAII输出租约；[SmoothQuant](../quantization/2026-09-29/smoothquant/README.md) · [ARM07](../arm/2026-09-29/README.md) · [论文两篇](../paper/2026-09-29/README.md) · [OS02](../os/2026-09-29/README.md) · [C++17 01](../cpp17/2026-09-29/README.md) | [RKNN](2026-09-29/src/rknn_output.cpp)、[CPU契约](2026-09-29/src/cpu_check.cpp) | CPU Release/ASan/UBSan 1024数值+6非法+1000租约通过；模型/转换/板端因依赖设备未验 | 无NPU/GPU/E2E实测；ARM独立Mac基准P50 serial/four=1.74544/0.663734us；[记录](2026-09-29/results/verification.json) |
 | [2026-09-30](2026-09-30/README.md) | PTX / CUTLASS | Thor双槽cp.async预取+消费后复用；[LLM.int8](../quantization/2026-09-30/llm_int8/README.md) · [ARM08](../arm/2026-09-30/README.md) · [论文](../paper/2026-09-30/README.md) · [OS03](../os/2026-09-30/README.md) · [C++17 02](../cpp17/2026-09-30/README.md) | [CUDA基线/候选](2026-09-30/src/gemm.cu)、[CPU](2026-09-30/src/cpu_check.cpp) | CPU Release/ASan/UBSan 400对照+边界通过；无nvcc/ncu/Thor，GPU未验；量化原生运行缺torch | 无GPU/NPU/E2E数据；ARM独立Mac4096元素P50 scalar/auto=1.92578/0.196289us批均值；[验证](2026-09-30/results/verification.json) |
+| [2026-10-01](2026-10-01/README.md) | 量化 GEMM | group32与Ktile16；W4A4/W4A16/W8A8/W8A16；[校准](../quantization/2026-10-01/calibration/README.md) · [ARM09](../arm/2026-10-01/README.md) · [OS04](../os/2026-10-01/README.md) · [C++17 03](../cpp17/2026-10-01/README.md) · [两篇论文](../paper/2026-10-01/README.md) | [CUDA](2026-10-01/src/quant_gemm.cu)与[CPU](2026-10-01/src/main.cpp) | Release/ASan/UBSan通过；20对照/40步QAT；GPU缺nvcc/ncu/Thor；原生量化缺torch | W4A4 NRMSE22.76%→1.97%（absmax→离群），漂移退化；无GPU收益；[记录](2026-10-01/results/verification.json) |
 
 
-下一主主题：**量化 GEMM**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
+下一主主题：**GPU 访存优化**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
 
 `2026-09-14` 为用户要求补充的历史 C++ 练习，不改变当前轮换位置。
 

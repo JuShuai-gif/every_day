@@ -13,9 +13,10 @@
 | [2026-09-28](2026-09-28/README.md) | 03（保留补充，不重复推进） | 加载/存储、地址与stride | Mac Release/ASan/UBSan 36形状+4非法输入通过；真实LDRH后索引汇编；板端未验 |
 | [2026-09-29](2026-09-29/README.md) | 07 | A64一链/四链公平基准，墙钟与线程CPU时间 | Release/ASan/UBSan通过；真实LDR/LDP/ADD；Mac P50 1.74544/0.663734us，板端未验 |
 | [2026-09-30](2026-09-30/README.md) | 08 | 自动向量化、别名依赖与运行时地址检查；工作部署闭环 | Mac Release/ASan/UBSan 4104重叠+1026独立输入通过；真实NEON汇编/CPU微基准；Linux交叉构建与板端待验 |
+| [2026-10-01](2026-10-01/README.md) | 09 | NEON128位加载/存储与对象边界/标量尾部 | Mac Release/ASan/UBSan 4128偏移长度+8保护页通过；真实ldr q/add.16b/str q；板端待验 |
 
 
-下一节：**09 — NEON向量加载与尾部处理**。机器进度见 [progress.json](progress.json)。
+下一节：**10 — FP32 FMA、横向归约与浮点误差**。机器进度见 [progress.json](progress.json)。
 
 
 2026-09-28 生成要求增加[就业与操作系统衔接](../docs/arm/CAREER_OS.md)：工程调试、完整推理和性能证据融入原路线；本次不推进课程。

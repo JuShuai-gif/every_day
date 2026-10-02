@@ -1,0 +1,2 @@
+Scoped mirror; actual repository scripts/format-cpp.sh and .clang-format; only new files copied back.
+Exit: 0

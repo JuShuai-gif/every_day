@@ -1,0 +1,6 @@
+Final JSON parse, Python AST, sh -n, relative Markdown link checks passed.
+Four pre-existing user-modified source hashes unchanged.
+ARM date contains no JSON.
+Main README 12 required H2 in order; concept 559 Chinese characters.
+Scoped format-cpp.sh ran and Release/ASan/UBSan rerun passed.
+Other 2026-10-02 directories observed during run left untouched and not staged.

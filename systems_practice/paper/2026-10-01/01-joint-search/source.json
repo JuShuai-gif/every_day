@@ -1,0 +1,18 @@
+{
+  "id": "arxiv:2606.04063",
+  "title": "LLM Compression with Jointly Optimizing Architectural and Quantization choices",
+  "version": "v1",
+  "read_date": "2026-10-01",
+  "paper_url": "https://arxiv.org/html/2606.04063v1",
+  "read_sections": [
+    "Sections 1-5",
+    "Equations 1-9",
+    "Tables 1-2",
+    "Figure 5"
+  ],
+  "relationship": "Independent minimal mechanism example; no full model reproduction",
+  "official_code_read": false,
+  "commit": null,
+  "repository": null,
+  "code_search": "Paper body and title GitHub search: no official implementation verified"
+}
