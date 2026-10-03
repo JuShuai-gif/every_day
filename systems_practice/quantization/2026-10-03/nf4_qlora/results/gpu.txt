@@ -1,0 +1,1 @@
+build-gpu.sh: line 6: nvcc: command not found

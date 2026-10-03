@@ -1,0 +1,26 @@
+{
+  "id": "arxiv:2609.31560",
+  "title": "Generalization behavior of OPTQ and the role of regularization",
+  "authors": [
+    "Erin George",
+    "Rayan Saab"
+  ],
+  "first_submitted": "2026-09-25",
+  "version": "v1",
+  "publication_status": "preprint; peer review not verified",
+  "date_read": "2026-10-03",
+  "url": "https://arxiv.org/html/2609.31560v1",
+  "sections_read": [
+    "2",
+    "3",
+    "4.2",
+    "equation35"
+  ],
+  "author_repository": null,
+  "code_search": {
+    "query": "Generalization behavior of OPTQ and the role of regularization GitHub",
+    "result": "No verified author implementation found; repository/license pending"
+  },
+  "example_relationship": "Independent standard-library mechanism illustration, not paper replication",
+  "source_code_read": false
+}

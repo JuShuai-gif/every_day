@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-02T10:35:43.289388+08:00",
+  "updated_at": "2026-10-03T10:23:02.942182+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -320,6 +320,30 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.31560",
+      "title": "Generalization behavior of OPTQ and the role of regularization",
+      "delivered_on": "2026-10-03",
+      "first_submitted": "2026-09-25",
+      "version_read": "v1",
+      "directory": "2026-10-03/01-optq",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2608.21142",
+      "title": "COEC: Calibrated Orthogonal-Equivalence Compensation for Structured Pruning of Large Language Models",
+      "delivered_on": "2026-10-03",
+      "first_submitted": "2026-08-21",
+      "version_read": "v1",
+      "directory": "2026-10-03/02-coec",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
     }
   ],
   "backlog": [
@@ -448,6 +472,18 @@
       "date": "2026-10-02",
       "kind": "author_source_or_full_reproduction",
       "reason": "Core source read; full commit and complete training/export/eval audit or model reproduction pending"
+    },
+    {
+      "id": "arxiv:2609.31560",
+      "date": "2026-10-03",
+      "reason": "Author implementation/license and full-model reproduction unresolved",
+      "record": "2026-10-03/01-optq/source.json"
+    },
+    {
+      "id": "arxiv:2608.21142",
+      "date": "2026-10-03",
+      "reason": "Author implementation/license and full-model reproduction unresolved",
+      "record": "2026-10-03/02-coec/source.json"
     }
   ]
 }

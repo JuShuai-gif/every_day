@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-03",
+  "paper_read": true,
+  "cpu_mechanism_example_run": true,
+  "example_language": "Python standard library",
+  "author_code_read": false,
+  "full_paper_reproduced": false,
+  "model_task_accuracy_reproduced": false,
+  "gpu_run": false,
+  "target_board_verified": false,
+  "evidence": [
+    "results/cpu.txt",
+    "results/final.txt"
+  ],
+  "blockers": [
+    "Author implementation and license unresolved",
+    "No model/data or target GPU"
+  ],
+  "performance_measured": false
+}

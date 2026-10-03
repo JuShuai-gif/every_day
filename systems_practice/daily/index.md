@@ -14,9 +14,9 @@
 
 2026-09-18 扩展为 **12 个方向**：新增“量化 GEMM”，涵盖 W4A4/W4A16/W8A8/W8A16、SmoothQuant、离群处理、校准缩放与 QAT，代码目标仍为 Thor SM110。
 
-2026-09-18 起另设 **每日量化方法**：每天在主知识点之外讲一个方法，拉取源仓库、阅读实际实现并给出完整使用示例及量化前后比较。独立轮换见 [量化栏目索引](../quantization/index.md)，下一方法 **NF4 / QLoRA**。该栏目不取代 12 个主方向，源码获取/阅读/示例运行分别记录。
+2026-09-18 起另设 **每日量化方法**：每天在主知识点之外讲一个方法，拉取源仓库、阅读实际实现并给出完整使用示例及量化前后比较。独立轮换见 [量化栏目索引](../quantization/index.md)，下一方法 **KIVI / KV Cache量化**。该栏目不取代 12 个主方向，源码获取/阅读/示例运行分别记录。
 
-2026-09-21 起新增 **每日两篇论文**：[paper 栏目](../docs/paper/README.md) · [历史索引](../paper/index.md) · [本期两篇](../paper/2026-10-01/README.md)。覆盖剪枝、量化、模型压缩和边缘部署，包含核心思想、复现难度、简单代码及真实验证记录；优先近 180 天首发，独立去重。
+2026-09-21 起新增 **每日两篇论文**：[paper 栏目](../docs/paper/README.md) · [历史索引](../paper/index.md) · [本期两篇](../paper/2026-10-03/README.md)。覆盖剪枝、量化、模型压缩和边缘部署，包含核心思想、复现难度、简单代码及真实验证记录；优先近 180 天首发，独立去重。
 
 | 日期 / 会话 | 主主题 | 核心知识点 | 代码路径 | 验证状态 | 性能数据与证据 |
 | --- | --- | --- | --- | --- | --- |
@@ -41,8 +41,9 @@
 | [2026-10-01](2026-10-01/README.md) | 量化 GEMM | group32与Ktile16；W4A4/W4A16/W8A8/W8A16；[校准](../quantization/2026-10-01/calibration/README.md) · [ARM09](../arm/2026-10-01/README.md) · [OS04](../os/2026-10-01/README.md) · [C++17 03](../cpp17/2026-10-01/README.md) · [两篇论文](../paper/2026-10-01/README.md) | [CUDA](2026-10-01/src/quant_gemm.cu)与[CPU](2026-10-01/src/main.cpp) | Release/ASan/UBSan通过；20对照/40步QAT；GPU缺nvcc/ncu/Thor；原生量化缺torch | W4A4 NRMSE22.76%→1.97%（absmax→离群），漂移退化；无GPU收益；[记录](2026-10-01/results/verification.json) |
 
 | [2026-10-02 / session-02](2026-10-02/session-02/README.md) | GPU 访存优化 | 独立stride转置：global合并+shared bank布局；[QAT](../quantization/2026-10-02/qat/README.md) · [ARM10](../arm/2026-10-02/session-02/README.md) · [OS05](../os/2026-10-02/session-02/README.md) · [C++04](../cpp17/2026-10-02/session-02/README.md) · [DAMP/GSQ](../paper/2026-10-02/README.md) | [CUDA](2026-10-02/session-02/src/transpose.cu)与[CPU](2026-10-02/session-02/src/cpu.cpp) | Release/ASan/UBSan 196比较+4非法输入通过；无nvcc/ncu/Thor，GPU未验；QAT缺torch | 无GPU/NPU/E2E收益；[验证](2026-10-02/session-02/verification.json)；[先前补充](2026-10-02/README.md)不重复推进 |
+| [2026-10-03](2026-10-03/README.md) | GPU 体系结构 | CTA共享树与warp映射：同步范围、驻留资源和长依赖链 | [Thor kernel](2026-10-03/src/energy.cu)；[NF4](../quantization/2026-10-03/nf4_qlora/README.md)；[ARM11](../arm/2026-10-03/README.md)；[论文](../paper/2026-10-03/README.md)；[OS06](../os/2026-10-03/README.md)；[C++05](../cpp17/2026-10-03/README.md) | CPU合同216项/ASan/UBSan通过；CUDA缺nvcc，GPU/ncu/PTX/SASS未验 | GPU性能未验证；[记录](2026-10-03/verification.json)；ARM CPU独立实测见分栏 |
 
-下一主主题：**GPU 体系结构**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
+下一主主题：**C++17 并发**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
 
 `2026-09-14` 为用户要求补充的历史 C++ 练习，不改变当前轮换位置。
 

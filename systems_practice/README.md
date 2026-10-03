@@ -12,7 +12,7 @@
 
 每课的 README 与代码、运行脚本和结果放在一起。学习路线、栏目规则等通用说明集中在 docs/。
 
-当前入口：[2026-10-02 主课](daily/2026-10-02/session-02/README.md) · [QAT](quantization/2026-10-02/qat/README.md) · [ARM10](arm/2026-10-02/session-02/README.md) · [DAMP与GSQ](paper/2026-10-02/README.md) · [OS05](os/2026-10-02/session-02/README.md) · [C++17 第04课](cpp17/2026-10-02/session-02/README.md)。
+当前入口：[2026-10-03 主课](daily/2026-10-03/README.md) · [NF4/QLoRA](quantization/2026-10-03/nf4_qlora/README.md) · [ARM11](arm/2026-10-03/README.md) · [OPTQ泛化与COEC](paper/2026-10-03/README.md) · [OS06](os/2026-10-03/README.md) · [C++17 第05课](cpp17/2026-10-03/README.md)。
 
 旧规范和旧总索引文件保留为兼容导航，正文只有一份；历史日志中的旧路径保留原样。迁移对应表见 [目录说明](docs/LAYOUT.md)。
 

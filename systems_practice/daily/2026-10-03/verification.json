@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-03",
+  "target": "Jetson Thor SM110",
+  "reference_cpu_run": true,
+  "cpu_cases": 216,
+  "cpu_sanitizer_passed": true,
+  "gpu_compiled": false,
+  "gpu_run": false,
+  "gpu_correctness_verified": false,
+  "gpu_performance_measured": false,
+  "ptx_generated": false,
+  "sass_generated": false,
+  "ncu_run": false,
+  "evidence": [
+    "results/cpu.txt",
+    "results/sanitize.txt",
+    "results/gpu.txt",
+    "results/environment.json"
+  ],
+  "blockers": [
+    "nvcc/ncu/cuobjdump absent",
+    "No NVIDIA GPU"
+  ],
+  "optimization_status": "complete candidate code; not compiled or performance validated",
+  "formatting": {
+    "script": "scripts/format-cpp.sh",
+    "status": "passed",
+    "scope": "Isolated mirror with root .clang-format and 8 current new C++/CUDA files; copied back; existing user files SHA256 unchanged"
+  },
+  "diff_check": {
+    "full_worktree": "Pre-existing trailing whitespace in arm/2026-09-23/src/registers.cpp:26; not modified by this run",
+    "current_scope": "git diff --cached --check passed after preserving raw GPU log in results/gpu-raw.json and normalizing text EOF"
+  }
+}

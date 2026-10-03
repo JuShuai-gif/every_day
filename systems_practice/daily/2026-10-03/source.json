@@ -1,0 +1,62 @@
+{
+  "date_read": "2026-10-03",
+  "repository": "https://github.com/pytorch/pytorch",
+  "tag": "v2.8.0",
+  "files": [
+    "aten/src/ATen/native/cuda/Reduce.cuh",
+    "LICENSE"
+  ],
+  "symbols": [
+    "ReduceOp::thread_reduce_impl",
+    "ReduceOp::block_x_reduce",
+    "ReduceConfig"
+  ],
+  "url": "https://github.com/pytorch/pytorch/blob/v2.8.0/aten/src/ATen/native/cuda/Reduce.cuh",
+  "license": "BSD-style; LICENSE read",
+  "relationship": "Inspired independent squared-energy kernels; no copied code",
+  "retained": [
+    "per-thread accumulation",
+    "shared-memory barrier versus warp shuffles",
+    "tail identity"
+  ],
+  "omitted": [
+    "generic dtype/functor dispatch",
+    "cross-CTA/global reduction",
+    "TensorIterator"
+  ],
+  "failed_attempts": [
+    {
+      "url": "https://raw.githubusercontent.com/NVIDIA/cuda-samples/master/cpp/2_Concepts_and_Techniques/reduction/reduction_kernel.cuh",
+      "reason": "web Internal Error/cache miss; not read"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/NVIDIA/cuda-samples/master/Samples/2_Concepts_and_Techniques/reduction/reduction_kernel.cuh",
+      "reason": "404; not read"
+    }
+  ],
+  "toolchain_evidence": "JetPack 7.0 announcement: Thor, CUDA 13; historical support baseline, not latest-version claim",
+  "official_sources": [
+    "https://forums.developer.nvidia.com/t/jetpack-7-0-jetson-linux-38-2-for-nvidia-jetson-thor-is-now-live/343127",
+    "https://docs.nvidia.com/cuda/parallel-thread-execution/",
+    "https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html",
+    "https://docs.nvidia.com/cuda/hopper-tuning-guide/index.html"
+  ],
+  "research_search_attempts": [
+    {
+      "url": "https://www.google.com/search?q=CUDA+warp+reduction+occupancy+NF4+QLoRA",
+      "result": "URL is not accessible via this tool; no article read"
+    },
+    {
+      "url": "https://www.google.com/search?q=NEON+multiple+accumulators+xv6+walk+string_view+lifetime",
+      "result": "URL is not accessible via this tool; no article read"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=CUDA%20warp%20NF4%20QLoRA",
+      "result": "URL is not accessible via this tool; no article read"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=NEON%20xv6%20string_view",
+      "result": "URL is not accessible via this tool; no article read"
+    }
+  ]
+}

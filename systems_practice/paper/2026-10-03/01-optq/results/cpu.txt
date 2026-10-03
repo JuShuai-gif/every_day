@@ -1,0 +1,53 @@
+{
+  "grid_results": [
+    {
+      "lambda": 0.0,
+      "q": [
+        0.0,
+        1.0
+      ],
+      "calibration": 0.0010000000000000018,
+      "validation": 0.5000666666666667
+    },
+    {
+      "lambda": 0.1,
+      "q": [
+        0.0,
+        1.0
+      ],
+      "calibration": 0.0010000000000000018,
+      "validation": 0.5000666666666667
+    },
+    {
+      "lambda": 1.0,
+      "q": [
+        0.0,
+        1.0
+      ],
+      "calibration": 0.0010000000000000018,
+      "validation": 0.5000666666666667
+    },
+    {
+      "lambda": 10.0,
+      "q": [
+        0.0,
+        1.0
+      ],
+      "calibration": 0.0010000000000000018,
+      "validation": 0.5000666666666667
+    }
+  ],
+  "chosen_on_validation": {
+    "lambda": 0.0,
+    "q": [
+      0.0,
+      1.0
+    ],
+    "calibration": 0.0010000000000000018,
+    "validation": 0.5000666666666667
+  },
+  "heldout_mse": 0.8127,
+  "nullspace_empirical": 0.0,
+  "isotropic_population": 2.0,
+  "not_OPTQ_replication": true
+}

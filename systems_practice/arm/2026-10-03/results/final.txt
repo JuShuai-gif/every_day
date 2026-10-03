@@ -1,0 +1,26 @@
+PASS comparisons=3081 max_abs_error=0
+PASS benchmark_shape=7 candidates=3
+N=7 accumulators=1 CPU_batch_mean_p50_us=0.00459 p95_us=0.00541
+N=7 accumulators=4 CPU_batch_mean_p50_us=0.00666 p95_us=0.00709
+N=7 accumulators=16 CPU_batch_mean_p50_us=0.00625 p95_us=0.00667
+PASS benchmark_shape=4096 candidates=3
+N=4096 accumulators=1 CPU_batch_mean_p50_us=1.19334 p95_us=1.66667
+N=4096 accumulators=4 CPU_batch_mean_p50_us=0.38584 p95_us=0.465
+N=4096 accumulators=16 CPU_batch_mean_p50_us=0.36916 p95_us=0.44292
+PASS benchmark_shape=65539 candidates=3
+N=65539 accumulators=1 CPU_batch_mean_p50_us=13.2296 p95_us=14.1921
+N=65539 accumulators=4 CPU_batch_mean_p50_us=3.79 p95_us=4.22167
+N=65539 accumulators=16 CPU_batch_mean_p50_us=3.81292 p95_us=4.24708
+PASS comparisons=3081 max_abs_error=0
+PASS benchmark_shape=7 candidates=3
+N=7 accumulators=1 CPU_batch_mean_p50_us=0.0075 p95_us=0.0075
+N=7 accumulators=4 CPU_batch_mean_p50_us=0.01375 p95_us=0.01417
+N=7 accumulators=16 CPU_batch_mean_p50_us=0.01875 p95_us=0.01916
+PASS benchmark_shape=4096 candidates=3
+N=4096 accumulators=1 CPU_batch_mean_p50_us=1.97208 p95_us=2.06334
+N=4096 accumulators=4 CPU_batch_mean_p50_us=1.56958 p95_us=1.685
+N=4096 accumulators=16 CPU_batch_mean_p50_us=1.40167 p95_us=1.47334
+PASS benchmark_shape=65539 candidates=3
+N=65539 accumulators=1 CPU_batch_mean_p50_us=30.6446 p95_us=31.5708
+N=65539 accumulators=4 CPU_batch_mean_p50_us=25.1412 p95_us=25.6062
+N=65539 accumulators=16 CPU_batch_mean_p50_us=22.3142 p95_us=22.9229

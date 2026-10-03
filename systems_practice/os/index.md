@@ -8,7 +8,8 @@
 | [2026-09-29](2026-09-29/README.md) | 02：fork状态复制 + exec映像替换 | Mac Release/ASan/UBSan成功/失败两路径通过；源码已读 | 精确commit、xv6/QEMU/Linux/板端；[记录](2026-09-29/verification.json) |
 | [2026-09-30](2026-09-30/README.md) | 03：exit资源释放 + wait僵尸回收 | Mac Release/ASan/UBSan：exit37/SIGKILL9、EOF、WNOWAIT、ECHILD通过 | 精确commit、xv6/QEMU/Linux/板端；[记录](2026-09-30/verification.json) |
 | [2026-10-01](2026-10-01/README.md) | 04：trapframe现场 + 系统调用返回 | 宿主状态模型/EBADF，Release/ASan/UBSan通过；xv6源码已读 | commit、xv6/QEMU/Linux/板端待验；[记录](2026-10-01/verification.json) |
+| [2026-10-03](2026-10-03/README.md) | 06：walk多级索引 + 映射权限与解除映射 | C++17 Release/ASan/UBSan，手算地址、1025跨叶映射与失败边界通过；本地PDF页5勘误核实 | xv6/QEMU/Linux/板端与精确commit待验；[记录](2026-10-03/verification.json) |
 
-下一课：**06 虚拟地址与页表**。
+下一课：**07 用户指针与内核拷贝**。
 
 2026-10-02正式交付：[05 页分配器空闲链表与失败回滚](2026-10-02/session-02/README.md)。Mac Release/ASan/UBSan通过；源码已读，Linux/板端未验。[并发旧游标补充](2026-10-02/README.md)保留但不计新课。

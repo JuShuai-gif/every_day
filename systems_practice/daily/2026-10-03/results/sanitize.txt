@@ -1,0 +1,1 @@
+PASS comparisons=216 invalid=4 zero=1 exact_index_coverage=1

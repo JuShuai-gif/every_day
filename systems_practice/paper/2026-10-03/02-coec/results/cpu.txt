@@ -1,0 +1,12 @@
+{
+  "one_sided_test": 0.30945977853425066,
+  "two_sided_test": 0.0,
+  "selected_test": 0.0,
+  "angles": [
+    0.4,
+    -0.6
+  ],
+  "preserved_frobenius_sq": 4.25,
+  "scale_mismatch_error_lower_bound": 0.9600637960155471,
+  "not_full_COEC": true
+}

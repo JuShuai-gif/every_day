@@ -1,0 +1,62 @@
+{
+  "date_read": "2026-10-03",
+  "source_fetch_record": "source.json",
+  "read_channel": "GitHub raw web; no verified local checkout",
+  "repositories": [
+    {
+      "url": "https://github.com/artidoro/qlora",
+      "commit": "7f4e95a68dc076bea9b3a413d2b512eca6d004e5",
+      "license": "MIT",
+      "files": [
+        "qlora.py",
+        "requirements.txt",
+        "LICENSE"
+      ],
+      "symbols": [
+        "get_accelerate_model",
+        "find_all_linear_names",
+        "SavePeftModelCallback",
+        "local_dataset",
+        "make_data_module",
+        "train"
+      ],
+      "call_chain": "train -> get_accelerate_model -> BitsAndBytesConfig + prepare_model_for_kbit_training -> get_peft_model -> Seq2SeqTrainer.train -> SavePeftModelCallback",
+      "permalink": "https://github.com/artidoro/qlora/blob/7f4e95a68dc076bea9b3a413d2b512eca6d004e5/qlora.py"
+    },
+    {
+      "url": "https://github.com/bitsandbytes-foundation/bitsandbytes",
+      "tag": "0.48.1",
+      "commit": "7e16503e403de460d4ed7dfd6c90a656628f5149",
+      "license": "MIT",
+      "files": [
+        "bitsandbytes/functional.py",
+        "bitsandbytes/nn/modules.py",
+        "bitsandbytes/backends/default/ops.py",
+        "pyproject.toml",
+        "LICENSE"
+      ],
+      "symbols": [
+        "quantize_nf4",
+        "quantize_4bit",
+        "dequantize_nf4",
+        "QuantState.as_dict",
+        "QuantState.from_dict",
+        "Linear4bit",
+        "quantize_4bit (default backend)"
+      ],
+      "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/7e16503e403de460d4ed7dfd6c90a656628f5149/bitsandbytes/functional.py",
+      "call_chain": "quantize_nf4 -> quantize_4bit -> registered backend -> packed uint8 + QuantState -> dequantize_nf4"
+    }
+  ],
+  "migration": "Current foundation repository verified; artidoro/qlora address still resolves. No local fetch success inferred.",
+  "relationship": {
+    "example.py": "Native bitsandbytes APIs plus independently implemented low-rank training/evaluation; not full QLoRA trainer",
+    "qlora-local.sh": "Original pinned QLoRA CLI candidate, unexecuted",
+    "src/nf4.cu": "Independent SIMT decoded GEMV, custom incompatible nibble/group layout"
+  },
+  "failed_build_source_read": {
+    "url": "https://raw.githubusercontent.com/bitsandbytes-foundation/bitsandbytes/0.48.1/CMakeLists.txt",
+    "reason": "Internal Error; no asserted verified native-extension build flags"
+  },
+  "search_attempt_record": "../../../daily/2026-10-03/source.json"
+}

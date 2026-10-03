@@ -1,0 +1,40 @@
+{
+  "date_read": "2026-10-03",
+  "repository": "https://github.com/mit-pdos/xv6-riscv",
+  "branch": "riscv",
+  "commit": null,
+  "file": "kernel/vm.c",
+  "symbols": [
+    "walk",
+    "walkaddr",
+    "mappages",
+    "uvmunmap",
+    "copyout",
+    "kvminithart"
+  ],
+  "license": "MIT; LICENSE read",
+  "relationship": "Independent C++17 Sv39 semantic model, not a kernel port",
+  "retained": [
+    "9-bit indices",
+    "leaf permissions",
+    "unmap semantics"
+  ],
+  "omitted": [
+    "actual hardware page tables",
+    "TLB",
+    "physical page allocator",
+    "concurrent faults"
+  ],
+  "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/vm.c",
+  "local_pdf": {
+    "path": "/Users/guhaoran/书籍资料/ARM/VivekPublicRepo/ARM-MMU/MMUAdvanced/MMU-Chapter 19 MMU Performance Optimization Techniques.pdf",
+    "sha256": "bec29c5ba1ab2ac0169b26c61d789d9d7861b4ff889d5bf9f22b892d89740279",
+    "page": 5,
+    "section": "19.4",
+    "method": "pdftoppm page render visually read; pdftotext absent",
+    "license": "unverified; no PDF redistributed",
+    "correction": "Traditional AArch64 48-bit VA / 4KB uses four levels, unlike three-level Sv39",
+    "authority": "https://docs.kernel.org/arch/arm64/memory.html"
+  },
+  "search_attempt_record": "../../daily/2026-10-03/source.json"
+}

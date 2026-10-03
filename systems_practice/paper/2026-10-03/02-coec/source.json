@@ -1,0 +1,29 @@
+{
+  "id": "arxiv:2608.21142",
+  "title": "COEC: Calibrated Orthogonal-Equivalence Compensation for Structured Pruning of Large Language Models",
+  "authors": [
+    "Peiqi Yu",
+    "Nam Ling",
+    "Wei Wang",
+    "Wei Jiang"
+  ],
+  "first_submitted": "2026-08-21",
+  "version": "v1",
+  "publication_status": "preprint; peer review not verified",
+  "date_read": "2026-10-03",
+  "url": "https://arxiv.org/html/2608.21142v1",
+  "sections_read": [
+    "3",
+    "4.1",
+    "4.2",
+    "Algorithm1",
+    "5.1-5.3"
+  ],
+  "author_repository": null,
+  "code_search": {
+    "query": "COEC: Calibrated Orthogonal-Equivalence Compensation for Structured Pruning of Large Language Models GitHub",
+    "result": "No verified author implementation found; repository/license pending"
+  },
+  "example_relationship": "Independent standard-library mechanism illustration, not paper replication",
+  "source_code_read": false
+}

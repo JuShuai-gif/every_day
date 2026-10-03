@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "next_method_id": "nf4_qlora",
-  "last_lesson_date": "2026-10-02",
+  "next_method_id": "kivi",
+  "last_lesson_date": "2026-10-03",
   "completed_methods": [],
   "history": [
     {
@@ -255,6 +255,21 @@
       "verification": "2026-10-02/qat/verification.json",
       "counts_toward_daily_progress": true,
       "status": "partial; clone DNS and missing torch; full commit/license/Thor pending"
+    },
+    {
+      "date": "2026-10-03",
+      "method": "nf4_qlora",
+      "commit": "7f4e95a68dc076bea9b3a413d2b512eca6d004e5",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "native_api_language": "Python/PyTorch",
+      "lesson": "2026-10-03/nf4_qlora/README.md",
+      "verification": "2026-10-03/nf4_qlora/verification.json",
+      "counts_toward_daily_progress": true,
+      "status": "partial; clone DNS, missing torch and Thor; native example and training not executed"
     }
   ],
   "backlog": [
@@ -269,9 +284,9 @@
       "example_delivered": true,
       "cpu_example_run": false,
       "thor_verified": false,
-      "last_retry_date": "2026-10-02",
+      "last_retry_date": "2026-10-03",
       "latest_verification": "2026-09-19/awq/verification.json",
-      "latest_source_retry": "2026-10-02/awq-retry-source.json"
+      "latest_source_retry": "2026-10-03/awq-retry-source.json"
     },
     {
       "method": "gptq",
@@ -439,12 +454,23 @@
       "example_delivered": true,
       "cpu_example_run": false,
       "thor_verified": false
+    },
+    {
+      "method": "nf4_qlora",
+      "date": "2026-10-03",
+      "reason": "Local clone DNS failed, no verified cache; torch missing; Thor/native backend and QLoRA dependency compatibility unverified",
+      "latest_verification": "2026-10-03/nf4_qlora/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false
     }
   ],
   "policy": "One quantization lesson per Asia/Shanghai calendar day, independent of main rotation. Preparation does not advance cursor. Daily attempted lessons may advance cursor but failures stay in backlog and never enter completed_methods. Completion requires source read and concrete upstream usage example delivered; execution evidence tracked separately.",
   "last_language_audit": "2026-09-22T10:43:01.386131+08:00",
   "language_policy": "Torch-first for algorithms/models/precision/framework timing; C++ optional for explicit layout/CPU kernel studies",
-  "last_canonical_lesson_date": "2026-10-02",
+  "last_canonical_lesson_date": "2026-10-03",
   "backfill_reconciled_at": "2026-09-28T05:01:42.754872+00:00",
   "reconciliation_note": "2026-10-02 concurrent Oct1 registration corrected: calibration draft retained as supplemental; QAT canonical. One old backlog retry AWQ only. Earlier backfill history preserved."
 }

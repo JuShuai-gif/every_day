@@ -25,6 +25,8 @@
 | 2026-09-30 | [When Quantization Breaks Memory: Recurrent-State Write-Back in Low-Precision Temporal Inference](2026-09-30/01-writeback/README.md) / 2026-09-03 | 状态回写量化吞掉小更新；误差反馈与真实状态存储 | 完整复现难：作者实现未核实/未公开 | Python独立机制检查通过；无模型/硬件复现 |
 | 2026-09-30 | [When Compression Scores Cannot Decide: Information Boundaries for Group-Robust LLM Pruning](2026-09-30/02-group-risk/README.md) / 2026-08-03 | 同局部分数可对应相反最差组决策；完整mask风险边界 | 完整复现难：作者实现未核实/未公开 | Python独立机制检查通过；无模型/硬件复现 |
 | 2026-10-01 | [Joint Architectural/Quantization Search](2026-10-01/01-joint-search/README.md) / 2026-06-02；[Debias-SparseGPT](2026-10-01/02-debias/README.md) / 2026-09-02 | 联合选择/离散预算；成对Hessian与OBS | 官方实现缺口/全模型难；Debias master补丁已读 | 两个独立Python例子通过，无完整训练/GPU复现 |
+| 2026-10-03 | [OPTQ泛化与正则](2026-10-03/01-optq/README.md) / 2026-09-25 | 校准零空间与正则几何；v1预印本 | 中→难：作者实现未找到 | Python标准库秩亏/独立调参及保留评估通过；非OPTQ实现 |
+| 2026-10-03 | [COEC](2026-10-03/02-coec/README.md) / 2026-08-21 | 结构剪枝后双侧正交补偿；v1预印本 | 难：作者实现未找到 | 二维旋转与谱尺度反例通过；非模型剪枝复现 |
 
 
 下一期继续检索新论文；不重复已归档 arXiv ID。完整进度见 [progress.json](progress.json)。

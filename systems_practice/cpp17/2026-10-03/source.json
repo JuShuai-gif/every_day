@@ -1,0 +1,37 @@
+{
+  "date_read": "2026-10-03",
+  "repository": "https://github.com/llvm/llvm-project",
+  "branch": "main",
+  "commit": null,
+  "file": "libcxx/include/string_view",
+  "symbols": [
+    "basic_string_view constructors",
+    "data",
+    "size",
+    "remove_prefix",
+    "substr",
+    "at"
+  ],
+  "license": "Apache-2.0 WITH LLVM-exception; LICENSE.TXT read",
+  "url": "https://github.com/llvm/llvm-project/blob/main/libcxx/include/string_view",
+  "relationship": "Independent owner-plus-offset request inspired by borrowed pointer/length representation",
+  "retained": [
+    "non-owning slice",
+    "length-aware operations"
+  ],
+  "omitted": [
+    "traits/custom allocators",
+    "C++20/23 APIs"
+  ],
+  "failed_attempts": [
+    {
+      "ref": "llvmorg-18.1.8",
+      "reason": "Cache miss"
+    },
+    {
+      "ref": "release/18.x",
+      "reason": "Incomplete web rendering; used readable main implementation and only C++17 APIs"
+    }
+  ],
+  "search_attempt_record": "../../daily/2026-10-03/source.json"
+}

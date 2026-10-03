@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-03",
+  "source_read": true,
+  "host_compile": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "target_board_verified": false,
+  "evidence": [
+    "results/host.txt"
+  ],
+  "blockers": [
+    "No target Linux board; source branch not commit-pinned"
+  ],
+  "lesson_id": "05",
+  "version_pinned": false
+}

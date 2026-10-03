@@ -1,0 +1,44 @@
+{
+  "method": "nf4_qlora",
+  "date": "2026-10-03",
+  "repository": "https://github.com/artidoro/qlora",
+  "commit": "7f4e95a68dc076bea9b3a413d2b512eca6d004e5",
+  "backend_commit": "7e16503e403de460d4ed7dfd6c90a656628f5149",
+  "source_record": "source.json",
+  "reading_record": "source-reading.json",
+  "source_fetched": false,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "training_updates_executed": false,
+  "thor_verified": false,
+  "gpu_compiled": false,
+  "read_symbols": [
+    "get_accelerate_model",
+    "find_all_linear_names",
+    "SavePeftModelCallback",
+    "local_dataset",
+    "make_data_module",
+    "train",
+    "quantize_nf4",
+    "quantize_4bit",
+    "dequantize_nf4",
+    "QuantState.as_dict",
+    "QuantState.from_dict",
+    "Linear4bit",
+    "quantize_4bit (default backend)"
+  ],
+  "evidence": [
+    "results/cpu.txt",
+    "results/gpu.txt",
+    "source.json",
+    "source-reading.json"
+  ],
+  "blockers": [
+    "git clone: Could not resolve host github.com; no verified cache",
+    "ModuleNotFoundError: torch",
+    "nvcc absent; no Thor",
+    "Native backend SM110 compatibility and historical QLoRA dependency combination unverified"
+  ],
+  "status": "delivered usage candidate; native execution and numerical/storage/performance results pending"
+}
