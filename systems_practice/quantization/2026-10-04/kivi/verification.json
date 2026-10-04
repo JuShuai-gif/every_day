@@ -1,0 +1,52 @@
+{
+  "method": "kivi",
+  "date": "2026-10-04",
+  "recorded_at": "2026-10-04T12:16:52.055206+08:00",
+  "repository": "https://github.com/jy-yuan/KIVI",
+  "commit": "876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6",
+  "source_record": "source.json",
+  "additional_source_record": "source-web.json",
+  "source_fetched": false,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": [
+    "quant_and_pack_kcache",
+    "quant_and_pack_vcache",
+    "pack_tensor",
+    "unpack_tensor",
+    "unpack_and_dequant_kcache",
+    "unpack_and_dequant_vcache",
+    "LlamaAttention_KIVI.forward",
+    "cuda_bmm_fA_qB_outer",
+    "warp_reduce_sum",
+    "gemv_kernel_g64"
+  ],
+  "independent_cpu_model_run": true,
+  "independent_asan_ubsan_passed": true,
+  "independent_checks": "964 rows/36 shapes/2invalid; 2bit mapping and warp model; no native KIVI inference",
+  "gpu_compiled": false,
+  "gpu_run": false,
+  "ptx_generated": false,
+  "sass_generated": false,
+  "ncu_run": false,
+  "evidence": [
+    "results/awq-retry.json",
+    "results/final-cpu.txt",
+    "results/final-dependencies.txt",
+    "results/final-gpu.txt",
+    "results/final-isa.txt",
+    "results/final-native.txt",
+    "results/final-ncu.txt",
+    "results/final-sanitize.txt",
+    "results/initial-cpu.txt"
+  ],
+  "blockers": [
+    "git clone DNS failure; no verified cached checkout",
+    "native run stops on missing checkout; dependency probe fails missing torch",
+    "No nvcc/ncu/Thor",
+    "Historical upstream dependencies do not establish CUDA13/SM110 support"
+  ],
+  "native_accuracy_storage_performance": null
+}

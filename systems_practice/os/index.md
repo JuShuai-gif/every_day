@@ -10,6 +10,8 @@
 | [2026-10-01](2026-10-01/README.md) | 04：trapframe现场 + 系统调用返回 | 宿主状态模型/EBADF，Release/ASan/UBSan通过；xv6源码已读 | commit、xv6/QEMU/Linux/板端待验；[记录](2026-10-01/verification.json) |
 | [2026-10-03](2026-10-03/README.md) | 06：walk多级索引 + 映射权限与解除映射 | C++17 Release/ASan/UBSan，手算地址、1025跨叶映射与失败边界通过；本地PDF页5勘误核实 | xv6/QEMU/Linux/板端与精确commit待验；[记录](2026-10-03/verification.json) |
 
-下一课：**07 用户指针与内核拷贝**。
+下一课：**08 地址空间增长与延迟分配**。
 
 2026-10-02正式交付：[05 页分配器空闲链表与失败回滚](2026-10-02/session-02/README.md)。Mac Release/ASan/UBSan通过；源码已读，Linux/板端未验。[并发旧游标补充](2026-10-02/README.md)保留但不计新课。
+
+2026-10-04正式交付：[07 copyin/copyout＋跨页边界](2026-10-04/README.md)。Release/ASan/UBSan 2450区间/部分复制/事务回滚通过；xv6源码与本地PDF页1已读；QEMU/Linux/板端未验。

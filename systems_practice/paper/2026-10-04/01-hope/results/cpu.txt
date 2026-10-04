@@ -1,0 +1,16 @@
+{
+  "selected": [
+    0,
+    2
+  ],
+  "diagonal": [
+    0,
+    1
+  ],
+  "calibration_full": 0.8133333333333332,
+  "calibration_diagonal": 1.3333333333333333,
+  "heldout_full": 16.81,
+  "heldout_diagonal": 0.04000000000000001,
+  "conditional_objective": 2.44,
+  "status": "PASS; shifted heldout can regress; surrogate only; no model accuracy or pruning speed"
+}

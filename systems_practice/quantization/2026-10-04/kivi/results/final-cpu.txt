@@ -1,0 +1,4 @@
+command=['sh', 'systems_practice/quantization/2026-10-04/kivi/build.sh', 'cpu']
+PASS independent packed QK 964 rows, 36 shapes, zero/constant/tails, 2 invalid; not native KIVI or GPU execution
+
+exit_code=0

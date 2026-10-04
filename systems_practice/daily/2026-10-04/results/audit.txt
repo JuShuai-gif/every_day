@@ -1,0 +1,18 @@
+{
+  "counts": {
+    "json": 14,
+    "python": 3,
+    "shell": 14,
+    "links": 50
+  },
+  "user_files_unchanged": [
+    "systems_practice/arm/2026-09-22/src/inspect_target.cpp",
+    "systems_practice/arm/2026-09-23/src/registers.cpp",
+    "systems_practice/daily/2026-09-14/src/frame_arena.hpp",
+    "systems_practice/daily/2026-09-14/src/main.cpp"
+  ],
+  "ARM_date_json_count": 0,
+  "scoped_formatter": "real scripts/format-cpp.sh via scoped mirror; no historical files formatted"
+}
+
+Full-worktree git diff --check: only pre-existing user trailing whitespace systems_practice/arm/2026-09-23/src/registers.cpp:26; preserved.

@@ -1,0 +1,11 @@
+PASS 66 shapes, offset1, odd stride, tails, guards, invalid stride
+shape=17x1 stride=58
+scalar/autovec CPU batch_mean_us P50=0.041625 P95=0.046875
+AoS LD3 direct CPU batch_mean_us P50=0.0078125 P95=0.0104375
+SoA reused CPU batch_mean_us P50=0.00525 P95=0.0078125
+pack+SoA CPU batch_mean_us P50=0.015625 P95=0.01825
+shape=641x480 stride=1930
+scalar/autovec CPU batch_mean_us P50=158.273 P95=311.875
+AoS LD3 direct CPU batch_mean_us P50=13.4297 P95=13.5599
+SoA reused CPU batch_mean_us P50=9.24475 P95=9.36194
+pack+SoA CPU batch_mean_us P50=35.4453 P95=36.9609

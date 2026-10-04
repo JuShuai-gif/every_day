@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-04",
+  "repository": "https://github.com/jy-yuan/KIVI",
+  "commit": "876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6",
+  "source_read": true,
+  "source_fetched": false,
+  "scope": "Pinned webpage low-level pack/unpack, model cache forward selected sections, CUDA wrapper and warp/g64 path; not full repository audit",
+  "files": [
+    "quant/new_pack.py",
+    "models/llama_kivi.py",
+    "quant/matmul.py",
+    "quant/csrc/gemv_cuda.cu",
+    "quant/setup.py",
+    "README.md",
+    "LICENSE"
+  ],
+  "symbols": [
+    "quant_and_pack_kcache",
+    "quant_and_pack_vcache",
+    "pack_tensor",
+    "unpack_tensor",
+    "unpack_and_dequant_kcache",
+    "unpack_and_dequant_vcache",
+    "LlamaAttention_KIVI.forward",
+    "cuda_bmm_fA_qB_outer",
+    "warp_reduce_sum",
+    "gemv_kernel_g64"
+  ],
+  "permalinks": [
+    "https://github.com/jy-yuan/KIVI/blob/876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6/quant/new_pack.py",
+    "https://github.com/jy-yuan/KIVI/blob/876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6/models/llama_kivi.py",
+    "https://github.com/jy-yuan/KIVI/blob/876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6/quant/matmul.py",
+    "https://github.com/jy-yuan/KIVI/blob/876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6/quant/csrc/gemv_cuda.cu",
+    "https://github.com/jy-yuan/KIVI/blob/876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6/quant/setup.py",
+    "https://github.com/jy-yuan/KIVI/blob/876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6/README.md",
+    "https://github.com/jy-yuan/KIVI/blob/876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6/LICENSE"
+  ],
+  "license": "MIT; pinned LICENSE body read",
+  "migration": "same original repository; no redirect observed",
+  "upstream_versions": {
+    "README": "Python3.10; transformers4.43 note",
+    "requirements_branch": "torch2.1.2 numpy1.26.3 flash-attn2.5.6; NOT Thor compatibility proof"
+  },
+  "failed_attempts": [
+    {
+      "url": "https://raw.githubusercontent.com/jy-yuan/KIVI/876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6/quant/csrc/setup.py",
+      "error": "Internal Error; corrected to quant/setup.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/jy-yuan/KIVI/876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6/setup.py",
+      "error": "Internal Error; not read"
+    }
+  ],
+  "research_attempts": [
+    {
+      "url": "https://www.google.com/search?q=C%2B%2B+bounded+thread+pool+shutdown+site%3Azhihu.com",
+      "result": "web Internal Error / inaccessible; no article read"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=NEON%20vld3%20RGB",
+      "result": "web Internal Error / inaccessible; no article read"
+    },
+    {
+      "url": "https://www.google.com/search?q=KIVI+KV+cache+copyin+structured+bindings+source",
+      "result": "web Internal Error / inaccessible; no article read"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=KIVI%20copyin%20%E7%BB%93%E6%9E%84%E5%8C%96%E7%BB%91%E5%AE%9A",
+      "result": "web Internal Error / inaccessible; no article read"
+    },
+    {
+      "url": "https://www.google.com/search?q=HOPE+D-Quant+paper+implementation",
+      "result": "web Internal Error / inaccessible; no article read"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=HOPE%20D-Quant",
+      "result": "web Internal Error / inaccessible; no article read"
+    }
+  ],
+  "relationship": "native_example calls upstream functions; qk candidates independently authored, not binary layout compatible"
+}

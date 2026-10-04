@@ -3,15 +3,16 @@
   "timezone": "Asia/Shanghai",
   "created_on": "2026-09-28",
   "topics_per_day": 2,
-  "next_lesson_id": "07",
-  "last_delivery_date": "2026-10-03",
+  "next_lesson_id": "08",
+  "last_delivery_date": "2026-10-04",
   "delivered_lesson_ids": [
     "01",
     "02",
     "03",
     "04",
     "05",
-    "06"
+    "06",
+    "07"
   ],
   "delivered_topic_ids": [
     "01a",
@@ -25,7 +26,9 @@
     "05a",
     "05b",
     "06a",
-    "06b"
+    "06b",
+    "07a",
+    "07b"
   ],
   "history": [
     {
@@ -165,6 +168,27 @@
       "xv6_compiled": false,
       "qemu_run": false,
       "linux_run": false
+    },
+    {
+      "date": "2026-10-04",
+      "lesson_id": "07",
+      "path": "2026-10-04",
+      "source_read": true,
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "version_pinned": false,
+      "verification": "2026-10-04/verification.json",
+      "topic_ids": [
+        "07a",
+        "07b"
+      ],
+      "xv6_compiled": false,
+      "qemu_run": false,
+      "linux_run": false
     }
   ],
   "backlog": [
@@ -228,5 +252,6 @@
       "reason": "Upstream exact commit and Linux/target-board verification pending",
       "verification": "2026-10-03/verification.json"
     }
-  ]
+  ],
+  "last_canonical_lesson_date": "2026-10-04"
 }

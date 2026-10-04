@@ -1,0 +1,4 @@
+command=['sh', 'systems_practice/quantization/2026-10-04/kivi/build.sh', 'gpu']
+systems_practice/quantization/2026-10-04/kivi/build.sh: line 8: nvcc: command not found
+
+exit_code=127

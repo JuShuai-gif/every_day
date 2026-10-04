@@ -1,0 +1,49 @@
+{
+  "read_date": "2026-10-04",
+  "repository": "https://github.com/llvm/llvm-project",
+  "branch": "main",
+  "commit": null,
+  "version_pinned": false,
+  "files": [
+    "libcxx/include/__utility/pair.h"
+  ],
+  "symbols": [
+    "pair",
+    "tuple_size",
+    "tuple_element",
+    "get",
+    "__get_pair"
+  ],
+  "urls": [
+    "https://github.com/llvm/llvm-project/blob/main/libcxx/include/__utility/pair.h"
+  ],
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "relationship": "Independent map example; pair protocol read, not compiler implementation",
+  "source_read": true,
+  "research_attempts": [
+    {
+      "url": "https://www.google.com/search?q=C%2B%2B+bounded+thread+pool+shutdown+site%3Azhihu.com",
+      "result": "web Internal Error / inaccessible; no article read"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=NEON%20vld3%20RGB",
+      "result": "web Internal Error / inaccessible; no article read"
+    },
+    {
+      "url": "https://www.google.com/search?q=KIVI+KV+cache+copyin+structured+bindings+source",
+      "result": "web Internal Error / inaccessible; no article read"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=KIVI%20copyin%20%E7%BB%93%E6%9E%84%E5%8C%96%E7%BB%91%E5%AE%9A",
+      "result": "web Internal Error / inaccessible; no article read"
+    },
+    {
+      "url": "https://www.google.com/search?q=HOPE+D-Quant+paper+implementation",
+      "result": "web Internal Error / inaccessible; no article read"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=HOPE%20D-Quant",
+      "result": "web Internal Error / inaccessible; no article read"
+    }
+  ]
+}

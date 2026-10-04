@@ -1,0 +1,1 @@
+PASS independent packed QK 964 rows, 36 shapes, zero/constant/tails, 2 invalid; not native KIVI or GPU execution

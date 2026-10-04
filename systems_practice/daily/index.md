@@ -43,7 +43,9 @@
 | [2026-10-02 / session-02](2026-10-02/session-02/README.md) | GPU 访存优化 | 独立stride转置：global合并+shared bank布局；[QAT](../quantization/2026-10-02/qat/README.md) · [ARM10](../arm/2026-10-02/session-02/README.md) · [OS05](../os/2026-10-02/session-02/README.md) · [C++04](../cpp17/2026-10-02/session-02/README.md) · [DAMP/GSQ](../paper/2026-10-02/README.md) | [CUDA](2026-10-02/session-02/src/transpose.cu)与[CPU](2026-10-02/session-02/src/cpu.cpp) | Release/ASan/UBSan 196比较+4非法输入通过；无nvcc/ncu/Thor，GPU未验；QAT缺torch | 无GPU/NPU/E2E收益；[验证](2026-10-02/session-02/verification.json)；[先前补充](2026-10-02/README.md)不重复推进 |
 | [2026-10-03](2026-10-03/README.md) | GPU 体系结构 | CTA共享树与warp映射：同步范围、驻留资源和长依赖链 | [Thor kernel](2026-10-03/src/energy.cu)；[NF4](../quantization/2026-10-03/nf4_qlora/README.md)；[ARM11](../arm/2026-10-03/README.md)；[论文](../paper/2026-10-03/README.md)；[OS06](../os/2026-10-03/README.md)；[C++05](../cpp17/2026-10-03/README.md) | CPU合同216项/ASan/UBSan通过；CUDA缺nvcc，GPU/ncu/PTX/SASS未验 | GPU性能未验证；[记录](2026-10-03/verification.json)；ARM CPU独立实测见分栏 |
 
-下一主主题：**C++17 并发**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
+| [2026-10-04](2026-10-04/README.md) | C++17 并发 | 有界提交＋关闭排空/在途资源寿命；[KIVI](../quantization/2026-10-04/kivi/README.md) · [ARM12](../arm/2026-10-04/README.md) · [OS07](../os/2026-10-04/README.md) · [C++06](../cpp17/2026-10-04/README.md) · [HOPE/D-Quant](../paper/2026-10-04/README.md) | [线程池](2026-10-04/src/pool.hpp)与[检查](2026-10-04/src/main.cpp) | Release/ASan/UBSan/TSan通过，800任务、启动失败/异常/关闭；量化原生缺checkout/torch，Thor缺工具设备 | 主课不测推理性能；ARM独立CPU direct/pack+SoA P50 13.3386/34.8229us；[记录](2026-10-04/verification.json) |
+
+下一主主题：**CPU 体系结构**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
 
 `2026-09-14` 为用户要求补充的历史 C++ 练习，不改变当前轮换位置。
 

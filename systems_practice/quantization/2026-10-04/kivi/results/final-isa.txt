@@ -1,0 +1,4 @@
+command=['sh', 'systems_practice/quantization/2026-10-04/kivi/export-isa.sh']
+systems_practice/quantization/2026-10-04/kivi/export-isa.sh: line 5: nvcc: command not found
+
+exit_code=127

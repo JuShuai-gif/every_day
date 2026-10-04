@@ -1,0 +1,12 @@
+command=['sh', 'systems_practice/quantization/2026-10-04/kivi/run.sh']
+fatal: cannot change to '/Users/guhaoran/code/EveryDay/systems_practice/.tmp/quant_sources/kivi-g2u4zey0/repo': No such file or directory
+Traceback (most recent call last):
+  File "/Users/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-04/kivi/native_example.py", line 17, in <module>
+    if subprocess.check_output(['git', '-C', str(repo), 'rev-parse', 'HEAD'], text=True).strip() != PIN:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 424, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', '-C', '/Users/guhaoran/code/EveryDay/systems_practice/.tmp/quant_sources/kivi-g2u4zey0/repo', 'rev-parse', 'HEAD']' returned non-zero exit status 128.
+
+exit_code=1

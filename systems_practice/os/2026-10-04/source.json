@@ -1,0 +1,63 @@
+{
+  "read_date": "2026-10-04",
+  "repository": "https://github.com/mit-pdos/xv6-riscv",
+  "branch": "riscv",
+  "commit": null,
+  "version_pinned": false,
+  "files": [
+    "kernel/vm.c",
+    "kernel/syscall.c",
+    "LICENSE"
+  ],
+  "symbols": [
+    "copyin",
+    "copyout",
+    "copyinstr",
+    "vmfault",
+    "argaddr",
+    "fetchaddr"
+  ],
+  "urls": [
+    "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/vm.c",
+    "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/syscall.c",
+    "https://github.com/mit-pdos/xv6-riscv/blob/riscv/LICENSE"
+  ],
+  "license": "MIT",
+  "relationship": "Independent page-copy model, not kernel port; 16-byte teaching pages",
+  "source_read": true,
+  "research_attempts": [
+    {
+      "url": "https://www.google.com/search?q=C%2B%2B+bounded+thread+pool+shutdown+site%3Azhihu.com",
+      "result": "web Internal Error / inaccessible; no article read"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=NEON%20vld3%20RGB",
+      "result": "web Internal Error / inaccessible; no article read"
+    },
+    {
+      "url": "https://www.google.com/search?q=KIVI+KV+cache+copyin+structured+bindings+source",
+      "result": "web Internal Error / inaccessible; no article read"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=KIVI%20copyin%20%E7%BB%93%E6%9E%84%E5%8C%96%E7%BB%91%E5%AE%9A",
+      "result": "web Internal Error / inaccessible; no article read"
+    },
+    {
+      "url": "https://www.google.com/search?q=HOPE+D-Quant+paper+implementation",
+      "result": "web Internal Error / inaccessible; no article read"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=HOPE%20D-Quant",
+      "result": "web Internal Error / inaccessible; no article read"
+    }
+  ],
+  "local_reference": {
+    "path": "/Users/guhaoran/书籍资料/ARM/VivekPublicRepo/ARM-MMU/MMUAdvanced/MMU-Chapter 05 PAGE TABLE LEVELS AND DESCRIPTOR FORMATS.pdf",
+    "pages": [
+      1
+    ],
+    "sha256": "9f5d73354fd147afe02a5101fb3e7a313da2aa8465635fac1ffa1fc87d63e187",
+    "scope": "5.1 introduction; rendered and visually read; hierarchy depends on granule/VA; no copyin claims from PDF",
+    "license": "unverified; no copied PDF/text"
+  }
+}

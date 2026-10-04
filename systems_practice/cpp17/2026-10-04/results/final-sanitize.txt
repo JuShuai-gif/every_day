@@ -1,0 +1,3 @@
+PASS value bindings copies=2; reference edits=2 copies=0; throwing copy leaves map unchanged; empty; duplicate insert; temporary lifetime; decltype checks
+
+exit_code=0

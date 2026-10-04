@@ -1,0 +1,6 @@
+command=['python3', '-c', 'import torch; import triton; print(torch.__version__,triton.__version__)']
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'torch'
+
+exit_code=1

@@ -1,0 +1,4 @@
+command=['sh', 'systems_practice/quantization/2026-10-04/kivi/profile.sh']
+systems_practice/quantization/2026-10-04/kivi/profile.sh: line 6: ncu: command not found
+
+exit_code=127

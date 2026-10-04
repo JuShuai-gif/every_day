@@ -1,0 +1,18 @@
+{
+  "method": "awq",
+  "repository": "https://github.com/mit-han-lab/llm-awq.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-10-04T00:32:43.210732+00:00",
+  "commit": null,
+  "cache": ".tmp/quant_sources/awq-o74wph9g",
+  "status": "failed",
+  "source_read": false,
+  "example_run": false,
+  "files": [],
+  "errors": [
+    {
+      "reason": "Cloning into '/Users/guhaoran/code/EveryDay/systems_practice/.tmp/quant_sources/awq-o74wph9g/repo'...\nfatal: unable to access 'https://github.com/mit-han-lab/llm-awq.git/': Could not resolve host: github.com"
+    }
+  ],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example."
+}

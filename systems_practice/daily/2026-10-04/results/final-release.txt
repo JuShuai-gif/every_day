@@ -1,0 +1,3 @@
+PASS 800 tasks exactly once; full timeout; close wake/drain; in-flight idle; 3 task errors; 3 constructor rollbacks; 2 invalid shapes
+
+exit_code=0

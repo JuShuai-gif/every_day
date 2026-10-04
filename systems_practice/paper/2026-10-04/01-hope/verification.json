@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-04",
+  "paper_id": "arxiv:2609.18916",
+  "selected_fulltext_sections_read": true,
+  "author_source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": true,
+  "full_paper_reproduced": false,
+  "training_update_performed": false,
+  "author_model_run": false,
+  "thor_verified": false,
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "blockers": [
+    "Full model/data/target experiment not run",
+    "Native author workflow/version pin pending"
+  ],
+  "performance_claim": null
+}

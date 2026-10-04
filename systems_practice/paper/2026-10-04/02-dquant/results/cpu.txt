@@ -1,0 +1,10 @@
+{
+  "nearest_bits": 18,
+  "nearest_error": 0.7000000000000002,
+  "drift_bits": 16,
+  "drift_error": 2.7,
+  "oracle_error": 2.7,
+  "actual_payload_bytes": 2,
+  "format_note": "fixed shared codebook; count/scale metadata excluded; NOT total KV BPV",
+  "status": "PASS roundtrip/infeasible; scalar prefix-code demonstration, not D-Quant replication"
+}

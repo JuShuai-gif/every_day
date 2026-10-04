@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-04",
+  "recorded_at": "2026-10-04T12:16:52.055206+08:00",
+  "source_read": true,
+  "version_pinned": false,
+  "host_compiled": true,
+  "host_run": true,
+  "asan_ubsan_passed": true,
+  "tsan_passed": null,
+  "compiler": "Apple clang 21.0.0; arm64-apple-darwin25.6.0; -std=c++17",
+  "xv6_compiled": false,
+  "qemu_run": false,
+  "linux_run": false,
+  "target_board_verified": false,
+  "performance_claim": null,
+  "evidence": [
+    "results/final-release.txt",
+    "results/final-sanitize.txt"
+  ],
+  "blockers": [
+    "No target board validation",
+    "Upstream exact commit not pinned"
+  ]
+}

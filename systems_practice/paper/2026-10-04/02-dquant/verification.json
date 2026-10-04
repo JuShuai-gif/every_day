@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-04",
+  "paper_id": "arxiv:2609.19880",
+  "selected_fulltext_sections_read": true,
+  "author_source_read": false,
+  "example_delivered": true,
+  "cpu_example_run": true,
+  "full_paper_reproduced": false,
+  "training_update_performed": false,
+  "author_model_run": false,
+  "thor_verified": false,
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "blockers": [
+    "Author code/license not located",
+    "Toy prefix code is not rANS or compressed attention backend"
+  ],
+  "performance_claim": null
+}

@@ -2,7 +2,7 @@
 
 [栏目说明](../docs/quantization/README.md) · [交付模板](../docs/quantization/LESSON_TEMPLATE.md) · [方法目录](catalog.json) · [进度](progress.json)
 
-下一方法：**KIVI / KV Cache量化**（kivi）。NF4/QLoRA原生运行、训练与源码获取待补，不记为完成。
+下一方法：**8-bit optimizer states**（optimizer_8bit）。KIVI原生运行、Thor验证与源码获取待补，不记为完成。
 
 | 日期 | 类型 | 方法 | 源码 / 阅读 / 示例 / CPU / Thor | 证据 |
 | --- | --- | --- | --- | --- |
@@ -27,3 +27,5 @@
 补课失败均单独进入 backlog；24–27是历史课程日期，源码实际读取和尝试日期为2026-09-28，不伪造历史运行。原28日OmniQuant保留。
 
 2026-10-02：[QAT正式栏目](2026-10-02/qat/README.md)：v0.13.0实现已读、原生训练/导出示例已交付；获取否/CPU否/Thor否，完整commit与tag许可待补。[五项状态](2026-10-02/qat/verification.json)。早期[calibration](2026-10-02/calibration/README.md)仅补充；当日只计QAT，旧AWQ仅重试一次。
+
+2026-10-04：[KIVI：KV分组轴与残留](2026-10-04/kivi/README.md)，获取否/阅读是/示例交付是/CPU原生否/Thor否；独立packed QK CPU964行通过，不能替代原生运行。[五项记录](2026-10-04/kivi/verification.json)。只重试旧AWQ一次，DNS失败；下一方法optimizer_8bit。
