@@ -1,0 +1,4 @@
+run_time=2026-10-05T09:35:32.751534+08:00
+command=['sh', 'run.sh', 'tsan', '--quick']
+PASS 36 boundary trials, 3 constructor failures, invalid workers; strides=8,64,128
+exit_code=0

@@ -1,0 +1,40 @@
+{
+  "read_date": "2026-10-05",
+  "repository": "https://github.com/llvm/llvm-project",
+  "ref": "llvmorg-18.1.8",
+  "commit": null,
+  "version_pinned_to_tag": true,
+  "source_read": true,
+  "files": [
+    "libcxx/include/__tree",
+    "libcxx/LICENSE.TXT"
+  ],
+  "symbols": [
+    "find",
+    "__lower_bound",
+    "__erase_unique"
+  ],
+  "urls": [
+    "https://github.com/llvm/llvm-project/blob/llvmorg-18.1.8/libcxx/include/__tree",
+    "https://github.com/llvm/llvm-project/blob/llvmorg-18.1.8/libcxx/LICENSE.TXT"
+  ],
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "relationship": "Independent registry using standard map; not a port or build of reviewed libc++",
+  "research_attempts": [
+    {
+      "url": "https://www.google.com/search?q=CPU+false+sharing+folly+cacheline",
+      "result": "web Internal Error; no article read"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=FP16%20%E4%BC%AA%E5%85%B1%E4%BA%AB%20xv6%20Adam8bit",
+      "result": "web Internal Error; no article read"
+    },
+    {
+      "query": "site:zhihu.com FP16 ggml 累加",
+      "result": "search attempted; no suitable primary article read"
+    }
+  ],
+  "failed_attempts": [
+    "release/18.x map and __tree raw returned unusably compact rendering; changed to llvmorg-18.1.8 __tree"
+  ]
+}

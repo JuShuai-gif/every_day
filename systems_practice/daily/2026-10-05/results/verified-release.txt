@@ -1,0 +1,16 @@
+run_time=2026-10-05T09:35:32.751534+08:00
+command=['sh', 'run.sh', 'release']
+PASS 36 boundary trials, 3 constructor failures, invalid workers; strides=8,64,128
+workers=1 mode=0 batch_ms_p50=0.4575 p95=0.736916
+workers=1 mode=1 batch_ms_p50=0.453167 p95=0.598125
+workers=1 mode=2 batch_ms_p50=0.45175 p95=0.777959
+workers=1 mode=3 batch_ms_p50=0.121208 p95=0.147667
+workers=2 mode=0 batch_ms_p50=2.16038 p95=2.42429
+workers=2 mode=1 batch_ms_p50=0.361541 p95=0.397959
+workers=2 mode=2 batch_ms_p50=0.35975 p95=0.39225
+workers=2 mode=3 batch_ms_p50=0.106 p95=0.113666
+workers=4 mode=0 batch_ms_p50=6.37029 p95=6.65671
+workers=4 mode=1 batch_ms_p50=0.378167 p95=0.387042
+workers=4 mode=2 batch_ms_p50=0.378292 p95=0.403459
+workers=4 mode=3 batch_ms_p50=0.108875 p95=0.126625
+exit_code=0

@@ -1,0 +1,13 @@
+PASS 36 boundary trials, 3 constructor failures, invalid workers; strides=8,64,128
+workers=1 mode=0 batch_ms_p50=0.434459 p95=0.628375
+workers=1 mode=1 batch_ms_p50=0.452792 p95=0.733375
+workers=1 mode=2 batch_ms_p50=0.432416 p95=0.776917
+workers=1 mode=3 batch_ms_p50=0.121375 p95=0.264667
+workers=2 mode=0 batch_ms_p50=2.14387 p95=2.52096
+workers=2 mode=1 batch_ms_p50=0.618208 p95=0.679625
+workers=2 mode=2 batch_ms_p50=0.361958 p95=0.390416
+workers=2 mode=3 batch_ms_p50=0.106375 p95=0.110834
+workers=4 mode=0 batch_ms_p50=6.49692 p95=6.63767
+workers=4 mode=1 batch_ms_p50=0.380417 p95=0.391542
+workers=4 mode=2 batch_ms_p50=0.378625 p95=0.421167
+workers=4 mode=3 batch_ms_p50=0.111375 p95=0.124375

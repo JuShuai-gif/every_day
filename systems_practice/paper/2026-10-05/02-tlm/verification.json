@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-05",
+  "run_time": "2026-10-05T09:36:53.844377+08:00",
+  "paper_fulltext_selected_sections_read": true,
+  "author_source_read": false,
+  "example_delivered": true,
+  "cpu_mechanism_example_verified": true,
+  "full_paper_reproduced": false,
+  "thor_verified": false,
+  "performance_measured": false,
+  "actual_training_updates": 2000,
+  "evidence": [
+    "results/cpu-final.txt"
+  ],
+  "blockers": [
+    "Author implementation retrieval/publication pending",
+    "Full models/data/hardware experiment not run"
+  ],
+  "source_record": "source.json"
+}

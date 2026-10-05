@@ -1,0 +1,51 @@
+{
+  "read_date": "2026-10-05",
+  "repository": "https://github.com/mit-pdos/xv6-riscv",
+  "ref": "riscv",
+  "commit": null,
+  "version_pinned_to_tag": false,
+  "source_read": true,
+  "files": [
+    "kernel/sysproc.c",
+    "kernel/trap.c",
+    "kernel/vm.c",
+    "LICENSE"
+  ],
+  "symbols": [
+    "sys_sbrk",
+    "usertrap",
+    "vmfault",
+    "ismapped"
+  ],
+  "urls": [
+    "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/sysproc.c",
+    "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/trap.c",
+    "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/vm.c",
+    "https://github.com/mit-pdos/xv6-riscv/blob/riscv/LICENSE"
+  ],
+  "license": "MIT",
+  "relationship": "Independent lazy allocation state model, not kernel code or OS residency measurement",
+  "research_attempts": [
+    {
+      "url": "https://www.google.com/search?q=CPU+false+sharing+folly+cacheline",
+      "result": "web Internal Error; no article read"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=FP16%20%E4%BC%AA%E5%85%B1%E4%BA%AB%20xv6%20Adam8bit",
+      "result": "web Internal Error; no article read"
+    },
+    {
+      "query": "site:zhihu.com FP16 ggml 累加",
+      "result": "search attempted; no suitable primary article read"
+    }
+  ],
+  "local_reference": {
+    "path": "/Users/guhaoran/书籍资料/ARM/VivekPublicRepo/ARM-MMU/MMUAdvanced/MMU-Chapter 05 PAGE TABLE LEVELS AND DESCRIPTOR FORMATS.pdf",
+    "pages": [
+      1
+    ],
+    "sha256": "9f5d73354fd147afe02a5101fb3e7a313da2aa8465635fac1ffa1fc87d63e187",
+    "scope": "Existing page render visually reread; original PDF hash rechecked; 5.1 only. Auxiliary outline, no lazy-allocation implementation claim",
+    "license": "unverified, no copied PDF"
+  }
+}

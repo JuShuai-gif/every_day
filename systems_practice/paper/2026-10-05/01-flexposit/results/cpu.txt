@@ -1,0 +1,49 @@
+{
+  "independent_not_author_code": true,
+  "posit4_es1_levels": [
+    -16.0,
+    -4.0,
+    -2.0,
+    -1.0,
+    -0.5,
+    -0.25,
+    -0.0625,
+    0.0,
+    0.0625,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    16.0
+  ],
+  "calibration_squared_errors_4_5": [
+    [
+      0.05252499999999999,
+      0.0031500000000000013
+    ],
+    [
+      0.09020781250000003,
+      0.04010039062499998
+    ],
+    [
+      0.0006405703124999996,
+      3.910699462890632e-05
+    ],
+    [
+      0.125,
+      0.0625
+    ]
+  ],
+  "upgrade_config": [
+    0,
+    0,
+    0,
+    1
+  ],
+  "mean_bits": 4.25,
+  "calibration_loss": 0.20587338281250003,
+  "shifted_loss_frozen_config": 4.2114343750000005,
+  "payload_bits_theoretical": 68,
+  "packed_export_implemented": false
+}

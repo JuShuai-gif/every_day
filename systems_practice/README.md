@@ -12,7 +12,7 @@
 
 每课的 README 与代码、运行脚本和结果放在一起。学习路线、栏目规则等通用说明集中在 docs/。
 
-当前入口：[2026-10-04 主课](daily/2026-10-04/README.md) · [KIVI](quantization/2026-10-04/kivi/README.md) · [ARM12](arm/2026-10-04/README.md) · [HOPE与D-Quant](paper/2026-10-04/README.md) · [OS07](os/2026-10-04/README.md) · [C++17 第06课](cpp17/2026-10-04/README.md)。
+当前入口：[2026-10-05 主课](daily/2026-10-05/README.md) · [8-bit优化器状态](quantization/2026-10-05/optimizer_8bit/README.md) · [ARM13](arm/2026-10-05/README.md) · [FlexPosit与TLM](paper/2026-10-05/README.md) · [OS08](os/2026-10-05/README.md) · [C++17 第07课](cpp17/2026-10-05/README.md)。
 
 旧规范和旧总索引文件保留为兼容导航，正文只有一份；历史日志中的旧路径保留原样。迁移对应表见 [目录说明](docs/LAYOUT.md)。
 

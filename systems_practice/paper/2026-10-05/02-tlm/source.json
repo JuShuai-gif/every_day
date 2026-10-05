@@ -1,0 +1,34 @@
+{
+  "read_date": "2026-10-05",
+  "title": "Telescopic Language Models",
+  "id": "arxiv:2609.35769",
+  "version_read": "v1",
+  "first_submitted": "2026-09-28",
+  "latest_version_observed": "v1",
+  "paper_url": "https://arxiv.org/html/2609.35769v1",
+  "paper_read_scope": "Selected sections 2, 3, 4.1 opening, 4.3, conclusion; table2 context",
+  "repository": "https://github.com/ZhilinGuo/telescopic-language-models",
+  "branch": "main",
+  "commit": null,
+  "source_read": false,
+  "repository_scope": "README/directory; explicitly Code coming soon; no implementation available",
+  "license": "Apache-2.0 stated in README, license body not reviewed",
+  "relationship": "Original independent teaching experiment, not author implementation or full reproduction",
+  "failures": [
+    "Author implementation not released"
+  ],
+  "research_attempts": [
+    {
+      "url": "https://www.google.com/search?q=CPU+false+sharing+folly+cacheline",
+      "result": "web Internal Error; no article read"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=FP16%20%E4%BC%AA%E5%85%B1%E4%BA%AB%20xv6%20Adam8bit",
+      "result": "web Internal Error; no article read"
+    },
+    {
+      "query": "site:zhihu.com FP16 ggml 累加",
+      "result": "search attempted; no suitable primary article read"
+    }
+  ]
+}

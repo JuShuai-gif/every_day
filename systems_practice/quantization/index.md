@@ -2,7 +2,7 @@
 
 [栏目说明](../docs/quantization/README.md) · [交付模板](../docs/quantization/LESSON_TEMPLATE.md) · [方法目录](catalog.json) · [进度](progress.json)
 
-下一方法：**8-bit optimizer states**（optimizer_8bit）。KIVI原生运行、Thor验证与源码获取待补，不记为完成。
+下一方法：**FP8 scaling**（fp8_scaling）。今日optimizer_8bit原生/Thor与源码获取仍在backlog。
 
 | 日期 | 类型 | 方法 | 源码 / 阅读 / 示例 / CPU / Thor | 证据 |
 | --- | --- | --- | --- | --- |
@@ -29,3 +29,5 @@
 2026-10-02：[QAT正式栏目](2026-10-02/qat/README.md)：v0.13.0实现已读、原生训练/导出示例已交付；获取否/CPU否/Thor否，完整commit与tag许可待补。[五项状态](2026-10-02/qat/verification.json)。早期[calibration](2026-10-02/calibration/README.md)仅补充；当日只计QAT，旧AWQ仅重试一次。
 
 2026-10-04：[KIVI：KV分组轴与残留](2026-10-04/kivi/README.md)，获取否/阅读是/示例交付是/CPU原生否/Thor否；独立packed QK CPU964行通过，不能替代原生运行。[五项记录](2026-10-04/kivi/verification.json)。只重试旧AWQ一次，DNS失败；下一方法optimizer_8bit。
+
+2026-10-05：[Adam8bit分块状态](2026-10-05/optimizer_8bit/README.md)，获取否/实现阅读是/原生示例是/CPU原生否/Thor否。独立均匀8bit真实80步更新与失败反例通过，非bnb性能；Thor SM110 codec基线/优化/ncu/ISA命令齐备但未运行。旧AWQ只重试一次，DNS失败。[五项状态](2026-10-05/optimizer_8bit/verification.json)。

@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-05",
+  "run_time": "2026-10-05T09:36:53.844377+08:00",
+  "source_read": true,
+  "version_pinned": true,
+  "host_compiled": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "tsan_passed": false,
+  "target_board_verified": false,
+  "linux_run": false,
+  "xv6_compiled": false,
+  "qemu_run": false,
+  "source_record": "source.json",
+  "evidence": [
+    "results/verified-release.txt",
+    "results/verified-sanitize.txt"
+  ],
+  "blockers": [
+    "No Linux/target board verification"
+  ],
+  "performance_domain": "not benchmarked"
+}

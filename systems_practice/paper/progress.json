@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-04T12:18:30.557455+08:00",
+  "updated_at": "2026-10-05T09:39:11.625435+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -368,6 +368,30 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.04724",
+      "title": "FlexPosit: Tunable Fractional Precision for LLM Inference Accelerators",
+      "delivered_on": "2026-10-05",
+      "first_submitted": "2026-09-04",
+      "version_read": "v1",
+      "directory": "2026-10-05/01-flexposit",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.35769",
+      "title": "Telescopic Language Models",
+      "delivered_on": "2026-10-05",
+      "first_submitted": "2026-09-28",
+      "version_read": "v1",
+      "directory": "2026-10-05/02-tlm",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
     }
   ],
   "backlog": [
@@ -520,6 +544,18 @@
       "date": "2026-10-04",
       "reason": "author code/license unavailable; independent prefix-code example only",
       "verification": "2026-10-04/02-dquant/verification.json"
+    },
+    {
+      "id": "arxiv:2609.04724",
+      "date": "2026-10-05",
+      "reason": "Author implementation inaccessible; independent Posit budget example only",
+      "verification": "2026-10-05/01-flexposit/verification.json"
+    },
+    {
+      "id": "arxiv:2609.35769",
+      "date": "2026-10-05",
+      "reason": "Official code coming soon; independent shared linear-prefix training only",
+      "verification": "2026-10-05/02-tlm/verification.json"
     }
   ]
 }

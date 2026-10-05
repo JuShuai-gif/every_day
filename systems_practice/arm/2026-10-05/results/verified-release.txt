@@ -1,0 +1,11 @@
+run_time=2026-10-05T09:35:32.751534+08:00
+command=['sh', 'run.sh', 'release']
+half_bytes=2 fp16_vector=1
+PASS cases=1026 tie=1 storage_overflow=inf wide_sum=5.76e+06 half_accum=inf
+n=17 mode=0 cpu_batchmean_us_p50=0.01291 p95=0.01292
+n=17 mode=1 cpu_batchmean_us_p50=0.00541 p95=0.00542
+n=4096 mode=0 cpu_batchmean_us_p50=6.38625 p95=7.80125
+n=4096 mode=1 cpu_batchmean_us_p50=1.37417 p95=1.4025
+n=65539 mode=0 cpu_batchmean_us_p50=52.3054 p95=58.035
+n=65539 mode=1 cpu_batchmean_us_p50=13.5775 p95=13.8242
+exit_code=0

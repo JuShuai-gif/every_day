@@ -1,0 +1,3 @@
+PASS {'json': 14, 'python': 4, 'shell': 14, 'links': 53}; 12 required headings; concept 550 Chinese chars; no ARM date JSON; 4 user-file SHA256 unchanged.
+Actual scripts/format-cpp.sh applied to isolated mirror of 5 new C++/CUDA sources; no historical source formatted.
+Full git diff --check: pre-existing arm/2026-09-23/src/registers.cpp:26 trailing whitespace; outside scope and preserved.

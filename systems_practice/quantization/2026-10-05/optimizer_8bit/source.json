@@ -1,0 +1,18 @@
+{
+  "method": "optimizer_8bit",
+  "repository": "https://github.com/bitsandbytes-foundation/bitsandbytes.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-10-05T00:43:25.239847+00:00",
+  "commit": null,
+  "cache": ".tmp/quant_sources/optimizer_8bit-gg1yrgck",
+  "status": "failed",
+  "source_read": false,
+  "example_run": false,
+  "files": [],
+  "errors": [
+    {
+      "reason": "Cloning into '/Users/guhaoran/code/EveryDay/systems_practice/.tmp/quant_sources/optimizer_8bit-gg1yrgck/repo'...\nfatal: unable to access 'https://github.com/bitsandbytes-foundation/bitsandbytes.git/': Could not resolve host: github.com"
+    }
+  ],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example."
+}

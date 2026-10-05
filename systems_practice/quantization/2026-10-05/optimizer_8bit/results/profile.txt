@@ -1,0 +1,3 @@
+profile.sh: line 5: ncu: command not found
+
+exit_code=127

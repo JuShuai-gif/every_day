@@ -1,0 +1,8 @@
+half_bytes=2 fp16_vector=1
+PASS cases=1026 tie=1 storage_overflow=inf wide_sum=5.76e+06 half_accum=inf
+n=17 mode=0 cpu_batchmean_us_p50=0.02166 p95=0.02208
+n=17 mode=1 cpu_batchmean_us_p50=0.00791 p95=0.00833
+n=4096 mode=0 cpu_batchmean_us_p50=4.85583 p95=5.155
+n=4096 mode=1 cpu_batchmean_us_p50=1.31292 p95=1.45708
+n=65539 mode=0 cpu_batchmean_us_p50=72.9692 p95=74.0871
+n=65539 mode=1 cpu_batchmean_us_p50=20.3888 p95=20.8592

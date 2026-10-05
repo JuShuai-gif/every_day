@@ -1,0 +1,3 @@
+build.sh: line 6: nvcc: command not found
+
+exit_code=127

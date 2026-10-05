@@ -1,0 +1,37 @@
+{
+  "read_date": "2026-10-05",
+  "repository": "https://github.com/facebook/folly",
+  "ref": "main",
+  "commit": null,
+  "version_pinned_to_tag": false,
+  "source_read": true,
+  "files": [
+    "folly/lang/Align.h",
+    "LICENSE"
+  ],
+  "symbols": [
+    "hardware_destructive_interference_size",
+    "cacheline_align_v",
+    "valid_align_value_fn"
+  ],
+  "urls": [
+    "https://github.com/facebook/folly/blob/main/folly/lang/Align.h",
+    "https://github.com/facebook/folly/blob/main/LICENSE"
+  ],
+  "license": "Apache-2.0",
+  "relationship": "Independent counter-layout experiment inspired by portability/alignment implementation",
+  "research_attempts": [
+    {
+      "url": "https://www.google.com/search?q=CPU+false+sharing+folly+cacheline",
+      "result": "web Internal Error; no article read"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=FP16%20%E4%BC%AA%E5%85%B1%E4%BA%AB%20xv6%20Adam8bit",
+      "result": "web Internal Error; no article read"
+    },
+    {
+      "query": "site:zhihu.com FP16 ggml 累加",
+      "result": "search attempted; no suitable primary article read"
+    }
+  ]
+}

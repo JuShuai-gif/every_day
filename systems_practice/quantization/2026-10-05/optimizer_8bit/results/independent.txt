@@ -1,0 +1,22 @@
+{
+  "independent_uniform_codec_only": true,
+  "actual_updates": 80,
+  "fp32_reference_state_payload_bytes": 4104,
+  "reference_loss": 3.457074842092977e-05,
+  "256": {
+    "loss": 3.436983531740845e-05,
+    "state_payload_bytes": 1050,
+    "weight_max_abs_vs_reference": 0.016576722862737075
+  },
+  "513": {
+    "loss": 6.530556602032021,
+    "state_payload_bytes": 1034,
+    "weight_max_abs_vs_reference": 57.52649787905301
+  },
+  "outlier_remote_block_error_256_vs_tensor": [
+    1.4755642020747306e-10,
+    0.01
+  ]
+}
+
+exit_code=0

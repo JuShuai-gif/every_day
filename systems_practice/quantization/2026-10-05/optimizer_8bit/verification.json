@@ -1,0 +1,46 @@
+{
+  "method": "optimizer_8bit",
+  "date": "2026-10-05",
+  "run_time": "2026-10-05T09:36:53.844377+08:00",
+  "repository": "https://github.com/bitsandbytes-foundation/bitsandbytes",
+  "commit": "7e16503e403de460d4ed7dfd6c90a656628f5149",
+  "source_record": "source-web.json",
+  "fetch_record": "source.json",
+  "source_fetched": false,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "independent_math_run": true,
+  "independent_math_not_native": true,
+  "native_language": "Python/PyTorch",
+  "read_symbols": [
+    "Adam8bit.__init__",
+    "Adam32bit.__init__",
+    "Optimizer2State.init_state",
+    "Optimizer2State.update_step",
+    "optimizer_update_8bit_blockwise",
+    "kOptimizerStatic8bit2StateBlockwise"
+  ],
+  "evidence": [
+    "results/native.txt",
+    "results/independent-final.txt",
+    "results/gpu.txt",
+    "results/profile.txt",
+    "results/isa.txt",
+    "results/awq-retry.json"
+  ],
+  "blockers": [
+    "clone DNS failure and no verified cache",
+    "torch missing",
+    "native optimizer path requires GPU",
+    "nvcc/ncu/Thor absent",
+    "CMakeLists source unavailable; exact native extension build compatibility pending"
+  ],
+  "gpu_baseline": "src/codec.cu:codec_baseline",
+  "gpu_final_candidate": "src/codec.cu:codec_optimized",
+  "gpu_target": "sm_110",
+  "compiled_ptx_available": false,
+  "sass_available": false,
+  "inline_ptx_delivered": true
+}

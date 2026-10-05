@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
-  "last_delivery_date": "2026-10-04",
-  "next_lesson_id": "13",
+  "last_delivery_date": "2026-10-05",
+  "next_lesson_id": "14",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -15,7 +15,8 @@
     "09",
     "10",
     "11",
-    "12"
+    "12",
+    "13"
   ],
   "history": [
     {
@@ -255,6 +256,26 @@
       "program_compiled": true,
       "program_run": true,
       "implementation_language": "C++17"
+    },
+    {
+      "date": "2026-10-05",
+      "lesson_id": "13",
+      "path": "2026-10-05",
+      "source_read": true,
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "version_pinned": false,
+      "verification": "2026-10-05/README.md",
+      "observation_run": true,
+      "compute_kernel_run": true,
+      "compute_kernel_benchmarked": true,
+      "program_compiled": true,
+      "program_run": true,
+      "implementation_language": "C++17"
     }
   ],
   "backlog": [
@@ -275,6 +296,12 @@
       "lesson_id": "11",
       "reason": "Upstream exact commit and Linux/target-board verification pending",
       "verification": "2026-10-03/README.md"
+    },
+    {
+      "date": "2026-10-05",
+      "lesson_id": "13",
+      "reason": "Linux/target board pending; full upstream commit unresolved",
+      "verification": "2026-10-05/README.md"
     }
   ],
   "curriculum_adjustments": [
@@ -303,5 +330,5 @@
       "reason": "User requested four working/deployment capability layers; mapped existing 28 lessons, preserved order and historical progress. Actual delivery08 advances to09 separately."
     }
   ],
-  "last_canonical_lesson_date": "2026-10-04"
+  "last_canonical_lesson_date": "2026-10-05"
 }

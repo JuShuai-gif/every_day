@@ -1,0 +1,63 @@
+{
+  "method": "optimizer_8bit",
+  "read_date": "2026-10-05",
+  "repository": "https://github.com/bitsandbytes-foundation/bitsandbytes",
+  "commit": "7e16503e403de460d4ed7dfd6c90a656628f5149",
+  "tag": "0.48.1",
+  "license": "MIT",
+  "source_fetched": false,
+  "source_read": true,
+  "files": [
+    "bitsandbytes/optim/adam.py",
+    "bitsandbytes/optim/optimizer.py",
+    "bitsandbytes/functional.py",
+    "csrc/kernels.cu",
+    "pyproject.toml",
+    "LICENSE"
+  ],
+  "read_symbols": [
+    "Adam8bit.__init__",
+    "Adam32bit.__init__",
+    "Optimizer2State.init_state",
+    "Optimizer2State.update_step",
+    "optimizer_update_8bit_blockwise",
+    "kOptimizerStatic8bit2StateBlockwise"
+  ],
+  "permalinks": [
+    "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/7e16503e403de460d4ed7dfd6c90a656628f5149/bitsandbytes/optim/adam.py",
+    "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/7e16503e403de460d4ed7dfd6c90a656628f5149/bitsandbytes/optim/optimizer.py",
+    "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/7e16503e403de460d4ed7dfd6c90a656628f5149/bitsandbytes/functional.py",
+    "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/7e16503e403de460d4ed7dfd6c90a656628f5149/csrc/kernels.cu",
+    "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/7e16503e403de460d4ed7dfd6c90a656628f5149/pyproject.toml",
+    "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/7e16503e403de460d4ed7dfd6c90a656628f5149/LICENSE"
+  ],
+  "actual_access": "adam.py at full commit; other implementation/packaging/license at tag; release commit link resolved this run",
+  "scope": "Selected symbols/sections, not full repository audit",
+  "relationship": "Native API usage; separate independent uniform codec and Adam state experiment",
+  "call_chain": "Adam8bit -> Optimizer2State.step/init_state/update_step -> functional -> torch.ops -> CUDA kernel",
+  "failed_attempts": [
+    "git clone DNS failure; source.json retains original",
+    "no verified local cache found",
+    "CMakeLists.txt tag/fullhash web Cache miss; source build options/Thor backend audit pending"
+  ],
+  "research_attempts": [
+    {
+      "url": "https://www.google.com/search?q=CPU+false+sharing+folly+cacheline",
+      "result": "web Internal Error; no article read"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=FP16%20%E4%BC%AA%E5%85%B1%E4%BA%AB%20xv6%20Adam8bit",
+      "result": "web Internal Error; no article read"
+    },
+    {
+      "query": "site:zhihu.com FP16 ggml 累加",
+      "result": "search attempted; no suitable primary article read"
+    }
+  ],
+  "thor_toolchain_sources": [
+    "https://developer.nvidia.com/blog/whats-new-and-important-in-cuda-toolkit-13-0/",
+    "https://docs.nvidia.com/cuda/parallel-thread-execution/",
+    "https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html"
+  ],
+  "architecture_comparator": "Ampere cp.async; execution fixed Thor SM110"
+}
