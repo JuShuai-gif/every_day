@@ -1,0 +1,48 @@
+{
+  "method": "fp8_scaling",
+  "date": "2026-10-06",
+  "repository": "https://github.com/pytorch/ao",
+  "tag": "v0.13.0",
+  "commit": null,
+  "source_record": "source.json",
+  "read_record": "source-read.json",
+  "source_fetched": false,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "independent_cpu_example_run": true,
+  "thor_verified": false,
+  "gpu_compiled": false,
+  "gpu_run": false,
+  "performance_verified": false,
+  "ptx_generated": false,
+  "sass_generated": false,
+  "ncu_run": false,
+  "read_symbols": [
+    "Float8Linear.from_float",
+    "Float8Linear.forward",
+    "matmul_with_hp_or_float8_args.forward",
+    "CastConfig",
+    "Float8LinearConfig",
+    "tensor_to_amax",
+    "amax_to_scale",
+    "tensor_to_scale",
+    "to_fp8_saturated",
+    "get_extensions selected build logic",
+    "BSD-3-Clause conditions"
+  ],
+  "evidence": [
+    "results/native.txt",
+    "results/independent.txt",
+    "results/thor-build.txt",
+    "results/awq-retry.json"
+  ],
+  "blockers": [
+    "clone DNS/no verified cache",
+    "torch absent",
+    "full SHA and dependency/backend compatibility pending",
+    "nvcc/ncu/Thor absent"
+  ],
+  "target": "sm_110",
+  "architecture_comparator": "Hopper FP8 conversion; theory only"
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-05T09:39:11.625435+08:00",
+  "updated_at": "2026-10-06T09:27:54.005400+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -392,6 +392,30 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2610.00426",
+      "title": "IrekoGPT: Turning Structured Pruning into Post-Hoc Slimmable LLMs",
+      "delivered_on": "2026-10-06",
+      "first_submitted": "2026-09-30",
+      "version_read": "v1",
+      "directory": "2026-10-06/01-irekogpt",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.01224",
+      "title": "S2Prune: Spatially Structured Visual Token Pruning for Multimodal Large Language Models",
+      "delivered_on": "2026-10-06",
+      "first_submitted": "2026-09-01",
+      "version_read": "v1",
+      "directory": "2026-10-06/02-s2prune",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
     }
   ],
   "backlog": [
@@ -556,6 +580,18 @@
       "date": "2026-10-05",
       "reason": "Official code coming soon; independent shared linear-prefix training only",
       "verification": "2026-10-05/02-tlm/verification.json"
+    },
+    {
+      "id": "arxiv:2610.00426",
+      "date": "2026-10-06",
+      "reason": "Author full implementation/version/dependencies/model reproduction pending",
+      "directory": "2026-10-06/01-irekogpt"
+    },
+    {
+      "id": "arxiv:2609.01224",
+      "date": "2026-10-06",
+      "reason": "Author full implementation/version/dependencies/model reproduction pending",
+      "directory": "2026-10-06/02-s2prune"
     }
   ]
 }

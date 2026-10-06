@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-06",
+  "paper_sections_read": true,
+  "author_implementation_read": true,
+  "example_delivered": true,
+  "cpu_example_run": true,
+  "full_paper_reproduced": false,
+  "thor_verified": false,
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "blockers": [
+    "full repository/version/requirements audit",
+    "no author model/dataset run",
+    "no device validation"
+  ]
+}

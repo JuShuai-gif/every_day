@@ -1,0 +1,1 @@
+PASS transactions=1000 shape_reject=1 bad_get=1 valueless=1 visit_reject=1 recovery=1

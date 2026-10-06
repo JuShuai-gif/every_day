@@ -1,0 +1,31 @@
+{
+  "lambda_selected_on_tune": 0.01,
+  "weights": [
+    2.433190510317494,
+    0.3933881506666608
+  ],
+  "results": {
+    "iid": {
+      "1": {
+        "baseline": 2.7204578126132404,
+        "ridge": 0.37089127727596594
+      },
+      "2": {
+        "baseline": 0.0,
+        "ridge": 0.28861388625594786
+      }
+    },
+    "shifted": {
+      "1": {
+        "baseline": 2.6839829848855867,
+        "ridge": 7.928719776933927
+      },
+      "2": {
+        "baseline": 0.0,
+        "ridge": 6.243621873357423
+      }
+    }
+  },
+  "actual_closed_form_parameter_update": true,
+  "full_model_reproduction": false
+}

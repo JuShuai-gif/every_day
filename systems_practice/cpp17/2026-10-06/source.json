@@ -1,0 +1,21 @@
+{
+  "repository": "https://github.com/llvm/llvm-project",
+  "branch": "main",
+  "file": "libcxx/include/variant",
+  "symbols": [
+    "__generic_get",
+    "__throw_if_valueless",
+    "visit"
+  ],
+  "read_scope": "1219-1227,1436-1483",
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "chain": "get -> __generic_get -> alternative check; visit -> valueless check -> index dispatch",
+  "retained": "closed alternatives and explicit exception handling",
+  "simplified": "standard library usage not implementation copy; host Apple libc++ revision independent",
+  "failed_url": "https://raw.githubusercontent.com/llvm/llvm-project/release/18.x/libcxx/include/variant",
+  "read_date": "2026-10-06",
+  "commit": null,
+  "source_read": true,
+  "relationship": "independent inspired implementation",
+  "research_record": "../../daily/2026-10-06/results/research.json"
+}

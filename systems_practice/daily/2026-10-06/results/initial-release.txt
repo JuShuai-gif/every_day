@@ -1,0 +1,11 @@
+runtime_dotprod=1
+PASS cases=4116 rejected=4 hand=672 wrong_global_scale=64
+K=17 group=32 scalar CPU batch_mean_us p50=0.01375 p95=0.01417
+K=17 group=32 widening CPU batch_mean_us p50=0.00542 p95=0.00583
+K=17 group=32 dotprod CPU batch_mean_us p50=0.00583 p95=0.00666
+K=4099 group=32 scalar CPU batch_mean_us p50=2.45375 p95=3.12458
+K=4099 group=32 widening CPU batch_mean_us p50=0.48 p95=0.48084
+K=4099 group=32 dotprod CPU batch_mean_us p50=0.24042 p95=0.48125
+K=65539 group=32 scalar CPU batch_mean_us p50=20.6812 p95=32.0396
+K=65539 group=32 widening CPU batch_mean_us p50=3.22792 p95=3.29875
+K=65539 group=32 dotprod CPU batch_mean_us p50=3.22625 p95=3.34875

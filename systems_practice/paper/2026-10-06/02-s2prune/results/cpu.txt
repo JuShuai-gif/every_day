@@ -1,0 +1,15 @@
+{
+  "cases": 39,
+  "allocation": [
+    1,
+    1,
+    2,
+    4
+  ],
+  "coverage_regions": 4,
+  "global_top_coverage": 2,
+  "retained_hidden_fp16_bytes": 1024,
+  "full_hidden_fp16_bytes": 2048,
+  "index_int32_bytes": 32,
+  "no_task_accuracy_or_kernel_speed_claim": true
+}

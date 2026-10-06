@@ -1,0 +1,21 @@
+{
+  "repository": "https://github.com/mit-pdos/xv6-riscv",
+  "branch": "riscv",
+  "file": "kernel/vm.c",
+  "symbols": [
+    "uvmcopy",
+    "copyout",
+    "vmfault"
+  ],
+  "read_scope": "279-305,323-354,430-448",
+  "license": "MIT",
+  "chain": "uvmcopy -> kalloc/memmove/mappages -> uvmunmap rollback; copyout -> vmfault and PTE_W check",
+  "retained": "mapping/refcount/allocate-before-commit model",
+  "simplified": "COW is MIT2025 lab extension, not default implementation; no real PTE/TLB/traps",
+  "lab": "https://pdos.csail.mit.edu/6.1810/2025/labs/cow.html",
+  "read_date": "2026-10-06",
+  "commit": null,
+  "source_read": true,
+  "relationship": "independent inspired implementation",
+  "research_record": "../../daily/2026-10-06/results/research.json"
+}

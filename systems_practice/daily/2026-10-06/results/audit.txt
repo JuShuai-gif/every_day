@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "json": 15,
+    "python": 4,
+    "shell": 12,
+    "links": 46
+  },
+  "practice_files": 58,
+  "user_modified_files_unchanged": 4,
+  "main_headings": 12,
+  "concept_chinese_chars": 524
+}

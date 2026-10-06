@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-06",
+  "google": [
+    {
+      "url": "https://www.google.com/search?q=ARM+int8+dot+product+overflow+ggml",
+      "result": "Internal Error"
+    },
+    {
+      "url": "https://www.google.com/search?q=xv6+COW+copyout+variant+exception+safety+fp8+dynamic+scaling",
+      "result": "Internal Error"
+    }
+  ],
+  "zhihu": {
+    "queries": [
+      "site:zhihu.com ARM int8 dot product 溢出",
+      "site:zhihu.com variant valueless_by_exception",
+      "site:zhihu.com FP8 动态 缩放 amax"
+    ],
+    "result": "ARM/variant no relevant readable primary implementation; FP8 results found but articles not read, no reliance on snippets",
+    "url": "https://www.zhihu.com/search?type=content&q=ARM%20INT8%20COW%20FP8",
+    "open_result": "Internal Error"
+  }
+}

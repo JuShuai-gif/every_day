@@ -1,0 +1,75 @@
+{
+  "repository": "https://github.com/pytorch/ao",
+  "tag": "v0.13.0",
+  "commit": null,
+  "verified_abbrev": "e318546",
+  "date": "2026-10-06",
+  "license": "BSD-3-Clause",
+  "source_fetched": false,
+  "source_read": true,
+  "files": [
+    {
+      "path": "torchao/float8/float8_linear.py",
+      "symbols": [
+        "Float8Linear.from_float",
+        "Float8Linear.forward",
+        "matmul_with_hp_or_float8_args.forward"
+      ],
+      "url": "https://github.com/pytorch/ao/blob/v0.13.0/torchao/float8/float8_linear.py",
+      "permanent_sha_link_verified": false
+    },
+    {
+      "path": "torchao/float8/config.py",
+      "symbols": [
+        "CastConfig",
+        "Float8LinearConfig"
+      ],
+      "url": "https://github.com/pytorch/ao/blob/v0.13.0/torchao/float8/config.py",
+      "permanent_sha_link_verified": false
+    },
+    {
+      "path": "torchao/float8/float8_utils.py",
+      "symbols": [
+        "tensor_to_amax",
+        "amax_to_scale",
+        "tensor_to_scale",
+        "to_fp8_saturated"
+      ],
+      "url": "https://github.com/pytorch/ao/blob/v0.13.0/torchao/float8/float8_utils.py",
+      "permanent_sha_link_verified": false
+    },
+    {
+      "path": "setup.py",
+      "symbols": [
+        "get_extensions selected build logic"
+      ],
+      "url": "https://github.com/pytorch/ao/blob/v0.13.0/setup.py",
+      "permanent_sha_link_verified": false
+    },
+    {
+      "path": "LICENSE",
+      "symbols": [
+        "BSD-3-Clause conditions"
+      ],
+      "url": "https://github.com/pytorch/ao/blob/v0.13.0/LICENSE",
+      "permanent_sha_link_verified": false
+    }
+  ],
+  "unread": [
+    "torchao/float8/float8_scaling_utils.py",
+    "torchao/float8/float8_tensor.py",
+    "pyproject.toml"
+  ],
+  "errors": [
+    "GitHub clone DNS failure",
+    "Full commit page Internal Error",
+    "Unlisted intermediate/backend source remains unread"
+  ],
+  "cache_check": "No usable files/checkouts under systems_practice/.tmp/quant_sources",
+  "relationship": {
+    "example.py": "calls reviewed torchao helpers and Float8Linear API; unexecuted",
+    "independent.py": "independent E4M3FN math/codec, not upstream usage",
+    "codec.cu": "independent CUDA Math encoder, not torchao kernel"
+  },
+  "license_url": "https://github.com/pytorch/ao/blob/v0.13.0/LICENSE"
+}

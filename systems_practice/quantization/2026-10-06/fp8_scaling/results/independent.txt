@@ -1,0 +1,61 @@
+{
+  "independent_only": true,
+  "shape": [
+    8,
+    33,
+    7
+  ],
+  "weight_fp32_bytes": 924,
+  "weight_fp16_bytes": 462,
+  "weight_fp8_actual_file_bytes": 235,
+  "cpu_python_quantize_us_p50": 221.45800000000077,
+  "results": {
+    "iid": {
+      "fp16": {
+        "nrmse": 0.00023615974171432153,
+        "max_abs": 0.0015405596553828005,
+        "cosine": 0.9999999733694005
+      },
+      "static_absmax": {
+        "nrmse": 0.044011103488447056,
+        "max_abs": 0.4720743182943954,
+        "cosine": 0.9990310420271935,
+        "saturated": 1,
+        "input_payload_bytes": 268,
+        "weight_payload_bytes": 235
+      },
+      "dynamic_absmax": {
+        "nrmse": 0.03938979266713754,
+        "max_abs": 0.2881901678486507,
+        "cosine": 0.9992239484850141,
+        "saturated": 0,
+        "input_payload_bytes": 268,
+        "weight_payload_bytes": 235
+      }
+    },
+    "shifted": {
+      "fp16": {
+        "nrmse": 0.00016496587523656906,
+        "max_abs": 0.037372561151596706,
+        "cosine": 0.9999999876267205
+      },
+      "static_absmax": {
+        "nrmse": 0.9056922575163889,
+        "max_abs": 210.6576536686817,
+        "cosine": 0.8351798052125271,
+        "saturated": 30,
+        "input_payload_bytes": 268,
+        "weight_payload_bytes": 235
+      },
+      "dynamic_absmax": {
+        "nrmse": 0.010263873681768553,
+        "max_abs": 2.5697012850268663,
+        "cosine": 0.9999529028747367,
+        "saturated": 0,
+        "input_payload_bytes": 268,
+        "weight_payload_bytes": 235
+      }
+    }
+  },
+  "codec_roundtrips": 254
+}

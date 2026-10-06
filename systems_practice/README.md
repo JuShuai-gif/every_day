@@ -12,7 +12,7 @@
 
 每课的 README 与代码、运行脚本和结果放在一起。学习路线、栏目规则等通用说明集中在 docs/。
 
-当前入口：[2026-10-05 主课](daily/2026-10-05/README.md) · [8-bit优化器状态](quantization/2026-10-05/optimizer_8bit/README.md) · [ARM13](arm/2026-10-05/README.md) · [FlexPosit与TLM](paper/2026-10-05/README.md) · [OS08](os/2026-10-05/README.md) · [C++17 第07课](cpp17/2026-10-05/README.md)。
+当前入口：[2026-10-06 主课](daily/2026-10-06/README.md) · [FP8动态缩放](quantization/2026-10-06/fp8_scaling/README.md) · [ARM14](arm/2026-10-06/README.md) · [IrekoGPT与S²Prune](paper/2026-10-06/README.md) · [OS09](os/2026-10-06/README.md) · [C++17 第08课](cpp17/2026-10-06/README.md)。
 
 旧规范和旧总索引文件保留为兼容导航，正文只有一份；历史日志中的旧路径保留原样。迁移对应表见 [目录说明](docs/LAYOUT.md)。
 

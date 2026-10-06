@@ -1,0 +1,29 @@
+{
+  "id": "arxiv:2609.01224",
+  "title": "S2Prune: Spatially Structured Visual Token Pruning for Multimodal Large Language Models",
+  "authors": [
+    "Yuanyuan Jia",
+    "Shunpu Tang",
+    "Qianqian Yang"
+  ],
+  "first_submitted": "2026-09-01",
+  "version_read": "v1",
+  "read_date": "2026-10-06",
+  "fulltext_url": "https://arxiv.org/html/2609.01224v1",
+  "read_sections": "Introduction,3,4 method overview,Table1",
+  "status": "preprint; external peer review not independently confirmed",
+  "repository": "https://github.com/yuanyuanjia71-spec/S2Prune",
+  "branch": "main",
+  "commit": null,
+  "implementation_read": true,
+  "read_symbols": [
+    "build_coarse_regions",
+    "laplacian_region_complexity",
+    "largest_remainder_allocation"
+  ],
+  "license": "unverified; LICENSE retrieval failed",
+  "errors": [
+    "LICENSE Internal Error"
+  ],
+  "relationship": "independent simplified mechanism demonstration, not full reproduction"
+}

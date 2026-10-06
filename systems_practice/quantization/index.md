@@ -2,7 +2,7 @@
 
 [栏目说明](../docs/quantization/README.md) · [交付模板](../docs/quantization/LESSON_TEMPLATE.md) · [方法目录](catalog.json) · [进度](progress.json)
 
-下一方法：**FP8 scaling**（fp8_scaling）。今日optimizer_8bit原生/Thor与源码获取仍在backlog。
+下一方法：**Block-scaled FP4**（block_fp4）。FP8源码获取、完整SHA、原生/Thor仍在backlog。
 
 | 日期 | 类型 | 方法 | 源码 / 阅读 / 示例 / CPU / Thor | 证据 |
 | --- | --- | --- | --- | --- |
@@ -31,3 +31,5 @@
 2026-10-04：[KIVI：KV分组轴与残留](2026-10-04/kivi/README.md)，获取否/阅读是/示例交付是/CPU原生否/Thor否；独立packed QK CPU964行通过，不能替代原生运行。[五项记录](2026-10-04/kivi/verification.json)。只重试旧AWQ一次，DNS失败；下一方法optimizer_8bit。
 
 2026-10-05：[Adam8bit分块状态](2026-10-05/optimizer_8bit/README.md)，获取否/实现阅读是/原生示例是/CPU原生否/Thor否。独立均匀8bit真实80步更新与失败反例通过，非bnb性能；Thor SM110 codec基线/优化/ncu/ISA命令齐备但未运行。旧AWQ只重试一次，DNS失败。[五项状态](2026-10-05/optimizer_8bit/verification.json)。
+
+2026-10-06：[FP8动态per-tensor缩放](2026-10-06/fp8_scaling/README.md)。获取否/局部阅读是/原生示例交付是/CPU原生否/Thor否；独立E4M3FN真实235B权重文件与误差对照已运行。Thor SM110编码基线/向量候选、ncu/ISA命令已交付，理论对照Hopper；旧AWQ仅重试一次失败。

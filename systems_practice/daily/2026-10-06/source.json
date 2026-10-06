@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/ggml-org/ggml",
+  "branch": "master",
+  "file": "src/ggml-cpu/arch/arm/quants.c",
+  "symbols": [
+    "quantize_row_q8_0",
+    "ggml_vec_dot_q8_0_q8_0"
+  ],
+  "read_scope": "37-75,1028-1043,1207-1245; NEON block dot and scalar remainder",
+  "license": "MIT",
+  "chain": "ggml_vec_dot_q8_0_q8_0 -> block loads -> ggml_vdotq_s32 call site -> scale -> reduction",
+  "retained": "integer block accumulation then per-block scales",
+  "simplified": "custom contiguous layout, FP32 scales, double outer sum; no GGUF/SVE/i8mm",
+  "read_date": "2026-10-06",
+  "commit": null,
+  "source_read": true,
+  "relationship": "independent inspired implementation",
+  "research_record": "results/research.json"
+}
