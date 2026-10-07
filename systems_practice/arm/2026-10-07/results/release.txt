@@ -1,0 +1,14 @@
+bytes,pattern,p50_ns_per_dependent_load,p95_ns_per_dependent_load
+4096,sequential,1.37568,1.42241
+4096,random,1.41239,1.42384
+32768,sequential,1.41208,1.43687
+32768,random,1.34404,1.40079
+131072,sequential,1.34436,1.42749
+131072,random,1.34468,1.35485
+1048576,sequential,1.69627,1.7155
+1048576,random,4.78856,5.44866
+8388608,sequential,1.76573,1.79625
+8388608,random,7.79422,8.70959
+33554432,sequential,5.01792,5.85493
+33554432,random,48.6379,87.4855
+PASS boundary_rings=14 zero_rejected=1 sink=0

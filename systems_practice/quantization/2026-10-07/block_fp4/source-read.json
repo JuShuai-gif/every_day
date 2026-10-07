@@ -1,0 +1,61 @@
+{
+  "method": "block_fp4",
+  "date": "2026-10-07",
+  "repository": "https://github.com/NVIDIA/Model-Optimizer",
+  "tag": "0.35.0",
+  "commit": "c359cb774db4daab623cddde6c7e0399a49cf7d2",
+  "commit_evidence": "https://github.com/NVIDIA/Model-Optimizer/commit/c359cb774db4daab623cddde6c7e0399a49cf7d2",
+  "source_fetched": false,
+  "source_read": true,
+  "license": "Apache-2.0 (SPDX headers and setup.py); LICENSE body fetch failed",
+  "files": [
+    {
+      "path": "modelopt/torch/quantization/qtensor/nvfp4_tensor.py",
+      "symbols": [
+        "NVFP4QTensor.quantize",
+        "get_weights_scaling_factor",
+        "_cast_fp4",
+        "dequantize"
+      ],
+      "read_ref": "0.35.0",
+      "permalink": "https://github.com/NVIDIA/Model-Optimizer/blob/c359cb774db4daab623cddde6c7e0399a49cf7d2/modelopt/torch/quantization/qtensor/nvfp4_tensor.py"
+    },
+    {
+      "path": "modelopt/torch/quantization/config.py",
+      "symbols": [
+        "NVFP4_DEFAULT_CFG",
+        "MXFP4_DEFAULT_CFG"
+      ],
+      "read_ref": "0.35.0",
+      "permalink": "https://github.com/NVIDIA/Model-Optimizer/blob/c359cb774db4daab623cddde6c7e0399a49cf7d2/modelopt/torch/quantization/config.py"
+    },
+    {
+      "path": "modelopt/torch/quantization/backends/utils.py",
+      "symbols": [
+        "fp4_compatible"
+      ],
+      "read_ref": "0.35.0",
+      "permalink": "https://github.com/NVIDIA/Model-Optimizer/blob/c359cb774db4daab623cddde6c7e0399a49cf7d2/modelopt/torch/quantization/backends/utils.py"
+    },
+    {
+      "path": "setup.py",
+      "symbols": [
+        "required_deps",
+        "python_requires"
+      ],
+      "read_ref": "0.35.0",
+      "permalink": "https://github.com/NVIDIA/Model-Optimizer/blob/c359cb774db4daab623cddde6c7e0399a49cf7d2/setup.py"
+    }
+  ],
+  "call_chain": "quantize -> block padding/absmax -> E4M3 block scale -> _cast_fp4 -> nibble pack; dequantize -> unpack -> both scales -> FP32 matmul in example",
+  "scope": "native tensor API; model_quant.py, base_qtensor.py and LICENSE requests failed; no full model/backend audit",
+  "relationship": "example.py calls upstream; independent.py and decode.cu are independent teaching implementations",
+  "cache_check": "No repo/.git/HEAD found under quant_sources on this run",
+  "failures": [
+    "git clone DNS: see source.json",
+    "model_quant.py Internal Error",
+    "base_qtensor.py Cache miss",
+    "LICENSE Cache miss"
+  ],
+  "backend": "fp4_compatible unconditionally queries CUDA0 and only checks >=10.0, not an SM110 backend compatibility guarantee"
+}

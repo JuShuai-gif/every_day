@@ -1,0 +1,4 @@
+$ sh thor.sh isa
+thor.sh: line 10: nvcc: command not found
+
+exit_code=127

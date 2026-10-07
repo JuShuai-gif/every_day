@@ -1,0 +1,15 @@
+{
+  "file_counts": {
+    "json": 15,
+    "python": 4,
+    "shell": 12,
+    "links": 43
+  },
+  "archive_candidates": 74,
+  "user_files_hashes_preserved": 4,
+  "main_headings": 12,
+  "concept_chinese_characters": 550,
+  "arm_date_json_count": 0,
+  "status": "PASS",
+  "global_diff_check": "Preexisting trailing whitespace only: arm/2026-09-23/src/registers.cpp:26; preserved"
+}

@@ -33,3 +33,5 @@
 2026-10-05：[Adam8bit分块状态](2026-10-05/optimizer_8bit/README.md)，获取否/实现阅读是/原生示例是/CPU原生否/Thor否。独立均匀8bit真实80步更新与失败反例通过，非bnb性能；Thor SM110 codec基线/优化/ncu/ISA命令齐备但未运行。旧AWQ只重试一次，DNS失败。[五项状态](2026-10-05/optimizer_8bit/verification.json)。
 
 2026-10-06：[FP8动态per-tensor缩放](2026-10-06/fp8_scaling/README.md)。获取否/局部阅读是/原生示例交付是/CPU原生否/Thor否；独立E4M3FN真实235B权重文件与误差对照已运行。Thor SM110编码基线/向量候选、ncu/ISA命令已交付，理论对照Hopper；旧AWQ仅重试一次失败。
+
+2026-10-07：[NVFP4双层scale与真实打包](2026-10-07/block_fp4/README.md)。获取否/固定tag实现阅读是/原生示例是/CPU原生否/Thor否；独立文件785B与FP16权重2210B，CPU QDQ更慢，分布偏移退化保留。Thor SM110解码基线/候选、ncu/PTX/SASS方案，理论对照Ada；下一轮AWQ选新设计点。旧AWQ仅重试一次失败。

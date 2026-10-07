@@ -1,0 +1,4 @@
+$ sh thor.sh query
+thor.sh: line 12: ncu: command not found
+
+exit_code=127

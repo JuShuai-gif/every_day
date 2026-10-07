@@ -1,0 +1,1 @@
+systems_practice/quantization/2026-10-07/block_fp4/thor.sh: line 7: nvcc: command not found

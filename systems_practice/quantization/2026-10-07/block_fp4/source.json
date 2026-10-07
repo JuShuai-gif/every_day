@@ -1,0 +1,18 @@
+{
+  "method": "block_fp4",
+  "repository": "https://github.com/NVIDIA/Model-Optimizer.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-10-07T00:56:20.665047+00:00",
+  "commit": null,
+  "cache": ".tmp/quant_sources/block_fp4-05vbsioy",
+  "status": "failed",
+  "source_read": false,
+  "example_run": false,
+  "files": [],
+  "errors": [
+    {
+      "reason": "Cloning into '/Users/guhaoran/code/EveryDay/systems_practice/.tmp/quant_sources/block_fp4-05vbsioy/repo'...\nfatal: unable to access 'https://github.com/NVIDIA/Model-Optimizer.git/': Could not resolve host: github.com"
+    }
+  ],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example."
+}

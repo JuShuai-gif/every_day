@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "next_method_id": "block_fp4",
-  "last_lesson_date": "2026-10-06",
+  "next_method_id": "awq",
+  "last_lesson_date": "2026-10-07",
   "completed_methods": [],
   "history": [
     {
@@ -311,6 +311,21 @@
       "lesson": "2026-10-06/fp8_scaling/README.md",
       "verification": "2026-10-06/fp8_scaling/verification.json",
       "status": "partial; clone DNS, no torch/nvcc/ncu; full SHA/backend compatibility pending"
+    },
+    {
+      "method": "block_fp4",
+      "date": "2026-10-07",
+      "commit": "c359cb774db4daab623cddde6c7e0399a49cf7d2",
+      "tag": "0.35.0",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "lesson": "2026-10-07/block_fp4/README.md",
+      "verification": "2026-10-07/block_fp4/verification.json",
+      "status": "partial; clone DNS, missing native dependencies/toolchain/Thor; independent CPU only",
+      "counts_toward_daily_progress": true
     }
   ],
   "backlog": [
@@ -553,12 +568,29 @@
       "status": "partial; clone DNS, no torch/nvcc/ncu; full SHA/backend compatibility pending",
       "reason": "Source checkout, full commit, native dependency/backend audit and Thor validation pending",
       "latest_verification": "2026-10-06/fp8_scaling/verification.json"
+    },
+    {
+      "method": "block_fp4",
+      "date": "2026-10-07",
+      "commit": "c359cb774db4daab623cddde6c7e0399a49cf7d2",
+      "tag": "0.35.0",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "lesson": "2026-10-07/block_fp4/README.md",
+      "verification": "2026-10-07/block_fp4/verification.json",
+      "status": "partial; clone DNS, missing native dependencies/toolchain/Thor; independent CPU only",
+      "counts_toward_daily_progress": true,
+      "reason": "Source checkout/native run/Thor compatibility and ISA profiling pending",
+      "latest_verification": "2026-10-07/block_fp4/verification.json"
     }
   ],
   "policy": "One quantization lesson per Asia/Shanghai calendar day, independent of main rotation. Preparation does not advance cursor. Daily attempted lessons may advance cursor but failures stay in backlog and never enter completed_methods. Completion requires source read and concrete upstream usage example delivered; execution evidence tracked separately.",
   "last_language_audit": "2026-09-22T10:43:01.386131+08:00",
   "language_policy": "Torch-first for algorithms/models/precision/framework timing; C++ optional for explicit layout/CPU kernel studies",
-  "last_canonical_lesson_date": "2026-10-06",
+  "last_canonical_lesson_date": "2026-10-07",
   "backfill_reconciled_at": "2026-09-28T05:01:42.754872+00:00",
   "reconciliation_note": "2026-10-02 concurrent Oct1 registration corrected: calibration draft retained as supplemental; QAT canonical. One old backlog retry AWQ only. Earlier backfill history preserved.",
   "retry_history": [
@@ -582,6 +614,14 @@
       "source_fetched": false,
       "result": "GitHub DNS failure; no verified cache",
       "evidence": "2026-10-06/fp8_scaling/results/awq-retry.json"
+    },
+    {
+      "date": "2026-10-07",
+      "method": "awq",
+      "source_fetched": false,
+      "result": "DNS failure; no verified cache",
+      "evidence": "2026-10-07/block_fp4/results/awq-retry.json"
     }
-  ]
+  ],
+  "next_cycle_note": "Second rotation: choose a new AWQ design point; preserve unresolved prior backlog and retry at most one old item."
 }

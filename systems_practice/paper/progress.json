@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-06T09:27:54.005400+08:00",
+  "updated_at": "2026-10-07T09:42:34.310240+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -416,6 +416,30 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2606.14150",
+      "title": "Small LLMs: Pruning vs. Training from Scratch",
+      "delivered_on": "2026-10-07",
+      "first_submitted": "2026-06-12",
+      "version_read": "v1",
+      "directory": "2026-10-07/01-prune-budget",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2608.27512",
+      "title": "Quantization-Triggered Backdoors in Language Models: Cross-Quantizer Transferability and the Validation–Deployment Gap",
+      "delivered_on": "2026-10-07",
+      "first_submitted": "2026-08-27",
+      "version_read": "v1",
+      "directory": "2026-10-07/02-deployment-gap",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
     }
   ],
   "backlog": [
@@ -592,6 +616,18 @@
       "date": "2026-10-06",
       "reason": "Author full implementation/version/dependencies/model reproduction pending",
       "directory": "2026-10-06/02-s2prune"
+    },
+    {
+      "id": "arxiv:2606.14150",
+      "date": "2026-10-07",
+      "reason": "Author implementation/full replication unavailable or access failed; exact environment and target validation pending",
+      "directory": "2026-10-07/01-prune-budget"
+    },
+    {
+      "id": "arxiv:2608.27512",
+      "date": "2026-10-07",
+      "reason": "Author implementation/full replication unavailable or access failed; exact environment and target validation pending",
+      "directory": "2026-10-07/02-deployment-gap"
     }
   ]
 }

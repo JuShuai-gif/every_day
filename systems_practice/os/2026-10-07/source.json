@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-07",
+  "relationship": "inspired independent implementation; no upstream source copied",
+  "search_attempts": [
+    {
+      "url": "https://www.google.com/search?q=model+hot+reload+shared_ptr+inference",
+      "result": "web Internal Error"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=ARM%20Cache%20工作集",
+      "result": "web Internal Error"
+    }
+  ],
+  "repository": "https://github.com/mit-pdos/xv6-riscv",
+  "ref": "riscv",
+  "commit": null,
+  "source_read": true,
+  "license": "MIT",
+  "files": [
+    {
+      "path": "kernel/spinlock.c",
+      "symbols": [
+        "acquire",
+        "release",
+        "push_off",
+        "pop_off",
+        "holding"
+      ],
+      "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/spinlock.c"
+    },
+    {
+      "path": "LICENSE",
+      "symbols": [],
+      "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/LICENSE"
+    }
+  ]
+}

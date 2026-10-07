@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-07",
+  "paper_id": "arxiv:2606.14150",
+  "paper_sections_read": true,
+  "source_implementation_read": false,
+  "example_delivered": true,
+  "cpu_example_run": true,
+  "evidence": [
+    "results/run.txt"
+  ],
+  "full_paper_reproduced": false,
+  "gpu_run": false,
+  "target_board_verified": false,
+  "training_updates": true,
+  "blockers": [
+    "author implementation/dependency audit incomplete",
+    "no model/data/training or target hardware replication"
+  ]
+}

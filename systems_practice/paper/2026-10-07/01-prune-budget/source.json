@@ -1,0 +1,21 @@
+{
+  "read_date": "2026-10-07",
+  "arxiv_id": "2606.14150",
+  "title": "Small LLMs: Pruning vs. Training from Scratch",
+  "authors": [
+    "Yufeng Xu",
+    "Taiming Lu",
+    "Kunjun Li",
+    "Jiachen Zhu",
+    "Mingjie Sun",
+    "Zhuang Liu"
+  ],
+  "first_submitted": "2026-06-12",
+  "version_read": "v1",
+  "url": "https://arxiv.org/html/2606.14150v1",
+  "scope": "v1 sections 3.1,3.2,4/table2; latest metadata v3 June29 distinguished",
+  "repository": "https://github.com/zlab-princeton/llm-pruning-collection",
+  "source_implementation_read": false,
+  "implementation_access": "README read; prune.py and .gitmodules requests Cache miss/Internal Error; exact SHA and license body pending",
+  "relation": "independent mechanism example, not author implementation or model reproduction"
+}

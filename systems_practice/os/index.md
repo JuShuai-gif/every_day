@@ -10,7 +10,7 @@
 | [2026-10-01](2026-10-01/README.md) | 04：trapframe现场 + 系统调用返回 | 宿主状态模型/EBADF，Release/ASan/UBSan通过；xv6源码已读 | commit、xv6/QEMU/Linux/板端待验；[记录](2026-10-01/verification.json) |
 | [2026-10-03](2026-10-03/README.md) | 06：walk多级索引 + 映射权限与解除映射 | C++17 Release/ASan/UBSan，手算地址、1025跨叶映射与失败边界通过；本地PDF页5勘误核实 | xv6/QEMU/Linux/板端与精确commit待验；[记录](2026-10-03/verification.json) |
 
-下一课：**10 自旋锁与中断**。
+下一课：**11 睡眠与唤醒**。
 
 2026-10-02正式交付：[05 页分配器空闲链表与失败回滚](2026-10-02/session-02/README.md)。Mac Release/ASan/UBSan通过；源码已读，Linux/板端未验。[并发旧游标补充](2026-10-02/README.md)保留但不计新课。
 
@@ -19,3 +19,5 @@
 2026-10-05正式交付：[08 地址空间增长＋首次触页；4098 size、deferred OOM、映射回滚/洞/缩堆通过；xv6真实lazy源码已读，QEMU/Linux/板端待验。](2026-10-05/README.md) Release/ASan/UBSan通过。
 
 2026-10-06：[OS09 共享只读页与COW引用计数](2026-10-06/README.md)。4096偏移/注入OOM与多代回收通过，Release/ASan/UBSan；独立宿主模型，COW为MIT实验扩展，非xv6默认实现，QEMU/Linux/板端未验。
+
+2026-10-07：[OS10 原子互斥与嵌套关中断：40000更新/异常释放/两初始状态，Release/ASan/UBSan/TSan通过；中断只是宿主模型，xv6/QEMU/板端未验。](2026-10-07/README.md)

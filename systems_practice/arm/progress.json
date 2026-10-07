@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
-  "last_delivery_date": "2026-10-06",
-  "next_lesson_id": "15",
+  "last_delivery_date": "2026-10-07",
+  "next_lesson_id": "16",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -17,7 +17,8 @@
     "11",
     "12",
     "13",
-    "14"
+    "14",
+    "15"
   ],
   "history": [
     {
@@ -298,6 +299,20 @@
       "program_run": true,
       "implementation_language": "C++17",
       "shared_implementation": "../daily/2026-10-06/src/main.cpp"
+    },
+    {
+      "date": "2026-10-07",
+      "lesson_id": "15",
+      "path": "2026-10-07",
+      "source_read": true,
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "version_pinned": false,
+      "verification": "2026-10-07/README.md"
     }
   ],
   "backlog": [
@@ -324,6 +339,12 @@
       "lesson_id": "13",
       "reason": "Linux/target board pending; full upstream commit unresolved",
       "verification": "2026-10-05/README.md"
+    },
+    {
+      "date": "2026-10-07",
+      "lesson_id": "15",
+      "reason": "Target Linux/board pending; cache query permission denied, no PMU",
+      "verification": "2026-10-07/README.md"
     }
   ],
   "curriculum_adjustments": [
@@ -352,5 +373,5 @@
       "reason": "User requested four working/deployment capability layers; mapped existing 28 lessons, preserved order and historical progress. Actual delivery08 advances to09 separately."
     }
   ],
-  "last_canonical_lesson_date": "2026-10-06"
+  "last_canonical_lesson_date": "2026-10-07"
 }

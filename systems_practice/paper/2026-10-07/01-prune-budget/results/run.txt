@@ -1,0 +1,42 @@
+{
+  "parent_steps": 200,
+  "parent": [
+    1.9986414269528516,
+    -0.4996264036753363,
+    0.021336343069785327
+  ],
+  "results": [
+    {
+      "name": "pruned_retrain",
+      "steps": 40,
+      "test_mse": 0.0020634462740004842,
+      "weights": [
+        2.0031179296045982,
+        -0.5650499480134455,
+        0.0
+      ]
+    },
+    {
+      "name": "scratch_equal_retrain",
+      "steps": 40,
+      "test_mse": 0.010251528320077042,
+      "weights": [
+        2.006763919526343,
+        -0.19779102709853907,
+        0.0
+      ]
+    },
+    {
+      "name": "scratch_total_steps",
+      "steps": 240,
+      "test_mse": 0.0013638448993255853,
+      "weights": [
+        2.002514686009449,
+        -0.6258138704164766,
+        0.0
+      ]
+    }
+  ],
+  "checks": "PASS real updates, fixed mask, independent tune/test",
+  "caution": "equal steps is a toy budget, not compute/token equivalence; parent cost remains 200"
+}

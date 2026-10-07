@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-07/block_fp4/example.py", line 7, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'

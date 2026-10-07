@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-07",
+  "verified_at": "2026-10-07T09:42:34.310240+08:00",
+  "source_read": true,
+  "source_record": "source.json",
+  "host_compile": true,
+  "host_run": true,
+  "release_passed": true,
+  "asan_ubsan_passed": true,
+  "tsan_passed": true,
+  "tsan_applicable": true,
+  "target_board_verified": false,
+  "gpu_run": false,
+  "npu_run": false,
+  "performance_measured": false,
+  "evidence": [
+    "results/verified-release.txt",
+    "results/verified-sanitize.txt",
+    "results/verified-tsan.txt"
+  ],
+  "blockers": [
+    "No Linux/target board validation",
+    "Exact upstream commit not resolved; branch read date or LLVM tag recorded"
+  ]
+}

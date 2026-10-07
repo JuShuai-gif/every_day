@@ -1,0 +1,19 @@
+{
+  "read_date": "2026-10-07",
+  "arxiv_id": "2608.27512",
+  "title": "Quantization-Triggered Backdoors in Language Models: Cross-Quantizer Transferability and the Validation–Deployment Gap",
+  "authors": [
+    "Jacopo Dardini",
+    "Claudio Stanzione",
+    "Giordano Colò",
+    "Giuseppe Fenza"
+  ],
+  "first_submitted": "2026-08-27",
+  "version_read": "v1",
+  "url": "https://arxiv.org/html/2608.27512v1",
+  "scope": "v1 sections3.2-3.4,4.1/4.2 table2,6.4",
+  "repository": null,
+  "source_implementation_read": false,
+  "implementation_access": "paper6.4 states full artifacts/checkpoints/data will not be publicly released; no author implementation found",
+  "relation": "independent mechanism example, not author implementation or model reproduction"
+}

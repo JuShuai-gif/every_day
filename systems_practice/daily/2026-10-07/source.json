@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-07",
+  "relationship": "inspired independent implementation; no upstream source copied",
+  "search_attempts": [
+    {
+      "url": "https://www.google.com/search?q=model+hot+reload+shared_ptr+inference",
+      "result": "web Internal Error"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=ARM%20Cache%20工作集",
+      "result": "web Internal Error"
+    }
+  ],
+  "repository": "https://github.com/triton-inference-server/core",
+  "ref": "main",
+  "commit": null,
+  "source_read": true,
+  "license": "BSD-3-Clause file header",
+  "files": [
+    {
+      "path": "src/model_repository_manager/model_lifecycle.cc",
+      "symbols": [
+        "GetModel",
+        "AsyncLoad",
+        "OnLoadComplete",
+        "OnLoadFinal",
+        "ModelDeleter"
+      ],
+      "url": "https://github.com/triton-inference-server/core/blob/main/src/model_repository_manager/model_lifecycle.cc"
+    }
+  ]
+}

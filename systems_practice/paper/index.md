@@ -41,3 +41,5 @@
 2026-10-05：[FlexPosit](2026-10-05/01-flexposit/README.md)（2026-09-04首发，v1方法/表II，最新v2另标）＋[Telescopic Language Models](2026-10-05/02-tlm/README.md)（2026-09-28 v1）。独立Posit预算/分布偏移与2000步前缀训练已运行；作者实现分别访问失败/尚未发布，无完整模型/硬件复现。[当日入口](2026-10-05/README.md)。
 
 2026-10-06：[IrekoGPT](2026-10-06/01-irekogpt/README.md)（2026-09-30 v1，多宽度校准/岭修正）＋[S²Prune](2026-10-06/02-s2prune/README.md)（2026-09-01 v1，空间覆盖与容量分配）。方法/表1选段已读；独立CPU例子运行，保留分布变化退化；无完整模型/设备复现。[入口](2026-10-06/README.md)。
+
+2026-10-07：[Small LLMs: Pruning vs. Training from Scratch与Quantization-Triggered Backdoors](2026-10-07/README.md)。前者首发06-12，本次v1（最新v3另标）；后者08-27v1，作者备注ARES2026接收。实际读方法/表格，独立预算训练与部署margin例运行通过；作者算法/完整模型/硬件未复现。

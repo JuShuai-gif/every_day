@@ -17,7 +17,7 @@
 | [2026-10-03](2026-10-03/README.md) | 11 | NEON多累加器、依赖与寄存器压力 | Mac Release/ASan/UBSan、3081+9数值对照通过，真实汇编；N65539四链P50 3.7900us；板端未验 |
 
 
-下一课：**15 Cache、工作集与局部性**。
+下一课：**16 分块与packing**。
 
 
 2026-09-28 生成要求增加[就业与操作系统衔接](../docs/arm/CAREER_OS.md)：工程调试、完整推理和性能证据融入原路线；本次不推进课程。
@@ -55,3 +55,5 @@
 2026-10-05正式交付：[13 FP16存储/转换/算术与累加精度；1026长度及溢出/舍入通过，真实FCVTL/FMLA.4S/FMLA.8H；Mac CPU N65539标量/NEON批均值P50=52.3054/13.5775μs，非板端。](2026-10-05/README.md) Release/ASan/UBSan通过。
 
 2026-10-06：[ARM14 INT8扩宽/SDOT](2026-10-06/README.md)。复用主课，4116案例与4拒绝、Release/ASan/UBSan通过；实际SMULL/SADALP/SDOT，MacCPU批均值已测，板端/PMU未验。
+
+2026-10-07：[ARM15 工作集与依赖LDR：14环/零输入、Release/ASan/UBSan通过，真实A64已保存；最终32MiB random/seq批均值P50=51.4197/7.07443ns/load。cache查询权限拒绝、PMU/板端未验。](2026-10-07/README.md)

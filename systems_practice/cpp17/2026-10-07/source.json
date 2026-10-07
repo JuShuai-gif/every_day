@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-07",
+  "relationship": "inspired independent implementation; no upstream source copied",
+  "search_attempts": [
+    {
+      "url": "https://www.google.com/search?q=model+hot+reload+shared_ptr+inference",
+      "result": "web Internal Error"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=ARM%20Cache%20工作集",
+      "result": "web Internal Error"
+    }
+  ],
+  "repository": "https://github.com/llvm/llvm-project",
+  "ref": "llvmorg-18.1.8",
+  "commit": null,
+  "source_read": true,
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "files": [
+    {
+      "path": "libcxx/include/any",
+      "symbols": [
+        "_IsSmallObject",
+        "_SmallHandler",
+        "_LargeHandler",
+        "any::operator=",
+        "any::emplace",
+        "any_cast"
+      ],
+      "url": "https://github.com/llvm/llvm-project/blob/llvmorg-18.1.8/libcxx/include/any"
+    },
+    {
+      "path": "LICENSE.TXT",
+      "symbols": [],
+      "url": "https://github.com/llvm/llvm-project/blob/llvmorg-18.1.8/LICENSE.TXT"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "shape": {
+    "x": [
+      8,
+      65
+    ],
+    "w": [
+      17,
+      65
+    ]
+  },
+  "fp16": {
+    "nrmse": 0.00032354833211653886,
+    "max_abs": 0.007428361565954944,
+    "cosine": 0.9999999561883192
+  },
+  "absmax_int4_qdq": {
+    "nrmse": 0.3409415076049428,
+    "max_abs": 4.498032029539392,
+    "cosine": 0.9419384578670875
+  },
+  "independent_nvfp4_qdq": {
+    "nrmse": 0.14778226516289505,
+    "max_abs": 2.1742279661158235,
+    "cosine": 0.9890719237569243
+  },
+  "shifted_frozen_activation_scale": {
+    "nrmse": 0.370673871350867,
+    "max_abs": 34.840450924587,
+    "cosine": 0.9466183448056856
+  },
+  "saturation_counts": {
+    "w": 40,
+    "x": 19,
+    "shifted": 189
+  },
+  "storage": {
+    "fp16_unpadded": 2210,
+    "packed_padded": 680,
+    "scale": 85,
+    "header": 20,
+    "actual_file": 785
+  },
+  "python_cpu_batch_ms_p50": [
+    0.23374999999999785,
+    0.682083999999996
+  ],
+  "checks": "PASS reload,7 zero/tail shapes,4 invalid, ties-even",
+  "scope": "independent Python CPU QDQ+matmul; no upstream/native GPU run"
+}
