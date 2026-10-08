@@ -1,8 +1,10 @@
 {
   "schema_version": 1,
-  "next_method_id": "awq",
-  "last_lesson_date": "2026-10-07",
-  "completed_methods": [],
+  "next_method_id": "gptq",
+  "last_lesson_date": "2026-10-08",
+  "completed_methods": [
+    "awq"
+  ],
   "history": [
     {
       "date": "2026-09-19",
@@ -326,6 +328,22 @@
       "verification": "2026-10-07/block_fp4/verification.json",
       "status": "partial; clone DNS, missing native dependencies/toolchain/Thor; independent CPU only",
       "counts_toward_daily_progress": true
+    },
+    {
+      "date": "2026-10-08",
+      "method": "awq",
+      "focus": "Second rotation: activation-aware scale fusion and distribution shift",
+      "lesson": "2026-10-08/awq/README.md",
+      "verification": "2026-10-08/awq/verification.json",
+      "commit": "d6e797a42b9ef7778de8ee2352116e0f48a78d61",
+      "source_fetched": true,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "independent_cpu_example_run": true,
+      "counts_toward_daily_progress": true,
+      "status": "Source/read/example complete; native dependencies and Thor execution pending"
     }
   ],
   "backlog": [
@@ -334,15 +352,17 @@
       "kind": "preparatory_source_fetch",
       "date": "2026-09-18",
       "record": "results/2026-09-18-awq-source.json",
-      "reason": "Local clone still fails DNS; pinned implementations/license read via web and clip/packing API example delivered; dependencies/native Thor backend remain unverified.",
-      "source_fetched": false,
+      "reason": "Source fetch resolved on 2026-10-08. Historical failures preserved. Native dependencies, extension build and Thor remain unverified.",
+      "source_fetched": true,
       "source_read": true,
       "example_delivered": true,
       "cpu_example_run": false,
       "thor_verified": false,
       "last_retry_date": "2026-10-03",
       "latest_verification": "2026-09-19/awq/verification.json",
-      "latest_source_retry": "2026-10-03/awq-retry-source.json"
+      "latest_source_retry": "2026-10-03/awq-retry-source.json",
+      "source_fetch_resolved_on": "2026-10-08",
+      "resolution_evidence": "2026-10-08/awq/source-read.json"
     },
     {
       "method": "gptq",
@@ -585,12 +605,19 @@
       "counts_toward_daily_progress": true,
       "reason": "Source checkout/native run/Thor compatibility and ISA profiling pending",
       "latest_verification": "2026-10-07/block_fp4/verification.json"
+    },
+    {
+      "method": "awq",
+      "date": "2026-10-08",
+      "kind": "native_execution_and_thor",
+      "reason": "Missing torch and CUDA extension/toolchain/device; CPU-independent run does not validate upstream API or Thor",
+      "verification": "2026-10-08/awq/verification.json"
     }
   ],
   "policy": "One quantization lesson per Asia/Shanghai calendar day, independent of main rotation. Preparation does not advance cursor. Daily attempted lessons may advance cursor but failures stay in backlog and never enter completed_methods. Completion requires source read and concrete upstream usage example delivered; execution evidence tracked separately.",
   "last_language_audit": "2026-09-22T10:43:01.386131+08:00",
   "language_policy": "Torch-first for algorithms/models/precision/framework timing; C++ optional for explicit layout/CPU kernel studies",
-  "last_canonical_lesson_date": "2026-10-07",
+  "last_canonical_lesson_date": "2026-10-08",
   "backfill_reconciled_at": "2026-09-28T05:01:42.754872+00:00",
   "reconciliation_note": "2026-10-02 concurrent Oct1 registration corrected: calibration draft retained as supplemental; QAT canonical. One old backlog retry AWQ only. Earlier backfill history preserved.",
   "retry_history": [
@@ -621,6 +648,13 @@
       "source_fetched": false,
       "result": "DNS failure; no verified cache",
       "evidence": "2026-10-07/block_fp4/results/awq-retry.json"
+    },
+    {
+      "date": "2026-10-08",
+      "method": "gptq",
+      "source_fetched": false,
+      "result": "Single old-backlog attempt: GitHub DNS failure",
+      "evidence": "2026-10-08/awq/results/gptq-retry.json"
     }
   ],
   "next_cycle_note": "Second rotation: choose a new AWQ design point; preserve unresolved prior backlog and retry at most one old item."

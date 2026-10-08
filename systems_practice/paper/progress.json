@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-07T09:42:34.310240+08:00",
+  "updated_at": "2026-10-08T15:45:05.585462+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -440,6 +440,30 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.04098",
+      "title": "Why Gated DeltaNet Survives 4-Bit Quantization: NVFP4 W4A4 for the Recurrent Half of a Hybrid 27B LLM",
+      "delivered_on": "2026-10-08",
+      "first_submitted": "2026-09-03",
+      "version_read": "v1",
+      "directory": "2026-10-08/01-gdn",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2605.18331",
+      "title": "Prune, Update and Trim: Robust Structured Pruning for Large Language Models",
+      "delivered_on": "2026-10-08",
+      "first_submitted": "2026-05-18",
+      "version_read": "v1",
+      "directory": "2026-10-08/02-putri",
+      "status": "delivered",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
     }
   ],
   "backlog": [
@@ -628,6 +652,18 @@
       "date": "2026-10-07",
       "reason": "Author implementation/full replication unavailable or access failed; exact environment and target validation pending",
       "directory": "2026-10-07/02-deployment-gap"
+    },
+    {
+      "id": "arxiv:2609.04098",
+      "date": "2026-10-08",
+      "reason": "Complete author reproduction code unverified; CPU algebra only",
+      "directory": "2026-10-08/01-gdn"
+    },
+    {
+      "id": "arxiv:2605.18331",
+      "date": "2026-10-08",
+      "reason": "Author source read at pinned commit; code license, native dependencies/full-model/Thor execution pending",
+      "directory": "2026-10-08/02-putri"
     }
   ]
 }

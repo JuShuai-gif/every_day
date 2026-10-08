@@ -1,0 +1,13 @@
+{
+  "kept_channel": 0,
+  "before_weight": 1.0,
+  "updated_weight": 2.607178149336467,
+  "lambda": 0,
+  "test_mse_before": 0.8076480832273523,
+  "test_mse_after": 0.0036554767081438152,
+  "shift_mse_before": 0.9916868023726781,
+  "shift_mse_after": 3.982276136677634,
+  "parameters_before": 2,
+  "parameters_after": 1,
+  "scope": "independent CPU least squares, no GQA pruning/LLM/Thor run"
+}

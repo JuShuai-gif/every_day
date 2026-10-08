@@ -2,7 +2,7 @@
 
 [栏目说明](../docs/quantization/README.md) · [交付模板](../docs/quantization/LESSON_TEMPLATE.md) · [方法目录](catalog.json) · [进度](progress.json)
 
-下一方法：**Block-scaled FP4**（block_fp4）。FP8源码获取、完整SHA、原生/Thor仍在backlog。
+下一方法：**GPTQ**（gptq，第二轮）。AWQ源码获取与阅读已补齐，原生依赖和Thor运行仍在backlog。
 
 | 日期 | 类型 | 方法 | 源码 / 阅读 / 示例 / CPU / Thor | 证据 |
 | --- | --- | --- | --- | --- |
@@ -35,3 +35,5 @@
 2026-10-06：[FP8动态per-tensor缩放](2026-10-06/fp8_scaling/README.md)。获取否/局部阅读是/原生示例交付是/CPU原生否/Thor否；独立E4M3FN真实235B权重文件与误差对照已运行。Thor SM110编码基线/向量候选、ncu/ISA命令已交付，理论对照Hopper；旧AWQ仅重试一次失败。
 
 2026-10-07：[NVFP4双层scale与真实打包](2026-10-07/block_fp4/README.md)。获取否/固定tag实现阅读是/原生示例是/CPU原生否/Thor否；独立文件785B与FP16权重2210B，CPU QDQ更慢，分布偏移退化保留。Thor SM110解码基线/候选、ncu/PTX/SASS方案，理论对照Ada；下一轮AWQ选新设计点。旧AWQ仅重试一次失败。
+
+2026-10-08：[AWQ第二轮：缩放融合与分布偏移](2026-10-08/awq/README.md)。获取是/实现阅读是/原生示例交付是/CPU原生否/Thor否；独立CPU真实332B文件，误差0.051529→0.022090，分布偏移反而退化。Thor SM110基线/warp候选、ncu/ISA教程齐备未实测，理论对照Turing。AWQ进入已读已交付列表，运行待补；旧GPTQ仅重试一次失败。下一方法GPTQ。

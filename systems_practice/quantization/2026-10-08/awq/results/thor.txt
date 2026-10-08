@@ -1,0 +1,1 @@
+systems_practice/quantization/2026-10-08/awq/thor.sh: line 6: nvcc: command not found

@@ -12,7 +12,7 @@
 
 每课的 README 与代码、运行脚本和结果放在一起。学习路线、栏目规则等通用说明集中在 docs/。
 
-当前入口：[2026-10-07 主课](daily/2026-10-07/README.md) · [NVFP4](quantization/2026-10-07/block_fp4/README.md) · [ARM15](arm/2026-10-07/README.md) · [预算公平与量化部署验证论文](paper/2026-10-07/README.md) · [OS10](os/2026-10-07/README.md) · [C++17第09课](cpp17/2026-10-07/README.md)。
+当前入口：[2026-10-08 主课](daily/2026-10-08/README.md) · [AWQ](quantization/2026-10-08/awq/README.md) · [ARM16](arm/2026-10-08/README.md) · [GDN与Putri论文](paper/2026-10-08/README.md) · [OS11](os/2026-10-08/README.md) · [C++17第10课](cpp17/2026-10-08/README.md)。
 
 旧规范和旧总索引文件保留为兼容导航，正文只有一份；历史日志中的旧路径保留原样。迁移对应表见 [目录说明](docs/LAYOUT.md)。
 

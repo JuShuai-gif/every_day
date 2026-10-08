@@ -1,0 +1,94 @@
+{
+  "method": "awq",
+  "repository": "https://github.com/mit-han-lab/llm-awq.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-10-08T01:42:42.678535+00:00",
+  "commit": "d6e797a42b9ef7778de8ee2352116e0f48a78d61",
+  "cache": ".tmp/quant_sources/awq-w2ymt074",
+  "status": "fetched",
+  "source_read": true,
+  "example_run": false,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 18206,
+      "sha256": "98c1caabd48369d81b527df210b01886d1b103534925374e5bdf6ff3b73b66e0",
+      "local_source": ".tmp/quant_sources/awq-w2ymt074/source/README.md",
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/README.md"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1068,
+      "sha256": "2af485d269071b583c62c20250a63349f8313312cc9df0bd9007ca39c6d57bd9",
+      "local_source": ".tmp/quant_sources/awq-w2ymt074/source/LICENSE",
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/LICENSE"
+    },
+    {
+      "path": "awq/quantize/pre_quant.py",
+      "bytes": 9095,
+      "sha256": "bd7c708775266425febd952fd81ca706955229a59ba411acfc3f4196b65e9b7c",
+      "local_source": ".tmp/quant_sources/awq-w2ymt074/source/awq/quantize/pre_quant.py",
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/awq/quantize/pre_quant.py"
+    },
+    {
+      "path": "awq/quantize/quantizer.py",
+      "bytes": 5691,
+      "sha256": "7929ee1f97addde95ce1b9c1d55f027b3b4d13fb1b9e6c850ab8a01736914e6c",
+      "local_source": ".tmp/quant_sources/awq-w2ymt074/source/awq/quantize/quantizer.py",
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/awq/quantize/quantizer.py"
+    },
+    {
+      "path": "awq/entry.py",
+      "bytes": 13304,
+      "sha256": "d601122ff19f901f13d531aef67cb364f827d8f75c6389a3f2533237d6ff029d",
+      "local_source": ".tmp/quant_sources/awq-w2ymt074/source/awq/entry.py",
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/awq/entry.py"
+    },
+    {
+      "path": "awq/quantize/auto_scale.py",
+      "bytes": 15813,
+      "sha256": "b6cf9bc5c7de67a03f56366046d473c1f6633ee6df3f59748b4559d47df858e8",
+      "local_source": ".tmp/quant_sources/awq-w2ymt074/source/awq/quantize/auto_scale.py",
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/awq/quantize/auto_scale.py"
+    },
+    {
+      "path": "awq/quantize/auto_clip.py",
+      "bytes": 3448,
+      "sha256": "fca53998885661c4930c7a373f52d9dc25e58fb15ad74c87678673ed5209157d",
+      "local_source": ".tmp/quant_sources/awq-w2ymt074/source/awq/quantize/auto_clip.py",
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/awq/quantize/auto_clip.py"
+    },
+    {
+      "path": "awq/quantize/qmodule.py",
+      "bytes": 7885,
+      "sha256": "310947d8cc49be6036b3408fc38dd3b61e941b18747629910b15415d7deb9658",
+      "local_source": ".tmp/quant_sources/awq-w2ymt074/source/awq/quantize/qmodule.py",
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/awq/quantize/qmodule.py"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 865,
+      "sha256": "0a0cf1665ac4a227bdfb4b0e111788ab62c9c4ae70b1bd32995da5675f123a41",
+      "local_source": ".tmp/quant_sources/awq-w2ymt074/source/pyproject.toml",
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/pyproject.toml"
+    },
+    {
+      "path": "awq/kernels/setup.py",
+      "bytes": 1763,
+      "sha256": "bb7129a88adc279e961299587e8a12323775f8318ca6dbb583f9a1644e2107cb",
+      "local_source": ".tmp/quant_sources/awq-w2ymt074/source/awq/kernels/setup.py",
+      "permalink": "https://github.com/mit-han-lab/llm-awq/blob/d6e797a42b9ef7778de8ee2352116e0f48a78d61/awq/kernels/setup.py"
+    }
+  ],
+  "errors": [],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example.",
+  "read_date": "2026-10-08",
+  "relationship": "Native example calls read upstream APIs; independent.py and gemv.cu are separately authored mechanism examples",
+  "license_notes": "Root MIT; pyproject classifier Apache; NVIDIA-derived gemv source Apache-2.0 header; no third-party implementation copied",
+  "call_chain": [
+    "get_act_scale -> 20-ratio search -> pseudo_quantize_tensor -> scale_ln_fcs",
+    "WQLinear.from_linear -> packing -> state_dict/load_state_dict -> forward -> awq_inference_engine GEMV/GEMM"
+  ],
+  "native_cpu_executed": false,
+  "thor_verified": false
+}

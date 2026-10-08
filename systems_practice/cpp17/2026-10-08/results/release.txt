@@ -1,0 +1,4 @@
+src/main.cpp:36:35: error: deduced conflicting types ('const char *' vs 'std::string' (aka 'basic_string<char>')) for initializer list element type
+   36 |         for(const std::string v : {"", "0", "-1", "+1", " 2", "2 ", "2x", "0x10", "4294967296", "4097", std::string("2\0x",3)}) {
+      |                                   ^~~                                                                   ~~~~~~~~~~~~~~~~~~~~~
+1 error generated.

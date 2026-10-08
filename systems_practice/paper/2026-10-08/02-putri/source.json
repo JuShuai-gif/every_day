@@ -1,0 +1,29 @@
+{
+  "id": "arxiv:2605.18331",
+  "title": "Prune, Update and Trim: Robust Structured Pruning for Large Language Models",
+  "first_submitted": "2026-05-18",
+  "version_read": "v1",
+  "read_date": "2026-10-08",
+  "fulltext": "https://arxiv.org/html/2605.18331v1",
+  "publication_status": "Preprint; peer-reviewed publication unverified",
+  "sections_read": [
+    "3.1",
+    "3.2",
+    "table1",
+    "table2"
+  ],
+  "author_repository": "https://github.com/Coello-dev/Putri",
+  "commit": "a840e31c7ea11cbbacf37a5ba13d05835f7f7167",
+  "source_fetched": true,
+  "implementation_read": true,
+  "files": [
+    "src/widthmerge_aux.py",
+    "src/widthmerge_utils/twossppruner.py",
+    "src/widthmerge_utils/basepruner.py",
+    "main.py",
+    "requirements.txt"
+  ],
+  "license": "Paper CC BY-SA4.0; repository root has no LICENSE, code license unverified",
+  "relationship": "Independent mathematical demonstration, no author implementation copied",
+  "model_downloaded": false
+}

@@ -1,0 +1,24 @@
+{
+  "relationship": "independent, not llm-awq execution",
+  "ratio": 0.3,
+  "codes": 231,
+  "saturated_endpoint_count": 27,
+  "packed_bytes": 116,
+  "group_scale_bytes": 84,
+  "channel_scale_bytes": 132,
+  "file_bytes": 332,
+  "fp32_payload": 924,
+  "fp16_payload": 462,
+  "test": {
+    "fp16": 0.0001158152833009447,
+    "absmax": 0.05152904188744708,
+    "awq_inspired": 0.02208971152229261
+  },
+  "shifted": {
+    "fp16": 0.00018779479528316907,
+    "absmax": 0.021850476473537786,
+    "awq_inspired": 0.03262990231279021
+  },
+  "fp32_CPU_batch_mean_ms_p50": 0.15854166666666678,
+  "decoded_awq_CPU_batch_mean_ms_p50": 0.14893066666666482
+}

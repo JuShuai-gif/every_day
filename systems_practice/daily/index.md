@@ -45,7 +45,7 @@
 
 | [2026-10-04](2026-10-04/README.md) | C++17 并发 | 有界提交＋关闭排空/在途资源寿命；[KIVI](../quantization/2026-10-04/kivi/README.md) · [ARM12](../arm/2026-10-04/README.md) · [OS07](../os/2026-10-04/README.md) · [C++06](../cpp17/2026-10-04/README.md) · [HOPE/D-Quant](../paper/2026-10-04/README.md) | [线程池](2026-10-04/src/pool.hpp)与[检查](2026-10-04/src/main.cpp) | Release/ASan/UBSan/TSan通过，800任务、启动失败/异常/关闭；量化原生缺checkout/torch，Thor缺工具设备 | 主课不测推理性能；ARM独立CPU direct/pack+SoA P50 13.3386/34.8229us；[记录](2026-10-04/verification.json) |
 
-下一主主题：**C++ 工程知识**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
+下一主主题：**CUDA Kernel**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
 
 `2026-09-14` 为用户要求补充的历史 C++ 练习，不改变当前轮换位置。
 
@@ -63,3 +63,7 @@
 2026-10-06：[ARM SIMD / NEON：INT8块点积与scale边界](2026-10-06/README.md)，[代码](2026-10-06/src/main.cpp)。Release/ASan/UBSan通过4116案例＋4拒绝；Mac K65539 CPU批均值P50 scalar18.0896µs / widening3.22666µs / SDOT3.22583µs，[最终日志](2026-10-06/results/verified-release.txt)。板端/PMU/E2E未验。[FP8动态缩放](../quantization/2026-10-06/fp8_scaling/README.md) · [ARM14](../arm/2026-10-06/README.md) · [OS09](../os/2026-10-06/README.md) · [CPP08](../cpp17/2026-10-06/README.md) · [IrekoGPT/S²Prune](../paper/2026-10-06/README.md)。量化CUDA编码候选固定Thor SM110，理论对照Hopper；无nvcc/ncu/设备，未编译/运行。
 
 2026-10-07：[边缘端部署：模型候选发布与在途租约](2026-10-07/README.md)，[C++17代码](2026-10-07/src/main.cpp)。Release/ASan/UBSan/TSan通过20000请求、9坏清单、回滚/背压/过期写者/关闭；未测推理性能，真实SDK/板端未验。[NVFP4](../quantization/2026-10-07/block_fp4/README.md) · [ARM15](../arm/2026-10-07/README.md) · [OS10](../os/2026-10-07/README.md) · [CPP09](../cpp17/2026-10-07/README.md) · [两篇论文](../paper/2026-10-07/README.md)。量化CUDA固定Thor SM110，理论对照Ada；CPU独立结果不是原生/设备验证。
+
+| 日期 | 主主题 | 核心知识与附加栏目 | 代码 | 验证 | 实测与边界 |
+| --- | --- | --- | --- | --- | --- |
+| [2026-10-08](2026-10-08/README.md) | C++ 工程知识 | 有界PMR与异常后整批回收；[AWQ](../quantization/2026-10-08/awq/README.md) · [ARM16](../arm/2026-10-08/README.md) · [OS11](../os/2026-10-08/README.md) · [C++10](../cpp17/2026-10-08/README.md) · [两篇论文](../paper/2026-10-08/README.md) | [C++17](2026-10-08/src/main.cpp) | Release/ASan/UBSan通过；65分配失败点与1000复用；量化原生缺torch，Thor未验 | allocation71次/9696B→65次/7680B，非时延；[验证](2026-10-08/verification.json) |

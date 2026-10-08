@@ -17,7 +17,7 @@
 | [2026-10-03](2026-10-03/README.md) | 11 | NEON多累加器、依赖与寄存器压力 | Mac Release/ASan/UBSan、3081+9数值对照通过，真实汇编；N65539四链P50 3.7900us；板端未验 |
 
 
-下一课：**16 分块与packing**。
+下一课：**17 带宽瓶颈与预取的适用条件**。
 
 
 2026-09-28 生成要求增加[就业与操作系统衔接](../docs/arm/CAREER_OS.md)：工程调试、完整推理和性能证据融入原路线；本次不推进课程。
@@ -57,3 +57,5 @@
 2026-10-06：[ARM14 INT8扩宽/SDOT](2026-10-06/README.md)。复用主课，4116案例与4拒绝、Release/ASan/UBSan通过；实际SMULL/SADALP/SDOT，MacCPU批均值已测，板端/PMU未验。
 
 2026-10-07：[ARM15 工作集与依赖LDR：14环/零输入、Release/ASan/UBSan通过，真实A64已保存；最终32MiB random/seq批均值P50=51.4197/7.07443ns/load。cache查询权限拒绝、PMU/板端未验。](2026-10-07/README.md)
+
+2026-10-08：[第16课：packing复用与搬运摊销](2026-10-08/README.md)。Mac C++17 Release/ASan/UBSan通过；实现已读，目标板未验证。真实NEON汇编与pack-only/reuse1/reuse8计时；小N一次使用出现无收益，未外推板端。

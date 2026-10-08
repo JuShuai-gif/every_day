@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-08",
+  "python_standard_library": true,
+  "cpu_example_run": true,
+  "log": "results/output.json",
+  "full_paper_reproduced": false,
+  "author_code_run": false,
+  "thor_verified": false,
+  "npu_verified": false,
+  "performance_measured": false,
+  "actual_parameter_update": false,
+  "boundaries": "2D recurrence and real-number scale algebra, not NVFP4 codec"
+}

@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-08",
+  "format_script_passed": true,
+  "mirror_scope": "Only five newly created C++/CUDA files; formatted results matched final source",
+  "main_concept_chinese_characters": 512,
+  "readme_local_links_passed": true,
+  "json_python_shell_syntax_passed": true,
+  "existing_user_file_hashes_preserved": true,
+  "global_diff_check": "Existing user edit systems_practice/arm/2026-09-23/src/registers.cpp:26 trailing whitespace; left unchanged",
+  "thor_cuda_compile": false,
+  "native_torch_run": false
+}

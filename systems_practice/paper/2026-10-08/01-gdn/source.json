@@ -1,0 +1,26 @@
+{
+  "id": "arxiv:2609.04098",
+  "title": "Why Gated DeltaNet Survives 4-Bit Quantization: NVFP4 W4A4 for the Recurrent Half of a Hybrid 27B LLM",
+  "first_submitted": "2026-09-03",
+  "version_read": "v1",
+  "read_date": "2026-10-08",
+  "fulltext": "https://arxiv.org/html/2609.04098v1",
+  "publication_status": "Preprint; peer-reviewed publication unverified",
+  "sections_read": [
+    "2",
+    "3",
+    "4",
+    "table1",
+    "5.1-5.4",
+    "6",
+    "9"
+  ],
+  "author_repository": null,
+  "commit": null,
+  "source_fetched": false,
+  "implementation_read": false,
+  "files": [],
+  "license": "Checkpoint card Apache-2.0; full author code unverified",
+  "relationship": "Independent mathematical demonstration, no author implementation copied",
+  "model_downloaded": false
+}

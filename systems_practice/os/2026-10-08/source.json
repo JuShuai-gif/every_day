@@ -1,0 +1,21 @@
+{
+  "read_date": "2026-10-08",
+  "repository": "https://github.com/mit-pdos/xv6-riscv",
+  "ref": "riscv",
+  "commit": null,
+  "source_read": true,
+  "license": "MIT",
+  "files": [
+    {
+      "path": "kernel/proc.c",
+      "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/proc.c"
+    },
+    {
+      "path": "kernel/pipe.c",
+      "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/pipe.c"
+    }
+  ],
+  "mechanisms": "sleep_prepare / sleep / wakeup / pipe predicate loops",
+  "relationship": "Independent C++17 example inspired by implementation; no source copied",
+  "boundary": "Read-date source reference, not pinned commit or installed library equivalence"
+}

@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-08",
+  "host": "arm64 macOS / Apple clang 21 / C++17",
+  "source_read": true,
+  "host_compile": true,
+  "host_run": true,
+  "release_passed": true,
+  "asan_ubsan_passed": true,
+  "tsan_passed": null,
+  "logs": [
+    "results/verified-release.txt",
+    "results/verified-sanitize.txt"
+  ],
+  "target_board_verified": false,
+  "xv6_qemu_run": null,
+  "gpu_verified": false,
+  "npu_verified": false,
+  "performance_scope": "No timing claim; allocation counts only",
+  "failures_preserved": "No final host build failure"
+}

@@ -1,0 +1,21 @@
+PASS cases=252 stride reject; identical direct/packed NEON order
+M=4 N=17 K=257 stride=264 packed_bytes=20560
+direct CPU_batch_mean_us P50=10.2916 P95=10.35
+packed_reused CPU_batch_mean_us P50=9.3168 P95=9.3418
+pack_only CPU_batch_mean_us P50=0.9168 P95=1.1
+reuse=1 transaction (pack allocation included)
+direct_R CPU_batch_mean_us P50=8.7916 P95=9.3166
+pack_plus_R CPU_batch_mean_us P50=8.8418 P95=8.9584
+reuse=8 transaction (pack allocation included)
+direct_R CPU_batch_mean_us P50=61.4166 P95=76.7666
+pack_plus_R CPU_batch_mean_us P50=58.2082 P95=65.325
+M=4 N=128 K=257 stride=264 packed_bytes=131584
+direct CPU_batch_mean_us P50=62.1418 P95=62.7166
+packed_reused CPU_batch_mean_us P50=36.6668 P95=43.4418
+pack_only CPU_batch_mean_us P50=7.1 P95=7.1918
+reuse=1 transaction (pack allocation included)
+direct_R CPU_batch_mean_us P50=47.9168 P95=54.0834
+pack_plus_R CPU_batch_mean_us P50=39.75 P95=40.7082
+reuse=8 transaction (pack allocation included)
+direct_R CPU_batch_mean_us P50=291.533 P95=341.592
+pack_plus_R CPU_batch_mean_us P50=167.675 P95=174.45

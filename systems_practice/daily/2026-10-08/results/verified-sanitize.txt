@@ -1,0 +1,2 @@
+64 labels length80 growth calls=71 bytes=9696 reserve calls=65 bytes=7680
+PASS failure_points=65 reuse=1000 empty/exhaustion/alignment/rollback

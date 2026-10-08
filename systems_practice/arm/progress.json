@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
-  "last_delivery_date": "2026-10-07",
-  "next_lesson_id": "16",
+  "last_delivery_date": "2026-10-08",
+  "next_lesson_id": "17",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -18,7 +18,8 @@
     "12",
     "13",
     "14",
-    "15"
+    "15",
+    "16"
   ],
   "history": [
     {
@@ -313,6 +314,20 @@
       "target_board_verified": false,
       "version_pinned": false,
       "verification": "2026-10-07/README.md"
+    },
+    {
+      "date": "2026-10-08",
+      "lesson_id": "16",
+      "path": "2026-10-08",
+      "source_read": true,
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "version_pinned": false,
+      "verification": "2026-10-08/README.md"
     }
   ],
   "backlog": [
@@ -373,5 +388,5 @@
       "reason": "User requested four working/deployment capability layers; mapped existing 28 lessons, preserved order and historical progress. Actual delivery08 advances to09 separately."
     }
   ],
-  "last_canonical_lesson_date": "2026-10-07"
+  "last_canonical_lesson_date": "2026-10-08"
 }

@@ -43,3 +43,5 @@
 2026-10-06：[IrekoGPT](2026-10-06/01-irekogpt/README.md)（2026-09-30 v1，多宽度校准/岭修正）＋[S²Prune](2026-10-06/02-s2prune/README.md)（2026-09-01 v1，空间覆盖与容量分配）。方法/表1选段已读；独立CPU例子运行，保留分布变化退化；无完整模型/设备复现。[入口](2026-10-06/README.md)。
 
 2026-10-07：[Small LLMs: Pruning vs. Training from Scratch与Quantization-Triggered Backdoors](2026-10-07/README.md)。前者首发06-12，本次v1（最新v3另标）；后者08-27v1，作者备注ARES2026接收。实际读方法/表格，独立预算训练与部署margin例运行通过；作者算法/完整模型/硬件未复现。
+
+2026-10-08：[Gated DeltaNet NVFP4](2026-10-08/01-gdn/README.md)（首发2026-09-03）与[Putri结构剪枝](2026-10-08/02-putri/README.md)（首发2026-05-18）。v1全文已读，均预印本；二维状态/融合scale与真实最小二乘更新例子通过。Putri源码实际拉取阅读；两篇完整复现难，未验证LLM/Thor性能。

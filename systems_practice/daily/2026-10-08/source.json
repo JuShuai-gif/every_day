@@ -1,0 +1,21 @@
+{
+  "read_date": "2026-10-08",
+  "repository": "https://github.com/llvm/llvm-project",
+  "ref": "main",
+  "commit": null,
+  "source_read": true,
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "files": [
+    {
+      "path": "libcxx/src/memory_resource.cpp",
+      "url": "https://github.com/llvm/llvm-project/blob/main/libcxx/src/memory_resource.cpp"
+    },
+    {
+      "path": "libcxx/include/__memory_resource/monotonic_buffer_resource.h",
+      "url": "https://github.com/llvm/llvm-project/blob/main/libcxx/include/__memory_resource/monotonic_buffer_resource.h"
+    }
+  ],
+  "mechanisms": "null upstream / monotonic alignment and release",
+  "relationship": "Independent C++17 example inspired by implementation; no source copied",
+  "boundary": "Read-date source reference, not pinned commit or installed library equivalence"
+}

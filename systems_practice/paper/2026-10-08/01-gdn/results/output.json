@@ -1,0 +1,18 @@
+{
+  "alternating_key_impulse_norm": 4.177199746236069e-13,
+  "fixed_key_impulse_norm": 0.7740428188605086,
+  "reference": [
+    1.5,
+    -5.0
+  ],
+  "bad_fused": [
+    3.75,
+    -5.0
+  ],
+  "fixed_fused": [
+    1.5,
+    -5.0
+  ],
+  "uncontrolled_alpha_growth": 2.7169239322355936,
+  "scope": "Python CPU algebra only; no NVFP4/LLM/Thor execution"
+}
