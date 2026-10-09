@@ -1,0 +1,15 @@
+{
+  "method": "gptq",
+  "read_at": "2026-10-09",
+  "repository": "https://github.com/IST-DASLab/gptq",
+  "commit": "2d65066eeb06a5c9ff5184d8cebdf33662c67faf",
+  "license": "MIT",
+  "retrieval": "GitHub raw-file read after shallow fetch failed",
+  "files_read": [
+    {"path": "gptq.py", "symbols": ["GPTQ.add_batch", "GPTQ.fasterquant", "GPTQ.free"]},
+    {"path": "quant.py", "symbols": ["quantize", "Quantizer.configure", "Quantizer.find_params", "Quant3Linear.pack", "Quant3Linear.forward"]},
+    {"path": "opt.py", "symbols": ["opt_sequential", "opt_pack3", "load_quant3"]},
+    {"path": "LICENSE", "symbols": []}
+  ],
+  "call_chain": "opt_sequential registers forward hooks -> GPTQ.add_batch accumulates H -> GPTQ.fasterquant applies damping/Cholesky/error feedback -> opt_pack3 calls Quant3Linear.pack -> quant_cuda single-token matmul when extension exists"
+}

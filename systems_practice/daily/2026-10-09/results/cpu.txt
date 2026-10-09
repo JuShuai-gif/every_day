@@ -1,0 +1,3 @@
+2026-10-09 Asia/Shanghai
+PASS: 8 stable-softmax cases, 2 invalid shapes; CUDA kernels not run on this Mac
+Command: sh systems_practice/daily/2026-10-09/run.sh cpu

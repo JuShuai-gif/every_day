@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-09",
+  "topic": "CUDA Kernel",
+  "target": "Jetson Thor SM110 (sm_110)",
+  "source_read": true,
+  "host_compile": true,
+  "host_run": true,
+  "asan_ubsan": true,
+  "cuda_compiled": false,
+  "thor_run": false,
+  "ncu_run": false,
+  "ptx_sass_exported": false,
+  "evidence": ["results/cpu.txt", "results/sanitize.txt", "source.json"],
+  "blockers": ["Mac has no NVIDIA GPU", "nvcc/Thor device unavailable"],
+  "performance": "No GPU or end-to-end performance measured."
+}

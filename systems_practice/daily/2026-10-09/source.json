@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/pytorch/pytorch",
+  "tag": "v2.8.0",
+  "read_at": "2026-10-09",
+  "license": "BSD-3-Clause",
+  "files": [
+    {"path": "aten/src/ATen/native/cuda/SoftMax.cu", "symbols": ["SoftMaxForwardEpilogue", "SoftMaxForward_getBlockSize", "ilpReduce", "WriteFpropResultsVectorized"]},
+    {"path": "aten/src/ATen/native/cuda/PersistentSoftmax.cuh", "symbols": ["PersistentSoftmax"]}
+  ],
+  "relationship": "启发：保留稳定 max/subtract/sum 语义和按行选择并行度；本课为独立、缩小的 FP32 教学实现，不复制 PyTorch 调度、dtype dispatch、mask/backward 或 vector-alignment 完整路径。"
+}

@@ -37,3 +37,5 @@
 2026-10-07：[NVFP4双层scale与真实打包](2026-10-07/block_fp4/README.md)。获取否/固定tag实现阅读是/原生示例是/CPU原生否/Thor否；独立文件785B与FP16权重2210B，CPU QDQ更慢，分布偏移退化保留。Thor SM110解码基线/候选、ncu/PTX/SASS方案，理论对照Ada；下一轮AWQ选新设计点。旧AWQ仅重试一次失败。
 
 2026-10-08：[AWQ第二轮：缩放融合与分布偏移](2026-10-08/awq/README.md)。获取是/实现阅读是/原生示例交付是/CPU原生否/Thor否；独立CPU真实332B文件，误差0.051529→0.022090，分布偏移反而退化。Thor SM110基线/warp候选、ncu/ISA教程齐备未实测，理论对照Turing。AWQ进入已读已交付列表，运行待补；旧GPTQ仅重试一次失败。下一方法GPTQ。
+
+2026-10-09：[GPTQ第二轮：Hessian阻尼、act-order与分组](2026-10-09/gptq/README.md)。本地获取否/固定commit实现阅读是/原生示例交付是/CPU原生否/Thor否；GitHub raw 源码读取 `GPTQ.add_batch/fasterquant`、`Quantizer.find_params`、`Quant3Linear.pack` 与 `opt_sequential`，浅克隆失败事实保留。下一方法AdaRound。

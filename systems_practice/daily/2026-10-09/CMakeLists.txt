@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.24)
+project(thor_softmax_rows LANGUAGES CXX)
+
+add_executable(cpu_check src/cpu_check.cpp)
+target_compile_features(cpu_check PRIVATE cxx_std_17)
+if(SANITIZER)
+  target_compile_options(cpu_check PRIVATE -fsanitize=address,undefined -fno-omit-frame-pointer)
+  target_link_options(cpu_check PRIVATE -fsanitize=address,undefined)
+endif()
+
+option(ENABLE_CUDA "Build the Jetson Thor SM110 kernels" OFF)
+if(ENABLE_CUDA)
+  enable_language(CUDA)
+  add_executable(softmax src/softmax.cu)
+  set_target_properties(softmax PROPERTIES CUDA_STANDARD 17 CUDA_STANDARD_REQUIRED YES CUDA_ARCHITECTURES 110)
+  target_compile_options(softmax PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:-lineinfo>)
+endif()

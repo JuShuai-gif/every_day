@@ -1,0 +1,15 @@
+{
+  "method": "gptq",
+  "date": "2026-10-09",
+  "repository": "https://github.com/IST-DASLab/gptq",
+  "commit": "2d65066eeb06a5c9ff5184d8cebdf33662c67faf",
+  "source_record": "source.json",
+  "source_fetched": false,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": ["GPTQ.add_batch", "GPTQ.fasterquant", "Quantizer.find_params", "Quant3Linear.pack", "opt_sequential"],
+  "evidence": ["source.json records failed shallow retrieval", "source-read.json records direct GitHub source reading"],
+  "blockers": ["GitHub shallow clone failed", "Mac has no Thor SM110/CUDA toolchain", "torch and transformers were not installed"]
+}

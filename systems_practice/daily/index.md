@@ -45,7 +45,7 @@
 
 | [2026-10-04](2026-10-04/README.md) | C++17 并发 | 有界提交＋关闭排空/在途资源寿命；[KIVI](../quantization/2026-10-04/kivi/README.md) · [ARM12](../arm/2026-10-04/README.md) · [OS07](../os/2026-10-04/README.md) · [C++06](../cpp17/2026-10-04/README.md) · [HOPE/D-Quant](../paper/2026-10-04/README.md) | [线程池](2026-10-04/src/pool.hpp)与[检查](2026-10-04/src/main.cpp) | Release/ASan/UBSan/TSan通过，800任务、启动失败/异常/关闭；量化原生缺checkout/torch，Thor缺工具设备 | 主课不测推理性能；ARM独立CPU direct/pack+SoA P50 13.3386/34.8229us；[记录](2026-10-04/verification.json) |
 
-下一主主题：**CUDA Kernel**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
+下一主主题：**TensorRT**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
 
 `2026-09-14` 为用户要求补充的历史 C++ 练习，不改变当前轮换位置。
 
@@ -67,3 +67,4 @@
 | 日期 | 主主题 | 核心知识与附加栏目 | 代码 | 验证 | 实测与边界 |
 | --- | --- | --- | --- | --- | --- |
 | [2026-10-08](2026-10-08/README.md) | C++ 工程知识 | 有界PMR与异常后整批回收；[AWQ](../quantization/2026-10-08/awq/README.md) · [ARM16](../arm/2026-10-08/README.md) · [OS11](../os/2026-10-08/README.md) · [C++10](../cpp17/2026-10-08/README.md) · [两篇论文](../paper/2026-10-08/README.md) | [C++17](2026-10-08/src/main.cpp) | Release/ASan/UBSan通过；65分配失败点与1000复用；量化原生缺torch，Thor未验 | allocation71次/9696B→65次/7680B，非时延；[验证](2026-10-08/verification.json) |
+| [2026-10-09](2026-10-09/README.md) | CUDA Kernel | Thor SM110 稳定行 Softmax：max/subtract/sum 与 warp 独占行归约；[GPTQ](../quantization/2026-10-09/gptq/README.md) | [CUDA](2026-10-09/src/softmax.cu) · [CPU](2026-10-09/src/cpu_check.cpp) | Mac Release/ASan/UBSan 8 shape、平移不变性和 2 非法输入通过；Thor/ncu/PTX/SASS 未验 | 无 GPU/E2E 实测；[验证](2026-10-09/verification.json) |
