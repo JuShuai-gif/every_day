@@ -1,0 +1,1 @@
+{"repository":"https://github.com/llvm/llvm-project","tag":"llvmorg-20.1.0","read_at":"2026-10-09","license":"Apache-2.0 WITH LLVM-exception","files":[{"path":"libcxx/include/__hash_table","symbols":["__hash_table::__emplace_unique_key_args","__hash_table::find"]}],"relationship":"受实现启发的独立标准库调用示例。"}

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
-  "last_delivery_date": "2026-10-08",
-  "next_lesson_id": "17",
+  "last_delivery_date": "2026-10-09",
+  "next_lesson_id": "18",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -19,9 +19,11 @@
     "13",
     "14",
     "15",
-    "16"
+    "16",
+    "17"
   ],
   "history": [
+    {"date":"2026-10-09","lesson_id":"17","path":"2026-10-09","source_read":false,"lesson_delivered":true,"observation_run":true,"compute_kernel_run":true,"target_board_verified":false,"program_compiled":true,"program_run":true,"verification":"2026-10-09/README.md","status":"specific source path unavailable; builtin prefetch mechanism documented"},
     {
       "date": "2026-09-22",
       "lesson_id": "01",

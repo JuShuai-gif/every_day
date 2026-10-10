@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-08T15:45:05.585462+08:00",
+  "updated_at": "2026-10-10T08:40:00+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -13,6 +13,8 @@
   "deduplicate_by": "versionless_arxiv_id_or_doi",
   "schedule_integration": "Existing daily 08:30 Asia/Shanghai task reads systems_practice/docs/PRACTICE_SPEC.md; no scheduler mutation.",
   "history": [
+    {"id":"arxiv:2609.31009","title":"G²PTQ: Improving LLM Post-Training Quantization with Generalized Gradient Compensation","delivered_on":"2026-10-09","first_submitted":"2026-09-25","version_read":"v1 metadata/abstract","directory":"2026-10-09/01-g2ptq","status":"partial","cpu_mechanism_example_verified":true,"full_paper_reproduced":false},
+    {"id":"arxiv:2609.35570","title":"EdgeVLN: Runtime-Aware Deployment Ready Quantized Vision Language Navigation Model","delivered_on":"2026-10-09","first_submitted":"2026-09-28","version_read":"v1 metadata/abstract","directory":"2026-10-09/02-edgevln","status":"partial","cpu_mechanism_example_verified":true,"full_paper_reproduced":false},
     {
       "id": "arxiv:2609.01743",
       "title": "SCULPT: Training Edge Vision Models for Post-Training Quantization Readiness",

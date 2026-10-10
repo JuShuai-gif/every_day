@@ -3,8 +3,8 @@
   "timezone": "Asia/Shanghai",
   "created_on": "2026-09-28",
   "topics_per_day": 2,
-  "next_lesson_id": "12",
-  "last_delivery_date": "2026-10-08",
+  "next_lesson_id": "13",
+  "last_delivery_date": "2026-10-09",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -16,7 +16,8 @@
     "08",
     "09",
     "10",
-    "11"
+    "11",
+    "12"
   ],
   "delivered_topic_ids": [
     "01a",
@@ -40,9 +41,12 @@
     "10a",
     "10b",
     "11a",
-    "11b"
+    "11b",
+    "12a",
+    "12b"
   ],
   "history": [
+    {"date":"2026-10-09","lesson_id":"12","topic_ids":["12a","12b"],"path":"2026-10-09","source_read":true,"lesson_delivered":true,"host_compile":true,"host_run":true,"xv6_compiled":false,"qemu_run":false,"linux_run":false,"target_board_verified":false,"verification":"2026-10-09/verification.json"},
     {
       "date": "2026-09-28",
       "lesson_id": "01",

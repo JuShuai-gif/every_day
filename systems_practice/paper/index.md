@@ -45,3 +45,5 @@
 2026-10-07：[Small LLMs: Pruning vs. Training from Scratch与Quantization-Triggered Backdoors](2026-10-07/README.md)。前者首发06-12，本次v1（最新v3另标）；后者08-27v1，作者备注ARES2026接收。实际读方法/表格，独立预算训练与部署margin例运行通过；作者算法/完整模型/硬件未复现。
 
 2026-10-08：[Gated DeltaNet NVFP4](2026-10-08/01-gdn/README.md)（首发2026-09-03）与[Putri结构剪枝](2026-10-08/02-putri/README.md)（首发2026-05-18）。v1全文已读，均预印本；二维状态/融合scale与真实最小二乘更新例子通过。Putri源码实际拉取阅读；两篇完整复现难，未验证LLM/Thor性能。
+
+2026-10-09：[G²PTQ](2026-10-09/01-g2ptq/README.md) 与 [EdgeVLN](2026-10-09/02-edgevln/README.md)。两篇 v1 的 arXiv 元数据/摘要已读，独立 Python 边界例子通过；未读全文、未复现作者模型或硬件结果。

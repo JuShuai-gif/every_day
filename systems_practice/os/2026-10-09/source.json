@@ -1,0 +1,1 @@
+{"repository":"https://github.com/mit-pdos/xv6-riscv","branch":"riscv","read_at":"2026-10-09","license":"MIT","files":[{"path":"kernel/proc.c","symbols":["scheduler","sched","swtch","yield"]}],"relationship":"独立宿主状态模型；不复制或运行xv6内核。"}
