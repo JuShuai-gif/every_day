@@ -1,0 +1,10 @@
+host_page_bytes=16384 sample=262144 dependent CPU loads
+nodes=1 stride=64 reserved_bytes=64 virtual_pages=1 first_touch_minflt=1 warm_minflt=0 ns_per_load_p50=1.72679 p95=3.56785
+nodes=1 stride=16384 reserved_bytes=16384 virtual_pages=1 first_touch_minflt=1 warm_minflt=0 ns_per_load_p50=1.49155 p95=1.53239
+nodes=16 stride=64 reserved_bytes=1024 virtual_pages=1 first_touch_minflt=1 warm_minflt=0 ns_per_load_p50=1.48296 p95=1.49965
+nodes=16 stride=16384 reserved_bytes=262144 virtual_pages=16 first_touch_minflt=16 warm_minflt=0 ns_per_load_p50=6.30204 p95=7.11981
+nodes=256 stride=64 reserved_bytes=16384 virtual_pages=1 first_touch_minflt=1 warm_minflt=0 ns_per_load_p50=1.60535 p95=1.8123
+nodes=256 stride=16384 reserved_bytes=4194304 virtual_pages=256 first_touch_minflt=256 warm_minflt=0 ns_per_load_p50=9.65754 p95=11.8505
+nodes=4096 stride=64 reserved_bytes=262144 virtual_pages=16 first_touch_minflt=16 warm_minflt=0 ns_per_load_p50=3.438 p95=3.59964
+nodes=4096 stride=16384 reserved_bytes=67108864 virtual_pages=4096 first_touch_minflt=4096 warm_minflt=0 ns_per_load_p50=28.3025 p95=29.9287
+PASS 8 rings, rejected zero; TLB counters and board unverified

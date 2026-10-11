@@ -1,0 +1,41 @@
+{
+  "method": "adaround",
+  "date": "2026-10-11",
+  "repository": "https://github.com/qualcomm/aimet.git",
+  "commit": "6360e0c7d9f122cfa64f42475f099c3dafca4010",
+  "source_record": "source-network.json",
+  "source_fetched": true,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": [
+    "Adaround._compute_param_encodings",
+    "AdaroundBase.apply_adaround",
+    "AdaroundBase._adaround_model",
+    "AdaroundBase._export_encodings_to_json",
+    "AdaroundOptimizer._optimize_rounding",
+    "AdaroundWrapperBase.apply_adaround",
+    "AdaroundLoss.compute_round_loss"
+  ],
+  "evidence": [
+    "source-network.json",
+    "source-read.json",
+    "upstream_api.py",
+    "results/native-attempt.txt"
+  ],
+  "blockers": [
+    "Host Python3.9.6 < required3.10",
+    "Missing torch/aimet_torch/psutil and matched installed AIMET checkout",
+    "AIMET Thor extensions/backend and native u4 roundtrip/accuracy/timing not executed"
+  ],
+  "python_ast_valid": true,
+  "packed_payload_generated": false,
+  "performance": null,
+  "upstream_cuda_default_architectures": [
+    70,
+    75,
+    80
+  ],
+  "thor_build_override_required": "CMAKE_CUDA_ARCHITECTURES=110; torch extension arch11.0 only when applicable; unbuilt"
+}

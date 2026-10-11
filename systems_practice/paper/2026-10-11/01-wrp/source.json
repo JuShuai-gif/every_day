@@ -1,0 +1,35 @@
+{
+  "id": "arxiv:2609.09883",
+  "title": "Forward-Free LLM Depth Pruning via Weight Redundancy",
+  "authors": [
+    "Vincent-Daniel Yun",
+    "Woosang Lim"
+  ],
+  "first_submitted": "2026-09-09",
+  "version_read": "v1",
+  "latest_version_observed": "v2 2026-09-14",
+  "read_at": "2026-10-11T14:32:18.085351+08:00",
+  "primary_fulltext": "https://arxiv.org/html/2609.09883v1",
+  "fulltext_fetch": {
+    "file": "paper-wrp.html",
+    "url": "https://arxiv.org/html/2609.09883v1",
+    "returncode": 0,
+    "error": null,
+    "sha256": "01bc01e733fa199e93ecaed5be15081ff3a59cec827072a0674de0971de549f1"
+  },
+  "read_sections": [
+    "3.1",
+    "3.2",
+    "4.1",
+    "4.2",
+    "4.3",
+    "Table1",
+    "conclusion"
+  ],
+  "publication_status": "preprint; peer-reviewed status not verified",
+  "author_code_verified": false,
+  "author_repository": null,
+  "code_search": "Exact title + GitHub and links in primary fulltext; no verified author implementation located",
+  "relation": "independent mathematical demonstration; not full reproduction",
+  "license": "CC0 paper"
+}

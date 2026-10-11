@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-11",
+  "id": "arxiv:2606.07819",
+  "primary_fulltext_sections_read": true,
+  "author_source_read": false,
+  "example_delivered": true,
+  "cpu_example_run": true,
+  "training_updates": false,
+  "full_model_reproduced": false,
+  "thor_verified": false,
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "blockers": [
+    "Author implementation/dependencies/export/evaluation code not verified",
+    "Full-model and target-device reproduction absent"
+  ]
+}

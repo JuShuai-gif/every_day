@@ -1,0 +1,92 @@
+{
+  "method": "adaround",
+  "repository": "https://github.com/qualcomm/aimet.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-10-11T06:13:51.958344+00:00",
+  "commit": "6360e0c7d9f122cfa64f42475f099c3dafca4010",
+  "cache": ".tmp/quant_sources/adaround-y0767pt9",
+  "status": "fetched",
+  "source_read": false,
+  "example_run": false,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 11635,
+      "sha256": "a14339d5c17f439be91a51b0929b992c6ec9cd2a2c071a3d18392d33b8dcc551",
+      "local_source": ".tmp/quant_sources/adaround-y0767pt9/source/README.md",
+      "permalink": "https://github.com/qualcomm/aimet/blob/6360e0c7d9f122cfa64f42475f099c3dafca4010/README.md"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1556,
+      "sha256": "9c17c34cdf28efc567fcb101b05869acb720157c9325e5c3f05eed3fb158525f",
+      "local_source": ".tmp/quant_sources/adaround-y0767pt9/source/LICENSE",
+      "permalink": "https://github.com/qualcomm/aimet/blob/6360e0c7d9f122cfa64f42475f099c3dafca4010/LICENSE"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 1923,
+      "sha256": "a6011d68b35a019fcab498c43f8e45d6153bdcca88dbb7f71f65856dee6946d8",
+      "local_source": ".tmp/quant_sources/adaround-y0767pt9/source/pyproject.toml",
+      "permalink": "https://github.com/qualcomm/aimet/blob/6360e0c7d9f122cfa64f42475f099c3dafca4010/pyproject.toml"
+    },
+    {
+      "path": "packaging/version.txt",
+      "bytes": 7,
+      "sha256": "cf4e24156f2593439ad1fd6b7cc9c5b7f61ed4036d30a936b947968fa72c6eca",
+      "local_source": ".tmp/quant_sources/adaround-y0767pt9/source/packaging/version.txt",
+      "permalink": "https://github.com/qualcomm/aimet/blob/6360e0c7d9f122cfa64f42475f099c3dafca4010/packaging/version.txt"
+    },
+    {
+      "path": "packaging/plugins/local/aimet.py",
+      "bytes": 9486,
+      "sha256": "f5579efe7b3f0ff447d0beee40cc8ab6c0435149bd2d4e93da15eb6b7c1c1b0f",
+      "local_source": ".tmp/quant_sources/adaround-y0767pt9/source/packaging/plugins/local/aimet.py",
+      "permalink": "https://github.com/qualcomm/aimet/blob/6360e0c7d9f122cfa64f42475f099c3dafca4010/packaging/plugins/local/aimet.py"
+    },
+    {
+      "path": "packaging/dependencies/fast-release/torch-gpu/reqs_pip_torch_gpu.txt",
+      "bytes": 246,
+      "sha256": "b555f284f0542dff36655bafceecf983fbc9103e6ed5f4bb39d1ff8cb8433c0f",
+      "local_source": ".tmp/quant_sources/adaround-y0767pt9/source/packaging/dependencies/fast-release/torch-gpu/reqs_pip_torch_gpu.txt",
+      "permalink": "https://github.com/qualcomm/aimet/blob/6360e0c7d9f122cfa64f42475f099c3dafca4010/packaging/dependencies/fast-release/torch-gpu/reqs_pip_torch_gpu.txt"
+    },
+    {
+      "path": "TrainingExtensions/torch/src/python/aimet_torch/adaround/adaround_weight.py",
+      "bytes": 6793,
+      "sha256": "b729e56d5b0f8959886dab869bf68c3f1d3a4fefb26fe1ff4e7240667455c94b",
+      "local_source": ".tmp/quant_sources/adaround-y0767pt9/source/TrainingExtensions/torch/src/python/aimet_torch/adaround/adaround_weight.py",
+      "permalink": "https://github.com/qualcomm/aimet/blob/6360e0c7d9f122cfa64f42475f099c3dafca4010/TrainingExtensions/torch/src/python/aimet_torch/adaround/adaround_weight.py"
+    },
+    {
+      "path": "TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_weight.py",
+      "bytes": 33420,
+      "sha256": "d590b7f431974cb94a50b8601135f6441d3c9987a364d7053e15bb21acdb139c",
+      "local_source": ".tmp/quant_sources/adaround-y0767pt9/source/TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_weight.py",
+      "permalink": "https://github.com/qualcomm/aimet/blob/6360e0c7d9f122cfa64f42475f099c3dafca4010/TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_weight.py"
+    },
+    {
+      "path": "TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_optimizer.py",
+      "bytes": 17844,
+      "sha256": "06ee2c27a193a0a9d51177d05aa71f5f8a272e7e560717a3528e9f921c7b2fba",
+      "local_source": ".tmp/quant_sources/adaround-y0767pt9/source/TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_optimizer.py",
+      "permalink": "https://github.com/qualcomm/aimet/blob/6360e0c7d9f122cfa64f42475f099c3dafca4010/TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_optimizer.py"
+    },
+    {
+      "path": "TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_wrapper.py",
+      "bytes": 5234,
+      "sha256": "7030710dfebf7ef392c7c3536b06245fba0076e741e6c177cbf9e899e835e1eb",
+      "local_source": ".tmp/quant_sources/adaround-y0767pt9/source/TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_wrapper.py",
+      "permalink": "https://github.com/qualcomm/aimet/blob/6360e0c7d9f122cfa64f42475f099c3dafca4010/TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_wrapper.py"
+    },
+    {
+      "path": "TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_loss.py",
+      "bytes": 4606,
+      "sha256": "0d0296e5d585674dc67f5a5d8ae847916675fecf5c1279b7aaa9147f7791d348",
+      "local_source": ".tmp/quant_sources/adaround-y0767pt9/source/TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_loss.py",
+      "permalink": "https://github.com/qualcomm/aimet/blob/6360e0c7d9f122cfa64f42475f099c3dafca4010/TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_loss.py"
+    }
+  ],
+  "errors": [],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example."
+}

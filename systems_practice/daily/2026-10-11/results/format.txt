@@ -1,0 +1,3 @@
+Initial full-tree run stopped to avoid unrelated edits; incidental clean Oct09 C++ formatting restored. Existing four user-modified files retained.
+Scoped mirror of 8 new sources; same repository script and .clang-format.
+exit=0

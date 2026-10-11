@@ -2,7 +2,7 @@
 
 [栏目说明](../docs/quantization/README.md) · [交付模板](../docs/quantization/LESSON_TEMPLATE.md) · [方法目录](catalog.json) · [进度](progress.json)
 
-下一方法：**GPTQ**（gptq，第二轮）。AWQ源码获取与阅读已补齐，原生依赖和Thor运行仍在backlog。
+下一方法：**AutoRound**（autoround，第二轮）。当期AdaRound源码/阅读/示例已交付，原生运行与Thor待补。
 
 | 日期 | 类型 | 方法 | 源码 / 阅读 / 示例 / CPU / Thor | 证据 |
 | --- | --- | --- | --- | --- |
@@ -39,3 +39,5 @@
 2026-10-08：[AWQ第二轮：缩放融合与分布偏移](2026-10-08/awq/README.md)。获取是/实现阅读是/原生示例交付是/CPU原生否/Thor否；独立CPU真实332B文件，误差0.051529→0.022090，分布偏移反而退化。Thor SM110基线/warp候选、ncu/ISA教程齐备未实测，理论对照Turing。AWQ进入已读已交付列表，运行待补；旧GPTQ仅重试一次失败。下一方法GPTQ。
 
 2026-10-09：[GPTQ第二轮：Hessian阻尼、act-order与分组](2026-10-09/gptq/README.md)。本地获取否/固定commit实现阅读是/原生示例交付是/CPU原生否/Thor否；GitHub raw 源码读取 `GPTQ.add_batch/fasterquant`、`Quantizer.find_params`、`Quant3Linear.pack` 与 `opt_sequential`，浅克隆失败事实保留。下一方法AdaRound。
+
+2026-10-11：[AdaRound第二轮：正则与硬化交付](2026-10-11/adaround/README.md)。真实浅拉取6360e0c7、实现阅读与原生示例交付；CPU原生未运行（Python/torch/AIMET不足）、Thor未验。五项状态见[验证](2026-10-11/adaround/verification.json)。旧GPTQ仅重试一次，源码获取成功，未重新读/跑或推进游标。

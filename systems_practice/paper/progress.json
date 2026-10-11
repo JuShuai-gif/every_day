@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-10T08:40:00+08:00",
+  "updated_at": "2026-10-11T14:33:44.440329+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -13,8 +13,28 @@
   "deduplicate_by": "versionless_arxiv_id_or_doi",
   "schedule_integration": "Existing daily 08:30 Asia/Shanghai task reads systems_practice/docs/PRACTICE_SPEC.md; no scheduler mutation.",
   "history": [
-    {"id":"arxiv:2609.31009","title":"G²PTQ: Improving LLM Post-Training Quantization with Generalized Gradient Compensation","delivered_on":"2026-10-09","first_submitted":"2026-09-25","version_read":"v1 metadata/abstract","directory":"2026-10-09/01-g2ptq","status":"partial","cpu_mechanism_example_verified":true,"full_paper_reproduced":false},
-    {"id":"arxiv:2609.35570","title":"EdgeVLN: Runtime-Aware Deployment Ready Quantized Vision Language Navigation Model","delivered_on":"2026-10-09","first_submitted":"2026-09-28","version_read":"v1 metadata/abstract","directory":"2026-10-09/02-edgevln","status":"partial","cpu_mechanism_example_verified":true,"full_paper_reproduced":false},
+    {
+      "id": "arxiv:2609.31009",
+      "title": "G²PTQ: Improving LLM Post-Training Quantization with Generalized Gradient Compensation",
+      "delivered_on": "2026-10-09",
+      "first_submitted": "2026-09-25",
+      "version_read": "v1 metadata/abstract",
+      "directory": "2026-10-09/01-g2ptq",
+      "status": "partial",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false
+    },
+    {
+      "id": "arxiv:2609.35570",
+      "title": "EdgeVLN: Runtime-Aware Deployment Ready Quantized Vision Language Navigation Model",
+      "delivered_on": "2026-10-09",
+      "first_submitted": "2026-09-28",
+      "version_read": "v1 metadata/abstract",
+      "directory": "2026-10-09/02-edgevln",
+      "status": "partial",
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false
+    },
     {
       "id": "arxiv:2609.01743",
       "title": "SCULPT: Training Edge Vision Models for Post-Training Quantization Readiness",
@@ -466,6 +486,32 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.09883",
+      "title": "Forward-Free LLM Depth Pruning via Weight Redundancy",
+      "delivered_on": "2026-10-11",
+      "first_submitted": "2026-09-09",
+      "version_read": "v1",
+      "directory": "2026-10-11/01-wrp",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2606.07819",
+      "title": "Joint Structural Pruning and Mixed-Precision Quantization for LLM Compression",
+      "delivered_on": "2026-10-11",
+      "first_submitted": "2026-06-05",
+      "version_read": "v1",
+      "directory": "2026-10-11/02-toga",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
     }
   ],
   "backlog": [
@@ -666,6 +712,18 @@
       "date": "2026-10-08",
       "reason": "Author source read at pinned commit; code license, native dependencies/full-model/Thor execution pending",
       "directory": "2026-10-08/02-putri"
+    },
+    {
+      "id": "arxiv:2609.09883",
+      "date": "2026-10-11",
+      "reason": "Author repository/implementation not verified; full model and target device reproduction pending",
+      "directory": "2026-10-11/01-wrp"
+    },
+    {
+      "id": "arxiv:2606.07819",
+      "date": "2026-10-11",
+      "reason": "Author repository/implementation not verified; full model and target device reproduction pending",
+      "directory": "2026-10-11/02-toga"
     }
   ]
 }

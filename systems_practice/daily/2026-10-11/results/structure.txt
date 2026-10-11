@@ -1,0 +1,1 @@
+PASS new README local links; 12 ordered main headings; concept Chinese characters=543; no ARM date JSON; one advancement per column/day, two papers; Python AST/shell/JSON valid.

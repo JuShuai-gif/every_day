@@ -1,0 +1,50 @@
+{
+  "method": "gptq",
+  "repository": "https://github.com/IST-DASLab/gptq.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-10-11T06:18:08.537381+00:00",
+  "commit": "2d65066eeb06a5c9ff5184d8cebdf33662c67faf",
+  "cache": ".tmp/quant_sources/gptq-jagbv4my",
+  "status": "fetched",
+  "source_read": false,
+  "example_run": false,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5980,
+      "sha256": "c67e5fe08d7cceb1f2bd0b5c2ad4055c3b4fd87e1def15b949844d31c8e51686",
+      "local_source": ".tmp/quant_sources/gptq-jagbv4my/source/README.md",
+      "permalink": "https://github.com/IST-DASLab/gptq/blob/2d65066eeb06a5c9ff5184d8cebdf33662c67faf/README.md"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "local_source": ".tmp/quant_sources/gptq-jagbv4my/source/LICENSE",
+      "permalink": "https://github.com/IST-DASLab/gptq/blob/2d65066eeb06a5c9ff5184d8cebdf33662c67faf/LICENSE"
+    },
+    {
+      "path": "gptq.py",
+      "bytes": 5475,
+      "sha256": "bb47468cc2c788577562751de414d76eeb9968ff1c6098e21153557ef3d154c7",
+      "local_source": ".tmp/quant_sources/gptq-jagbv4my/source/gptq.py",
+      "permalink": "https://github.com/IST-DASLab/gptq/blob/2d65066eeb06a5c9ff5184d8cebdf33662c67faf/gptq.py"
+    },
+    {
+      "path": "quant.py",
+      "bytes": 7330,
+      "sha256": "211528568b962b868d20fc58b55200b615f41ebd9f36b4d2d7e4a196a095ea5a",
+      "local_source": ".tmp/quant_sources/gptq-jagbv4my/source/quant.py",
+      "permalink": "https://github.com/IST-DASLab/gptq/blob/2d65066eeb06a5c9ff5184d8cebdf33662c67faf/quant.py"
+    },
+    {
+      "path": "opt.py",
+      "bytes": 17309,
+      "sha256": "ee61cb779e1c53f85475c1731d88659b4d1593c39fe34497b68dbb0f15786187",
+      "local_source": ".tmp/quant_sources/gptq-jagbv4my/source/opt.py",
+      "permalink": "https://github.com/IST-DASLab/gptq/blob/2d65066eeb06a5c9ff5184d8cebdf33662c67faf/opt.py"
+    }
+  ],
+  "errors": [],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example."
+}

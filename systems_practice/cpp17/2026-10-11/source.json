@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-11",
+  "repository": "https://github.com/llvm/llvm-project",
+  "ref": "llvmorg-18.1.8",
+  "commit": null,
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "source_read": true,
+  "files": [
+    {
+      "file": "map",
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-18.1.8/libcxx/include/map",
+      "returncode": 0,
+      "error": null,
+      "sha256": "553ac3b1c9656b993628664690c396cb636dbc1e29b40e4cb8600605f17ac8cf"
+    },
+    {
+      "file": "__tree",
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-18.1.8/libcxx/include/__tree",
+      "returncode": 0,
+      "error": null,
+      "sha256": "813c57cdced005702b09a1218c8632a344110bbe38e22fe3dbe6c27b5a98b804"
+    }
+  ],
+  "symbols": [
+    "map::extract",
+    "map::insert(node_type&&)",
+    "__node_handle_insert_unique",
+    "__node_handle_extract"
+  ],
+  "relation": "independent host observation; no copied upstream implementation",
+  "call_chain": "map::extract/insert -> __tree node-handle extract/insert -> ownership transfer",
+  "research_record": "../../daily/2026-10-11/source.json"
+}

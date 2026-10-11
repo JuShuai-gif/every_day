@@ -1,0 +1,1 @@
+PASS CPU shape/reference cases=24 rejected=5; CUDA/TensorRT not validated

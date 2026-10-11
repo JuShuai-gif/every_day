@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-11",
+  "read_at": "2026-10-11T14:32:18.085351+08:00",
+  "repository": "https://github.com/qualcomm/aimet.git",
+  "commit": "6360e0c7d9f122cfa64f42475f099c3dafca4010",
+  "license": "BSD-3-Clause",
+  "version_file": "2.41.0",
+  "read_symbols": [
+    "Adaround._compute_param_encodings",
+    "AdaroundBase.apply_adaround",
+    "AdaroundBase._adaround_model",
+    "AdaroundBase._export_encodings_to_json",
+    "AdaroundOptimizer._optimize_rounding",
+    "AdaroundWrapperBase.apply_adaround",
+    "AdaroundLoss.compute_round_loss"
+  ],
+  "read_files": [
+    "README.md",
+    "LICENSE",
+    "pyproject.toml",
+    "packaging/version.txt",
+    "packaging/dependencies/fast-release/torch-gpu/reqs_pip_torch_gpu.txt",
+    "TrainingExtensions/torch/src/python/aimet_torch/adaround/adaround_weight.py",
+    "TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_weight.py",
+    "TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_optimizer.py",
+    "TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_wrapper.py",
+    "TrainingExtensions/torch/src/python/aimet_torch/_base/adaround/adaround_loss.py"
+  ],
+  "source_record": "source-network.json",
+  "relation": "public API invocation; independent data/evaluation/u4 serialization",
+  "reading_note": "Read public/base entry, alpha optimizer, wrapper/loss, legacy 0.6.1 export, README, pyproject/version/dependencies and LICENSE; packaging plugin audit incomplete",
+  "upstream_cuda_default_architectures": [
+    70,
+    75,
+    80
+  ],
+  "thor_build_override_required": "CMAKE_CUDA_ARCHITECTURES=110; torch extension arch11.0 only when applicable; unbuilt"
+}

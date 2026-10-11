@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-11",
+  "read_at": "2026-10-11T14:32:18.085351+08:00",
+  "repository": "https://github.com/NVIDIA/TensorRT",
+  "ref": "release/10.13",
+  "commit": null,
+  "license": "Apache-2.0",
+  "source_read": true,
+  "relation": "independent implementation inspired by actual sample and API contracts",
+  "symbols": [
+    "SampleDynamicReshape::buildPreprocessorEngine",
+    "SampleDynamicReshape::infer",
+    "IExecutionContext::setInputShape",
+    "IExecutionContext::setTensorAddress",
+    "IExecutionContext::setOptimizationProfileAsync",
+    "IExecutionContext::enqueueV3",
+    "IBuilder::createOptimizationProfile"
+  ],
+  "files": [
+    {
+      "path": "samples/sampleDynamicReshape/sampleDynamicReshape.cpp",
+      "url": "https://github.com/NVIDIA/TensorRT/blob/release/10.13/samples/sampleDynamicReshape/sampleDynamicReshape.cpp",
+      "sha256": "a01b05774f0aa49ba855e147487fde7399d81eb20eb599e2f4b7f7c15f5212fb"
+    },
+    {
+      "file": "NvInferRuntime.h",
+      "url": "https://raw.githubusercontent.com/NVIDIA/TensorRT/release/10.13/include/NvInferRuntime.h",
+      "returncode": 0,
+      "error": null,
+      "sha256": "c6ef78bbd8d12c8affa22961d136951e87e7b4c2a405fe44aef40b35264e3686"
+    },
+    {
+      "file": "NvInfer.h",
+      "url": "https://raw.githubusercontent.com/NVIDIA/TensorRT/release/10.13/include/NvInfer.h",
+      "returncode": 0,
+      "error": null,
+      "sha256": "1bfa6bd2e8638f7ad78c40a0eafcd9b34f75b281ee56ee90bd9b14ed0914e388"
+    }
+  ],
+  "attempts": [
+    {
+      "url": "https://raw.githubusercontent.com/NVIDIA/TensorRT/release/10.13/samples/sampleDynamicReshape/sampleDynamicReshape.cpp",
+      "first_failure": "web cache miss and sandbox curl exit6 DNS",
+      "retry": "network-approved curl success; implementation read"
+    }
+  ],
+  "research_queries": [
+    "TensorRT dynamic shape AdaRound TLB node handle pipe backpressure",
+    "site:zhihu.com AdaRound",
+    "site:zhihu.com TensorRT 动态 profile",
+    "site:zhihu.com TLB 页大小 C++17 extract 管道 背压",
+    "Forward-Free LLM Depth Pruning github",
+    "Joint Structural Pruning and Mixed-Precision Quantization github"
+  ],
+  "google_url": "https://www.google.com/search?q=TensorRT+dynamic+shape+AdaRound+TLB+node+handle+pipe+backpressure",
+  "secondary_sources_adopted": [],
+  "secondary_search_scope": "Queries attempted; no relevant verified original-author Zhihu case adopted. Exact claims checked in first-party implementation/docs.",
+  "toolchain_sources": [
+    "https://docs.nvidia.com/jetson/agx-thor-devkit/user-guide/latest/setup_cuda.html",
+    "https://docs.nvidia.com/deeplearning/tensorrt/10.x.x/getting-started/release-notes-10/10.13.2.html",
+    "https://docs.nvidia.com/nsight-compute/ReleaseNotes/",
+    "https://docs.nvidia.com/cuda/parallel-thread-execution/index.html"
+  ],
+  "toolchain_failure": {
+    "file": "jetpack.html",
+    "url": "https://docs.nvidia.com/jetson/jetpack/7.0/release-notes/index.html",
+    "returncode": 28,
+    "error": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:08 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:09 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:10 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:11 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:12 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:13 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:14 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:15 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:16 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:17 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:18 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:19 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:20 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:21 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:22 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:23 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:24 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:25 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:26 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:27 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:28 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:29 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:30 --:--:--     0\ncurl: (28) Connection timed out after 30005 milliseconds\n"
+  },
+  "architecture_comparison": "Thor sm_110 execution only; Hopper theoretical comparison; prior lesson Ampere"
+}

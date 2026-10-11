@@ -1,0 +1,7 @@
+{
+  "cka_column_permutation": 0.9999999999999977,
+  "unpermuted_input_output_squared_error": 41.0,
+  "zero_gram_similarity": 0,
+  "empty_rejected": true,
+  "scope": "CPU algebra only; no model pruning, training, timing or device result"
+}

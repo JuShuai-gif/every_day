@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-11",
+  "recorded_at": "2026-10-11T14:32:18.085351+08:00",
+  "source_read": true,
+  "version_pinned": false,
+  "host_compile": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "cpu_cases": 24,
+  "rejected_inputs": 5,
+  "gpu_target": "sm_110",
+  "cuda_compile": false,
+  "gpu_run": false,
+  "tensorrt_run": false,
+  "ncu_run": false,
+  "real_ptx_sass_generated": false,
+  "gpu_performance": null,
+  "evidence": [
+    "results/cpu.txt",
+    "results/sanitize.txt",
+    "results/thor-attempt.txt",
+    "results/format.txt"
+  ],
+  "blockers": [
+    "No nvcc/ncu/TensorRT/NVIDIA GPU on host",
+    "Thor SDK/driver/ncu installed combination unverified"
+  ],
+  "format_script": "passed on scoped mirror of 8 new sources; initial full-tree run stopped, incidental older clean file formatting restored",
+  "full_worktree_diff_check": "preexisting trailing whitespace arm/2026-09-23/src/registers.cpp:26; user file untouched",
+  "staged_diff_check": "passed after lossless JSON escaping of raw whitespace diagnostic logs",
+  "post_format_revalidation": "all four C++ programs release and ASan/UBSan passed; see results/verified-* logs"
+}

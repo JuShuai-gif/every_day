@@ -1,0 +1,32 @@
+{
+  "joint_bits": [
+    4,
+    4,
+    4,
+    0
+  ],
+  "sequential_bits": [
+    4,
+    4,
+    4,
+    0
+  ],
+  "logical_bits_excluding_metadata": [
+    12,
+    12
+  ],
+  "calibration_mse": [
+    0.010678571428571431,
+    0.010678571428571431
+  ],
+  "heldout_mse": [
+    0.09300340136054426,
+    0.09300340136054426
+  ],
+  "shifted_mse": [
+    14.44,
+    14.44
+  ],
+  "zero_budget_rejected": true,
+  "scope": "exhaustive CPU numerical model; no packing, training updates, CUDA kernel or task accuracy"
+}
