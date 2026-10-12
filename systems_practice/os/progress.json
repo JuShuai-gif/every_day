@@ -3,8 +3,8 @@
   "timezone": "Asia/Shanghai",
   "created_on": "2026-09-28",
   "topics_per_day": 2,
-  "next_lesson_id": "14",
-  "last_delivery_date": "2026-10-11",
+  "next_lesson_id": "15",
+  "last_delivery_date": "2026-10-12",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -18,7 +18,8 @@
     "10",
     "11",
     "12",
-    "13"
+    "13",
+    "14"
   ],
   "delivered_topic_ids": [
     "01a",
@@ -46,7 +47,9 @@
     "12a",
     "12b",
     "13a",
-    "13b"
+    "13b",
+    "14a",
+    "14b"
   ],
   "history": [
     {
@@ -330,6 +333,27 @@
       "xv6_compiled": false,
       "qemu_run": false,
       "linux_run": false
+    },
+    {
+      "date": "2026-10-12",
+      "lesson_id": "14",
+      "path": "2026-10-12",
+      "source_read": true,
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "verification": "2026-10-12/verification.json",
+      "topic_ids": [
+        "14a",
+        "14b"
+      ],
+      "tsan_passed": true,
+      "xv6_compiled": false,
+      "qemu_run": false,
+      "linux_run": false
     }
   ],
   "backlog": [
@@ -410,7 +434,14 @@
       "lesson_id": "13",
       "reason": "Exact upstream commit, xv6/QEMU/Linux/board pending",
       "verification": "2026-10-11/verification.json"
+    },
+    {
+      "date": "2026-10-12",
+      "lesson_id": "14",
+      "kind": "target_validation",
+      "reason": "Host lesson delivered; Linux/target board validation pending; xv6 commit/build/QEMU pending",
+      "verification": "2026-10-12/verification.json"
     }
   ],
-  "last_canonical_lesson_date": "2026-10-11"
+  "last_canonical_lesson_date": "2026-10-12"
 }

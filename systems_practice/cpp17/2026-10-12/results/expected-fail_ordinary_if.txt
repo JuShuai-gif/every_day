@@ -1,0 +1,9 @@
+command=['clang++', '-std=c++17', '-DFAIL_ORDINARY_IF', '-fsyntax-only', 'systems_practice/cpp17/2026-10-12/src/main.cpp']
+Expected compile failure; exit=1
+systems_practice/cpp17/2026-10-12/src/main.cpp:39:17: error: member reference base type 'const int' is not a structure or union
+   39 |     return int(x.size());
+      |                ~^~~~~
+systems_practice/cpp17/2026-10-12/src/main.cpp:72:12: note: in instantiation of function template specialization 'wrong<int>' requested here
+   72 |     return wrong(3);
+      |            ^
+1 error generated.

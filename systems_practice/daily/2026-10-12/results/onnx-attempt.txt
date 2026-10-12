@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-12/convert.py", line 7, in <module>
+    import onnx
+ModuleNotFoundError: No module named 'onnx'

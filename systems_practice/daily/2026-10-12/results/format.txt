@@ -1,0 +1,3 @@
+Executed original scripts/format-cpp.sh with identical .clang-format in isolated input mirror.
+Only the 7 current C++ sources were copied back; pre-existing user files and cached third-party sources untouched.
+exit=0

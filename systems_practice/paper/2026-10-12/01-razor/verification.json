@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-12",
+  "recorded_at": "2026-10-12T09:25:57.060187+08:00",
+  "arxiv_id": "2609.30465",
+  "fulltext_sections_read": true,
+  "independent_cpu_example_run": true,
+  "native_author_model_run": false,
+  "full_paper_reproduced": false,
+  "target_board_verified": false,
+  "cuda_run": false,
+  "performance_measured": false,
+  "evidence": [
+    "results/output.json",
+    "results/execution.txt"
+  ],
+  "blockers": [
+    "No author model/dataset/target device run"
+  ]
+}

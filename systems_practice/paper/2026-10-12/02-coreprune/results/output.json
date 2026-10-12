@@ -1,0 +1,66 @@
+{
+  "subset_identities": 16,
+  "static_keep": [
+    2,
+    3
+  ],
+  "static_error": 0.37071428571428566,
+  "conditional_keep": [
+    0,
+    1
+  ],
+  "conditional_error": 0.1650000000000001,
+  "exhaustive_optimum": 0.1650000000000001,
+  "negative_rescue_marginals": [
+    [
+      [
+        0,
+        1
+      ],
+      1,
+      -0.07451298701298698
+    ],
+    [
+      [
+        0,
+        2
+      ],
+      0,
+      -0.4283642224012892
+    ],
+    [
+      [
+        0,
+        2
+      ],
+      2,
+      -0.21447384806973824
+    ],
+    [
+      [
+        1,
+        3
+      ],
+      1,
+      -0.04899193548387093
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      2,
+      -0.40124999999999983
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      3,
+      -0.4941176470588235
+    ]
+  ],
+  "all_removed_rejected": true,
+  "scope": "one head/receiver, fixed attention, B=1 rescue; no depth refresh or full model reproduction"
+}

@@ -1,0 +1,73 @@
+{
+  "method": "autoround",
+  "repository": "https://github.com/intel/auto-round.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-10-12T01:05:19.879436+00:00",
+  "commit": "7a660e16d39114958a035eab920a44fee0b0b8c4",
+  "cache": ".tmp/quant_sources/autoround-v54tnv8l",
+  "status": "partial",
+  "source_read": false,
+  "example_run": false,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 22577,
+      "sha256": "e20891d949a246019d58d1792f390a6aa5e8037974660b985584ef781173d580",
+      "local_source": ".tmp/quant_sources/autoround-v54tnv8l/source/README.md",
+      "permalink": "https://github.com/intel/auto-round/blob/7a660e16d39114958a035eab920a44fee0b0b8c4/README.md"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 10172,
+      "sha256": "59899c6091b540582ed617e8eeaac4919dc985ccfc35459ee9752b699be5205b",
+      "local_source": ".tmp/quant_sources/autoround-v54tnv8l/source/LICENSE",
+      "permalink": "https://github.com/intel/auto-round/blob/7a660e16d39114958a035eab920a44fee0b0b8c4/LICENSE"
+    },
+    {
+      "path": "setup.py",
+      "bytes": 6608,
+      "sha256": "44657c4a4e48751dffa83ea3f194a9304874b0267efd203fc256baca41dab766",
+      "local_source": ".tmp/quant_sources/autoround-v54tnv8l/source/setup.py",
+      "permalink": "https://github.com/intel/auto-round/blob/7a660e16d39114958a035eab920a44fee0b0b8c4/setup.py"
+    },
+    {
+      "path": "auto_round/autoround.py",
+      "bytes": 36511,
+      "sha256": "c02e9c2a414de4bfcee18c03c82aeb9bfecd5f863391a732d335d8df2bbfeacf",
+      "local_source": ".tmp/quant_sources/autoround-v54tnv8l/source/auto_round/autoround.py",
+      "permalink": "https://github.com/intel/auto-round/blob/7a660e16d39114958a035eab920a44fee0b0b8c4/auto_round/autoround.py"
+    },
+    {
+      "path": "auto_round/wrapper.py",
+      "bytes": 39861,
+      "sha256": "657829ecf6871508c9622b82a79f1c2a759bae382bd5ccca561678353bab61e1",
+      "local_source": ".tmp/quant_sources/autoround-v54tnv8l/source/auto_round/wrapper.py",
+      "permalink": "https://github.com/intel/auto-round/blob/7a660e16d39114958a035eab920a44fee0b0b8c4/auto_round/wrapper.py"
+    },
+    {
+      "path": "auto_round/data_type/int.py",
+      "bytes": 16834,
+      "sha256": "04464c01157149379676aade1fea16694b11a55b3c3ac02baef98bb9843e1ff5",
+      "local_source": ".tmp/quant_sources/autoround-v54tnv8l/source/auto_round/data_type/int.py",
+      "permalink": "https://github.com/intel/auto-round/blob/7a660e16d39114958a035eab920a44fee0b0b8c4/auto_round/data_type/int.py"
+    },
+    {
+      "path": "auto_round/data_type/utils.py",
+      "bytes": 21712,
+      "sha256": "192f2ed625c87b07b49d758071e082e26bc6ccad34ec5ac5a29578477196bfd0",
+      "local_source": ".tmp/quant_sources/autoround-v54tnv8l/source/auto_round/data_type/utils.py",
+      "permalink": "https://github.com/intel/auto-round/blob/7a660e16d39114958a035eab920a44fee0b0b8c4/auto_round/data_type/utils.py"
+    }
+  ],
+  "errors": [
+    {
+      "path": "requirements-lib.txt",
+      "reason": "fatal: path 'requirements-lib.txt' does not exist in '7a660e16d39114958a035eab920a44fee0b0b8c4'"
+    },
+    {
+      "path": "auto_round/sign_sgd.py",
+      "reason": "fatal: path 'auto_round/sign_sgd.py' does not exist in '7a660e16d39114958a035eab920a44fee0b0b8c4'"
+    }
+  ],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example."
+}

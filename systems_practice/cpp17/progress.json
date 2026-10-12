@@ -2,8 +2,8 @@
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
   "created_on": "2026-09-29",
-  "last_delivery_date": "2026-10-11",
-  "next_lesson_id": "13",
+  "last_delivery_date": "2026-10-12",
+  "next_lesson_id": "14",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -16,7 +16,8 @@
     "09",
     "10",
     "11",
-    "12"
+    "12",
+    "13"
   ],
   "history": [
     {
@@ -197,6 +198,20 @@
       "sanitize_passed": true,
       "target_board_verified": false,
       "verification": "2026-10-11/verification.json"
+    },
+    {
+      "date": "2026-10-12",
+      "lesson_id": "13",
+      "path": "2026-10-12",
+      "source_read": true,
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "verification": "2026-10-12/verification.json",
+      "expected_compile_failures_verified": 2
     }
   ],
   "backlog": [
@@ -249,7 +264,14 @@
       "lesson_id": "12",
       "reason": "Target Linux/board and cross-library ABI pending",
       "verification": "2026-10-11/verification.json"
+    },
+    {
+      "date": "2026-10-12",
+      "lesson_id": "13",
+      "kind": "target_validation",
+      "reason": "Host lesson delivered; Linux/target board validation pending",
+      "verification": "2026-10-12/verification.json"
     }
   ],
-  "last_canonical_lesson_date": "2026-10-11"
+  "last_canonical_lesson_date": "2026-10-12"
 }

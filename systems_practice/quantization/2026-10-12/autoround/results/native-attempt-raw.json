@@ -1,0 +1,4 @@
+{
+  "note": "Original attempted-run log; JSON escaping preserves trailing whitespace.",
+  "raw_log": "exit=1\nAutoRound 0.17.0 source requires Python >=3.11; found 3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]\n"
+}

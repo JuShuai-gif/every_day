@@ -2,7 +2,7 @@
 
 [栏目说明](../docs/quantization/README.md) · [交付模板](../docs/quantization/LESSON_TEMPLATE.md) · [方法目录](catalog.json) · [进度](progress.json)
 
-下一方法：**AutoRound**（autoround，第二轮）。当期AdaRound源码/阅读/示例已交付，原生运行与Thor待补。
+下一方法：**HQQ**（hqq，第二轮）。AutoRound源码/阅读/示例已交付，原生运行与Thor待补。
 
 | 日期 | 类型 | 方法 | 源码 / 阅读 / 示例 / CPU / Thor | 证据 |
 | --- | --- | --- | --- | --- |
@@ -41,3 +41,5 @@
 2026-10-09：[GPTQ第二轮：Hessian阻尼、act-order与分组](2026-10-09/gptq/README.md)。本地获取否/固定commit实现阅读是/原生示例交付是/CPU原生否/Thor否；GitHub raw 源码读取 `GPTQ.add_batch/fasterquant`、`Quantizer.find_params`、`Quant3Linear.pack` 与 `opt_sequential`，浅克隆失败事实保留。下一方法AdaRound。
 
 2026-10-11：[AdaRound第二轮：正则与硬化交付](2026-10-11/adaround/README.md)。真实浅拉取6360e0c7、实现阅读与原生示例交付；CPU原生未运行（Python/torch/AIMET不足）、Thor未验。五项状态见[验证](2026-10-11/adaround/verification.json)。旧GPTQ仅重试一次，源码获取成功，未重新读/跑或推进游标。
+
+2026-10-12：[AutoRound第二轮：舍入与范围同条件消融](2026-10-12/autoround/README.md)。原仓库7a660e16实际浅拉取，旧路径迁移核实；原生QDQ/SignSGD示例已交付，Python/torch不足未运行，Thor未验。旧HQQ仅重试获取成功，不推进其游标。[五项状态](2026-10-12/autoround/verification.json)。

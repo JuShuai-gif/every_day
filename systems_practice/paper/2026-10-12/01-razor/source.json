@@ -1,0 +1,50 @@
+{
+  "read_at": "2026-10-12T09:25:57.060187+08:00",
+  "title": "RAZOR: Pruning Replaceable Experts in LLMs",
+  "authors": [
+    "Mingyang Song",
+    "Mao Zheng"
+  ],
+  "arxiv_id": "2609.30465",
+  "first_submitted": "2026-09-24",
+  "version": "v1",
+  "version_date": "2026-09-24",
+  "publication_status": "preprint; peer-reviewed acceptance not verified",
+  "primary_fulltext": "https://arxiv.org/html/2609.30465v1",
+  "sections_read": [
+    "2 equations1-4",
+    "3 experimental setup/table1",
+    "limitations"
+  ],
+  "primary_html_sha256": "083185a5542f89939d0f6e855e285c4ec2a8368254035cdbcd4a36bbf970eb6d",
+  "example_relationship": "Independent scalar mechanism demonstration, not full paper reproduction",
+  "research": "../../../daily/2026-10-12/results/research.json",
+  "repository": "https://github.com/nick7nlp/Razor",
+  "commit": "e83ca5c2701108b6158ce10c6c5d719bb7f4f1dc",
+  "license": "Apache-2.0",
+  "source_read": true,
+  "files": [
+    {
+      "path": "razor/collect.py",
+      "sha256": "3fca86b008592b07f2ab48df534f087ad467a0512920f9fab62386e3b72aa477"
+    },
+    {
+      "path": "razor/metrics.py",
+      "sha256": "09041a8ddc30322e88f7ff918d29f98d6640abc96e03c3b710d315ce9581fbd8"
+    },
+    {
+      "path": "razor/prune.py",
+      "sha256": "9b40f63c64ebac316f75a0e3f0aa2463c90b7873625e5a6d4cce91bfaa0ff4e5"
+    },
+    {
+      "path": "razor/geometry.py",
+      "sha256": "406a571889cc264a9b93aae072ef6888273eb7e5f125995d1e4f2ffab744e46a"
+    }
+  ],
+  "read_symbols": [
+    "collector consensus/refill accumulation",
+    "metrics.canonical/resolve/_validate_moments/score",
+    "prune.resolve_target_experts/validate_keep_indices/select_keep_indices"
+  ],
+  "native_example_run": false
+}

@@ -1,0 +1,5 @@
+command=['systems_practice/daily/2026-10-12/build/sanitize']
+exit=0
+PASS shapes=45 rejected=5 minimum_extent=35B
+stride_fault_elements=30 double_normalization_fault_elements=45
+CPU correctness only; no NPU/GPU or end-to-end timing

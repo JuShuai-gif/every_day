@@ -1,0 +1,55 @@
+{
+  "read_at": "2026-10-12T09:25:57.060187+08:00",
+  "relationship": "independently implemented inspired by Model Zoo input/query/run/get/release path",
+  "repository": "https://github.com/airockchip/rknn_model_zoo",
+  "ref": "main read 2026-10-12; commit not pinned",
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "file": "rknn_api.h",
+      "url": "https://raw.githubusercontent.com/airockchip/rknn-toolkit2/master/rknpu2/runtime/Linux/librknn_api/include/rknn_api.h",
+      "resolved": "https://raw.githubusercontent.com/airockchip/rknn-toolkit2/master/rknpu2/runtime/Linux/librknn_api/include/rknn_api.h",
+      "sha256": "c48e11a6f41b451a5fd1e4ad774ea60252d3d94f78bee9b21ea3d21b21deba9a",
+      "bytes": 35707
+    },
+    {
+      "file": "rknn_zero.cc",
+      "url": "https://raw.githubusercontent.com/airockchip/rknn-toolkit2/master/rknpu2/examples/rknn_mobilenet_demo/src/main.cc",
+      "resolved": "https://raw.githubusercontent.com/airockchip/rknn-toolkit2/master/rknpu2/examples/rknn_mobilenet_demo/src/main.cc",
+      "sha256": "44821e21a5809d69104a1d16322be024ae8d537c963702bc0eeaec3eba4c863d",
+      "bytes": 7001
+    },
+    {
+      "file": "mobilenet.cc",
+      "url": "https://raw.githubusercontent.com/airockchip/rknn_model_zoo/main/examples/mobilenet/cpp/rknpu2/mobilenet.cc",
+      "resolved": "https://raw.githubusercontent.com/airockchip/rknn_model_zoo/main/examples/mobilenet/cpp/rknpu2/mobilenet.cc",
+      "sha256": "f86e8c0318b23ed1d8c61c2141c63e26ed745c8435b51644680b9679bb6c9c68",
+      "bytes": 8135
+    },
+    {
+      "file": "rknn_convert.py",
+      "url": "https://raw.githubusercontent.com/airockchip/rknn_model_zoo/main/examples/mobilenet/python/mobilenet.py",
+      "resolved": "https://raw.githubusercontent.com/airockchip/rknn_model_zoo/main/examples/mobilenet/python/mobilenet.py",
+      "sha256": "872a92482c4949dd079f5c728a2747a75490fd5e0c07dbf10c933ccbb2833a7e",
+      "bytes": 6693
+    },
+    {
+      "file": "rknn_license",
+      "url": "https://raw.githubusercontent.com/airockchip/rknn_model_zoo/main/LICENSE",
+      "resolved": "https://raw.githubusercontent.com/airockchip/rknn_model_zoo/main/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    }
+  ],
+  "symbols": [
+    "init_mobilenet_model",
+    "inference_mobilenet_model",
+    "release_mobilenet_model",
+    "RKNN.config/load_onnx/build/export_rknn",
+    "rknn_input.pass_through",
+    "rknn_perf_run",
+    "rknn_sdk_version"
+  ],
+  "read_scope": "selected implementation functions and header declarations/contracts; no SDK binary execution",
+  "research": "results/research.json"
+}

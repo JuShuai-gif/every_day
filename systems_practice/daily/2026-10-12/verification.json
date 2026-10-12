@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-12",
+  "recorded_at": "2026-10-12T09:25:57.060187+08:00",
+  "host": "Mac arm64 / Apple Clang 21.0.0",
+  "cxx_standard": 17,
+  "source_read": true,
+  "host_compile": true,
+  "host_run": true,
+  "asan_ubsan_passed": true,
+  "target_board_verified": false,
+  "cpu_performance_measured": false,
+  "gpu_performance_measured": false,
+  "npu_performance_measured": false,
+  "end_to_end_measured": false,
+  "evidence": [
+    "results/release.txt",
+    "results/sanitize.txt"
+  ],
+  "topic": "RKNN stride and preprocessing",
+  "host_checks": {
+    "shape_cases": 45,
+    "rejections": 5,
+    "minimum_extent_bytes": 35,
+    "stride_error_elements": 30,
+    "double_normalization_errors": 45
+  },
+  "onnx_generated": false,
+  "onnx_reference_run": false,
+  "rknn_converted": false,
+  "rknn_header_syntax_check": true,
+  "rknn_linked": false,
+  "rknn_board_run": false,
+  "rknn_accuracy_verified": false,
+  "blockers": [
+    "onnx not installed",
+    "RKNN Toolkit2/Runtime absent",
+    "RK3588 board absent"
+  ],
+  "gpu_scope": "No CUDA kernel taught/generated in this NPU lesson"
+}

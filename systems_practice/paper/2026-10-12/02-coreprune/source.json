@@ -1,0 +1,34 @@
+{
+  "read_at": "2026-10-12T09:25:57.060187+08:00",
+  "title": "From Token Importance to Conditional Removability: Rethinking Visual Token Pruning in Multimodal Large Language Models",
+  "authors": [
+    "Shengli He",
+    "Yongchao Liang",
+    "Roumeng He",
+    "Junjie Zeng",
+    "Jiyuan He",
+    "Xin Fang",
+    "Can Wu",
+    "Li Zheng"
+  ],
+  "arxiv_id": "2609.26484",
+  "first_submitted": "2026-09-22",
+  "version": "v1",
+  "version_date": "2026-09-22",
+  "publication_status": "preprint; peer-reviewed acceptance not verified",
+  "primary_fulltext": "https://arxiv.org/html/2609.26484v1",
+  "sections_read": [
+    "III Eq1-7",
+    "IV diagnostics",
+    "V method",
+    "VI-G TableVII",
+    "VII discussion"
+  ],
+  "primary_html_sha256": "5983118c99d194178475414b5d2f2328ee124c83b57b5b105102393c46aac233",
+  "example_relationship": "Independent scalar mechanism demonstration, not full paper reproduction",
+  "research": "../../../daily/2026-10-12/results/research.json",
+  "repository": null,
+  "source_read": false,
+  "code_search": "CoRePrune github; primary paper links inspected; no verified author implementation found",
+  "license": "Author implementation license unresolved; arXiv non-exclusive article license"
+}

@@ -1,0 +1,9 @@
+command=['clang++', '-std=c++17', '-DFAIL_UNSUPPORTED', '-fsyntax-only', 'systems_practice/cpp17/2026-10-12/src/main.cpp']
+Expected compile failure; exit=1
+systems_practice/cpp17/2026-10-12/src/main.cpp:28:19: error: static assertion failed due to requirement 'unsupported<double>': unsupported wire field type
+   28 |     static_assert(unsupported<T>, "unsupported wire field type");
+      |                   ^~~~~~~~~~~~~~
+systems_practice/cpp17/2026-10-12/src/main.cpp:69:5: note: in instantiation of function template specialization 'append<double>' requested here
+   69 |     append(bytes, 1.25);  // 构建脚本期望此分支编译失败，不执行未定义行为。
+      |     ^
+1 error generated.

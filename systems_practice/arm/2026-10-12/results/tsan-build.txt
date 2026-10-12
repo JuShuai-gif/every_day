@@ -1,0 +1,2 @@
+command=['clang++', '-std=c++17', '-O1', '-g', '-pthread', '-fsanitize=thread', 'systems_practice/arm/2026-10-12/src/main.cpp', '-o', 'systems_practice/arm/2026-10-12/build/tsan']
+exit=0

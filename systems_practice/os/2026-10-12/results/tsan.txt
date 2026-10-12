@@ -1,0 +1,4 @@
+command=['systems_practice/os/2026-10-12/build/tsan']
+exit=0
+PASS increments=20000 refs=0 inversion_rejected=1 exception_released=1 ordered_pair=1
+Host C++ mutex model; no xv6 interrupts/scheduler/device IO executed

@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-12",
+  "recorded_at": "2026-10-12T09:25:57.060187+08:00",
+  "host": "Mac arm64 / Apple Clang 21.0.0",
+  "cxx_standard": 17,
+  "source_read": true,
+  "host_compile": true,
+  "host_run": true,
+  "asan_ubsan_passed": true,
+  "target_board_verified": false,
+  "cpu_performance_measured": false,
+  "gpu_performance_measured": false,
+  "npu_performance_measured": false,
+  "end_to_end_measured": false,
+  "evidence": [
+    "results/release.txt",
+    "results/sanitize.txt"
+  ],
+  "lesson_id": "13",
+  "version_pinned": true,
+  "expected_compile_failures": [
+    "FAIL_UNSUPPORTED",
+    "FAIL_ORDINARY_IF"
+  ],
+  "runtime_checks": [
+    "independent 8-byte wire oracle",
+    "empty string",
+    "255 accepted",
+    "256 rejected and rollback"
+  ],
+  "blockers": [
+    "Target board and protocol integration absent"
+  ]
+}

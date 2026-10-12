@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-12",
+  "recorded_at": "2026-10-12T09:25:57.060187+08:00",
+  "method": "autoround",
+  "repository": "https://github.com/intel/auto-round",
+  "commit": "7a660e16d39114958a035eab920a44fee0b0b8c4",
+  "source_record": "source-network-retry.json",
+  "read_record": "source-read.json",
+  "source_fetched": true,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": [
+    "quant_tensor_asym",
+    "round_ste",
+    "reshape_pad_tensor_by_group_size",
+    "revert_tensor_by_pad",
+    "SignSGD.__init__/step",
+    "_single_tensor_sgd",
+    "WrapperLinear._qdq_weight/forward/unwrapper"
+  ],
+  "evidence": [
+    "source-network-retry.json",
+    "source-read.json",
+    "native_example.py",
+    "results/native-attempt.txt",
+    "results/bundled-python-attempt.txt"
+  ],
+  "static_python_syntax": true,
+  "packed_files_created": false,
+  "native_training_updates_verified": false,
+  "accuracy_measured": false,
+  "performance_measured": false,
+  "blockers": [
+    "system Python3.9.6 below upstream>=3.11",
+    "bundled Python3.12.14 lacks torch and auto_round",
+    "upstream packed inference/extension Thor compatibility not audited",
+    "no Thor/nvcc/ncu"
+  ],
+  "thor_official_stack_reference": "https://developer.nvidia.com/embedded/jetpack/downloads/archive-7.0",
+  "gpu_scope": "CPU QDQ algorithm/native usage, not CUDA kernel or native low-bit execution"
+}

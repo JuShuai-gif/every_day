@@ -1,0 +1,50 @@
+{
+  "read_at": "2026-10-12T09:25:57.060187+08:00",
+  "repository": "https://github.com/mit-pdos/xv6-riscv",
+  "ref": "riscv branch read 2026-10-12",
+  "version_pinned": false,
+  "license": "MIT",
+  "relationship": "independent C++ mechanism model, not xv6 code port",
+  "files": [
+    {
+      "file": "sleeplock.c",
+      "url": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/kernel/sleeplock.c",
+      "resolved": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/kernel/sleeplock.c",
+      "sha256": "0ddda91203e2ee48285182e165879f25eaf56dc1ba34118e0d7066a34ff455bd",
+      "bytes": 848
+    },
+    {
+      "file": "bio.c",
+      "url": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/kernel/bio.c",
+      "resolved": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/kernel/bio.c",
+      "sha256": "5a0dcfd6266635ba55eaa32611d9e274e3f752402ec0964661bef7a954bd8108",
+      "bytes": 3366
+    },
+    {
+      "file": "proc.c",
+      "url": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/kernel/proc.c",
+      "resolved": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/kernel/proc.c",
+      "sha256": "eb4db448863ecdfb882f581bd3b068f74a937590bbb9cf69333ddf9ce479c506",
+      "bytes": 15019
+    },
+    {
+      "file": "xv6_license",
+      "url": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/LICENSE",
+      "resolved": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/LICENSE",
+      "sha256": "677302f30c9882c1f81b9be8ceda6efd4edff5576b9e02963b6114cf70c3162c",
+      "bytes": 1174
+    }
+  ],
+  "read_symbols": [
+    "acquiresleep",
+    "releasesleep",
+    "bget",
+    "bread",
+    "brelse",
+    "sleep_prepare",
+    "sleep",
+    "wakeup"
+  ],
+  "call_chain": "acquiresleep -> sleep_prepare -> unlock -> sleep -> relock -> predicate; bget pin -> unlock metadata -> acquire buffer",
+  "research": "../../daily/2026-10-12/results/research.json"
+}

@@ -1,0 +1,72 @@
+{
+  "read_at": "2026-10-12T09:25:57.060187+08:00",
+  "repository": "https://github.com/intel/auto-round",
+  "commit": "7a660e16d39114958a035eab920a44fee0b0b8c4",
+  "version_file": "0.17.0",
+  "license": "Apache-2.0 plus upstream optimizer notices",
+  "source_fetched": true,
+  "source_read": true,
+  "read_symbols": [
+    "quant_tensor_asym",
+    "round_ste",
+    "reshape_pad_tensor_by_group_size",
+    "revert_tensor_by_pad",
+    "SignSGD.__init__/step",
+    "_single_tensor_sgd",
+    "WrapperLinear._qdq_weight/forward/unwrapper"
+  ],
+  "paths": [
+    {
+      "path": "auto_round/data_type/int.py",
+      "sha256": "04464c01157149379676aade1fea16694b11a55b3c3ac02baef98bb9843e1ff5",
+      "permalink": "https://github.com/intel/auto-round/blob/7a660e16d39114958a035eab920a44fee0b0b8c4/auto_round/data_type/int.py"
+    },
+    {
+      "path": "auto_round/data_type/utils.py",
+      "sha256": "192f2ed625c87b07b49d758071e082e26bc6ccad34ec5ac5a29578477196bfd0",
+      "permalink": "https://github.com/intel/auto-round/blob/7a660e16d39114958a035eab920a44fee0b0b8c4/auto_round/data_type/utils.py"
+    },
+    {
+      "path": "auto_round/wrapper.py",
+      "sha256": "657829ecf6871508c9622b82a79f1c2a759bae382bd5ccca561678353bab61e1",
+      "permalink": "https://github.com/intel/auto-round/blob/7a660e16d39114958a035eab920a44fee0b0b8c4/auto_round/wrapper.py"
+    },
+    {
+      "path": "auto_round/autoround.py",
+      "sha256": "c02e9c2a414de4bfcee18c03c82aeb9bfecd5f863391a732d335d8df2bbfeacf",
+      "permalink": "https://github.com/intel/auto-round/blob/7a660e16d39114958a035eab920a44fee0b0b8c4/auto_round/autoround.py"
+    },
+    {
+      "path": "auto_round/algorithms/quantization/sign_round/sign_sgd.py",
+      "sha256": "dd87af7bb5287ae2386d683f7379492b6852226af2938192fac9985070d0fc81",
+      "permalink": "https://github.com/intel/auto-round/blob/7a660e16d39114958a035eab920a44fee0b0b8c4/auto_round/algorithms/quantization/sign_round/sign_sgd.py"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "e9ec56239a940bda41f3ddaffd05d78d3cea8ddae07035f3b0f9b3b42946e625",
+      "permalink": "https://github.com/intel/auto-round/blob/7a660e16d39114958a035eab920a44fee0b0b8c4/requirements.txt"
+    },
+    {
+      "path": "setup.py",
+      "sha256": "44657c4a4e48751dffa83ea3f194a9304874b0267efd203fc256baca41dab766",
+      "permalink": "https://github.com/intel/auto-round/blob/7a660e16d39114958a035eab920a44fee0b0b8c4/setup.py"
+    },
+    {
+      "path": "auto_round/version.py",
+      "sha256": "aeda3025953880fbec1e4f23ae8e0f3630579eee7de7503d5bb01e05b46a28ba",
+      "permalink": "https://github.com/intel/auto-round/blob/7a660e16d39114958a035eab920a44fee0b0b8c4/auto_round/version.py"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "59899c6091b540582ed617e8eeaac4919dc985ccfc35459ee9752b699be5205b",
+      "permalink": "https://github.com/intel/auto-round/blob/7a660e16d39114958a035eab920a44fee0b0b8c4/LICENSE"
+    }
+  ],
+  "read_scope": "Selected algorithm/wrapper/optimizer implementations; autoround entry symbol routing scan only; not full compressor/backend audit",
+  "repository_migration": "GitHub API full_name=intel/auto-round verified",
+  "path_migrations": {
+    "requirements-lib.txt": "requirements.txt",
+    "auto_round/sign_sgd.py": "auto_round/algorithms/quantization/sign_round/sign_sgd.py"
+  },
+  "relationship": "direct low-level native API calls with independent training orchestration and custom ARL1 packing"
+}

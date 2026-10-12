@@ -1,0 +1,5 @@
+command=['systems_practice/arm/2026-10-12/build/tsan']
+exit=0
+PASS seq_cst/acquire_release transfers=20002 zero=2 ticket_old_values=1000
+negative_count_rejected=1; no racy execution; lock_free=1
+No timing; TSan is evidence for this execution, not an ARM memory-model proof

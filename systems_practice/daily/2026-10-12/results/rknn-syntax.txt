@@ -1,0 +1,2 @@
+command=['clang++', '-std=c++17', '-Wall', '-Wextra', '-Werror', '-fsyntax-only', '-Isystems_practice/.tmp/run-20261012/rknn_include', 'systems_practice/daily/2026-10-12/src/rknn.cpp']
+exit=0

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
-  "last_delivery_date": "2026-10-11",
-  "next_lesson_id": "19",
+  "last_delivery_date": "2026-10-12",
+  "next_lesson_id": "20",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -21,7 +21,8 @@
     "15",
     "16",
     "17",
-    "18"
+    "18",
+    "19"
   ],
   "history": [
     {
@@ -360,6 +361,24 @@
       "assembly_observed": true,
       "tlb_pmu_verified": false,
       "compute_kernel_benchmarked": true
+    },
+    {
+      "date": "2026-10-12",
+      "lesson_id": "19",
+      "path": "2026-10-12",
+      "source_read": true,
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "verification": "2026-10-12/README.md",
+      "assembly_observed": true,
+      "tsan_passed": true,
+      "linux_cross_assembly_generated": true,
+      "linux_binary_run": false,
+      "cpu_performance_measured": false
     }
   ],
   "backlog": [
@@ -398,6 +417,13 @@
       "lesson_id": "18",
       "reason": "TLB PMU, page-offset confound isolation, Linux/target board pending",
       "verification": "2026-10-11/README.md"
+    },
+    {
+      "date": "2026-10-12",
+      "lesson_id": "19",
+      "kind": "target_validation",
+      "reason": "Host lesson delivered; Linux/target board validation pending",
+      "verification": "2026-10-12/README.md"
     }
   ],
   "curriculum_adjustments": [
@@ -426,5 +452,5 @@
       "reason": "User requested four working/deployment capability layers; mapped existing 28 lessons, preserved order and historical progress. Actual delivery08 advances to09 separately."
     }
   ],
-  "last_canonical_lesson_date": "2026-10-11"
+  "last_canonical_lesson_date": "2026-10-12"
 }

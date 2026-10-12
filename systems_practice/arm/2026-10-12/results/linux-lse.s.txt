@@ -1,0 +1,2 @@
+command=['clang++', '-std=c++17', '-target', 'aarch64-linux-gnu', '-march=armv8.1-a+lse', '-mno-outline-atomics', '-O2', '-S', 'systems_practice/arm/2026-10-12/src/atomic_probe.cpp', '-o', 'systems_practice/arm/2026-10-12/results/linux-lse.s']
+exit=0

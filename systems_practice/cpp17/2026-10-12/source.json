@@ -1,0 +1,21 @@
+{
+  "read_at": "2026-10-12T09:25:57.060187+08:00",
+  "repository": "https://github.com/llvm/llvm-project",
+  "tag": "llvmorg-20.1.0",
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "path": "libcxx/include/__memory/uninitialized_algorithms.h",
+  "sha256": "7aab0335664c61efe09a0a715350ff7cc257f38278ff864b60e82d479e4c4a58",
+  "permalink": "https://github.com/llvm/llvm-project/blob/llvmorg-20.1.0/libcxx/include/__memory/uninitialized_algorithms.h",
+  "symbols": [
+    "__allocator_destroy_multidimensional",
+    "__allocator_construct_at_multidimensional"
+  ],
+  "call_chain": "if constexpr is_array -> recurse with rebound allocator + exception guard; else allocator_traits::construct",
+  "relationship": "inspired independent C++17 wire encoder; no private libc++ calls",
+  "additional_read": [
+    "libcxx/LICENSE.TXT",
+    "allocator_traits.h allocate_at_least C++23 block excluded",
+    "N4659 stmt.if"
+  ],
+  "research": "../../daily/2026-10-12/results/research.json"
+}

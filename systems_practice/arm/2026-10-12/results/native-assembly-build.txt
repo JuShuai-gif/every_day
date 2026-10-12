@@ -1,0 +1,2 @@
+command=['clang++', '-std=c++17', '-O2', '-S', 'systems_practice/arm/2026-10-12/src/main.cpp', '-o', 'systems_practice/arm/2026-10-12/results/native.s']
+exit=0

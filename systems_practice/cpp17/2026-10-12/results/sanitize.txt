@@ -1,0 +1,4 @@
+command=['systems_practice/cpp17/2026-10-12/build/sanitize']
+exit=0
+PASS wire_oracle=8B empty=1 max255=1 reject256_rollback=1
+C++17 type dispatch; no performance claim

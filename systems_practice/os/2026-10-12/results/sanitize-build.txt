@@ -1,0 +1,2 @@
+command=['clang++', '-std=c++17', '-O1', '-g', '-pthread', '-fsanitize=address,undefined', '-fno-omit-frame-pointer', 'systems_practice/os/2026-10-12/src/main.cpp', '-o', 'systems_practice/os/2026-10-12/build/sanitize']
+exit=0

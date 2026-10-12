@@ -12,7 +12,7 @@
 
 每课的 README 与代码、运行脚本和结果放在一起。学习路线、栏目规则等通用说明集中在 docs/。
 
-当前入口：[2026-10-11 TensorRT主课](daily/2026-10-11/README.md) · [AdaRound](quantization/2026-10-11/adaround/README.md) · [ARM18](arm/2026-10-11/README.md) · [WRP/TOGA论文](paper/2026-10-11/README.md) · [OS13](os/2026-10-11/README.md) · [C++17第12课](cpp17/2026-10-11/README.md)。
+当前入口：[2026-10-12 RKNN主课](daily/2026-10-12/README.md) · [AutoRound](quantization/2026-10-12/autoround/README.md) · [ARM19](arm/2026-10-12/README.md) · [RAZOR/CoRePrune论文](paper/2026-10-12/README.md) · [OS14](os/2026-10-12/README.md) · [C++17第13课](cpp17/2026-10-12/README.md)。
 
 旧规范和旧总索引文件保留为兼容导航，正文只有一份；历史日志中的旧路径保留原样。迁移对应表见 [目录说明](docs/LAYOUT.md)。
 

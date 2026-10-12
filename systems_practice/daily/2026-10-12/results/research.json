@@ -1,0 +1,18 @@
+{
+  "read_at": "2026-10-12T09:25:57.060187+08:00",
+  "google_direct_attempt": "https://www.google.com/search?q=RKNN+stride+zero+copy+source",
+  "google_result": "web tool Internal Error; no Google page read",
+  "web_search_queries": [
+    "site:zhihu.com RKNN stride 内存 零拷贝",
+    "site:zhihu.com ARM LSE 原子 自旋锁 if constexpr",
+    "site:zhihu.com AutoRound 舍入",
+    "site:zhihu.com if constexpr 原理",
+    "site:zhihu.com 睡眠锁 xv6",
+    "site:zhihu.com LSE 原子",
+    "site:arxiv.org 2026 quantization October",
+    "site:arxiv.org 2026 pruning Sep",
+    "CoRePrune github"
+  ],
+  "adopted_zhihu_sources": [],
+  "zhihu_reason": "No adequately verified directly relevant original engineering implementation adopted. Some C++ results mix newer standards; technical conclusions use upstream source/standard."
+}

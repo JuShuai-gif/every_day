@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-11T14:33:44.440329+08:00",
+  "updated_at": "2026-10-12T09:27:31.722433+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -512,6 +512,32 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.30465",
+      "title": "RAZOR: Pruning Replaceable Experts in LLMs",
+      "delivered_on": "2026-10-12",
+      "first_submitted": "2026-09-24",
+      "version_read": "v1",
+      "directory": "2026-10-12/01-razor",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.26484",
+      "title": "From Token Importance to Conditional Removability: Rethinking Visual Token Pruning in Multimodal Large Language Models",
+      "delivered_on": "2026-10-12",
+      "first_submitted": "2026-09-22",
+      "version_read": "v1",
+      "directory": "2026-10-12/02-coreprune",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
     }
   ],
   "backlog": [
@@ -724,6 +750,18 @@
       "date": "2026-10-11",
       "reason": "Author repository/implementation not verified; full model and target device reproduction pending",
       "directory": "2026-10-11/02-toga"
+    },
+    {
+      "id": "arxiv:2609.30465",
+      "date": "2026-10-12",
+      "reason": "Author model/data/device reproduction pending",
+      "verification": "2026-10-12/01-razor/verification.json"
+    },
+    {
+      "id": "arxiv:2609.26484",
+      "date": "2026-10-12",
+      "reason": "Author model/data/device reproduction pending; no verified author implementation found",
+      "verification": "2026-10-12/02-coreprune/verification.json"
     }
   ]
 }
