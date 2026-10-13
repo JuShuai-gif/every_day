@@ -1,0 +1,38 @@
+cacheline query unavailable; no assumed universal size
+stride=8 workers=1 mode=0 addresses 0x6020000003b0
+packed CPU batch ms p50=0.218208 pmax=0.219667
+stride=64 workers=1 mode=0 addresses 0x60a000000700
+pad64 CPU batch ms p50=0.237708 pmax=0.241292
+stride=128 workers=1 mode=0 addresses 0x611000000400
+pad128 CPU batch ms p50=0.237875 pmax=0.24425
+stride=256 workers=1 mode=0 addresses 0x615000000800
+pad256 CPU batch ms p50=0.219042 pmax=0.220958
+stride=128 workers=1 mode=1 addresses 0x611000001300
+true_shared CPU batch ms p50=0.238167 pmax=0.240042
+stride=128 workers=1 mode=2 addresses 0x611000002200
+local CPU batch ms p50=0.023334 pmax=0.042166
+stride=8 workers=2 mode=0 addresses 0x602000001910 0x602000001918
+packed CPU batch ms p50=1.27196 pmax=1.52354
+stride=64 workers=2 mode=0 addresses 0x610000000340 0x610000000380
+pad64 CPU batch ms p50=0.258459 pmax=0.335208
+stride=128 workers=2 mode=0 addresses 0x613000000580 0x613000000600
+pad128 CPU batch ms p50=0.233083 pmax=0.274042
+stride=256 workers=2 mode=0 addresses 0x617000000b00 0x617000000c00
+pad256 CPU batch ms p50=0.229875 pmax=0.235375
+stride=128 workers=2 mode=1 addresses 0x613000001a80 0x613000001b00
+true_shared CPU batch ms p50=1.24025 pmax=1.48012
+stride=128 workers=2 mode=2 addresses 0x613000002f80 0x613000003000
+local CPU batch ms p50=0.039333 pmax=0.086375
+stride=8 workers=4 mode=0 addresses 0x603000004e10 0x603000004e18 0x603000004e20 0x603000004e28
+packed CPU batch ms p50=4.19308 pmax=7.42579
+stride=64 workers=4 mode=0 addresses 0x612000000640 0x612000000680 0x6120000006c0 0x612000000700
+pad64 CPU batch ms p50=0.31 pmax=0.322459
+stride=128 workers=4 mode=0 addresses 0x616000000f80 0x616000001000 0x616000001080 0x616000001100
+pad128 CPU batch ms p50=0.314583 pmax=0.316542
+stride=256 workers=4 mode=0 addresses 0x61a000001300 0x61a000001400 0x61a000001500 0x61a000001600
+pad256 CPU batch ms p50=0.267 pmax=0.326125
+stride=128 workers=4 mode=1 addresses 0x616000003380 0x616000003400 0x616000003480 0x616000003500
+true_shared CPU batch ms p50=4.261 pmax=4.55517
+stride=128 workers=4 mode=2 addresses 0x616000005780 0x616000005800 0x616000005880 0x616000005900
+local CPU batch ms p50=0.068958 pmax=0.102625
+PASS 216 batches totals verified; zero worker rejected

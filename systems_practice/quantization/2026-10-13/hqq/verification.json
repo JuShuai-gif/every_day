@@ -1,0 +1,44 @@
+{
+  "method": "hqq",
+  "date": "2026-10-13",
+  "repository": "https://github.com/dropbox/hqq.git",
+  "commit": "d88a488ec8aa2d58362ef2038a52bca862db2e74",
+  "source_record": "source-retry.json",
+  "source_fetched": true,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": [
+    "Quantizer.quantize",
+    "Quantizer.dequantize",
+    "HQQLinear.initialize",
+    "HQQLinear.quantize",
+    "HQQLinear.cuda",
+    "HQQLinear.forward_pytorch",
+    "HQQLinear.state_dict",
+    "HQQLinear.load_state_dict",
+    "BaseQuantizeConfig",
+    "optimize_weights_proximal_legacy_step",
+    "optimize_weights_proximal_legacy",
+    "shrink_lp_op",
+    "BitPack.pack_4bit_u8",
+    "BitPack.unpack_4bit_u8",
+    "encode_safetensor_type",
+    "decode_safetensor_type"
+  ],
+  "evidence": [
+    "source.json",
+    "source-retry.json",
+    "source-read.json",
+    "example.py",
+    "results/environment.json",
+    "results/native-attempt.txt"
+  ],
+  "blockers": [
+    "torch absent; native example not executed",
+    "No Thor/nvcc/ncu; backend compatibility unresolved"
+  ],
+  "native_api_language": "Python/PyTorch",
+  "static_syntax": "passed ast.parse"
+}

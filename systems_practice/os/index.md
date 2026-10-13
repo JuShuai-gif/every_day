@@ -10,7 +10,7 @@
 | [2026-10-01](2026-10-01/README.md) | 04：trapframe现场 + 系统调用返回 | 宿主状态模型/EBADF，Release/ASan/UBSan通过；xv6源码已读 | commit、xv6/QEMU/Linux/板端待验；[记录](2026-10-01/verification.json) |
 | [2026-10-03](2026-10-03/README.md) | 06：walk多级索引 + 映射权限与解除映射 | C++17 Release/ASan/UBSan，手算地址、1025跨叶映射与失败边界通过；本地PDF页5勘误核实 | xv6/QEMU/Linux/板端与精确commit待验；[记录](2026-10-03/verification.json) |
 
-下一课：**15 FD/file/inode与引用寿命**。
+下一课：**16 块缓存与并发访问**。
 
 2026-10-09：[第12课：可运行/运行/睡眠状态与上下文切换](2026-10-09/README.md)。Mac 状态模型通过；xv6 源码已读，QEMU/Linux/板端未验证。
 
@@ -29,3 +29,5 @@
 2026-10-11：[第13课：管道背压与端点关闭](2026-10-11/README.md)。真实Mac pipe填满/排空65536B，EAGAIN/dup阻止EOF/最后关闭EOF/EPIPE，Release/ASan/UBSan通过；xv6/QEMU/Linux/板端待验。
 
 2026-10-12：[第14课：睡眠锁与锁顺序；真实读新版sleep_prepare调用链，C++租约20000更新/ref=0、反向锁拒绝与异常释放，Release/ASan/UBSan/TSan通过；xv6/QEMU/Linux/板端未验。](2026-10-12/README.md)
+
+2026-10-13:[第15课：FD/file/inode与名字/引用寿命。真实Mac dup偏移、rename旧句柄、unlink后读及原地写反例，Release/ASan/UBSan通过；xv6/QEMU/Linux/板端未验](2026-10-13/README.md)。

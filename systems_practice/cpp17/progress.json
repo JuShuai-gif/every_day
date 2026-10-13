@@ -2,8 +2,8 @@
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
   "created_on": "2026-09-29",
-  "last_delivery_date": "2026-10-12",
-  "next_lesson_id": "14",
+  "last_delivery_date": "2026-10-13",
+  "next_lesson_id": "15",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -17,7 +17,8 @@
     "10",
     "11",
     "12",
-    "13"
+    "13",
+    "14"
   ],
   "history": [
     {
@@ -212,6 +213,20 @@
       "target_board_verified": false,
       "verification": "2026-10-12/verification.json",
       "expected_compile_failures_verified": 2
+    },
+    {
+      "date": "2026-10-13",
+      "lesson_id": "14",
+      "path": "2026-10-13",
+      "source_read": true,
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "version_pinned": false,
+      "verification": "2026-10-13/verification.json"
     }
   ],
   "backlog": [
@@ -271,7 +286,13 @@
       "kind": "target_validation",
       "reason": "Host lesson delivered; Linux/target board validation pending",
       "verification": "2026-10-12/verification.json"
+    },
+    {
+      "date": "2026-10-13",
+      "lesson_id": "14",
+      "reason": "Exact upstream commit and Linux/target board pending",
+      "verification": "2026-10-13/verification.json"
     }
   ],
-  "last_canonical_lesson_date": "2026-10-12"
+  "last_canonical_lesson_date": "2026-10-13"
 }

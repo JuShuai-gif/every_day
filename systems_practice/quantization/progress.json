@@ -1,11 +1,12 @@
 {
   "schema_version": 1,
-  "next_method_id": "hqq",
-  "last_lesson_date": "2026-10-12",
+  "next_method_id": "omniquant",
+  "last_lesson_date": "2026-10-13",
   "completed_methods": [
     "awq",
     "adaround",
-    "autoround"
+    "autoround",
+    "hqq"
   ],
   "history": [
     {
@@ -391,6 +392,21 @@
       "thor_verified": false,
       "counts_toward_daily_progress": true,
       "status": "source/read/example delivered; native runtime and Thor pending"
+    },
+    {
+      "date": "2026-10-13",
+      "method": "hqq",
+      "commit": "d88a488ec8aa2d58362ef2038a52bca862db2e74",
+      "focus": "Second rotation: proximal zero optimization, group32/64 packing and native Linear reload",
+      "lesson": "2026-10-13/hqq/README.md",
+      "verification": "2026-10-13/hqq/verification.json",
+      "source_fetched": true,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "counts_toward_daily_progress": true,
+      "status": "source/read/example delivered; native torch and Thor pending"
     }
   ],
   "backlog": [
@@ -468,7 +484,10 @@
       "source_read": true,
       "example_delivered": true,
       "cpu_example_run": false,
-      "thor_verified": false
+      "thor_verified": false,
+      "latest_source_fetched": true,
+      "latest_source_evidence": "2026-10-13/hqq/omniquant-retry.json",
+      "remaining": "Implementation/example/runtime checks remain as previously recorded; this retry only obtains source"
     },
     {
       "method": "omniquant",
@@ -481,7 +500,10 @@
       "source_read": true,
       "example_delivered": true,
       "cpu_example_run": false,
-      "thor_verified": false
+      "thor_verified": false,
+      "latest_source_fetched": true,
+      "latest_source_evidence": "2026-10-13/hqq/omniquant-retry.json",
+      "remaining": "Implementation/example/runtime checks remain as previously recorded; this retry only obtains source"
     },
     {
       "method": "quarot",
@@ -695,12 +717,28 @@
       "counts_toward_daily_progress": true,
       "status": "source/read/example delivered; native runtime and Thor pending",
       "reason": "System Python3.9 too old; bundled Python3.12 lacks torch/auto_round; native numbers/packing and Thor backend unverified"
+    },
+    {
+      "date": "2026-10-13",
+      "method": "hqq",
+      "commit": "d88a488ec8aa2d58362ef2038a52bca862db2e74",
+      "focus": "Second rotation: proximal zero optimization, group32/64 packing and native Linear reload",
+      "lesson": "2026-10-13/hqq/README.md",
+      "verification": "2026-10-13/hqq/verification.json",
+      "source_fetched": true,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "counts_toward_daily_progress": true,
+      "status": "source/read/example delivered; native torch and Thor pending",
+      "reason": "Native torch absent; real packing/error/timing and Thor backend not executed"
     }
   ],
   "policy": "One quantization lesson per Asia/Shanghai calendar day, independent of main rotation. Preparation does not advance cursor. Daily attempted lessons may advance cursor but failures stay in backlog and never enter completed_methods. Completion requires source read and concrete upstream usage example delivered; execution evidence tracked separately.",
   "last_language_audit": "2026-09-22T10:43:01.386131+08:00",
   "language_policy": "Torch-first for algorithms/models/precision/framework timing; C++ optional for explicit layout/CPU kernel studies",
-  "last_canonical_lesson_date": "2026-10-12",
+  "last_canonical_lesson_date": "2026-10-13",
   "backfill_reconciled_at": "2026-09-28T05:01:42.754872+00:00",
   "reconciliation_note": "2026-10-02 concurrent Oct1 registration corrected: calibration draft retained as supplemental; QAT canonical. One old backlog retry AWQ only. Earlier backfill history preserved.",
   "retry_history": [
@@ -752,6 +790,13 @@
       "source_fetched": true,
       "result": "One old backlog retry fetched d88a488ec8aa2d58362ef2038a52bca862db2e74; no new read/run claim; no HQQ cursor advance",
       "evidence": "2026-10-12/autoround/results/hqq-retry.json"
+    },
+    {
+      "date": "2026-10-13",
+      "method": "omniquant",
+      "source_fetched": true,
+      "result": "One old backlog retry fetched feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14; acquisition only, no new reading/runtime/cursor claim",
+      "evidence": "2026-10-13/hqq/omniquant-retry.json"
     }
   ],
   "next_cycle_note": "Second rotation: choose a new AWQ design point; preserve unresolved prior backlog and retry at most one old item."

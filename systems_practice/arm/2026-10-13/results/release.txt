@@ -1,0 +1,38 @@
+cacheline query unavailable; no assumed universal size
+stride=8 workers=1 mode=0 addresses 0x102df1500
+packed CPU batch ms p50=0.178792 pmax=0.181333
+stride=64 workers=1 mode=0 addresses 0xa79000200
+pad64 CPU batch ms p50=0.179 pmax=0.182917
+stride=128 workers=1 mode=0 addresses 0xa79004000
+pad128 CPU batch ms p50=0.179958 pmax=0.180833
+stride=256 workers=1 mode=0 addresses 0xa79008000
+pad256 CPU batch ms p50=0.178209 pmax=0.183459
+stride=128 workers=1 mode=1 addresses 0xa79004000
+true_shared CPU batch ms p50=0.179667 pmax=0.183333
+stride=128 workers=1 mode=2 addresses 0xa79004000
+local CPU batch ms p50=0.017292 pmax=0.023166
+stride=8 workers=2 mode=0 addresses 0x102df1500 0x102df1508
+packed CPU batch ms p50=1.09662 pmax=1.21825
+stride=64 workers=2 mode=0 addresses 0xa79004000 0xa79004040
+pad64 CPU batch ms p50=0.193875 pmax=0.196
+stride=128 workers=2 mode=0 addresses 0xa79008000 0xa79008080
+pad128 CPU batch ms p50=0.193542 pmax=0.194625
+stride=256 workers=2 mode=0 addresses 0xa78c08000 0xa78c08100
+pad256 CPU batch ms p50=0.194084 pmax=0.194625
+stride=128 workers=2 mode=1 addresses 0xa79008000 0xa79008080
+true_shared CPU batch ms p50=1.16183 pmax=1.16625
+stride=128 workers=2 mode=2 addresses 0xa79008000 0xa79008080
+local CPU batch ms p50=0.025958 pmax=0.040042
+stride=8 workers=4 mode=0 addresses 0x102df1500 0x102df1508 0x102df1510 0x102df1518
+packed CPU batch ms p50=3.72083 pmax=5.09846
+stride=64 workers=4 mode=0 addresses 0xa79008000 0xa79008040 0xa79008080 0xa790080c0
+pad64 CPU batch ms p50=0.358708 pmax=0.379625
+stride=128 workers=4 mode=0 addresses 0xa78c08000 0xa78c08080 0xa78c08100 0xa78c08180
+pad128 CPU batch ms p50=0.232458 pmax=0.235125
+stride=256 workers=4 mode=0 addresses 0xa7901c000 0xa7901c100 0xa7901c200 0xa7901c300
+pad256 CPU batch ms p50=0.232167 pmax=0.234541
+stride=128 workers=4 mode=1 addresses 0xa78c08000 0xa78c08080 0xa78c08100 0xa78c08180
+true_shared CPU batch ms p50=3.97067 pmax=5.019
+stride=128 workers=4 mode=2 addresses 0xa78c08000 0xa78c08080 0xa78c08100 0xa78c08180
+local CPU batch ms p50=0.030375 pmax=0.045458
+PASS 216 batches totals verified; zero worker rejected

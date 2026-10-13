@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-13",
+  "recorded_at": "2026-10-13T09:26:40.783341+08:00",
+  "source_read": true,
+  "lesson_delivered": true,
+  "host_compile": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "target_board_verified": false,
+  "evidence": [
+    "results/verified-cpu.txt",
+    "results/verified-sanitize.txt"
+  ],
+  "target": "Thor SM110",
+  "comparison_architecture": "Ada SM89 (theory only)",
+  "source_tag": "CUTLASS v4.2.1",
+  "host_checks": {
+    "shapes": 216,
+    "invalid": 3,
+    "stale_tile_detected": 1
+  },
+  "cuda_compiled": false,
+  "cuda_run": false,
+  "ncu_run": false,
+  "ptx_generated": false,
+  "sass_generated": false,
+  "gpu_performance_measured": false,
+  "blockers": [
+    "nvcc/ncu/Thor unavailable; full JetPack/L4T/CUDA/Nsight tuple requires board verification"
+  ]
+}

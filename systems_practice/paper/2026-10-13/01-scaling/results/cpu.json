@@ -1,0 +1,9 @@
+{
+  "synthetic_holdout_max_error": 0.0,
+  "sign_changing_QA_error": 0.11176470588235292,
+  "domain_rejections": 3,
+  "chosen": "int4",
+  "fixed_int4_priority_regret": 0.0,
+  "timing": "not measured",
+  "full_model_reproduced": false
+}

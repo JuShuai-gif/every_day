@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-13",
+  "repository": "https://github.com/facebook/folly",
+  "branch": "main",
+  "commit": null,
+  "license": "Apache-2.0",
+  "source_read": true,
+  "relationship": "independent host teaching implementation",
+  "files": [
+    {
+      "path": "folly/container/Foreach.h",
+      "symbols": [
+        "for_each"
+      ],
+      "url": "https://github.com/facebook/folly/blob/main/folly/container/Foreach.h",
+      "sha256": "9c57bb8cc7903e8c8cfc5ef20a9ea1148d9606686e502b81ff99290c266c4fe0"
+    },
+    {
+      "path": "folly/container/Foreach-inl.h",
+      "symbols": [
+        "for_each_tuple_impl",
+        "invoke_returning_loop_control"
+      ],
+      "url": "https://github.com/facebook/folly/blob/main/folly/container/Foreach-inl.h",
+      "sha256": "c6b53f747d24b1bbddbfe4e5cd00ba038658eb4cebc3ee91ab2df6b2b20c636a"
+    }
+  ],
+  "research": "Google combined search page fetched; Zhihu combined search no adopted original author article. Actual GitHub implementation read."
+}

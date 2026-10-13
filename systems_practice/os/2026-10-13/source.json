@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-13",
+  "repository": "https://github.com/mit-pdos/xv6-riscv",
+  "branch": "riscv",
+  "commit": null,
+  "license": "MIT",
+  "source_read": true,
+  "relationship": "independent host teaching implementation",
+  "files": [
+    {
+      "path": "kernel/file.c",
+      "symbols": [
+        "filedup",
+        "fileclose",
+        "fileread"
+      ],
+      "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/file.c",
+      "sha256": "b31fe01b67f97c8e00c36150cf16ec0ea7d27d2f324b6066d0f62eeddff4a4ac"
+    },
+    {
+      "path": "kernel/fs.c",
+      "symbols": [
+        "iput",
+        "ifree"
+      ],
+      "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/fs.c",
+      "sha256": "eb2cab16ab4eac8059e022e5c009c14d12fc35b720dd63e147270a1dbc50eed6"
+    },
+    {
+      "path": "kernel/sysfile.c",
+      "symbols": [
+        "sys_unlink"
+      ],
+      "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/sysfile.c",
+      "sha256": "5e18c50913ebc5c007b06bec86511d93b46d0361fac75291c8456867a7fd0b29"
+    }
+  ],
+  "research": "Google combined search page fetched; Zhihu combined search no adopted original author article. Actual GitHub implementation read."
+}

@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-13",
+  "repository": "https://github.com/NVIDIA/cutlass",
+  "tag": "v4.2.1",
+  "license": "BSD-3-Clause",
+  "source_read": true,
+  "relationship": "independent implementation inspired by zero-fill and producer/consumer synchronization",
+  "files": [
+    {
+      "path": "include/cutlass/arch/memory_sm80.h",
+      "symbols": [
+        "cp_async_zfill"
+      ],
+      "sha256": "ac539b45732761f7d41edb7e6b7e35ccf0d552a323056c244f7d3ad845d41411",
+      "permalink": "https://github.com/NVIDIA/cutlass/blob/v4.2.1/include/cutlass/arch/memory_sm80.h"
+    },
+    {
+      "path": "include/cutlass/gemm/threadblock/mma_multistage.h",
+      "symbols": [
+        "prologue",
+        "gmem_wait"
+      ],
+      "sha256": "3f89e410ca96b06e4a56ba19f90399e8fdd2744a28c45d458a60940708b4171b",
+      "permalink": "https://github.com/NVIDIA/cutlass/blob/v4.2.1/include/cutlass/gemm/threadblock/mma_multistage.h"
+    },
+    {
+      "path": "LICENSE.txt",
+      "symbols": [],
+      "sha256": "80a7a18b73d41f64dd9ca881af35938f8de88b18c728703251f4c94d1299884d",
+      "permalink": "https://github.com/NVIDIA/cutlass/blob/v4.2.1/LICENSE.txt"
+    }
+  ],
+  "web_queries": [
+    "CUTLASS cp_async_zfill src_size",
+    "site:zhihu.com CUTLASS cp.async HQQ 伪共享 fold expression inode"
+  ],
+  "google_attempt": "Google search HTML fetched; no independently vetted original author case adopted",
+  "zhihu": "Search discovered cp.async explanation; not used as authoritative source; all technical claims checked against CUTLASS/PTX",
+  "toolchain": "Thor official setup CUDA13 driver/runtime cc11.0 read; complete local JetPack/L4T/ncu tuple unverified"
+}

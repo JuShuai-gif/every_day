@@ -1,0 +1,16 @@
+{
+  "dense_calibration_scale": 1.2230096989676187,
+  "retained_calibration_scale": 1.125328396516977,
+  "heldout_retained_mse": {
+    "dense": 0.24491047670365776,
+    "retained": 0.27211906158336907
+  },
+  "shifted_retained_mse": {
+    "dense": 0.1514811329450056,
+    "retained": 0.12028041209245448
+  },
+  "changed_support_samples": 15,
+  "boundary": "budgets 0,10,11 + no mutation pass",
+  "packed_storage": false,
+  "training_updates": 0
+}

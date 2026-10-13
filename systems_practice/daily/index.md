@@ -14,7 +14,7 @@
 
 2026-09-18 扩展为 **12 个方向**：新增“量化 GEMM”，涵盖 W4A4/W4A16/W8A8/W8A16、SmoothQuant、离群处理、校准缩放与 QAT，代码目标仍为 Thor SM110。
 
-2026-09-18 起另设 **每日量化方法**：每天在主知识点之外讲一个方法，拉取源仓库、阅读实际实现并给出完整使用示例及量化前后比较。独立轮换见 [量化栏目索引](../quantization/index.md)，下一方法 **Block-scaled FP4**。该栏目不取代 12 个主方向，源码获取/阅读/示例运行分别记录。
+2026-09-18 起另设 **每日量化方法**：每天在主知识点之外讲一个方法，拉取源仓库、阅读实际实现并给出完整使用示例及量化前后比较。独立轮换见 [量化栏目索引](../quantization/index.md)，下一方法 **OmniQuant**。该栏目不取代 12 个主方向，源码获取/阅读/示例运行分别记录。
 
 2026-09-21 起新增 **每日两篇论文**：[paper 栏目](../docs/paper/README.md) · [历史索引](../paper/index.md) · [本期两篇](../paper/2026-10-05/README.md)。覆盖剪枝、量化、模型压缩和边缘部署，包含核心思想、复现难度、简单代码及真实验证记录；优先近 180 天首发，独立去重。
 
@@ -45,7 +45,7 @@
 
 | [2026-10-04](2026-10-04/README.md) | C++17 并发 | 有界提交＋关闭排空/在途资源寿命；[KIVI](../quantization/2026-10-04/kivi/README.md) · [ARM12](../arm/2026-10-04/README.md) · [OS07](../os/2026-10-04/README.md) · [C++06](../cpp17/2026-10-04/README.md) · [HOPE/D-Quant](../paper/2026-10-04/README.md) | [线程池](2026-10-04/src/pool.hpp)与[检查](2026-10-04/src/main.cpp) | Release/ASan/UBSan/TSan通过，800任务、启动失败/异常/关闭；量化原生缺checkout/torch，Thor缺工具设备 | 主课不测推理性能；ARM独立CPU direct/pack+SoA P50 13.3386/34.8229us；[记录](2026-10-04/verification.json) |
 
-下一主主题：**PTX / CUTLASS**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
+下一主主题：**量化 GEMM**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
 
 `2026-09-14` 为用户要求补充的历史 C++ 练习，不改变当前轮换位置。
 
@@ -72,3 +72,5 @@
 | [2026-10-11](2026-10-11/README.md) | TensorRT | 动态shape合同与异步缓冲区寿命；[AdaRound](../quantization/2026-10-11/adaround/README.md) · [ARM18](../arm/2026-10-11/README.md) · [OS13](../os/2026-10-11/README.md) · [CPP12](../cpp17/2026-10-11/README.md) · [WRP/TOGA](../paper/2026-10-11/README.md) | [TRT](2026-10-11/src/trt.cpp) / [CUDA基线与融合](2026-10-11/src/kernels.cu) | CPU24 shape/5拒绝、ASan/UBSan通过；Thor SM110编译/运行/ncu/ISA未验，理论对照Hopper | 无GPU收益；[记录](2026-10-11/verification.json) |
 
 | [2026-10-12](2026-10-12/README.md) | RK3588 NPU / RKNN | 相机行跨度与单次归一化；[AutoRound](../quantization/2026-10-12/autoround/README.md) · [ARM19](../arm/2026-10-12/README.md) · [OS14](../os/2026-10-12/README.md) · [CPP13](../cpp17/2026-10-12/README.md) · [RAZOR/CoRePrune](../paper/2026-10-12/README.md) | [输入合同](2026-10-12/src/input.hpp) / [RKNN](2026-10-12/src/rknn.cpp) | CPU45 shape/5拒绝、ASan/UBSan通过；官方RKNN头文件语法检查通过；ONNX/转换/板端未验 | 无CPU性能/NPU/GPU/E2E数字；[验证](2026-10-12/verification.json)。今日无CUDA kernel，GPU对照游标仍Hopper |
+
+| [2026-10-13](2026-10-13/README.md) | PTX / CUTLASS | 尾块补零与CTA可见性；[HQQ](../quantization/2026-10-13/hqq/README.md) · [ARM20](../arm/2026-10-13/README.md) · [OS15](../os/2026-10-13/README.md) · [CPP14](../cpp17/2026-10-13/README.md) · [Scaling-Down/P4Q](../paper/2026-10-13/README.md) | [Thor基线/async候选](2026-10-13/src/gemm.cu) | CPU216 shape/3拒绝/脏槽反例、ASan/UBSan通过；CUDA/ncu/PTX/SASS未验；理论对照Ada | 无GPU/NPU/E2E实测；[验证](2026-10-13/verification.json)。ARM4线程CPU整批P50 packed1.19892/pad128 0.210459ms，非GPU |

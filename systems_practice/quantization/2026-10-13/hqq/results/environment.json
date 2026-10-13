@@ -1,0 +1,7 @@
+{
+  "python": "3.9.6",
+  "torch_present": false,
+  "static_syntax": "ast.parse passed",
+  "native_run": "ModuleNotFoundError torch",
+  "time": "2026-10-13T09:12:46.930766+08:00"
+}

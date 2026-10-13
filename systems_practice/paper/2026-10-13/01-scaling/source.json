@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-13",
+  "arxiv": "2610.02462",
+  "title": "Capability Scaling-Down Laws for LLM Compression",
+  "authors": [
+    "Xueqi Cheng",
+    "Liang Wu",
+    "Kelly Wan",
+    "Liangjie Hong",
+    "Yushun Dong"
+  ],
+  "first_submitted": "2026-10-01",
+  "version": "v1",
+  "publication_status": "preprint; peer review acceptance not verified",
+  "primary_fulltext": "https://arxiv.org/html/2610.02462v1",
+  "read_scope": "sections 2,4,5 tables1/2,6",
+  "relationship": "independent standard-library mechanism example; no full-model reproduction",
+  "repository": "https://github.com/nokia-applied-research/Scaling_down_law",
+  "previous_url": "https://github.com/LabRAI/scaling_down_law",
+  "commit": "e5b1243c98d8fa016303b9cfcad1f6748db0e6ad",
+  "read_file": "analysis/final_rule.py",
+  "symbols": [
+    "channel_delta",
+    "predict"
+  ],
+  "sha256": "5387d516af3c13963148bce93ec77d3a18cb4efec6f131637e52f83b5770d950",
+  "license": "paper CC-BY4.0; code LICENSE absent in tree, HTTP404; no source copied",
+  "author_source_read": true
+}

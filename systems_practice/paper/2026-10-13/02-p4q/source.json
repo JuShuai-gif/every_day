@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-13",
+  "arxiv": "2609.34867",
+  "title": "P4Q: Co-designing Token Pruning and Quantization for Vision-Language Model Acceleration",
+  "authors": [
+    "Haizhao Jing",
+    "Zhenhao Shang",
+    "Haokui Zhang",
+    "Rong Xiao",
+    "Peng Wang"
+  ],
+  "first_submitted": "2026-09-28",
+  "version": "v1",
+  "publication_status": "preprint; peer review acceptance not verified",
+  "primary_fulltext": "https://arxiv.org/html/2609.34867v1",
+  "read_scope": "sections 3.1-3.3 and4.1, tables1/2",
+  "relationship": "independent standard-library mechanism example; no full-model reproduction",
+  "repository": null,
+  "author_source_read": false,
+  "attempts": [
+    "fulltext GitHub links search",
+    "P4Q Haizhao github web search"
+  ],
+  "blockers": [
+    "Official implementation and dependency versions not verified"
+  ],
+  "license": "arXiv perpetual non-exclusive paper distribution; code unknown"
+}

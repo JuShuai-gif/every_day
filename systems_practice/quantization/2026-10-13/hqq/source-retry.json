@@ -1,0 +1,64 @@
+{
+  "method": "hqq",
+  "repository": "https://github.com/dropbox/hqq.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-10-13T01:05:27.936968+00:00",
+  "commit": "d88a488ec8aa2d58362ef2038a52bca862db2e74",
+  "cache": ".tmp/quant_sources/hqq-u5w716a6",
+  "status": "fetched",
+  "source_read": false,
+  "example_run": false,
+  "files": [
+    {
+      "path": "Readme.md",
+      "bytes": 11926,
+      "sha256": "c22238c84ea223612cf49a54bad58b541b1eac837658f7ec863068a65c3797d6",
+      "local_source": ".tmp/quant_sources/hqq-u5w716a6/source/Readme.md",
+      "permalink": "https://github.com/dropbox/hqq/blob/d88a488ec8aa2d58362ef2038a52bca862db2e74/Readme.md"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11360,
+      "sha256": "2d0157263453efd7eb4c4f996a8ed8051ea72ddce9057c2520a0e45d776dde35",
+      "local_source": ".tmp/quant_sources/hqq-u5w716a6/source/LICENSE",
+      "permalink": "https://github.com/dropbox/hqq/blob/d88a488ec8aa2d58362ef2038a52bca862db2e74/LICENSE"
+    },
+    {
+      "path": "setup.py",
+      "bytes": 1803,
+      "sha256": "9c6bdd4f81fd8ee44f33ef2c62ca1d007d1613bbe4a84ab5d22fe3a2583f92f5",
+      "local_source": ".tmp/quant_sources/hqq-u5w716a6/source/setup.py",
+      "permalink": "https://github.com/dropbox/hqq/blob/d88a488ec8aa2d58362ef2038a52bca862db2e74/setup.py"
+    },
+    {
+      "path": "hqq/core/quantize.py",
+      "bytes": 38950,
+      "sha256": "a76a054ba4382d9552f563c468296771cddf53dcd9f4ce6655f94fe18e653daa",
+      "local_source": ".tmp/quant_sources/hqq-u5w716a6/source/hqq/core/quantize.py",
+      "permalink": "https://github.com/dropbox/hqq/blob/d88a488ec8aa2d58362ef2038a52bca862db2e74/hqq/core/quantize.py"
+    },
+    {
+      "path": "hqq/core/optimize.py",
+      "bytes": 14990,
+      "sha256": "c3cadc3332d0c0ae172f347cb244ccc126ebae861160ad0dcab8e76dd4915a64",
+      "local_source": ".tmp/quant_sources/hqq-u5w716a6/source/hqq/core/optimize.py",
+      "permalink": "https://github.com/dropbox/hqq/blob/d88a488ec8aa2d58362ef2038a52bca862db2e74/hqq/core/optimize.py"
+    },
+    {
+      "path": "hqq/core/bitpack.py",
+      "bytes": 5179,
+      "sha256": "19499f1c72e5f2422e7c90d83ab370e006bbbbad0ede3020b7e356688d99fca8",
+      "local_source": ".tmp/quant_sources/hqq-u5w716a6/source/hqq/core/bitpack.py",
+      "permalink": "https://github.com/dropbox/hqq/blob/d88a488ec8aa2d58362ef2038a52bca862db2e74/hqq/core/bitpack.py"
+    },
+    {
+      "path": "hqq/core/utils.py",
+      "bytes": 1926,
+      "sha256": "808316e4337f6a6305b97844c729a5b70a072052ae5c1c69b793834a143fdf60",
+      "local_source": ".tmp/quant_sources/hqq-u5w716a6/source/hqq/core/utils.py",
+      "permalink": "https://github.com/dropbox/hqq/blob/d88a488ec8aa2d58362ef2038a52bca862db2e74/hqq/core/utils.py"
+    }
+  ],
+  "errors": [],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example."
+}

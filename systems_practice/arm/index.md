@@ -17,7 +17,7 @@
 | [2026-10-03](2026-10-03/README.md) | 11 | NEON多累加器、依赖与寄存器压力 | Mac Release/ASan/UBSan、3081+9数值对照通过，真实汇编；N65539四链P50 3.7900us；板端未验 |
 
 
-下一课：**20 真共享与伪共享**。
+下一课：**21 大小核、线程池与任务粒度**。
 
 2026-10-09：[第17课：带宽瓶颈与预取适用条件](2026-10-09/README.md)。Mac C++17 通过 4097 元素和空输入；AArch64 `prfm`、PMU、RK3588/Thor 板端性能未验证。
 
@@ -65,3 +65,5 @@
 2026-10-11：[第18课：页跨度与依赖LDR](2026-10-11/README.md)。Release/ASan/UBSan通过8环/零拒绝；宿主16KiB页、真实A64汇编；4096节点64B/page步幅P50=3.18686/30.2445ns/load，仅CPU批均值，TLB PMU与板端未验。
 
 2026-10-12：[第19课：发布/复用双向同步与LSE；seq_cst/acquire-release 20002传输、负数拒绝、1000 RMW，Release/ASan/UBSan/TSan通过。实际Mac LDAPR/STLR/LDADD及Linux编译探针LDAR/LL-SC/LSE；板端未验，无性能数字。](2026-10-12/README.md)
+
+2026-10-13:[第20课：多核计数与伪共享。216整批/零worker、Release/ASan/UBSan/TSan通过，真实LDADD；4线程CPU整批P50 packed1.19892/pad128 0.210459ms，PMU/cacheline因果/板端未验](2026-10-13/README.md)。
