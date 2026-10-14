@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-14",
+  "id": "arxiv:2610.06026",
+  "title": "Differentiable Bit-Widths: Co-optimizing Pruning and Quantization via SVD for Ultra-Efficient LLM Compression",
+  "authors": [
+    "Hankyul Kang",
+    "Jongbin Ryu"
+  ],
+  "version": "v1",
+  "first_submitted": "2026-10-05",
+  "primary_fulltext": "https://arxiv.org/html/2610.06026v1",
+  "sections_read": [
+    "methods",
+    "experiments",
+    "selected results tables",
+    "limitations/discussion"
+  ],
+  "repository": "https://github.com/MMAI-Laboratory/DBW",
+  "commit": "a45f26e1d153ab6bc64dd27d056a3710a33f2e7a",
+  "license": null,
+  "files": [
+    {
+      "path": "dbw/fake_dbw.py",
+      "sha256": "6253bff6916267215cd5b3f42a94625371dd2443d5fa0ac10dbe49d847225809",
+      "permalink": "https://github.com/MMAI-Laboratory/DBW/blob/a45f26e1d153ab6bc64dd27d056a3710a33f2e7a/dbw/fake_dbw.py"
+    },
+    {
+      "path": "dbw/utils/quantize.py",
+      "sha256": "2f4b77b3f1bafea3b8a8b51fbf58430363f05b34aa08952f8a15b795350aaaf2",
+      "permalink": "https://github.com/MMAI-Laboratory/DBW/blob/a45f26e1d153ab6bc64dd27d056a3710a33f2e7a/dbw/utils/quantize.py"
+    }
+  ],
+  "relationship": "Independent standard-library illustration, not full author reproduction",
+  "blockers": [
+    "full model/data/device reproduction pending",
+    "LICENSE URL 404; tree contains no license path"
+  ]
+}

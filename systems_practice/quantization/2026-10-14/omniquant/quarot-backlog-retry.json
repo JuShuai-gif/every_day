@@ -1,0 +1,43 @@
+{
+  "method": "quarot",
+  "repository": "https://github.com/spcl/QuaRot.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-10-14T01:06:03.505339+00:00",
+  "commit": "5008669b08c1f11f9b64d52d16fddd47ca754c5a",
+  "cache": ".tmp/quant_sources/quarot-19ch2l08",
+  "status": "fetched",
+  "source_read": false,
+  "example_run": false,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1902,
+      "sha256": "80dcfe302a575a913c4eab8b82533ab55adf3bcbb9b17b61d6186f3f27207dcc",
+      "local_source": ".tmp/quant_sources/quarot-19ch2l08/source/README.md",
+      "permalink": "https://github.com/spcl/QuaRot/blob/5008669b08c1f11f9b64d52d16fddd47ca754c5a/README.md"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "local_source": ".tmp/quant_sources/quarot-19ch2l08/source/LICENSE",
+      "permalink": "https://github.com/spcl/QuaRot/blob/5008669b08c1f11f9b64d52d16fddd47ca754c5a/LICENSE"
+    },
+    {
+      "path": "fake_quant/rotation_utils.py",
+      "bytes": 13599,
+      "sha256": "e1d24439367b933d0f0b6c6a9ce82c79a0fcb82f6bd4d43f4086348af32d54f3",
+      "local_source": ".tmp/quant_sources/quarot-19ch2l08/source/fake_quant/rotation_utils.py",
+      "permalink": "https://github.com/spcl/QuaRot/blob/5008669b08c1f11f9b64d52d16fddd47ca754c5a/fake_quant/rotation_utils.py"
+    },
+    {
+      "path": "fake_quant/quant_utils.py",
+      "bytes": 14254,
+      "sha256": "de0aa3a7abf0acb6371beadae16cb7dfa5cbdb9db7e3872da41670cfa5dee57e",
+      "local_source": ".tmp/quant_sources/quarot-19ch2l08/source/fake_quant/quant_utils.py",
+      "permalink": "https://github.com/spcl/QuaRot/blob/5008669b08c1f11f9b64d52d16fddd47ca754c5a/fake_quant/quant_utils.py"
+    }
+  ],
+  "errors": [],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example."
+}

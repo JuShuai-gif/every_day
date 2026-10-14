@@ -1,0 +1,5 @@
+Command: OMNIQUANT_SOURCE=<fixed feffe8ea snapshot> PYTHON=<bundled Python3.12.14> sh run.sh
+Traceback (most recent call last):
+  File "/Users/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-14/omniquant/example.py", line 10, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'

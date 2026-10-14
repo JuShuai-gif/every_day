@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-14",
+  "repository": "https://github.com/llvm/llvm-project",
+  "ref": "llvmorg-20.1.8",
+  "source_read": true,
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "read_symbols": [
+    "vector iterator-pair constructor",
+    "C++17 iterator deduction guides"
+  ],
+  "relationship": "Independent Batch/Packet plus actual std::vector examples; Apple bundled libc++ execution",
+  "files": [
+    {
+      "path": "libcxx/include/__vector/vector.h",
+      "sha256": "2165b450d03957b8a06adcb73290979b4fb0ce4b71c44c5aec9f83cc37531f74"
+    },
+    {
+      "path": "libcxx/LICENSE.TXT",
+      "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b"
+    }
+  ]
+}

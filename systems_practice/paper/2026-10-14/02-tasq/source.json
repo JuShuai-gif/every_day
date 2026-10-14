@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-14",
+  "id": "arxiv:2610.03027",
+  "title": "Tailoring the Quantization Space for 1-Bit KV Cache Compression",
+  "authors": [
+    "Minsoo Cheong",
+    "Donghyun Son",
+    "Sungjoo Yoo"
+  ],
+  "version": "v1",
+  "first_submitted": "2026-10-02",
+  "primary_fulltext": "https://arxiv.org/html/2610.03027v1",
+  "sections_read": [
+    "methods",
+    "experiments",
+    "selected results tables",
+    "limitations/discussion"
+  ],
+  "repository": "https://github.com/mscheong01/TaSQ",
+  "commit": "28532bc03266a87c4e079e2c3da52dab257c115a",
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "path": "codebooks/make_tasq.py",
+      "sha256": "d563c1e528eb2efa6b6f8ae0a391fa2b6958852dbd80ad8aa6f739e8ce7aab62",
+      "permalink": "https://github.com/mscheong01/TaSQ/blob/28532bc03266a87c4e079e2c3da52dab257c115a/codebooks/make_tasq.py"
+    },
+    {
+      "path": "calibration/group_vq_codec.py",
+      "sha256": "d13d37306f46a1c00a651dd8a368776cebabf3b5cea86830bdaef243c9c2a2d2",
+      "permalink": "https://github.com/mscheong01/TaSQ/blob/28532bc03266a87c4e079e2c3da52dab257c115a/calibration/group_vq_codec.py"
+    }
+  ],
+  "relationship": "Independent standard-library illustration, not full author reproduction",
+  "blockers": [
+    "full model/data/device reproduction pending"
+  ]
+}

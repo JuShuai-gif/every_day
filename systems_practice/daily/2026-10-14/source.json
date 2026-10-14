@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-14",
+  "repository": "https://github.com/mit-han-lab/smoothquant",
+  "ref": "main read 2026-10-14",
+  "source_read": true,
+  "license": "MIT",
+  "read_symbols": [
+    "smooth_ln_fcs",
+    "smooth_ln_fcs_llama_like",
+    "smooth_lm"
+  ],
+  "relationship": "Independent implementation inspired by channel scaling; no upstream kernel copy",
+  "files": [
+    {
+      "path": "smoothquant/smooth.py",
+      "sha256": "74daf140e0efd00082ec536200aa1d18d7b1ca516b6aa70a3cb96439f4d4e88b"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "461e568b2ba8b2d9ab6a055746590a5bd2d030211dd751acba01cdf78511c06d"
+    }
+  ]
+}

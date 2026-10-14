@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-14",
+  "google_attempts": [
+    {
+      "url": "https://www.google.com/search?q=OmniQuant+LWC+learnable+weight+clipping",
+      "result": "web open Internal Error"
+    },
+    {
+      "url": "https://www.google.com/search?q=ncnn+set_cpu_thread_affinity+xv6+bget+C%2B%2B17+CTAD",
+      "result": "web open Internal Error"
+    }
+  ],
+  "web_search_queries": [
+    "site:zhihu.com OmniQuant LWC",
+    "site:zhihu.com ncnn 亲和性",
+    "site:zhihu.com CTAD vector",
+    "site:zhihu.com xv6 bget"
+  ],
+  "secondary_scope": "Search performed; no secondary article adopted as technical authority. Used fetched GitHub implementations and official docs.",
+  "github_fetch": [
+    {
+      "file": "smooth.py",
+      "url": "https://raw.githubusercontent.com/mit-han-lab/smoothquant/main/smoothquant/smooth.py",
+      "bytes": 6137,
+      "status": "fetched"
+    },
+    {
+      "file": "bio.c",
+      "url": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/kernel/bio.c",
+      "bytes": 3366,
+      "status": "fetched"
+    },
+    {
+      "file": "cpu.cpp",
+      "url": "https://raw.githubusercontent.com/Tencent/ncnn/master/src/cpu.cpp",
+      "bytes": 84236,
+      "status": "fetched"
+    },
+    {
+      "file": "vector.h",
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-20.1.8/libcxx/include/__vector/vector.h",
+      "bytes": 58171,
+      "status": "fetched"
+    },
+    {
+      "file": "dbw-quantize.py",
+      "url": "https://raw.githubusercontent.com/MMAI-Laboratory/DBW/a45f26e1d153ab6bc64dd27d056a3710a33f2e7a/dbw/utils/quantize.py",
+      "bytes": 5436
+    },
+    {
+      "file": "dbw-license",
+      "url": "https://raw.githubusercontent.com/MMAI-Laboratory/DBW/a45f26e1d153ab6bc64dd27d056a3710a33f2e7a/LICENSE",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "file": "dbw-fake.py",
+      "url": "https://raw.githubusercontent.com/MMAI-Laboratory/DBW/a45f26e1d153ab6bc64dd27d056a3710a33f2e7a/dbw/fake_dbw.py",
+      "bytes": 11781
+    },
+    {
+      "file": "tasq-codec.py",
+      "url": "https://raw.githubusercontent.com/mscheong01/TaSQ/28532bc03266a87c4e079e2c3da52dab257c115a/calibration/group_vq_codec.py",
+      "bytes": 13986
+    },
+    {
+      "file": "tasq-license",
+      "url": "https://raw.githubusercontent.com/mscheong01/TaSQ/28532bc03266a87c4e079e2c3da52dab257c115a/LICENSE",
+      "bytes": 11346
+    },
+    {
+      "file": "ncnn-license",
+      "url": "https://raw.githubusercontent.com/Tencent/ncnn/master/LICENSE.txt",
+      "bytes": 6427
+    },
+    {
+      "file": "xv6-license",
+      "url": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/LICENSE",
+      "bytes": 1174
+    },
+    {
+      "file": "smooth-license",
+      "url": "https://raw.githubusercontent.com/mit-han-lab/smoothquant/main/LICENSE",
+      "bytes": 1068
+    },
+    {
+      "file": "llvm-license",
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-20.1.8/libcxx/LICENSE.TXT",
+      "bytes": 16703
+    }
+  ]
+}

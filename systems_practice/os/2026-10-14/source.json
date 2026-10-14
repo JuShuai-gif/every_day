@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-14",
+  "repository": "https://github.com/mit-pdos/xv6-riscv",
+  "ref": "riscv read 2026-10-14",
+  "source_read": true,
+  "license": "MIT",
+  "read_symbols": [
+    "binit",
+    "bget",
+    "bread",
+    "bwrite",
+    "brelse",
+    "bpin",
+    "bunpin"
+  ],
+  "relationship": "Independent two-slot host cache; preserves pin-before-wait, omits disk/LRU/journal",
+  "files": [
+    {
+      "path": "kernel/bio.c",
+      "sha256": "5a0dcfd6266635ba55eaa32611d9e274e3f752402ec0964661bef7a954bd8108"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "677302f30c9882c1f81b9be8ceda6efd4edff5576b9e02963b6114cf70c3162c"
+    }
+  ]
+}

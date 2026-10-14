@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-14",
+  "source_read": true,
+  "host_compiled": true,
+  "host_run": true,
+  "release": true,
+  "asan_ubsan": true,
+  "thor_verified": false,
+  "linux_run": false,
+  "target_board_verified": false,
+  "evidence": [
+    "results/release.txt",
+    "results/sanitize.txt",
+    "results/experiment.json",
+    "results/format.txt",
+    "results/toolchain.json",
+    "results/rejections.json"
+  ],
+  "compiler": "Apple clang 21.0.0; C++17",
+  "run_time": "2026-10-14T09:17:10.596107+08:00",
+  "numpy_experiment_run": true,
+  "numpy": "2.3.5",
+  "fixture_count": 28,
+  "qat_actual_updates": true,
+  "cuda_compiled": false,
+  "cuda_run": false,
+  "ncu_run": false,
+  "ptx_generated": false,
+  "sass_generated": false,
+  "architecture_comparison": "Turing SM75 theoretical only",
+  "cuda_target": "sm_110",
+  "blockers": [
+    "Mac has no nvcc/ncu/NVIDIA GPU; full JetPack/L4T/driver/ncu tuple pending"
+  ],
+  "fixture_parser_rejections": 3
+}

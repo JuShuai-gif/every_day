@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-14",
+  "source_read": true,
+  "host_compiled": true,
+  "host_run": true,
+  "release": true,
+  "asan_ubsan": true,
+  "thor_verified": false,
+  "linux_run": false,
+  "target_board_verified": false,
+  "evidence": [
+    "results/release.txt",
+    "results/sanitize.txt",
+    "results/negative.txt"
+  ],
+  "compiler": "Apple clang 21.0.0; C++17",
+  "run_time": "2026-10-14T09:17:10.597076+08:00",
+  "expected_compile_rejection": true,
+  "version_pinned": true
+}

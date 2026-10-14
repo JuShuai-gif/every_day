@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-14",
+  "source_read": true,
+  "host_compiled": true,
+  "host_run": true,
+  "release": true,
+  "asan_ubsan": true,
+  "thor_verified": false,
+  "linux_run": false,
+  "target_board_verified": false,
+  "evidence": [
+    "results/release.txt",
+    "results/sanitize.txt",
+    "results/tsan.txt"
+  ],
+  "compiler": "Apple clang 21.0.0; C++17",
+  "run_time": "2026-10-14T09:17:10.596682+08:00",
+  "tsan": true,
+  "xv6_compiled": false,
+  "qemu_run": false,
+  "version_pinned": false
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "case": "truncated",
+    "exit": 1,
+    "stderr": "truncated fixture\n"
+  },
+  {
+    "case": "trailing",
+    "exit": 1,
+    "stderr": "trailing fixture bytes\n"
+  },
+  {
+    "case": "bad-magic",
+    "exit": 1,
+    "stderr": "invalid fixture header\n"
+  }
+]

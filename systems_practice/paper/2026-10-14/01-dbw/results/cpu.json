@@ -1,0 +1,26 @@
+{
+  "ideal": [
+    5.1063829787234045,
+    2.269503546099291,
+    0.5673758865248227,
+    0.056737588652482275
+  ],
+  "floor_bits": [
+    5,
+    2,
+    0,
+    0
+  ],
+  "floor_sum": 7,
+  "capped_apportion": [
+    5,
+    2,
+    1,
+    0
+  ],
+  "budget": 8,
+  "discarded_diagonal_energy": 0.010000000000000002,
+  "rejected": 3,
+  "training_updates": false,
+  "gpu_run": false
+}

@@ -1,0 +1,15 @@
+systems_practice/cpp17/2026-10-14/src/main.cpp:63:11: error: no viable constructor or deduction guide for deduction of template arguments of 'Batch'
+   63 |     Batch bad(1, 2);  // 整数没有iterator_traits::value_type，必须编译失败。
+      |           ^
+systems_practice/cpp17/2026-10-14/src/main.cpp:15:3: note: candidate template ignored: couldn't infer template argument 'T'
+   15 |   Batch(It first, It last) : items(first, last) {
+      |   ^
+systems_practice/cpp17/2026-10-14/src/main.cpp:15:3: note: implicit deduction guide declared as 'template <class T, class It> Batch(It first, It last) -> Batch<T>'
+systems_practice/cpp17/2026-10-14/src/main.cpp:26:1: note: candidate template ignored: substitution failure [with It = int]: no type named 'value_type' in 'std::iterator_traits<int>'
+   26 | Batch(It, It) -> Batch<typename std::iterator_traits<It>::value_type>;
+      | ^                                                         ~~~~~~~~~~
+systems_practice/cpp17/2026-10-14/src/main.cpp:10:7: note: candidate function template not viable: requires 1 argument, but 2 were provided
+   10 | class Batch {
+      |       ^~~~~
+systems_practice/cpp17/2026-10-14/src/main.cpp:10:7: note: implicit deduction guide declared as 'template <class T> Batch(Batch<T>) -> Batch<T>'
+1 error generated.

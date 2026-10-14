@@ -1,0 +1,29 @@
+{
+  "rows": [
+    {
+      "method": "euclidean",
+      "key_mse": 1.5319025625391984,
+      "diagonal_qk_error": 19.335948304941457,
+      "shifted_query_error": 7.744647009912852,
+      "index_bytes": 16,
+      "codebook_bytes": 32,
+      "file_bytes": 48
+    },
+    {
+      "method": "query_weighted",
+      "key_mse": 4.136467033155647,
+      "diagonal_qk_error": 1.7510804450961583,
+      "shifted_query_error": 64.80857041416046,
+      "index_bytes": 16,
+      "codebook_bytes": 32,
+      "file_bytes": 48
+    }
+  ],
+  "learned_query_weights": [
+    18.387728534029904,
+    0.04124054298028968
+  ],
+  "index_bits_per_channel": 1,
+  "actual_bits_per_channel": 3.0,
+  "full_tasq_reproduction": false
+}

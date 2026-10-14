@@ -12,7 +12,7 @@
 
 每课的 README 与代码、运行脚本和结果放在一起。学习路线、栏目规则等通用说明集中在 docs/。
 
-当前入口：[2026-10-13 Thor PTX主课](daily/2026-10-13/README.md) · [HQQ](quantization/2026-10-13/hqq/README.md) · [ARM20](arm/2026-10-13/README.md) · [Scaling-Down/P4Q论文](paper/2026-10-13/README.md) · [OS15](os/2026-10-13/README.md) · [C++17第14课](cpp17/2026-10-13/README.md)。
+当前入口：[2026-10-14 量化GEMM主课](daily/2026-10-14/README.md) · [OmniQuant](quantization/2026-10-14/omniquant/README.md) · [ARM21](arm/2026-10-14/README.md) · [DBW/TaSQ论文](paper/2026-10-14/README.md) · [OS16](os/2026-10-14/README.md) · [C++17第15课](cpp17/2026-10-14/README.md)。
 
 旧规范和旧总索引文件保留为兼容导航，正文只有一份；历史日志中的旧路径保留原样。迁移对应表见 [目录说明](docs/LAYOUT.md)。
 

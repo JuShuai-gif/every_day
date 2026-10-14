@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-13T09:26:40.783341+08:00",
+  "updated_at": "2026-10-14T09:19:24.302003+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -564,6 +564,32 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2610.06026",
+      "title": "Differentiable Bit-Widths: Co-optimizing Pruning and Quantization via SVD for Ultra-Efficient LLM Compression",
+      "delivered_on": "2026-10-14",
+      "first_submitted": "2026-10-05",
+      "version_read": "v1",
+      "directory": "2026-10-14/01-dbw",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2610.03027",
+      "title": "Tailoring the Quantization Space for 1-Bit KV Cache Compression",
+      "delivered_on": "2026-10-14",
+      "first_submitted": "2026-10-02",
+      "version_read": "v1",
+      "directory": "2026-10-14/02-tasq",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
     }
   ],
   "backlog": [
@@ -800,6 +826,18 @@
       "date": "2026-10-13",
       "reason": "Author implementation not verified; full model and Thor execution pending",
       "verification": "2026-10-13/02-p4q/verification.json"
+    },
+    {
+      "id": "arxiv:2610.06026",
+      "date": "2026-10-14",
+      "reason": "Full model/Thor reproduction pending; source license unavailable",
+      "verification": "2026-10-14/01-dbw/verification.json"
+    },
+    {
+      "id": "arxiv:2610.03027",
+      "date": "2026-10-14",
+      "reason": "Full model/Thor reproduction pending",
+      "verification": "2026-10-14/02-tasq/verification.json"
     }
   ]
 }

@@ -1,0 +1,2 @@
+pinned waiter refs=3 eviction rejected
+PASS 20000 serialized updates; waiter pin; exhaustion; invalidate reuse; exception refs=0

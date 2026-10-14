@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-14",
+  "commit": "feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14",
+  "files": [
+    "README.md",
+    "LICENCE",
+    "pyproject.toml",
+    "quantize/omniquant.py",
+    "quantize/quantizer.py",
+    "quantize/int_linear.py"
+  ],
+  "symbols": [
+    "QuantLinear.__init__/forward/set_quant_state",
+    "UniformAffineQuantizer.forward/per_token_dynamic_calibration/fake_quant",
+    "round_ste",
+    "omniquant LET init / AdamW parameter groups / block reconstruction / real_quant restriction"
+  ],
+  "call_chain": "QuantLinear -> UniformAffineQuantizer dynamic ranges -> sigmoid LWC -> round_ste/clamp -> dequant -> F.linear",
+  "license": "LICENCE MIT; pyproject Apache classifier conflict retained",
+  "relationship": "Native low-level APIs; independent calibration orchestration and custom packed export; full LET/model pipeline not reproduced"
+}

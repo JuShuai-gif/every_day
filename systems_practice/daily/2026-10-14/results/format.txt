@@ -1,0 +1,2 @@
+Exact repository script + config in scoped mirror to preserve existing user edits.
+exit=0 sources=6

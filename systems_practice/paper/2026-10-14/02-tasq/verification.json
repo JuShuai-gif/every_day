@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-14",
+  "source_read": true,
+  "primary_fulltext_sections_read": true,
+  "author_selected_source_read": true,
+  "python_example_run": true,
+  "cpu_mechanism_example_verified": true,
+  "full_paper_reproduced": false,
+  "author_native_run": false,
+  "thor_verified": false,
+  "evidence": [
+    "results/cpu.json",
+    "source.json"
+  ],
+  "no_performance_claim": true
+}

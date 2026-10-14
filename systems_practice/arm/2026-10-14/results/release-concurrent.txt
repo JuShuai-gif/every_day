@@ -1,0 +1,10 @@
+workers=1 grain=1 batch_p50_us=52.208 task_queue_p50_us=26.166 task_queue_p95_us=48.167 task_exec_p50_us=0.167 migration_endpoint_changes=0 observed=0
+workers=1 grain=16 batch_p50_us=42.541 task_queue_p50_us=20.916 task_queue_p95_us=40.375 task_exec_p50_us=2.458 migration_endpoint_changes=0 observed=0
+workers=1 grain=128 batch_p50_us=41.416 task_queue_p50_us=20.5 task_queue_p95_us=41.417 task_exec_p50_us=19.333 migration_endpoint_changes=0 observed=0
+workers=2 grain=1 batch_p50_us=39.875 task_queue_p50_us=19.292 task_queue_p95_us=34.084 task_exec_p50_us=0.167 migration_endpoint_changes=0 observed=0
+workers=2 grain=16 batch_p50_us=26 task_queue_p50_us=12.917 task_queue_p95_us=22.834 task_exec_p50_us=2.458 migration_endpoint_changes=0 observed=0
+workers=2 grain=128 batch_p50_us=27.042 task_queue_p50_us=3.583 task_queue_p95_us=22.25 task_exec_p50_us=19.25 migration_endpoint_changes=0 observed=0
+workers=4 grain=1 batch_p50_us=41.375 task_queue_p50_us=17.834 task_queue_p95_us=28.917 task_exec_p50_us=0.25 migration_endpoint_changes=0 observed=0
+workers=4 grain=16 batch_p50_us=23.917 task_queue_p50_us=10.25 task_queue_p95_us=15.834 task_exec_p50_us=2.458 migration_endpoint_changes=0 observed=0
+workers=4 grain=128 batch_p50_us=25.625 task_queue_p50_us=4.166 task_queue_p95_us=8.792 task_exec_p50_us=19.25 migration_endpoint_changes=0 observed=0
+PASS 135 batches, odd row/K tails, zero-worker/grain rejected

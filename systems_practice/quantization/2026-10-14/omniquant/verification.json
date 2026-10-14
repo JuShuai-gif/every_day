@@ -1,0 +1,30 @@
+{
+  "method": "omniquant",
+  "date": "2026-10-14",
+  "repository": "https://github.com/OpenGVLab/OmniQuant.git",
+  "commit": "feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14",
+  "source_record": "source-network-retry.json",
+  "initial_failure_record": "source.json",
+  "source_fetched": true,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": [
+    "QuantLinear.__init__/forward/set_quant_state",
+    "UniformAffineQuantizer.forward/per_token_dynamic_calibration/fake_quant",
+    "round_ste",
+    "omniquant LET init / AdamW parameter groups / block reconstruction / real_quant restriction"
+  ],
+  "evidence": [
+    "source-network-retry.json",
+    "example.py",
+    "native-attempt.txt",
+    "results/native-run.txt"
+  ],
+  "blockers": [
+    "torch missing; native packing/error/timing unexecuted",
+    "AutoGPTQ/MLC Thor SM110 compatibility not audited"
+  ],
+  "license": "LICENCE MIT; pyproject Apache classifier conflict retained"
+}

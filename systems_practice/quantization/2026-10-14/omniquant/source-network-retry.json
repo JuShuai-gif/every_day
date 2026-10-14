@@ -1,0 +1,57 @@
+{
+  "method": "omniquant",
+  "repository": "https://github.com/OpenGVLab/OmniQuant.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-10-14T00:59:00.838714+00:00",
+  "commit": "feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14",
+  "cache": ".tmp/quant_sources/omniquant-j3g8gona",
+  "status": "fetched",
+  "source_read": false,
+  "example_run": false,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 11671,
+      "sha256": "c14df4109288d2182fd05fc089be9feb2cc8781d3a5927939e7208a97c106d31",
+      "local_source": ".tmp/quant_sources/omniquant-j3g8gona/source/README.md",
+      "permalink": "https://github.com/OpenGVLab/OmniQuant/blob/feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14/README.md"
+    },
+    {
+      "path": "LICENCE",
+      "bytes": 1069,
+      "sha256": "3c589d7359eeae58fb327a23d53935ca3d003043670b5074a5f5633c25022428",
+      "local_source": ".tmp/quant_sources/omniquant-j3g8gona/source/LICENCE",
+      "permalink": "https://github.com/OpenGVLab/OmniQuant/blob/feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14/LICENCE"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 1132,
+      "sha256": "ab3d8cfdc35ce9dec2f575e9fd5ea532ba4a6b2b1c5ca65c17d35cb688eece89",
+      "local_source": ".tmp/quant_sources/omniquant-j3g8gona/source/pyproject.toml",
+      "permalink": "https://github.com/OpenGVLab/OmniQuant/blob/feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14/pyproject.toml"
+    },
+    {
+      "path": "quantize/omniquant.py",
+      "bytes": 14211,
+      "sha256": "5b8b3acbfe3750ffdc81bac539a2e451a11383e86792adb7564f36df64c041fd",
+      "local_source": ".tmp/quant_sources/omniquant-j3g8gona/source/quantize/omniquant.py",
+      "permalink": "https://github.com/OpenGVLab/OmniQuant/blob/feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14/quantize/omniquant.py"
+    },
+    {
+      "path": "quantize/quantizer.py",
+      "bytes": 5651,
+      "sha256": "df933fc772b97bfee5f48d7fb3b47ab6ebea963ed282c7edea06f94ccb5829dd",
+      "local_source": ".tmp/quant_sources/omniquant-j3g8gona/source/quantize/quantizer.py",
+      "permalink": "https://github.com/OpenGVLab/OmniQuant/blob/feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14/quantize/quantizer.py"
+    },
+    {
+      "path": "quantize/int_linear.py",
+      "bytes": 2169,
+      "sha256": "88440aba24a850bfa858ea879b7ebdc4f5f594276622499eff932a3d87a59b14",
+      "local_source": ".tmp/quant_sources/omniquant-j3g8gona/source/quantize/int_linear.py",
+      "permalink": "https://github.com/OpenGVLab/OmniQuant/blob/feffe8ea87d80f7bb57b6e25e7cff9dc950fcc14/quantize/int_linear.py"
+    }
+  ],
+  "errors": [],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example."
+}
