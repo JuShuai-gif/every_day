@@ -1,0 +1,20 @@
+{
+  "g": 0.7071067811865476,
+  "trace_plain": 5.0,
+  "trace_joint": 4.0,
+  "trace_bound": 4.0,
+  "better": 755,
+  "worse": 687,
+  "equal": 79,
+  "feedback_overloads": 357,
+  "counterexample": {
+    "w": [
+      -0.95,
+      -0.95
+    ],
+    "plain_error": 0.012500000000000022,
+    "joint_error": 0.21016047348899292,
+    "feedback_overload": false
+  },
+  "scope": "fixed-grid PTQ mechanism; no QAT/model/native backend"
+}

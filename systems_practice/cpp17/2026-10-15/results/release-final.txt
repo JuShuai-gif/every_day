@@ -1,0 +1,1 @@
+PASS invoke member/data; apply empty/move-only; owned=3 borrowed=8; rejected=2 total=9

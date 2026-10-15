@@ -1,0 +1,32 @@
+{
+  "method": "quarot",
+  "date": "2026-10-15",
+  "repository": "https://github.com/spcl/QuaRot.git",
+  "commit": "5008669b08c1f11f9b64d52d16fddd47ca754c5a",
+  "source_record": "source-retry.json",
+  "source_fetched": true,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": [
+    "random_hadamard_matrix",
+    "matmul_hadU",
+    "get_hadK",
+    "ActQuantizer.configure/find_params/quantize",
+    "pack_i4/unpack_i4",
+    "rotate_model/rotate_mlp_input/rotate_mlp_output/rotate_ov_proj",
+    "register_online_rotation/online_rotate",
+    "get_cuda_arch_flags/third_party_cmake"
+  ],
+  "evidence": [
+    "source-retry.json",
+    "source-read.json",
+    "results/native-attempt.txt"
+  ],
+  "blockers": [
+    "Python3.9.6 lacks torch; native API/export/error/timing not run",
+    "setup hardcoded targets; transitive extension commits and Thor backend compatibility not verified"
+  ],
+  "gpu_performance": null
+}

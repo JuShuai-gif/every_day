@@ -1,0 +1,35 @@
+{
+  "repository": "https://github.com/NVIDIA/cuda-samples",
+  "ref": "v13.0",
+  "read_date": "2026-10-15",
+  "files": [
+    {
+      "file": "transpose.cu",
+      "url": "https://raw.githubusercontent.com/NVIDIA/cuda-samples/v13.0/Samples/6_Performance/transpose/transpose.cu",
+      "bytes": 21736,
+      "sha256": "14b15f234a54fbe3d31185e397caab40532cd76a347691af4ce840cae8f30682"
+    }
+  ],
+  "symbols_read": [
+    "transposeNaive",
+    "transposeCoalesced",
+    "transposeNoBankConflicts"
+  ],
+  "license": "BSD-3-Clause",
+  "relationship": "kernel mapping adapted with notice",
+  "source_read": true,
+  "search_attempts": [
+    {
+      "file": "google.html",
+      "url": "https://www.google.com/search?q=CUDA+transpose+bank+conflict+NEON+small+GEMM+xv6+log+invoke+apply",
+      "bytes": 92983,
+      "sha256": "5de4cc65f3db00c5272b0ad9e33557a8a615a693618f8993808021149771f207"
+    },
+    {
+      "file": "zhihu.html",
+      "url": "https://www.zhihu.com/question/667972067",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "search_scope": "Google HTML obtained, not treated as read article; Zhihu403; implementation files actually read"
+}

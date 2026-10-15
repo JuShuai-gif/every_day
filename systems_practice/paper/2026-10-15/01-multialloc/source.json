@@ -1,0 +1,73 @@
+{
+  "id": "arxiv:2610.18642",
+  "title": "MultiAlloc: Budget-Aware Precision Allocation for KV Cache Quantization",
+  "authors": [
+    "Yangchengyu Zhou",
+    "Zhiping Wu",
+    "Runchang Jiang",
+    "Dongdong Ren",
+    "Youfang Han",
+    "Wei Zhao",
+    "Dongqi Cai",
+    "Wenbin Li"
+  ],
+  "first_submitted": "2026-10-13",
+  "version": "v1",
+  "version_date": "2026-10-13",
+  "read_date": "2026-10-15",
+  "publication_status": "preprint; peer review not verified",
+  "primary_url": "https://arxiv.org/html/2610.18642v1",
+  "license": "arXiv perpetual non-exclusive for paper; no full text copied",
+  "relationship": "Independent standard-library mathematical illustration",
+  "sections_read": [
+    "4",
+    "5.1",
+    "5.2 Table1",
+    "7",
+    "Appendix A protocol selections"
+  ],
+  "author_repository": "https://github.com/RL-MIND/MultiAlloc",
+  "code_license": "MIT",
+  "source_read": {
+    "commit": "ae2451cff712224223defd701d8423ebc72d4fed",
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://raw.githubusercontent.com/RL-MIND/MultiAlloc/ae2451cff712224223defd701d8423ebc72d4fed/README.md",
+        "sha256": "791e246250c6eadb01caae39267267ce59ea0ba64818d6909bc6876f55c13898",
+        "bytes": 8416
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/RL-MIND/MultiAlloc/ae2451cff712224223defd701d8423ebc72d4fed/LICENSE",
+        "sha256": "21d318ea5b10bba4890da05dd56c2a2a581619dc669a3ce070340bfb8fce5c36",
+        "bytes": 1075
+      },
+      {
+        "path": "multialloc/allocation/joint.py",
+        "url": "https://raw.githubusercontent.com/RL-MIND/MultiAlloc/ae2451cff712224223defd701d8423ebc72d4fed/multialloc/allocation/joint.py",
+        "sha256": "d2b92740092c798c7dd50278045724ca800735b126e59f7ee5e46e1d57ae58f5",
+        "bytes": 41006
+      },
+      {
+        "path": "multialloc/allocation/layerwise.py",
+        "url": "https://raw.githubusercontent.com/RL-MIND/MultiAlloc/ae2451cff712224223defd701d8423ebc72d4fed/multialloc/allocation/layerwise.py",
+        "sha256": "d2651f8aa9b5b908ffac59dc83c9897f9786d711b6aade4bd185fca38f61b254",
+        "bytes": 2968
+      },
+      {
+        "path": "multialloc/runtime/cache.py",
+        "url": "https://raw.githubusercontent.com/RL-MIND/MultiAlloc/ae2451cff712224223defd701d8423ebc72d4fed/multialloc/runtime/cache.py",
+        "sha256": "18135a96375fde05949d617ff7ee9fcc57cbd4199790e6643b10aa1130873279",
+        "bytes": 32627
+      }
+    ]
+  },
+  "symbols_read": [
+    "allocate_memory_budget",
+    "estimate_outlier_memory_mb",
+    "estimate_layer_scale_zero_memory_mb",
+    "dynamic_split_budget selected candidate evaluation",
+    "MultiAllocKVCache selected base_dequant_cache path"
+  ]
+}

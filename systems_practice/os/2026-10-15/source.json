@@ -1,0 +1,44 @@
+{
+  "repository": "https://github.com/mit-pdos/xv6-riscv",
+  "ref": "riscv (read date plus SHA256; commit not pinned)",
+  "read_date": "2026-10-15",
+  "files": [
+    {
+      "file": "log.c",
+      "url": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/kernel/log.c",
+      "bytes": 6262,
+      "sha256": "62c1a96498b2e345f24ddf13bc81b7bdee89f845d6d8d553f07dbb43ff498f71"
+    },
+    {
+      "file": "xv6-LICENSE",
+      "url": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/LICENSE",
+      "bytes": 1174,
+      "sha256": "677302f30c9882c1f81b9be8ceda6efd4edff5576b9e02963b6114cf70c3162c"
+    }
+  ],
+  "symbols_read": [
+    "begin_op",
+    "end_op",
+    "log_write",
+    "commit",
+    "recover_from_log",
+    "install_trans"
+  ],
+  "license": "MIT",
+  "relationship": "independent inspired teaching example",
+  "source_read": true,
+  "search_attempts": [
+    {
+      "file": "google.html",
+      "url": "https://www.google.com/search?q=CUDA+transpose+bank+conflict+NEON+small+GEMM+xv6+log+invoke+apply",
+      "bytes": 92983,
+      "sha256": "5de4cc65f3db00c5272b0ad9e33557a8a615a693618f8993808021149771f207"
+    },
+    {
+      "file": "zhihu.html",
+      "url": "https://www.zhihu.com/question/667972067",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "search_scope": "Google HTML obtained, not treated as read article; Zhihu403; implementation files actually read"
+}

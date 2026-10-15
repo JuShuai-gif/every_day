@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-15",
+  "primary_sections_read": true,
+  "example_delivered": true,
+  "cpu_mechanism_example_run": true,
+  "author_native_run": false,
+  "full_paper_reproduced": false,
+  "thor_verified": false,
+  "model_downloaded": false,
+  "evidence": [
+    "results/cpu.json"
+  ],
+  "scope": "Synthetic independent mechanism only",
+  "blockers": [
+    "No full model/data/native dependency/device validation"
+  ]
+}

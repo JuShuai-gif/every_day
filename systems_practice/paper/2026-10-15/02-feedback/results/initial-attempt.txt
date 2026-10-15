@@ -1,0 +1,3 @@
+Initial run on 2026-10-15: AssertionError at example.py line37:
+assert better and worse and saturations and better+worse+equal==1521
+The fixed-rotation two-coordinate conditional optimum did not produce the requested worse-than-RTN cases. This was a mistaken test hypothesis, not an upstream defect. Revised example uses a joint rotation/feedback trace-optimal pair and finite grids; no result from the failed version is counted as passing.

@@ -1,0 +1,1 @@
+PASS CPU index model cases=98 rejections=3 bank sets=1,32 (analytical, not GPU measurement)

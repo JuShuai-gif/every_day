@@ -2,7 +2,7 @@
 
 [栏目说明](../docs/quantization/README.md) · [交付模板](../docs/quantization/LESSON_TEMPLATE.md) · [方法目录](catalog.json) · [进度](progress.json)
 
-下一方法：**QuaRot**（quarot，第二轮）。OmniQuant已读已交付，原生CPU/Thor待补。
+下一方法：**SpinQuant**（spinquant，第二轮）。QuaRot已读已交付，原生CPU/Thor待补。
 
 | 日期 | 类型 | 方法 | 源码 / 阅读 / 示例 / CPU / Thor | 证据 |
 | --- | --- | --- | --- | --- |
@@ -47,3 +47,5 @@
 2026-10-13：[HQQ第二轮：近端优化与分组打包](2026-10-13/hqq/README.md)。原仓库d88a488e实际获取并阅读，原生Quantizer/HQQLinear导出重载示例已交付；CPU因缺torch未运行，Thor未验。旧OmniQuant仅重试获取成功，不推进其课程游标。[五项状态](2026-10-13/hqq/verification.json)。
 
 2026-10-14：[OmniQuant第二轮：LWC校准优化与硬导出](2026-10-14/omniquant/README.md)。源码实际获取feffe8ea、阅读/原生API交付是；CPU缺torch未运行，Thor后端未验。主课四位宽比较与实际STE训练独立运行，不能替代OmniQuant原生状态；只重试旧QuaRot获取成功。[五项状态](2026-10-14/omniquant/verification.json)。
+
+2026-10-15：[QuaRot第二轮：在线旋转成本与i4导出](2026-10-15/quarot/README.md)。固定5008669b真实浅获取/阅读/原生API交付；CPU缺torch未运行，旧SM硬编码的Thor后端未验。SpinQuant旧待补仅重试获取，3文件成功/旧路径缺失，无阅读或运行推进。[五项状态](2026-10-15/quarot/verification.json)。

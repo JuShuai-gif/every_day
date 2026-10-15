@@ -1,0 +1,4 @@
+PASS cases=128 zero shape rejected
+M=1 N=65 K=129 CPU_batch_mean_p50_us scalar=14.3167 neon1=5.38584 neon2=5.705 pack_alloc_plus_neon2=31.4792
+M=2 N=65 K=129 CPU_batch_mean_p50_us scalar=28.6433 neon1=10.8167 neon2=7.57418 pack_alloc_plus_neon2=33.3508
+M=8 N=65 K=129 CPU_batch_mean_p50_us scalar=114.385 neon1=43.1717 neon2=30.2992 pack_alloc_plus_neon2=56.6317

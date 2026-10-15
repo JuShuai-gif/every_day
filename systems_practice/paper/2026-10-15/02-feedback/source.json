@@ -1,0 +1,29 @@
+{
+  "id": "arxiv:2610.18139",
+  "title": "Revisiting Error Feedback for Model Quantization",
+  "authors": [
+    "Wai-Yiu Keung",
+    "Chi Cui",
+    "Wing-Kin Ma",
+    "Jesús Cid-Sueiro",
+    "Hei Victor Cheng"
+  ],
+  "first_submitted": "2026-10-13",
+  "version": "v1",
+  "version_date": "2026-10-13",
+  "read_date": "2026-10-15",
+  "publication_status": "preprint; peer review not verified",
+  "primary_url": "https://arxiv.org/html/2610.18139v1",
+  "license": "arXiv perpetual non-exclusive for paper; no full text copied",
+  "relationship": "Independent standard-library mathematical illustration",
+  "sections_read": [
+    "2",
+    "3",
+    "4.1",
+    "5.1 Table2",
+    "5.2 Table3 selections"
+  ],
+  "author_repository": null,
+  "search_query": "\"Revisiting Error Feedback for Model Quantization\" github",
+  "repository_status": "No author implementation verified in paper links or search; nanoGPT is background citation, not this method"
+}

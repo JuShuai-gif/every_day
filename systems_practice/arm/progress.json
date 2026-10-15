@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
-  "last_delivery_date": "2026-10-14",
-  "next_lesson_id": "22",
+  "last_delivery_date": "2026-10-15",
+  "next_lesson_id": "23",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -24,7 +24,8 @@
     "18",
     "19",
     "20",
-    "21"
+    "21",
+    "22"
   ],
   "history": [
     {
@@ -420,6 +421,23 @@
       "cpu_performance_measured": true,
       "affinity_board_verified": false,
       "migration_host_observed": false
+    },
+    {
+      "date": "2026-10-15",
+      "lesson_id": "22",
+      "path": "2026-10-15",
+      "source_read": true,
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "version_pinned": false,
+      "verification": "2026-10-15/README.md",
+      "assembly_observed": true,
+      "compute_kernel_benchmarked": true,
+      "cpu_performance_measured": true
     }
   ],
   "backlog": [
@@ -477,6 +495,12 @@
       "lesson_id": "21",
       "reason": "Target Linux/board verification pending",
       "verification": "2026-10-14/README.md"
+    },
+    {
+      "date": "2026-10-15",
+      "lesson_id": "22",
+      "reason": "Target board validation pending",
+      "verification": "2026-10-15/README.md"
     }
   ],
   "curriculum_adjustments": [
@@ -505,5 +529,5 @@
       "reason": "User requested four working/deployment capability layers; mapped existing 28 lessons, preserved order and historical progress. Actual delivery08 advances to09 separately."
     }
   ],
-  "last_canonical_lesson_date": "2026-10-14"
+  "last_canonical_lesson_date": "2026-10-15"
 }

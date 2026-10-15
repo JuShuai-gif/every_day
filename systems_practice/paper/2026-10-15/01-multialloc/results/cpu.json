@@ -1,0 +1,33 @@
+{
+  "selected_calibration_policy": [
+    6,
+    213,
+    [
+      4,
+      2
+    ],
+    [
+      2,
+      1
+    ]
+  ],
+  "feasible_candidates": 28,
+  "shift_score_of_frozen_policy": 23,
+  "shift_oracle_only_for_diagnosis": [
+    3.5,
+    213,
+    [
+      2,
+      4
+    ],
+    [
+      1,
+      2
+    ]
+  ],
+  "payload_only_bytes": 128,
+  "full_example_bytes": 260,
+  "budget_bytes": 224,
+  "infeasible_rejected": true,
+  "scope": "Analytical toy storage model and synthetic profiles; no packed KV file/model/kernel run"
+}

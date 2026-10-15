@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-15",
+  "source_read": true,
+  "version_pinned": true,
+  "host_compile": true,
+  "host_run": true,
+  "asan_ubsan_passed": true,
+  "target_board_verified": false,
+  "evidence": [
+    "results/release.txt",
+    "results/sanitize.txt"
+  ],
+  "final_after_format_evidence": [
+    "results/release-final.txt",
+    "results/sanitize-final.txt"
+  ],
+  "verified_at": "2026-10-15T09:25:30.893215+08:00"
+}

@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-15",
+  "repository": "https://github.com/spcl/QuaRot.git",
+  "commit": "5008669b08c1f11f9b64d52d16fddd47ca754c5a",
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1902,
+      "sha256": "80dcfe302a575a913c4eab8b82533ab55adf3bcbb9b17b61d6186f3f27207dcc",
+      "local_source": ".tmp/quant_sources/quarot-nlnkcd41/source/README.md",
+      "permalink": "https://github.com/spcl/QuaRot/blob/5008669b08c1f11f9b64d52d16fddd47ca754c5a/README.md"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "local_source": ".tmp/quant_sources/quarot-nlnkcd41/source/LICENSE",
+      "permalink": "https://github.com/spcl/QuaRot/blob/5008669b08c1f11f9b64d52d16fddd47ca754c5a/LICENSE"
+    },
+    {
+      "path": "fake_quant/rotation_utils.py",
+      "bytes": 13599,
+      "sha256": "e1d24439367b933d0f0b6c6a9ce82c79a0fcb82f6bd4d43f4086348af32d54f3",
+      "local_source": ".tmp/quant_sources/quarot-nlnkcd41/source/fake_quant/rotation_utils.py",
+      "permalink": "https://github.com/spcl/QuaRot/blob/5008669b08c1f11f9b64d52d16fddd47ca754c5a/fake_quant/rotation_utils.py"
+    },
+    {
+      "path": "fake_quant/quant_utils.py",
+      "bytes": 14254,
+      "sha256": "de0aa3a7abf0acb6371beadae16cb7dfa5cbdb9db7e3872da41670cfa5dee57e",
+      "local_source": ".tmp/quant_sources/quarot-nlnkcd41/source/fake_quant/quant_utils.py",
+      "permalink": "https://github.com/spcl/QuaRot/blob/5008669b08c1f11f9b64d52d16fddd47ca754c5a/fake_quant/quant_utils.py"
+    },
+    {
+      "path": "fake_quant/hadamard_utils.py",
+      "sha256": "dd3596b49fae635be59398bebb4a87ede2f0b7a72a7b461752fce799262b2d2f",
+      "bytes": 427132,
+      "permalink": "https://github.com/spcl/QuaRot/blob/5008669b08c1f11f9b64d52d16fddd47ca754c5a/fake_quant/hadamard_utils.py"
+    },
+    {
+      "path": "fake_quant/utils.py",
+      "sha256": "c5e610e0fa1bb45e2ee52a99b386222d5a84030cdae084af196b588e37175695",
+      "bytes": 12761,
+      "permalink": "https://github.com/spcl/QuaRot/blob/5008669b08c1f11f9b64d52d16fddd47ca754c5a/fake_quant/utils.py"
+    },
+    {
+      "path": "fake_quant/model_utils.py",
+      "sha256": "a1fdb971f10b0d7beaa3b96fc241f019586802241ebcb8a93854062d103f250b",
+      "bytes": 9523,
+      "permalink": "https://github.com/spcl/QuaRot/blob/5008669b08c1f11f9b64d52d16fddd47ca754c5a/fake_quant/model_utils.py"
+    },
+    {
+      "path": "fake_quant/README.md",
+      "sha256": "53d50a5772fd38c2b40b343bba168102b4035af67ac70410ccb4c27a570e85a2",
+      "bytes": 1858,
+      "permalink": "https://github.com/spcl/QuaRot/blob/5008669b08c1f11f9b64d52d16fddd47ca754c5a/fake_quant/README.md"
+    },
+    {
+      "path": "setup.py",
+      "sha256": "d96760b779b042f5d1063268b7396c2b7a04f9043bfaf9676651b37281e6f829",
+      "bytes": 2426,
+      "permalink": "https://github.com/spcl/QuaRot/blob/5008669b08c1f11f9b64d52d16fddd47ca754c5a/setup.py"
+    }
+  ],
+  "read_symbols": [
+    "random_hadamard_matrix",
+    "matmul_hadU",
+    "get_hadK",
+    "ActQuantizer.configure/find_params/quantize",
+    "pack_i4/unpack_i4",
+    "rotate_model/rotate_mlp_input/rotate_mlp_output/rotate_ov_proj",
+    "register_online_rotation/online_rotate",
+    "get_cuda_arch_flags/third_party_cmake"
+  ],
+  "read_scope": "Selected symbols only; model_utils import headers inspected, not full implementation",
+  "missing_paths": [
+    "fake_quant/requirements.txt"
+  ],
+  "backend": "setup hardcodes older GPU targets and invokes pip; not executed",
+  "relationship": "Native helper API calls with independent single-Linear orchestration"
+}

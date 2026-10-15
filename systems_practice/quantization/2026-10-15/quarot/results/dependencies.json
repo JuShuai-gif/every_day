@@ -1,0 +1,11 @@
+{
+  "python": "3.9.6",
+  "packages": {
+    "torch": false,
+    "numpy": true,
+    "transformers": false,
+    "accelerate": false,
+    "fast_hadamard_transform": false
+  },
+  "note": "Availability probe, no installation"
+}

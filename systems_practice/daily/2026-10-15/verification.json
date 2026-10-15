@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-15",
+  "source_read": true,
+  "version_pinned": true,
+  "host_compile": true,
+  "host_run": true,
+  "asan_ubsan_passed": true,
+  "target_board_verified": false,
+  "evidence": [
+    "results/cpu.txt",
+    "results/sanitize.txt"
+  ],
+  "target": "Thor SM110",
+  "gpu_compile": false,
+  "gpu_run": false,
+  "ncu": false,
+  "ptx_generated": false,
+  "sass_generated": false,
+  "gpu_performance": null,
+  "comparison_architecture": "Ampere",
+  "cpu_cases": 98,
+  "cpu_rejections": 3,
+  "blockers": [
+    "No nvcc/ncu/NVIDIA GPU on Mac; SDK/driver/ncu tuple requires board verification"
+  ],
+  "final_after_format_evidence": [
+    "results/cpu-final.txt",
+    "results/sanitize-final.txt"
+  ],
+  "verified_at": "2026-10-15T09:25:30.893215+08:00"
+}
