@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-17",
+  "repository": "https://github.com/NVIDIA/cuda-samples",
+  "tag": "v13.0",
+  "files": [
+    {
+      "file": "reduction.cu",
+      "url": "https://raw.githubusercontent.com/NVIDIA/cuda-samples/v13.0/Samples/2_Concepts_and_Techniques/reduction/reduction_kernel.cu",
+      "bytes": 31971,
+      "sha256": "c9ac9a9a424726522dd616fa24d58e6f0919ac95dd746a233d5fb857bffffde9"
+    }
+  ],
+  "symbols": [
+    "reduce6",
+    "reduce7",
+    "warpReduceSum"
+  ],
+  "license": "BSD-3-Clause",
+  "relationship": "independent inspired row reduction; no copied upstream kernel",
+  "source_read": true,
+  "failed_initial_fetch": "DNS resolution failure; later explicit network retry succeeded",
+  "search_attempts": [
+    "Google SpinQuant SGDG Cayley: Internal Error",
+    "Zhihu CUDA kernel article: Internal Error; no article adopted"
+  ]
+}

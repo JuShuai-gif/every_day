@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-15T09:25:30.893215+08:00",
+  "updated_at": "2026-10-17T10:20:29.925262+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -616,6 +616,32 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2610.12494",
+      "title": "Algebraic Integer Quantization for Machine Learning Applications",
+      "delivered_on": "2026-10-17",
+      "first_submitted": "2026-09-25",
+      "version_read": "v1",
+      "directory": "2026-10-17/01-aiq",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.11687",
+      "title": "Structured Transforms for Low-Overhead Quantization of Language Models",
+      "delivered_on": "2026-10-17",
+      "first_submitted": "2026-09-10",
+      "version_read": "v1",
+      "directory": "2026-10-17/02-kashin",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
     }
   ],
   "backlog": [
@@ -864,6 +890,18 @@
       "date": "2026-10-14",
       "reason": "Full model/Thor reproduction pending",
       "verification": "2026-10-14/02-tasq/verification.json"
+    },
+    {
+      "id": "arxiv:2610.12494",
+      "date": "2026-10-17",
+      "reason": "Author source/full model/Thor reproduction pending",
+      "verification": "2026-10-17/01-aiq/verification.json"
+    },
+    {
+      "id": "arxiv:2609.11687",
+      "date": "2026-10-17",
+      "reason": "Author source/full model/Thor reproduction pending",
+      "verification": "2026-10-17/02-kashin/verification.json"
     }
   ]
 }

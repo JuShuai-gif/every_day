@@ -45,7 +45,7 @@
 
 | [2026-10-04](2026-10-04/README.md) | C++17 并发 | 有界提交＋关闭排空/在途资源寿命；[KIVI](../quantization/2026-10-04/kivi/README.md) · [ARM12](../arm/2026-10-04/README.md) · [OS07](../os/2026-10-04/README.md) · [C++06](../cpp17/2026-10-04/README.md) · [HOPE/D-Quant](../paper/2026-10-04/README.md) | [线程池](2026-10-04/src/pool.hpp)与[检查](2026-10-04/src/main.cpp) | Release/ASan/UBSan/TSan通过，800任务、启动失败/异常/关闭；量化原生缺checkout/torch，Thor缺工具设备 | 主课不测推理性能；ARM独立CPU direct/pack+SoA P50 13.3386/34.8229us；[记录](2026-10-04/verification.json) |
 
-下一主主题：**GPU 访存优化**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
+下一主主题：**C++17 并发**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
 
 `2026-09-14` 为用户要求补充的历史 C++ 练习，不改变当前轮换位置。
 
@@ -78,3 +78,5 @@
 | [2026-10-14](2026-10-14/README.md) | 量化 GEMM | 真实signed打包与组内累加/组间scale；[OmniQuant](../quantization/2026-10-14/omniquant/README.md) · [ARM21](../arm/2026-10-14/README.md) · [OS16](../os/2026-10-14/README.md) · [CPP15](../cpp17/2026-10-14/README.md) · [DBW/TaSQ](../paper/2026-10-14/README.md) | [Thor基线/tiled](2026-10-14/src/gemm.cu) · [四位宽与STE](2026-10-14/experiment.py) | 28个CPU fixture、真实打包重载/80步QAT、Release/ASan/UBSan通过；Thor/ncu/PTX/SASS未验；理论对照Turing | W4A4 NRMSE absmax0.153753→smooth0.078814；shift反向退化，非任务精度/非GPU性能；[验证](2026-10-14/verification.json) |
 
 | [2026-10-15](2026-10-15/README.md) | GPU 访存优化 | 转置合并与shared bank映射；[QuaRot](../quantization/2026-10-15/quarot/README.md) · [ARM22](../arm/2026-10-15/README.md) · [OS17](../os/2026-10-15/README.md) · [CPP16](../cpp17/2026-10-15/README.md) · [两篇论文](../paper/2026-10-15/README.md) | [Thor三版](2026-10-15/src/transpose.cu) | CPU索引98组合/3拒绝、Release/ASan/UBSan通过；Thor/ncu/PTX/SASS未验；理论对照Ampere | 无GPU性能；ARM M2预打包neon1/2=2.35668/1.23µs仅Mac批均值P50；[验证](2026-10-15/verification.json)。下一主方向GPU体系结构 |
+
+| [2026-10-17](2026-10-17/README.md) | GPU 体系结构 | 单/四累加器依赖与寄存器预算；[SpinQuant](../quantization/2026-10-17/spinquant/README.md) · [ARM23](../arm/2026-10-17/README.md) · [OS18](../os/2026-10-17/README.md) · [CPP17](../cpp17/2026-10-17/README.md) · [AIQ/Kashin](../paper/2026-10-17/README.md) | [Thor两版](2026-10-17/src/energy.cu) | CPU110 shape/4拒绝、Release/ASan/UBSan通过；Thor/ncu/PTX/SASS未验；理论对照Hopper | 无GPU性能；ARM Mac N65539分离/融合43.0596/13.2967µs批均值P50；[验证](2026-10-17/verification.json)。下一主方向C++17并发 |

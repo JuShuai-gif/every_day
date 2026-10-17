@@ -1,0 +1,1 @@
+build.sh: line 8: nvcc: command not found

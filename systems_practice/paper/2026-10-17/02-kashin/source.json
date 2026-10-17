@@ -1,0 +1,14 @@
+{
+  "id": "arxiv:2609.11687",
+  "title": "Structured Transforms for Low-Overhead Quantization of Language Models",
+  "authors": "Daria Cherniuk, Alexander Rudikov, Boris Kashin, Ivan Oseledets",
+  "first_submitted": "2026-09-10",
+  "version_read": "v1",
+  "read_date": "2026-10-17",
+  "primary_url": "https://arxiv.org/html/2609.11687v1",
+  "sections_read": "§3–4、Algorithm1、§5及limitations",
+  "publication_status": "preprint; acceptance unverified",
+  "author_repository_verified": false,
+  "search_attempt": "Exact title + GitHub; paper links checked; no author implementation verified",
+  "example_relationship": "independent math/serialization experiment; not author native implementation"
+}

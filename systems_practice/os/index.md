@@ -10,7 +10,7 @@
 | [2026-10-01](2026-10-01/README.md) | 04：trapframe现场 + 系统调用返回 | 宿主状态模型/EBADF，Release/ASan/UBSan通过；xv6源码已读 | commit、xv6/QEMU/Linux/板端待验；[记录](2026-10-01/verification.json) |
 | [2026-10-03](2026-10-03/README.md) | 06：walk多级索引 + 映射权限与解除映射 | C++17 Release/ASan/UBSan，手算地址、1025跨叶映射与失败边界通过；本地PDF页5勘误核实 | xv6/QEMU/Linux/板端与精确commit待验；[记录](2026-10-03/verification.json) |
 
-下一课：**18 virtio请求队列与中断唤醒**。
+下一节：**19**（按progress.json继续）。
 
 2026-10-09：[第12课：可运行/运行/睡眠状态与上下文切换](2026-10-09/README.md)。Mac 状态模型通过；xv6 源码已读，QEMU/Linux/板端未验证。
 
@@ -35,3 +35,5 @@
 2026-10-14：[OS16：缓存身份pin与每块内容锁](2026-10-14/README.md)。等待者ref、耗尽/复用、20000更新、Release/ASan/UBSan/TSan通过；xv6 bio.c已读，QEMU/Linux/板端未验。
 
 2026-10-15：[OS17：日志事务与崩溃恢复](2026-10-15/README.md)。7崩溃点/恢复幂等/错误写序与坏header，Release/ASan/UBSan通过；教学状态模型，真实持久性及xv6/QEMU/Linux/板端未验。下一节18。
+
+2026-10-17：[第18课](2026-10-17/README.md)。virtio提交与中断完成：2000复用/4拒绝与失败/关闭，Release/ASan/UBSan/TSan通过；xv6源码已读，QEMU/Linux/板端未验。下一节19。

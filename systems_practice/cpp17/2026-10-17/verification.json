@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-17",
+  "lesson_id": "17",
+  "source_read": true,
+  "version_pinned": true,
+  "host_compile": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "target_board_verified": false,
+  "platform": "macOS arm64 Apple clang21 C++17",
+  "performance_scope": "not measured",
+  "evidence": [
+    "results/release.txt",
+    "results/sanitize.txt",
+    "results/negative.txt"
+  ],
+  "blockers": [
+    "Linux and target board not available"
+  ],
+  "expected_link_failure_verified": true
+}

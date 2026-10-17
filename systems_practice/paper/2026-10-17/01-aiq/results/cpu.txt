@@ -1,0 +1,12 @@
+{
+  "coefficient_A": 203,
+  "coefficient_B": 62,
+  "coefficient_vs_decoded_error": 5.329070518200751e-15,
+  "quantized_vs_original_dot_error": 0.040097353950800496,
+  "AIQ_weight_rmse": 0.006936852601438747,
+  "uniform8_weight_rmse": 0.006611238149298912,
+  "actual_file_bytes": 44,
+  "fp16_weight_payload_bytes": 64,
+  "cases": "zero + signed pack/reload + integer identity",
+  "performance": "not measured; no GPU execution"
+}

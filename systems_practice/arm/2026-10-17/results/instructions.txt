@@ -1,0 +1,53 @@
+	ldp	x8, x9, [x1]
+	ldr	x10, [x0]
+	ldr	q3, [x14]
+	and.16b	v4, v3, v1
+	add.16b	v4, v4, v2
+	usra.16b	v5, v3, #4
+	sshll.8h	v3, v4, #0
+	sshll2.8h	v4, v4, #0
+	ldr	s6, [x14, #16]
+	sshll.4s	v7, v3, #0
+	scvtf.4s	v7, v7
+	fmul.4s	v7, v7, v6[0]
+	ldp	q16, q17, [x11, #-64]
+	fmla.4s	v0, v16, v7
+	sshll.8h	v7, v5, #0
+	sshll2.8h	v5, v5, #0
+	sshll2.4s	v3, v3, #0
+	scvtf.4s	v3, v3
+	fmul.4s	v3, v3, v6[0]
+	fmla.4s	v0, v17, v3
+	sshll.4s	v3, v4, #0
+	scvtf.4s	v3, v3
+	fmul.4s	v3, v3, v6[0]
+	sshll2.4s	v4, v4, #0
+	scvtf.4s	v4, v4
+	fmul.4s	v4, v4, v6[0]
+	ldp	q16, q17, [x11, #-32]
+	fmla.4s	v0, v16, v3
+	fmla.4s	v0, v17, v4
+	sshll.4s	v3, v7, #0
+	scvtf.4s	v3, v3
+	fmul.4s	v3, v3, v6[0]
+	sshll2.4s	v4, v7, #0
+	scvtf.4s	v4, v4
+	fmul.4s	v4, v4, v6[0]
+	ldp	q7, q16, [x11]
+	fmla.4s	v0, v7, v3
+	fmla.4s	v0, v16, v4
+	sshll.4s	v3, v5, #0
+	scvtf.4s	v3, v3
+	fmul.4s	v3, v3, v6[0]
+	sshll2.4s	v4, v5, #0
+	scvtf.4s	v4, v4
+	fmul.4s	v4, v4, v6[0]
+	ldp	q5, q6, [x11, #32]
+	fmla.4s	v0, v5, v3
+	fmla.4s	v0, v6, v4
+	ldr	x10, [x0]
+	ldrb	w13, [x12, x13]
+	scvtf	s1, w13
+	ldr	s2, [x12, #16]
+	fmul	s1, s2, s1
+	ldr	s2, [x8, x14, lsl #2]

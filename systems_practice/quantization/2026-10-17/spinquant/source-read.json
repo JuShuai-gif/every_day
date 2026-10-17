@@ -1,0 +1,120 @@
+{
+  "method": "spinquant",
+  "repository": "https://github.com/facebookresearch/SpinQuant.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-10-17T00:40:19.315473+00:00",
+  "commit": "8f47aa3f00e8662caf1a484153920a07e5281c3a",
+  "cache": ".tmp/quant_sources/spinquant-hbvn44_5",
+  "status": "fetched_corrected_paths",
+  "source_read": true,
+  "example_run": false,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 9055,
+      "sha256": "7c7e2029bea5cc4f3d0434c6ce640df3d1e9acb6891c2b6b45c7533aacc6799b",
+      "local_source": ".tmp/quant_sources/spinquant-hbvn44_5/source/README.md",
+      "permalink": "https://github.com/facebookresearch/SpinQuant/blob/8f47aa3f00e8662caf1a484153920a07e5281c3a/README.md"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 19332,
+      "sha256": "1d8ca66080a2701508a70be4ddad4be28c509bcc3397a682fb8edf767fdd7a00",
+      "local_source": ".tmp/quant_sources/spinquant-hbvn44_5/source/LICENSE",
+      "permalink": "https://github.com/facebookresearch/SpinQuant/blob/8f47aa3f00e8662caf1a484153920a07e5281c3a/LICENSE"
+    },
+    {
+      "path": "optimize_rotation.py",
+      "bytes": 5091,
+      "sha256": "ba044d26e0944cb6ce5cfab2314270a1aa141d484e3ff0aff26d42a4bec6e3e3",
+      "local_source": ".tmp/quant_sources/spinquant-hbvn44_5/source/optimize_rotation.py",
+      "permalink": "https://github.com/facebookresearch/SpinQuant/blob/8f47aa3f00e8662caf1a484153920a07e5281c3a/optimize_rotation.py"
+    },
+    {
+      "path": "utils/utils.py",
+      "sha256": "32a07ec4a845701b903b878d11ececd5152bc34f04035dd47c7a02253348e089",
+      "local_source": ".tmp/quant_sources/spinquant-hbvn44_5/source/utils/utils.py",
+      "permalink": "https://github.com/facebookresearch/SpinQuant/blob/8f47aa3f00e8662caf1a484153920a07e5281c3a/utils/utils.py"
+    },
+    {
+      "path": "utils/hadamard_utils.py",
+      "sha256": "b2d805ab9698a02410c2748c83ecc755a7d60785e1e7ee30b14e404b2300703b",
+      "local_source": ".tmp/quant_sources/spinquant-hbvn44_5/source/utils/hadamard_utils.py",
+      "permalink": "https://github.com/facebookresearch/SpinQuant/blob/8f47aa3f00e8662caf1a484153920a07e5281c3a/utils/hadamard_utils.py"
+    },
+    {
+      "path": "utils/model_utils.py",
+      "sha256": "f681c3bc97faf3760c3aae19750c4a51ce9b2eaf561eba81e4e2a129d6d583f5",
+      "local_source": ".tmp/quant_sources/spinquant-hbvn44_5/source/utils/model_utils.py",
+      "permalink": "https://github.com/facebookresearch/SpinQuant/blob/8f47aa3f00e8662caf1a484153920a07e5281c3a/utils/model_utils.py"
+    },
+    {
+      "path": "train_utils/optimizer.py",
+      "sha256": "115bfba5260129bd818e60ea083d25a68519c66a3daf2c56a115caf14bcf1bb3",
+      "local_source": ".tmp/quant_sources/spinquant-hbvn44_5/source/train_utils/optimizer.py",
+      "permalink": "https://github.com/facebookresearch/SpinQuant/blob/8f47aa3f00e8662caf1a484153920a07e5281c3a/train_utils/optimizer.py"
+    },
+    {
+      "path": "train_utils/quant_linear.py",
+      "sha256": "eb90718e8dd5bddcdd62f8b135bf39ab0b8d627d395954c4838ce5b6b09fb252",
+      "local_source": ".tmp/quant_sources/spinquant-hbvn44_5/source/train_utils/quant_linear.py",
+      "permalink": "https://github.com/facebookresearch/SpinQuant/blob/8f47aa3f00e8662caf1a484153920a07e5281c3a/train_utils/quant_linear.py"
+    },
+    {
+      "path": "utils/quant_utils.py",
+      "sha256": "90c721fc5cd2bbfd20d8d9b7b6aa0f210e5bc5b095e728b5a6bc89ba8f6aebe8",
+      "local_source": ".tmp/quant_sources/spinquant-hbvn44_5/source/utils/quant_utils.py",
+      "permalink": "https://github.com/facebookresearch/SpinQuant/blob/8f47aa3f00e8662caf1a484153920a07e5281c3a/utils/quant_utils.py"
+    },
+    {
+      "path": "eval_utils/rotation_utils.py",
+      "sha256": "d1e44cb7c64bd3f09d0ba45d6aa27c1b314ad33daf5d31ec44a96048e3e60453",
+      "local_source": ".tmp/quant_sources/spinquant-hbvn44_5/source/eval_utils/rotation_utils.py",
+      "permalink": "https://github.com/facebookresearch/SpinQuant/blob/8f47aa3f00e8662caf1a484153920a07e5281c3a/eval_utils/rotation_utils.py"
+    },
+    {
+      "path": "train_utils/main.py",
+      "sha256": "345daf63b9527d829dcfd5a97e9bbd89ee388ac1d0cb4e0c7c5c8c0ab4cbb5be",
+      "local_source": ".tmp/quant_sources/spinquant-hbvn44_5/source/train_utils/main.py",
+      "permalink": "https://github.com/facebookresearch/SpinQuant/blob/8f47aa3f00e8662caf1a484153920a07e5281c3a/train_utils/main.py"
+    },
+    {
+      "path": "requirement.txt",
+      "sha256": "f5feff26cc735d3df9c88cf3dcb1654db022feb34bf279e3f9f7c4d692a2b89f",
+      "local_source": ".tmp/quant_sources/spinquant-hbvn44_5/source/requirement.txt",
+      "permalink": "https://github.com/facebookresearch/SpinQuant/blob/8f47aa3f00e8662caf1a484153920a07e5281c3a/requirement.txt"
+    },
+    {
+      "path": "train_utils/rtn_utils.py",
+      "sha256": "fedd8de097651f868173ca1fb508b30276d80709c868008d7c445e201bdb80ec",
+      "local_source": ".tmp/quant_sources/spinquant-hbvn44_5/source/train_utils/rtn_utils.py",
+      "permalink": "https://github.com/facebookresearch/SpinQuant/blob/8f47aa3f00e8662caf1a484153920a07e5281c3a/train_utils/rtn_utils.py"
+    }
+  ],
+  "errors": [
+    {
+      "path": "utils/rotation_utils.py",
+      "reason": "fatal: path 'utils/rotation_utils.py' does not exist in '8f47aa3f00e8662caf1a484153920a07e5281c3a'"
+    }
+  ],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example.",
+  "read_date": "2026-10-17",
+  "license": "CC-BY-NC-4.0; selected headers note Apache-2.0 lineage",
+  "read_symbols": [
+    "SGDG.step",
+    "Cayley_loop",
+    "QuantizeLinear.forward",
+    "ActQuantizer",
+    "WeightQuantizer",
+    "STEQuantize",
+    "train",
+    "prepare_model",
+    "rtn_fwrd"
+  ],
+  "dependency_build": {
+    "url": "https://github.com/Dao-AILab/fast-hadamard-transform/blob/master/setup.py",
+    "date": "2026-10-17",
+    "sha256": "2f590390c64caa95a0f3fc802cf83af0c423e4525d5c3838aa68b70efe57fd70",
+    "scope": "cc_flag and CUDA version guard; includes SM110 but other targets also present"
+  }
+}

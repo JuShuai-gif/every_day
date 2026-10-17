@@ -1,0 +1,1 @@
+Original scripts/format-cpp.sh and repository .clang-format executed successfully in ignored scoped mirrors. Initial daily/ARM/OS/C++ sources formatted; final changed ARM source formatted again. Original user file hashes unchanged. No source caches or historical code formatted.

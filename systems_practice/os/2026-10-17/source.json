@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-17",
+  "repository": "https://github.com/mit-pdos/xv6-riscv",
+  "version": "riscv branch read 2026-10-17",
+  "files": [
+    {
+      "file": "virtio_disk.c",
+      "url": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/kernel/virtio_disk.c",
+      "bytes": 8813,
+      "sha256": "ea2074da81f9f1f7ef808aac832982f4ccfc6b3bad8d1df7a8c037737ed17186"
+    }
+  ],
+  "symbols": [
+    "alloc3_desc",
+    "virtio_disk_rw",
+    "virtio_disk_intr"
+  ],
+  "license": "MIT",
+  "source_read": true,
+  "relationship": "independent inspired implementation; not upstream runtime",
+  "initial_failure": "DNS; network retry succeeded"
+}

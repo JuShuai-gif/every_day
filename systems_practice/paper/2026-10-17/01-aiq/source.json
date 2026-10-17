@@ -1,0 +1,14 @@
+{
+  "id": "arxiv:2610.12494",
+  "title": "Algebraic Integer Quantization for Machine Learning Applications",
+  "authors": "Anthony Kostal-Vazquez, Vassil Dimitrov, Branden Butler",
+  "first_submitted": "2026-09-25",
+  "version_read": "v1",
+  "read_date": "2026-10-17",
+  "primary_url": "https://arxiv.org/html/2610.12494v1",
+  "sections_read": "II–III乘法/位宽、Table II与V量化公式",
+  "publication_status": "preprint; acceptance unverified",
+  "author_repository_verified": false,
+  "search_attempt": "Exact title + GitHub; paper links checked; no author implementation verified",
+  "example_relationship": "independent math/serialization experiment; not author native implementation"
+}

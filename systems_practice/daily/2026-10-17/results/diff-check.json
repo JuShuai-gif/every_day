@@ -1,0 +1,6 @@
+{
+  "exit_code": 2,
+  "stdout": "systems_practice/arm/2026-09-23/src/registers.cpp:26: trailing whitespace.\n+  W0：          | 低 32 位 |  \n",
+  "stderr": "",
+  "note": "Existing user change left untouched; staged-only check performed separately"
+}

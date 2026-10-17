@@ -2,7 +2,7 @@
 
 独立随每日北京时间08:30任务运行，同日不重复推进，不改变12个主方向。路线及完整28课见[课程说明](../docs/cpp17/README.md)，状态见[progress.json](progress.json)。此前主轮换中的C++课程保留原位，不倒填为本栏目的历史交付。
 
-下一课：**17 静态配置与链接**。
+下一节：**18**（按progress.json继续）。
 
 2026-10-09：[第11课：哈希表插入成本](2026-10-09/README.md)。Mac C++17 通过 `try_emplace`、重复键与 miss 查找边界；目标板未验证。
 
@@ -34,3 +34,5 @@
 2026-10-14：[CPP15：CTAD与deduction guide](2026-10-14/README.md)。范围拥有、花括号指针反例、空范围与预期编译失败，Release/ASan/UBSan通过；libc++ llvmorg-20.1.8已读，板端未验。
 
 2026-10-15：[CPP1716：invoke/apply与参数寿命](2026-10-15/README.md)。成员调用/成员数据引用、move-only与空tuple、两次异常回滚通过Release/ASan/UBSan；板端未验。下一课17。
+
+2026-10-17：[第17课](2026-10-17/README.md)。inline变量与ODR：跨TU身份、边界及预期重复符号链接失败通过；Release/ASan/UBSan通过，板端未验。下一节18。

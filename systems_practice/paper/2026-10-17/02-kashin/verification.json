@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-17",
+  "primary_fulltext_sections_read": true,
+  "read_scope": "§3–4、Algorithm1、§5及limitations",
+  "author_source_fetched": false,
+  "author_implementation_read": false,
+  "independent_example_run": true,
+  "example_language": "Python standard library",
+  "full_paper_reproduced": false,
+  "thor_verified": false,
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "blockers": [
+    "No verified author implementation; no model/device reproduction"
+  ]
+}

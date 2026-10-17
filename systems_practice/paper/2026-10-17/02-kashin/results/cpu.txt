@@ -1,0 +1,10 @@
+{
+  "initial_residual": 5.326615696131671,
+  "final_residual": 1.9453064595950236e-14,
+  "factor_quant_nrmse": 0.1456364924204205,
+  "uniform4_nrmse": 0.11294699265717853,
+  "actual_file_bytes": 60,
+  "fp16_payload_bytes": 64,
+  "metadata_bytes": 44,
+  "performance": "not measured; dense educational DCT; not author JAX/H100 reproduction"
+}

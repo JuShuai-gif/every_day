@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-17",
+  "repository": "https://github.com/llvm/llvm-project",
+  "version": "llvmorg-20.1.8",
+  "files": [
+    {
+      "file": "optional",
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-20.1.8/libcxx/include/optional",
+      "bytes": 54167,
+      "sha256": "c33344069468e49259b6dc8ac3663af34ea3c4882fc41fe39c1551d22caeb9b2"
+    }
+  ],
+  "symbols": [
+    "nullopt_t",
+    "inline constexpr nullopt"
+  ],
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "source_read": true,
+  "relationship": "independent inspired implementation; not upstream runtime",
+  "initial_failure": "DNS; network retry succeeded"
+}

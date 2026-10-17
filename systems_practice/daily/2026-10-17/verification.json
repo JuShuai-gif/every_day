@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-17",
+  "topic": "GPU architecture",
+  "target": "Thor sm_110",
+  "comparison_architecture": "Hopper; next Ada",
+  "source_read": true,
+  "host_compiled": true,
+  "host_run": true,
+  "asan_ubsan_passed": true,
+  "cases": 110,
+  "invalid_cases": 4,
+  "gpu_compile": false,
+  "gpu_run": false,
+  "ncu_run": false,
+  "real_ptx_sass_generated": false,
+  "gpu_performance_measured": false,
+  "gpu_build_exit": 127,
+  "blockers": [
+    "nvcc: command not found",
+    "ncu missing; no NVIDIA GPU on this Mac",
+    "Board JetPack/L4T/driver/ncu tuple not collected"
+  ],
+  "evidence": [
+    "results/release.txt",
+    "results/sanitize.txt",
+    "results/gpu-build-attempt.txt"
+  ]
+}

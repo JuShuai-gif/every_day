@@ -1,0 +1,3 @@
+N=33 payload_with_scale_bytes=40 object_bytes=40 FP32_weight_bytes=132 CPU_batch_mean_P50_us separated=0.01625 fused=0.00292
+N=65539 payload_with_scale_bytes=40980 object_bytes=40980 FP32_weight_bytes=262156 CPU_batch_mean_P50_us separated=43.0575 fused=13.6392
+PASS lengths=12 rejected=2

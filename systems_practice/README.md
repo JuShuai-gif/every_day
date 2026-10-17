@@ -12,7 +12,7 @@
 
 每课的 README 与代码、运行脚本和结果放在一起。学习路线、栏目规则等通用说明集中在 docs/。
 
-当前入口：[2026-10-15 GPU访存优化](daily/2026-10-15/README.md) · [QuaRot](quantization/2026-10-15/quarot/README.md) · [ARM22](arm/2026-10-15/README.md) · [MultiAlloc/误差反馈论文](paper/2026-10-15/README.md) · [OS17](os/2026-10-15/README.md) · [C++17第16课](cpp17/2026-10-15/README.md)。
+当前入口：[2026-10-17 GPU体系结构](daily/2026-10-17/README.md) · [SpinQuant](quantization/2026-10-17/spinquant/README.md) · [ARM23](arm/2026-10-17/README.md) · [AIQ/Kashin论文](paper/2026-10-17/README.md) · [OS18](os/2026-10-17/README.md) · [C++17第17课](cpp17/2026-10-17/README.md)。
 
 旧规范和旧总索引文件保留为兼容导航，正文只有一份；历史日志中的旧路径保留原样。迁移对应表见 [目录说明](docs/LAYOUT.md)。
 

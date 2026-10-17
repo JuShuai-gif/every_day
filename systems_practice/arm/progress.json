@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
-  "last_delivery_date": "2026-10-15",
-  "next_lesson_id": "23",
+  "last_delivery_date": "2026-10-17",
+  "next_lesson_id": "24",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -25,7 +25,8 @@
     "19",
     "20",
     "21",
-    "22"
+    "22",
+    "23"
   ],
   "history": [
     {
@@ -438,6 +439,32 @@
       "assembly_observed": true,
       "compute_kernel_benchmarked": true,
       "cpu_performance_measured": true
+    },
+    {
+      "date": "2026-10-17",
+      "lesson_id": "23",
+      "source_read": true,
+      "version_pinned": false,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "platform": "macOS arm64 Apple clang21 C++17",
+      "performance_scope": "CPU batch means only",
+      "evidence": [
+        "results/release.txt",
+        "results/sanitize.txt"
+      ],
+      "blockers": [
+        "Linux and target board not available"
+      ],
+      "path": "2026-10-17",
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "verification": "2026-10-17/README.md",
+      "assembly_observed": true,
+      "cpu_performance_measured": true,
+      "compute_kernel_benchmarked": true
     }
   ],
   "backlog": [
@@ -501,6 +528,12 @@
       "lesson_id": "22",
       "reason": "Target board validation pending",
       "verification": "2026-10-15/README.md"
+    },
+    {
+      "date": "2026-10-17",
+      "lesson_id": "23",
+      "reason": "Target board pending",
+      "verification": "2026-10-17/README.md"
     }
   ],
   "curriculum_adjustments": [
@@ -529,5 +562,5 @@
       "reason": "User requested four working/deployment capability layers; mapped existing 28 lessons, preserved order and historical progress. Actual delivery08 advances to09 separately."
     }
   ],
-  "last_canonical_lesson_date": "2026-10-15"
+  "last_canonical_lesson_date": "2026-10-17"
 }
