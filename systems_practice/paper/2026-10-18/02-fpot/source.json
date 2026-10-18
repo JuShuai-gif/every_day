@@ -1,0 +1,28 @@
+{
+  "read_at": "2026-10-18T08:54:55.915812+08:00",
+  "title": "Fractional Power-of-Two Quantization for Efficient and Effective Multiplier-Free LLM Inference",
+  "authors": [
+    "Sunghyun Wee",
+    "Geunjae Choi",
+    "Hyeonjin Kim",
+    "Suyoung Kim",
+    "Nojun Kwak"
+  ],
+  "id": "arxiv:2610.21257",
+  "version": "v1",
+  "first_submitted": "2026-10-15",
+  "version_date": "2026-10-15",
+  "abstract_url": "https://arxiv.org/abs/2610.21257v1",
+  "fulltext": "https://arxiv.org/html/2610.21257v1",
+  "sections_read": [
+    "3",
+    "5.2-5.4",
+    "6 Limitations"
+  ],
+  "publication_status": "paper self-reports Accepted at NeurIPS2026; conference listing not independently checked",
+  "author_repository_verified": false,
+  "search_query": "Fractional Power-of-Two Quantization for Efficient and Effective Multiplier-Free LLM Inference github",
+  "repository_result": "No verified author implementation obtained; HTML GitHub links are renderer issue trackers",
+  "relationship": "Independent stdlib mechanism demonstration; no full model reproduction",
+  "paper_license": "arXiv perpetual non-exclusive license; no full-text copied"
+}

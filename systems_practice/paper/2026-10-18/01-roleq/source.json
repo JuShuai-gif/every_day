@@ -1,0 +1,26 @@
+{
+  "read_at": "2026-10-18T08:54:55.915812+08:00",
+  "title": "RoleQ: Role-Aligned Scales for Converting Language Models to Ternary",
+  "authors": [
+    "Johannes Knittel",
+    "Alec Helbling",
+    "Hanspeter Pfister"
+  ],
+  "id": "arxiv:2610.21808",
+  "version": "v1",
+  "first_submitted": "2026-10-15",
+  "version_date": "2026-10-15",
+  "abstract_url": "https://arxiv.org/abs/2610.21808v1",
+  "fulltext": "https://arxiv.org/html/2610.21808v1",
+  "sections_read": [
+    "3.1-3.5",
+    "4.1",
+    "bit accounting"
+  ],
+  "publication_status": "preprint; acceptance unverified",
+  "author_repository_verified": false,
+  "search_query": "RoleQ: Role-Aligned Scales for Converting Language Models to Ternary github",
+  "repository_result": "No verified author implementation obtained; HTML GitHub links are renderer issue trackers",
+  "relationship": "Independent stdlib mechanism demonstration; no full model reproduction",
+  "paper_license": "arXiv perpetual non-exclusive license; no full-text copied"
+}

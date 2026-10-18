@@ -1,0 +1,13 @@
+{
+  "counts": {
+    "json": 17,
+    "python": 3,
+    "shell": 12,
+    "local_links": 38
+  },
+  "concept_chinese_characters": 502,
+  "main_headings_correct": true,
+  "original_user_file_hashes_unchanged": true,
+  "format_script": "Exact scripts/format-cpp.sh and repository .clang-format executed in ignored scoped mirror; four new C++ files copied back and compiled. Existing user/cached sources excluded.",
+  "errors": []
+}

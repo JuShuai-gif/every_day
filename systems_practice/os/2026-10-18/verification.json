@@ -1,0 +1,23 @@
+{
+  "recorded_at": "2026-10-18T08:54:55.915812+08:00",
+  "source_read": true,
+  "version_pinned": false,
+  "host_compile": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "target_board_verified": false,
+  "platform": "macOS arm64 Apple clang21 C++17",
+  "performance_scope": "one sequence of process wall/CPU/fault observations, not benchmark distribution",
+  "blockers": [
+    "Linux and target board not available"
+  ],
+  "evidence": [
+    "results/release.txt",
+    "results/sanitize.txt"
+  ],
+  "xv6_compiled": false,
+  "qemu_run": false,
+  "linux_run": false,
+  "linux_source_tag": "v6.12",
+  "xv6_version_pinned": false
+}

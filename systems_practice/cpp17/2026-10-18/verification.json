@@ -1,0 +1,21 @@
+{
+  "recorded_at": "2026-10-18T08:54:55.915812+08:00",
+  "source_read": true,
+  "version_pinned": true,
+  "host_compile": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "target_board_verified": false,
+  "platform": "macOS arm64 Apple clang21 C++17",
+  "performance_scope": "not measured",
+  "blockers": [
+    "Linux and target board not available"
+  ],
+  "evidence": [
+    "results/final-release.txt",
+    "results/final-sanitize.txt",
+    "results/final-noelide.txt",
+    "results/final-negative.txt"
+  ],
+  "expected_compile_failure_verified": true
+}

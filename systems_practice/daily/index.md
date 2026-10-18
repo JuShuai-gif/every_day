@@ -14,7 +14,7 @@
 
 2026-09-18 扩展为 **12 个方向**：新增“量化 GEMM”，涵盖 W4A4/W4A16/W8A8/W8A16、SmoothQuant、离群处理、校准缩放与 QAT，代码目标仍为 Thor SM110。
 
-2026-09-18 起另设 **每日量化方法**：每天在主知识点之外讲一个方法，拉取源仓库、阅读实际实现并给出完整使用示例及量化前后比较。独立轮换见 [量化栏目索引](../quantization/index.md)，下一方法 **SpinQuant**。该栏目不取代 12 个主方向，源码获取/阅读/示例运行分别记录。
+2026-09-18 起另设 **每日量化方法**：每天在主知识点之外讲一个方法，拉取源仓库、阅读实际实现并给出完整使用示例及量化前后比较。独立轮换见 [量化栏目索引](../quantization/index.md)，下一方法 **SmoothQuant**。该栏目不取代 12 个主方向，源码获取/阅读/示例运行分别记录。
 
 2026-09-21 起新增 **每日两篇论文**：[paper 栏目](../docs/paper/README.md) · [历史索引](../paper/index.md) · [本期两篇](../paper/2026-10-05/README.md)。覆盖剪枝、量化、模型压缩和边缘部署，包含核心思想、复现难度、简单代码及真实验证记录；优先近 180 天首发，独立去重。
 
@@ -80,3 +80,5 @@
 | [2026-10-15](2026-10-15/README.md) | GPU 访存优化 | 转置合并与shared bank映射；[QuaRot](../quantization/2026-10-15/quarot/README.md) · [ARM22](../arm/2026-10-15/README.md) · [OS17](../os/2026-10-15/README.md) · [CPP16](../cpp17/2026-10-15/README.md) · [两篇论文](../paper/2026-10-15/README.md) | [Thor三版](2026-10-15/src/transpose.cu) | CPU索引98组合/3拒绝、Release/ASan/UBSan通过；Thor/ncu/PTX/SASS未验；理论对照Ampere | 无GPU性能；ARM M2预打包neon1/2=2.35668/1.23µs仅Mac批均值P50；[验证](2026-10-15/verification.json)。下一主方向GPU体系结构 |
 
 | [2026-10-17](2026-10-17/README.md) | GPU 体系结构 | 单/四累加器依赖与寄存器预算；[SpinQuant](../quantization/2026-10-17/spinquant/README.md) · [ARM23](../arm/2026-10-17/README.md) · [OS18](../os/2026-10-17/README.md) · [CPP17](../cpp17/2026-10-17/README.md) · [AIQ/Kashin](../paper/2026-10-17/README.md) | [Thor两版](2026-10-17/src/energy.cu) | CPU110 shape/4拒绝、Release/ASan/UBSan通过；Thor/ncu/PTX/SASS未验；理论对照Hopper | 无GPU性能；ARM Mac N65539分离/融合43.0596/13.2967µs批均值P50；[验证](2026-10-17/verification.json)。下一主方向C++17并发 |
+
+| [2026-10-18](2026-10-18/README.md) | C++17 并发 | 有界队列背压与关闭排空；[SpQR](../quantization/2026-10-18/spqr/README.md) · [ARM24](../arm/2026-10-18/README.md) · [OS19](../os/2026-10-18/README.md) · [CPP18](../cpp17/2026-10-18/README.md) · [RoleQ/FPoT](../paper/2026-10-18/README.md) | [C++17](2026-10-18/src/main.cpp) | 800提交/10异常、退出/超时/启动回滚；Release/ASan/UBSan/TSan通过；设备未验 | 主课不测性能；ARM Mac641×480分步/融合128.275/78.1668µs批均值P50，非板端；[记录](2026-10-18/verification.json)。下一主方向CPU体系结构；GPU对照游标仍Hopper |

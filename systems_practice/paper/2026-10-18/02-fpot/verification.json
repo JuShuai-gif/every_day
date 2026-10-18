@@ -1,0 +1,14 @@
+{
+  "recorded_at": "2026-10-18T08:54:55.915812+08:00",
+  "primary_fulltext_sections_read": true,
+  "author_code_read": false,
+  "example_run": true,
+  "python": "3.9.6 stdlib",
+  "evidence": [
+    "results/run.txt"
+  ],
+  "full_paper_reproduced": false,
+  "thor_verified": false,
+  "runtime_performance_measured": false,
+  "scope": "synthetic numerical/real-file packing experiment, no model accuracy or hardware throughput"
+}

@@ -1,0 +1,3 @@
+capacity=1 accepted=400 successful=395 exceptions=5
+capacity=8 accepted=400 successful=395 exceptions=5
+PASS timeout/ownership/blocked-close/drain/in-flight/startup-rollback rejects=3

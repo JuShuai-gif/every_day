@@ -1,0 +1,35 @@
+{
+  "results": [
+    {
+      "method": "pot",
+      "scale": 0.10500000000000001,
+      "weight_mse": 0.03853701804073715,
+      "evaluation_mse": 54.17399207646621,
+      "shifted_mse": 73.55804463019534,
+      "file_bytes": 44
+    },
+    {
+      "method": "exact_then_replace",
+      "scale": 0.34500000000000003,
+      "weight_mse": 0.009937058022097746,
+      "evaluation_mse": 10.694575851042845,
+      "shifted_mse": 13.373239316895877,
+      "file_bytes": 44
+    },
+    {
+      "method": "approx_grid",
+      "scale": 0.36000000000000004,
+      "weight_mse": 0.011804136331886865,
+      "evaluation_mse": 11.968571898467486,
+      "shifted_mse": 13.17330518404752,
+      "file_bytes": 44
+    }
+  ],
+  "integer_shift_dot_cases": 62,
+  "negative_odd_demo": {
+    "x": -3,
+    "naive_x_plus_shift": -5,
+    "guard_bit_exact": -4.5
+  },
+  "scope": "CPU numerical experiment; no speed or gate-count measurement"
+}

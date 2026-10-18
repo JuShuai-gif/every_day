@@ -1,0 +1,16 @@
+NEGATIVE_NRVO exit=1
+systems_practice/cpp17/2026-10-18/src/main.cpp:57:10: error: call to deleted constructor of 'Frame'
+   57 |   return value;
+      |          ^~~~~
+systems_practice/cpp17/2026-10-18/src/main.cpp:24:3: note: 'Frame' has been explicitly marked deleted here
+   24 |   Frame(Frame&&) = delete;
+      |   ^
+1 error generated.
+NEGATIVE_MOVE exit=1
+systems_practice/cpp17/2026-10-18/src/main.cpp:62:10: error: call to deleted constructor of 'Frame'
+   62 |   return std::move(Frame(1));
+      |          ^~~~~~~~~~~~~~~~~~~
+systems_practice/cpp17/2026-10-18/src/main.cpp:24:3: note: 'Frame' has been explicitly marked deleted here
+   24 |   Frame(Frame&&) = delete;
+      |   ^
+1 error generated.

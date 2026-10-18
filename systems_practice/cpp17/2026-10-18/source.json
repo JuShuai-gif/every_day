@@ -1,0 +1,36 @@
+{
+  "read_at": "2026-10-18T08:54:55.915812+08:00",
+  "source_read": true,
+  "files": [
+    {
+      "file": "optional",
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-20.1.8/libcxx/include/optional",
+      "bytes": 54167,
+      "sha256": "c33344069468e49259b6dc8ac3663af34ea3c4882fc41fe39c1551d22caeb9b2"
+    },
+    {
+      "file": "llvm-license",
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-20.1.8/LICENSE.TXT",
+      "bytes": 15141,
+      "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee"
+    }
+  ],
+  "symbols_read": [
+    "make_optional overloads lines1263-1275"
+  ],
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "relationship": "Native std::make_optional usage plus independent prvalue/NRVO example; local SDK not necessarily source tag version.",
+  "retrieval_and_reading_separate": true,
+  "search_attempts": [
+    {
+      "file": "google.html",
+      "url": "https://www.google.com/search?q=C%2B%2B+bounded+queue+shutdown+NRVO+Linux+mmap+first+touch",
+      "bytes": 92227
+    },
+    {
+      "file": "zhihu.html",
+      "url": "https://www.zhihu.com/search?type=content&q=ncnn%20NEON%20%E9%A2%84%E5%A4%84%E7%90%86",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ]
+}

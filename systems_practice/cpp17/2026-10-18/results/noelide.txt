@@ -1,0 +1,8 @@
+src/main.cpp:52:10: warning: moving a local object in a return statement prevents copy elision [-Wpessimizing-move]
+   52 |   return std::move(value);
+      |          ^
+src/main.cpp:52:10: note: remove std::move call here
+   52 |   return std::move(value);
+      |          ^~~~~~~~~~     ~
+1 warning generated.
+PASS immovable direct/optional sizes=0,1,4096 rejects=2 alive=0 nrvo_moves=1 forced_move_delta=1

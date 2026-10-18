@@ -1,0 +1,46 @@
+{
+  "read_at": "2026-10-18T08:54:55.915812+08:00",
+  "source_read": true,
+  "files": [
+    {
+      "file": "pool.cpp",
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-20.1.8/llvm/lib/Support/ThreadPool.cpp",
+      "bytes": 7863,
+      "sha256": "317e3e5f4dc27e8e419368948b9d6129e7d84df10b3d4169b82061be9a3fc68b"
+    },
+    {
+      "file": "pool.h",
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-20.1.8/llvm/include/llvm/Support/ThreadPool.h",
+      "bytes": 11374,
+      "sha256": "3caa1dfd8397ebe19dad2cb03eef173206a98ff7e14d281632b1e0e08b279fd2"
+    },
+    {
+      "file": "llvm-license",
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-20.1.8/LICENSE.TXT",
+      "bytes": 15141,
+      "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee"
+    }
+  ],
+  "symbols_read": [
+    "StdThreadPool::processTasks",
+    "workCompletedUnlocked",
+    "wait",
+    "~StdThreadPool",
+    "ThreadPoolTaskGroup"
+  ],
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "relationship": "Independent bounded queue inspired by predicate wait, active vs queued distinction, drain and join; no upstream code copied.",
+  "retrieval_and_reading_separate": true,
+  "search_attempts": [
+    {
+      "file": "google.html",
+      "url": "https://www.google.com/search?q=C%2B%2B+bounded+queue+shutdown+NRVO+Linux+mmap+first+touch",
+      "bytes": 92227
+    },
+    {
+      "file": "zhihu.html",
+      "url": "https://www.zhihu.com/search?type=content&q=ncnn%20NEON%20%E9%A2%84%E5%A4%84%E7%90%86",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ]
+}

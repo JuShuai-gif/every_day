@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-17T10:20:29.925262+08:00",
+  "updated_at": "2026-10-18T08:56:20.604641+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -642,6 +642,32 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2610.21808",
+      "title": "RoleQ: Role-Aligned Scales for Converting Language Models to Ternary",
+      "delivered_on": "2026-10-18",
+      "first_submitted": "2026-10-15",
+      "version_read": "v1",
+      "directory": "2026-10-18/01-roleq",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2610.21257",
+      "title": "Fractional Power-of-Two Quantization for Efficient and Effective Multiplier-Free LLM Inference",
+      "delivered_on": "2026-10-18",
+      "first_submitted": "2026-10-15",
+      "version_read": "v1",
+      "directory": "2026-10-18/02-fpot",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
     }
   ],
   "backlog": [
@@ -902,6 +928,18 @@
       "date": "2026-10-17",
       "reason": "Author source/full model/Thor reproduction pending",
       "verification": "2026-10-17/02-kashin/verification.json"
+    },
+    {
+      "id": "arxiv:2610.21808",
+      "date": "2026-10-18",
+      "kind": "author_implementation_and_full_model",
+      "reason": "No verified author repository obtained; independent example is not full reproduction"
+    },
+    {
+      "id": "arxiv:2610.21257",
+      "date": "2026-10-18",
+      "kind": "author_implementation_and_full_model",
+      "reason": "No verified author repository obtained; independent example is not full reproduction"
     }
   ]
 }

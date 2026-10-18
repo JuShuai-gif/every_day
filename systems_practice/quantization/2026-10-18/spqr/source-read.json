@@ -1,0 +1,78 @@
+{
+  "read_at": "2026-10-18T08:54:55.915812+08:00",
+  "repository": "https://github.com/Vahe1994/SpQR.git",
+  "commit": "543d10e56f921e5eeb10d5f0aaaccd30b6662d0e",
+  "license": "Apache-2.0 root/header; setup.cfg MIT classifier discrepancy retained",
+  "source_read": true,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "d7f287e4262d9640d94a6b288e5ebdf0ea40ea94172c8dd1bb5da93e74a2974c",
+      "permalink": "https://github.com/Vahe1994/SpQR/blob/543d10e56f921e5eeb10d5f0aaaccd30b6662d0e/README.md"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "7382b1cf711e7a7c7af9816e0e07b49b91e7149b7c6d347225f98800fcb1f1c2",
+      "permalink": "https://github.com/Vahe1994/SpQR/blob/543d10e56f921e5eeb10d5f0aaaccd30b6662d0e/LICENSE"
+    },
+    {
+      "path": "spqr_engine.py",
+      "sha256": "d10d298f83f20d94440ee8f3d86197644e6299249f615133a82baef8cbbb352c",
+      "permalink": "https://github.com/Vahe1994/SpQR/blob/543d10e56f921e5eeb10d5f0aaaccd30b6662d0e/spqr_engine.py"
+    },
+    {
+      "path": "quant_groups.py",
+      "sha256": "fc243f88df820f305dcd7f573a225d7bfe763424afbfd0601a1056cf61840e2d",
+      "permalink": "https://github.com/Vahe1994/SpQR/blob/543d10e56f921e5eeb10d5f0aaaccd30b6662d0e/quant_groups.py"
+    },
+    {
+      "path": "weight_permutation.py",
+      "sha256": "3a39994c800ee405046518f0fcaa0bba80955d95a2da865fd2858883a6f09f7e",
+      "permalink": "https://github.com/Vahe1994/SpQR/blob/543d10e56f921e5eeb10d5f0aaaccd30b6662d0e/weight_permutation.py"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "7a386173193db7333f93116f94a0f59198f442f0cae990cb19f7aef9d880d597",
+      "permalink": "https://github.com/Vahe1994/SpQR/blob/543d10e56f921e5eeb10d5f0aaaccd30b6662d0e/requirements.txt"
+    },
+    {
+      "path": "inference_lib/src/spqr_quant/inference.py",
+      "sha256": "cccd2108ab8b8fa7d2f6ce3647c95aa7d5b14548efb7e7708187f313f60bf472",
+      "permalink": "https://github.com/Vahe1994/SpQR/blob/543d10e56f921e5eeb10d5f0aaaccd30b6662d0e/inference_lib/src/spqr_quant/inference.py"
+    },
+    {
+      "path": "inference_lib/src/spqr_quant/inference_kernels/cuda_kernel.py",
+      "sha256": "cc93d9d020f398d2fe809b3285533a97d25e6f1c829953cd84011700125969c8",
+      "permalink": "https://github.com/Vahe1994/SpQR/blob/543d10e56f921e5eeb10d5f0aaaccd30b6662d0e/inference_lib/src/spqr_quant/inference_kernels/cuda_kernel.py"
+    },
+    {
+      "path": "inference_lib/setup.cfg",
+      "sha256": "8b9d109961e49f881b54726c7469ea9c119e09fd7a38a0f04bc23ccf9bf406da",
+      "permalink": "https://github.com/Vahe1994/SpQR/blob/543d10e56f921e5eeb10d5f0aaaccd30b6662d0e/inference_lib/setup.cfg"
+    },
+    {
+      "path": "inference_lib/pyproject.toml",
+      "sha256": "30c7d6534b6adfcf4d109113589313cacfdd3f81c9cf17f7ac8acf988cd5308e",
+      "permalink": "https://github.com/Vahe1994/SpQR/blob/543d10e56f921e5eeb10d5f0aaaccd30b6662d0e/inference_lib/pyproject.toml"
+    }
+  ],
+  "symbols": [
+    "SPQRUtil.__init__/add_batch/quantize",
+    "get_leave_one_out_error",
+    "Quantizer.configure/find_params/quantize/dequantize",
+    "get_permutation_order",
+    "QuantizationResult",
+    "QuantizedLinear constructor/layout",
+    "cuda_kernel.py JIT load and registration"
+  ],
+  "scope": "Algorithm and listed API/build symbols; CUDA kernel body NOT read or run",
+  "path_correction": {
+    "attempted": "inference_lib/setup.py",
+    "error": "path does not exist at commit",
+    "actual": [
+      "inference_lib/setup.cfg",
+      "inference_lib/pyproject.toml"
+    ]
+  },
+  "relationship": "Native SPQRUtil API with independently written custom u4 serializer/CPU evaluation; not original compressed CUDA format."
+}

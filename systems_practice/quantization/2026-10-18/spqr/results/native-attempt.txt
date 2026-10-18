@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-18/spqr/example.py", line 137, in <module>
+    main()
+  File "/Users/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-18/spqr/example.py", line 18, in main
+    import torch
+ModuleNotFoundError: No module named 'torch'

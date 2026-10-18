@@ -1,0 +1,43 @@
+{
+  "method": "spqr",
+  "repository": "https://github.com/Vahe1994/SpQR.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-10-18T00:41:52.288397+00:00",
+  "commit": "543d10e56f921e5eeb10d5f0aaaccd30b6662d0e",
+  "cache": ".tmp/quant_sources/spqr-rwib2na4",
+  "status": "fetched",
+  "source_read": false,
+  "example_run": false,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 11657,
+      "sha256": "d7f287e4262d9640d94a6b288e5ebdf0ea40ea94172c8dd1bb5da93e74a2974c",
+      "local_source": ".tmp/quant_sources/spqr-rwib2na4/source/README.md",
+      "permalink": "https://github.com/Vahe1994/SpQR/blob/543d10e56f921e5eeb10d5f0aaaccd30b6662d0e/README.md"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11356,
+      "sha256": "7382b1cf711e7a7c7af9816e0e07b49b91e7149b7c6d347225f98800fcb1f1c2",
+      "local_source": ".tmp/quant_sources/spqr-rwib2na4/source/LICENSE",
+      "permalink": "https://github.com/Vahe1994/SpQR/blob/543d10e56f921e5eeb10d5f0aaaccd30b6662d0e/LICENSE"
+    },
+    {
+      "path": "spqr_engine.py",
+      "bytes": 17692,
+      "sha256": "d10d298f83f20d94440ee8f3d86197644e6299249f615133a82baef8cbbb352c",
+      "local_source": ".tmp/quant_sources/spqr-rwib2na4/source/spqr_engine.py",
+      "permalink": "https://github.com/Vahe1994/SpQR/blob/543d10e56f921e5eeb10d5f0aaaccd30b6662d0e/spqr_engine.py"
+    },
+    {
+      "path": "quant_groups.py",
+      "bytes": 5411,
+      "sha256": "fc243f88df820f305dcd7f573a225d7bfe763424afbfd0601a1056cf61840e2d",
+      "local_source": ".tmp/quant_sources/spqr-rwib2na4/source/quant_groups.py",
+      "permalink": "https://github.com/Vahe1994/SpQR/blob/543d10e56f921e5eeb10d5f0aaaccd30b6662d0e/quant_groups.py"
+    }
+  ],
+  "errors": [],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example."
+}

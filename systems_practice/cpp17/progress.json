@@ -2,8 +2,8 @@
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
   "created_on": "2026-09-29",
-  "last_delivery_date": "2026-10-17",
-  "next_lesson_id": "18",
+  "last_delivery_date": "2026-10-18",
+  "next_lesson_id": "19",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -21,7 +21,8 @@
     "14",
     "15",
     "16",
-    "17"
+    "17",
+    "18"
   ],
   "history": [
     {
@@ -283,6 +284,33 @@
       "lesson_delivered": true,
       "counts_toward_daily_progress": true,
       "verification": "2026-10-17/verification.json"
+    },
+    {
+      "recorded_at": "2026-10-18T08:54:55.915812+08:00",
+      "source_read": true,
+      "version_pinned": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "platform": "macOS arm64 Apple clang21 C++17",
+      "performance_scope": "not measured",
+      "blockers": [
+        "Linux and target board not available"
+      ],
+      "evidence": [
+        "results/final-release.txt",
+        "results/final-sanitize.txt",
+        "results/final-noelide.txt",
+        "results/final-negative.txt"
+      ],
+      "expected_compile_failure_verified": true,
+      "date": "2026-10-18",
+      "lesson_id": "18",
+      "path": "2026-10-18",
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "verification": "2026-10-18/verification.json"
     }
   ],
   "backlog": [
@@ -366,7 +394,13 @@
       "lesson_id": "17",
       "reason": "Target board pending",
       "verification": "2026-10-17/verification.json"
+    },
+    {
+      "date": "2026-10-18",
+      "lesson_id": "18",
+      "reason": "Linux/target board validation pending",
+      "verification": "2026-10-18/verification.json"
     }
   ],
-  "last_canonical_lesson_date": "2026-10-17"
+  "last_canonical_lesson_date": "2026-10-18"
 }

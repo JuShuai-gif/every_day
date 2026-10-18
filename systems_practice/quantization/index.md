@@ -2,7 +2,7 @@
 
 [栏目说明](../docs/quantization/README.md) · [交付模板](../docs/quantization/LESSON_TEMPLATE.md) · [方法目录](catalog.json) · [进度](progress.json)
 
-下一方法：**SpQR**（spqr，第二轮）。SpinQuant已读已交付，原生CPU/Thor待补。
+下一方法：**SmoothQuant**（smoothquant，第二轮）。SpQR已读已交付，原生CPU/Thor待补。
 
 | 日期 | 类型 | 方法 | 源码 / 阅读 / 示例 / CPU / Thor | 证据 |
 | --- | --- | --- | --- | --- |
@@ -51,3 +51,5 @@
 2026-10-15：[QuaRot第二轮：在线旋转成本与i4导出](2026-10-15/quarot/README.md)。固定5008669b真实浅获取/阅读/原生API交付；CPU缺torch未运行，旧SM硬编码的Thor后端未验。SpinQuant旧待补仅重试获取，3文件成功/旧路径缺失，无阅读或运行推进。[五项状态](2026-10-15/quarot/verification.json)。
 
 2026-10-17：[SpinQuant第二轮：原生SGDG与旋转交付成本](2026-10-17/spinquant/README.md)。固定8f47aa3f真实获取/阅读/示例交付；CPU缺torch未运行，Thor未验。旧SpQR仅重试获取成功，无阅读或运行推进。[五项状态](2026-10-17/spinquant/verification.json)。
+
+| 2026-10-18 | 第二轮：稀疏覆盖与真实存储预算 | SpQR | 获取是 / 阅读是 / 示例是 / CPU否（缺torch） / Thor否 | [课程](2026-10-18/spqr/README.md) · [状态](2026-10-18/spqr/verification.json)；SmoothQuant仅重试获取失败 |

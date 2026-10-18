@@ -1,0 +1,60 @@
+{
+  "read_at": "2026-10-18T08:54:55.915812+08:00",
+  "source_read": true,
+  "files": [
+    {
+      "file": "memory.c",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.12/mm/memory.c",
+      "bytes": 195715,
+      "sha256": "363b63b99772b217a59149ec9b8e2f21b569f04cf5be7ad4e5d22afd015ca565"
+    },
+    {
+      "file": "vm.c",
+      "url": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/kernel/vm.c",
+      "bytes": 11451,
+      "sha256": "7e85b5001ab9282eefd11f13cd10f9d09287f1feaa603be7fd984de75e0e0de6"
+    },
+    {
+      "file": "xv6-license",
+      "url": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/LICENSE",
+      "bytes": 1174,
+      "sha256": "677302f30c9882c1f81b9be8ceda6efd4edff5576b9e02963b6114cf70c3162c"
+    }
+  ],
+  "symbols_read": [
+    "Linux v6.12 do_anonymous_page lines4735-4860",
+    "xv6 vmfault/ismapped lines459-501"
+  ],
+  "license": "Linux GPL-2.0-only; xv6 MIT",
+  "relationship": "Independent POSIX host observation; kernel sources explanatory only.",
+  "retrieval_and_reading_separate": true,
+  "search_attempts": [
+    {
+      "file": "google.html",
+      "url": "https://www.google.com/search?q=C%2B%2B+bounded+queue+shutdown+NRVO+Linux+mmap+first+touch",
+      "bytes": 92227
+    },
+    {
+      "file": "zhihu.html",
+      "url": "https://www.zhihu.com/search?type=content&q=ncnn%20NEON%20%E9%A2%84%E5%A4%84%E7%90%86",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "local_pdf": {
+    "path": "/Users/guhaoran/书籍资料/ARM/VivekPublicRepo/ARM-MMU/MMUAdvanced/MMU-Chapter 26 Debugging Tools, Tracing & Instrumentation.pdf",
+    "sha256": "08f5044cf5d890eca5d746d85887aeed505000d58aebd2c0919f5203764bb0b5",
+    "pages_read": [
+      1
+    ],
+    "page_count": 18,
+    "render": "unavailable: no pdftoppm or fitz; text only"
+  },
+  "references": [
+    "https://man7.org/linux/man-pages/man2/mmap.2.html",
+    "https://man7.org/linux/man-pages/man2/mincore.2.html"
+  ],
+  "failed_reference": {
+    "url": "https://man7.org/linux/man-pages/man2/getrusage.2.html",
+    "error": "web internal error"
+  }
+}

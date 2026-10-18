@@ -1,0 +1,30 @@
+{
+  "oracle_cases": 3,
+  "results": [
+    {
+      "case": "writer_column_structure",
+      "axis": "row",
+      "weight_mse": 24.887500000000003,
+      "file_bytes": 44
+    },
+    {
+      "case": "writer_column_structure",
+      "axis": "column",
+      "weight_mse": 0.6312500000000001,
+      "file_bytes": 44
+    },
+    {
+      "case": "transposed_reader_structure",
+      "axis": "row",
+      "weight_mse": 0.63125,
+      "file_bytes": 44
+    },
+    {
+      "case": "transposed_reader_structure",
+      "axis": "column",
+      "weight_mse": 24.8875,
+      "file_bytes": 44
+    }
+  ],
+  "scope": "weight reconstruction only; no rotation/GPTQ/distillation"
+}

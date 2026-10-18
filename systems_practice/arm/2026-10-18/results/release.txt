@@ -1,0 +1,4 @@
+lane CHW: -2.12069 -1.60345 -1.87719 -1.35088 -1.42373 -0.915254
+PASS shapes=54 rejects=2 bitwise_equal=true
+CPU batch_mean_p50_us width=9 height=3 split=0.0168 fused=0.0166 alloc_split=0.0416 alloc_fused=0.0334
+CPU batch_mean_p50_us width=641 height=480 split=151.375 fused=92.6082 alloc_split=143.583 alloc_fused=94.1

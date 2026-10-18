@@ -2,7 +2,7 @@
 
 独立随每日北京时间08:30任务运行，同日不重复推进，不改变12个主方向。路线及完整28课见[课程说明](../docs/cpp17/README.md)，状态见[progress.json](progress.json)。此前主轮换中的C++课程保留原位，不倒填为本栏目的历史交付。
 
-下一节：**18**（按progress.json继续）。
+下一节：**19**（按progress.json继续）。
 
 2026-10-09：[第11课：哈希表插入成本](2026-10-09/README.md)。Mac C++17 通过 `try_emplace`、重复键与 miss 查找边界；目标板未验证。
 
@@ -36,3 +36,5 @@
 2026-10-15：[CPP1716：invoke/apply与参数寿命](2026-10-15/README.md)。成员调用/成员数据引用、move-only与空tuple、两次异常回滚通过Release/ASan/UBSan；板端未验。下一课17。
 
 2026-10-17：[第17课](2026-10-17/README.md)。inline变量与ODR：跨TU身份、边界及预期重复符号链接失败通过；Release/ASan/UBSan通过，板端未验。下一节18。
+
+2026-10-18：[第18课](2026-10-18/README.md)。prvalue直接构造/可选NRVO；不可移动Frame、optional、边界/异常及两种预期编译失败通过；Release/ASan/UBSan/noelide通过，NRVO移动0→1，无性能结论。下一节19。

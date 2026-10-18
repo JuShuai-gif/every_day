@@ -17,7 +17,7 @@
 | [2026-10-03](2026-10-03/README.md) | 11 | NEON多累加器、依赖与寄存器压力 | Mac Release/ASan/UBSan、3081+9数值对照通过，真实汇编；N65539四链P50 3.7900us；板端未验 |
 
 
-下一节：**24**（按progress.json继续）。
+下一节：**25**（按progress.json继续）。
 
 2026-10-09：[第17课：带宽瓶颈与预取适用条件](2026-10-09/README.md)。Mac C++17 通过 4097 元素和空输入；AArch64 `prfm`、PMU、RK3588/Thor 板端性能未验证。
 
@@ -73,3 +73,5 @@
 2026-10-15：[ARM22：小Batch GEMM的权重复用](2026-10-15/README.md)。128组合/零shape拒绝，Release/ASan/UBSan通过；真实LDR/FMLA。Mac M2预打包neon1/neon2批均值P50=2.35668/1.23µs；含pack4.01584µs，板端未验。下一节23。
 
 2026-10-17：[第23课](2026-10-17/README.md)。量化解码融合：12长度/2拒绝，Release/ASan/UBSan通过；真实SSHLL/SCVTF/FMLA。Mac N65539分离/融合CPU批均值P50=43.0596/13.2967µs，板端/PMU未验。下一节24。
+
+2026-10-18：[第24课](2026-10-18/README.md)。RGB/CHW与归一化融合；54组合/2拒绝、Release/ASan/UBSan通过；真实LD3/UADDW/SSHLL/SCVTF。Mac641×480 split/fused批均值P50=128.275/78.1668µs，含分配142.558/93.1666µs；9×3无核内收益。板端未验。下一节25。

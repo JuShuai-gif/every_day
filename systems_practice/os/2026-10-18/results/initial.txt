@@ -1,0 +1,5 @@
+page_bytes=16384 pages=2048 resident_initial=0
+phase=0 wall_us=2437.42 process_cpu_us=2437 minor_faults=2048 major_faults=0 resident=2048 checksum=0
+phase=1 wall_us=321.708 process_cpu_us=322 minor_faults=0 major_faults=0 resident=2048 checksum=261120
+phase=2 wall_us=20.666 process_cpu_us=21 minor_faults=0 major_faults=0 resident=2048 checksum=261120
+PASS mapping/read/write/rewarm rejects=2
