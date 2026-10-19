@@ -1,0 +1,1 @@
+PASS candidates=392 rejections=5 padding/int_exact/empty

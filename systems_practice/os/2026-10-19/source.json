@@ -1,0 +1,27 @@
+{
+  "read_date": "2026-10-19",
+  "source_read": true,
+  "files": [
+    {
+      "key": "linux",
+      "url": "https://github.com/torvalds/linux/blob/v6.12/kernel/sched/core.c",
+      "git_blob_sha": "a1c353a62c5684e3e773dd100afbddb818c480be"
+    },
+    {
+      "key": "research0",
+      "url": "https://github.com/torvalds/linux/blob/v6.12/kernel/sched/syscalls.c",
+      "git_blob_sha": "24f9f90b6574e57481a2d4e5dfbeb831b8a0f367"
+    },
+    {
+      "key": "xv6",
+      "url": "https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/proc.c",
+      "git_blob_sha": "31f23a3148a6a5ff2f61055db7313bddf91656e0"
+    }
+  ],
+  "license": "Linux GPL-2.0-only; xv6 MIT",
+  "relationship": "independent inspired example; no upstream source redistributed",
+  "scope": "Linux v6.12 __schedule and sched_setaffinity call chain; xv6 scheduler/sched/yield; independent host observer",
+  "version_pinned": false,
+  "unread": "OS xv6 exact commit not pinned; libc++ read tag is not claimed as host installed version",
+  "network_attempt_log": "../../daily/2026-10-19/results/research.json"
+}

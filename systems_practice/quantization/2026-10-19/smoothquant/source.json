@@ -1,0 +1,34 @@
+{
+  "method": "smoothquant",
+  "repository": "https://github.com/mit-han-lab/smoothquant.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-10-19T01:23:41.279976+00:00",
+  "commit": "c61476d728e42ae0d8a35e7e78494edcac3237b5",
+  "cache": ".tmp/quant_sources/smoothquant-1cymig_n",
+  "status": "failed",
+  "source_read": false,
+  "example_run": false,
+  "files": [],
+  "errors": [
+    {
+      "path": "README.md",
+      "reason": "Command '['git', 'cat-file', '-s', 'c61476d728e42ae0d8a35e7e78494edcac3237b5:README.md']' timed out after 30 seconds"
+    },
+    {
+      "path": "LICENSE",
+      "reason": "Command '['git', 'cat-file', '-s', 'c61476d728e42ae0d8a35e7e78494edcac3237b5:LICENSE']' timed out after 30 seconds"
+    },
+    {
+      "path": "smoothquant/smooth.py",
+      "reason": "Command '['git', 'cat-file', '-s', 'c61476d728e42ae0d8a35e7e78494edcac3237b5:smoothquant/smooth.py']' timed out after 30 seconds"
+    },
+    {
+      "path": "smoothquant/fake_quant.py",
+      "reason": "Command '['git', 'cat-file', '-s', 'c61476d728e42ae0d8a35e7e78494edcac3237b5:smoothquant/fake_quant.py']' timed out after 30 seconds"
+    },
+    {
+      "reason": "No implementation source obtained; README alone is insufficient."
+    }
+  ],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example."
+}

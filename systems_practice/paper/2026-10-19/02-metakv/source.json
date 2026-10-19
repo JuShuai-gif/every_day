@@ -1,0 +1,28 @@
+{
+  "id": "arxiv:2609.07966",
+  "title": "MetaKV: Adaptive KV Cache Compression for Constrained LLM Inference",
+  "authors": [
+    "Michael Wang",
+    "Keith Li",
+    "Roozbeh Bostandoost"
+  ],
+  "first_submitted": "2026-09-07",
+  "version": "v1",
+  "version_date": "2026-09-07",
+  "primary_fulltext": "https://arxiv.org/html/2609.07966v1",
+  "read_sections": "2.3,3.1-3.2 and Table1 selected text",
+  "read_date": "2026-10-19",
+  "upstream_files": [
+    {
+      "key": "meta-eval",
+      "url": "https://github.com/MichaelWang0505/MetaKV/blob/main/evaluate_metakv.ipynb",
+      "git_blob_sha": "646e55f94a47997969a0679a9fe7cf7d78ab338b"
+    }
+  ],
+  "upstream_branch": "main; commit unpinned, blob SHA recorded",
+  "license": "LICENSE fetch 404; license unresolved; no author code redistributed",
+  "relationship": "independent synthetic CPU mechanism example; not native reproduction",
+  "publication": "preprint; peer review not verified",
+  "unread": "full training/export/evaluation implementations not audited",
+  "source_read": true
+}

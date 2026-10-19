@@ -53,3 +53,5 @@
 2026-10-17：[SpinQuant第二轮：原生SGDG与旋转交付成本](2026-10-17/spinquant/README.md)。固定8f47aa3f真实获取/阅读/示例交付；CPU缺torch未运行，Thor未验。旧SpQR仅重试获取成功，无阅读或运行推进。[五项状态](2026-10-17/spinquant/verification.json)。
 
 | 2026-10-18 | 第二轮：稀疏覆盖与真实存储预算 | SpQR | 获取是 / 阅读是 / 示例是 / CPU否（缺torch） / Thor否 | [课程](2026-10-18/spqr/README.md) · [状态](2026-10-18/spqr/verification.json)；SmoothQuant仅重试获取失败 |
+
+2026-10-19：[SmoothQuant第二轮：共享Norm与真实i8导出](2026-10-19/smoothquant/README.md)。浅克隆解析c61476d7后blob超时，连接器按commit恢复源码快照；获取/阅读/示例是，CPU缺torch未运行，Thor未验。旧LLM.int8仅一次获取重试DNS失败；下一方法LLM.int8。[状态](2026-10-19/smoothquant/verification.json)。

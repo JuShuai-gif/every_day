@@ -1,0 +1,9 @@
+PASS candidates=392 rejections=5 padding/int_exact/empty
+shape=17x19 pad=0 scope=transpose_only batch_mean_us plain_p50=0.10583 blocked32_p50=0.12625 plain_p95=0.1075 blocked32_p95=0.12667
+shape=17x19 pad=0 scope=allocation_init_transpose_free batch_mean_us plain_p50=0.13708 blocked32_p50=0.15875 plain_p95=0.1475 blocked32_p95=0.16084
+shape=1024x1024 pad=0 scope=transpose_only batch_mean_us plain_p50=3413.75 blocked32_p50=386.467 plain_p95=3568.46 blocked32_p95=427.9
+shape=1024x1024 pad=0 scope=allocation_init_transpose_free batch_mean_us plain_p50=3609.07 blocked32_p50=475.417 plain_p95=3759.83 blocked32_p95=598.4
+shape=1024x1024 pad=7 scope=transpose_only batch_mean_us plain_p50=327.533 blocked32_p50=286.925 plain_p95=375.383 blocked32_p95=313.442
+shape=1024x1024 pad=7 scope=allocation_init_transpose_free batch_mean_us plain_p50=368.642 blocked32_p50=319.65 plain_p95=420.183 blocked32_p95=326.667
+shape=1023x769 pad=7 scope=transpose_only batch_mean_us plain_p50=247.633 blocked32_p50=217.117 plain_p95=252.292 blocked32_p95=242.433
+shape=1023x769 pad=7 scope=allocation_init_transpose_free batch_mean_us plain_p50=275.125 blocked32_p50=240.792 plain_p95=304.592 blocked32_p95=254.558

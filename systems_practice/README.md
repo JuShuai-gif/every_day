@@ -12,7 +12,7 @@
 
 每课的 README 与代码、运行脚本和结果放在一起。学习路线、栏目规则等通用说明集中在 docs/。
 
-当前入口：[2026-10-18 C++17并发](daily/2026-10-18/README.md) · [SpQR](quantization/2026-10-18/spqr/README.md) · [ARM24](arm/2026-10-18/README.md) · [RoleQ/FPoT论文](paper/2026-10-18/README.md) · [OS19](os/2026-10-18/README.md) · [C++17第18课](cpp17/2026-10-18/README.md)。
+当前入口：[2026-10-19 CPU体系结构](daily/2026-10-19/README.md) · [SmoothQuant](quantization/2026-10-19/smoothquant/README.md) · [ARM25](arm/2026-10-19/README.md) · [VLM剪枝/MetaKV论文](paper/2026-10-19/README.md) · [OS20](os/2026-10-19/README.md) · [C++17第19课](cpp17/2026-10-19/README.md)。
 
 旧规范和旧总索引文件保留为兼容导航，正文只有一份；历史日志中的旧路径保留原样。迁移对应表见 [目录说明](docs/LAYOUT.md)。
 

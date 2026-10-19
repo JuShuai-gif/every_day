@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-18T08:56:20.604641+08:00",
+  "updated_at": "2026-10-19T10:52:38.055769+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -668,6 +668,34 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2604.24380",
+      "title": "Structural Pruning of Large Vision Language Models: A Comprehensive Study on Pruning Dynamics, Recovery, and Data Efficiency",
+      "delivered_on": "2026-10-19",
+      "first_submitted": "2026-04-27",
+      "version_read": "v1",
+      "directory": "2026-10-19/01-vlm-pruning",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": true,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2609.07966",
+      "title": "MetaKV: Adaptive KV Cache Compression for Constrained LLM Inference",
+      "delivered_on": "2026-10-19",
+      "first_submitted": "2026-09-07",
+      "version_read": "v1",
+      "directory": "2026-10-19/02-metakv",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": true,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
     }
   ],
   "backlog": [
@@ -940,6 +968,18 @@
       "date": "2026-10-18",
       "kind": "author_implementation_and_full_model",
       "reason": "No verified author repository obtained; independent example is not full reproduction"
+    },
+    {
+      "id": "arxiv:2604.24380",
+      "date": "2026-10-19",
+      "kind": "native_full_model_and_device",
+      "reason": "Full VLM pruning/recovery/task/device reproduction pending"
+    },
+    {
+      "id": "arxiv:2609.07966",
+      "date": "2026-10-19",
+      "kind": "native_full_model_and_device",
+      "reason": "Author native training/profile/model/device reproduction pending; MetaKV license unresolved"
     }
   ]
 }

@@ -1,0 +1,24 @@
+{
+  "recorded_at": "2026-10-19T10:50:35.244092+08:00",
+  "source_read": true,
+  "version_pinned": true,
+  "host_compile": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "platform": "macOS-26.6.2-arm64-arm-64bit Apple clang21 C++17",
+  "target_board_verified": false,
+  "evidence": [
+    "results/release.txt",
+    "results/sanitize.txt",
+    "results/benchmark.txt"
+  ],
+  "blockers": [
+    "Linux and target board unavailable"
+  ],
+  "performance_scope": "CPU transpose-only and allocation/init/transpose/free batch mean; no GPU/NPU/E2E",
+  "cases": 392,
+  "rejections": 5,
+  "gpu_kernel_present": false,
+  "cuda_target_policy": "sm_110 only",
+  "gpu_comparison_cursor": "Hopper; next Ada"
+}

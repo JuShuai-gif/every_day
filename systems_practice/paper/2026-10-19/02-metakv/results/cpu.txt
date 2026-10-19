@@ -1,0 +1,10 @@
+{
+  "baseline_priority": "fp16",
+  "least_compressed_per_method": "q8",
+  "no_feasible_paper": "A",
+  "no_feasible_source": "B",
+  "drift_predicted_feasible": true,
+  "synthetic_actual_CSR": 0,
+  "rejections": 3,
+  "scope": "synthetic selection only; no compression/predictor training/device timing"
+}

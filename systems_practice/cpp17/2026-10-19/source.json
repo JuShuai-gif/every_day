@@ -1,0 +1,17 @@
+{
+  "read_date": "2026-10-19",
+  "source_read": true,
+  "files": [
+    {
+      "key": "allocate",
+      "url": "https://github.com/llvm/llvm-project/blob/llvmorg-20.1.8/libcxx/include/__new/allocate.h",
+      "git_blob_sha": "738fa62af4d61d8d74bcae4d122e7afa43400fe4"
+    }
+  ],
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "relationship": "independent inspired example; no upstream source redistributed",
+  "scope": "libc++ llvmorg20.1.8 overaligned allocation/deallocation helpers; independent standard library example",
+  "version_pinned": true,
+  "unread": "OS xv6 exact commit not pinned; libc++ read tag is not claimed as host installed version",
+  "network_attempt_log": "../../daily/2026-10-19/results/research.json"
+}

@@ -1,0 +1,32 @@
+{
+  "method": "smoothquant",
+  "date": "2026-10-19",
+  "repository": "https://github.com/mit-han-lab/smoothquant",
+  "commit": "c61476d728e42ae0d8a35e7e78494edcac3237b5",
+  "source_record": "source-recovery.json",
+  "source_fetched": true,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": [
+    "smooth_ln_fcs",
+    "W8A8Linear.from_float/forward",
+    "quantize_weight_per_channel_absmax",
+    "quantize_activation_per_token_absmax"
+  ],
+  "evidence": [
+    "source-initial.json",
+    "source.json",
+    "source-recovery.json",
+    "results/native-attempt.txt",
+    "example.py"
+  ],
+  "blockers": [
+    "ModuleNotFoundError: torch",
+    "native dependency pair untested",
+    "torch-int C++14/x86_64 linker assumptions need audit; no CUDA13/toolchain/Thor"
+  ],
+  "syntax_checked": true,
+  "numerical_or_performance_results": null
+}

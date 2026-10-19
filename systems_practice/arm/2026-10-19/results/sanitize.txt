@@ -1,0 +1,3 @@
+cap_query_failed key=hw.optional.neon errno=1 fallback=false
+caps neon=0 dot=1 i8mm=1 sve=0 sve2=0 selected=dot
+PASS cases=16 rejections=2 synthetic_dispatch_only=3

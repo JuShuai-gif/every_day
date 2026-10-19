@@ -75,3 +75,5 @@
 2026-10-17：[第23课](2026-10-17/README.md)。量化解码融合：12长度/2拒绝，Release/ASan/UBSan通过；真实SSHLL/SCVTF/FMLA。Mac N65539分离/融合CPU批均值P50=43.0596/13.2967µs，板端/PMU未验。下一节24。
 
 2026-10-18：[第24课](2026-10-18/README.md)。RGB/CHW与归一化融合；54组合/2拒绝、Release/ASan/UBSan通过；真实LD3/UADDW/SSHLL/SCVTF。Mac641×480 split/fused批均值P50=128.275/78.1668µs，含分配142.558/93.1666µs；9×3无核内收益。板端未验。下一节25。
+
+2026-10-19：[第25课](2026-10-19/README.md)。OS能力查询→独立TU分派，标量/NEON扩宽/SDOT；16组/2拒绝，Release+ASan/UBSan通过，真实SDOT/SMULL/SADALP已观察；neon查询权限失败保留，DotProd/i8mm=1；板端待验，无性能结论。下一节26。

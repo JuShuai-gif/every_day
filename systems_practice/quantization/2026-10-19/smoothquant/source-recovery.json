@@ -1,0 +1,67 @@
+{
+  "method": "smoothquant",
+  "repository": "https://github.com/mit-han-lab/smoothquant.git",
+  "commit": "c61476d728e42ae0d8a35e7e78494edcac3237b5",
+  "retrieved_at": "2026-10-19T10:50:35.244092+08:00",
+  "mechanism": "shallow metadata obtained; lazy blobs timed out; GitHub connector fetch_file at same explicit commit recovered required source bytes",
+  "status": "fetched_source_snapshot",
+  "full_checkout_completed": false,
+  "files": [
+    {
+      "path": "smoothquant/smooth.py",
+      "permalink": "https://github.com/mit-han-lab/smoothquant/blob/c61476d728e42ae0d8a35e7e78494edcac3237b5/smoothquant/smooth.py",
+      "git_blob_sha": "c2a70e70fe645c69f970392940511da1465ed71d",
+      "local_source": ".tmp/quant_sources/smoothquant-1cymig_n/source/smoothquant/smooth.py",
+      "snapshot_bytes": 6138,
+      "snapshot_sha256": "7554fb316fe9bab8a21fe16b4ecc0034a198ac6c9654d1f7000377c7c0d868cd"
+    },
+    {
+      "path": "smoothquant/fake_quant.py",
+      "permalink": "https://github.com/mit-han-lab/smoothquant/blob/c61476d728e42ae0d8a35e7e78494edcac3237b5/smoothquant/fake_quant.py",
+      "git_blob_sha": "24b62b5bcba457b273acb2ebc601dd041686d603",
+      "local_source": ".tmp/quant_sources/smoothquant-1cymig_n/source/smoothquant/fake_quant.py",
+      "snapshot_bytes": 12283,
+      "snapshot_sha256": "078bf93d4995e4042ede76aa7d0d9189825e358f326e3ca0699768e9ca83e4b5"
+    },
+    {
+      "path": "setup.py",
+      "permalink": "https://github.com/mit-han-lab/smoothquant/blob/c61476d728e42ae0d8a35e7e78494edcac3237b5/setup.py",
+      "git_blob_sha": "c7a7c84a5c6d4c5767b6a93dc2655a9d1de52dff",
+      "local_source": ".tmp/quant_sources/smoothquant-1cymig_n/source/setup.py",
+      "snapshot_bytes": 164,
+      "snapshot_sha256": "5747828c611a87bc7957ee75fe2a660ff4d68e36925e4bc8ceec5b4911962fb7"
+    },
+    {
+      "path": "LICENSE",
+      "permalink": "https://github.com/mit-han-lab/smoothquant/blob/c61476d728e42ae0d8a35e7e78494edcac3237b5/LICENSE",
+      "git_blob_sha": "f316bee8219819d0f805cbf64336c2074ff5c67a",
+      "local_source": ".tmp/quant_sources/smoothquant-1cymig_n/source/LICENSE",
+      "snapshot_bytes": 1069,
+      "snapshot_sha256": "633a28a2ed3cbaf61d79aabfaaafad16a247f2f5c1c9fd2af4e8b2b839f22e44"
+    },
+    {
+      "path": "README.md",
+      "permalink": "https://github.com/mit-han-lab/smoothquant/blob/c61476d728e42ae0d8a35e7e78494edcac3237b5/README.md",
+      "git_blob_sha": "a28236737adeb22031ceef50bf1852bad3b30d23",
+      "local_source": ".tmp/quant_sources/smoothquant-1cymig_n/source/README.md",
+      "snapshot_bytes": 9768,
+      "snapshot_sha256": "27518f1fc2a88c9a21ae7e6a186dcc37e457e5ee4931a251d361fa3f1bdbe95e"
+    }
+  ],
+  "license": "MIT",
+  "source_read": true,
+  "read_symbols": [
+    "smooth_ln_fcs",
+    "smooth_lm selected callers",
+    "W8A8Linear.from_float",
+    "W8A8Linear.forward",
+    "quantize_weight_per_channel_absmax",
+    "quantize_activation_per_token_absmax"
+  ],
+  "example_run": false,
+  "upstream_kernel_backend_audit": {
+    "key": "research2",
+    "url": "https://github.com/Guangxuan-Xiao/torch-int/blob/main/setup.py",
+    "git_blob_sha": "e9f50c13e40bd245a8aaae96e287f7081fb0933c"
+  }
+}

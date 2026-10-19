@@ -1,0 +1,17 @@
+{
+  "read_date": "2026-10-19",
+  "source_read": true,
+  "files": [
+    {
+      "key": "opencv",
+      "url": "https://github.com/opencv/opencv/blob/4.12.0/modules/core/src/matrix_transform.cpp",
+      "git_blob_sha": "c52fcc1e4fc44b35d057c8b124a567f08130eaeb"
+    }
+  ],
+  "license": "Apache-2.0",
+  "relationship": "independent inspired example; no upstream source redistributed",
+  "scope": "OpenCV4.12.0 transpose_ 4x4/step/tail and cv::transpose dispatcher; independent tiled implementation",
+  "version_pinned": true,
+  "unread": "OS xv6 exact commit not pinned; libc++ read tag is not claimed as host installed version",
+  "network_attempt_log": "results/research.json"
+}

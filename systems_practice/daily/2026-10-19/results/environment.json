@@ -1,0 +1,12 @@
+{
+  "recorded_at": "2026-10-19T10:50:35.244092+08:00",
+  "python": "3.9.6",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "tools": {
+    "nvcc": null,
+    "ncu": null,
+    "cmake": "/opt/homebrew/bin/cmake",
+    "clang++": "/usr/bin/clang++",
+    "perf": null
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "recorded_at": "2026-10-19T10:50:35.244092+08:00",
+  "primary_fulltext_sections_read": true,
+  "author_selected_implementation_read": true,
+  "cpu_mechanism_example_verified": true,
+  "native_author_example_run": false,
+  "full_paper_reproduced": false,
+  "thor_verified": false,
+  "implementation_language": "Python standard library",
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "scope": "synthetic matrix training200steps",
+  "blockers": [
+    "model/data/dependencies/device not available; not downloaded"
+  ],
+  "performance_scope": "no device timing or task accuracy"
+}

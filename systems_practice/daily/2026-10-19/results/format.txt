@@ -1,0 +1,3 @@
+Exact repository format-cpp.sh and .clang-format in scoped mirror; protects preexisting user code and third-party source caches.
+
+exit=0

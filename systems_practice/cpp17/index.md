@@ -38,3 +38,5 @@
 2026-10-17：[第17课](2026-10-17/README.md)。inline变量与ODR：跨TU身份、边界及预期重复符号链接失败通过；Release/ASan/UBSan通过，板端未验。下一节18。
 
 2026-10-18：[第18课](2026-10-18/README.md)。prvalue直接构造/可选NRVO；不可移动Frame、optional、边界/异常及两种预期编译失败通过；Release/ASan/UBSan/noelide通过，NRVO移动0→1，无性能结论。下一节19。
+
+2026-10-19：[第19课](2026-10-19/README.md)。alignas/扩展对齐分配；vector0/1/3/257及扩容、make_unique异常、std::align空间不足，Release+ASan/UBSan通过，alive0；未测性能/板端。下一节20。

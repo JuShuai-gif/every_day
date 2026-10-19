@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "next_method_id": "smoothquant",
-  "last_lesson_date": "2026-10-18",
+  "next_method_id": "llm_int8",
+  "last_lesson_date": "2026-10-19",
   "completed_methods": [
     "awq",
     "adaround",
@@ -10,7 +10,8 @@
     "omniquant",
     "quarot",
     "spinquant",
-    "spqr"
+    "spqr",
+    "smoothquant"
   ],
   "history": [
     {
@@ -471,6 +472,21 @@
       "focus": "Second rotation: native Hessian-aware sparse exceptions with custom u4 overwrite-format export/reload and real byte budget",
       "counts_toward_daily_progress": true,
       "status": "source/read/example delivered; native CPU runtime and Thor pending"
+    },
+    {
+      "date": "2026-10-19",
+      "method": "smoothquant",
+      "commit": "c61476d728e42ae0d8a35e7e78494edcac3237b5",
+      "source_fetched": true,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "lesson": "2026-10-19/smoothquant/README.md",
+      "verification": "2026-10-19/smoothquant/verification.json",
+      "focus": "Second rotation: shared LayerNorm fan-out equivalence, native in-place QDQ ownership and custom real i8 export/reload",
+      "counts_toward_daily_progress": true,
+      "status": "source/read/example delivered; native dependencies and Thor pending"
     }
   ],
   "backlog": [
@@ -852,12 +868,19 @@
       "kind": "native_runtime_and_thor",
       "reason": "Missing torch; upstream JIT arch=native and 3bit packed backend not validated on Thor",
       "verification": "2026-10-18/spqr/verification.json"
+    },
+    {
+      "date": "2026-10-19",
+      "method": "smoothquant",
+      "kind": "native_runtime_and_thor",
+      "reason": "Missing torch; real packed file/precision/runtime not executed; torch-int C++14/x86_64 assumptions need migration audit",
+      "verification": "2026-10-19/smoothquant/verification.json"
     }
   ],
   "policy": "One quantization lesson per Asia/Shanghai calendar day, independent of main rotation. Preparation does not advance cursor. Daily attempted lessons may advance cursor but failures stay in backlog and never enter completed_methods. Completion requires source read and concrete upstream usage example delivered; execution evidence tracked separately.",
   "last_language_audit": "2026-09-22T10:43:01.386131+08:00",
   "language_policy": "Torch-first for algorithms/models/precision/framework timing; C++ optional for explicit layout/CPU kernel studies",
-  "last_canonical_lesson_date": "2026-10-18",
+  "last_canonical_lesson_date": "2026-10-19",
   "backfill_reconciled_at": "2026-09-28T05:01:42.754872+00:00",
   "reconciliation_note": "2026-10-02 concurrent Oct1 registration corrected: calibration draft retained as supplemental; QAT canonical. One old backlog retry AWQ only. Earlier backfill history preserved.",
   "retry_history": [
@@ -942,7 +965,7 @@
       "counts_toward_daily_progress": false
     }
   ],
-  "next_cycle_note": "SpQR next; SpinQuant native CPU/Thor remains backlog; completed_methods means read and example only.",
+  "next_cycle_note": "Next LLM.int8; SmoothQuant native CPU/Thor remain backlog; completion means read plus example only.",
   "source_retries": [
     {
       "date": "2026-10-18",
@@ -952,6 +975,16 @@
       "example_run": false,
       "record": "2026-10-18/smoothquant-retry-source.json",
       "reason": "DNS failure; no verified local cache found; one historical backlog item retried",
+      "counts_toward_daily_progress": false
+    },
+    {
+      "date": "2026-10-19",
+      "method": "llm_int8",
+      "source_fetched": false,
+      "source_read": false,
+      "example_run": false,
+      "record": "2026-10-19/smoothquant/results/backlog-llm-int8-source.json",
+      "reason": "One old backlog acquisition attempt failed GitHub DNS; no new reading/cursor claim",
       "counts_toward_daily_progress": false
     }
   ]

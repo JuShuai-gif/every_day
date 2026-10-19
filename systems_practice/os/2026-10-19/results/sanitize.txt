@@ -1,0 +1,8 @@
+affinity=unavailable_on_host
+workers=1 jobs=0 launch_join_wall_ms=0.073875 process_cpu_ms=0.079 voluntary=0 involuntary=2 checksum=0
+workers=4 jobs=3 launch_join_wall_ms=0.102875 process_cpu_ms=0.184 voluntary=0 involuntary=13 checksum=253518956102879642
+workers=1 jobs=200000 launch_join_wall_ms=3.47667 process_cpu_ms=3.42 voluntary=0 involuntary=13 checksum=13627763573359682169
+workers=2 jobs=200000 launch_join_wall_ms=1.73333 process_cpu_ms=3.42 voluntary=0 involuntary=9 checksum=13627763573359682169
+workers=4 jobs=200000 launch_join_wall_ms=1.49404 process_cpu_ms=4.542 voluntary=0 involuntary=12 checksum=13627763573359682169
+workers=8 jobs=200000 launch_join_wall_ms=1.3565 process_cpu_ms=4.822 voluntary=0 involuntary=56 checksum=13627763573359682169
+PASS checksum/empty/uneven/rejection; not a latency distribution

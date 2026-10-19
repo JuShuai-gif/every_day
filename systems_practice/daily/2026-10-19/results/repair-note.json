@@ -1,0 +1,7 @@
+{
+  "recorded_at": "2026-10-19T10:50:35.244092+08:00",
+  "initial_log": "initial-release.txt (empty; no PASS evidence)",
+  "finding": "review found check() padding traversal for zero logical dimension could address empty storage",
+  "repair": "return before padding oracle when either dimension is zero",
+  "evidence": "final Release and ASan/UBSan empty cases pass"
+}

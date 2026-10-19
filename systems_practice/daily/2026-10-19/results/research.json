@@ -1,0 +1,56 @@
+{
+  "read_date": "2026-10-19",
+  "google_attempt": "https://www.google.com/search?q=CPU+blocked+matrix+transpose+OpenCV+stride",
+  "google_result": "web open internal error; no article read",
+  "zhihu_attempt": "https://zhuanlan.zhihu.com/p/2027433786036482104",
+  "zhihu_result": "search returned candidate; full text open internal error; no technical claim relies on snippet",
+  "web_search_queries": [
+    "ARM HWCAP i8mm SVE 运行时 分派 缓存 分块",
+    "Linux sched affinity runqueue context switches kernel source",
+    "LLM quantization 2026 arxiv October",
+    "KV cache compression 2026 arxiv September"
+  ],
+  "direct_network_failures": [
+    {
+      "file": "opencv_transpose.cpp",
+      "url": "https://raw.githubusercontent.com/opencv/opencv/4.12.0/modules/core/src/matrix_transform.cpp",
+      "error": "<urlopen error _ssl.c:1112: The handshake operation timed out>"
+    },
+    {
+      "file": "ncnn_cpu.cpp",
+      "url": "https://raw.githubusercontent.com/Tencent/ncnn/master/src/cpu.cpp",
+      "error": "<urlopen error _ssl.c:1112: The handshake operation timed out>"
+    },
+    {
+      "file": "allocate.h",
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-20.1.8/libcxx/include/__new/allocate.h",
+      "error": "<urlopen error _ssl.c:1112: The handshake operation timed out>"
+    },
+    {
+      "file": "aligned_alloc.h",
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-20.1.8/libcxx/include/__memory/aligned_alloc.h",
+      "error": "<urlopen error _ssl.c:1112: The handshake operation timed out>"
+    },
+    {
+      "file": "linux_core.c",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.12/kernel/sched/core.c",
+      "error": "<urlopen error _ssl.c:1112: The handshake operation timed out>"
+    },
+    {
+      "file": "xv6_proc.c",
+      "url": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/kernel/proc.c",
+      "error": "<urlopen error _ssl.c:1112: The handshake operation timed out>"
+    },
+    {
+      "file": "xv6_LICENSE",
+      "url": "https://raw.githubusercontent.com/mit-pdos/xv6-riscv/riscv/LICENSE",
+      "error": "<urlopen error _ssl.c:1112: The handshake operation timed out>"
+    },
+    {
+      "file": "hwcaps.rst",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.12/Documentation/arch/arm64/elf_hwcaps.rst",
+      "error": "<urlopen error _ssl.c:1112: The handshake operation timed out>"
+    }
+  ],
+  "recovery": "Read concrete implementation via GitHub connector; not homepage-only"
+}

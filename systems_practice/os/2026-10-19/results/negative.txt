@@ -1,0 +1,2 @@
+expected nonzero exit=1
+--pin requires Linux; no macOS CPU binding claim
