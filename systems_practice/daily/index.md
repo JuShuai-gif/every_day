@@ -45,7 +45,7 @@
 
 | [2026-10-04](2026-10-04/README.md) | C++17 并发 | 有界提交＋关闭排空/在途资源寿命；[KIVI](../quantization/2026-10-04/kivi/README.md) · [ARM12](../arm/2026-10-04/README.md) · [OS07](../os/2026-10-04/README.md) · [C++06](../cpp17/2026-10-04/README.md) · [HOPE/D-Quant](../paper/2026-10-04/README.md) | [线程池](2026-10-04/src/pool.hpp)与[检查](2026-10-04/src/main.cpp) | Release/ASan/UBSan/TSan通过，800任务、启动失败/异常/关闭；量化原生缺checkout/torch，Thor缺工具设备 | 主课不测推理性能；ARM独立CPU direct/pack+SoA P50 13.3386/34.8229us；[记录](2026-10-04/verification.json) |
 
-下一主主题：**C++17 并发**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
+下一主主题：**边缘端部署**。不得因本机缺少 GPU 而跳过代码生成；依规范生成目标环境命令并记录验证边界。
 
 `2026-09-14` 为用户要求补充的历史 C++ 练习，不改变当前轮换位置。
 
@@ -84,3 +84,5 @@
 | [2026-10-18](2026-10-18/README.md) | C++17 并发 | 有界队列背压与关闭排空；[SpQR](../quantization/2026-10-18/spqr/README.md) · [ARM24](../arm/2026-10-18/README.md) · [OS19](../os/2026-10-18/README.md) · [CPP18](../cpp17/2026-10-18/README.md) · [RoleQ/FPoT](../paper/2026-10-18/README.md) | [C++17](2026-10-18/src/main.cpp) | 800提交/10异常、退出/超时/启动回滚；Release/ASan/UBSan/TSan通过；设备未验 | 主课不测性能；ARM Mac641×480分步/融合128.275/78.1668µs批均值P50，非板端；[记录](2026-10-18/verification.json)。下一主方向CPU体系结构；GPU对照游标仍Hopper |
 
 | [2026-10-19](2026-10-19/README.md) | CPU 体系结构 | 转置缓存分块与stride合同；[SmoothQuant](../quantization/2026-10-19/smoothquant/README.md) · [ARM25](../arm/2026-10-19/README.md) · [OS20](../os/2026-10-19/README.md) · [CPP19](../cpp17/2026-10-19/README.md) · [VLM/MetaKV论文](../paper/2026-10-19/README.md) | [C++17基线/分块](2026-10-19/src/main.cpp) | 392组合/5拒绝，Release+ASan/UBSan通过；GPU无新增kernel，板端未验 | Mac1024²连续布局循环批均值P50 plain3413.75/tile32 386.467µs，小shape退化保留；非GPU/NPU/E2E；[日志](2026-10-19/results/benchmark.txt)。下一主方向ARM SIMD/NEON；GPU对照游标仍Hopper |
+
+| [2026-10-21](2026-10-21/README.md) | ARM SIMD / NEON | 舍入合同与饱和窄化；[LLM.int8](../quantization/2026-10-21/llm_int8/README.md) · [ARM26](../arm/2026-10-21/README.md) · [OS21](../os/2026-10-21/README.md) · [CPP20](../cpp17/2026-10-21/README.md) · [两篇论文](../paper/2026-10-21/README.md) | [标量/NEON](2026-10-21/src/quantize.hpp) | 1404比较/4非法scale；Release/ASan/UBSan通过，真实FCVTAS/SQXTN；量化Thor候选未编译，理论对照Ada | Mac百万元素CPU批均值P50 scalar704.854/NEON98.9165µs；无GPU/NPU/E2E；[记录](2026-10-21/verification.json)。下一主方向边缘端部署；下次GPU理论对照Turing |

@@ -1,0 +1,33 @@
+{
+  "rho": [
+    0.9953450773057202,
+    0.001671221538921406,
+    0.0013507918623944708,
+    0.0016329092929638818
+  ],
+  "tune_mse": {
+    "0": 0.8284050854816888,
+    "0.25": 0.256589699188562,
+    "0.5": 0.03440448486813515,
+    "1": 0.04211657536398221
+  },
+  "selected_alpha": 0.5,
+  "equivalence_max_abs": 1.7763568394002505e-15,
+  "results": {
+    "eval": {
+      "absminmax_u2": 0.14760969280190922,
+      "rotation_only": 0.5934253758557364,
+      "selected": 0.027168115482384417
+    },
+    "shift": {
+      "absminmax_u2": 0.15838031990640325,
+      "rotation_only": 0.28450064218661264,
+      "selected": 0.8950138162719014
+    }
+  },
+  "actual_file_bytes": 43,
+  "fp16_weight_payload_bytes": 24,
+  "training_steps": 0,
+  "packed_reload_equal": true,
+  "scope": "u2 minmax RTN, FP64 host MAC; not AutoRound/native lowbit"
+}

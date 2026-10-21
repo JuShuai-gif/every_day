@@ -55,3 +55,5 @@
 | 2026-10-18 | 第二轮：稀疏覆盖与真实存储预算 | SpQR | 获取是 / 阅读是 / 示例是 / CPU否（缺torch） / Thor否 | [课程](2026-10-18/spqr/README.md) · [状态](2026-10-18/spqr/verification.json)；SmoothQuant仅重试获取失败 |
 
 2026-10-19：[SmoothQuant第二轮：共享Norm与真实i8导出](2026-10-19/smoothquant/README.md)。浅克隆解析c61476d7后blob超时，连接器按commit恢复源码快照；获取/阅读/示例是，CPU缺torch未运行，Thor未验。旧LLM.int8仅一次获取重试DNS失败；下一方法LLM.int8。[状态](2026-10-19/smoothquant/verification.json)。
+
+2026-10-21：[LLM.int8第二轮：离群列与量化状态](2026-10-21/llm_int8/README.md)。原仓库83364904实际获取/阅读/原生API交付；CPU未运行（Python/torch），Thor基线/共享候选已写、未编译。固定sm_110，理论对照Ada，下一Turing。一个旧calibration获取重试失败；下个方法calibration。[五项状态](2026-10-21/llm_int8/verification.json)。

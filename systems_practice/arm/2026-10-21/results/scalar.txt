@@ -1,0 +1,1 @@
+PASS mode=scalar elements=1048576 repeats=1000 hot_loop_ms=719.671 PMU=not_collected_by_program

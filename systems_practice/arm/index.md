@@ -77,3 +77,5 @@
 2026-10-18：[第24课](2026-10-18/README.md)。RGB/CHW与归一化融合；54组合/2拒绝、Release/ASan/UBSan通过；真实LD3/UADDW/SSHLL/SCVTF。Mac641×480 split/fused批均值P50=128.275/78.1668µs，含分配142.558/93.1666µs；9×3无核内收益。板端未验。下一节25。
 
 2026-10-19：[第25课](2026-10-19/README.md)。OS能力查询→独立TU分派，标量/NEON扩宽/SDOT；16组/2拒绝，Release+ASan/UBSan通过，真实SDOT/SMULL/SADALP已观察；neon查询权限失败保留，DotProd/i8mm=1；板端待验，无性能结论。下一节26。
+
+2026-10-21：[第26课：PMU事件语义与采样定位](2026-10-21/README.md)。Mac Release/ASan/UBSan与真实FCVTAS/SQXTN通过；仅CPU转换probe。已读Linux v6.12 PMUv3，Linux perf/板端未验。 下一节27。

@@ -1,0 +1,5 @@
+PASS cases=1404 invalid_scales=4 ties/NaN/Inf/tails/offsets/guards
+CPU batch_mean_us n=7 repeats=149796 scalar_p50=0.0108336 neon_p50=0.0112628 scalar_p95=0.011544 neon_p95=0.0117382
+CPU batch_mean_us n=65 repeats=16131 scalar_p50=0.0806832 neon_p50=0.0163893 scalar_p95=0.0812617 neon_p95=0.0165778
+CPU batch_mean_us n=4096 repeats=256 scalar_p50=5.11654 neon_p50=0.856934 scalar_p95=5.39714 neon_p95=0.897301
+CPU batch_mean_us n=1048576 repeats=4 scalar_p50=1305.16 neon_p50=219.719 scalar_p95=1363.96 neon_p95=228.583

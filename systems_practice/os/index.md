@@ -41,3 +41,5 @@
 2026-10-18：[第19课](2026-10-18/README.md)。mmap驻留/首次触页；Mac2048页初读minor2048、之后两轮写minor0，checksum通过；Release/ASan/UBSan通过。Linux源码已读，Linux/xv6/板端未验；一次观察不是性能分布。下一节20。
 
 2026-10-19：[第20课](2026-10-19/README.md)。亲和性/核拓扑与切换/运行队列；固定工作量1/2/4/8线程checksum、空/不均匀/拒绝，Release+ASan/UBSan/TSan通过；Mac观测不是Linux因果或P95，Linux/板端待验。下一节21。
+
+2026-10-21：[第21课：等待谓词与futex丢失唤醒边界](2026-10-21/README.md)。40轮、200完成/160预期异常，空队列仍有在途任务/关闭排空/拒绝边界；Release/ASan/UBSan/TSan通过。Linux futex/xv6/板端未验。 下一节22。

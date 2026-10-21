@@ -1,0 +1,17 @@
+{
+  "recorded_at": "2026-10-21T09:23:54.368221+08:00",
+  "primary_fulltext_sections_read": true,
+  "author_selected_implementation_read": true,
+  "cpu_mechanism_example_verified": true,
+  "native_author_example_run": false,
+  "full_paper_reproduced": false,
+  "thor_verified": false,
+  "implementation_language": "Python standard library",
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "blockers": [
+    "No full-model dependencies/data/device; no installation/download"
+  ],
+  "performance_scope": "No GPU/NPU/end-to-end timing or LLM task accuracy"
+}

@@ -1,0 +1,15 @@
+{
+  "read_at": "2026-10-21T09:23:54.368221+08:00",
+  "paper": "https://arxiv.org/html/2605.25203v1",
+  "version_read": "v1 selected methods/experiments/limitations",
+  "repository": "https://github.com/gogipav14/spectral-llm",
+  "commit": "792d3347792aaa7916da70e465c366b3cdbc546a",
+  "symbols_read": [
+    "boolean_fourier/bbt_quant/influence.py:_SpectralEnergyHook/compute_layer_influences/bbt_channel_scales",
+    "boolean_fourier/bbt_quant/autoround_bbt.py:prepare_model_for_autoround/quantize_with_autoround"
+  ],
+  "license": "MIT; LICENSE read",
+  "relationship": "Independent mechanism example inspired by paper and read implementation; no author code copied",
+  "retrieval": "GitHub selected file reads; not local clone",
+  "full_repository_executed": false
+}

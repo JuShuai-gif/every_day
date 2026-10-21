@@ -1,0 +1,16 @@
+{
+  "recorded_at": "2026-10-21T09:26:54.424264+08:00",
+  "user_files_sha256_unchanged": true,
+  "scoped_original_format_cpp_sh": true,
+  "formatted_current_cpp_cuda_files": 6,
+  "python_ast": 3,
+  "shell_syntax": 14,
+  "json_parsed": 15,
+  "markdown_files_links_checked": 9,
+  "link_errors": [],
+  "global_git_diff_check_returncode": 2,
+  "global_git_diff_check_original_output": "systems_practice/arm/2026-09-23/src/registers.cpp:26: trailing whitespace.\n+  W0：          | 低 32 位 |  \n",
+  "global_diff_note": "Global diff contains one preserved pre-existing user whitespace error; current staged changes pass.",
+  "native_cpu_and_thor_status": "Native torch absent; CUDA nvcc absent; no inferred runtime success",
+  "staged_git_diff_check_passed": true
+}

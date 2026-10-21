@@ -1,0 +1,85 @@
+{
+  "method": "llm_int8",
+  "repository": "https://github.com/bitsandbytes-foundation/bitsandbytes.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-10-21T01:06:10.228609+00:00",
+  "commit": "833649043474794b8fe7a4136e0c40faf077b2e0",
+  "cache": ".tmp/quant_sources/llm_int8-tzvcif8e",
+  "status": "fetched",
+  "source_read": false,
+  "example_run": false,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 8266,
+      "sha256": "68fc2df60317162ca34ba4a1aa0ff3dbc195634391ddeff326b3b109ff7d5ea3",
+      "local_source": ".tmp/quant_sources/llm_int8-tzvcif8e/source/README.md",
+      "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/833649043474794b8fe7a4136e0c40faf077b2e0/README.md"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1086,
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85",
+      "local_source": ".tmp/quant_sources/llm_int8-tzvcif8e/source/LICENSE",
+      "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/833649043474794b8fe7a4136e0c40faf077b2e0/LICENSE"
+    },
+    {
+      "path": "bitsandbytes/nn/modules.py",
+      "bytes": 44262,
+      "sha256": "f7ab2160681e2f089caae80d6fd283ac6a9b9f1b82269e6f395c3b046faf606e",
+      "local_source": ".tmp/quant_sources/llm_int8-tzvcif8e/source/bitsandbytes/nn/modules.py",
+      "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/833649043474794b8fe7a4136e0c40faf077b2e0/bitsandbytes/nn/modules.py"
+    },
+    {
+      "path": "bitsandbytes/functional.py",
+      "bytes": 65287,
+      "sha256": "520a9e9d3afba11124734df60e48a27e38b6389305df888834405b435e285817",
+      "local_source": ".tmp/quant_sources/llm_int8-tzvcif8e/source/bitsandbytes/functional.py",
+      "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/833649043474794b8fe7a4136e0c40faf077b2e0/bitsandbytes/functional.py"
+    },
+    {
+      "path": "bitsandbytes/autograd/_functions.py",
+      "bytes": 17700,
+      "sha256": "77ca54c87b69ad470ac73e5d7dde94948f20de9de8b8764957728bc29831f37f",
+      "local_source": ".tmp/quant_sources/llm_int8-tzvcif8e/source/bitsandbytes/autograd/_functions.py",
+      "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/833649043474794b8fe7a4136e0c40faf077b2e0/bitsandbytes/autograd/_functions.py"
+    },
+    {
+      "path": "bitsandbytes/backends/default/ops.py",
+      "bytes": 19802,
+      "sha256": "e39afd16dca6e6f34a14305ade0ba4acbb49dc2c7a9baf937341d7e33b682819",
+      "local_source": ".tmp/quant_sources/llm_int8-tzvcif8e/source/bitsandbytes/backends/default/ops.py",
+      "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/833649043474794b8fe7a4136e0c40faf077b2e0/bitsandbytes/backends/default/ops.py"
+    },
+    {
+      "path": "bitsandbytes/backends/cuda/ops.py",
+      "bytes": 42583,
+      "sha256": "d58fa0a0c053d5a0ecd1e93d847531d5e0226a0bd8048472ee0ca632464cc20f",
+      "local_source": ".tmp/quant_sources/llm_int8-tzvcif8e/source/bitsandbytes/backends/cuda/ops.py",
+      "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/833649043474794b8fe7a4136e0c40faf077b2e0/bitsandbytes/backends/cuda/ops.py"
+    },
+    {
+      "path": "bitsandbytes/backends/cpu/ops.py",
+      "bytes": 20911,
+      "sha256": "d4bfca8b4ce6a6a368aeccdd1516f98f505bf374f6e66d64fb22e6229eb1ff67",
+      "local_source": ".tmp/quant_sources/llm_int8-tzvcif8e/source/bitsandbytes/backends/cpu/ops.py",
+      "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/833649043474794b8fe7a4136e0c40faf077b2e0/bitsandbytes/backends/cpu/ops.py"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 5019,
+      "sha256": "d88a6f7fd14f5226438a2cab4b48ace737b998fc5444bcbb972e6586ec8ce676",
+      "local_source": ".tmp/quant_sources/llm_int8-tzvcif8e/source/pyproject.toml",
+      "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/833649043474794b8fe7a4136e0c40faf077b2e0/pyproject.toml"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "bytes": 20610,
+      "sha256": "b248579ea0feba8f3c7dc1c3aef15cd50163080c599db7df8a8766d739d450d0",
+      "local_source": ".tmp/quant_sources/llm_int8-tzvcif8e/source/CMakeLists.txt",
+      "permalink": "https://github.com/bitsandbytes-foundation/bitsandbytes/blob/833649043474794b8fe7a4136e0c40faf077b2e0/CMakeLists.txt"
+    }
+  ],
+  "errors": [],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example."
+}

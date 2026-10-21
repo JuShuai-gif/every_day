@@ -1,0 +1,39 @@
+{
+  "method": "llm_int8",
+  "date": "2026-10-21",
+  "repository": "https://github.com/bitsandbytes-foundation/bitsandbytes.git",
+  "commit": "833649043474794b8fe7a4136e0c40faf077b2e0",
+  "source_record": "source.json",
+  "source_fetched": true,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": [
+    "Int8Params._quantize/to",
+    "Linear8bitLt.forward/_save_to_state_dict/_load_from_state_dict",
+    "MatMul8bitLt.forward",
+    "matmul",
+    "default int8_vectorwise_quant/int8_mixed_scaled_mm",
+    "CPU int8_linear_matmul dispatch",
+    "CUDA _int8_linear_matmul_impl",
+    "CMake COMPUTE_CAPABILITY"
+  ],
+  "evidence": [
+    "results/native-cpu.txt",
+    "results/native-cpu-python312.txt",
+    "source-retry.json",
+    "results/thor-build.txt",
+    "results/native-cpu-final.txt",
+    "results/native-cpu-python312-final.txt"
+  ],
+  "blockers": [
+    "Python3.9 below minimum; bundled Python3.12 lacks torch",
+    "No Thor/nvcc/ncu; native extension and independent baseline/tiled candidate compilation/runtime/ISA pending"
+  ],
+  "recorded_at": "2026-10-21T09:15:47.812212+08:00",
+  "cuda_candidate_delivered": true,
+  "cuda_compile": false,
+  "gpu_architecture_comparison": "Thor SM110 vs Ada SM89 (theory only)",
+  "cuda_source": "src/mixed.cu"
+}

@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-21",
+  "sources": [
+    {
+      "repository": "https://github.com/llvm/llvm-project",
+      "ref": "llvmorg-20.1.8",
+      "path": "libcxx/src/condition_variable.cpp",
+      "symbols": [
+        "condition_variable::wait",
+        "notify_all"
+      ],
+      "license": "Apache-2.0 WITH LLVM-exception"
+    },
+    {
+      "repository": "https://github.com/bminor/glibc",
+      "ref": "glibc-2.41",
+      "path": "nptl/pthread_cond_wait.c",
+      "symbols": [
+        "__pthread_cond_wait_common"
+      ],
+      "read_lines": "330-470",
+      "license": "LGPL-2.1-or-later"
+    },
+    {
+      "repository": "https://github.com/torvalds/linux",
+      "ref": "v6.12",
+      "path": "kernel/futex/waitwake.c",
+      "read_lines": "1-110 ordering commentary",
+      "license": "GPL-2.0-or-later"
+    }
+  ],
+  "relationship": "Independent teaching Worker; no copied OS implementation",
+  "source_read": true
+}

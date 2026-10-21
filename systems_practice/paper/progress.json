@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-19T10:52:38.055769+08:00",
+  "updated_at": "2026-10-21T09:25:39.858224+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -696,6 +696,34 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2605.29128",
+      "title": "Apertus LLM Family Expansion via Distillation and Quantization",
+      "delivered_on": "2026-10-21",
+      "first_submitted": "2026-05-27",
+      "version_read": "v1",
+      "directory": "2026-10-21/01-apertus",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": true,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2605.25203",
+      "title": "Influence-Inspired Spectral Rotations for Extreme Low-Bit LLM Quantization",
+      "delivered_on": "2026-10-21",
+      "first_submitted": "2026-05-24",
+      "version_read": "v1",
+      "directory": "2026-10-21/02-spectral",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": true,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
     }
   ],
   "backlog": [
@@ -980,6 +1008,18 @@
       "date": "2026-10-19",
       "kind": "native_full_model_and_device",
       "reason": "Author native training/profile/model/device reproduction pending; MetaKV license unresolved"
+    },
+    {
+      "id": "arxiv:2605.29128",
+      "date": "2026-10-21",
+      "kind": "native_full_model_and_device",
+      "reason": "Author full training/evaluation/native backend and hardware not reproduced; qat-suite license unresolved"
+    },
+    {
+      "id": "arxiv:2605.25203",
+      "date": "2026-10-21",
+      "kind": "native_full_model_and_device",
+      "reason": "Author full training/evaluation/native backend and hardware not reproduced"
     }
   ]
 }

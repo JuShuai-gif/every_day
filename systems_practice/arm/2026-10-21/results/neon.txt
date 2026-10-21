@@ -1,0 +1,1 @@
+PASS mode=neon elements=1048576 repeats=1000 hot_loop_ms=104.467 PMU=not_collected_by_program

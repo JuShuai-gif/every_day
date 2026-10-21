@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-21",
+  "repository": "https://github.com/llvm/llvm-project",
+  "ref": "llvmorg-20.1.8",
+  "files": [
+    "libcxx/src/memory_resource.cpp",
+    "libcxx/include/__memory_resource/monotonic_buffer_resource.h"
+  ],
+  "symbols": [
+    "monotonic_buffer_resource::do_allocate",
+    "align_down",
+    "release",
+    "do_deallocate"
+  ],
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "relationship": "Independent public-API demonstration",
+  "source_read": true
+}

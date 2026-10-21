@@ -1,0 +1,17 @@
+{
+  "read_at": "2026-10-21T09:23:54.368221+08:00",
+  "paper": "https://arxiv.org/html/2605.29128v1",
+  "version_read": "v1 selected methods/experiments/limitations",
+  "repository": "https://github.com/swiss-ai/qat-suite",
+  "commit": "40303358230f99953ba1b0402fe2d640f2caf26b",
+  "symbols_read": [
+    "pseudoqat_pkg/distill_loss.py:_TeacherDistillLoss.forward/backward",
+    "pseudoqat_pkg/pseudoquant.py:STE_FakeQuantize",
+    "pseudoqat_pkg/train_distill.py:optimizer.step and freeze/save",
+    "pyproject.toml"
+  ],
+  "license": "No LICENSE found in inspected tree; unresolved",
+  "relationship": "Independent mechanism example inspired by paper and read implementation; no author code copied",
+  "retrieval": "GitHub selected file reads; not local clone",
+  "full_repository_executed": false
+}

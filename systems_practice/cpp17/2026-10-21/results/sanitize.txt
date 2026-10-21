@@ -1,0 +1,2 @@
+clear_alive=0 retained_upstream_bytes=4032
+PASS allocation_calls=1 peak_bytes=4032 live=0 bounded_oom=1 reuse=1 constructor_rollback=1

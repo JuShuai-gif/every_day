@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-21",
+  "repository": "https://github.com/Tencent/ncnn",
+  "read_ref": "master",
+  "head_observed": "7e36d25cb153092ba87a60530455c7376fedf452",
+  "source_read": true,
+  "version_pinned": false,
+  "files": [
+    {
+      "path": "src/layer/arm/arm_usability.h",
+      "symbols": [
+        "float2int8(float)",
+        "float2int8(float32x4_t,float32x4_t)"
+      ],
+      "blob_sha": "f6a88b72afc3f4a70400f763ec2e11f5387edcb4"
+    },
+    {
+      "path": "src/layer/arm/quantize_arm.cpp",
+      "symbols": [
+        "quantize",
+        "Quantize_arm::forward"
+      ]
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "relationship": "Independent implementation inspired by upstream; explicit NaN/Inf policy added",
+  "official": "https://arm-software.github.io/acle/neon_intrinsics/advsimd.html",
+  "search_attempts": "实际检索日期2026-10-21。Google直访 `https://www.google.com/search?q=ncnn+float2int8+NEON+rounding+pmr+futex` 与知乎 `https://www.zhihu.com/search?type=content&q=NEON%20float2int8` 被网页工具拒绝访问；搜索引擎查询未取得可核查的知乎原文，因此不声称读过知乎案例。技术依据来自下面实际读取的GitHub实现与官方资料。"
+}

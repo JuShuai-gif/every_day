@@ -1,0 +1,28 @@
+{
+  "recorded_at": "2026-10-21T09:12:44.002213+08:00",
+  "source_read": true,
+  "host_compile": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "target_board_verified": false,
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "compiler": "Apple clang21 C++17",
+  "blockers": [
+    "No Linux/target board hardware"
+  ],
+  "cases": 1404,
+  "invalid_scale_rejections": 4,
+  "assembly_observed": true,
+  "performance_scope": "Mac CPU conversion; 11 batch mean samples, not request latency",
+  "evidence": [
+    "results/release.txt",
+    "results/sanitize.txt",
+    "results/benchmark.txt",
+    "results/native-arm64.s"
+  ],
+  "cuda_target": "sm_110",
+  "cuda_compile": false,
+  "gpu_run": false,
+  "npu_run": false,
+  "gpu_architecture_comparison_cursor": "Ada (quantization CUDA candidate); next Turing"
+}
