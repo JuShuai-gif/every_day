@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-22",
+  "source_read": true,
+  "primary_fulltext_sections_read": true,
+  "author_implementation_read": false,
+  "example_delivered": true,
+  "cpu_example_run": true,
+  "thor_verified": false,
+  "full_paper_reproduced": false,
+  "evidence": [
+    "results/output.json"
+  ],
+  "blockers": [
+    "No full model/data/target hardware; independent example only",
+    "Author repository not verified"
+  ]
+}

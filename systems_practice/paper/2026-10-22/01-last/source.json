@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-22",
+  "id": "arxiv:2607.27952",
+  "version": "v1",
+  "title": "LAST: The Last Query Token Guides Visual Token Pruning for Edge–Cloud Collaborative MLLM Inference",
+  "authors": [
+    "Feng Yang",
+    "Xinrui Ju",
+    "Keyang Zhang",
+    "Xiandong Meng",
+    "Rongqun Lin",
+    "Howard Leung",
+    "Shiqi Wang",
+    "Haoliang Li",
+    "Chris Xing Tian"
+  ],
+  "first_submitted": "2026-07-30",
+  "status": "preprint; peer review not established",
+  "url": "https://arxiv.org/html/2607.27952v1",
+  "read_sections": [
+    "Method overview and edge-cloud interface",
+    "Last-query scoring eq7-8",
+    "Selection eq9-12",
+    "Experiment settings and Tables1-2",
+    "Conclusion"
+  ],
+  "author_repository": null,
+  "author_search": "title/id + github search, no verified result; paper HTML no author code link found",
+  "relationship": "Independently authored CPU rule example; no author code reproduction"
+}

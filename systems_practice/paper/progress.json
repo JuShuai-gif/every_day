@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-21T09:25:39.858224+08:00",
+  "updated_at": "2026-10-22T09:28:03.715720+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -724,6 +724,34 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2607.27952",
+      "title": "LAST: The Last Query Token Guides Visual Token Pruning for Edge–Cloud Collaborative MLLM Inference",
+      "delivered_on": "2026-10-22",
+      "first_submitted": "2026-07-30",
+      "version_read": "v1",
+      "directory": "2026-10-22/01-last",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": false,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python stdlib"
+    },
+    {
+      "id": "arxiv:2602.18420",
+      "title": "SPQ: An Ensemble Technique for Large Language Model Compression",
+      "delivered_on": "2026-10-22",
+      "first_submitted": "2026-02-20",
+      "version_read": "LREC2026 proceedings",
+      "directory": "2026-10-22/02-spq",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": true,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python NumPy2.3.5"
     }
   ],
   "backlog": [
@@ -1020,6 +1048,11 @@
       "date": "2026-10-21",
       "kind": "native_full_model_and_device",
       "reason": "Author full training/evaluation/native backend and hardware not reproduced"
+    },
+    {
+      "date": "2026-10-22",
+      "id": "arxiv:2607.27952",
+      "reason": "Author code not verified; full model/Thor reproduction pending"
     }
   ]
 }

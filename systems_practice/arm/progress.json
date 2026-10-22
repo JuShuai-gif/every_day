@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
-  "last_delivery_date": "2026-10-21",
-  "next_lesson_id": "27",
+  "last_delivery_date": "2026-10-22",
+  "next_lesson_id": "28",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -29,7 +29,8 @@
     "23",
     "24",
     "25",
-    "26"
+    "26",
+    "27"
   ],
   "history": [
     {
@@ -526,6 +527,29 @@
       "actual_isa": "FCVTAS/SQXTN actual macOS A64 assembly; Linux PMUv3 source read",
       "performance_scope": "CPU conversion probe, no PMU evidence",
       "linux_pmu_verified": false
+    },
+    {
+      "date": "2026-10-22",
+      "lesson_id": "27",
+      "path": "2026-10-22",
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "source_read": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "recorded_at": "2026-10-22T09:28:03.715720+08:00",
+      "verification": "2026-10-22/README.md",
+      "evidence": [
+        "results/verified-release.txt",
+        "results/verified-sanitize.txt"
+      ],
+      "tsan_passed": true,
+      "arm_evidence": "results/publication.s: actual STLR/LDAPR",
+      "thor_transfer_compiled": false,
+      "thor_transfer_run": false,
+      "performance_scope": "none; CPU publication only"
     }
   ],
   "backlog": [
@@ -613,6 +637,12 @@
       "lesson_id": "26",
       "reason": "Linux/target board validation pending; perf PMU not available",
       "verification": "2026-10-21/README.md"
+    },
+    {
+      "date": "2026-10-22",
+      "lesson_id": "27",
+      "reason": "Thor CUDA transfer, actual DMA/SDK completion and board validation pending",
+      "evidence": "2026-10-22/README.md"
     }
   ],
   "curriculum_adjustments": [
@@ -641,5 +671,5 @@
       "reason": "User requested four working/deployment capability layers; mapped existing 28 lessons, preserved order and historical progress. Actual delivery08 advances to09 separately."
     }
   ],
-  "last_canonical_lesson_date": "2026-10-21"
+  "last_canonical_lesson_date": "2026-10-22"
 }

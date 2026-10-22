@@ -1,0 +1,1 @@
+PASS CPU frames=10000 elements=17 bidirectional publication; early-reuse counterexample; device simulation only

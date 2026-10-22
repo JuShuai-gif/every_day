@@ -12,7 +12,7 @@
 
 每课的 README 与代码、运行脚本和结果放在一起。学习路线、栏目规则等通用说明集中在 docs/。
 
-当前入口：[2026-10-21 ARM SIMD/NEON](daily/2026-10-21/README.md) · [LLM.int8](quantization/2026-10-21/llm_int8/README.md) · [ARM26](arm/2026-10-21/README.md) · [Apertus/Spectral论文](paper/2026-10-21/README.md) · [OS21](os/2026-10-21/README.md) · [C++17第20课](cpp17/2026-10-21/README.md)。
+当前入口：[2026-10-22 边缘部署](daily/2026-10-22/README.md) · [EMA校准](quantization/2026-10-22/calibration/README.md) · [ARM27](arm/2026-10-22/README.md) · [LAST/SPQ论文](paper/2026-10-22/README.md) · [OS22](os/2026-10-22/README.md) · [C++17第21课](cpp17/2026-10-22/README.md)。
 
 旧规范和旧总索引文件保留为兼容导航，正文只有一份；历史日志中的旧路径保留原样。迁移对应表见 [目录说明](docs/LAYOUT.md)。
 

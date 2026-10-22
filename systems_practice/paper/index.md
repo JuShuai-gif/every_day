@@ -65,3 +65,5 @@
 2026-10-19：[VLM结构剪枝/MetaKV](2026-10-19/README.md)。2604.24380v1（2026-04-27扩展，承接2025工作）、2609.07966v1（09-07）；方法/实验选段与作者选定源码已读。独立CPU真实200步projector恢复MSE0.44235→6.19e-11，MetaKV论文/源码fallback选择A/B反转通过；非完整模型/Thor复现，MetaKV许可待核实。
 
 2026-10-21：[Apertus蒸馏与量化](2026-10-21/01-apertus/README.md) · [Influence-Inspired Spectral Rotations for Extreme Low-Bit LLM Quantization](2026-10-21/02-spectral/README.md)。两篇一手全文选段/作者源码已读；独立CPU示例通过，160步STE与u2打包重载。偏移MSE与元数据存储退化保留；完整模型/设备未复现。[总览](2026-10-21/README.md)。
+
+2026-10-22：[LAST与SPQ](2026-10-22/README.md)。LAST首发07-30v1，SPQ首发02-20、5月LREC版本（365天例外）。全文选段已读，SPQ作者源码已读；独立CPU选择/NumPy打包通过，偏移退化与metadata/FP32影子成本保留。完整模型/Thor未验。

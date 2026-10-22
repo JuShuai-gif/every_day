@@ -79,3 +79,5 @@
 2026-10-19：[第25课](2026-10-19/README.md)。OS能力查询→独立TU分派，标量/NEON扩宽/SDOT；16组/2拒绝，Release+ASan/UBSan通过，真实SDOT/SMULL/SADALP已观察；neon查询权限失败保留，DotProd/i8mm=1；板端待验，无性能结论。下一节26。
 
 2026-10-21：[第26课：PMU事件语义与采样定位](2026-10-21/README.md)。Mac Release/ASan/UBSan与真实FCVTAS/SQXTN通过；仅CPU转换probe。已读Linux v6.12 PMUv3，Linux perf/板端未验。 下一节27。
+
+2026-10-22：[第27课](2026-10-22/README.md)。CPU发布/设备完成边界；10000帧Release/ASan/UBSan/TSan通过，真实STLR/LDAPR；Thor传输候选缺nvcc，未验。 下一节28。

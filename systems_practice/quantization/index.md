@@ -57,3 +57,5 @@
 2026-10-19：[SmoothQuant第二轮：共享Norm与真实i8导出](2026-10-19/smoothquant/README.md)。浅克隆解析c61476d7后blob超时，连接器按commit恢复源码快照；获取/阅读/示例是，CPU缺torch未运行，Thor未验。旧LLM.int8仅一次获取重试DNS失败；下一方法LLM.int8。[状态](2026-10-19/smoothquant/verification.json)。
 
 2026-10-21：[LLM.int8第二轮：离群列与量化状态](2026-10-21/llm_int8/README.md)。原仓库83364904实际获取/阅读/原生API交付；CPU未运行（Python/torch），Thor基线/共享候选已写、未编译。固定sm_110，理论对照Ada，下一Turing。一个旧calibration获取重试失败；下个方法calibration。[五项状态](2026-10-21/llm_int8/verification.json)。
+
+2026-10-22：[校准感知缩放：EMA顺序偏置](2026-10-22/calibration/README.md)。真实拉取/源码阅读/原生示例交付；缺torch，CPU原生/Thor未验。独立标量真i8文件8B，偏移MSE退化保留。下一方法QAT；仅重试旧QAT获取一次，DNS失败。

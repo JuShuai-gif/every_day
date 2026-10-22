@@ -1,0 +1,43 @@
+{
+  "method": "calibration",
+  "repository": "https://github.com/pytorch/pytorch.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-10-22T01:10:31.145008+00:00",
+  "commit": "37f56e48ce431907080585a595c437f9edb23411",
+  "cache": ".tmp/quant_sources/calibration-o6xya1tt",
+  "status": "fetched",
+  "source_read": false,
+  "example_run": false,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 23629,
+      "sha256": "c839137f1d406e0ba4f641222471a5cbfabb2141b39491f7267f57cf5e2107b9",
+      "local_source": ".tmp/quant_sources/calibration-o6xya1tt/source/README.md",
+      "permalink": "https://github.com/pytorch/pytorch/blob/37f56e48ce431907080585a595c437f9edb23411/README.md"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 3464,
+      "sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43",
+      "local_source": ".tmp/quant_sources/calibration-o6xya1tt/source/LICENSE",
+      "permalink": "https://github.com/pytorch/pytorch/blob/37f56e48ce431907080585a595c437f9edb23411/LICENSE"
+    },
+    {
+      "path": "torch/ao/quantization/observer.py",
+      "bytes": 80449,
+      "sha256": "0d7295857870bcdd485ad38148a81606dde98e08873bed58d9e1535f6dd3a3d7",
+      "local_source": ".tmp/quant_sources/calibration-o6xya1tt/source/torch/ao/quantization/observer.py",
+      "permalink": "https://github.com/pytorch/pytorch/blob/37f56e48ce431907080585a595c437f9edb23411/torch/ao/quantization/observer.py"
+    },
+    {
+      "path": "torch/ao/quantization/fake_quantize.py",
+      "bytes": 23466,
+      "sha256": "37c98e5f3f26cef21f728100d74d5723850ba7795a6983db3a8d7c51ab0601b3",
+      "local_source": ".tmp/quant_sources/calibration-o6xya1tt/source/torch/ao/quantization/fake_quantize.py",
+      "permalink": "https://github.com/pytorch/pytorch/blob/37f56e48ce431907080585a595c437f9edb23411/torch/ao/quantization/fake_quantize.py"
+    }
+  ],
+  "errors": [],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example."
+}

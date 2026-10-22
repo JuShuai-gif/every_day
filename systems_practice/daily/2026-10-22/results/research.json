@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-22",
+  "google": {
+    "url": "https://www.google.com/search?q=CPU+CUDA+event+buffer+ownership+epoll+EAGAIN+filesystem+TOCTOU",
+    "result": "Direct Google URL inaccessible via web tool; used web search queries, do not claim Google results read"
+  },
+  "queries": [
+    "site:github.com triton inference server dynamic batch scheduler timeout queue deadline",
+    "site:zhihu.com epoll ET EAGAIN 非阻塞",
+    "site:zhihu.com MovingAverageMinMaxObserver 量化",
+    "site:zhihu.com C++ filesystem error_code TOCTOU",
+    "model quantization site:arxiv.org",
+    "token pruning edge site:arxiv.org",
+    "LAST 2607.27952 github"
+  ],
+  "zhihu": {
+    "url": "https://www.zhihu.com/en/answer/130228057",
+    "author": "刘子龙",
+    "read": "pipe partial-read scenario and nonblocking discussion",
+    "role": "case lead only; conclusions verified against Linux v6.12; no performance claims adopted"
+  },
+  "quant_blog": {
+    "url": "https://zhuanlan.zhihu.com/p/29147272519",
+    "read": "search excerpt only",
+    "adopted": false,
+    "reason": "No original implementation evidence; robustness slogan not accepted"
+  },
+  "cpp_blog": "No suitable firsthand result found; libc++ implementation is primary",
+  "last_author_code": "No verified author repository found from paper and title/id search",
+  "toolchain": {
+    "cuda": "CUDA13.0 release notes and CUTLASS4.2.1 overview read: Thor renamed SM101 to SM110 in CUDA13.0",
+    "jetpack_attempts": [
+      "https://docs.nvidia.com/jetson/jetpack/7.0/release-notes/index.html",
+      "https://developer.nvidia.com/embedded/jetpack/jetpack-sdk-70",
+      "https://docs.nvidia.com/jetson/archives/jetpack-70/release-notes/index.html"
+    ],
+    "jetpack_result": "All three Thor/JetPack7 candidate URLs inaccessible via web. Unversioned URL resolves to6.2.1/Orin; not Thor proof. Actual JetPack/L4T/driver/ncu tuple pending.",
+    "kernel_today": false,
+    "target": "sm_110",
+    "architecture_comparison_cursor": "unchanged Ada; next kernel comparison Turing"
+  },
+  "paper_pdf_visual": "Web screenshot page7 failed cache miss; PDF text table3 read, no visual inspection claim"
+}

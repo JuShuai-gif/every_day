@@ -1,0 +1,2 @@
+PASS trials=1000 expiry/full/cancel/late/stale/close/device-error; valid-delivery=1; live=0
+Logical injected timestamps only; no inference latency measurement.

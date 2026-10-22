@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-22",
+  "id": "arxiv:2602.18420",
+  "doi": "10.63317/3t98siww4xf2",
+  "version_read": "LREC2026 proceedings; arxiv metadata v1",
+  "first_submitted": "2026-02-20",
+  "publication": "LREC2026 May11-16",
+  "title": "SPQ: An Ensemble Technique for Large Language Model Compression",
+  "authors": [
+    "Jiamin Yao",
+    "Eren Gultepe"
+  ],
+  "url": "https://aclanthology.org/2026.lrec-1.489.pdf",
+  "read_sections": [
+    "4.1-4.4",
+    "5.1",
+    "6.5 Table3",
+    "8 limitations"
+  ],
+  "repository": "https://github.com/JiaminYao/spq-compression",
+  "migrated_from": "https://github.com/JiaminYao/SPQ_LLM_Compression/",
+  "commit": "5a745b8dc6cac8fd1c2608a77fb3878fc2b25bf1",
+  "read_files": [
+    "methods/svd.py",
+    "methods/linear_quant.py",
+    "methods/pruning.py selected functions",
+    "methods/train.py fine_tune",
+    "main.py call sites",
+    "requirements.txt",
+    "README.md",
+    "wrappers.py"
+  ],
+  "read_symbols": [
+    "compute_cumsum_rank_ratios",
+    "svd_compress_layer",
+    "apply_svd_compression",
+    "QuantLinearChannelWise.forward",
+    "quantize_from_fp",
+    "get_per_layer_prune_ratios",
+    "prune_mlp_by_activation",
+    "fine_tune"
+  ],
+  "license": "No LICENSE in inspected tree; unresolved. No source copied.",
+  "relationship": "Independent NumPy rank/serialization illustration; omits full model/pruning/LoRA",
+  "age_exception": "244days since first submission; within365 fallback because official conference version and accessible author implementation expose storage/backend audit"
+}

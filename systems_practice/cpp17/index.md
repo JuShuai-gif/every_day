@@ -42,3 +42,5 @@
 2026-10-19：[第19课](2026-10-19/README.md)。alignas/扩展对齐分配；vector0/1/3/257及扩容、make_unique异常、std::align空间不足，Release+ASan/UBSan通过，alive0；未测性能/板端。下一节20。
 
 2026-10-21：[第20课：PMR对象析构与arena整体释放](2026-10-21/README.md)。clear析构与4032B保留、release归还、有限arena失败回滚；Release/ASan/UBSan通过，无性能数字。 下一节21。
+
+2026-10-22：[第21课](2026-10-22/README.md)。filesystem/error_code/TOCTOU；旧流/新路径、缺失/哨兵/异常/零值通过Release/ASan/UBSan；Linux板端未验。 下一节22。

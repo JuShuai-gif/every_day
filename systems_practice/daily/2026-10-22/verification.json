@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-22",
+  "recorded_at": "2026-10-22T09:28:03.715720+08:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+  "source_read": true,
+  "version_pinned": true,
+  "host_compile": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "target_board_verified": false,
+  "performance_scope": "none; functional tests only",
+  "evidence": [
+    "results/verified-release.txt",
+    "results/verified-sanitize.txt"
+  ],
+  "blockers": [
+    "Linux/target board not available"
+  ],
+  "cuda_compiled": false,
+  "cuda_run": false,
+  "main_topic": "边缘端部署",
+  "next_main_topic": "C++ 工程知识",
+  "tests": "1000 state trials, expiry/full/cancel/stale/close/error and valid delivery",
+  "gpu_kernel_added": false,
+  "linked_transfer": "../../arm/2026-10-22/src/transfer.cu"
+}

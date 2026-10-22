@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-22",
+  "repository": "https://github.com/llvm/llvm-project",
+  "version": "llvmorg-20.1.8",
+  "files": [
+    {
+      "file": "operations.cpp",
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-20.1.8/libcxx/src/filesystem/operations.cpp",
+      "sha256": "c2ff243df7206f32aaffed77ed18e1b5a0cf96ecb641bfe65dd935adea52b6e8",
+      "bytes": 33746,
+      "status": "fetched"
+    },
+    {
+      "file": "filesystem_common.h",
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-20.1.8/libcxx/src/filesystem/filesystem_common.h",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "file": "llvm-license",
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-20.1.8/libcxx/LICENSE.TXT",
+      "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+      "bytes": 16703,
+      "status": "fetched"
+    }
+  ],
+  "read_symbols": [
+    "__file_size",
+    "__rename",
+    "__status"
+  ],
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "relationship": "Independent C++17 example; no source copied",
+  "call_chain": [
+    "filesystem API",
+    "__file_size / __rename",
+    "posix_stat / rename",
+    "ErrorHandler report"
+  ],
+  "source_read": true,
+  "read_scope": "Selected implementations only, not full repository",
+  "initial_network_failure": "curl exit6: Could not resolve host: raw.githubusercontent.com; approved read-only retry succeeded",
+  "research_record": "../../daily/2026-10-22/results/research.json"
+}

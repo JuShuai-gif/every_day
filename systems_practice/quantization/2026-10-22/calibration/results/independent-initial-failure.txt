@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-22/calibration/independent.py", line 31, in <module>
+    rows.append(dict(split=name,method=method,bound=bound,mse=sum((u-v)**2 for u,v in zip(xs,y))/4,bytes=file.stat().st_size()))
+TypeError: 'int' object is not callable

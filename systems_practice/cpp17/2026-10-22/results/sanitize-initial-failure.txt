@@ -1,0 +1,4 @@
+src/main.cpp:15:15: error: use of undeclared identifier 'mkdtemp'
+   15 |     char* p = mkdtemp(buf.data());
+      |               ^~~~~~~
+1 error generated.

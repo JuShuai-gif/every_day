@@ -3,8 +3,8 @@
   "timezone": "Asia/Shanghai",
   "created_on": "2026-09-28",
   "topics_per_day": 2,
-  "next_lesson_id": "22",
-  "last_delivery_date": "2026-10-21",
+  "next_lesson_id": "23",
+  "last_delivery_date": "2026-10-22",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -26,7 +26,8 @@
     "18",
     "19",
     "20",
-    "21"
+    "21",
+    "22"
   ],
   "delivered_topic_ids": [
     "01a",
@@ -70,7 +71,9 @@
     "20a",
     "20b",
     "21a",
-    "21b"
+    "21b",
+    "22a",
+    "22b"
   ],
   "history": [
     {
@@ -573,6 +576,31 @@
         "21a",
         "21b"
       ]
+    },
+    {
+      "date": "2026-10-22",
+      "lesson_id": "22",
+      "path": "2026-10-22",
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "source_read": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "recorded_at": "2026-10-22T09:28:03.715720+08:00",
+      "verification": "2026-10-22/verification.json",
+      "evidence": [
+        "results/verified-release.txt",
+        "results/verified-sanitize.txt"
+      ],
+      "topic_ids": [
+        "22a",
+        "22b"
+      ],
+      "linux_run": false,
+      "xv6_compiled": false,
+      "qemu_run": false
     }
   ],
   "backlog": [
@@ -702,7 +730,13 @@
       "lesson_id": "21",
       "reason": "Linux/target board validation pending",
       "verification": "2026-10-21/verification.json"
+    },
+    {
+      "date": "2026-10-22",
+      "lesson_id": "22",
+      "reason": "Linux native epoll ET/LT and board run pending; Mac only pipe/poll",
+      "verification": "2026-10-22/verification.json"
     }
   ],
-  "last_canonical_lesson_date": "2026-10-21"
+  "last_canonical_lesson_date": "2026-10-22"
 }

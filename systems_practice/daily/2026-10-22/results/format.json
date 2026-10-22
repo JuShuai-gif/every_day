@@ -1,0 +1,17 @@
+{
+  "command": "sh scripts/format-cpp.sh",
+  "scoped_mirror": "systems_practice/.tmp/run-20261022/format-scope",
+  "script_sha256": "38522c4760ca32b5be6e3af5f34f4f85e706809b67950bd617373c39ed8033bb",
+  "exit": 0,
+  "stdout": "",
+  "stderr": "",
+  "files": [
+    "systems_practice/daily/2026-10-22/src/scheduler.hpp",
+    "systems_practice/daily/2026-10-22/src/main.cpp",
+    "systems_practice/arm/2026-10-22/src/transfer.cu",
+    "systems_practice/arm/2026-10-22/src/main.cpp",
+    "systems_practice/os/2026-10-22/src/main.cpp",
+    "systems_practice/cpp17/2026-10-22/src/main.cpp"
+  ],
+  "reason": "Original script formats entire tree including user changes and source caches; exact script/config run on current files only"
+}

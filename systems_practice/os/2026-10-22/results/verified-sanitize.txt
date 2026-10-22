@@ -1,0 +1,2 @@
+SKIP epoll: non-Linux host; portable pipe/poll only
+PASS frames=3 rejected=2 EAGAIN_bytes=65536 drained=65536

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "next_method_id": "calibration",
-  "last_lesson_date": "2026-10-21",
+  "next_method_id": "qat",
+  "last_lesson_date": "2026-10-22",
   "completed_methods": [
     "awq",
     "adaround",
@@ -12,7 +12,8 @@
     "spinquant",
     "spqr",
     "smoothquant",
-    "llm_int8"
+    "llm_int8",
+    "calibration"
   ],
   "history": [
     {
@@ -503,6 +504,21 @@
       "focus": "Second rotation: native outlier split and quantized checkpoint; independent Thor decode/shared reuse candidate",
       "counts_toward_daily_progress": true,
       "status": "Source/read/example delivered; native CPU runtime and Thor compilation/runtime pending"
+    },
+    {
+      "date": "2026-10-22",
+      "method": "calibration",
+      "commit": "37f56e48ce431907080585a595c437f9edb23411",
+      "lesson": "2026-10-22/calibration/README.md",
+      "verification": "2026-10-22/calibration/verification.json",
+      "focus": "Second rotation: MovingAverageMinMaxObserver ordering bias and frozen INT8 export",
+      "source_fetched": true,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "counts_toward_daily_progress": true,
+      "status": "source/read/example delivered; native runtime and Thor pending"
     }
   ],
   "backlog": [
@@ -898,12 +914,18 @@
       "kind": "native_runtime_and_thor",
       "reason": "Python3.9 below minimum; Python3.12 lacks torch. Native output/storage/timing and independent CUDA baseline/tiled compilation, ncu/PTX/SASS pending",
       "verification": "2026-10-21/llm_int8/verification.json"
+    },
+    {
+      "date": "2026-10-22",
+      "method": "calibration",
+      "reason": "No torch; native data/export/error/timing not run, Thor not validated",
+      "verification": "2026-10-22/calibration/verification.json"
     }
   ],
   "policy": "One quantization lesson per Asia/Shanghai calendar day, independent of main rotation. Preparation does not advance cursor. Daily attempted lessons may advance cursor but failures stay in backlog and never enter completed_methods. Completion requires source read and concrete upstream usage example delivered; execution evidence tracked separately.",
   "last_language_audit": "2026-09-22T10:43:01.386131+08:00",
   "language_policy": "Torch-first for algorithms/models/precision/framework timing; C++ optional for explicit layout/CPU kernel studies",
-  "last_canonical_lesson_date": "2026-10-21",
+  "last_canonical_lesson_date": "2026-10-22",
   "backfill_reconciled_at": "2026-09-28T05:01:42.754872+00:00",
   "reconciliation_note": "2026-10-02 concurrent Oct1 registration corrected: calibration draft retained as supplemental; QAT canonical. One old backlog retry AWQ only. Earlier backfill history preserved.",
   "retry_history": [
@@ -988,7 +1010,7 @@
       "counts_toward_daily_progress": false
     }
   ],
-  "next_cycle_note": "Next calibration; LLM.int8 native torch/Thor pending. One old calibration acquisition retry failed; no extra cursor advancement.",
+  "next_cycle_note": "Next QAT; calibration native/Thor pending. One historical QAT source retry failed; no extra advancement.",
   "source_retries": [
     {
       "date": "2026-10-18",
@@ -1018,6 +1040,16 @@
       "example_run": false,
       "record": "2026-10-21/llm_int8/results/backlog-calibration-source.json",
       "reason": "Exactly one historical source retry failed GitHub DNS; no verified cached calibration source found",
+      "counts_toward_daily_progress": false
+    },
+    {
+      "date": "2026-10-22",
+      "method": "qat",
+      "source_fetched": false,
+      "source_read": false,
+      "example_run": false,
+      "record": "2026-10-22/calibration/results/backlog-qat-source.json",
+      "reason": "One old backlog source acquisition DNS failure; no verified cache found",
       "counts_toward_daily_progress": false
     }
   ]

@@ -1,0 +1,2 @@
+missing error=No such file or directory
+PASS old-open/new-path; deterministic TOCTOU; missing/sentinel/throw; empty/zero; cleanup by RAII

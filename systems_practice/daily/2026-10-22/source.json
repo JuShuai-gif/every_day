@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-22",
+  "repository": "https://github.com/triton-inference-server/core",
+  "version": "r25.08",
+  "files": [
+    {
+      "file": "scheduler_utils.cc",
+      "url": "https://raw.githubusercontent.com/triton-inference-server/core/r25.08/src/scheduler_utils.cc",
+      "sha256": "09d7d995353001cc5e8696f67a479658d33042808b9b00ca4165a4327118c3e3",
+      "bytes": 18793,
+      "status": "fetched"
+    },
+    {
+      "file": "scheduler_utils.h",
+      "url": "https://raw.githubusercontent.com/triton-inference-server/core/r25.08/src/scheduler_utils.h",
+      "sha256": "493f268a91ea388cbd06a4793f42389be1ffdbaca3a962b8e4e28d99e1d835d2",
+      "bytes": 12076,
+      "status": "fetched"
+    },
+    {
+      "file": "dynamic_batch_scheduler.cc",
+      "url": "https://raw.githubusercontent.com/triton-inference-server/core/r25.08/src/dynamic_batch_scheduler.cc",
+      "sha256": "4114689beca045bf9a2e3ff854827ca9cc5ab85f6fa2e4abbf1eb2fe005b32eb",
+      "bytes": 31625,
+      "status": "fetched"
+    },
+    {
+      "file": "triton-license",
+      "url": "https://raw.githubusercontent.com/triton-inference-server/core/r25.08/LICENSE",
+      "sha256": "1b8a007445bc1a495a20f18da3b437454afe9af706e2120c0a54260452f9f273",
+      "bytes": 1494,
+      "status": "fetched"
+    }
+  ],
+  "read_symbols": [
+    "PriorityQueue::PolicyQueue::Enqueue",
+    "ApplyPolicy",
+    "RejectTimeoutRequests",
+    "ReleaseRejectedQueue"
+  ],
+  "license": "BSD-3-Clause",
+  "relationship": "Independent implementation inspired by queue timeout/unique ownership, not copied Triton code",
+  "call_chain": [
+    "DynamicBatchScheduler",
+    "PriorityQueue",
+    "PolicyQueue::Enqueue/ApplyPolicy",
+    "rejected queue release"
+  ],
+  "source_read": true,
+  "read_scope": "Selected implementations only, not full repository",
+  "initial_network_failure": "curl exit6: Could not resolve host: raw.githubusercontent.com; approved read-only retry succeeded",
+  "research_record": "results/research.json"
+}

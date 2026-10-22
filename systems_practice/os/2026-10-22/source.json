@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-22",
+  "repository": "https://github.com/torvalds/linux",
+  "version": "v6.12",
+  "files": [
+    {
+      "file": "eventpoll.c",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.12/fs/eventpoll.c",
+      "sha256": "e7fa7c5c3b3217cb58ce3b736497b96cde3b17961af686ae3ea6b7d56b7c6302",
+      "bytes": 71601,
+      "status": "fetched"
+    }
+  ],
+  "read_symbols": [
+    "ep_poll_callback",
+    "ep_send_events"
+  ],
+  "license": "GPL-2.0-or-later (file SPDX)",
+  "relationship": "Independent userspace observation, no kernel code copied",
+  "call_chain": [
+    "driver poll wakeup",
+    "ep_poll_callback",
+    "ready list",
+    "ep_send_events",
+    "userspace nonblocking read"
+  ],
+  "source_read": true,
+  "read_scope": "Selected implementations only, not full repository",
+  "initial_network_failure": "curl exit6: Could not resolve host: raw.githubusercontent.com; approved read-only retry succeeded",
+  "research_record": "../../daily/2026-10-22/results/research.json"
+}

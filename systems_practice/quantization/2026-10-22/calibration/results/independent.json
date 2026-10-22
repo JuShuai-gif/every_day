@@ -1,0 +1,48 @@
+{
+  "kind": "independent scalar calibration-order example, not upstream API/GEMM",
+  "rows": [
+    {
+      "split": "eval",
+      "method": "absmax",
+      "bound": 12.0,
+      "mse": 0.0009495318990637978,
+      "bytes": 8
+    },
+    {
+      "split": "eval",
+      "method": "ema",
+      "bound": 2.375,
+      "mse": 3.459413168826276e-05,
+      "bytes": 8
+    },
+    {
+      "split": "eval",
+      "method": "reversed",
+      "bound": 6.5,
+      "mse": 0.00024273048546096996,
+      "bytes": 8
+    },
+    {
+      "split": "shift",
+      "method": "absmax",
+      "bound": 12.0,
+      "mse": 0.0003875007750015486,
+      "bytes": 8
+    },
+    {
+      "split": "shift",
+      "method": "ema",
+      "bound": 2.375,
+      "mse": 31.16796875,
+      "bytes": 8
+    },
+    {
+      "split": "shift",
+      "method": "reversed",
+      "bound": 6.5,
+      "mse": 8.12509687519375,
+      "bytes": 8
+    }
+  ],
+  "zero_and_rejections": true
+}

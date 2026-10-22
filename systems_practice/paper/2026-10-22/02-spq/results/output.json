@@ -1,0 +1,24 @@
+{
+  "numpy": "2.3.5",
+  "rank": 2,
+  "rows": {
+    "eval": {
+      "truncated": 0.15823857494809299,
+      "packed": 0.15912610996033622
+    },
+    "shift": {
+      "truncated": 0.2834933406922673,
+      "packed": 0.6401663820052094
+    }
+  },
+  "bytes": {
+    "original_fp16": 128,
+    "packed_file": 88,
+    "int8_payload": 32,
+    "scales": 40,
+    "header": 16,
+    "fp32_shadow_if_retained": 128
+  },
+  "no_training": true,
+  "scope": "independent rank/packing example; no SPQ model/LoRA/Thor reproduction"
+}

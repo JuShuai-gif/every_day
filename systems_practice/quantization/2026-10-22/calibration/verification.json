@@ -1,0 +1,33 @@
+{
+  "method": "calibration",
+  "date": "2026-10-22",
+  "repository": "https://github.com/pytorch/pytorch.git",
+  "commit": "37f56e48ce431907080585a595c437f9edb23411",
+  "source_record": "source.json",
+  "source_fetched": true,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": [
+    "MovingAverageMinMaxObserver.forward",
+    "MinMaxObserver.calculate_qparams",
+    "UniformQuantizationObserverBase._calculate_qparams",
+    "FakeQuantize.forward"
+  ],
+  "evidence": [
+    "source-read.json",
+    "example.py",
+    "results/native-attempt.txt",
+    "results/native-bundled-attempt.txt"
+  ],
+  "independent_math_run": true,
+  "independent_evidence": "results/independent.json",
+  "native_metrics": null,
+  "blockers": [
+    "Python3.9 below upstream>=3.10; bundled3.12 and system environment have no torch",
+    "Pinned2.16.0a0 source build not present; upstream README C++20 requirement, no source build attempted",
+    "Thor hardware/nvcc/ncu/actualSDKtuple unavailable"
+  ],
+  "recorded_at": "2026-10-22T09:28:03.715720+08:00"
+}
