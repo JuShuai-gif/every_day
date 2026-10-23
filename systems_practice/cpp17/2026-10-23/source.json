@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-23",
+  "repository": "https://github.com/llvm/llvm-project",
+  "ref": "llvmorg-20.1.8",
+  "files": [
+    {
+      "url": "https://github.com/llvm/llvm-project/blob/llvmorg-20.1.8/libcxx/include/mutex",
+      "blob_sha": "9b128e8710aaebcedb91561c5be9caf9d90f8216",
+      "read_date": "2026-10-23"
+    }
+  ],
+  "symbols_read": [
+    "scoped_lock",
+    "std::lock",
+    "__lock_first",
+    "__unlock_unpack"
+  ],
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "relationship": "independent educational implementation inspired by actual source; no copied upstream implementation",
+  "search_attempts": [
+    {
+      "url": "https://www.google.com/search?q=C%2B%2B+atomic+shared_ptr+hot+reload+exception+safety",
+      "status": "web tool not accessible"
+    },
+    {
+      "url": "https://www.zhihu.com/search?q=DMA%20同步&type=content",
+      "status": "web tool not accessible"
+    },
+    {
+      "query": "site:zhihu.com C++ shared_ptr 原子 热更新 异常安全; site:zhihu.com DMA 地址 缓存 同步",
+      "status": "search returned no adopted original article"
+    },
+    {
+      "query": "When Lower Reconstruction Loss Hurts GitHub; Multi-Objective Structured Pruning GitHub",
+      "status": "No verified official author implementation found"
+    }
+  ],
+  "read_limits": "selected functions, not entire repository",
+  "target_verified": false
+}

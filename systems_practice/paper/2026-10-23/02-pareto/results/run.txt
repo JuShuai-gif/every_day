@@ -1,0 +1,53 @@
+{
+  "front": [
+    {
+      "mask": [
+        0,
+        0,
+        0
+      ],
+      "params": 0,
+      "cal_kl": 0.005359387223702844
+    },
+    {
+      "mask": [
+        0,
+        0,
+        1
+      ],
+      "params": 4,
+      "cal_kl": 0.0015954847098210993
+    },
+    {
+      "mask": [
+        1,
+        0,
+        1
+      ],
+      "params": 8,
+      "cal_kl": 0.00020555322118556536
+    },
+    {
+      "mask": [
+        1,
+        1,
+        1
+      ],
+      "params": 12,
+      "cal_kl": 0.0
+    }
+  ],
+  "chosen": [
+    1,
+    0,
+    1
+  ],
+  "test_kl": 0.00013900275808253763,
+  "file_bytes": 33,
+  "full_fp32_payload_bytes": 48,
+  "cpu_batch31_p50_us": {
+    "full": 79.166,
+    "pruned": 56.834
+  },
+  "scope": "Python CPU synthetic residual network; not attention, BO, LLM or board benchmark"
+}

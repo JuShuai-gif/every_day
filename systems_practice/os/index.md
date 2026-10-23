@@ -45,3 +45,5 @@
 2026-10-21：[第21课：等待谓词与futex丢失唤醒边界](2026-10-21/README.md)。40轮、200完成/160预期异常，空队列仍有在途任务/关闭排空/拒绝边界；Release/ASan/UBSan/TSan通过。Linux futex/xv6/板端未验。 下一节22。
 
 2026-10-22：[第22课](2026-10-22/README.md)。epoll就绪/字节流状态机；Mac3帧、2拒绝、65536B背压验证通过Release/ASan/UBSan；Linux ET/LT未验。 下一节23。
+
+2026-10-23：[第23课：DMA地址与同步所有权](2026-10-23/README.md)。Linuxv6.12映射/同步源码已读；独立合同模型1001周期/6拒绝/live0通过Release+ASan/UBSan；非真实DMA、Linux内核或板端验证。下一节24。

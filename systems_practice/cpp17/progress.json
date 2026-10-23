@@ -2,8 +2,8 @@
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
   "created_on": "2026-09-29",
-  "last_delivery_date": "2026-10-22",
-  "next_lesson_id": "22",
+  "last_delivery_date": "2026-10-23",
+  "next_lesson_id": "23",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -25,7 +25,8 @@
     "18",
     "19",
     "20",
-    "21"
+    "21",
+    "22"
   ],
   "history": [
     {
@@ -381,6 +382,25 @@
         "results/verified-release.txt",
         "results/verified-sanitize.txt"
       ]
+    },
+    {
+      "date": "2026-10-23",
+      "lesson_id": "22",
+      "path": "2026-10-23",
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "source_read": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "recorded_at": "2026-10-23T09:25:02.010760+08:00",
+      "verification": "2026-10-23/verification.json",
+      "evidence": [
+        "results/verified-release.txt",
+        "results/verified-sanitize.txt"
+      ],
+      "tsan_passed": true
     }
   ],
   "backlog": [
@@ -482,7 +502,14 @@
       "lesson_id": "20",
       "reason": "Linux/target board validation pending",
       "verification": "2026-10-21/verification.json"
+    },
+    {
+      "date": "2026-10-23",
+      "lesson_id": "22",
+      "kind": "target_board_verification",
+      "reason": "Host delivered; real device verification pending",
+      "verification": "2026-10-23/verification.json"
     }
   ],
-  "last_canonical_lesson_date": "2026-10-22"
+  "last_canonical_lesson_date": "2026-10-23"
 }

@@ -1,0 +1,1 @@
+PASS contract_model_only cycles=1001 rejected=6 live=0 real_dma=NOT_TESTED

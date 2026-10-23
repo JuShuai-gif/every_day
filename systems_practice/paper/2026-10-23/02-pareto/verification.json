@@ -1,0 +1,12 @@
+{
+  "recorded_at": "2026-10-23T09:23:36.209397+08:00",
+  "primary_fulltext_selected_sections_read": true,
+  "author_implementation_read": false,
+  "cpu_mechanism_example_verified": true,
+  "full_paper_reproduced": false,
+  "target_device_verified": false,
+  "dependencies": "Python standard library",
+  "results": "results/run.txt",
+  "source": "source.json",
+  "notes": "Real binary serialization under ignored build; no models or device code; all regression metrics preserved"
+}

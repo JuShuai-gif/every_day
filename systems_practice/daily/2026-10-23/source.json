@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-23",
+  "repository": "https://github.com/llvm/llvm-project",
+  "ref": "llvmorg-20.1.8",
+  "files": [
+    {
+      "url": "https://github.com/llvm/llvm-project/blob/llvmorg-20.1.8/libcxx/include/__memory/shared_ptr.h",
+      "blob_sha": "06b1fc488cf5155b901748ae084f1e44f350b4ee",
+      "read_date": "2026-10-23"
+    },
+    {
+      "url": "https://github.com/llvm/llvm-project/blob/llvmorg-20.1.8/libcxx/src/memory.cpp",
+      "blob_sha": "16190c242c1487ea19059828055523992837bd66",
+      "read_date": "2026-10-23"
+    }
+  ],
+  "symbols_read": [
+    "atomic_load",
+    "atomic_store",
+    "__shared_ptr_emplace",
+    "__get_sp_mut",
+    "__sp_mut::lock/unlock"
+  ],
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "relationship": "independent educational implementation inspired by actual source; no copied upstream implementation",
+  "search_attempts": [
+    {
+      "url": "https://www.google.com/search?q=C%2B%2B+atomic+shared_ptr+hot+reload+exception+safety",
+      "status": "web tool not accessible"
+    },
+    {
+      "url": "https://www.zhihu.com/search?q=DMA%20同步&type=content",
+      "status": "web tool not accessible"
+    },
+    {
+      "query": "site:zhihu.com C++ shared_ptr 原子 热更新 异常安全; site:zhihu.com DMA 地址 缓存 同步",
+      "status": "search returned no adopted original article"
+    },
+    {
+      "query": "When Lower Reconstruction Loss Hurts GitHub; Multi-Objective Structured Pruning GitHub",
+      "status": "No verified official author implementation found"
+    }
+  ],
+  "read_limits": "selected functions, not entire repository",
+  "target_verified": false
+}

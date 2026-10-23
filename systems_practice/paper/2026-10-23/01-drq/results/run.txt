@@ -1,0 +1,30 @@
+{
+  "rec_codes": [
+    0,
+    1
+  ],
+  "robust_codes": [
+    0,
+    0
+  ],
+  "alpha_selected_on_tune": 64,
+  "calibration": [
+    0.0004000000000000007,
+    0.9603999999999999
+  ],
+  "eval": [
+    0.3106245119767839,
+    0.36471206881661267
+  ],
+  "shift": [
+    0.7938302661270724,
+    0.0
+  ],
+  "robust_objective": [
+    32.0132,
+    31.693199999999997
+  ],
+  "file_bytes": 6,
+  "fp16_weight_payload_bytes": 4,
+  "limitation": "large alpha; no paper reconstruction-increase guard, no model or device run"
+}

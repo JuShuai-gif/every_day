@@ -1,0 +1,52 @@
+{
+  "implementation": "independent stdlib, FP64 arithmetic, not TorchAO",
+  "split_rows": [
+    64,
+    32,
+    32,
+    31
+  ],
+  "calibration_note": "weight-only scale from original W; cal held out and unused",
+  "steps_per_candidate": 160,
+  "lr": 0.05,
+  "history": [
+    [
+      0,
+      0.004626982671992079
+    ],
+    [
+      79,
+      0.013747995012886968
+    ],
+    [
+      159,
+      0.013747995012886968
+    ]
+  ],
+  "results": {
+    "eval": {
+      "absmax_mse": 0.0038943487200982633,
+      "qat_mse": 0.015113871095517149,
+      "fp16_storage_fp64_accum_mse": 3.208000816048466e-08
+    },
+    "shift": {
+      "absmax_mse": 0.08681423600436604,
+      "qat_mse": 0.7786802738388476,
+      "fp16_storage_fp64_accum_mse": 1.7242624172460996e-06
+    },
+    "zero": {
+      "absmax_mse": 0.0,
+      "qat_mse": 0.0,
+      "fp16_storage_fp64_accum_mse": 0.0
+    }
+  },
+  "bytes": {
+    "u4": 4,
+    "scale": 8,
+    "header": 12,
+    "file": 24,
+    "fp16_payload": 16
+  },
+  "cpu_decoded_gemm_p50_us": 19.292,
+  "thor_verified": false
+}

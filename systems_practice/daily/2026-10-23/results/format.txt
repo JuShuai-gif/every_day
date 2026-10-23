@@ -1,0 +1,1 @@
+Exact scripts/format-cpp.sh and .clang-format run in scoped mirror; four new C++ files. Exit 0. Original user and cache code excluded.

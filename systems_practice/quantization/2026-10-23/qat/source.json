@@ -1,0 +1,94 @@
+{
+  "method": "qat",
+  "repository": "https://github.com/pytorch/ao.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-10-23T01:07:57.276867+00:00",
+  "commit": "9e9dca96d42cf05985aeaf0afe5546d9d002b337",
+  "cache": ".tmp/quant_sources/qat-s3uesfks",
+  "status": "fetched",
+  "source_read": true,
+  "example_run": false,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 21642,
+      "sha256": "e183e1317f413cac21789bc7e473a6ff47735cff7b7ed96b48d92179f3b1b6e6",
+      "local_source": ".tmp/quant_sources/qat-s3uesfks/source/README.md",
+      "permalink": "https://github.com/pytorch/ao/blob/9e9dca96d42cf05985aeaf0afe5546d9d002b337/README.md"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1537,
+      "sha256": "67901e351baeaa5aef967cccd0886ba679f085df8673d1ecd49592bf284115af",
+      "local_source": ".tmp/quant_sources/qat-s3uesfks/source/LICENSE",
+      "permalink": "https://github.com/pytorch/ao/blob/9e9dca96d42cf05985aeaf0afe5546d9d002b337/LICENSE"
+    },
+    {
+      "path": "torchao/quantization/qat/linear.py",
+      "bytes": 22471,
+      "sha256": "1dfdf2a4f4e0d7a1d59e324f4fd7f580c0a48ed9e9302fdccf08076383cfaa3a",
+      "local_source": ".tmp/quant_sources/qat-s3uesfks/source/torchao/quantization/qat/linear.py",
+      "permalink": "https://github.com/pytorch/ao/blob/9e9dca96d42cf05985aeaf0afe5546d9d002b337/torchao/quantization/qat/linear.py"
+    },
+    {
+      "path": "torchao/quantization/qat/fake_quantizer.py",
+      "bytes": 17729,
+      "sha256": "cefc4e7f2a679af5b0b972895c494f70f4beda940263a171eb82e048bb74189c",
+      "local_source": ".tmp/quant_sources/qat-s3uesfks/source/torchao/quantization/qat/fake_quantizer.py",
+      "permalink": "https://github.com/pytorch/ao/blob/9e9dca96d42cf05985aeaf0afe5546d9d002b337/torchao/quantization/qat/fake_quantizer.py"
+    },
+    {
+      "path": "torchao/quantization/qat/fake_quantize_config.py",
+      "bytes": 22513,
+      "sha256": "256671ed995c589a9ff297672e464fb4d44b6aec2f1b06e0e96e2c46c9aa34e7",
+      "local_source": ".tmp/quant_sources/qat-s3uesfks/source/torchao/quantization/qat/fake_quantize_config.py",
+      "permalink": "https://github.com/pytorch/ao/blob/9e9dca96d42cf05985aeaf0afe5546d9d002b337/torchao/quantization/qat/fake_quantize_config.py"
+    }
+  ],
+  "errors": [],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example.",
+  "read_at": "2026-10-23T09:23:36.209397+08:00",
+  "license": "BSD-3-Clause",
+  "version_txt": "0.19.0",
+  "symbols": [
+    "FakeQuantizedLinear.from_linear/forward/to_linear",
+    "IntxFakeQuantizeConfig.__init__",
+    "IntxFakeQuantizer._should_compute_qparams/_per_channel_or_group_forward",
+    "_Round.backward",
+    "_ClampSTE.backward",
+    "_fake_quantize_affine"
+  ],
+  "additional_files": [
+    {
+      "url": "https://github.com/pytorch/ao/blob/9e9dca96d42cf05985aeaf0afe5546d9d002b337/torchao/quantization/qat/utils.py",
+      "blob_sha": "17c74e8d53081b89b24039c20cd31888cc70d126",
+      "read_date": "2026-10-23"
+    },
+    {
+      "url": "https://github.com/pytorch/ao/blob/9e9dca96d42cf05985aeaf0afe5546d9d002b337/torchao/quantization/quant_primitives.py",
+      "blob_sha": "5ab46ae41f05a50a0c77f7056196ad3ec48c0b7f",
+      "read_date": "2026-10-23"
+    },
+    {
+      "url": "https://github.com/pytorch/ao/blob/9e9dca96d42cf05985aeaf0afe5546d9d002b337/setup.py",
+      "blob_sha": "c88590c4dd7fe4401e6fcc05ab0c44c06b5f98ba",
+      "read_date": "2026-10-23"
+    },
+    {
+      "url": "https://github.com/pytorch/ao/blob/9e9dca96d42cf05985aeaf0afe5546d9d002b337/pyproject.toml",
+      "blob_sha": "6adbf5d302f131a22b3041fa08e90f5778f8183d",
+      "read_date": "2026-10-23"
+    },
+    {
+      "url": "https://github.com/pytorch/ao/blob/9e9dca96d42cf05985aeaf0afe5546d9d002b337/torchao/__init__.py",
+      "blob_sha": "ea9d66dc7e4aea641741709bf9fda298178c6434",
+      "read_date": "2026-10-23"
+    }
+  ],
+  "source_relationship": "Native API called in native.py (unexecuted); custom packing independent; independent.py is separate math experiment",
+  "migration": "README consolidates development into torch/callers; pytorch/ao remains reachable",
+  "preserved_records": [
+    "source-initial.json",
+    "source-retry.json"
+  ]
+}

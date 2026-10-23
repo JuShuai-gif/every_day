@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
-  "last_delivery_date": "2026-10-22",
-  "next_lesson_id": "28",
+  "last_delivery_date": "2026-10-23",
+  "next_lesson_id": null,
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -30,7 +30,8 @@
     "24",
     "25",
     "26",
-    "27"
+    "27",
+    "28"
   ],
   "history": [
     {
@@ -550,6 +551,28 @@
       "thor_transfer_compiled": false,
       "thor_transfer_run": false,
       "performance_scope": "none; CPU publication only"
+    },
+    {
+      "date": "2026-10-23",
+      "lesson_id": "28",
+      "path": "2026-10-23",
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "source_read": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "recorded_at": "2026-10-23T09:25:02.010760+08:00",
+      "verification": "2026-10-23/README.md",
+      "evidence": [
+        "results/verified-release.txt",
+        "results/verified-sanitize.txt"
+      ],
+      "arm_evidence": "results/neon.s actual FCVTAS/SQXTN, reused Oct21 kernel",
+      "thermal_steady_state_verified": false,
+      "energy_measured": false,
+      "end_to_end_inference_verified": false
     }
   ],
   "backlog": [
@@ -643,6 +666,13 @@
       "lesson_id": "27",
       "reason": "Thor CUDA transfer, actual DMA/SDK completion and board validation pending",
       "evidence": "2026-10-22/README.md"
+    },
+    {
+      "date": "2026-10-23",
+      "lesson_id": "28",
+      "kind": "target_board_verification",
+      "reason": "Host delivered; real device verification pending",
+      "verification": "2026-10-23/README.md"
     }
   ],
   "curriculum_adjustments": [
@@ -671,5 +701,8 @@
       "reason": "User requested four working/deployment capability layers; mapped existing 28 lessons, preserved order and historical progress. Actual delivery08 advances to09 separately."
     }
   ],
-  "last_canonical_lesson_date": "2026-10-22"
+  "last_canonical_lesson_date": "2026-10-23",
+  "first_cycle_teaching_delivery_complete": true,
+  "next_stage": "verified source kernels and integrated edge projects",
+  "next_action": "Start one integrated edge project continuation; do not restart lesson01. Target hardware verification still pending."
 }

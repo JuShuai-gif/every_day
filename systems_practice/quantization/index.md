@@ -59,3 +59,5 @@
 2026-10-21：[LLM.int8第二轮：离群列与量化状态](2026-10-21/llm_int8/README.md)。原仓库83364904实际获取/阅读/原生API交付；CPU未运行（Python/torch），Thor基线/共享候选已写、未编译。固定sm_110，理论对照Ada，下一Turing。一个旧calibration获取重试失败；下个方法calibration。[五项状态](2026-10-21/llm_int8/verification.json)。
 
 2026-10-22：[校准感知缩放：EMA顺序偏置](2026-10-22/calibration/README.md)。真实拉取/源码阅读/原生示例交付；缺torch，CPU原生/Thor未验。独立标量真i8文件8B，偏移MSE退化保留。下一方法QAT；仅重试旧QAT获取一次，DNS失败。
+
+2026-10-23：[QAT第二轮：固定网格STE与打包](2026-10-23/qat/README.md)。实际浅拉取/读取AO9e9dca96，原生示例交付；缺torch未运行，Thor未验。独立两候选各160更新、真u4文件24B，比FP16载荷16B大，eval与shift误差退化保留。一个旧NF4获取重试DNS失败；下一方法NF4/QLoRA。[五项状态](2026-10-23/qat/verification.json)。

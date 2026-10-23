@@ -1,0 +1,2 @@
+PASS rollback=2002 readers=20000 publishes=501 lock_free=0
+PASS final_live=0 old_lease_survives_and_reclaims

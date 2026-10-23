@@ -1,0 +1,20 @@
+{
+  "recorded_at": "2026-10-23T09:23:36.209397+08:00",
+  "source_read": true,
+  "host_compile": true,
+  "host_run": true,
+  "release_passed": true,
+  "asan_ubsan_passed": true,
+  "tsan_passed": true,
+  "linux_run": false,
+  "target_board_verified": false,
+  "performance_measured": false,
+  "evidence": [
+    "results/verified-release.txt",
+    "results/verified-sanitize.txt",
+    "results/verified-tsan.txt"
+  ],
+  "scope": "C++17 CPU functional verification; not device pipeline",
+  "compiler_environment": "../../daily/2026-10-23/results/environment.txt",
+  "source_sha256": "d5d8a963a42ec4299e85005a6f831b4c13ce18e08ff0e4b0d377230722e0f0dc"
+}

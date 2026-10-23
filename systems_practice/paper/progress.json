@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-22T09:28:03.715720+08:00",
+  "updated_at": "2026-10-23T09:25:02.010760+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -752,6 +752,34 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python NumPy2.3.5"
+    },
+    {
+      "id": "arxiv:2610.11226",
+      "title": "When Lower Reconstruction Loss Hurts: Distributionally Robust Refinement for Low-Bit LLM Quantization",
+      "delivered_on": "2026-10-23",
+      "first_submitted": "2026-10-08",
+      "version_read": "v1",
+      "directory": "2026-10-23/01-drq",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": false,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python stdlib"
+    },
+    {
+      "id": "arxiv:2607.22583",
+      "title": "Multi-Objective Structured Pruning of LLMs for Latency and Model Size Optimization",
+      "delivered_on": "2026-10-23",
+      "first_submitted": "2026-06-08",
+      "version_read": "v1",
+      "directory": "2026-10-23/02-pareto",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": false,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python stdlib"
     }
   ],
   "backlog": [
@@ -1053,6 +1081,18 @@
       "date": "2026-10-22",
       "id": "arxiv:2607.27952",
       "reason": "Author code not verified; full model/Thor reproduction pending"
+    },
+    {
+      "date": "2026-10-23",
+      "id": "arxiv:2610.11226",
+      "reason": "Official author repository unverified; complete model/device reproduction pending",
+      "verification": "2026-10-23/01-drq/verification.json"
+    },
+    {
+      "date": "2026-10-23",
+      "id": "arxiv:2607.22583",
+      "reason": "Official author repository unverified; complete model/device reproduction pending; v1 device identity requires clarification before adopting latency",
+      "verification": "2026-10-23/02-pareto/verification.json"
     }
   ]
 }

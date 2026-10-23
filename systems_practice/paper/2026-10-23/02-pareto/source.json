@@ -1,0 +1,28 @@
+{
+  "title": "Multi-Objective Structured Pruning of LLMs for Latency and Model Size Optimization",
+  "authors": [
+    "Muhammad Junaid Ali",
+    "Smail Niar",
+    "El-Ghazali Talbi"
+  ],
+  "arxiv_id": "2607.22583",
+  "first_submitted": "2026-06-08",
+  "version_read": "v1",
+  "latest_version": "v3 (2026-10-17)",
+  "publication_status": "Current arXiv metadata reports accepted presentation ICTAI2026; reading v1",
+  "url": "https://arxiv.org/html/2607.22583v1",
+  "read_at": "2026-10-23T09:23:36.209397+08:00",
+  "read_sections": "III Algorithm1 and A-D;IV;V TableI/discussion",
+  "fulltext_selected_sections_read": true,
+  "author_repository_verified": false,
+  "author_code_read": false,
+  "search_attempts": [
+    {
+      "query": "When Lower Reconstruction Loss Hurts GitHub; Multi-Objective Structured Pruning GitHub",
+      "status": "No verified official author implementation found"
+    }
+  ],
+  "license": "arXiv nonexclusive distribution, author code unknown",
+  "relationship": "independent small CPU mechanism example; not author implementation or complete reproduction",
+  "concern": "v1 hardware description mixes Jetson Nano and Ampere/1024cores/64GB; do not adopt its board latency"
+}

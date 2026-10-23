@@ -1,0 +1,34 @@
+{
+  "title": "When Lower Reconstruction Loss Hurts: Distributionally Robust Refinement for Low-Bit LLM Quantization",
+  "authors": [
+    "Yanlong Zhao",
+    "Xiaoyuan Cheng",
+    "Huihang Liu",
+    "Baihua He",
+    "Xinyu Zhang",
+    "Harrison Bo Hua Zhu",
+    "Wenlong Chen",
+    "Li Zeng",
+    "Zhuo Sun"
+  ],
+  "arxiv_id": "2610.11226",
+  "first_submitted": "2026-10-08",
+  "version_read": "v1",
+  "latest_version": "v1",
+  "publication_status": "preprint; venue unconfirmed",
+  "url": "https://arxiv.org/html/2610.11226v1",
+  "read_at": "2026-10-23T09:23:36.209397+08:00",
+  "read_sections": "2;3.2-3.3 algorithm;4.1-4.5 Table1;D.4 sensitivity selected paragraphs",
+  "fulltext_selected_sections_read": true,
+  "author_repository_verified": false,
+  "author_code_read": false,
+  "search_attempts": [
+    {
+      "query": "When Lower Reconstruction Loss Hurts GitHub; Multi-Objective Structured Pruning GitHub",
+      "status": "No verified official author implementation found"
+    }
+  ],
+  "license": "paper CC-BY4.0, author code unknown",
+  "relationship": "independent small CPU mechanism example; not author implementation or complete reproduction",
+  "concern": "No paper reconstruction-increase guard in toy; alpha64 intentionally exposes regression"
+}

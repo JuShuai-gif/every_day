@@ -81,3 +81,5 @@
 2026-10-21：[第26课：PMU事件语义与采样定位](2026-10-21/README.md)。Mac Release/ASan/UBSan与真实FCVTAS/SQXTN通过；仅CPU转换probe。已读Linux v6.12 PMUv3，Linux perf/板端未验。 下一节27。
 
 2026-10-22：[第27课](2026-10-22/README.md)。CPU发布/设备完成边界；10000帧Release/ASan/UBSan/TSan通过，真实STLR/LDAPR；Thor传输候选缺nvcc，未验。 下一节28。
+
+2026-10-23：[第28课：持续负载与温控证据](2026-10-23/README.md)。复用NEON内核，Release/ASan/UBSan与0/7/非法输入通过；真实FCVTAS/SQXTN。Mac2秒前/后窗单调用P50/P95 6.5/6.583与6.375/6.5µs，未证实热稳态，无功耗/板端/E2E。首轮教学交付结束，下一阶段为经核验源码的边缘项目，不能将此视为板端闭环。

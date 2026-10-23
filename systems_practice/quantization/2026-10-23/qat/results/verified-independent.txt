@@ -1,0 +1,84 @@
+{
+  "implementation": "independent stdlib, FP64 arithmetic, not TorchAO",
+  "split_rows": [
+    64,
+    32,
+    32,
+    31
+  ],
+  "calibration_note": "weight-only scale from original W; cal held out and unused",
+  "steps_per_candidate": 160,
+  "clamped_weight_fraction": 0.0,
+  "weight_max_delta": 0.03634660438695758,
+  "lr": 0.05,
+  "history": [
+    [
+      0,
+      0.004626982671992079
+    ],
+    [
+      79,
+      0.013747995012886968
+    ],
+    [
+      159,
+      0.013747995012886968
+    ]
+  ],
+  "results": {
+    "eval": {
+      "absmax_mse": 0.0038943487200982633,
+      "qat_mse": 0.015113871095517149,
+      "qat_metrics": {
+        "nrmse": 0.0940819495208285,
+        "max_abs": 0.4186807354059039,
+        "cosine": 0.9964623784734661
+      },
+      "absmax_metrics": {
+        "nrmse": 0.04775687163077826,
+        "max_abs": 0.24373538548119544,
+        "cosine": 0.9988830205570934
+      },
+      "fp16_storage_fp64_accum_mse": 3.208000816048466e-08
+    },
+    "shift": {
+      "absmax_mse": 0.08681423600436604,
+      "qat_mse": 0.7786802738388476,
+      "qat_metrics": {
+        "nrmse": 0.1358692610301857,
+        "max_abs": 2.8705687466567404,
+        "cosine": 0.9907924640899427
+      },
+      "absmax_metrics": {
+        "nrmse": 0.045366690716834926,
+        "max_abs": 0.9414267670131666,
+        "cosine": 0.9990034620917003
+      },
+      "fp16_storage_fp64_accum_mse": 1.7242624172460996e-06
+    },
+    "zero": {
+      "absmax_mse": 0.0,
+      "qat_mse": 0.0,
+      "qat_metrics": {
+        "nrmse": 0.0,
+        "max_abs": 0.0,
+        "cosine": 0.0
+      },
+      "absmax_metrics": {
+        "nrmse": 0.0,
+        "max_abs": 0.0,
+        "cosine": 0.0
+      },
+      "fp16_storage_fp64_accum_mse": 0.0
+    }
+  },
+  "bytes": {
+    "u4": 4,
+    "scale": 8,
+    "header": 12,
+    "file": 24,
+    "fp16_payload": 16
+  },
+  "cpu_decoded_gemm_p50_us": 17.75,
+  "thor_verified": false
+}

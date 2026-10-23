@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "python": 4,
+    "shell": 12,
+    "json": 15,
+    "local_links": 38
+  },
+  "errors": [],
+  "user_dirty_hashes_unchanged": true,
+  "arm_date_json_count": 0
+}

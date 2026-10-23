@@ -44,3 +44,5 @@
 2026-10-21：[第20课：PMR对象析构与arena整体释放](2026-10-21/README.md)。clear析构与4032B保留、release归还、有限arena失败回滚；Release/ASan/UBSan通过，无性能数字。 下一节21。
 
 2026-10-22：[第21课](2026-10-22/README.md)。filesystem/error_code/TOCTOU；旧流/新路径、缺失/哨兵/异常/零值通过Release/ASan/UBSan；Linux板端未验。 下一节22。
+
+2026-10-23：[第22课：scoped_lock与异常提交](2026-10-23/README.md)。libc++多锁源码已读，双向20000转移/4拒绝/锁获取异常回收通过Release+ASan/UBSan/TSan；总额度200000。无性能结论，下一节23。

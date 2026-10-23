@@ -1,0 +1,52 @@
+[
+  {
+    "command": [
+      "uname",
+      "-a"
+    ],
+    "exit": 0,
+    "stdout": "Darwin guhaorandeMacBook-Air.local 25.6.0 Darwin Kernel Version 25.6.0: Fri Jul 31 19:16:20 PDT 2026; root:xnu-12377.161.14~5/RELEASE_ARM64_T8142 arm64\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "c++",
+      "--version"
+    ],
+    "exit": 0,
+    "stdout": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "--version"
+    ],
+    "exit": 0,
+    "stdout": "Python 3.9.6\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Users/guhaoran/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "--version"
+    ],
+    "exit": 0,
+    "stdout": "Python 3.12.14\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "nvcc",
+      "--version"
+    ],
+    "error": "[Errno 2] No such file or directory: 'nvcc'"
+  },
+  {
+    "command": [
+      "ncu",
+      "--version"
+    ],
+    "error": "[Errno 2] No such file or directory: 'ncu'"
+  }
+]
