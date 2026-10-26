@@ -1,0 +1,47 @@
+{
+  "method": "kivi",
+  "date": "2026-10-26",
+  "verified_at": "2026-10-26T09:22:12.202144+08:00",
+  "repository": "https://github.com/jy-yuan/KIVI",
+  "commit": "876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6",
+  "source_record": "source-retry.json",
+  "initial_source_record": "source.json",
+  "source_fetched": true,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": false,
+  "thor_verified": false,
+  "read_symbols": [
+    "quant_and_pack_kcache",
+    "quant_and_pack_vcache",
+    "pack_tensor",
+    "unpack_tensor",
+    "unpack_and_dequant_kcache",
+    "unpack_and_dequant_vcache",
+    "triton_quantize_and_pack_along_last_dim (read only)",
+    "LlamaAttention_KIVI.__init__/forward selected cache lifecycle",
+    "cuda_bmm_fA_qB_outer (entry only)",
+    "quant/setup.py CUDAExtension"
+  ],
+  "not_read": "gemv_cuda.cu downloaded only, no kernel implementation-reading claim",
+  "evidence": [
+    "example.py",
+    "results/cpu-initial.txt",
+    "results/cpu-bundled.txt"
+  ],
+  "blockers": [
+    "No torch on Python3.9.6 and3.12.14",
+    "Native torch/triton dependencies not installed",
+    "Old upstream dependency pins do not establish Thor compatibility",
+    "Native numeric/storage/timing and Thor kernel baseline/optimization/ncu/PTX/SASS remain unverified"
+  ],
+  "source_license": "MIT",
+  "native_example": "CPU tensor pack/unpack functions with independent evaluation orchestration",
+  "static_check": "Python AST and shell syntax only; not native execution",
+  "historical_retry": {
+    "method": "optimizer_8bit",
+    "record": "results/backlog-optimizer-source.json",
+    "cache_check": "rg --files quant_sources found no adam.py or bitsandbytes optimizer.py; SpinQuant optimizer.py is not applicable",
+    "counts_toward_progress": false
+  }
+}

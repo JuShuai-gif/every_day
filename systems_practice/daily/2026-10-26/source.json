@@ -1,0 +1,31 @@
+{
+  "read_date": "2026-10-26",
+  "relation": "independent implementation inspired by source; not copied upstream code",
+  "sources": [
+    {
+      "repository": "https://github.com/NVIDIA/TensorRT",
+      "ref": "release/10.13",
+      "path": "samples/common/sampleInference.cpp",
+      "read_scope": "IterationStd::createEnqueueFunction: lines1252-1291",
+      "license": "Apache-2.0",
+      "blob_sha": "cea7afd6203affa7eec36e8e7aa3179ddb9d5dd1",
+      "permalink": "https://github.com/NVIDIA/TensorRT/blob/release/10.13/samples/common/sampleInference.cpp"
+    }
+  ],
+  "full_file_read": false,
+  "research_attempts": [
+    {
+      "url": "https://www.google.com/search?q=TensorRT+CUDA+Graph+buffer+lifetime",
+      "result": "tool URL inaccessible"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=TensorRT%20CUDA%20Graph",
+      "result": "tool URL inaccessible; site-search returned no adopted relevant primary case"
+    }
+  ],
+  "selection_basis": {
+    "main": "Existing worktree daily/index.md registered Oct24 CUDA, so Oct26 TensorRT",
+    "quantization": "Existing progress next_method_id=kivi; no Oct26 entry before run",
+    "preservation": "Earlier Oct24/25 artifacts and their uncommitted index registrations are retained in worktree, excluded from this commit. Only current-run index changes staged from HEAD."
+  }
+}

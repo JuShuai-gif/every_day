@@ -2,7 +2,7 @@
 
 [栏目说明](../docs/quantization/README.md) · [交付模板](../docs/quantization/LESSON_TEMPLATE.md) · [方法目录](catalog.json) · [进度](progress.json)
 
-下一方法：**SmoothQuant**（smoothquant，第二轮）。SpQR已读已交付，原生CPU/Thor待补。
+下一方法：**8-bit优化器状态**（optimizer_8bit，第二轮）。KIVI源码/原生用法已交付，CPU原生/Thor待补。
 
 | 日期 | 类型 | 方法 | 源码 / 阅读 / 示例 / CPU / Thor | 证据 |
 | --- | --- | --- | --- | --- |
@@ -61,3 +61,5 @@
 2026-10-22：[校准感知缩放：EMA顺序偏置](2026-10-22/calibration/README.md)。真实拉取/源码阅读/原生示例交付；缺torch，CPU原生/Thor未验。独立标量真i8文件8B，偏移MSE退化保留。下一方法QAT；仅重试旧QAT获取一次，DNS失败。
 
 2026-10-23：[QAT第二轮：固定网格STE与打包](2026-10-23/qat/README.md)。实际浅拉取/读取AO9e9dca96，原生示例交付；缺torch未运行，Thor未验。独立两候选各160更新、真u4文件24B，比FP16载荷16B大，eval与shift误差退化保留。一个旧NF4获取重试DNS失败；下一方法NF4/QLoRA。[五项状态](2026-10-23/qat/verification.json)。
+
+2026-10-26：[KIVI第二轮：残留窗口与真实pack/unpack](2026-10-26/kivi/README.md)。实际浅拉取876b4d2d并读实现，原生CPU示例已交付；两Python环境缺torch未运行，Thor后端待补。五状态是/是/是/否/否；仅重试一个旧optimizer_8bit获取失败、无可验证缓存；下一optimizer_8bit。[状态](2026-10-26/kivi/verification.json)。

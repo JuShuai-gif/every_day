@@ -2,7 +2,7 @@
 
 独立随每日北京时间08:30任务运行，同日不重复推进，不改变12个主方向。路线及完整28课见[课程说明](../docs/cpp17/README.md)，状态见[progress.json](progress.json)。此前主轮换中的C++课程保留原位，不倒填为本栏目的历史交付。
 
-下一节：**19**（按progress.json继续）。
+下一节：**25**（按progress.json继续）。
 
 2026-10-09：[第11课：哈希表插入成本](2026-10-09/README.md)。Mac C++17 通过 `try_emplace`、重复键与 miss 查找边界；目标板未验证。
 
@@ -46,3 +46,5 @@
 2026-10-22：[第21课](2026-10-22/README.md)。filesystem/error_code/TOCTOU；旧流/新路径、缺失/哨兵/异常/零值通过Release/ASan/UBSan；Linux板端未验。 下一节22。
 
 2026-10-23：[第22课：scoped_lock与异常提交](2026-10-23/README.md)。libc++多锁源码已读，双向20000转移/4拒绝/锁获取异常回收通过Release+ASan/UBSan/TSan；总额度200000。无性能结论，下一节23。
+
+2026-10-26：[第24课：条件变量与退出协议](2026-10-26/README.md)。libc++源码已读，4000任务/200受控异常、空close/满队列producer关闭、4项排空通过Release/ASan/UBSan/TSan；不宣称所有调度证明，无性能数据。下一25。

@@ -1,0 +1,21 @@
+{
+  "time": "2026-10-26T09:25:22.007410+08:00",
+  "files_before_audit": 87,
+  "checks": {
+    "json": 22,
+    "py": 3,
+    "sh": 14,
+    "local_links": 54
+  },
+  "staged_diff_check": "passed",
+  "initial_staged_diff_check": "packed.s blank line at EOF; removed by fixing assembly excerpt writer",
+  "global_diff_check": {
+    "exit_code": 2,
+    "stdout": "systems_practice/arm/2026-09-23/src/registers.cpp:26: trailing whitespace.\n+  W0：          | 低 32 位 |  \n",
+    "stderr": ""
+  },
+  "preserved": "4 preexisting source hashes unchanged; all earlier worktree histories retained. Only today index deltas staged from HEAD.",
+  "format": "repository script/config on8 source files scoped mirror; wrong initial workdir failure corrected",
+  "main_readme": "12 headings;527 CJK concept characters",
+  "target": "Thor sm_110 only; GPU compiler/runtime/profiling unverified"
+}

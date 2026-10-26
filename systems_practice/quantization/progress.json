@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "next_method_id": "nf4_qlora",
-  "last_lesson_date": "2026-10-23",
+  "next_method_id": "optimizer_8bit",
+  "last_lesson_date": "2026-10-26",
   "completed_methods": [
     "awq",
     "adaround",
@@ -14,7 +14,8 @@
     "smoothquant",
     "llm_int8",
     "calibration",
-    "qat"
+    "qat",
+    "kivi"
   ],
   "history": [
     {
@@ -535,6 +536,21 @@
       "thor_verified": false,
       "counts_toward_daily_progress": true,
       "status": "Source and native API example delivered; native/Thor pending; independent CPU update/export verified"
+    },
+    {
+      "date": "2026-10-26",
+      "method": "kivi",
+      "commit": "876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6",
+      "source_fetched": true,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "lesson": "2026-10-26/kivi/README.md",
+      "verification": "2026-10-26/kivi/verification.json",
+      "focus": "Second rotation native CPU pack/unpack and residual storage; native execution pending",
+      "counts_toward_daily_progress": true,
+      "status": "Source/read/native example delivered; no torch or Thor"
     }
   ],
   "backlog": [
@@ -945,12 +961,28 @@
       "kind": "native_runtime_and_target",
       "reason": "Source/read/example complete; Python3.9 too old and bundled3.12 lacks torch; no installation; native export and Thor unverified",
       "verification": "2026-10-23/qat/verification.json"
+    },
+    {
+      "date": "2026-10-26",
+      "method": "kivi",
+      "commit": "876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6",
+      "source_fetched": true,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "lesson": "2026-10-26/kivi/README.md",
+      "verification": "2026-10-26/kivi/verification.json",
+      "focus": "Second rotation native CPU pack/unpack and residual storage; native execution pending",
+      "counts_toward_daily_progress": true,
+      "status": "Source/read/native example delivered; no torch or Thor",
+      "reason": "Native CPU numerical/export/storage/timing not run; Thor backend compatibility/kernel optimization/ncu/PTX/SASS pending"
     }
   ],
   "policy": "One quantization lesson per Asia/Shanghai calendar day, independent of main rotation. Preparation does not advance cursor. Daily attempted lessons may advance cursor but failures stay in backlog and never enter completed_methods. Completion requires source read and concrete upstream usage example delivered; execution evidence tracked separately.",
   "last_language_audit": "2026-09-22T10:43:01.386131+08:00",
   "language_policy": "Torch-first for algorithms/models/precision/framework timing; C++ optional for explicit layout/CPU kernel studies",
-  "last_canonical_lesson_date": "2026-10-23",
+  "last_canonical_lesson_date": "2026-10-26",
   "backfill_reconciled_at": "2026-09-28T05:01:42.754872+00:00",
   "reconciliation_note": "2026-10-02 concurrent Oct1 registration corrected: calibration draft retained as supplemental; QAT canonical. One old backlog retry AWQ only. Earlier backfill history preserved.",
   "retry_history": [
@@ -1035,7 +1067,7 @@
       "counts_toward_daily_progress": false
     }
   ],
-  "next_cycle_note": "Next NF4/QLoRA; QAT native CPU and Thor pending. Exactly one historical NF4 source retry failed.",
+  "next_cycle_note": "Next optimizer_8bit. KIVI native CPU and Thor pending.",
   "source_retries": [
     {
       "date": "2026-10-18",
@@ -1086,6 +1118,17 @@
       "record": "2026-10-23/qat/results/backlog-nf4-source.json",
       "reason": "One old backlog fetch DNS failure; no verified nf4 cache found",
       "counts_toward_daily_progress": false
+    },
+    {
+      "date": "2026-10-26",
+      "method": "optimizer_8bit",
+      "source_fetched": false,
+      "source_read": false,
+      "example_run": false,
+      "record": "2026-10-26/kivi/results/backlog-optimizer-source.json",
+      "reason": "One old backlog source retry DNS failure; no verified applicable cache",
+      "counts_toward_daily_progress": false
     }
-  ]
+  ],
+  "updated_at": "2026-10-26T09:23:35.402897+08:00"
 }

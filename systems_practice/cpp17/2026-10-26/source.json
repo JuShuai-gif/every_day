@@ -1,0 +1,35 @@
+{
+  "read_date": "2026-10-26",
+  "relation": "independent implementation inspired by source; not copied upstream code",
+  "sources": [
+    {
+      "repository": "https://github.com/llvm/llvm-project",
+      "ref": "llvmorg-20.1.8",
+      "path": "libcxx/include/__condition_variable/condition_variable.h",
+      "read_scope": "condition_variable::wait(predicate) lines145-148",
+      "license": "Apache-2.0 WITH LLVM-exception",
+      "blob_sha": "4521fe274614ef287beb9bf4f3490dc60f56f097",
+      "permalink": "https://github.com/llvm/llvm-project/blob/llvmorg-20.1.8/libcxx/include/__condition_variable/condition_variable.h"
+    },
+    {
+      "repository": "https://github.com/llvm/llvm-project",
+      "ref": "llvmorg-20.1.8",
+      "path": "libcxx/src/condition_variable.cpp",
+      "read_scope": "wait/notify_one/notify_all",
+      "license": "Apache-2.0 WITH LLVM-exception",
+      "blob_sha": "db60571cf5f5601a383d2cf2861503df6057caf9",
+      "permalink": "https://github.com/llvm/llvm-project/blob/llvmorg-20.1.8/libcxx/src/condition_variable.cpp"
+    }
+  ],
+  "full_file_read": false,
+  "research_attempts": [
+    {
+      "url": "https://www.google.com/search?q=TensorRT+CUDA+Graph+buffer+lifetime",
+      "result": "tool URL inaccessible"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=TensorRT%20CUDA%20Graph",
+      "result": "tool URL inaccessible; site-search returned no adopted relevant primary case"
+    }
+  ]
+}

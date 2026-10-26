@@ -1,0 +1,19 @@
+{
+  "selected_heads": [
+    1
+  ],
+  "all_head_tokens": [
+    0,
+    5
+  ],
+  "selected_head_tokens": [
+    2,
+    3
+  ],
+  "normal_retained_mass": 0.7,
+  "shift_retained_mass": 0.04,
+  "dense_FP16_KV_payload_bytes": 24,
+  "selected_with_indices_bytes": 12,
+  "invalid_budget_rejected": 2,
+  "scope": "independent CPU toy selection, not author calibration/GQA runtime"
+}

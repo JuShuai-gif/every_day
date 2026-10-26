@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-23T09:25:02.010760+08:00",
+  "updated_at": "2026-10-26T09:23:35.402897+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -780,6 +780,34 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python stdlib"
+    },
+    {
+      "id": "arxiv:2608.23834",
+      "title": "Minima-KV: Retention-Preserving KV Cache Compression with Mixed-Format Paged Attention",
+      "delivered_on": "2026-10-26",
+      "first_submitted": "2026-08-24",
+      "version_read": "v1",
+      "directory": "2026-10-26/01-minima",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": false,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python stdlib"
+    },
+    {
+      "id": "arxiv:2606.24467",
+      "title": "CompressKV: Semantic-Retrieval-Guided KV-Cache Compression for Resource-Efficient Long-Context LLM Inference",
+      "delivered_on": "2026-10-26",
+      "first_submitted": "2026-06-23",
+      "version_read": "v1",
+      "directory": "2026-10-26/02-compress",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": true,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python stdlib"
     }
   ],
   "backlog": [
@@ -1093,6 +1121,11 @@
       "id": "arxiv:2607.22583",
       "reason": "Official author repository unverified; complete model/device reproduction pending; v1 device identity requires clarification before adopting latency",
       "verification": "2026-10-23/02-pareto/verification.json"
+    },
+    {
+      "date": "2026-10-26",
+      "reason": "Minima author source unavailable; CompressKV license/full calibration pending; full model/Thor unverified",
+      "directory": "2026-10-26"
     }
   ]
 }

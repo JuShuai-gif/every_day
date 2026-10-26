@@ -2,8 +2,8 @@
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
   "created_on": "2026-09-29",
-  "last_delivery_date": "2026-10-23",
-  "next_lesson_id": "23",
+  "last_delivery_date": "2026-10-26",
+  "next_lesson_id": "25",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -26,7 +26,8 @@
     "19",
     "20",
     "21",
-    "22"
+    "22",
+    "24"
   ],
   "history": [
     {
@@ -401,6 +402,25 @@
         "results/verified-sanitize.txt"
       ],
       "tsan_passed": true
+    },
+    {
+      "date": "2026-10-26",
+      "lesson_id": "24",
+      "path": "2026-10-26",
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "source_read": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "recorded_at": "2026-10-26T09:23:35.402897+08:00",
+      "verification": "2026-10-26/verification.json",
+      "evidence": [
+        "results/verified-release.txt",
+        "results/verified-sanitize.txt"
+      ],
+      "tsan_passed": true
     }
   ],
   "backlog": [
@@ -509,7 +529,14 @@
       "kind": "target_board_verification",
       "reason": "Host delivered; real device verification pending",
       "verification": "2026-10-23/verification.json"
+    },
+    {
+      "date": "2026-10-26",
+      "lesson_id": "24",
+      "reason": "Target Linux/board not verified; host evidence only",
+      "verification": "2026-10-26/verification.json"
     }
   ],
-  "last_canonical_lesson_date": "2026-10-23"
+  "last_canonical_lesson_date": "2026-10-26",
+  "updated_at": "2026-10-26T09:23:35.402897+08:00"
 }

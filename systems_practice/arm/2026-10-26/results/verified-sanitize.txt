@@ -1,0 +1,13 @@
+PASS shapes=56 rejects=3 max_abs=1.61255e-07
+shape=1x513
+scalar_relu CPU_batch_mean_us_P50=1.44417 P95=1.4927
+packed_kernel_relu CPU_batch_mean_us_P50=1.42708 P95=1.48395
+pack_kernel_unpack CPU_batch_mean_us_P50=5.55813 P95=6.03437
+shape=5x513
+scalar_relu CPU_batch_mean_us_P50=7.22375 P95=7.73625
+packed_kernel_relu CPU_batch_mean_us_P50=2.77729 P95=2.855
+pack_kernel_unpack CPU_batch_mean_us_P50=15.7906 P95=16.389
+shape=32x513
+scalar_relu CPU_batch_mean_us_P50=45.3556 P95=48.1419
+packed_kernel_relu CPU_batch_mean_us_P50=11.0717 P95=11.4994
+pack_kernel_unpack CPU_batch_mean_us_P50=80.8369 P95=90.4585

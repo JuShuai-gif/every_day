@@ -1,0 +1,8 @@
+{
+  "reference": 2.4621171572600096,
+  "stable_merge": 2.4621171572600096,
+  "naive_average": -16.079527207670044,
+  "worst_error_9_cases": 0,
+  "empty_rejected": true,
+  "scope": "Python CPU arithmetic only; no codec, model, training or GPU timing"
+}

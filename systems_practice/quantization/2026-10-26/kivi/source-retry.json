@@ -1,0 +1,71 @@
+{
+  "method": "kivi",
+  "repository": "https://github.com/jy-yuan/KIVI.git",
+  "requested_ref": "default branch HEAD (resolved commit recorded after clone)",
+  "retrieved_at_utc": "2026-10-26T01:07:31.173333+00:00",
+  "commit": "876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6",
+  "cache": ".tmp/quant_sources/kivi-4qwpqaj4",
+  "status": "fetched",
+  "source_read": false,
+  "example_run": false,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5931,
+      "sha256": "baa1095e6edf8263bbf20507f0d1ce444c3cb57d97d5f5677c2ac19c3b934bbf",
+      "local_source": ".tmp/quant_sources/kivi-4qwpqaj4/source/README.md",
+      "permalink": "https://github.com/jy-yuan/KIVI/blob/876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6/README.md"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1067,
+      "sha256": "add9ea09ab043685efec19b2ba456d6889b62a128ff43e2eca5d37489fdbf8a8",
+      "local_source": ".tmp/quant_sources/kivi-4qwpqaj4/source/LICENSE",
+      "permalink": "https://github.com/jy-yuan/KIVI/blob/876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6/LICENSE"
+    },
+    {
+      "path": "models/llama_kivi.py",
+      "bytes": 46492,
+      "sha256": "67ca858604a460fcafae018d97c5e420841b1ea7dcce522daf554e2df3af68f1",
+      "local_source": ".tmp/quant_sources/kivi-4qwpqaj4/source/models/llama_kivi.py",
+      "permalink": "https://github.com/jy-yuan/KIVI/blob/876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6/models/llama_kivi.py"
+    },
+    {
+      "path": "quant/new_pack.py",
+      "bytes": 8708,
+      "sha256": "3678af0e34a0ba18e5d80a4128acf11d4070667c800a15540a16d07253a4f75e",
+      "local_source": ".tmp/quant_sources/kivi-4qwpqaj4/source/quant/new_pack.py",
+      "permalink": "https://github.com/jy-yuan/KIVI/blob/876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6/quant/new_pack.py"
+    },
+    {
+      "path": "quant/matmul.py",
+      "bytes": 8713,
+      "sha256": "e212072490b99f3e157a04c985f5bbaae4028fb14581de4e1a5029f212ec22bd",
+      "local_source": ".tmp/quant_sources/kivi-4qwpqaj4/source/quant/matmul.py",
+      "permalink": "https://github.com/jy-yuan/KIVI/blob/876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6/quant/matmul.py"
+    },
+    {
+      "path": "quant/setup.py",
+      "bytes": 1151,
+      "sha256": "07d8d6f7c55e58b37b938fe352965824e978345ccab1ad7efcfdeffdd337674a",
+      "local_source": ".tmp/quant_sources/kivi-4qwpqaj4/source/quant/setup.py",
+      "permalink": "https://github.com/jy-yuan/KIVI/blob/876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6/quant/setup.py"
+    },
+    {
+      "path": "quant/csrc/gemv_cuda.cu",
+      "bytes": 24935,
+      "sha256": "850b9a33b1e320b3d77dab61a423cea6c73473ab7f33b064dd2e34a682dfef63",
+      "local_source": ".tmp/quant_sources/kivi-4qwpqaj4/source/quant/csrc/gemv_cuda.cu",
+      "permalink": "https://github.com/jy-yuan/KIVI/blob/876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6/quant/csrc/gemv_cuda.cu"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 3385,
+      "sha256": "70d88b20853e5a18fe6796e8602f7529f9820391777034aa23a0fbafc7a3f7a5",
+      "local_source": ".tmp/quant_sources/kivi-4qwpqaj4/source/requirements.txt",
+      "permalink": "https://github.com/jy-yuan/KIVI/blob/876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6/requirements.txt"
+    }
+  ],
+  "errors": [],
+  "note": "Downloaded bytes do not establish that an agent read the implementation or ran an example."
+}

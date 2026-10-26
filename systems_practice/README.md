@@ -12,7 +12,7 @@
 
 每课的 README 与代码、运行脚本和结果放在一起。学习路线、栏目规则等通用说明集中在 docs/。
 
-当前入口：[2026-10-23 C++热更新](daily/2026-10-23/README.md) · [QAT](quantization/2026-10-23/qat/README.md) · [ARM28](arm/2026-10-23/README.md) · [DRQ/多目标剪枝论文](paper/2026-10-23/README.md) · [OS23](os/2026-10-23/README.md) · [C++17第22课](cpp17/2026-10-23/README.md)。
+当前入口：[2026-10-26 TensorRT Graph](daily/2026-10-26/README.md) · [KIVI](quantization/2026-10-26/kivi/README.md) · [ARM集成02](arm/2026-10-26/README.md) · [两篇论文](paper/2026-10-26/README.md) · [OS25](os/2026-10-26/README.md) · [C++17第24课](cpp17/2026-10-26/README.md)。宿主验证通过，量化原生缺torch、Thor缺工具设备；GPU无性能结论。
 
 旧规范和旧总索引文件保留为兼容导航，正文只有一份；历史日志中的旧路径保留原样。迁移对应表见 [目录说明](docs/LAYOUT.md)。
 

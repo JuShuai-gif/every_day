@@ -10,7 +10,7 @@
 | [2026-10-01](2026-10-01/README.md) | 04：trapframe现场 + 系统调用返回 | 宿主状态模型/EBADF，Release/ASan/UBSan通过；xv6源码已读 | commit、xv6/QEMU/Linux/板端待验；[记录](2026-10-01/verification.json) |
 | [2026-10-03](2026-10-03/README.md) | 06：walk多级索引 + 映射权限与解除映射 | C++17 Release/ASan/UBSan，手算地址、1025跨叶映射与失败边界通过；本地PDF页5勘误核实 | xv6/QEMU/Linux/板端与精确commit待验；[记录](2026-10-03/verification.json) |
 
-下一节：**20**（按progress.json继续）。
+下一节：**26**（按progress.json继续）。
 
 2026-10-09：[第12课：可运行/运行/睡眠状态与上下文切换](2026-10-09/README.md)。Mac 状态模型通过；xv6 源码已读，QEMU/Linux/板端未验证。
 
@@ -47,3 +47,5 @@
 2026-10-22：[第22课](2026-10-22/README.md)。epoll就绪/字节流状态机；Mac3帧、2拒绝、65536B背压验证通过Release/ASan/UBSan；Linux ET/LT未验。 下一节23。
 
 2026-10-23：[第23课：DMA地址与同步所有权](2026-10-23/README.md)。Linuxv6.12映射/同步源码已读；独立合同模型1001周期/6拒绝/live0通过Release+ASan/UBSan；非真实DMA、Linux内核或板端验证。下一节24。
+
+2026-10-26：[OS25：映射/读取选择与文件更新寿命](2026-10-26/README.md)。Linuxv6.12 VMA引用与rename选段已读；旧/新映射、unlink存活、空文件拒绝和ENOENT通过Release/ASan/UBSan。无性能、断电/Linux/板端验证，下一26。

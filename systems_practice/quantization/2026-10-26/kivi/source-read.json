@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-26",
+  "commit": "876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6",
+  "source_record": "source-retry.json",
+  "read_symbols": [
+    "quant_and_pack_kcache",
+    "quant_and_pack_vcache",
+    "pack_tensor",
+    "unpack_tensor",
+    "unpack_and_dequant_kcache",
+    "unpack_and_dequant_vcache",
+    "triton_quantize_and_pack_along_last_dim (read only)",
+    "LlamaAttention_KIVI.__init__/forward selected cache lifecycle",
+    "cuda_bmm_fA_qB_outer (entry only)",
+    "quant/setup.py CUDAExtension"
+  ],
+  "license": "MIT",
+  "relation": "Upstream CPU pack/unpack invoked without modification. Independent orchestration/export/attention. No upstream CUDA kernel port."
+}

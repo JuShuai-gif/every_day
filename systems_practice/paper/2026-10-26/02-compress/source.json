@@ -1,0 +1,35 @@
+{
+  "read_date": "2026-10-26",
+  "title": "CompressKV: Semantic-Retrieval-Guided KV-Cache Compression for Resource-Efficient Long-Context LLM Inference",
+  "authors": [
+    "Xiaolin Lin",
+    "Jingcun Wang",
+    "Olga Kondrateva",
+    "Yiyu Shi",
+    "Bing Li",
+    "Grace Li Zhang"
+  ],
+  "arxiv_id": "2606.24467",
+  "version": "v1",
+  "url": "https://arxiv.org/html/2606.24467v1",
+  "first_public_date": "2026-06-23",
+  "version_date": "2026-06-23",
+  "publication_status": "preprint; peer-reviewed acceptance not verified",
+  "read_sections": [
+    "3.1-3.4",
+    "4.3-4.5 Table2/3"
+  ],
+  "fulltext_selected_sections_read": true,
+  "example_relation": "independent CPU mechanism example, not author model reproduction",
+  "repository": "https://github.com/TUDa-HWAI/CompressKV",
+  "commit": "4838455a7b0d32e130b96953a7487703d3af4ca4",
+  "file": "methods/compresskv/snapkv_utils.py",
+  "symbols": [
+    "init_compresskv",
+    "compresskvCluster.update_kv",
+    "get_important_head_kv"
+  ],
+  "blob_sha": "ec762331c606566460a20a3bb058b0ec9ab16115",
+  "license": "No LICENSE found in root listing or selected file; unresolved; no upstream code copied",
+  "source_read": true
+}

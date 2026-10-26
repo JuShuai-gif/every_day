@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-26",
+  "verified_at": "2026-10-26T09:22:12.202144+08:00",
+  "source_read": true,
+  "source_record": "source.json",
+  "host": "Darwin arm64; Apple Clang 21.0.0 C++17",
+  "host_compiled": true,
+  "host_run": true,
+  "asan_ubsan": true,
+  "tsan": "not applicable/not run",
+  "evidence": [
+    "results/verified-release.txt",
+    "results/verified-sanitize.txt"
+  ],
+  "thor_compiled": false,
+  "thor_run": false,
+  "ptx_generated": false,
+  "sass_generated": false,
+  "linux_board": false,
+  "xv6_qemu": false,
+  "performance": null,
+  "blockers": [
+    "Linux/board not available; no performance claim"
+  ],
+  "format": "Exact repository scripts/format-cpp.sh and .clang-format executed on scoped mirror of 8 current C++/CUDA sources; originals copied back; final host verification rerun",
+  "initial_format_attempt": "Failed because wrong workdir; no source formatting performed by failed command. Corrected mirror setup and script succeeded."
+}

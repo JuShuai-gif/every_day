@@ -1,0 +1,35 @@
+{
+  "read_date": "2026-10-26",
+  "relation": "independent implementation inspired by source; not copied upstream code",
+  "sources": [
+    {
+      "repository": "https://github.com/torvalds/linux",
+      "ref": "v6.12",
+      "path": "mm/mmap.c",
+      "read_scope": "mmap_region selected VMA get_file/mmap_file; not entire file",
+      "license": "GPL-2.0-only",
+      "blob_sha": "79d541f1502b22eb8279c1a7ec96f37583efa7e6",
+      "permalink": "https://github.com/torvalds/linux/blob/v6.12/mm/mmap.c"
+    },
+    {
+      "repository": "https://github.com/torvalds/linux",
+      "ref": "v6.12",
+      "path": "fs/namei.c",
+      "read_scope": "vfs_rename permission/locking selected lines4910-4980",
+      "license": "GPL-2.0-only",
+      "blob_sha": "4a4a22a08ac20df0e2cbe4b242d47eb4bc630faa",
+      "permalink": "https://github.com/torvalds/linux/blob/v6.12/fs/namei.c"
+    }
+  ],
+  "full_file_read": false,
+  "research_attempts": [
+    {
+      "url": "https://www.google.com/search?q=TensorRT+CUDA+Graph+buffer+lifetime",
+      "result": "tool URL inaccessible"
+    },
+    {
+      "url": "https://www.zhihu.com/search?type=content&q=TensorRT%20CUDA%20Graph",
+      "result": "tool URL inaccessible; site-search returned no adopted relevant primary case"
+    }
+  ]
+}

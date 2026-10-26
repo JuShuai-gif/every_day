@@ -83,3 +83,5 @@
 2026-10-22：[第27课](2026-10-22/README.md)。CPU发布/设备完成边界；10000帧Release/ASan/UBSan/TSan通过，真实STLR/LDAPR；Thor传输候选缺nvcc，未验。 下一节28。
 
 2026-10-23：[第28课：持续负载与温控证据](2026-10-23/README.md)。复用NEON内核，Release/ASan/UBSan与0/7/非法输入通过；真实FCVTAS/SQXTN。Mac2秒前/后窗单调用P50/P95 6.5/6.583与6.375/6.5µs，未证实热稳态，无功耗/板端/E2E。首轮教学交付结束，下一阶段为经核验源码的边缘项目，不能将此视为板端闭环。
+
+2026-10-26：[集成02：任意行尾与packed布局复用](2026-10-26/README.md)。重读ncnn真实实现，56shape/3拒绝/padding lane与double oracle、Release/ASan/UBSan通过；真实FMLA/FRSQRTE/FRSQRTS/FMAX。Mac32×513 scalar/packed/含pack批均值P50=9.02354/4.34563/9.04937µs，保留一行和含pack退化；无PMU/板端/E2E。下一相邻算子布局合同，不重启28课。

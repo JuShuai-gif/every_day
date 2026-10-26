@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-26",
+  "verified_at": "2026-10-26T09:22:12.202144+08:00",
+  "paper_read": true,
+  "paper_read_scope": [
+    "3.1-3.4",
+    "4.3-4.5 Table2/3"
+  ],
+  "author_source_read": true,
+  "independent_cpu_run": true,
+  "result": {
+    "selected_heads": [
+      1
+    ],
+    "all_head_tokens": [
+      0,
+      5
+    ],
+    "selected_head_tokens": [
+      2,
+      3
+    ],
+    "normal_retained_mass": 0.7,
+    "shift_retained_mass": 0.04,
+    "dense_FP16_KV_payload_bytes": 24,
+    "selected_with_indices_bytes": 12,
+    "invalid_budget_rejected": 2,
+    "scope": "independent CPU toy selection, not author calibration/GQA runtime"
+  },
+  "evidence": [
+    "results/cpu.txt"
+  ],
+  "author_native_run": false,
+  "full_model_reproduction": false,
+  "thor_verified": false,
+  "training_updates": false,
+  "blockers": [
+    "No model/dependencies/GPU; no installations/downloads",
+    "Minima author code unavailable; CompressKV full calibration and license pending"
+  ]
+}
