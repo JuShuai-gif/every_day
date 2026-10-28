@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "next_method_id": "optimizer_8bit",
-  "last_lesson_date": "2026-10-26",
+  "next_method_id": "block_fp4",
+  "last_lesson_date": "2026-10-28",
   "completed_methods": [
     "awq",
     "adaround",
@@ -15,24 +15,11 @@
     "llm_int8",
     "calibration",
     "qat",
-    "kivi"
+    "nf4_qlora",
+    "kivi",
+    "optimizer_8bit"
   ],
   "history": [
-    {
-      "date": "2026-10-09",
-      "method": "gptq",
-      "focus": "Pinned upstream Hessian/damping, act-order/static groups and W4A16 QDQ integration boundary",
-      "lesson": "2026-10-09/gptq/README.md",
-      "verification": "2026-10-09/gptq/verification.json",
-      "commit": "2d65066eeb06a5c9ff5184d8cebdf33662c67faf",
-      "source_fetched": false,
-      "source_read": true,
-      "example_delivered": true,
-      "cpu_example_run": false,
-      "thor_verified": false,
-      "status": "partial; raw GitHub implementation read after shallow clone failure; native runtime needs Thor and torch",
-      "native_api_language": "Python/PyTorch"
-    },
     {
       "date": "2026-09-19",
       "method": "awq",
@@ -373,6 +360,21 @@
       "status": "Source/read/example complete; native dependencies and Thor execution pending"
     },
     {
+      "date": "2026-10-09",
+      "method": "gptq",
+      "focus": "Pinned upstream Hessian/damping, act-order/static groups and W4A16 QDQ integration boundary",
+      "lesson": "2026-10-09/gptq/README.md",
+      "verification": "2026-10-09/gptq/verification.json",
+      "commit": "2d65066eeb06a5c9ff5184d8cebdf33662c67faf",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "status": "partial; raw GitHub implementation read after shallow clone failure; native runtime needs Thor and torch",
+      "native_api_language": "Python/PyTorch"
+    },
+    {
       "date": "2026-10-11",
       "method": "adaround",
       "commit": "6360e0c7d9f122cfa64f42475f099c3dafca4010",
@@ -538,6 +540,23 @@
       "status": "Source and native API example delivered; native/Thor pending; independent CPU update/export verified"
     },
     {
+      "date": "2026-10-24",
+      "actual_delivery_date": "2026-10-25",
+      "method": "nf4_qlora",
+      "commit": "7f4e95a68dc076bea9b3a413d2b512eca6d004e5",
+      "backend_commit": "7e16503e403de460d4ed7dfd6c90a656628f5149",
+      "lesson": "2026-10-24/nf4_qlora/README.md",
+      "verification": "2026-10-24/nf4_qlora/verification.json",
+      "focus": "Second rotation NF4 nested scale state, native codec serialization and floating Linear",
+      "source_fetched": true,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": false,
+      "thor_verified": false,
+      "counts_toward_daily_progress": true,
+      "status": "Source/read/native example delivered; missing torch; native accuracy/storage/performance and Thor pending"
+    },
+    {
       "date": "2026-10-26",
       "method": "kivi",
       "commit": "876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6",
@@ -551,6 +570,36 @@
       "focus": "Second rotation native CPU pack/unpack and residual storage; native execution pending",
       "counts_toward_daily_progress": true,
       "status": "Source/read/native example delivered; no torch or Thor"
+    },
+    {
+      "date": "2026-10-27",
+      "method": "optimizer_8bit",
+      "commit": "833649043474794b8fe7a4136e0c40faf077b2e0",
+      "lesson": "2026-10-27/optimizer_8bit/README.md",
+      "verification": "2026-10-27/optimizer_8bit/verification.json",
+      "source_fetched": true,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": true,
+      "thor_verified": false,
+      "focus": "Second rotation block-wise optimizer state and real training-update boundary",
+      "status": "source/read/independent example complete; native torch and Thor pending",
+      "counts_toward_daily_progress": true
+    },
+    {
+      "date": "2026-10-28",
+      "method": "fp8_scaling",
+      "commit": "e318546",
+      "lesson": "2026-10-28/fp8_scaling/README.md",
+      "verification": "2026-10-28/fp8_scaling/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": true,
+      "thor_verified": false,
+      "counts_toward_daily_progress": true,
+      "status": "source web/read/independent example complete; clone DNS, native torch and Thor pending",
+      "reason": "No torch/torchao/CUDA install; FP8 backend and sm_110 validation pending"
     }
   ],
   "backlog": [
@@ -753,13 +802,14 @@
     {
       "method": "nf4_qlora",
       "date": "2026-10-03",
-      "reason": "Local clone DNS failed, no verified cache; torch missing; Thor/native backend and QLoRA dependency compatibility unverified",
-      "latest_verification": "2026-10-03/nf4_qlora/verification.json",
-      "source_fetched": false,
+      "reason": "Source acquired/read and native example delivered; native runtime and Thor still pending",
+      "latest_verification": "2026-10-24/nf4_qlora/verification.json",
+      "source_fetched": true,
       "source_read": true,
       "example_delivered": true,
       "cpu_example_run": false,
-      "thor_verified": false
+      "thor_verified": false,
+      "source_fetch_resolved_on": "2026-10-24"
     },
     {
       "date": "2026-10-04",
@@ -963,6 +1013,13 @@
       "verification": "2026-10-23/qat/verification.json"
     },
     {
+      "date": "2026-10-24",
+      "method": "nf4_qlora",
+      "kind": "native_runtime_and_target",
+      "reason": "No torch; native export/error/storage/timing and Thor backend unverified",
+      "verification": "2026-10-24/nf4_qlora/verification.json"
+    },
+    {
       "date": "2026-10-26",
       "method": "kivi",
       "commit": "876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6",
@@ -977,12 +1034,18 @@
       "counts_toward_daily_progress": true,
       "status": "Source/read/native example delivered; no torch or Thor",
       "reason": "Native CPU numerical/export/storage/timing not run; Thor backend compatibility/kernel optimization/ncu/PTX/SASS pending"
+    },
+    {
+      "method": "optimizer_8bit",
+      "date": "2026-10-27",
+      "reason": "native torch/bitsandbytes runtime, CUDA extension and Thor sm_110 verification pending",
+      "record": "2026-10-27/optimizer_8bit/verification.json"
     }
   ],
   "policy": "One quantization lesson per Asia/Shanghai calendar day, independent of main rotation. Preparation does not advance cursor. Daily attempted lessons may advance cursor but failures stay in backlog and never enter completed_methods. Completion requires source read and concrete upstream usage example delivered; execution evidence tracked separately.",
   "last_language_audit": "2026-09-22T10:43:01.386131+08:00",
   "language_policy": "Torch-first for algorithms/models/precision/framework timing; C++ optional for explicit layout/CPU kernel studies",
-  "last_canonical_lesson_date": "2026-10-26",
+  "last_canonical_lesson_date": "2026-10-28",
   "backfill_reconciled_at": "2026-09-28T05:01:42.754872+00:00",
   "reconciliation_note": "2026-10-02 concurrent Oct1 registration corrected: calibration draft retained as supplemental; QAT canonical. One old backlog retry AWQ only. Earlier backfill history preserved.",
   "retry_history": [
@@ -1120,6 +1183,17 @@
       "counts_toward_daily_progress": false
     },
     {
+      "date": "2026-10-24",
+      "actual_attempt_date": "2026-10-25",
+      "method": "kivi",
+      "source_fetched": false,
+      "source_read": false,
+      "example_run": false,
+      "record": "2026-10-24/nf4_qlora/results/backlog-kivi-source.json",
+      "reason": "Exactly one old backlog acquisition retry failed DNS; no verified cache",
+      "counts_toward_daily_progress": false
+    },
+    {
       "date": "2026-10-26",
       "method": "optimizer_8bit",
       "source_fetched": false,
@@ -1130,5 +1204,5 @@
       "counts_toward_daily_progress": false
     }
   ],
-  "updated_at": "2026-10-26T09:23:35.402897+08:00"
+  "updated_at": "2026-10-28T09:30:00+08:00"
 }

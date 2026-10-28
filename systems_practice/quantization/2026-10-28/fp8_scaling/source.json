@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-28",
+  "repository": "https://github.com/pytorch/ao",
+  "requested_tag": "v0.13.0",
+  "verified_commit": "e318546 (web record; full SHA unavailable)",
+  "read_date": "2026-10-28",
+  "files": [
+    "torchao/float8/float8_linear.py",
+    "torchao/float8/config.py",
+    "torchao/float8/float8_utils.py"
+  ],
+  "symbols": [
+    "Float8Linear",
+    "Float8DynamicActivationFloat8WeightConfig",
+    "hp_tensor_to_float8_dynamic"
+  ],
+  "license": "BSD-3-Clause",
+  "original_scenario": "torchao Float8Linear dynamic scaling",
+  "relationship": "native API example preserves torchao call shape; stdlib example is independent codec, not native implementation",
+  "fetch_status": "clone failed: GitHub DNS; web source pages read"
+}

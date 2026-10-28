@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-28",
+  "repository": "https://github.com/NVIDIA/cutlass",
+  "commit_or_tag": "v4.2.1",
+  "read_date": "2026-10-28",
+  "license": "BSD-3-Clause",
+  "files": [
+    "include/cutlass/gemm/kernel/gemm_universal.hpp",
+    "include/cutlass/gemm/collective/sm90_mma_array.hpp"
+  ],
+  "symbols": [
+    "GemmUniversal",
+    "CollectiveMma"
+  ],
+  "original_scenario": "CUTLASS tiled GEMM mainloop and producer/consumer synchronization",
+  "relationship": "independent adaptation; retains tile ownership and synchronization contract, omits CUTLASS templates and MMA atoms; target remains Thor sm_110"
+}

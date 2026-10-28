@@ -84,4 +84,11 @@
 
 2026-10-23：[第28课：持续负载与温控证据](2026-10-23/README.md)。复用NEON内核，Release/ASan/UBSan与0/7/非法输入通过；真实FCVTAS/SQXTN。Mac2秒前/后窗单调用P50/P95 6.5/6.583与6.375/6.5µs，未证实热稳态，无功耗/板端/E2E。首轮教学交付结束，下一阶段为经核验源码的边缘项目，不能将此视为板端闭环。
 
+2026-10-24：[集成源码案例01：packed4 RMSNorm](2026-10-24/README.md)。ncnn实际源码启发，20例/零维拒绝/混轴反例，Release+ASan/UBSan通过，真实FMLA/FRSQRTE/FRSQRTS；Mac4×513批均值P50 scalar2.16167、NEON1.20104、含pack/unpack1.33688µs。板端/PMU未验；不重启基础01，下一集成任意行尾与布局复用。实际核验10月25。
+
 2026-10-26：[集成02：任意行尾与packed布局复用](2026-10-26/README.md)。重读ncnn真实实现，56shape/3拒绝/padding lane与double oracle、Release/ASan/UBSan通过；真实FMLA/FRSQRTE/FRSQRTS/FMAX。Mac32×513 scalar/packed/含pack批均值P50=9.02354/4.34563/9.04937µs，保留一行和含pack退化；无PMU/板端/E2E。下一相邻算子布局合同，不重启28课。
+
+2026-10-27：[ARM25：NEON能力分派与性能边界](2026-10-27/README.md)。llama.cpp commit 7aca0d2e 的 CPU feature/NUMA 分支已读；宿主 Release/ASan/UBSan 与 A64 候选汇编通过，Linux HWCAP、RK3588/Orin/Thor PMU 与性能待验；下一节性能工具与热点。
+
+
+2026-10-28：[集成03：算子布局合同与版本化分派](2026-10-28/README.md)。llama.cpp CPU feature/backend 分派实际重读；Mac scalar/NEON候选与尾部 oracle 通过，Linux HWCAP、PMU、RK3588/Thor 未验。

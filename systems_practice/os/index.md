@@ -48,4 +48,11 @@
 
 2026-10-23：[第23课：DMA地址与同步所有权](2026-10-23/README.md)。Linuxv6.12映射/同步源码已读；独立合同模型1001周期/6拒绝/live0通过Release+ASan/UBSan；非真实DMA、Linux内核或板端验证。下一节24。
 
+2026-10-24：[第24课：异步完成与租约回收](2026-10-24/README.md)。CUDA Samples v13.0源码已读；1000周期/5099拒绝，400交付、600放弃/失败，Release+ASan/UBSan通过。Thor SDK缺nvcc未验；下一25，实际核验10月25。
+
 2026-10-26：[OS25：映射/读取选择与文件更新寿命](2026-10-26/README.md)。Linuxv6.12 VMA引用与rename选段已读；旧/新映射、unlink存活、空文件拒绝和ENOENT通过Release/ASan/UBSan。无性能、断电/Linux/板端验证，下一26。
+
+2026-10-27：[OS26：端到端延迟归因](2026-10-27/README.md)。Linux v6.12 perf-stat/hrtimer 与 xv6 trap 路径已读；宿主分段观察 Release/ASan/UBSan 通过，不报告P95或Linux/板端结果；下一课按索引继续。
+
+
+2026-10-28：[OS27：长期运行与故障恢复](2026-10-28/README.md)。xv6-riscv proc.c/proc.h 实际阅读；C++ bounded shutdown Release 通过，Linux 长稳/QEMU/板端未验，下一28。

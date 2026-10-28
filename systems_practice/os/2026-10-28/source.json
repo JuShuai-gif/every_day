@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-28",
+  "xv6_repository": "https://github.com/mit-pdos/xv6-riscv",
+  "branch": "riscv",
+  "read_date": "2026-10-28",
+  "files": [
+    "kernel/proc.c:allocproc,freeproc,kexit,kwait",
+    "kernel/proc.h:struct proc"
+  ],
+  "license": "MIT",
+  "linux_reference": "procfs/resource limits documentation",
+  "original_scenario": "process table lifetime and orderly exit",
+  "relationship": "host C++ is independent adaptation of bounded worker shutdown; no claim xv6 has service queues"
+}

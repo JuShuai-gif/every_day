@@ -1,0 +1,2 @@
+cpu build complete; use ./build.sh thor for nvcc
+cpu_gemm_pass max_abs=0 tail_shape=3x5x7

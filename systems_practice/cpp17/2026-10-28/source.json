@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-28",
+  "repository": "https://github.com/llvm/llvm-project",
+  "tag": "llvmorg-20.1.8",
+  "read_date": "2026-10-28",
+  "files": [
+    "libcxx/include/atomic",
+    "libcxx/include/__atomic/atomic_base.h"
+  ],
+  "symbols": [
+    "atomic<T>::store",
+    "atomic<T>::load"
+  ],
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "original_scenario": "libc++ atomic order implementation",
+  "relationship": "independent C++17 publication example; retains release/acquire contract, omits platform atomics"
+}

@@ -1,0 +1,9 @@
+{
+  "arxiv": "2602.06069",
+  "title": "HQP：敏感度感知混合量化与剪枝",
+  "paper_url": "https://arxiv.org/abs/2602.06069",
+  "read_date": "2026-10-28",
+  "sections_read": "abstract, introduction, method, experiments, limitations",
+  "author_repo": "not verified",
+  "relationship": "independent standard-library budget example, not author implementation"
+}

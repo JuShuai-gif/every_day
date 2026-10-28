@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-26T09:23:35.402897+08:00",
+  "updated_at": "2026-10-28T09:30:00+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -782,6 +782,36 @@
       "implementation_language": "Python stdlib"
     },
     {
+      "id": "arxiv:2609.07901",
+      "title": "Quantization Amplifies Determinism, Not Bias: Scale-Dependent Behavioral Effects of Serving-Time Weight Compression",
+      "delivered_on": "2026-10-24",
+      "actual_final_validation_date": "2026-10-25",
+      "first_submitted": "2026-09-07",
+      "version_read": "v1",
+      "directory": "2026-10-24/01-concentration",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": false,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python stdlib"
+    },
+    {
+      "id": "arxiv:2608.14191",
+      "title": "KV Cache Compression Through the Lens of Transform Coding",
+      "delivered_on": "2026-10-24",
+      "actual_final_validation_date": "2026-10-25",
+      "first_submitted": "2026-08-14",
+      "version_read": "v1",
+      "directory": "2026-10-24/02-aatc",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": false,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python stdlib"
+    },
+    {
       "id": "arxiv:2608.23834",
       "title": "Minima-KV: Retention-Preserving KV Cache Compression with Mixed-Format Paged Attention",
       "delivered_on": "2026-10-26",
@@ -808,6 +838,15 @@
       "cpu_mechanism_example_verified": true,
       "full_paper_reproduced": false,
       "implementation_language": "Python stdlib"
+    },
+    {
+      "date": "2026-10-28",
+      "directory": "2026-10-28",
+      "ids": [
+        "arxiv:2610.19121",
+        "arxiv:2602.06069"
+      ],
+      "reason": "full model/device reproduction pending; independent examples verified"
     }
   ],
   "backlog": [
@@ -1123,9 +1162,85 @@
       "verification": "2026-10-23/02-pareto/verification.json"
     },
     {
+      "date": "2026-10-24",
+      "id": "arxiv:2609.07901",
+      "reason": "Author repository unverified; full model and Thor reproduction pending",
+      "verification": "2026-10-24/01-concentration/verification.json"
+    },
+    {
+      "date": "2026-10-24",
+      "id": "arxiv:2608.14191",
+      "reason": "Author repository unverified; full model and Thor reproduction pending",
+      "verification": "2026-10-24/02-aatc/verification.json"
+    },
+    {
       "date": "2026-10-26",
       "reason": "Minima author source unavailable; CompressKV license/full calibration pending; full model/Thor unverified",
       "directory": "2026-10-26"
+    },
+    {
+      "date": "2026-10-27",
+      "id": "arxiv:2607.14618",
+      "reason": "no verified author implementation; full model/CPU backend/Thor reproduction pending"
     }
-  ]
+  ],
+  "papers": [
+    {
+      "id": "arxiv:2608.15693",
+      "title": "Large Models for Small Devices: Recent Advances and Empirical Analysis of Edge AI Deployment",
+      "delivered_on": "2026-10-27",
+      "first_submitted": "2026-08-16",
+      "version_read": "v1",
+      "directory": "2026-10-27/01-small-devices",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": true,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2607.14618",
+      "title": "PolyQ: Codesigning End-to-End Quantization Framework for Scalable Edge CPU LLM Inference",
+      "delivered_on": "2026-10-27",
+      "first_submitted": "2026-07-16",
+      "version_read": "v1",
+      "directory": "2026-10-27/02-polyq",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": false,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2610.19121",
+      "title": "Unlocking Structured Pruning for Reasoning Language Models via Attention-Preserving MLP Trimming",
+      "delivered_on": "2026-10-28",
+      "first_submitted": "2026-10-13",
+      "version_read": "v1",
+      "directory": "2026-10-28/01-layertrim",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": false,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    },
+    {
+      "id": "arxiv:2602.06069",
+      "title": "HQP: Sensitivity-Aware Hybrid Quantization and Pruning for Ultra-Low-Latency Edge AI Inference",
+      "delivered_on": "2026-10-28",
+      "first_submitted": "2026-02-02",
+      "version_read": "v1",
+      "directory": "2026-10-28/02-hqp",
+      "status": "delivered",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": false,
+      "cpu_mechanism_example_verified": true,
+      "full_paper_reproduced": false,
+      "implementation_language": "Python standard library"
+    }
+  ],
+  "last_delivery_date": "2026-10-28"
 }

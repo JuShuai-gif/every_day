@@ -70,4 +70,11 @@
 
 2026-10-23：[DRQ与多目标结构剪枝](2026-10-23/README.md)。2610.11226v1(10-08)与2607.22583v1(元数据首发06-08，最新v3为10-17)一手方法/实验选段已读；作者实现未核实。独立CPU真2位打包/物理删块重载通过；普通eval退化、metadata成本与论文设备描述不一致保留，未复现完整模型/Thor。
 
+2026-10-24：[Quantization Amplifies Determinism, Not Bias / KV Cache Compression Through the Lens of Transform Coding](2026-10-24/README.md)。2609.07901v1（09-07）/2608.14191v1（08-14）一手方法/结果/局限已读；独立CPU测量与真混合位打包例通过，AATC代理目标改善但实际attention误差退化如实保留。作者实现、完整模型/Thor未复现；最终核验10月25。
+
 2026-10-26：[Minima-KV与CompressKV](2026-10-26/README.md)。2608.23834v1（08-24）/2606.24467v1（06-23），一手方法/实验选段已读；CompressKV作者selected源码已读，许可待核实。独立CPU稳定softmax合并9例与真实12B FP16 KV/索引输出通过，shift保留质量0.7→0.04退化；Minima表3算术不一致已标注。完整模型/Thor未复现。
+
+2026-10-27：[两篇](2026-10-27/README.md)：Large Models for Small Devices（2608.15693，作者仓库已读）与PolyQ（2607.14618，全文已读但无核实作者仓库）。独立CPU布局例通过，完整模型/设备未复现。
+
+
+2026-10-28：[LayerTrim](2026-10-28/01-layertrim/README.md) 与 [HQP](2026-10-28/02-hqp/README.md)。一手全文选段与独立 CPU 预算例通过；作者完整实现、模型、Thor/RK3588 未复现。

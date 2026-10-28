@@ -1,0 +1,9 @@
+{
+  "arxiv": "2610.19121",
+  "title": "LayerTrim：保留注意力的结构化 MLP 裁剪",
+  "paper_url": "https://arxiv.org/abs/2610.19121",
+  "read_date": "2026-10-28",
+  "sections_read": "abstract, introduction, method, experiments, limitations",
+  "author_repo": "not verified",
+  "relationship": "independent standard-library budget example, not author implementation"
+}

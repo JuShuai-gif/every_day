@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-28",
+  "example_run": true,
+  "output": "kept [2, 0] removed [1, 3]",
+  "full_model": false,
+  "author_native": false,
+  "thor": false,
+  "reason": "no model/data/dependency download"
+}

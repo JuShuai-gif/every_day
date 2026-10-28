@@ -62,4 +62,11 @@
 
 2026-10-23：[QAT第二轮：固定网格STE与打包](2026-10-23/qat/README.md)。实际浅拉取/读取AO9e9dca96，原生示例交付；缺torch未运行，Thor未验。独立两候选各160更新、真u4文件24B，比FP16载荷16B大，eval与shift误差退化保留。一个旧NF4获取重试DNS失败；下一方法NF4/QLoRA。[五项状态](2026-10-23/qat/verification.json)。
 
+2026-10-24：[NF4第二轮：nested scale状态与原生重载](2026-10-24/nf4_qlora/README.md)。真实拉取QLoRA7f4e95a并阅读，bnb0.48.1/7e16503e原生API与CMake已读；获取/阅读/示例是，CPU缺torch、Thor未验。旧KIVI只重试获取一次DNS失败；下一KIVI。[五项状态](2026-10-24/nf4_qlora/verification.json)。最终核验10月25，不消耗额外25日游标。
+
 2026-10-26：[KIVI第二轮：残留窗口与真实pack/unpack](2026-10-26/kivi/README.md)。实际浅拉取876b4d2d并读实现，原生CPU示例已交付；两Python环境缺torch未运行，Thor后端待补。五状态是/是/是/否/否；仅重试一个旧optimizer_8bit获取失败、无可验证缓存；下一optimizer_8bit。[状态](2026-10-26/kivi/verification.json)。
+
+2026-10-27：[8-bit优化器状态](2026-10-27/optimizer_8bit/README.md)。bitsandbytes 当前提交83364904实际浅拉取并阅读；独立32参数40步block8更新通过，payload 256B→96B；native torch/CUDA/Thor未运行，五项状态见[verification](2026-10-27/optimizer_8bit/verification.json)。下一方法FP8动态缩放。
+
+
+2026-10-28：[FP8 scaling](2026-10-28/fp8_scaling/README.md)。torchao Float8Linear/config/utils 实际网页源码已读；浅克隆因 GitHub DNS 失败。独立 E4M3 小例 CPU 通过，native torch/Thor 未运行；下一方法 MXFP4/NVFP4。

@@ -47,4 +47,11 @@
 
 2026-10-23：[第22课：scoped_lock与异常提交](2026-10-23/README.md)。libc++多锁源码已读，双向20000转移/4拒绝/锁获取异常回收通过Release+ASan/UBSan/TSan；总额度200000。无性能结论，下一节23。
 
+2026-10-24：[第23课：shared_mutex与读者寿命](2026-10-24/README.md)。libc++ llvmorg-20.1.8已读；20000读/2拒绝/旧快照0/最终501/live0，Release+ASan/UBSan+TSan通过。无性能数字；下一24，实际核验10月25。
+
 2026-10-26：[第24课：条件变量与退出协议](2026-10-26/README.md)。libc++源码已读，4000任务/200受控异常、空close/满队列producer关闭、4项排空通过Release/ASan/UBSan/TSan；不宣称所有调度证明，无性能数据。下一25。
+
+2026-10-27：[CPP25：future/promise异常传播](2026-10-27/README.md)。libc++ llvmorg-20.1.8 future共享状态路径已读；Release/ASan/UBSan通过值与异常场景，无性能/TSan结论；下一课原子与发布可见性。
+
+
+2026-10-28：[CPP26：原子与发布可见性](2026-10-28/README.md)。libc++ atomic store/load 源码已读；Release 通过，sanitizer/TSan/Linux/板端未验，下一27。

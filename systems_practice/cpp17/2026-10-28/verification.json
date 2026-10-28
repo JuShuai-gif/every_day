@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-28",
+  "compile": "pass AppleClang C++17",
+  "run": "pass release_acquire_pass value=42",
+  "asan_ubsan": "not run",
+  "tsan": "not run",
+  "board_verified": false
+}

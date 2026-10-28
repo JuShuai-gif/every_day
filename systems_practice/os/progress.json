@@ -3,8 +3,8 @@
   "timezone": "Asia/Shanghai",
   "created_on": "2026-09-28",
   "topics_per_day": 2,
-  "next_lesson_id": "26",
-  "last_delivery_date": "2026-10-26",
+  "next_lesson_id": "28",
+  "last_delivery_date": "2026-10-28",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -29,6 +29,7 @@
     "21",
     "22",
     "23",
+    "24",
     "25"
   ],
   "delivered_topic_ids": [
@@ -78,28 +79,12 @@
     "22b",
     "23a",
     "23b",
+    "24a",
+    "24b",
     "25a",
     "25b"
   ],
   "history": [
-    {
-      "date": "2026-10-09",
-      "lesson_id": "12",
-      "topic_ids": [
-        "12a",
-        "12b"
-      ],
-      "path": "2026-10-09",
-      "source_read": true,
-      "lesson_delivered": true,
-      "host_compile": true,
-      "host_run": true,
-      "xv6_compiled": false,
-      "qemu_run": false,
-      "linux_run": false,
-      "target_board_verified": false,
-      "verification": "2026-10-09/verification.json"
-    },
     {
       "date": "2026-09-28",
       "lesson_id": "01",
@@ -343,6 +328,24 @@
       "xv6_compiled": false,
       "qemu_run": false,
       "linux_run": false
+    },
+    {
+      "date": "2026-10-09",
+      "lesson_id": "12",
+      "topic_ids": [
+        "12a",
+        "12b"
+      ],
+      "path": "2026-10-09",
+      "source_read": true,
+      "lesson_delivered": true,
+      "host_compile": true,
+      "host_run": true,
+      "xv6_compiled": false,
+      "qemu_run": false,
+      "linux_run": false,
+      "target_board_verified": false,
+      "verification": "2026-10-09/verification.json"
     },
     {
       "date": "2026-10-11",
@@ -635,6 +638,32 @@
       "real_dma_verified": false
     },
     {
+      "date": "2026-10-24",
+      "lesson_id": "24",
+      "path": "2026-10-24",
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "source_read": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "recorded_at": "2026-10-25T08:46:45.321442+08:00",
+      "verification": "2026-10-24/verification.json",
+      "evidence": [
+        "results/verified-release.txt",
+        "results/verified-sanitize.txt"
+      ],
+      "topic_ids": [
+        "24a",
+        "24b"
+      ],
+      "linux_run": false,
+      "xv6_compiled": false,
+      "qemu_run": false,
+      "real_dma_verified": false
+    },
+    {
       "date": "2026-10-26",
       "lesson_id": "25",
       "path": "2026-10-26",
@@ -654,6 +683,52 @@
       "topic_ids": [
         "25a",
         "25b"
+      ],
+      "linux_run": false,
+      "xv6_compiled": false,
+      "qemu_run": false
+    },
+    {
+      "date": "2026-10-27",
+      "lesson_id": "26",
+      "path": "2026-10-27",
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "source_read": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "recorded_at": "2026-10-27T09:40:00+08:00",
+      "verification": "2026-10-27/verification.json",
+      "topic_ids": [
+        "26a",
+        "26b"
+      ],
+      "linux_run": false,
+      "xv6_compiled": false,
+      "qemu_run": false,
+      "performance_scope": "one host observation; no P95"
+    },
+    {
+      "date": "2026-10-28",
+      "lesson_id": "27",
+      "path": "2026-10-28",
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "source_read": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": false,
+      "target_board_verified": false,
+      "recorded_at": "2026-10-28T09:30:00+08:00",
+      "verification": "2026-10-28/verification.json",
+      "evidence": [
+        "results.txt"
+      ],
+      "topic_ids": [
+        "27a",
+        "27b"
       ],
       "linux_run": false,
       "xv6_compiled": false,
@@ -802,12 +877,19 @@
       "verification": "2026-10-23/verification.json"
     },
     {
+      "date": "2026-10-24",
+      "lesson_id": "24",
+      "kind": "target_board_verification",
+      "reason": "Host delivered; real board and SDK verification pending",
+      "verification": "2026-10-24/verification.json"
+    },
+    {
       "date": "2026-10-26",
       "lesson_id": "25",
       "reason": "Target Linux/board not verified; host evidence only",
       "verification": "2026-10-26/verification.json"
     }
   ],
-  "last_canonical_lesson_date": "2026-10-26",
-  "updated_at": "2026-10-26T09:23:35.402897+08:00"
+  "last_canonical_lesson_date": "2026-10-28",
+  "updated_at": "2026-10-28T09:30:00+08:00"
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
-  "last_delivery_date": "2026-10-26",
+  "last_delivery_date": "2026-10-28",
   "next_lesson_id": null,
   "delivered_lesson_ids": [
     "01",
@@ -34,20 +34,6 @@
     "28"
   ],
   "history": [
-    {
-      "date": "2026-10-09",
-      "lesson_id": "17",
-      "path": "2026-10-09",
-      "source_read": false,
-      "lesson_delivered": true,
-      "observation_run": true,
-      "compute_kernel_run": true,
-      "target_board_verified": false,
-      "program_compiled": true,
-      "program_run": true,
-      "verification": "2026-10-09/README.md",
-      "status": "specific source path unavailable; builtin prefetch mechanism documented"
-    },
     {
       "date": "2026-09-22",
       "lesson_id": "01",
@@ -356,6 +342,20 @@
       "verification": "2026-10-08/README.md"
     },
     {
+      "date": "2026-10-09",
+      "lesson_id": "17",
+      "path": "2026-10-09",
+      "source_read": false,
+      "lesson_delivered": true,
+      "observation_run": true,
+      "compute_kernel_run": true,
+      "target_board_verified": false,
+      "program_compiled": true,
+      "program_run": true,
+      "verification": "2026-10-09/README.md",
+      "status": "specific source path unavailable; builtin prefetch mechanism documented"
+    },
+    {
       "date": "2026-10-11",
       "lesson_id": "18",
       "path": "2026-10-11",
@@ -575,6 +575,27 @@
       "end_to_end_inference_verified": false
     },
     {
+      "date": "2026-10-24",
+      "lesson_id": "source01",
+      "path": "2026-10-24",
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "source_read": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "recorded_at": "2026-10-25T08:46:45.321442+08:00",
+      "verification": "2026-10-24/README.md",
+      "evidence": [
+        "results/verified-release.txt",
+        "results/verified-sanitize.txt"
+      ],
+      "stage": "integrated_source_case",
+      "arm_evidence": "results/packed4.s actual FMLA/FRSQRTE/FRSQRTS",
+      "performance_scope": "Mac CPU 4x513 batch mean; no board/PMU/E2E"
+    },
+    {
       "date": "2026-10-26",
       "lesson_id": "source02",
       "path": "2026-10-26",
@@ -594,6 +615,38 @@
       "stage": "integrated_source_case",
       "arm_evidence": "results/packed.s actual FMLA/FRSQRTE/FRSQRTS/FMAX",
       "performance_scope": "Mac CPU batch means only; packing regressions retained"
+    },
+    {
+      "date": "2026-10-27",
+      "lesson_id": "25",
+      "path": "2026-10-27",
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "source_read": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "recorded_at": "2026-10-27T09:40:00+08:00",
+      "verification": "2026-10-27/README.md",
+      "arm_evidence": "results/dispatch.s candidate NEON symbols; runtime sysctl dispatch",
+      "performance_scope": "correctness and dispatch only; no PMU/board latency"
+    },
+    {
+      "date": "2026-10-28",
+      "lesson_id": "source03",
+      "path": "2026-10-28",
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "source_read": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": false,
+      "target_board_verified": false,
+      "recorded_at": "2026-10-28T09:30:00+08:00",
+      "verification": "2026-10-28/README.md",
+      "arm_evidence": "results.s actual/host assembly candidate",
+      "performance_scope": "correctness only; no PMU/board/E2E"
     }
   ],
   "backlog": [
@@ -696,6 +749,13 @@
       "verification": "2026-10-23/README.md"
     },
     {
+      "date": "2026-10-24",
+      "lesson_id": "source01",
+      "kind": "target_board_verification",
+      "reason": "Host delivered; real board and SDK verification pending",
+      "verification": "2026-10-24/README.md"
+    },
+    {
       "date": "2026-10-26",
       "lesson_id": "source02",
       "reason": "Target Linux/board not verified; host evidence only",
@@ -728,12 +788,13 @@
       "reason": "User requested four working/deployment capability layers; mapped existing 28 lessons, preserved order and historical progress. Actual delivery08 advances to09 separately."
     }
   ],
-  "last_canonical_lesson_date": "2026-10-26",
+  "last_canonical_lesson_date": "2026-10-28",
   "first_cycle_teaching_delivery_complete": true,
   "next_stage": "verified source kernels and integrated edge projects",
   "next_action": "Continue adjacent-operator layout contract and versioned dispatch; no restart of first cycle.",
   "delivered_integrated_case_ids": [
+    "source01",
     "source02"
   ],
-  "updated_at": "2026-10-26T09:23:35.402897+08:00"
+  "updated_at": "2026-10-28T09:30:00+08:00"
 }

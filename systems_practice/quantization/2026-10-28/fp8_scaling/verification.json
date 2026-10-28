@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-28",
+  "source_fetched": false,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": true,
+  "output": "mse recorded by run.sh",
+  "native_torch_run": false,
+  "thor_verified": false,
+  "reason": "Python torch/torchao/CUDA absent; no install",
+  "cuda_target": "Thor sm_110 only; no FP8 Tensor Core claim"
+}
