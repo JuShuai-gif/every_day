@@ -8,8 +8,31 @@
   "source_read": true,
   "example_delivered": true,
   "cpu_example_run": false,
-  "thor_verified": false,
-  "read_symbols": ["GPTQ.add_batch", "GPTQ.fasterquant", "Quantizer.find_params", "Quant3Linear.pack", "opt_sequential"],
-  "evidence": ["source.json records failed shallow retrieval", "source-read.json records direct GitHub source reading"],
-  "blockers": ["GitHub shallow clone failed", "Mac has no Thor SM110/CUDA toolchain", "torch and transformers were not installed"]
+  "thor_verified": true,
+  "read_symbols": [
+    "GPTQ.add_batch",
+    "GPTQ.fasterquant",
+    "Quantizer.find_params",
+    "Quant3Linear.pack",
+    "opt_sequential"
+  ],
+  "evidence": [
+    "source.json records failed shallow retrieval",
+    "source-read.json records direct GitHub source reading"
+  ],
+  "blockers": [
+    "Upstream Quant3Linear CUDA extension absent; packed low-bit kernel, ncu and throughput remain unverified."
+  ],
+  "historical_blockers": [
+    "GitHub shallow clone failed",
+    "Mac has no Thor SM110/CUDA toolchain",
+    "torch and transformers were not installed"
+  ],
+  "thor_2026_10_29": {
+    "source_commit": "2d65066eeb06a5c9ff5184d8cebdf33662c67faf",
+    "source_hashes": "5/5 matched 2026-10-11 fetch record",
+    "scope": "Native GPTQ calibration and W4 QDQ evaluation on Thor CUDA via PyTorch; no packed CUDA extension",
+    "evaluation_nrmse": 0.09775657206773758,
+    "evidence": "../../../validation/2026-10-29-thor/gptq-native-final.txt"
+  }
 }

@@ -1,16 +1,26 @@
 #include <cuda_runtime.h>
 
+#include <cmath>
 #include <cstdio>
-#include <cstdlib>
+#include <stdexcept>
+#include <vector>
 // Thor SM110 目标：baseline 与 shared-tile 候选保持同一 FP32 语义。
-#define CUDA_OK(x)                                                                        \
-  do {                                                                                    \
-    cudaError_t e = (x);                                                                  \
-    if (e != cudaSuccess) {                                                               \
-      std::fprintf(stderr, "CUDA %s:%d %s\n", __FILE__, __LINE__, cudaGetErrorString(e)); \
-      return 2;                                                                           \
-    }                                                                                     \
-  } while (0)
+void check_cuda(cudaError_t error) {
+  if (error != cudaSuccess)
+    throw std::runtime_error(cudaGetErrorString(error));
+}
+struct DeviceBuffer {
+  float* ptr = nullptr;
+  explicit DeviceBuffer(std::size_t n) {
+    check_cuda(cudaMalloc(&ptr, n * sizeof(float)));
+  }
+  ~DeviceBuffer() {
+    if (ptr)
+      cudaFree(ptr);
+  }
+  DeviceBuffer(const DeviceBuffer&) = delete;
+  DeviceBuffer& operator=(const DeviceBuffer&) = delete;
+};
 __global__ void baseline(const float* A, const float* B, float* C, int M, int N, int K) {
   int row = blockIdx.y * blockDim.y + threadIdx.y, col = blockIdx.x * blockDim.x + threadIdx.x;
   if (row >= M || col >= N)
@@ -37,20 +47,49 @@ __global__ void tiled(const float* A, const float* B, float* C, int M, int N, in
     C[row * N + col] = s;
 }
 int main() {
-  int M = 257, N = 193, K = 129;
-  float *a, *b, *c;
-  CUDA_OK(cudaMalloc(&a, M * K * 4));
-  CUDA_OK(cudaMalloc(&b, K * N * 4));
-  CUDA_OK(cudaMalloc(&c, M * N * 4));
-  dim3 block(16, 16);
-  baseline<<<(N + 15) / 16, (M + 15) / 16>>>(a, b, c, M, N, K);
-  CUDA_OK(cudaGetLastError());
-  CUDA_OK(cudaDeviceSynchronize());
-  tiled<<<dim3((N + 15) / 16, (M + 15) / 16), block>>>(a, b, c, M, N, K);
-  CUDA_OK(cudaGetLastError());
-  CUDA_OK(cudaDeviceSynchronize());
-  cudaFree(a);
-  cudaFree(b);
-  cudaFree(c);
-  std::puts("thor_sm110_candidate_ok");
+  try {
+    int device = 0;
+    check_cuda(cudaGetDevice(&device));
+    cudaDeviceProp prop{};
+    check_cuda(cudaGetDeviceProperties(&prop, device));
+    if (prop.major != 11 || prop.minor != 0)
+      throw std::runtime_error("requires Thor SM110");
+    int comparisons = 0;
+    for (const auto shape : {std::vector<int>{3, 5, 7}, std::vector<int>{257, 193, 129}}) {
+      const int M = shape[0], N = shape[1], K = shape[2];
+      std::vector<float> a(M * K), b(K * N), reference(M * N), output(M * N);
+      for (std::size_t i = 0; i < a.size(); ++i)
+        a[i] = float(int(i % 17) - 8) / 16;
+      for (std::size_t i = 0; i < b.size(); ++i)
+        b[i] = float(int(i % 13) - 6) / 16;
+      for (int m = 0; m < M; ++m)
+        for (int n = 0; n < N; ++n)
+          for (int k = 0; k < K; ++k)
+            reference[m * N + n] = std::fma(a[m * K + k], b[k * N + n], reference[m * N + n]);
+      DeviceBuffer da(a.size()), db(b.size()), dc(output.size());
+      check_cuda(cudaMemcpy(da.ptr, a.data(), a.size() * sizeof(float), cudaMemcpyHostToDevice));
+      check_cuda(cudaMemcpy(db.ptr, b.data(), b.size() * sizeof(float), cudaMemcpyHostToDevice));
+      const dim3 block(16, 16), grid((N + 15) / 16, (M + 15) / 16);
+      for (int variant = 0; variant < 2; ++variant) {
+        check_cuda(cudaMemset(dc.ptr, 0xff, output.size() * sizeof(float)));
+        if (variant == 0)
+          baseline<<<grid, block>>>(da.ptr, db.ptr, dc.ptr, M, N, K);
+        else
+          tiled<<<grid, block>>>(da.ptr, db.ptr, dc.ptr, M, N, K);
+        check_cuda(cudaGetLastError());
+        check_cuda(cudaMemcpy(
+            output.data(), dc.ptr, output.size() * sizeof(float), cudaMemcpyDeviceToHost));
+        for (std::size_t i = 0; i < output.size(); ++i)
+          if (!std::isfinite(output[i]) ||
+              std::abs(output[i] - reference[i]) > 1e-4F * (1 + std::abs(reference[i])))
+            throw std::runtime_error("GEMM numerical mismatch");
+        ++comparisons;
+      }
+    }
+    std::printf("PASS Thor SM110 GEMM comparisons=%d tail_shapes=3x5x7,257x193x129\n", comparisons);
+    return 0;
+  } catch (const std::exception& e) {
+    std::fprintf(stderr, "%s\n", e.what());
+    return 1;
+  }
 }

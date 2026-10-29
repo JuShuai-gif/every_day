@@ -6,11 +6,24 @@
   "host_compile": true,
   "host_run": true,
   "asan_ubsan": true,
-  "cuda_compiled": false,
-  "thor_run": false,
+  "cuda_compiled": true,
+  "thor_run": true,
   "ncu_run": false,
   "ptx_sass_exported": false,
-  "evidence": ["results/cpu.txt", "results/sanitize.txt", "source.json"],
-  "blockers": ["Mac has no NVIDIA GPU", "nvcc/Thor device unavailable"],
-  "performance": "No GPU or end-to-end performance measured."
+  "evidence": [
+    "results/cpu.txt",
+    "results/sanitize.txt",
+    "source.json",
+    "../../validation/2026-10-29-thor/fixed-retests.txt"
+  ],
+  "blockers": [
+    "ncu, PTX/SASS and performance for this lesson not collected"
+  ],
+  "performance": "No GPU or end-to-end performance measured.",
+  "original_mac_status": {
+    "cuda_compiled": false,
+    "thor_run": false,
+    "reason": "Mac has no NVIDIA GPU or nvcc"
+  },
+  "thor_2026_10_29": "CUDA 13.0, SM110; 36 CPU-reference comparisons across 18 shapes and 2 variants passed"
 }

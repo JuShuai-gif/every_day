@@ -1,0 +1,30 @@
+未通过或未运行：量化原生入口（见 docker-retry.txt 和 cached-quant-first.txt）
+systems_practice/quantization/2026-09-19/awq/run.sh
+systems_practice/quantization/2026-09-20/gptq/run.sh
+systems_practice/quantization/2026-09-21/adaround/run.sh
+systems_practice/quantization/2026-09-22/autoround/run.sh
+systems_practice/quantization/2026-09-23/hqq/run.sh
+systems_practice/quantization/2026-09-24/omniquant/run.sh
+systems_practice/quantization/2026-09-25/quarot/run.sh
+systems_practice/quantization/2026-09-26/spinquant/run.sh
+systems_practice/quantization/2026-09-27/spqr/run.sh
+systems_practice/quantization/2026-09-28/omniquant/run.sh
+systems_practice/quantization/2026-09-29/smoothquant/run.sh
+systems_practice/quantization/2026-09-30/llm_int8/run.sh
+systems_practice/quantization/2026-10-01/calibration/run.sh
+systems_practice/quantization/2026-10-02/calibration/run.sh
+systems_practice/quantization/2026-10-02/qat/run.sh
+systems_practice/quantization/2026-10-03/nf4_qlora/run.sh
+systems_practice/quantization/2026-10-04/kivi/run.sh
+systems_practice/quantization/2026-10-05/optimizer_8bit/run.sh
+systems_practice/quantization/2026-10-06/fp8_scaling/run.sh
+systems_practice/quantization/2026-10-11/adaround/run.sh
+systems_practice/quantization/2026-10-12/autoround/run.sh
+systems_practice/quantization/2026-10-15/quarot/run.sh
+systems_practice/quantization/2026-10-17/spinquant/run.sh
+systems_practice/quantization/2026-10-21/llm_int8/run.sh
+systems_practice/quantization/2026-10-22/calibration/run.sh
+systems_practice/quantization/2026-10-23/qat/run.sh
+
+Clang 向量化专用诊断未运行；GCC 替代运行见 arm-vectorizer-gcc.txt。
+NVIDIA GPU 性能计数器：ERR_NVGPUCTRPERM（主机与普通 Docker）。

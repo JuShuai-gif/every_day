@@ -26,7 +26,7 @@ CUDA_BUILD=1 sh systems_practice/daily/2026-10-29/build.sh   # Thor 上执行，
 sh systems_practice/daily/2026-10-29/profile.sh               # Thor 上生成 PTX/SASS/ncu
 ```
 
-Mac 实测：C++ 28 fixtures 通过，NumPy 20 行比较与实际 packed 文件通过；`nvcc` 为 `command not found`，所以 CUDA 编译、Thor 正确性、ncu、PTX/SASS、GPU/E2E/功耗均未验证。不得用 CPU 时间推断 GPU 收益。
+Mac 实测：C++ 28 fixtures 通过，NumPy 20 行比较与实际 packed 文件通过；Mac 无 `nvcc`。之后在 Thor 上编译并运行 28 个 fixture 的两版 kernel，真实 PTX/SASS 已生成；ncu 计数器、受控 E2E 和功耗仍未验证。不得用 CPU 时间推断 GPU 收益。
 
 ## Thor SM110 优化与架构对照
 
@@ -46,3 +46,8 @@ Mac 实测：C++ 28 fixtures 通过，NumPy 20 行比较与实际 packed 文件�
 ## 每日附加栏
 
 [block_fp4](../../quantization/2026-10-29/block_fp4/README.md) · ARM source04 · OS 第28节 · C++17 第27课 · 今日论文见 `paper/2026-10-29/`。
+
+
+## 2026-10-29 Thor 实机复核
+
+Thor 实机复核：CUDA 13.0 / sm_110 编译、28 fixture × 两 kernel 数值对照通过，真实 PTX/SASS 已归档；ncu 因 GPU 计数器权限受限。见[验证总览](../../validation/2026-10-29-thor/README.md)。

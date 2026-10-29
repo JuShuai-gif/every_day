@@ -11,7 +11,7 @@ ncu --query-metrics > build/metrics.txt
 CUDA_BUILD=1 sh build.sh
 nvcc -std=c++17 -O3 -lineinfo -arch=sm_110 -ptx src/gemm.cu -o build/gemm-sm110.ptx
 nvcc -std=c++17 -O3 -lineinfo -arch=sm_110 -cubin src/gemm.cu -o build/gemm-sm110.cubin
-cuobjdump --dump-sass --dump-lineinfo build/gemm-sm110.cubin > build/gemm-sm110.sass.txt
+cuobjdump --dump-sass build/gemm-sm110.cubin > build/gemm-sm110.sass.txt
 nvdisasm -g build/gemm-sm110.cubin > build/gemm-sm110.nvdisasm.txt
 # case-16是M31,K33,N17 W4A4；过滤后的第11次launch为预热后的第一次计时。
 for variant in baseline tiled; do

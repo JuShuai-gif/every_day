@@ -5,8 +5,15 @@
   "example_delivered": true,
   "cpu_example_run": true,
   "output": "mse recorded by run.sh",
-  "native_torch_run": false,
-  "thor_verified": false,
-  "reason": "Python torch/torchao/CUDA absent; no install",
-  "cuda_target": "Thor sm_110 only; no FP8 Tensor Core claim"
+  "native_torch_run": true,
+  "thor_verified": true,
+  "cuda_target": "Thor sm_110 only; no FP8 Tensor Core claim",
+  "historical_reason": "Python torch/torchao/CUDA absent; no install",
+  "thor_2026_10_29": {
+    "environment": "nvcr.io/nvidia/pytorch:26.06-py3, PyTorch 2.13.0a0, torchao 0.18.0+git28e6aca5, CUDA 13.3",
+    "scope": "64x64 FP16 Linear converted to Float8Tensor; 16x64 GPU input; finite output and FP16 reference comparison passed",
+    "max_abs": 0.076416,
+    "ncu_ptx_sass": "not collected; no instruction or performance claim",
+    "evidence": "../../../validation/2026-10-29-thor/fp8-ao018-final.txt"
+  }
 }

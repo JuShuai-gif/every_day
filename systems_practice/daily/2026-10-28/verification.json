@@ -3,8 +3,8 @@
   "host": "macOS AppleClang",
   "cpu_compile": true,
   "cpu_run": "pass: cpu_gemm_pass max_abs=0 tail_shape=3x5x7",
-  "cuda_compile": "not run: nvcc unavailable; command retained for Thor",
-  "thor_sm110": false,
+  "cuda_compile": "passed on Thor CUDA 13.0 sm_110",
+  "thor_sm110": true,
   "ncu_ptx_sass": false,
   "performance": "no GPU number claimed",
   "checks": [
@@ -12,5 +12,11 @@
     "tail tiles",
     "CUDA error checks"
   ],
-  "thor_compile_log": "results/nvcc-thor.txt: nvcc command not found"
+  "thor_compile_log": "results/nvcc-thor.txt: nvcc command not found",
+  "original_mac_status": {
+    "cuda_compile": "not run: nvcc unavailable",
+    "thor_sm110": false
+  },
+  "thor_2026_10_29": "two initialized tail shapes x two kernels compared to CPU oracle; 4 passed",
+  "thor_evidence": "../../validation/2026-10-29-thor/fixed-retests.txt"
 }

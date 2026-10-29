@@ -1,0 +1,12 @@
+CUDA extension not installed.
+time 0.23
+error 6.585583686828613
+time 0.02
+error 7.758758544921875
+{
+  "commit": "2d65066eeb06a5c9ff5184d8cebdf33662c67faf",
+  "format": "W4A16 QDQ weights, FP16/FP32 activation path",
+  "selected_damping": 0.1,
+  "evaluation_nrmse": 0.09775657206773758,
+  "note": "This is upstream GPTQ QDQ evaluation, not Quant3Linear packed-kernel throughput."
+}

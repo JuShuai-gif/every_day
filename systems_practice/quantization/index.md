@@ -72,3 +72,7 @@
 2026-10-28：[FP8 scaling](2026-10-28/fp8_scaling/README.md)。torchao Float8Linear/config/utils 实际网页源码已读；浅克隆因 GitHub DNS 失败。独立 E4M3 小例 CPU 通过，native torch/Thor 未运行；下一方法 MXFP4/NVFP4。
 
 2026-10-29：[MXFP4/NVFP4 分块浮点](2026-10-29/block_fp4/README.md)。Model Optimizer 浅克隆因 GitHub DNS/cache miss，独立 block-scale codec CPU 通过；native API、CUDA/Thor 未验证。下一方法 AWQ。
+
+2026-10-29 Old_Thor 补充验证：固定源码缓存的 HQQ、OmniQuant、SpQR、SmoothQuant、KIVI 原生 CPU 示例通过；GPTQ 在 Thor GPU 上运行原生 QDQ 评估通过，打包 CUDA 扩展仍缺失。[范围与待补](../validation/2026-10-29-thor/README.md)。
+
+2026-10-29 后续：2026-10-28 FP8 原生示例在 Thor 既有 PyTorch 26.06 / torchao 0.18 容器确认 `Float8Tensor` 转换并与 FP16 比较通过；这不是原读 torchao 0.13 的复现，ncu/指令/性能待验。[记录](../validation/2026-10-29-thor/fp8-ao018-final.txt)。

@@ -31,7 +31,7 @@ CPU Release 通过 `max_abs=0`；CUDA 目标验收要求两 kernel 与 host orac
 公平报告四个域：H2D、kernel、D2H、E2E；固定 warm-up 20、采样 100、同一 stream 与 shape。ncu 关注 `sm__pipe_fma_cycles_active`、shared load/store、branch efficiency、occupancy 和 barrier stall，并用 `--page raw --section SpeedOfLight_RooflineChart` 筛选；`cuobjdump --dump-sass` 只在真实 cubin 后分析指令依赖。Hopper TMA 仅作对照，不能宣称 Thor 使用 TMA。
 
 ## 实际运行结果
-Mac CPU：`cpu_gemm_pass max_abs=0 tail_shape=3x5x7`。`nvcc`、ncu、Thor、真实 PTX/SASS 和性能均未验证，原因是本机无 NVIDIA 工具链/设备。
+Mac CPU：`cpu_gemm_pass max_abs=0 tail_shape=3x5x7`。原 Mac 运行时无 NVIDIA 工具链/设备；后续 Thor 数值复核见文末，ncu 和性能仍待验。
 
 ## 工程注意事项
 shared tile 只解决 CTA 内复用，不自动解决跨 kernel 生命周期；边界写零必须与布局一致；不要用 `sm_110a`。CUDA 版本、JetPack/驱动、ncu 版本和实际频率写入结果后再比较。
@@ -45,3 +45,8 @@ shared tile 只解决 CTA 内复用，不自动解决跨 kernel 生命周期；�
 
 ## 固定栏目入口
 量化：[FP8 scaling](../../quantization/2026-10-28/fp8_scaling/README.md)；ARM：[布局合同](../../arm/2026-10-28/README.md)；OS：[长期运行与故障恢复](../../os/2026-10-28/README.md)；C++17：[原子与发布可见性](../../cpp17/2026-10-28/README.md)；论文：[两篇论文](../../paper/2026-10-28/README.md)。这些是现成附加材料，不增加第二个主编码任务。
+
+
+## 2026-10-29 Thor 实机复核
+
+Thor 实机复核：修正基线二维网格、初始化输入并增加独立参考；两种 shape × 两 kernel 共 4 项通过；[完整记录](../../validation/2026-10-29-thor/fixed-retests.txt)。

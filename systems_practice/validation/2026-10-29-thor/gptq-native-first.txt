@@ -1,0 +1,15 @@
+/workspace/systems_practice/quantization/2026-10-09/gptq/upstream_api.py:43: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /opt/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:838.)
+  candidates.append((float(nrmse), damping, layer.weight.detach().clone()))
+CUDA extension not installed.
+time 0.36
+error 6.585583686828613
+time 0.02
+error 7.758758544921875
+{
+  "commit": "2d65066eeb06a5c9ff5184d8cebdf33662c67faf",
+  "format": "W4A16 QDQ weights, FP16/FP32 activation path",
+  "selected_damping": 0.1,
+  "evaluation_nrmse": 0.09775657206773758,
+  "note": "This is upstream GPTQ QDQ evaluation, not Quant3Linear packed-kernel throughput."
+}

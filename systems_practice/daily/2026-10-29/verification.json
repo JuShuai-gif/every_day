@@ -5,22 +5,26 @@
   "source_record": "source.json",
   "cpu_release": true,
   "cpu_sanitizer": true,
-  "cuda_compile": false,
-  "thor_run": false,
+  "cuda_compile": true,
+  "thor_run": true,
   "ncu": false,
-  "ptx": false,
-  "sass": false,
+  "ptx": true,
+  "sass": true,
   "evidence": [
     "results/experiment.json",
     "results/nvcc-thor.txt",
     "results/release.txt",
-    "results/sanitize-final.txt"
+    "results/sanitize-final.txt",
+    "../../validation/2026-10-29-thor/qgemm-final.txt",
+    "../../validation/2026-10-29-thor/ncu-container.txt",
+    "../../validation/2026-10-29-thor/gemm-sm110.ptx.txt",
+    "../../validation/2026-10-29-thor/gemm-sm110.sass.txt"
   ],
   "cpu_result": "28 packed W4A4/W4A16/W8A8/W8A16 fixtures passed independent C++ group INT32/FP16 oracle; NumPy experiment produced 20 comparison rows and real packed files.",
   "blockers": [
-    "nvcc command not found on Mac",
-    "no NVIDIA GPU/Thor SDK/ncu/cubin"
+    "ncu ERR_NVGPUCTRPERM on host and ordinary Docker",
+    "controlled clocks/thermal, end-to-end and power not measured"
   ],
-  "performance": "No GPU speedup, PTX/SASS or power claim. CPU timings include quant/pack/GEMM only.",
+  "performance": "28 fixtures x 2 variants passed on Thor; CUDA event samples recorded, not a controlled E2E or hardware-counter comparison.",
   "sanitize_passed": true
 }

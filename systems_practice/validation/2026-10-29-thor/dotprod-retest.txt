@@ -1,0 +1,24 @@
+=== daily ARM dotprod ===
+runtime_dotprod=1
+PASS cases=4116 rejected=4 hand=672 wrong_global_scale=64
+K=17 group=32 scalar CPU batch_mean_us p50=0.00908 p95=0.00926
+K=17 group=32 widening CPU batch_mean_us p50=0.00408 p95=0.00417
+K=17 group=32 dotprod CPU batch_mean_us p50=0.0038 p95=0.00592
+K=4099 group=32 scalar CPU batch_mean_us p50=2.02565 p95=2.0575
+K=4099 group=32 widening CPU batch_mean_us p50=0.41703 p95=0.4175
+K=4099 group=32 dotprod CPU batch_mean_us p50=0.2787 p95=0.27907
+K=65539 group=32 scalar CPU batch_mean_us p50=27.6359 p95=28.0566
+K=65539 group=32 widening CPU batch_mean_us p50=6.59621 p95=6.63139
+K=65539 group=32 dotprod CPU batch_mean_us p50=4.32528 p95=4.36398
+=== ARM lesson14 ===
+runtime_dotprod=1
+PASS cases=4116 rejected=4 hand=672 wrong_global_scale=64
+K=17 group=32 scalar CPU batch_mean_us p50=0.01055 p95=0.01083
+K=17 group=32 widening CPU batch_mean_us p50=0.00417 p95=0.00426
+K=17 group=32 dotprod CPU batch_mean_us p50=0.00389 p95=0.00389
+K=4099 group=32 scalar CPU batch_mean_us p50=2.02546 p95=2.02565
+K=4099 group=32 widening CPU batch_mean_us p50=0.41713 p95=0.41759
+K=4099 group=32 dotprod CPU batch_mean_us p50=0.27815 p95=0.27879
+K=65539 group=32 scalar CPU batch_mean_us p50=27.6353 p95=28.0147
+K=65539 group=32 widening CPU batch_mean_us p50=6.59742 p95=6.62796
+K=65539 group=32 dotprod CPU batch_mean_us p50=4.32648 p95=4.35991

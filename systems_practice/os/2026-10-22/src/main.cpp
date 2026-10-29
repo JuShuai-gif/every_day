@@ -4,6 +4,7 @@
 
 #include <array>
 #include <cerrno>
+#include <cstdint>
 #include <cstring>
 #include <iostream>
 #include <stdexcept>
@@ -123,7 +124,8 @@ void epoll_case(bool edge) {
   Pipe p;
   Fd ep(epoll_create1(EPOLL_CLOEXEC));
   epoll_event ev{};
-  ev.events = EPOLLIN | (edge ? EPOLLET : 0);
+  ev.events =
+      static_cast<std::uint32_t>(EPOLLIN) | (edge ? static_cast<std::uint32_t>(EPOLLET) : 0U);
   ev.data.fd = p.r.v;
   check(epoll_ctl(ep.v, EPOLL_CTL_ADD, p.r.v, &ev) == 0, "epoll_ctl");
   auto wait = [&] {

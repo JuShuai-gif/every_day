@@ -40,7 +40,7 @@ def main() -> None:
         engine.add_batch(calibration, layer(calibration))
         engine.fasterquant(blocksize=32, percdamp=damping, groupsize=32, actorder=True, static_groups=True)
         nrmse = (F.linear(validation, layer.weight) - F.linear(validation, original)).norm() / F.linear(validation, original).norm()
-        candidates.append((float(nrmse), damping, layer.weight.detach().clone()))
+        candidates.append((float(nrmse.detach()), damping, layer.weight.detach().clone()))
         engine.free()
     _, selected_damping, selected_weight = min(candidates)
     output = F.linear(evaluation, selected_weight)

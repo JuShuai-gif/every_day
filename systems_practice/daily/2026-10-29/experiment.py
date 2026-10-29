@@ -7,9 +7,6 @@ import time
 from pathlib import Path
 import numpy as np
 
-# 某些 macOS BLAS 对 float32 小矩阵会发出无害的中间警告；最终结果仍由 finite 检查约束。
-np.seterr(divide="ignore", over="ignore", invalid="ignore")
-
 GROUP = 16
 
 def metric(y, ref):

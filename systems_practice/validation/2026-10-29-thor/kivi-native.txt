@@ -1,0 +1,77 @@
+/workspace/systems_practice/.tmp/quant_sources/kivi-4qwpqaj4/source/quant/new_pack.py:104: UserWarning: Using a non-tuple sequence for multidimensional indexing is deprecated and will be changed in pytorch 2.9; use x[tuple(seq)] instead of x[seq]. In pytorch 2.9 this will be interpreted as tensor index, x[torch.tensor(seq)], which will result either in an error or a different result (Triggered internally at /opt/pytorch/pytorch/torch/csrc/autograd/python_variable_indexing.cpp:347.)
+  code[packed_indices] |= data[unpacked_indices] << (bits * (j - i))
+/workspace/systems_practice/.tmp/quant_sources/kivi-4qwpqaj4/source/quant/new_pack.py:124: UserWarning: Using a non-tuple sequence for multidimensional indexing is deprecated and will be changed in pytorch 2.9; use x[tuple(seq)] instead of x[seq]. In pytorch 2.9 this will be interpreted as tensor index, x[torch.tensor(seq)], which will result either in an error or a different result (Triggered internally at /opt/pytorch/pytorch/torch/csrc/autograd/python_variable_indexing.cpp:347.)
+  unpacked_v_code = ((v_code[packed_indices] >> (j * bits)[None, None, :, None]).to(torch.int16)) & num
+/workspace/systems_practice/.tmp/quant_sources/kivi-4qwpqaj4/source/quant/new_pack.py:126: UserWarning: Using a non-tuple sequence for multidimensional indexing is deprecated and will be changed in pytorch 2.9; use x[tuple(seq)] instead of x[seq]. In pytorch 2.9 this will be interpreted as tensor index, x[torch.tensor(seq)], which will result either in an error or a different result (Triggered internally at /opt/pytorch/pytorch/torch/csrc/autograd/python_variable_indexing.cpp:347.)
+  unpacked_v_code = ((v_code[packed_indices] >> (j * bits)).to(torch.int16)) & num
+{
+  "torch": "2.12.0a0+5aff3928d8.nv26.05",
+  "triton": "3.7.0",
+  "tune": [
+    {
+      "residual": 32,
+      "shift": false,
+      "MSE": 0.009227676317095757,
+      "max_abs": 0.2566632628440857,
+      "NRMSE": 0.5701318383216858,
+      "cosine": 0.8372477293014526,
+      "absmax_MSE": 0.031442344188690186,
+      "FP16_payload_bytes": 65536,
+      "packed_payload_with_scale_min_residual_bytes": 25600,
+      "reconstruction_finite": true
+    },
+    {
+      "residual": 64,
+      "shift": false,
+      "MSE": 0.0068861329928040504,
+      "max_abs": 0.2571498453617096,
+      "NRMSE": 0.49251192808151245,
+      "cosine": 0.8723573684692383,
+      "absmax_MSE": 0.031442344188690186,
+      "FP16_payload_bytes": 65536,
+      "packed_payload_with_scale_min_residual_bytes": 38912,
+      "reconstruction_finite": true
+    }
+  ],
+  "eval": {
+    "residual": 64,
+    "shift": false,
+    "MSE": 0.0018073797691613436,
+    "max_abs": 0.09054030478000641,
+    "NRMSE": 0.3494279086589813,
+    "cosine": 0.9431678652763367,
+    "absmax_MSE": 0.013748408295214176,
+    "FP16_payload_bytes": 65536,
+    "packed_payload_with_scale_min_residual_bytes": 38912,
+    "reconstruction_finite": true,
+    "raw_bytes": 38912,
+    "torch_container_bytes": 41841,
+    "layout_bytes": 633,
+    "dense_attention": {
+      "CPU_call_us_P50": 55.686,
+      "CPU_call_us_P95": 61.713
+    },
+    "reconstructed_attention": {
+      "CPU_call_us_P50": 55.593,
+      "CPU_call_us_P95": 58.704
+    },
+    "pack": {
+      "CPU_call_us_P50": 1991.251,
+      "CPU_call_us_P95": 2055.705
+    }
+  },
+  "shift": {
+    "residual": 64,
+    "shift": true,
+    "MSE": 0.3644506335258484,
+    "max_abs": 1.9458407163619995,
+    "NRMSE": 0.8363788723945618,
+    "cosine": 0.5674732327461243,
+    "absmax_MSE": 0.5210959911346436,
+    "FP16_payload_bytes": 65536,
+    "packed_payload_with_scale_min_residual_bytes": 38912,
+    "reconstruction_finite": true
+  },
+  "rejected": 2,
+  "scope": "native CPU packing + independent attention; no Thor kernel or training"
+}

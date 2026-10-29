@@ -1,0 +1,20 @@
+===baseline===
+==WARNING== Could not deploy stock section files to "//Documents/NVIDIA Nsight Compute/2026.1.1/Sections".
+Set the HOME environment variable to a writable directory.
+==WARNING== Using "/opt/nvidia/nsight-compute/2026.1.1/target/linux-desktop-t210-a64/../../sections" instead.
+==WARNING== See https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#faq.
+==WARNING== Note: Running with unmodified GPU clocks. If not controlled otherwise, profiling results may be inconsistent.
+==PROF== Connected to process 65 (/workspace/systems_practice/daily/2026-10-29/build/gemm)
+==ERROR== ERR_NVGPUCTRPERM - The user does not have permission to access NVIDIA GPU Performance Counters on the target device 0. For instructions on enabling permissions and to get more information see https://developer.nvidia.com/ERR_NVGPUCTRPERM
+PASS SM110 baseline W4A4 kernel_event_ms p50=0.151168 p95=0.16304 samples=50 warmup=10
+==PROF== Disconnected from process 65
+===tiled===
+==WARNING== Could not deploy stock section files to "//Documents/NVIDIA Nsight Compute/2026.1.1/Sections".
+Set the HOME environment variable to a writable directory.
+==WARNING== Using "/opt/nvidia/nsight-compute/2026.1.1/target/linux-desktop-t210-a64/../../sections" instead.
+==WARNING== See https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#faq.
+==WARNING== Note: Running with unmodified GPU clocks. If not controlled otherwise, profiling results may be inconsistent.
+==PROF== Connected to process 86 (/workspace/systems_practice/daily/2026-10-29/build/gemm)
+==ERROR== ERR_NVGPUCTRPERM - The user does not have permission to access NVIDIA GPU Performance Counters on the target device 0. For instructions on enabling permissions and to get more information see https://developer.nvidia.com/ERR_NVGPUCTRPERM
+PASS SM110 tiled W4A4 kernel_event_ms p50=0.147616 p95=0.151232 samples=50 warmup=10
+==PROF== Disconnected from process 86

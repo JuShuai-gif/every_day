@@ -1,0 +1,583 @@
+=== PASS systems_practice/arm/2026-09-24/run.sh 0.9s ===
+stride cases=36 invalid=4 PASS
+stride cases=36 invalid=4 PASS
+
+sum_rows：A64加载与寻址
+_Z8sum_rowsPKtmmmm:
+.LFB2602:
+	.cfi_startproc
+	.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+	.cfi_lsda 0x1b,.LLSDA2602
+	cmp	x2, x3
+	bhi	.L2
+	cbz	x1, .L11
+	mov	x5, x0
+	umulh	x0, x3, x1
+	cmp	x0, 0
+	cset	x0, ne
+	bne	.L2
+	mul	x6, x3, x1
+	cmp	x6, x4
+	bhi	.L2
+	cmp	x2, 0
+	ccmp	x5, 0, 0, ne
+	beq	.L2
+	lsl	x8, x2, 1
+	lsl	x7, x3, 1
+	add	x5, x5, x8
+	mov	x6, 0
+	.p2align 3,,7
+.L6:
+	sub	x3, x5, x8
+	cbz	x2, .L9
+	.p2align 3,,7
+.L7:
+	ldrh	w4, [x3], 2
+	add	x0, x0, x4
+	cmp	x3, x5
+	bne	.L7
+.L9:
+	add	x6, x6, 1
+	add	x5, x5, x7
+	cmp	x1, x6
+	bne	.L6
+	ret
+.L11:
+	mov	x0, 0
+	ret
+.L2:
+	stp	x29, x30, [sp, -32]!
+	.cfi_def_cfa_offset 32
+	.cfi_offset 29, -32
+	.cfi_offset 30, -24
+	mov	x0, 16
+	mov	x29, sp
+	str	x19, [sp, 16]
+	.cfi_offset 19, -16
+	bl	__cxa_allocate_exception
+	adrp	x1, .LC2
+	mov	x19, x0
+	add	x1, x1, :lo12:.LC2
+.LEHB0:
+	bl	_ZNSt16invalid_argumentC1EPKc
+.LEHE0:
+	adrp	x2, :got:_ZNSt16invalid_argumentD1Ev
+	ldr	x2, [x2, :got_lo12:_ZNSt16invalid_argumentD1Ev]
+	mov	x0, x19
+	adrp	x1, :got:_ZTISt16invalid_argument
+	ldr	x1, [x1, :got_lo12:_ZTISt16invalid_argument]
+.LEHB1:
+	bl	__cxa_throw
+.L12:
+	mov	x1, x0
+	mov	x0, x19
+	mov	x19, x1
+	bl	__cxa_free_exception
+	mov	x0, x19
+	bl	_Unwind_Resume
+.LEHE1:
+	.cfi_endproc
+
+=== PASS systems_practice/arm/2026-09-25/run.sh 0.8s ===
+PASS 1025 lengths with tails and modulo overflow; no board performance claim
+PASS 1025 lengths with tails and modulo overflow; no board performance claim
+
+serial/four：A64寄存器依赖
+_Z6serialPKmm:
+.LFB2413:
+	.cfi_startproc
+	cbz	x1, .L4
+	mov	x2, x0
+	mov	x0, 0
+	add	x3, x2, x1, lsl 3
+	.p2align 3,,7
+.L3:
+	ldr	x1, [x2], 8
+	add	x0, x0, x1
+	cmp	x2, x3
+	bne	.L3
+	ret
+	.p2align 2,,3
+.L4:
+	mov	x0, 0
+	ret
+	.cfi_endproc
+_Z4fourPKmm:
+.LFB2414:
+	.cfi_startproc
+	cmp	x1, 3
+	bls	.L12
+	sub	x4, x1, #4
+	add	x8, x0, 32
+	mov	x2, x0
+	mov	x6, 0
+	lsr	x10, x4, 2
+	mov	x7, 0
+	mov	x5, 0
+	mov	x3, 0
+	add	x10, x8, x10, lsl 5
+	.p2align 3,,7
+.L9:
+	ldp	x9, x8, [x2]
+	add	x3, x3, x9
+	add	x5, x5, x8
+	ldp	x9, x8, [x2, 16]
+	add	x2, x2, 32
+	add	x7, x7, x9
+	add	x6, x6, x8
+	cmp	x10, x2
+	bne	.L9
+	and	x2, x4, -4
+	add	x5, x5, x7
+	add	x2, x2, 4
+	add	x5, x5, x6
+.L8:
+	cmp	x1, x2
+	bls	.L10
+	add	x2, x0, x2, lsl 3
+	add	x1, x0, x1, lsl 3
+	.p2align 3,,7
+.L11:
+	ldr	x0, [x2], 8
+	add	x3, x3, x0
+	cmp	x1, x2
+	bne	.L11
+.L10:
+	add	x0, x3, x5
+	ret
+	.p2align 2,,3
+.L12:
+	mov	x5, 0
+	mov	x2, 0
+	mov	x3, 0
+	b	.L8
+	.cfi_endproc
+
+=== PASS systems_practice/arm/2026-09-26/run.sh 0.7s ===
+PASS 1000 calls, nine uint64 args, live value across call; native Darwin ABI
+PASS 1000 calls, nine uint64 args, live value across call; native Darwin ABI
+
+caller：AArch64参数与保存寄存器
+_Z6callerm:
+.LFB2050:
+	.cfi_startproc
+	sub	sp, sp, #48
+	.cfi_def_cfa_offset 48
+	mov	x1, 9
+	mov	x7, 8
+	mov	x6, 7
+	mov	x5, 6
+	mov	x4, 5
+	stp	x29, x30, [sp, 16]
+	.cfi_offset 29, -32
+	.cfi_offset 30, -24
+	add	x29, sp, 16
+	mov	x3, 4
+	mov	x2, 3
+	str	x1, [sp]
+	mov	x1, 2
+	str	x19, [sp, 32]
+	.cfi_offset 19, -16
+	mov	x19, x0
+	bl	combine
+	add	x1, x19, x19, lsl 2
+	ldp	x29, x30, [sp, 16]
+	lsl	x1, x1, 2
+	sub	x1, x1, x19
+	ldr	x19, [sp, 32]
+	add	x0, x1, x0
+	add	sp, sp, 48
+	.cfi_restore 29
+	.cfi_restore 30
+	.cfi_restore 19
+	.cfi_def_cfa_offset 0
+	ret
+	.cfi_endproc
+
+=== PASS systems_practice/arm/2026-09-27/run.sh 1.2s ===
+PASS 1025 lengths C++17; target=aarch64 NEON compiled compiler=13.3.0
+PASS 1025 lengths C++17; target=aarch64 NEON compiled compiler=13.3.0
+PASS 1025 lengths C++17; target=aarch64 NEON compiled compiler=13.3.0
+
+checksum：禁向量化
+_Z8checksumPKjm:
+.LFB2413:
+	.cfi_startproc
+	cbz	x1, .L9
+	mov	x2, x0
+	mov	w0, 0
+	add	x3, x2, x1, lsl 2
+	.p2align 3,,7
+.L8:
+	ldr	w1, [x2], 4
+	add	w0, w0, w1
+	cmp	x2, x3
+	bne	.L8
+	ret
+	.p2align 2,,3
+.L9:
+	mov	w0, 0
+	ret
+	.cfi_endproc
+
+checksum：O3编译结果
+_Z8checksumPKjm:
+.LFB2413:
+	.cfi_startproc
+	mov	x4, x0
+	cbz	x1, .L12
+	sub	x0, x1, #1
+	cmp	x0, 2
+	bls	.L13
+	lsr	x3, x1, 2
+	mov	x2, x4
+	movi	v0.4s, 0
+	add	x3, x4, x3, lsl 4
+	.p2align 3,,7
+.L9:
+	ldr	q1, [x2], 16
+	add	v0.4s, v0.4s, v1.4s
+	cmp	x3, x2
+	bne	.L9
+	addv	s0, v0.4s
+	and	x2, x1, -4
+	fmov	w0, s0
+	tst	x1, 3
+	beq	.L6
+.L8:
+	ldr	w5, [x4, x2, lsl 2]
+	add	x3, x2, 1
+	lsl	x6, x2, 2
+	add	w0, w0, w5
+	cmp	x1, x3
+	bls	.L6
+	add	x4, x4, x6
+	add	x2, x2, 2
+	ldr	w3, [x4, 4]
+	add	w0, w0, w3
+	cmp	x1, x2
+	bls	.L6
+	ldr	w1, [x4, 8]
+	add	w0, w0, w1
+.L6:
+	ret
+	.p2align 2,,3
+.L12:
+	mov	w0, 0
+	ret
+.L13:
+	mov	x2, 0
+	mov	w0, 0
+	b	.L8
+	.cfi_endproc
+
+=== PASS systems_practice/arm/2026-09-28/run.sh 0.9s ===
+stride cases=36 invalid=4 PASS
+stride cases=36 invalid=4 PASS
+
+sum_rows：A64加载与寻址
+_Z8sum_rowsPKtmmmm:
+.LFB2602:
+	.cfi_startproc
+	.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+	.cfi_lsda 0x1b,.LLSDA2602
+	cmp	x2, x3
+	bhi	.L2
+	cbz	x1, .L11
+	mov	x5, x0
+	umulh	x0, x3, x1
+	cmp	x0, 0
+	cset	x0, ne
+	bne	.L2
+	mul	x6, x3, x1
+	cmp	x6, x4
+	bhi	.L2
+	cmp	x2, 0
+	ccmp	x5, 0, 0, ne
+	beq	.L2
+	lsl	x8, x2, 1
+	lsl	x7, x3, 1
+	add	x5, x5, x8
+	mov	x6, 0
+	.p2align 3,,7
+.L6:
+	sub	x3, x5, x8
+	cbz	x2, .L9
+	.p2align 3,,7
+.L7:
+	ldrh	w4, [x3], 2
+	add	x0, x0, x4
+	cmp	x3, x5
+	bne	.L7
+.L9:
+	add	x6, x6, 1
+	add	x5, x5, x7
+	cmp	x1, x6
+	bne	.L6
+	ret
+.L11:
+	mov	x0, 0
+	ret
+.L2:
+	stp	x29, x30, [sp, -32]!
+	.cfi_def_cfa_offset 32
+	.cfi_offset 29, -32
+	.cfi_offset 30, -24
+	mov	x0, 16
+	mov	x29, sp
+	str	x19, [sp, 16]
+	.cfi_offset 19, -16
+	bl	__cxa_allocate_exception
+	adrp	x1, .LC2
+	mov	x19, x0
+	add	x1, x1, :lo12:.LC2
+.LEHB0:
+	bl	_ZNSt16invalid_argumentC1EPKc
+.LEHE0:
+	adrp	x2, :got:_ZNSt16invalid_argumentD1Ev
+	ldr	x2, [x2, :got_lo12:_ZNSt16invalid_argumentD1Ev]
+	mov	x0, x19
+	adrp	x1, :got:_ZTISt16invalid_argument
+	ldr	x1, [x1, :got_lo12:_ZTISt16invalid_argument]
+.LEHB1:
+	bl	__cxa_throw
+.L12:
+	mov	x1, x0
+	mov	x0, x19
+	mov	x19, x1
+	bl	__cxa_free_exception
+	mov	x0, x19
+	bl	_Unwind_Resume
+.LEHE1:
+	.cfi_endproc
+
+=== PASS systems_practice/arm/2026-09-29/run.sh 2.0s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Linux aarch64
+PASS 1025 lengths; N=4096 uint64, warmup=20 samples=101 calls/sample=128
+serial wall p50_us=1.58876 p95_us=1.61357
+four wall p50_us=0.600477 p95_us=0.600766
+serial threadCPU p50_us=1.59159 p95_us=1.59657
+four threadCPU p50_us=0.603227 p95_us=0.603805
+scope=CPU cached kernel+call; no board/GPU/NPU claim; sink=33340784640
+	.arch armv8-a
+	.file	"kernels.cpp"
+	.text
+#APP
+	.globl _ZSt21ios_base_library_initv
+#NO_APP
+	.align	2
+	.p2align 4,,11
+	.global	_Z6serialPKmm
+	.type	_Z6serialPKmm, %function
+_Z6serialPKmm:
+.LFB2413:
+	.cfi_startproc
+	cbz	x1, .L4
+	mov	x2, x0
+	mov	x0, 0
+	add	x3, x2, x1, lsl 3
+	.p2align 3,,7
+.L3:
+	ldr	x1, [x2], 8
+	add	x0, x0, x1
+	cmp	x2, x3
+	bne	.L3
+	ret
+	.p2align 2,,3
+.L4:
+	mov	x0, 0
+	ret
+	.cfi_endproc
+.LFE2413:
+	.size	_Z6serialPKmm, .-_Z6serialPKmm
+	.align	2
+	.p2align 4,,11
+	.global	_Z4fourPKmm
+	.type	_Z4fourPKmm, %function
+_Z4fourPKmm:
+.LFB2414:
+	.cfi_startproc
+	cmp	x1, 3
+	bls	.L12
+	sub	x4, x1, #4
+	add	x8, x0, 32
+	mov	x2, x0
+	mov	x6, 0
+	lsr	x10, x4, 2
+	mov	x7, 0
+	mov	x5, 0
+	mov	x3, 0
+	add	x10, x8, x10, lsl 5
+	.p2align 3,,7
+.L9:
+	ldp	x9, x8, [x2]
+	add	x3, x3, x9
+	add	x5, x5, x8
+	ldp	x9, x8, [x2, 16]
+	add	x2, x2, 32
+	add	x7, x7, x9
+	add	x6, x6, x8
+	cmp	x10, x2
+	bne	.L9
+	and	x2, x4, -4
+	add	x5, x5, x7
+	add	x2, x2, 4
+	add	x5, x5, x6
+.L8:
+	cmp	x1, x2
+	bls	.L10
+	add	x2, x0, x2, lsl 3
+	add	x1, x0, x1, lsl 3
+	.p2align 3,,7
+.L11:
+	ldr	x0, [x2], 8
+	add	x3, x3, x0
+	cmp	x1, x2
+	bne	.L11
+.L10:
+	add	x0, x3, x5
+	ret
+	.p2align 2,,3
+.L12:
+	mov	x5, 0
+	mov	x2, 0
+	mov	x3, 0
+	b	.L8
+	.cfi_endproc
+.LFE2414:
+	.size	_Z4fourPKmm, .-_Z4fourPKmm
+	.ident	"GCC: (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+	.section	.note.GNU-stack,"",@progbits
+PASS 1025 lengths; N=4096 uint64, warmup=20 samples=101 calls/sample=128
+serial wall p50_us=3.25391 p95_us=3.45146
+four wall p50_us=2.87146 p95_us=2.89475
+serial threadCPU p50_us=3.25405 p95_us=3.45263
+four threadCPU p50_us=2.87558 p95_us=2.88368
+scope=CPU cached kernel+call; no board/GPU/NPU claim; sink=33340784640
+
+=== FAIL(1) systems_practice/arm/2026-09-30/run.sh 0.0s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+=== PASS systems_practice/arm/2026-10-01/run.sh 2.7s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+scalar CPU batch_mean_us p50=1.80527 p95=1.80629
+neon CPU batch_mean_us p50=0.110898 p95=0.111039
+PASS 4128 offset/length cases, 8 guard-page tails, invalid capacity; checksum=7710720
+scalar CPU batch_mean_us p50=6.3256 p95=6.35707
+neon CPU batch_mean_us p50=0.63332 p95=0.634617
+PASS 4128 offset/length cases, 8 guard-page tails, invalid capacity; checksum=7710720
+
+=== PASS systems_practice/arm/2026-10-02/run.sh 2.7s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+scalar CPU batch_mean_us p50=1.80534 p95=1.82719
+neon CPU batch_mean_us p50=0.110891 p95=0.111328
+PASS 4128 offset/length cases, 8 guard-page tails, invalid capacity; checksum=7710720
+scalar CPU batch_mean_us p50=6.3217 p95=6.3669
+neon CPU batch_mean_us p50=0.635344 p95=0.635992
+PASS 4128 offset/length cases, 8 guard-page tails, invalid capacity; checksum=7710720
+
+=== PASS systems_practice/arm/2026-10-02/session-02/run.sh 1.9s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+cancel sequential=1 neon_tree=0 double_oracle=2
+PASS cases=774 worst_abs_error=8.38486e-07 separate=0 fma=-1.42109e-14 invalid=3
+cancel sequential=1 neon_tree=0 double_oracle=2
+PASS cases=774 worst_abs_error=8.38486e-07 separate=0 fma=-1.42109e-14 invalid=3
+
+=== FAIL(1) systems_practice/arm/2026-10-06/run.sh 0.5s ===
+src/main.cpp:48:70: error: arch extension ‘dotprod’ should be prefixed by ‘+’
+   48 |                                                              size_t n) {
+      |                                                                      ^
+
+=== PASS systems_practice/arm/2026-10-15/run.sh 1.0s ===
+PASS cases=128 zero shape rejected
+M=1 N=65 K=129 CPU_batch_mean_p50_us scalar=4.6263 neon1=7.4115 neon2=1.29316 pack_alloc_plus_neon2=4.88852
+M=2 N=65 K=129 CPU_batch_mean_p50_us scalar=9.25166 neon1=14.8283 neon2=1.62778 pack_alloc_plus_neon2=5.19056
+M=8 N=65 K=129 CPU_batch_mean_p50_us scalar=37.0482 neon1=59.3945 neon2=6.54316 pack_alloc_plus_neon2=10.0992
+
+=== PASS systems_practice/arm/2026-10-19/run.sh 1.4s ===
+caps neon=1 dot=1 i8mm=1 sve=1 sve2=1 selected=dot
+PASS cases=16 rejections=2 synthetic_dispatch_only=3
+
+=== PASS systems_practice/arm/2026-10-21/run.sh 1.6s ===
+PASS mode=scalar elements=1048576 repeats=1000 hot_loop_ms=884.122 PMU=not_collected_by_program
+
+=== PASS systems_practice/arm/2026-10-26/run.sh 1.3s ===
+PASS shapes=56 rejects=3 max_abs=1.61255e-07
+shape=1x513
+scalar_relu CPU_batch_mean_us_P50=0.862775 P95=0.880185
+packed_kernel_relu CPU_batch_mean_us_P50=0.74324 P95=0.74597
+pack_kernel_unpack CPU_batch_mean_us_P50=2.51774 P95=2.5312
+shape=5x513
+scalar_relu CPU_batch_mean_us_P50=4.28342 P95=4.3075
+packed_kernel_relu CPU_batch_mean_us_P50=1.47779 P95=1.49282
+pack_kernel_unpack CPU_batch_mean_us_P50=5.095 P95=5.10973
+shape=32x513
+scalar_relu CPU_batch_mean_us_P50=27.4021 P95=27.5398
+packed_kernel_relu CPU_batch_mean_us_P50=5.90236 P95=5.92316
+pack_kernel_unpack CPU_batch_mean_us_P50=23.8845 P95=24.1649
+
+=== PASS systems_practice/cpp17/2026-09-30/run.sh 0.9s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+PASS 1000 partial-construction failures, 1000 moves + repeated reset; opened=2000 closed=2000
+PASS 1000 partial-construction failures, 1000 moves + repeated reset; opened=2000 closed=2000
+
+=== PASS systems_practice/cpp17/2026-10-03/run.sh 1.4s ===
+PASS queued=1000 invalid=3 empty=1 embedded_NUL=1 moved_from_rejected=1 substr_range=1
+PASS queued=1000 invalid=3 empty=1 embedded_NUL=1 moved_from_rejected=1 substr_range=1
+
+=== PASS systems_practice/cpp17/2026-10-06/run.sh 0.4s ===
+PASS transactions=1000 shape_reject=1 bad_get=1 valueless=1 visit_reject=1 recovery=1
+
+=== PASS systems_practice/daily/2026-09-30/run.sh 0.5s ===
+PASS 400 tiled comparisons, 5 invalid shapes, hand oracle, zero input
+
+=== FAIL(1) systems_practice/daily/2026-10-06/run.sh 0.5s ===
+src/main.cpp:48:70: error: arch extension ‘dotprod’ should be prefixed by ‘+’
+   48 |                                                              size_t n) {
+      |                                                                      ^
+
+=== PASS systems_practice/os/2026-09-30/run.sh 0.6s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+before reap: pid=2312191 si_code=1 si_status=37 pipe_EOF=true
+before reap: pid=2312192 si_code=2 si_status=9 pipe_EOF=true
+PASS normal exit37, signal9, EOF before reap, WNOWAIT, ECHILD
+before reap: pid=2312194 si_code=1 si_status=37 pipe_EOF=true
+before reap: pid=2312195 si_code=2 si_status=9 pipe_EOF=true
+PASS normal exit37, signal9, EOF before reap, WNOWAIT, ECHILD
+
+=== PASS systems_practice/os/2026-10-06/run.sh 0.5s ===
+PASS offsets=4096 OOM rollback=4096 read_only=1 bounds=1 multigeneration=1 released=1
+
+=== PASS systems_practice/os/2026-10-22/run.sh 0.5s ===
+Linux LT event_after_partial=1
+Linux ET event_after_partial=0
+PASS frames=3 rejected=2 EAGAIN_bytes=65536 drained=65536

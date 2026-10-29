@@ -7,7 +7,7 @@
   "source_fetched": true,
   "source_read": true,
   "example_delivered": true,
-  "cpu_example_run": false,
+  "cpu_example_run": true,
   "thor_verified": false,
   "read_symbols": [
     "Quantizer.quantize",
@@ -36,9 +36,18 @@
     "results/native-attempt.txt"
   ],
   "blockers": [
+    "Native GPU backend, Thor compatibility and ncu remain unverified; CPU run is not low-bit GPU inference."
+  ],
+  "native_api_language": "Python/PyTorch",
+  "static_syntax": "passed ast.parse",
+  "historical_mac_blockers": [
     "torch absent; native example not executed",
     "No Thor/nvcc/ncu; backend compatibility unresolved"
   ],
-  "native_api_language": "Python/PyTorch",
-  "static_syntax": "passed ast.parse"
+  "thor_2026_10_29": {
+    "cpu_native_run": true,
+    "environment": "Old_Thor Docker ghr-flashrt-thor, PyTorch 2.12.0a0 CUDA 13.2; CPU execution",
+    "evidence": "../../../validation/2026-10-29-thor/cached-quant-retry.txt",
+    "gpu_backend_verified": false
+  }
 }

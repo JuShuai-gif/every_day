@@ -1,0 +1,5 @@
+==WARNING== Note: Running with unmodified GPU clocks. If not controlled otherwise, profiling results may be inconsistent.
+==PROF== Connected to process 2349601 (/home/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/build/gemm)
+==ERROR== ERR_NVGPUCTRPERM - The user does not have permission to access NVIDIA GPU Performance Counters on the target device 0. For instructions on enabling permissions and to get more information see https://developer.nvidia.com/ERR_NVGPUCTRPERM
+PASS SM110 baseline W4A4 kernel_event_ms p50=0.160096 p95=0.275168 samples=50 warmup=10
+==PROF== Disconnected from process 2349601

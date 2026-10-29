@@ -1,0 +1,31 @@
+=== softmax 2026-09-26 ===
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-26/build/thor
+[ 50%] Built target cpu
+[ 75%] Building CUDA object CMakeFiles/softmax.dir/src/softmax.cu.o
+[100%] Linking CUDA executable softmax
+[100%] Built target softmax
+GPU comparisons=192; warmup=20 samples=100 rows=1024 cols=127 FP32
+optimized=0 kernel_ms_p50=0.033056 p95=0.04128 request_ms_p50=0.078926 p95=0.09124
+optimized=1 kernel_ms_p50=0.008512 p95=0.010208 request_ms_p50=0.054185 p95=0.058741
+=== softmax 2026-10-09 ===
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-10-09/build/thor
+[ 50%] Built target cpu_check
+[ 75%] Building CUDA object CMakeFiles/softmax.dir/src/softmax.cu.o
+[100%] Linking CUDA executable softmax
+[100%] Built target softmax
+PASS Thor SM110 softmax comparisons=36 rows=1,5,1024 cols=1,31,32,33,127,256
+=== gemm 2026-10-28 ===
+cpu build complete; use ./build.sh thor for nvcc
+cpu_gemm_pass max_abs=0 tail_shape=3x5x7
+PASS Thor SM110 GEMM comparisons=4 tail_shapes=3x5x7,257x193x129
+=== cpp17 2026-10-03 ===
+PASS queued=1000 invalid=3 empty=1 embedded_NUL=1 moved_from_rejected=1 substr_range=1
+PASS queued=1000 invalid=3 empty=1 embedded_NUL=1 moved_from_rejected=1 substr_range=1
+=== os 2026-10-22 ===
+Linux LT event_after_partial=1
+Linux ET event_after_partial=0
+PASS frames=3 rejected=2 EAGAIN_bytes=65536 drained=65536

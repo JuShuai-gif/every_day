@@ -43,9 +43,13 @@ __attribute__((noinline)) int32_t widening(const int8_t* a, const int8_t* b, siz
   }
   return r;
 }
-__attribute__((target("dotprod"), noinline)) int32_t dotprod(const int8_t* a,
-                                                             const int8_t* b,
-                                                             size_t n) {
+#if defined(__GNUC__) && !defined(__clang__)
+#define DOTPROD_TARGET "+dotprod"
+#else
+#define DOTPROD_TARGET "dotprod"
+#endif
+__attribute__((target(DOTPROD_TARGET),
+               noinline)) int32_t dotprod(const int8_t* a, const int8_t* b, size_t n) {
   int32x4_t s = vdupq_n_s32(0);
   size_t i = 0;
   for (; i + 16 <= n; i += 16) {

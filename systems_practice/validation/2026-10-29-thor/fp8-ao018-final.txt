@@ -1,0 +1,2 @@
+W1029 08:28:46.999000 1 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PASS Thor FP8 Linear shape=(16, 64) weight_type=Float8Tensor max_abs=0.076416

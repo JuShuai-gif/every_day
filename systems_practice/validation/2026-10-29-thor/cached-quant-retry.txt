@@ -1,0 +1,335 @@
+=== PASS hqq 3.5s ===
+{
+  "torch": "2.12.0a0+5aff3928d8.nv26.05",
+  "device": "cpu",
+  "shape_W": [
+    32,
+    64
+  ],
+  "shape_X": [
+    32,
+    64
+  ],
+  "rows": [
+    {
+      "group": 32,
+      "optimize": false,
+      "quantize_cpu_us": 369.643,
+      "packed_bytes": 1024,
+      "scale_zero_bytes": 512,
+      "file_bytes": 3882,
+      "endpoint_fraction": 0.0859375,
+      "eval": {
+        "nrmse": 0.10042620197802092,
+        "max_abs": 0.9235029220581055,
+        "cosine": 0.9949493772184126
+      },
+      "shift": {
+        "nrmse": 0.02656464548659557,
+        "max_abs": 2.3496971130371094,
+        "cosine": 0.9996508437262803
+      },
+      "decode": {
+        "cpu_sync_host_us_p50": 16.417,
+        "samples": 50
+      },
+      "decode_plus_matmul": {
+        "cpu_sync_host_us_p50": 24.1295,
+        "samples": 50
+      }
+    },
+    {
+      "group": 32,
+      "optimize": true,
+      "quantize_cpu_us": 944.186,
+      "packed_bytes": 1024,
+      "scale_zero_bytes": 512,
+      "file_bytes": 3882,
+      "endpoint_fraction": 0.083984375,
+      "eval": {
+        "nrmse": 0.09300102830569273,
+        "max_abs": 0.9316544681787491,
+        "cosine": 0.9956768345896292
+      },
+      "shift": {
+        "nrmse": 0.02057161236655761,
+        "max_abs": 1.4699020385742188,
+        "cosine": 0.9997888166913814
+      },
+      "decode": {
+        "cpu_sync_host_us_p50": 15.809999999999999,
+        "samples": 50
+      },
+      "decode_plus_matmul": {
+        "cpu_sync_host_us_p50": 23.5,
+        "samples": 50
+      }
+    },
+    {
+      "group": 64,
+      "optimize": false,
+      "quantize_cpu_us": 99.89,
+      "packed_bytes": 1024,
+      "scale_zero_bytes": 256,
+      "file_bytes": 3626,
+      "endpoint_fraction": 0.05029296875,
+      "eval": {
+        "nrmse": 0.13550802575284088,
+        "max_abs": 1.3893219232559204,
+        "cosine": 0.9909211953595681
+      },
+      "shift": {
+        "nrmse": 0.029877540879090097,
+        "max_abs": 2.4330520629882812,
+        "cosine": 0.9995535777764132
+      },
+      "decode": {
+        "cpu_sync_host_us_p50": 15.7405,
+        "samples": 50
+      },
+      "decode_plus_matmul": {
+        "cpu_sync_host_us_p50": 23.491,
+        "samples": 50
+      }
+    },
+    {
+      "group": 64,
+      "optimize": true,
+      "quantize_cpu_us": 934.046,
+      "packed_bytes": 1024,
+      "scale_zero_bytes": 256,
+      "file_bytes": 3626,
+      "endpoint_fraction": 0.04931640625,
+      "eval": {
+        "nrmse": 0.12324338528080556,
+        "max_abs": 1.057750403881073,
+        "cosine": 0.9924711238577206
+      },
+      "shift": {
+        "nrmse": 0.025089629231930224,
+        "max_abs": 2.5350570678710938,
+        "cosine": 0.9996852057288872
+      },
+      "decode": {
+        "cpu_sync_host_us_p50": 15.6585,
+        "samples": 50
+      },
+      "decode_plus_matmul": {
+        "cpu_sync_host_us_p50": 23.2735,
+        "samples": 50
+      }
+    }
+  ],
+  "fp32": {
+    "payload_bytes": 8192,
+    "file_bytes": 9684,
+    "cpu_sync_host_us_p50": 7.463,
+    "samples": 50
+  },
+  "fp16_reference": {
+    "nrmse": 0.000350533301028803,
+    "max_abs": 0.0033416748046875,
+    "cosine": 0.9999999388713967
+  },
+  "absmax_qdq_only": {
+    "nrmse": 0.16677541068373633,
+    "max_abs": 1.89367014169693,
+    "cosine": 0.986387361566899
+  },
+  "invalid_group_rejected": true,
+  "linear_reload": {
+    "nrmse": 0.09300102830569273,
+    "max_abs": 0.9316544681787491,
+    "cosine": 0.9956768345896292
+  }
+}
+
+=== PASS omniquant 2.5s ===
+/workspace/systems_practice/quantization/2026-10-14/omniquant/example.py:38: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /opt/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:838.)
+  delta=sum(float((p-s).norm()) for p,s in zip(params,start));assert delta>0
+{
+  "torch": "2.12.0a0+5aff3928d8.nv26.05",
+  "method": "OmniQuant native LWC only",
+  "shape": [
+    31,
+    32,
+    16
+  ],
+  "train_log": [
+    {
+      "lr": 0.001,
+      "step": 0,
+      "train_mse": 0.0031353679951280355
+    },
+    {
+      "lr": 0.001,
+      "step": 10,
+      "train_mse": 0.0031330473721027374
+    },
+    {
+      "lr": 0.001,
+      "step": 20,
+      "train_mse": 0.0031318149995058775
+    },
+    {
+      "lr": 0.001,
+      "step": 30,
+      "train_mse": 0.0031331528443843126
+    },
+    {
+      "lr": 0.001,
+      "parameter_update_l2": 0.6059125363826752,
+      "tune_mse": 0.003848894964903593
+    },
+    {
+      "lr": 0.01,
+      "step": 0,
+      "train_mse": 0.0031353679951280355
+    },
+    {
+      "lr": 0.01,
+      "step": 10,
+      "train_mse": 0.00311321672052145
+    },
+    {
+      "lr": 0.01,
+      "step": 20,
+      "train_mse": 0.0030759647488594055
+    },
+    {
+      "lr": 0.01,
+      "step": 30,
+      "train_mse": 0.0030547629576176405
+    },
+    {
+      "lr": 0.01,
+      "parameter_update_l2": 5.764704942703247,
+      "tune_mse": 0.003732542507350445
+    }
+  ],
+  "baseline": {
+    "nrmse": 0.053108613938093185,
+    "max_abs": 0.2375727891921997
+  },
+  "lwc": {
+    "nrmse": 0.052984610199928284,
+    "max_abs": 0.2698855400085449
+  },
+  "fp16": {
+    "nrmse": 0.0002662173646967858,
+    "max_abs": 0.0019125938415527344
+  },
+  "shifted": {
+    "nrmse": 0.04695501551032066,
+    "max_abs": 0.43666982650756836
+  },
+  "storage": {
+    "fp32": 2048,
+    "fp16": 1024,
+    "packed_codes": 256,
+    "scales": 256,
+    "zero_points": 256,
+    "actual_file": 768
+  },
+  "cpu_framework_ms_p50": {
+    "fp32": 0.004917,
+    "native_qdq": 0.049251,
+    "decoded_fp32": 0.003408
+  },
+  "thor_verified": false
+}
+
+=== PASS smoothquant 5.6s ===
+{
+  "torch": "2.12.0a0+5aff3928d8.nv26.05",
+  "device": "cpu",
+  "selected_alpha": 0.5,
+  "tune_scores": [
+    [
+      0.010881328023970127,
+      0.0
+    ],
+    [
+      0.003468088572844863,
+      0.5
+    ],
+    [
+      0.007833424024283886,
+      0.8
+    ],
+    [
+      0.01604001224040985,
+      1.0
+    ]
+  ],
+  "alpha_search_ms": 4.14707901654765,
+  "training_steps": 0,
+  "storage": {
+    "actual_file_bytes": 1876,
+    "weight_i8_bytes": 1280,
+    "weight_endpoint_fraction": 0.03203125
+  },
+  "reference_fp32_payload_bytes": 5536,
+  "reference_fp16_payload_bytes": 2768,
+  "eval": {
+    "activation_endpoint_fraction": 0.03125,
+    "absmax": {
+      "nrmse": 0.011155690997838974,
+      "max_abs": 0.24840116500854492,
+      "cosine": 0.9999383091926575
+    },
+    "smooth": {
+      "nrmse": 0.0029551279731094837,
+      "max_abs": 0.05785036087036133,
+      "cosine": 0.9999958276748657
+    },
+    "fp16": {
+      "nrmse": 0.0004343788023106754,
+      "max_abs": 0.012280464172363281,
+      "cosine": 1.0
+    }
+  },
+  "shift": {
+    "activation_endpoint_fraction": 0.03125,
+    "absmax": {
+      "nrmse": 0.010386962443590164,
+      "max_abs": 0.14115631580352783,
+      "cosine": 0.999945878982544
+    },
+    "smooth": {
+      "nrmse": 0.004588400945067406,
+      "max_abs": 0.04298591613769531,
+      "cosine": 0.99998939037323
+    },
+    "fp16": {
+      "nrmse": 0.00040092546259984374,
+      "max_abs": 0.005478382110595703,
+      "cosine": 0.9999997019767761
+    }
+  },
+  "zero": {
+    "activation_endpoint_fraction": 0.0,
+    "absmax": {
+      "nrmse": 0.0,
+      "max_abs": 0.0,
+      "cosine": 0.9999999403953552
+    },
+    "smooth": {
+      "nrmse": 0.0,
+      "max_abs": 0.0,
+      "cosine": 0.9999999403953552
+    },
+    "fp16": {
+      "nrmse": 0.00020348443649709225,
+      "max_abs": 5.517899990081787e-05,
+      "cosine": 1.0
+    }
+  },
+  "cpu_framework_batch_mean_p50_us": {
+    "fp32": 21.507150086108595,
+    "absmax_qdq": 50.90234917588532,
+    "smooth_qdq": 50.68340105935931
+  },
+  "scope": "CPU LayerNorm + input clones + QDQ + FP32 linear; excludes export/calibration; not INT8 kernel or task accuracy"
+}

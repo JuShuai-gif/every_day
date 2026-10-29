@@ -1,0 +1,18 @@
+2026-10-29T16:03:31+08:00
+jetson-thor
+Linux jetson-thor 6.8.12-tegra #1 SMP PREEMPT Tue Dec 30 15:40:41 PST 2025 aarch64 aarch64 aarch64 GNU/Linux
+# R38 (release), REVISION: 4.0, GCID: 43443517, BOARD: generic, EABI: aarch64, DATE: Wed Dec 31 00:15:19 UTC 2025
+NVIDIA Thor, 580.00
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Jul_16_07:31:19_PM_PDT_2025
+Cuda compilation tools, release 13.0, V13.0.48
+Build cuda_13.0.r13.0/compiler.36260728_0
+NVIDIA (R) Nsight Compute Command Line Profiler
+Copyright (c) 2018-2025 NVIDIA Corporation
+Version 2025.3.0.0 (build 36273991) (public-release)
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Python 3.12.3
+numpy 1.26.4
+image_id=sha256:c0aa890a83fb11b62a226b688edd2a623733f52ee32cb7ca94857f13f06b055e
+torch 2.12.0a0+5aff3928d8.nv26.05 cuda 13.2 numpy 2.1.0 triton 3.7.0

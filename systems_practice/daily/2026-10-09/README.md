@@ -30,7 +30,7 @@ Mac：`./run.sh cpu`，`./run.sh sanitize`。Thor Linux（匹配 CUDA/JetPack/L4
 
 ## 正确性验证
 
-CPU reference 覆盖 8 个列数（含 warp/8 槽边界）、7 行、逐行平移不变性和 2 个非法 shape。GPU 正确性、编译及执行未验证：本机没有 NVIDIA GPU、`nvcc` 或 Thor；CPU 通过不等同 GPU 验收。
+CPU reference 覆盖 8 个列数（含 warp/8 槽边界）、7 行、逐行平移不变性和 2 个非法 shape。原 Mac 运行时 GPU 未验证；后续 Thor 数值验收见文末，CPU 通过不等同 GPU 验收。
 
 ## 性能分析
 
@@ -38,7 +38,7 @@ CPU reference 覆盖 8 个列数（含 warp/8 槽边界）、7 行、逐行平�
 
 ## 实际运行结果
 
-Mac 已实际编译并运行 Release、ASan/UBSan：8 个稳定 softmax shape/平移不变性及 2 个非法 shape 均通过，原始输出见 [cpu.txt](results/cpu.txt) 和 [sanitize.txt](results/sanitize.txt)。Thor GPU、ncu、PTX/SASS和性能数据均未验证；没有任何 GPU 加速比声明。
+Mac 已实际编译并运行 Release、ASan/UBSan：8 个稳定 softmax shape/平移不变性及 2 个非法 shape 均通过，原始输出见 [cpu.txt](results/cpu.txt) 和 [sanitize.txt](results/sanitize.txt)。原 Mac 运行时 Thor GPU、ncu、PTX/SASS 和性能数据未验证；后续 Thor 结果见文末。
 
 ## 工程注意事项
 
@@ -56,3 +56,8 @@ Mac 已实际编译并运行 Release、ASan/UBSan：8 个稳定 softmax shape/�
 ## 自测问题
 
 若 shape 从 `[1024,127]` 改为 `[1024,513]`，请设计不改变稳定语义的 kernel 路径选择和正确性/性能验收，说明为什么不能仅把寄存器数组从 8 扩为 17。
+
+
+## 2026-10-29 Thor 实机复核
+
+Thor 实机复核：补充独立参考后，3 种行数 × 6 种列数 × 2 kernel 共 36 项通过；[完整记录](../../validation/2026-10-29-thor/fixed-retests.txt)。

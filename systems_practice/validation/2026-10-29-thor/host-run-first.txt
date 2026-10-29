@@ -1,0 +1,3086 @@
+=== PASS systems_practice/arm/2026-09-22/run.sh 0.5s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/arm/2026-09-22/build/cpp
+[ 50%] Building CXX object CMakeFiles/inspect_target.dir/src/inspect_target.cpp.o
+[100%] Linking CXX executable inspect_target
+[100%] Built target inspect_target
+runtime.os=Linux
+runtime.release=6.8.12-tegra
+runtime.machine=aarch64
+compiler=GCC 13.3.0
+compile.os=Linux
+compile.pointer_bytes=8
+__aarch64__=1
+__ARM_NEON=1
+__ARM_FEATURE_DOTPROD=not_defined
+__ARM_FEATURE_FP16_VECTOR_ARITHMETIC=not_defined
+__ARM_FEATURE_MATMUL_INT8=not_defined
+__ARM_FEATURE_SVE=not_defined
+__ARM_FEATURE_SVE2=not_defined
+__ARM_NEON_SVE_BRIDGE=not_defined
+scope=compile-time features; no remote board capability query
+compute_kernel_executed=false
+performance_measured=false
+
+=== PASS systems_practice/arm/2026-09-23/run.sh 0.9s ===
+input=0x0 write_W_read_X=0x0
+input=0xffff000012345678 write_W_read_X=0x12345678
+input=0xffffffffffffffff write_W_read_X=0xffffffff
+lane0=11
+lane1=22
+lane2=33
+lane3=0
+PASS 3 W/X cases + 4 V lanes; CPU observation only
+
+=== FAIL(1) systems_practice/arm/2026-09-24/run.sh 0.0s ===
+g++: error: unrecognized command-line option ‘-fno-vectorize’; did you mean ‘-ftree-vectorize’?
+g++: error: unrecognized command-line option ‘-fno-slp-vectorize’; did you mean ‘-ftree-slp-vectorize’?
+
+=== PASS systems_practice/arm/2026-09-24/source-study/run.sh 0.9s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Linux aarch64
+rectangular expected: 58 64 139 154
+rectangular wrong: 3027 5008 6078 11032
+rectangular corrected: 58 64 139 154
+square equal-stride control: wrong candidate also passes
+PASS: semantic bug detected without out-of-bounds access; zero-depth/invalid-stride checked
+rectangular expected: 58 64 139 154
+rectangular wrong: 3027 5008 6078 11032
+rectangular corrected: 58 64 139 154
+square equal-stride control: wrong candidate also passes
+PASS: semantic bug detected without out-of-bounds access; zero-depth/invalid-stride checked
+
+=== FAIL(1) systems_practice/arm/2026-09-25/run.sh 0.0s ===
+g++: error: unrecognized command-line option ‘-fno-vectorize’; did you mean ‘-ftree-vectorize’?
+g++: error: unrecognized command-line option ‘-fno-slp-vectorize’; did you mean ‘-ftree-slp-vectorize’?
+
+=== FAIL(1) systems_practice/arm/2026-09-26/run.sh 0.0s ===
+g++: error: unrecognized command-line option ‘-fno-vectorize’; did you mean ‘-ftree-vectorize’?
+g++: error: unrecognized command-line option ‘-fno-slp-vectorize’; did you mean ‘-ftree-slp-vectorize’?
+
+=== FAIL(1) systems_practice/arm/2026-09-27/run.sh 0.0s ===
+g++: error: unrecognized command-line option ‘-fno-vectorize’; did you mean ‘-ftree-vectorize’?
+g++: error: unrecognized command-line option ‘-fno-slp-vectorize’; did you mean ‘-ftree-slp-vectorize’?
+
+=== FAIL(1) systems_practice/arm/2026-09-28/run.sh 0.0s ===
+g++: error: unrecognized command-line option ‘-fno-vectorize’; did you mean ‘-ftree-vectorize’?
+g++: error: unrecognized command-line option ‘-fno-slp-vectorize’; did you mean ‘-ftree-slp-vectorize’?
+
+=== FAIL(1) systems_practice/arm/2026-09-29/run.sh 0.0s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Linux aarch64
+g++: error: unrecognized command-line option ‘-fno-vectorize’; did you mean ‘-ftree-vectorize’?
+g++: error: unrecognized command-line option ‘-fno-slp-vectorize’; did you mean ‘-ftree-slp-vectorize’?
+
+=== FAIL(127) systems_practice/arm/2026-09-30/run.sh 0.0s ===
+build.sh: 5: clang++: not found
+
+=== FAIL(1) systems_practice/arm/2026-10-01/run.sh 0.0s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+g++: error: unrecognized command-line option ‘-fno-vectorize’; did you mean ‘-ftree-vectorize’?
+g++: error: unrecognized command-line option ‘-fno-slp-vectorize’; did you mean ‘-ftree-slp-vectorize’?
+
+=== FAIL(1) systems_practice/arm/2026-10-02/run.sh 0.0s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+g++: error: unrecognized command-line option ‘-fno-vectorize’; did you mean ‘-ftree-vectorize’?
+g++: error: unrecognized command-line option ‘-fno-slp-vectorize’; did you mean ‘-ftree-slp-vectorize’?
+
+=== FAIL(1) systems_practice/arm/2026-10-02/session-02/run.sh 0.0s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+g++: error: unrecognized command-line option ‘-fno-vectorize’; did you mean ‘-ftree-vectorize’?
+g++: error: unrecognized command-line option ‘-fno-slp-vectorize’; did you mean ‘-ftree-slp-vectorize’?
+
+=== PASS systems_practice/arm/2026-10-03/run.sh 6.2s ===
+s=3
+N=4096 accumulators=1 CPU_batch_mean_p50_us=0.76722 p95_us=0.76778
+N=4096 accumulators=4 CPU_batch_mean_p50_us=0.57 p95_us=0.57037
+N=4096 accumulators=16 CPU_batch_mean_p50_us=0.43796 p95_us=0.43926
+PASS benchmark_shape=65539 candidates=3
+N=65539 accumulators=1 CPU_batch_mean_p50_us=12.6842 p95_us=12.7507
+N=65539 accumulators=4 CPU_batch_mean_p50_us=9.54232 p95_us=9.60082
+N=65539 accumulators=16 CPU_batch_mean_p50_us=8.37602 p95_us=8.44277
+PASS comparisons=3081 max_abs_error=0
+PASS benchmark_shape=7 candidates=3
+N=7 accumulators=1 CPU_batch_mean_p50_us=0.04074 p95_us=0.07176
+N=7 accumulators=4 CPU_batch_mean_p50_us=0.08732 p95_us=7.98288
+N=7 accumulators=16 CPU_batch_mean_p50_us=1.71222 p95_us=2.1137
+PASS benchmark_shape=4096 candidates=3
+N=4096 accumulators=1 CPU_batch_mean_p50_us=21.2503 p95_us=21.3178
+N=4096 accumulators=4 CPU_batch_mean_p50_us=12.8522 p95_us=12.9021
+N=4096 accumulators=16 CPU_batch_mean_p50_us=6.83332 p95_us=6.87084
+PASS benchmark_shape=65539 candidates=3
+N=65539 accumulators=1 CPU_batch_mean_p50_us=116.082 p95_us=116.177
+N=65539 accumulators=4 CPU_batch_mean_p50_us=87.7123 p95_us=88.5219
+N=65539 accumulators=16 CPU_batch_mean_p50_us=79.7937 p95_us=80.1988
+
+=== PASS systems_practice/arm/2026-10-04/run.sh 0.9s ===
+PASS 66 shapes, offset1, odd stride, tails, guards, invalid stride
+shape=17x1 stride=58
+scalar/autovec CPU batch_mean_us P50=0.0185 P95=0.0185625
+AoS LD3 direct CPU batch_mean_us P50=0.0115625 P95=0.01275
+SoA reused CPU batch_mean_us P50=0.0098125 P95=0.009875
+pack+SoA CPU batch_mean_us P50=0.0150625 P95=0.0168125
+shape=641x480 stride=1930
+scalar/autovec CPU batch_mean_us P50=172.756 P95=174.84
+AoS LD3 direct CPU batch_mean_us P50=57.8402 P95=59.0046
+SoA reused CPU batch_mean_us P50=33.6759 P95=34.5127
+pack+SoA CPU batch_mean_us P50=122.185 P95=123.399
+
+=== PASS systems_practice/arm/2026-10-05/run.sh 1.1s ===
+half_bytes=2 fp16_vector=0
+PASS cases=1026 tie=1 storage_overflow=inf wide_sum=5.76e+06
+n=17 mode=0 cpu_batchmean_us_p50=0.01352 p95=0.01352
+n=17 mode=1 cpu_batchmean_us_p50=0.00723 p95=0.00732
+n=4096 mode=0 cpu_batchmean_us_p50=3.15 p95=3.18009
+n=4096 mode=1 cpu_batchmean_us_p50=1.575 p95=1.57508
+n=65539 mode=0 cpu_batchmean_us_p50=50.4266 p95=50.4823
+n=65539 mode=1 cpu_batchmean_us_p50=25.2284 p95=25.244
+
+=== FAIL(1) systems_practice/arm/2026-10-06/run.sh 0.0s ===
+g++: error: unrecognized command-line option ‘-fno-vectorize’; did you mean ‘-ftree-vectorize’?
+g++: error: unrecognized command-line option ‘-fno-slp-vectorize’; did you mean ‘-ftree-slp-vectorize’?
+
+=== PASS systems_practice/arm/2026-10-07/run.sh 0.9s ===
+bytes,pattern,p50_ns_per_dependent_load,p95_ns_per_dependent_load
+4096,sequential,1.92236,1.9634
+4096,random,1.92236,1.93861
+32768,sequential,1.9225,1.93493
+32768,random,1.92243,2.08364
+131072,sequential,2.21231,2.22602
+131072,random,2.77728,2.92478
+1048576,sequential,2.77724,2.85587
+1048576,random,6.48756,6.60635
+8388608,sequential,4.88772,5.57963
+8388608,random,9.14623,9.42651
+33554432,sequential,5.98211,6.24215
+33554432,random,7.75761,45.9977
+PASS boundary_rings=14 zero_rejected=1 sink=0
+
+=== PASS systems_practice/arm/2026-10-08/run.sh 1.1s ===
+PASS cases=252 stride reject; identical direct/packed NEON order
+M=4 N=17 K=257 stride=264 packed_bytes=20560
+direct CPU_batch_mean_us P50=12.4518 P95=12.5
+packed_reused CPU_batch_mean_us P50=3.6242 P95=3.6278
+pack_only CPU_batch_mean_us P50=1.1796 P95=1.187
+reuse=1 transaction (pack allocation included)
+direct_R CPU_batch_mean_us P50=12.2204 P95=12.2426
+pack_plus_R CPU_batch_mean_us P50=4.7796 P95=4.7872
+reuse=8 transaction (pack allocation included)
+direct_R CPU_batch_mean_us P50=99.6742 P95=100.005
+pack_plus_R CPU_batch_mean_us P50=30.0722 P95=30.0834
+M=4 N=128 K=257 stride=264 packed_bytes=131584
+direct CPU_batch_mean_us P50=85.4664 P95=86.1814
+packed_reused CPU_batch_mean_us P50=23.1186 P95=23.1314
+pack_only CPU_batch_mean_us P50=8.0372 P95=8.0814
+reuse=1 transaction (pack allocation included)
+direct_R CPU_batch_mean_us P50=85.2204 P95=85.976
+pack_plus_R CPU_batch_mean_us P50=31.3592 P95=31.4278
+reuse=8 transaction (pack allocation included)
+direct_R CPU_batch_mean_us P50=683.542 P95=684.122
+pack_plus_R CPU_batch_mean_us P50=193.085 P95=193.707
+
+=== PASS systems_practice/arm/2026-10-09/run.sh 0.3s ===
+PASS prefetch contract: 4097 elements and empty boundary
+
+=== PASS systems_practice/arm/2026-10-11/run.sh 0.7s ===
+host_page_bytes=4096 sample=262144 dependent CPU loads
+nodes=1 stride=64 reserved_bytes=64 virtual_pages=1 first_touch_minflt=1 warm_minflt=1 ns_per_load_p50=1.53789 p95=1.59931
+nodes=1 stride=4096 reserved_bytes=4096 virtual_pages=1 first_touch_minflt=1 warm_minflt=0 ns_per_load_p50=1.53796 p95=1.95662
+nodes=16 stride=64 reserved_bytes=1024 virtual_pages=1 first_touch_minflt=1 warm_minflt=0 ns_per_load_p50=1.53793 p95=1.55484
+nodes=16 stride=4096 reserved_bytes=65536 virtual_pages=16 first_touch_minflt=16 warm_minflt=0 ns_per_load_p50=1.53807 p95=1.54841
+nodes=256 stride=64 reserved_bytes=16384 virtual_pages=4 first_touch_minflt=4 warm_minflt=0 ns_per_load_p50=1.5381 p95=1.55428
+nodes=256 stride=4096 reserved_bytes=1048576 virtual_pages=256 first_touch_minflt=256 warm_minflt=0 ns_per_load_p50=6.15229 p95=6.27698
+nodes=4096 stride=64 reserved_bytes=262144 virtual_pages=64 first_touch_minflt=64 warm_minflt=0 ns_per_load_p50=2.12567 p95=2.13962
+nodes=4096 stride=4096 reserved_bytes=16777216 virtual_pages=4096 first_touch_minflt=8 warm_minflt=0 ns_per_load_p50=5.75291 p95=6.01305
+PASS 8 rings, rejected zero; TLB counters and board unverified
+
+=== PASS systems_practice/arm/2026-10-12/run.sh 0.3s ===
+PASS seq_cst/acquire_release transfers=20002 zero=2 ticket_old_values=1000
+negative_count_rejected=1; no racy execution; lock_free=1
+No timing; TSan is evidence for this execution, not an ARM memory-model proof
+
+=== PASS systems_practice/arm/2026-10-13/run.sh 1.0s ===
+00
+pad256 CPU batch ms p50=0.635147 pmax=0.691888
+stride=128 workers=2 mode=1 addresses 0xaaaae6a1e800 0xaaaae6a1e880
+true_shared CPU batch ms p50=2.01821 pmax=2.1653
+stride=128 workers=2 mode=2 addresses 0xaaaae6a1e800 0xaaaae6a1e880
+local CPU batch ms p50=0.035583 pmax=0.080445
+stride=8 workers=4 mode=0 addresses 0xaaaae6a1d2f0 0xaaaae6a1d2f8 0xaaaae6a1d300 0xaaaae6a1d308
+packed CPU batch ms p50=2.13458 pmax=3.6916
+stride=64 workers=4 mode=0 addresses 0xaaaae6a1e800 0xaaaae6a1e840 0xaaaae6a1e880 0xaaaae6a1e8c0
+pad64 CPU batch ms p50=0.656342 pmax=0.684389
+stride=128 workers=4 mode=0 addresses 0xaaaae6a1eb00 0xaaaae6a1eb80 0xaaaae6a1ec00 0xaaaae6a1ec80
+pad128 CPU batch ms p50=0.666778 pmax=0.727852
+stride=256 workers=4 mode=0 addresses 0xaaaae6a1f000 0xaaaae6a1f100 0xaaaae6a1f200 0xaaaae6a1f300
+pad256 CPU batch ms p50=0.650565 pmax=0.71301
+stride=128 workers=4 mode=1 addresses 0xaaaae6a1eb00 0xaaaae6a1eb80 0xaaaae6a1ec00 0xaaaae6a1ec80
+true_shared CPU batch ms p50=3.98094 pmax=4.23297
+stride=128 workers=4 mode=2 addresses 0xaaaae6a1eb00 0xaaaae6a1eb80 0xaaaae6a1ec00 0xaaaae6a1ec80
+local CPU batch ms p50=0.054814 pmax=0.063009
+PASS 216 batches totals verified; zero worker rejected
+
+=== PASS systems_practice/arm/2026-10-14/run.sh 0.9s ===
+k_exec_p50_us=3.093 migration_endpoint_changes=0 observed=255
+workers=1 grain=128 batch_p50_us=60.315 task_queue_p50_us=30.556 task_queue_p95_us=57.343 task_exec_p50_us=24.509 migration_endpoint_changes=0 observed=45
+workers=2 grain=1 batch_p50_us=64.99 task_queue_p50_us=32.379 task_queue_p95_us=56.611 task_exec_p50_us=0.278 migration_endpoint_changes=0 observed=3855
+workers=2 grain=16 batch_p50_us=36.602 task_queue_p50_us=18.212 task_queue_p95_us=30.63 task_exec_p50_us=3.009 migration_endpoint_changes=0 observed=255
+workers=2 grain=128 batch_p50_us=33.907 task_queue_p50_us=5.704 task_queue_p95_us=28.972 task_exec_p50_us=22.824 migration_endpoint_changes=0 observed=45
+workers=4 grain=1 batch_p50_us=45.157 task_queue_p50_us=21.222 task_queue_p95_us=34.592 task_exec_p50_us=0.269 migration_endpoint_changes=0 observed=3855
+workers=4 grain=16 batch_p50_us=28.621 task_queue_p50_us=11.871 task_queue_p95_us=17.731 task_exec_p50_us=2.935 migration_endpoint_changes=0 observed=255
+workers=4 grain=128 batch_p50_us=35.426 task_queue_p50_us=6.018 task_queue_p95_us=6.695 task_exec_p50_us=23.445 migration_endpoint_changes=0 observed=45
+PASS 135 batches, odd row/K tails, zero-worker/grain rejected
+
+=== FAIL(1) systems_practice/arm/2026-10-15/run.sh 0.0s ===
+g++: error: unrecognized command-line option ‘-fno-vectorize’; did you mean ‘-ftree-vectorize’?
+g++: error: unrecognized command-line option ‘-fno-slp-vectorize’; did you mean ‘-ftree-slp-vectorize’?
+
+=== PASS systems_practice/arm/2026-10-17/run.sh 1.1s ===
+N=33 payload_with_scale_bytes=40 object_bytes=40 FP32_weight_bytes=132 CPU_batch_mean_P50_us separated=0.03657 fused=0.01546
+N=65539 payload_with_scale_bytes=40980 object_bytes=40980 FP32_weight_bytes=262156 CPU_batch_mean_P50_us separated=79.073 fused=23.5907
+PASS lengths=12 rejected=2
+
+=== PASS systems_practice/arm/2026-10-18/run.sh 1.2s ===
+lane CHW: -2.12069 -1.60345 -1.87719 -1.35088 -1.42373 -0.915254
+PASS shapes=54 rejects=2 bitwise_equal=true
+CPU batch_mean_p50_us width=9 height=3 split=0.05 fused=0.0426 alloc_split=0.063 alloc_fused=0.0834
+CPU batch_mean_p50_us width=641 height=480 split=375.97 fused=290.046 alloc_split=412.307 alloc_fused=646.02
+
+=== FAIL(1) systems_practice/arm/2026-10-19/run.sh 0.0s ===
+g++: error: unrecognized command-line option ‘-fno-vectorize’; did you mean ‘-ftree-vectorize’?
+g++: error: unrecognized command-line option ‘-fno-slp-vectorize’; did you mean ‘-ftree-slp-vectorize’?
+
+=== FAIL(1) systems_practice/arm/2026-10-21/run.sh 0.7s ===
+usage: probe scalar|neon
+
+=== PASS systems_practice/arm/2026-10-22/run.sh 0.3s ===
+PASS CPU frames=10000 elements=17 bidirectional publication; early-reuse counterexample; device simulation only
+
+=== PASS systems_practice/arm/2026-10-23/run.sh 2.7s ===
+elapsed_s,scalar_us,neon_us
+2.4473e-05,76.37,32.649
+0.113659,80.083,30.666
+0.227042,76.277,32.546
+0.340464,76.25,32.574
+0.453874,76.148,30.713
+0.567357,77.537,30.843
+0.680805,77.713,30.777
+0.794206,77.528,30.62
+0.907647,76.158,32.602
+1.02103,76.158,32.537
+1.13442,76.157,30.657
+1.24785,76.222,32.408
+1.36127,76.148,32.556
+1.47491,76.222,32.555
+1.58829,76.101,32.389
+1.7017,79.889,32.583
+1.81514,76.092,32.389
+1.92857,76.13,32.398
+PASS n=65539 requests=17630 early_n=5876 late_n=5876 early_p50_us=32.399 early_p95_us=32.611 late_p50_us=32.398 late_p95_us=32.611 thermal_cause=UNVERIFIED energy=UNMEASURED e2e=UNMEASURED
+
+=== FAIL(1) systems_practice/arm/2026-10-26/run.sh 0.0s ===
+c++: error: unrecognized command-line option ‘-fno-vectorize’; did you mean ‘-ftree-vectorize’?
+c++: error: unrecognized command-line option ‘-fno-slp-vectorize’; did you mean ‘-ftree-slp-vectorize’?
+
+=== FAIL(2) systems_practice/arm/2026-10-28/run.sh 0.0s ===
+systems_practice/arm/2026-10-28/run.sh: 2: set: Illegal option -o pipefail
+
+=== PASS systems_practice/arm/2026-10-29/run.sh 0.5s ===
+PASS layout_tail n=7 sum=28 fallback=1
+
+=== PASS systems_practice/cpp17/2026-09-29/run.sh 0.4s ===
+baseline: failed emplace leaves empty slot
+transaction: 7 invalid updates preserve old config
+PASS: empty access, failed startup, boundaries, commit, repeated reset
+
+=== FAIL(127) systems_practice/cpp17/2026-09-30/run.sh 0.0s ===
+build.sh: 5: clang++: not found
+
+=== PASS systems_practice/cpp17/2026-10-01/run.sh 0.7s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+PASS 1000 reject/throw/accept/take/move-assign/reset cycles; alive=0
+PASS 1000 reject/throw/accept/take/move-assign/reset cycles; alive=0
+
+=== PASS systems_practice/cpp17/2026-10-02/run.sh 0.7s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+PASS 1000 reject/throw/accept/take/move-assign/reset cycles; alive=0
+PASS 1000 reject/throw/accept/take/move-assign/reset cycles; alive=0
+
+=== PASS systems_practice/cpp17/2026-10-02/session-02/run.sh 1.2s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+noexcept=1 copies=0 moves=4
+noexcept=0 copies=4 moves=0
+PASS copy_failures=4 no_leaks=1
+noexcept=1 copies=0 moves=4
+noexcept=0 copies=4 moves=0
+PASS copy_failures=4 no_leaks=1
+
+=== FAIL(1) systems_practice/cpp17/2026-10-03/run.sh 0.4s ===
+src/main.cpp: In function ‘int main()’:
+src/main.cpp:78:15: error: ignoring return value of ‘constexpr std::basic_string_view<_CharT, _Traits> std::basic_string_view<_CharT, _Traits>::substr(size_type, size_type) const [with _CharT = char; _Traits = std::char_traits<char>; size_type = long unsigned int]’, declared with attribute ‘nodiscard’ [-Werror=unused-result]
+   78 |       v.substr(4);
+      |       ~~~~~~~~^~~
+In file included from /usr/include/c++/13/bits/basic_string.h:47,
+                 from /usr/include/c++/13/string:54,
+                 from /usr/include/c++/13/bits/locale_classes.h:40,
+                 from /usr/include/c++/13/bits/ios_base.h:41,
+                 from /usr/include/c++/13/ios:44,
+                 from /usr/include/c++/13/ostream:40,
+                 from /usr/include/c++/13/iostream:41,
+                 from src/main.cpp:1:
+/usr/include/c++/13/string_view:334:7: note: declared here
+  334 |       substr(size_type __pos = 0, size_type __n = npos) const noexcept(false)
+      |       ^~~~~~
+cc1plus: all warnings being treated as errors
+
+=== PASS systems_practice/cpp17/2026-10-04/run.sh 0.4s ===
+PASS value bindings copies=2; reference edits=2 copies=0; throwing copy leaves map unchanged; empty; duplicate insert; temporary lifetime; decltype checks
+
+=== PASS systems_practice/cpp17/2026-10-05/run.sh 0.6s ===
+PASS missing lookup no insertion; 1000 replacements retain snapshot; invalid update rollback; empty/prefix keys; operator[] counterexample
+
+=== FAIL(1) systems_practice/cpp17/2026-10-06/run.sh 0.0s ===
+g++: error: unrecognized command-line option ‘-fno-vectorize’; did you mean ‘-ftree-vectorize’?
+g++: error: unrecognized command-line option ‘-fno-slp-vectorize’; did you mean ‘-ftree-slp-vectorize’?
+
+=== PASS systems_practice/cpp17/2026-10-07/run.sh 0.4s ===
+PASS iterations=1000 exact_type=1 bad_any_cast=1 assignment_rollback=1 emplace_empty=1 alive=0
+
+=== PASS systems_practice/cpp17/2026-10-08/run.sh 0.3s ===
+PASS 4096 valid, 11 lexical rejects, budget rollback, overflow preserves value, partial parse consumes2
+
+=== PASS systems_practice/cpp17/2026-10-09/run.sh 0.4s ===
+PASS try_emplace inserts once; duplicate preserves mapped value; find does not insert
+
+=== PASS systems_practice/cpp17/2026-10-11/run.sh 0.4s ===
+PASS 1000 collision rollbacks/renames; empty/missing/transfer; alive=0; mapped copy/move deleted
+
+=== PASS systems_practice/cpp17/2026-10-12/run.sh 0.4s ===
+PASS wire_oracle=8B empty=1 max255=1 reject256_rollback=1
+C++17 type dispatch; no performance claim
+
+=== PASS systems_practice/cpp17/2026-10-13/run.sh 0.3s ===
+PASS ordered=123 empty=ok short_circuit_calls=2 rollback=1000 exception_prefix=1
+
+=== PASS systems_practice/cpp17/2026-10-14/run.sh 0.3s ===
+PASS CTAD owning range=3; braces pointer count=2; string owner; empty rejected
+
+=== PASS systems_practice/cpp17/2026-10-15/run.sh 0.3s ===
+PASS invoke member/data; apply empty/move-only; owned=3 borrowed=8; rejected=2 total=9
+
+=== PASS systems_practice/cpp17/2026-10-17/run.sh 0.4s ===
+PASS inline_identity=shared static_identity=distinct nullopt_identity=shared count=5 rejected=1
+
+=== PASS systems_practice/cpp17/2026-10-18/run.sh 0.3s ===
+src/main.cpp: In function ‘Movable forced(int)’:
+src/main.cpp:55:19: warning: moving a local object in a return statement prevents copy elision [-Wpessimizing-move]
+   55 |   return std::move(value);
+      |          ~~~~~~~~~^~~~~~~
+src/main.cpp:55:19: note: remove ‘std::move’ call
+PASS immovable direct/optional sizes=0,1,4096 rejects=2 alive=0 nrvo_moves=0 forced_move_delta=1
+
+=== PASS systems_practice/cpp17/2026-10-19/run.sh 0.3s ===
+PASS vector_sizes=0,1,3,257 growth aligned=128 sizeof=128 constructor_failure=1 align_failure=1 alive=0
+
+=== PASS systems_practice/cpp17/2026-10-21/run.sh 0.5s ===
+clear_alive=0 retained_upstream_bytes=4032
+PASS allocation_calls=1 peak_bytes=4032 live=0 bounded_oom=1 reuse=1 constructor_rollback=1
+
+=== PASS systems_practice/cpp17/2026-10-22/run.sh 0.5s ===
+missing error=No such file or directory
+PASS old-open/new-path; deterministic TOCTOU; missing/sentinel/throw; empty/zero; cleanup by RAII
+
+=== PASS systems_practice/cpp17/2026-10-23/run.sh 0.6s ===
+PASS transfers=20000 total=200000 rejected=4 lock_exception_cleanup=1
+
+=== PASS systems_practice/cpp17/2026-10-26/run.sh 0.4s ===
+PASS completed=4000 task_errors=200 full_drain=4 empty_close=1
+
+=== FAIL(2) systems_practice/cpp17/2026-10-28/run.sh 0.0s ===
+systems_practice/cpp17/2026-10-28/run.sh: 2: set: Illegal option -o pipefail
+
+=== PASS systems_practice/cpp17/2026-10-29/run.sh 0.3s ===
+PASS shared_lifetime abi_stamp=17
+
+=== PASS systems_practice/daily/2026-09-14/run.sh 0.8s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-14/results/mac-release-build
+[ 50%] Building CXX object CMakeFiles/frame_arena.dir/src/main.cpp.o
+[100%] Linking CXX executable frame_arena
+[100%] Built target frame_arena
+correctness=PASS workers=4 managed_destruction=PASS reset_gate=PASS
+arena_us p50=2.555 p95=2.565
+heap_us p50=8.556 p95=8.629
+checksum=7833600
+
+=== FAIL(2) systems_practice/daily/2026-09-15/run.sh 0.0s ===
+systems_practice/daily/2026-09-15/run.sh: 2: set: Illegal option -o pipefail
+
+=== FAIL(2) systems_practice/daily/2026-09-16/run.sh 0.0s ===
+systems_practice/daily/2026-09-16/run.sh: 2: set: Illegal option -o pipefail
+
+=== PASS systems_practice/daily/2026-09-17/run.sh 0.6s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-17/results/mac-cpu-build
+[ 50%] Building CXX object CMakeFiles/cpu_stride_check.dir/src/preprocess_cpu.cpp.o
+[100%] Linking CXX executable cpu_stride_check
+[100%] Built target cpu_stride_check
+CPU stride-pack correctness=PASS; host preprocessing average_us=0.0221713
+
+=== PASS systems_practice/daily/2026-09-18/run.sh 1.0s ===
+check.dir/src/cpu_check.cpp.o
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-18/src/cpu_check.cpp: In function ‘int main()’:
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-18/src/cpu_check.cpp:105:21: warning: loop variable ‘args’ creates a copy from type ‘const std::vector<std::__cxx11::basic_string<char> >’ [-Wrange-loop-construct]
+  105 |     for (const auto args : {std::vector<std::string>{"--profile", "all"},
+      |                     ^~~~
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-18/src/cpu_check.cpp:105:21: note: use reference type to prevent copying
+  105 |     for (const auto args : {std::vector<std::string>{"--profile", "all"},
+      |                     ^~~~
+      |                     &
+[100%] Linking CXX executable cpu_check
+[100%] Built target cpu_check
+Internal ctest changing into directory: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-18/build/cpu
+Test project /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-18/build/cpu
+    Start 1: cpu_contract
+1/1 Test #1: cpu_contract .....................   Passed    0.02 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.03 sec
+
+=== PASS systems_practice/daily/2026-09-18/session-02/run.sh 2.8s ===
+
+QAT_TRACE W8A8 steps=40 changed_master_updates=47164 changed_final_packed_bytes=367 train_last=2.22931813e-05 selected_step=1
+| W8A16 | absmax | 0.00332892632 | 0.0424804688 | 0.999994486 | 0.00348054614 | 0 | 1235 | 644 | 4160 | 6039 | 1.09786388 | 0.073204 | -1 | 1 | 1 | 0 | 0 / 0 |
+| W8A16 | smoothquant | 0.00164348458 | 0.02582407 | 0.99999865 | 0.00686251004 | 0 | 1235 | 644 | 4160 | 6039 | 1.09786388 | 0.071278 | 0.5 | 1 | 1 | 0 | 0 / 0 |
+| W8A16 | calibrated | 0.00136760243 | 0.0187944174 | 0.999999066 | 0.00383598325 | 0 | 1235 | 644 | 4160 | 6039 | 1.09786388 | 0.069407 | 0.25 | 1 | 1 | 0 | 0 / 0 |
+| W8A16 | outlier | 0.000793615445 | 0.0121321678 | 0.999999686 | 0.00228987952 | 0 | 1311 | 652 | 4288 | 6251 | 1.0606303 | 0.071833 | 1 | 1 | 1 | 0 | 0 / 0 |
+| W8A16 | qat | 0.000793615445 | 0.0121321678 | 0.999999686 | 0.00228987952 | 0 | 1311 | 652 | 4288 | 6251 | 1.0606303 | 0.07838 | 1 | 1 | 1 | 0 | 1.2333388e-05 / 1.2333388e-05 |
+QAT_TRACE W8A16 steps=40 changed_master_updates=47496 changed_final_packed_bytes=252 train_last=2.29661224e-05 selected_step=0
+PASS 20 format/method comparisons; scales/checkpoints fitted without evaluation samples; CPU only, Thor NOT validated
+
+=== PASS systems_practice/daily/2026-09-19/run.sh 1.1s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-19/build/cpu
+[ 50%] Building CXX object CMakeFiles/cpu_check.dir/src/cpu_check.cpp.o
+[100%] Linking CXX executable cpu_check
+[100%] Built target cpu_check
+analytical_bank_max_multiplicity pad=0 value=32
+analytical_bank_max_multiplicity pad=1 value=1
+PASS 196 shapes x 3 tile configurations; exact oracle, unique writers, padding; 4 invalid shapes
+CPU indexing validation only; no GPU timing or race validation
+
+=== PASS systems_practice/daily/2026-09-20/run.sh 1.1s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-20/build/cpu
+[ 50%] Building CXX object CMakeFiles/cpu_check.dir/src/cpu_check.cpp.o
+[100%] Linking CXX executable cpu_check
+[100%] Built target cpu_check
+PASS shapes=45 patterns=3 variants=5 comparisons=675 invalid=4 NaN-rejected; independent FP64 oracle and unique input coverage
+CPU contract simulation only; GPU synchronization/registers/occupancy/performance UNVERIFIED
+
+=== PASS systems_practice/daily/2026-09-21/run.sh 4.5s ===
+00%] Linking CXX executable pool_check
+[100%] Built target pool_check
+Internal ctest changing into directory: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-21/build/cpu
+Test project /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-21/build/cpu
+    Start 1: concurrency_contract
+1/1 Test #1: concurrency_contract .............   Passed    0.04 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.04 sec
+CPU capacity=1 workers=2 shape=[2,197,32] requests_per_batch=128 warmup=10 samples=30 batch_p50_us=1123.67 batch_p95_us=1201.09 admission_p95_us=11.75 submit_to_start_p95_us=16.825 cpu_work_p50_us=9.75 request_e2e_p95_us=26.76 queue_high_water=1
+CPU capacity=8 workers=2 shape=[2,197,32] requests_per_batch=128 warmup=10 samples=30 batch_p50_us=758.889 batch_p95_us=778.593 admission_p95_us=11.685 submit_to_start_p95_us=56.287 cpu_work_p50_us=9.704 request_e2e_p95_us=66.018 queue_high_water=8
+CPU capacity=64 workers=2 shape=[2,197,32] requests_per_batch=128 warmup=10 samples=30 batch_p50_us=748.157 batch_p95_us=754.435 admission_p95_us=11.306 submit_to_start_p95_us=378.61 cpu_work_p50_us=9.704 request_e2e_p95_us=388.333 queue_high_water=64
+
+=== PASS systems_practice/daily/2026-09-22/run.sh 2.6s ===
+ wall us: release gate -> all done; excludes create/join; no affinity; warmup=5 samples=30 n_per_worker=200000
+packed workers=1 p50_us=1087.29 p95_us=1116.48 ns_per_increment=5.43644
+pad64 workers=1 p50_us=1091.57 p95_us=1383.12 ns_per_increment=5.45782
+pad128 workers=1 p50_us=1087.23 p95_us=1103.77 ns_per_increment=5.43616
+pad256 workers=1 p50_us=1088.03 p95_us=1699.78 ns_per_increment=5.44013
+true_shared workers=1 p50_us=1087.19 p95_us=1318.62 ns_per_increment=5.43597
+packed workers=2 p50_us=3503.69 p95_us=3954.02 ns_per_increment=8.75923
+pad64 workers=2 p50_us=1088.18 p95_us=1103.92 ns_per_increment=2.72044
+pad128 workers=2 p50_us=1088.14 p95_us=1621.14 ns_per_increment=2.72035
+pad256 workers=2 p50_us=1087.8 p95_us=1782.96 ns_per_increment=2.71949
+true_shared workers=2 p50_us=3572.06 p95_us=3956.05 ns_per_increment=8.93016
+packed workers=4 p50_us=7222.51 p95_us=7674.89 ns_per_increment=9.02814
+pad64 workers=4 p50_us=1091.29 p95_us=1424.86 ns_per_increment=1.36411
+pad128 workers=4 p50_us=1111.8 p95_us=1897.3 ns_per_increment=1.38975
+pad256 workers=4 p50_us=1227.06 p95_us=2170.33 ns_per_increment=1.53382
+true_shared workers=4 p50_us=7211.16 p95_us=7787.28 ns_per_increment=9.01395
+
+=== PASS systems_practice/daily/2026-09-23/run.sh 1.0s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-23/build/release
+[ 25%] Building CXX object CMakeFiles/q8_dot.dir/src/main.cpp.o
+[ 50%] Building CXX object CMakeFiles/q8_dot.dir/src/scalar.cpp.o
+[ 75%] Building CXX object CMakeFiles/q8_dot.dir/src/neon.cpp.o
+[100%] Linking CXX executable q8_dot
+[100%] Built target q8_dot
+system=Linux 6.8.12-tegra aarch64 compiler=13.3.0 dotprod_compiled=0
+correctness_cases=1218 invalid_cases=10 PASS
+CPU only: M=1 N=64 K=1027 warmups=20 samples=100 includes_scale_checks_and_calls excludes_quantization_allocation_io
+scalar p50_us=30.824 p95_us=31.528
+neon_widen p50_us=9.824 p95_us=9.862
+dot_or_fallback p50_us=9.759 p95_us=9.778
+checksum=-85.0804
+
+=== PASS systems_practice/daily/2026-09-24/run.sh 1.5s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-24/build/release
+[ 50%] Building CXX object CMakeFiles/edge_deployment.dir/src/main.cpp.o
+[100%] Linking CXX executable edge_deployment
+[100%] Built target edge_deployment
+contracts: invalid=7 stale/replay/failure/close/lifetime PASS
+concurrency: 20000 requests / 1000 publications PASS
+CPU acquire+fixture us/request p50=0.047787 p95=0.047898 warmup=20 samples=100 batch=1000
+
+=== PASS systems_practice/daily/2026-09-25/run.sh 0.7s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-25/build/release
+[ 50%] Building CXX object CMakeFiles/rollback.dir/src/main.cpp.o
+[100%] Linking CXX executable rollback
+[100%] Built target rollback
+PASS 2000 injected failures, 1000 success/move, guard move/commit, pool saturation
+
+=== PASS systems_practice/daily/2026-09-26/run.sh 0.8s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-26/build/cpu
+[ 50%] Building CXX object CMakeFiles/cpu.dir/src/cpu.cpp.o
+[100%] Linking CXX executable cpu
+[100%] Built target cpu
+CPU oracle PASS 96 shapes/patterns, translation invariance, 4 invalid; GPU untested
+
+=== PASS systems_practice/daily/2026-09-27/run.sh 0.5s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-27/build/cpu
+[ 50%] Building CXX object CMakeFiles/cpu.dir/src/cpu.cpp.o
+[100%] Linking CXX executable cpu
+[100%] Built target cpu
+CPU lease PASS 2 completion orders, context reentry rejected; CUDA/TRT untested
+
+=== PASS systems_practice/daily/2026-09-28/run.sh 1.6s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-28/build/release
+[ 50%] Building CXX object CMakeFiles/edge_deployment.dir/src/main.cpp.o
+[100%] Linking CXX executable edge_deployment
+[100%] Built target edge_deployment
+contracts: invalid=7 stale/replay/failure/close/lifetime PASS
+concurrency: 20000 requests / 1000 publications PASS
+CPU acquire+fixture us/request p50=0.048102 p95=0.048194 warmup=20 samples=100 batch=1000
+
+=== PASS systems_practice/daily/2026-09-29/run.sh 0.6s ===
+<lambda()>’ at /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-29/src/cpu_check.cpp:33:13,
+    inlined from ‘main()::<lambda(auto:1)> [with auto:1 = main()::<lambda()>]’ at /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-29/src/cpu_check.cpp:21:13,
+    inlined from ‘int main()’ at /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-29/src/cpu_check.cpp:32:11:
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-29/src/contract.hpp:23:38: warning: array subscript 1 is outside array bounds of ‘int8_t [1]’ {aka ‘signed char [1]’} [-Warray-bounds=]
+   23 |     out[i] = (static_cast<int>(data[i]) - zero) * scale;
+      |                                ~~~~~~^
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-29/src/cpu_check.cpp: In function ‘int main()’:
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-29/src/cpu_check.cpp:18:17: note: at offset 1 into object ‘value’ of size 1
+   18 |     std::int8_t value = 0;
+      |                 ^~~~~
+[100%] Linking CXX executable cpu_check
+[100%] Built target cpu_check
+PASS affine=1024 invalid=6 lease=1000 (500 exception unwinds) frames=16
+CPU contract only; no NPU performance measured
+
+=== FAIL(127) systems_practice/daily/2026-09-30/run.sh 0.0s ===
+build.sh: 6: clang++: not found
+
+=== PASS systems_practice/daily/2026-10-01/run.sh 2.9s ===
+1 mse=1.64693269e-05
+TRAIN 8/16 step=12 mse=1.70863036e-05
+TRAIN 8/16 step=13 mse=1.80438415e-05
+TRAIN 8/16 step=14 mse=1.88094406e-05
+TRAIN 8/16 step=15 mse=1.85856101e-05
+TRAIN 8/16 step=16 mse=1.82993885e-05
+TRAIN 8/16 step=17 mse=2.04653085e-05
+TRAIN 8/16 step=18 mse=1.92009096e-05
+TRAIN 8/16 step=19 mse=1.8981135e-05
+TRAIN 8/16 step=20 mse=1.84678385e-05
+TRAIN 8/16 step=21 mse=1.96121752e-05
+TRAIN 8/16 step=22 mse=2.03521263e-05
+TRAIN 8/16 step=23 mse=2.23204427e-05
+TRAIN 8/16 step=24 mse=2.12842965e-05
+TRAIN 8/16 step=25 mse=2.10380237e-05
+TRAIN 8/16 step=26 mse=1.93898635e-05
+TRAIN 8/16 step=27 mse=2.18034731e-05
+TRAIN 8/16 step=28 mse=1.92253054e-05
+TRAIN 8/16 step=29 mse=1.98959359e-05
+TRAIN 8/16 step=30 mse=2.08107067e-05
+TRAIN 8/16 step=31 mse=2.11127194e-05
+TRAIN 8/16 step=32 mse=2.2921512e-05
+TRAIN 8/16 step=33 mse=2.16816577e-05
+TRAIN 8/16 step=34 mse=2.09561634e-05
+TRAIN 8/16 step=35 mse=2.2862608e-05
+TRAIN 8/16 step=36 mse=2.28429642e-05
+TRAIN 8/16 step=37 mse=2.41890948e-05
+TRAIN 8/16 step=38 mse=2.28334728e-05
+TRAIN 8/16 step=39 mse=2.16685716e-05
+PASS 20 format/method comparisons; scales/checkpoints fitted without evaluation samples; CPU only, Thor NOT validated
+
+=== PASS systems_practice/daily/2026-10-02/run.sh 2.8s ===
+1 mse=1.64693269e-05
+TRAIN 8/16 step=12 mse=1.70863036e-05
+TRAIN 8/16 step=13 mse=1.80438415e-05
+TRAIN 8/16 step=14 mse=1.88094406e-05
+TRAIN 8/16 step=15 mse=1.85856101e-05
+TRAIN 8/16 step=16 mse=1.82993885e-05
+TRAIN 8/16 step=17 mse=2.04653085e-05
+TRAIN 8/16 step=18 mse=1.92009096e-05
+TRAIN 8/16 step=19 mse=1.8981135e-05
+TRAIN 8/16 step=20 mse=1.84678385e-05
+TRAIN 8/16 step=21 mse=1.96121752e-05
+TRAIN 8/16 step=22 mse=2.03521263e-05
+TRAIN 8/16 step=23 mse=2.23204427e-05
+TRAIN 8/16 step=24 mse=2.12842965e-05
+TRAIN 8/16 step=25 mse=2.10380237e-05
+TRAIN 8/16 step=26 mse=1.93898635e-05
+TRAIN 8/16 step=27 mse=2.18034731e-05
+TRAIN 8/16 step=28 mse=1.92253054e-05
+TRAIN 8/16 step=29 mse=1.98959359e-05
+TRAIN 8/16 step=30 mse=2.08107067e-05
+TRAIN 8/16 step=31 mse=2.11127194e-05
+TRAIN 8/16 step=32 mse=2.2921512e-05
+TRAIN 8/16 step=33 mse=2.16816577e-05
+TRAIN 8/16 step=34 mse=2.09561634e-05
+TRAIN 8/16 step=35 mse=2.2862608e-05
+TRAIN 8/16 step=36 mse=2.28429642e-05
+TRAIN 8/16 step=37 mse=2.41890948e-05
+TRAIN 8/16 step=38 mse=2.28334728e-05
+TRAIN 8/16 step=39 mse=2.16685716e-05
+PASS 20 format/method comparisons; scales/checkpoints fitted without evaluation samples; CPU only, Thor NOT validated
+
+=== PASS systems_practice/daily/2026-10-02/session-02/run.sh 0.7s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-10-02/session-02/build/cpu
+[ 50%] Building CXX object CMakeFiles/cpu.dir/src/cpu.cpp.o
+[100%] Linking CXX executable cpu
+[100%] Built target cpu
+PASS mapping_cases=196 invalid=4 CPU correctness only
+
+=== PASS systems_practice/daily/2026-10-03/run.sh 0.7s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-10-03/build/cpu
+[ 50%] Building CXX object CMakeFiles/cpu.dir/src/cpu.cpp.o
+[100%] Linking CXX executable cpu
+[100%] Built target cpu
+PASS comparisons=216 invalid=4 zero=1 exact_index_coverage=1
+
+=== PASS systems_practice/daily/2026-10-04/run.sh 2.7s ===
+PASS 800 tasks exactly once; full timeout; close wake/drain; in-flight idle; 3 task errors; 3 constructor rollbacks; 2 invalid shapes
+
+=== PASS systems_practice/daily/2026-10-05/run.sh 1.5s ===
+PASS 36 boundary trials, 3 constructor failures, invalid workers; strides=8,64,128
+workers=1 mode=0 batch_ms_p50=1.20368 p95=1.25602
+workers=1 mode=1 batch_ms_p50=1.20228 p95=1.24814
+workers=1 mode=2 batch_ms_p50=1.20084 p95=1.22487
+workers=1 mode=3 batch_ms_p50=0.24037 p95=0.25038
+workers=2 mode=0 batch_ms_p50=3.95901 p95=4.27973
+workers=2 mode=1 batch_ms_p50=1.20403 p95=1.24144
+workers=2 mode=2 batch_ms_p50=1.20498 p95=1.30088
+workers=2 mode=3 batch_ms_p50=0.248833 p95=0.264694
+workers=4 mode=0 batch_ms_p50=8.01468 p95=8.46197
+workers=4 mode=1 batch_ms_p50=1.20974 p95=2.10469
+workers=4 mode=2 batch_ms_p50=1.2139 p95=1.439
+workers=4 mode=3 batch_ms_p50=0.251704 p95=0.490815
+
+=== FAIL(1) systems_practice/daily/2026-10-06/run.sh 0.0s ===
+g++: error: unrecognized command-line option ‘-fno-vectorize’; did you mean ‘-ftree-vectorize’?
+g++: error: unrecognized command-line option ‘-fno-slp-vectorize’; did you mean ‘-ftree-slp-vectorize’?
+
+=== PASS systems_practice/daily/2026-10-07/run.sh 0.8s ===
+PASS requests=20000 faults=0 invalid_manifests=9 warmup_rollback=1 stale_writer=1 retirement_backpressure=1 close_lease=1
+
+=== PASS systems_practice/daily/2026-10-08/run.sh 0.5s ===
+64 labels length80 growth calls=71 bytes=10264 reserve calls=65 bytes=7744
+PASS failure_points=65 reuse=1000 empty/exhaustion/alignment/rollback
+
+=== PASS systems_practice/daily/2026-10-09/run.sh 0.6s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-10-09/build/cpu
+[ 50%] Building CXX object CMakeFiles/cpu_check.dir/src/cpu_check.cpp.o
+[100%] Linking CXX executable cpu_check
+[100%] Built target cpu_check
+PASS: 8 stable-softmax cases, 2 invalid shapes; CUDA kernels not run on this Mac
+
+=== PASS systems_practice/daily/2026-10-11/run.sh 0.4s ===
+PASS CPU shape/reference cases=24 rejected=5; CUDA/TensorRT not validated
+
+=== PASS systems_practice/daily/2026-10-12/run.sh 0.5s ===
+PASS shapes=45 rejected=5 minimum_extent=35B
+stride_fault_elements=30 double_normalization_fault_elements=45
+CPU correctness only; no NPU/GPU or end-to-end timing
+
+=== PASS systems_practice/daily/2026-10-13/run.sh 0.4s ===
+PASS shapes=216 invalid=3 stale_tile_detected=1; CPU contract only
+
+=== PASS systems_practice/daily/2026-10-14/run.sh 0.8s ===
+PASS independent C++ group INT32/FP16 reference fixtures=28
+
+=== PASS systems_practice/daily/2026-10-15/run.sh 0.4s ===
+PASS CPU index model cases=98 rejections=3 bank sets=1,32 (analytical, not GPU measurement)
+
+=== PASS systems_practice/daily/2026-10-17/run.sh 0.4s ===
+PASS shapes=110 two_mappings exact_coverage zero rejected=4
+
+=== PASS systems_practice/daily/2026-10-18/run.sh 1.7s ===
+capacity=1 accepted=400 successful=395 exceptions=5
+capacity=8 accepted=400 successful=395 exceptions=5
+PASS timeout/ownership/blocked-close/drain/in-flight/startup-rollback rejects=3
+
+=== PASS systems_practice/daily/2026-10-19/run.sh 0.6s ===
+PASS candidates=392 rejections=5 padding/int_exact/empty
+
+=== PASS systems_practice/daily/2026-10-21/run.sh 1.2s ===
+PASS cases=1404 invalid_scales=4 ties/NaN/Inf/tails/offsets/guards
+CPU batch_mean_us n=7 repeats=149796 scalar_p50=0.00815232 neon_p50=0.00812544 scalar_p95=0.00884345 neon_p95=0.00922767
+CPU batch_mean_us n=65 repeats=16131 scalar_p50=0.0565205 neon_p50=0.0320478 scalar_p95=0.0599759 neon_p95=0.032282
+CPU batch_mean_us n=4096 repeats=256 scalar_p50=3.44654 neon_p50=1.91616 scalar_p95=3.46014 neon_p95=1.97725
+CPU batch_mean_us n=1048576 repeats=4 scalar_p50=884.975 neon_p50=505.398 scalar_p95=891.632 neon_p95=516.077
+
+=== PASS systems_practice/daily/2026-10-22/run.sh 0.6s ===
+PASS trials=1000 expiry/full/cancel/late/stale/close/device-error; valid-delivery=1; live=0
+Logical injected timestamps only; no inference latency measurement.
+
+=== PASS systems_practice/daily/2026-10-23/run.sh 0.6s ===
+PASS rollback=2002 readers=20000 publishes=501 lock_free=0
+PASS final_live=0 old_lease_survives_and_reclaims
+
+=== PASS systems_practice/daily/2026-10-26/run.sh 0.4s ===
+PASS frames=200 rejected=283 no_GPU_claim
+
+=== FAIL(2) systems_practice/daily/2026-10-28/run.sh 0.0s ===
+systems_practice/daily/2026-10-28/run.sh: 2: set: Illegal option -o pipefail
+
+=== PASS systems_practice/daily/2026-10-29/run.sh 0.8s ===
+PASS independent C++ group INT32/FP16 reference fixtures=28
+
+=== FAIL(2) systems_practice/os/2026-09-28/run.sh 0.0s ===
+systems_practice/os/2026-09-28/run.sh: 2: set: Illegal option -o pipefail
+
+=== PASS systems_practice/os/2026-09-29/run.sh 0.8s ===
+PASS exec_success parent=2278328 child=2278329 before=99 after=7 errno=0 parent_state=7
+PASS exec_failure parent=2278328 child=2278330 before=99 after=99 errno=2 parent_state=7
+POSIX host observation only; xv6/QEMU/Linux board not tested
+PASS exec_success parent=2278331 child=2278332 before=99 after=7 errno=0 parent_state=7
+PASS exec_failure parent=2278331 child=2278334 before=99 after=99 errno=2 parent_state=7
+POSIX host observation only; xv6/QEMU/Linux board not tested
+
+=== FAIL(127) systems_practice/os/2026-09-30/run.sh 0.0s ===
+build.sh: 5: clang++: not found
+
+=== PASS systems_practice/os/2026-10-01/run.sh 0.6s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+PASS model pc+4, a0 replacement, 31 saved registers, invalid syscall, PC guard
+POSIX read(-1): return=-1 errno=9 EBADF=9 process continues
+PASS model pc+4, a0 replacement, 31 saved registers, invalid syscall, PC guard
+POSIX read(-1): return=-1 errno=9 EBADF=9 process continues
+
+=== PASS systems_practice/os/2026-10-02/run.sh 0.6s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+PASS model pc+4, a0 replacement, 30 preserved writable registers + x0 constant, invalid syscall, PC guard
+POSIX read(-1): return=-1 errno=9 EBADF=9 process continues
+PASS model pc+4, a0 replacement, 30 preserved writable registers + x0 constant, invalid syscall, PC guard
+POSIX read(-1): return=-1 errno=9 EBADF=9 process continues
+
+=== PASS systems_practice/os/2026-10-02/session-02/run.sh 1.2s ===
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+PASS gets=8014 puts=8014 failures=1 free=8 double_free_rejected=1
+PASS gets=8014 puts=8014 failures=1 free=8 double_free_rejected=1
+
+=== PASS systems_practice/os/2026-10-03/run.sh 0.9s ===
+PASS VPN=[1,2,3] offset=0xabc PA=0x9abc cross_leaf_pages=1025 faults=6 repeated_unmap=1
+PASS VPN=[1,2,3] offset=0xabc PA=0x9abc cross_leaf_pages=1025 faults=6 repeated_unmap=1
+
+=== PASS systems_practice/os/2026-10-04/run.sh 0.4s ===
+PASS 2450 ranges; partial prefix=2; transactional snapshot rollback; readonly write reject; user permission; UINT64_MAX; zero length
+
+=== PASS systems_practice/os/2026-10-05/run.sh 0.4s ===
+PASS 4098 sizes; reserve!=resident; zero-fill; mapping rollback; deferred OOM; shrink holes; overflow; exact end rejected
+
+=== FAIL(1) systems_practice/os/2026-10-06/run.sh 0.0s ===
+g++: error: unrecognized command-line option ‘-fno-vectorize’; did you mean ‘-ftree-vectorize’?
+g++: error: unrecognized command-line option ‘-fno-slp-vectorize’; did you mean ‘-ftree-slp-vectorize’?
+
+=== PASS systems_practice/os/2026-10-07/run.sh 0.4s ===
+PASS protected_updates=40000 exception_unlock=1 nested_initial_states=2 invalid_pop_cases=3
+
+=== PASS systems_practice/os/2026-10-08/run.sh 0.6s ===
+PASS 20000 ordered transfers, 20000 noise notifications, close/drain/reject, three wait schedules
+
+=== PASS systems_practice/os/2026-10-09/run.sh 0.3s ===
+PASS runnable->running, sleeping skipped, no-runnable idle
+
+=== PASS systems_practice/os/2026-10-11/run.sh 0.3s ===
+PASS filled/drained=65536 bytes; EAGAIN, duplicate writer, EOF, EPIPE
+
+=== PASS systems_practice/os/2026-10-12/run.sh 0.4s ===
+PASS increments=20000 refs=0 inversion_rejected=1 exception_released=1 ordered_pair=1
+Host C++ mutex model; no xv6 interrupts/scheduler/device IO executed
+
+=== PASS systems_practice/os/2026-10-13/run.sh 0.4s ===
+PASS dup_offset independent_open rename_old_NEW unlink_nlink0 ENOENT in_place_counterexample
+
+=== PASS systems_practice/os/2026-10-14/run.sh 0.4s ===
+pinned waiter refs=3 eviction rejected
+PASS 20000 serialized updates; waiter pin; exhaustion; invalidate reuse; exception refs=0
+
+=== PASS systems_practice/os/2026-10-15/run.sh 0.2s ===
+crash_after=0 home=1,2 recovery_idempotent=yes
+crash_after=1 home=1,2 recovery_idempotent=yes
+crash_after=2 home=1,2 recovery_idempotent=yes
+crash_after=3 home=11,22 recovery_idempotent=yes
+crash_after=4 home=11,22 recovery_idempotent=yes
+crash_after=5 home=11,22 recovery_idempotent=yes
+crash_after=6 home=11,22 recovery_idempotent=yes
+counterexample header-before-data recovers mixed generation 11,0
+PASS 7 crash points; invalid header rejected; no real power-loss/durability test
+
+=== PASS systems_practice/os/2026-10-17/run.sh 0.5s ===
+PASS 2000 reuse submit!=complete!=reclaim rejected=4 shutdown_lease_released
+
+=== PASS systems_practice/os/2026-10-18/run.sh 0.4s ===
+page_bytes=4096 pages=2048 resident_initial=0
+phase=0 wall_us=13.269 process_cpu_us=17 minor_faults=5 major_faults=0 resident=2048 checksum=0
+phase=1 wall_us=3509.34 process_cpu_us=3496 minor_faults=2048 major_faults=0 resident=2048 checksum=261120
+phase=2 wall_us=20.222 process_cpu_us=21 minor_faults=0 major_faults=0 resident=2048 checksum=261120
+PASS mapping/read/write/rewarm rejects=2
+
+=== PASS systems_practice/os/2026-10-19/run.sh 0.6s ===
+allowed=14 first_allowed=0
+workers=1 jobs=0 launch_join_wall_ms=0.101482 process_cpu_ms=0.043 voluntary=1 involuntary=0 checksum=0
+workers=4 jobs=3 launch_join_wall_ms=0.133194 process_cpu_ms=0.091 voluntary=2 involuntary=0 checksum=253518956102879642
+workers=1 jobs=200000 launch_join_wall_ms=3.60967 process_cpu_ms=2.471 voluntary=1 involuntary=0 checksum=13627763573359682169
+workers=2 jobs=200000 launch_join_wall_ms=1.82368 process_cpu_ms=0.028 voluntary=1 involuntary=0 checksum=13627763573359682169
+workers=4 jobs=200000 launch_join_wall_ms=0.944889 process_cpu_ms=0.049 voluntary=2 involuntary=0 checksum=13627763573359682169
+workers=8 jobs=200000 launch_join_wall_ms=0.585824 process_cpu_ms=0.62 voluntary=7 involuntary=0 checksum=13627763573359682169
+PASS checksum/empty/uneven/rejection; not a latency distribution
+
+=== PASS systems_practice/os/2026-10-21/run.sh 1.2s ===
+PASS trials=40 completed=200 injected_failures=160 in_flight_timeout=40 full/closed/empty_rejections empty_close=1
+
+=== FAIL(1) systems_practice/os/2026-10-22/run.sh 0.5s ===
+src/main.cpp: In function ‘void epoll_case(bool)’:
+src/main.cpp:126:31: error: enumerated and non-enumerated type in conditional expression [-Werror=extra]
+  126 |   ev.events = EPOLLIN | (edge ? EPOLLET : 0);
+      |                          ~~~~~^~~~~~~~~~~~~
+cc1plus: all warnings being treated as errors
+
+=== PASS systems_practice/os/2026-10-23/run.sh 0.3s ===
+PASS contract_model_only cycles=1001 rejected=6 live=0 real_dma=NOT_TESTED
+
+=== PASS systems_practice/os/2026-10-26/run.sh 0.3s ===
+PASS old=model-v1 new=model-v2-longer unlink_survival=1 empty_rejected=1 ENOENT=1 durability_unverified
+
+=== FAIL(2) systems_practice/os/2026-10-28/run.sh 0.0s ===
+systems_practice/os/2026-10-28/run.sh: 2: set: Illegal option -o pipefail
+
+=== PASS systems_practice/os/2026-10-29/run.sh 0.4s ===
+PASS bounded_pipeline done=10 close_reject=1
+
+=== PASS systems_practice/paper/2026-09-21/01-sculpt/run.sh 1.0s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/paper/2026-09-21/01-sculpt/build/cpp-OFF
+[ 50%] Building CXX object CMakeFiles/paper_example.dir/src/example.cpp.o
+[100%] Linking CXX executable paper_example
+[100%] Built target paper_example
+{"kind":"independent_cpp_mechanism_no_training","frozen_bounds":[0,3.1529045145744754],"regularizer_on_pre_activation":{"skew":4.8403097171175,"kurtosis":132.30750994535575,"penalty":167.43860726425899},"minmax":{"mse_all":0.0005875782118789385,"mse_body_x_lt_5":0.00058772514316472973,"outside_bounds":0,"stored_bytes_including_metadata":4016},"percentile_ema":{"mse_all":0.18019809850522195,"mse_body_x_lt_5":6.4661208632781823e-06,"outside_bounds":2,"stored_bytes_including_metadata":4016},"checks":["frozen_bounds","constant_zero","quantile_interpolation"]}
+
+=== PASS systems_practice/paper/2026-09-21/02-edge-deployment/run.sh 1.0s ===
+- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/paper/2026-09-21/02-edge-deployment/build/cpp-OFF
+[ 50%] Building CXX object CMakeFiles/paper_example.dir/src/example.cpp.o
+[100%] Linking CXX executable paper_example
+[100%] Built target paper_example
+{"kind":"independent_cpp_custom_format_not_gguf","cases":[{"case":"baseline","kept_width":1024,"actual_pruned_fraction":0,"storage_mode":"custom_u4","payload_and_scales_bytes":528,"abs_error_vs_original":1.2587713181356714,"abs_storage_error_vs_pruned_reference":1.2587713181356714},{"case":"prune_target_10pct","kept_width":922,"actual_pruned_fraction":0.099609375,"storage_mode":"fp16_fallback","payload_and_scales_bytes":1844,"abs_error_vs_original":8.5244198267556506,"abs_storage_error_vs_pruned_reference":0.00089988774462668175},{"case":"round_down_to_aligned_width","kept_width":768,"actual_pruned_fraction":0.25,"storage_mode":"custom_u4","payload_and_scales_bytes":396,"abs_error_vs_original":7.3877703097021223,"abs_storage_error_vs_pruned_reference":0.46909880895463907}],"checks":["zero_block","unaligned_tail","exact_nibble_roundtrip","actual_byte_lengths","empty_rejected"]}
+
+=== PASS systems_practice/paper/2026-09-22/01-real-q/run.sh 1.0s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/paper/2026-09-22/01-real-q/build/cpp-OFF
+[ 50%] Building CXX object CMakeFiles/paper_example.dir/src/example.cpp.o
+[100%] Linking CXX executable paper_example
+[100%] Built target paper_example
+{"scope":"C++ scalar mechanism only; no GPTQ compensation, real NLL Fisher, sliding transformer window, packed GEMM or full paper reproduction","calibration_loss_before":0.0560317309298001,"calibration_loss_after":0.029214557247318425,"evaluation_loss_before":0.036073880612815232,"evaluation_loss_after":0.019023492352781793,"max_gradient_check_error":1.6294354754364804e-11,"locked_columns_unchanged":true,"actual_updated_parameters":4,"same_euclidean_norm_penalty":{"aligned":2.5,"opposed":0.5}}
+
+=== PASS systems_practice/paper/2026-09-22/02-ests/run.sh 1.9s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/paper/2026-09-22/02-ests/build/cpp-OFF
+[ 50%] Building CXX object CMakeFiles/paper_example.dir/src/example.cpp.o
+[100%] Linking CXX executable paper_example
+[100%] Built target paper_example
+{"scope":"independent C++ scalar example; no recovery SFT, MXFP4, language metric, or hardware speedup","js_scores":[0.12396022088290456,0.009991903404783703,0.22897176480214082],"capacities":[4,2,6],"retained_original_ids":[[0,1,2,3],[0,1],[0,1,2,3,4,5]],"full_fp32_payload_bytes":288,"pruned_fp32_payload_bytes":192,"active_experts_per_token_before_after":[2,2],"synthetic_output_mse":0.1804548166197571,"capacity_cases_passed":52,"invalid_budgets_rejected":2}
+
+=== PASS systems_practice/paper/2026-09-23/01-qah/run.sh 0.1s ===
+0,
+          "train_kl": 0.11636705143030054
+        }
+      ],
+      "max_parameter_update": 0.04561441613235573,
+      "validation_kl": 0.2153870578026283,
+      "test_kl": 0.27642792737980726,
+      "chunk_vs_dense_abs": 0.0
+    },
+    "recovered_teacher": {
+      "train_trace": [
+        {
+          "step": 1,
+          "train_kl": 0.0009643723871246624
+        },
+        {
+          "step": 50,
+          "train_kl": 0.000677088652378476
+        },
+        {
+          "step": 150,
+          "train_kl": 0.002023176651528237
+        }
+      ],
+      "max_parameter_update": 0.04489942193287344,
+      "validation_kl": 0.2138588508448338,
+      "test_kl": 0.2732913826625933,
+      "chunk_vs_dense_abs": 0.0
+    },
+    "hard_labels": {
+      "train_trace": [
+        {
+          "step": 1,
+          "train_kl": 0.8612216350689872
+        },
+        {
+          "step": 50,
+          "train_kl": 0.7705295481122234
+        },
+        {
+          "step": 150,
+          "train_kl": 0.7652160055552838
+        }
+      ],
+      "max_parameter_update": 0.5043165370854492,
+      "validation_kl": 0.2686122130975537,
+      "test_kl": 0.3497410894391456,
+      "chunk_vs_dense_abs": 0.0
+    }
+  }
+}
+
+=== PASS systems_practice/paper/2026-09-23/02-fisher-distance/run.sh 0.0s ===
+: 0.3174575312568348,
+      "trapezoid_length": 0.31862884521515256
+    },
+    {
+      "coordinate": 2,
+      "nodes": 9,
+      "paper_rms": 0.3194840964755565,
+      "trapezoid_length": 0.3199412353099796
+    },
+    {
+      "coordinate": 2,
+      "nodes": 33,
+      "paper_rms": 0.3199905611465044,
+      "trapezoid_length": 0.3200228729942565
+    }
+  ],
+  "pruning": {
+    "magnitude": {
+      "scores": [
+        1.5,
+        0.2,
+        0.7
+      ],
+      "removed_coordinate": 1,
+      "heldout_kl": 0.041801300940917725
+    },
+    "fisher_only": {
+      "scores": [
+        0.00590050556141512,
+        2.0639087341937006,
+        0.1832522617110687
+      ],
+      "removed_coordinate": 0,
+      "heldout_kl": 0.005015367848404694
+    },
+    "one_shot": {
+      "scores": [
+        0.11522212249904104,
+        0.287326207241435,
+        0.2996558162933328
+      ],
+      "removed_coordinate": 0,
+      "heldout_kl": 0.005015367848404694
+    },
+    "coordinate_path": {
+      "scores": [
+        0.1160103732886095,
+        0.3045749325452241,
+        0.3194840964755565
+      ],
+      "removed_coordinate": 0,
+      "heldout_kl": 0.005015367848404694
+    }
+  },
+  "boundary_checks": "PASS"
+}
+
+=== PASS systems_practice/paper/2026-09-24/01-bridge/run.sh 0.0s ===
+{
+  "path": [
+    {
+      "restored": 5,
+      "kept": 1,
+      "cal_mse": 24.43033562712139,
+      "heldout_mse": 14.562779731714143
+    },
+    {
+      "restored": 4,
+      "kept": 2,
+      "cal_mse": 10.802830152179988,
+      "heldout_mse": 6.095272844279125
+    },
+    {
+      "restored": 2,
+      "kept": 3,
+      "cal_mse": 5.17785730241657,
+      "heldout_mse": 6.236198985415326
+    },
+    {
+      "restored": 1,
+      "kept": 4,
+      "cal_mse": 0.21404865459352804,
+      "heldout_mse": 0.3138364568591224
+    },
+    {
+      "restored": 3,
+      "kept": 5,
+      "cal_mse": 0.04551321459123205,
+      "heldout_mse": 0.038506208013325396
+    },
+    {
+      "restored": 0,
+      "kept": 6,
+      "cal_mse": 0.0,
+      "heldout_mse": 0.0
+    }
+  ],
+  "training_updates": 0,
+  "scope": "greedy restoration only; not BRIDGE policy"
+}
+
+=== PASS systems_practice/paper/2026-09-24/02-bayes/run.sh 0.9s ===
+max_error=1.38778e-17 original_values=10 merged_values=20 padding_values=10
+max_error=0 original_values=10 merged_values=20 padding_values=10
+
+=== PASS systems_practice/paper/2026-09-25/01-porta/run.sh 0.0s ===
+{
+  "variance": [
+    9.564585851910356e-05,
+    4.0785992398771596,
+    0.1521287520249194
+  ],
+  "scores": [
+    9.564585851910357e-06,
+    4.0785992398771596,
+    0.04563862560747582
+  ],
+  "variance_keep": 1,
+  "mean_magnitude_keep": 0,
+  "heldout_mse_by_single_kept_channel": {
+    "0": 3.320974652567821,
+    "1": 1.0045662824273482,
+    "2": 3.862765314508538
+  },
+  "training_updates": 0
+}
+
+=== PASS systems_practice/paper/2026-09-25/02-twinquant/run.sh 0.0s ===
+{
+  "selected_G": 0.25,
+  "calibration_scores": [
+    [
+      0.2396205057400629,
+      0.25
+    ],
+    [
+      0.2396205057400629,
+      0.5
+    ],
+    [
+      0.47626030370110406,
+      1
+    ],
+    [
+      3.49877435939866,
+      2
+    ],
+    [
+      21.740924620026473,
+      4
+    ]
+  ],
+  "test_mse_baseline": 0.542150141119502,
+  "test_mse_scaled": 0.27817285624694105,
+  "training_updates": 0,
+  "scope": "grid search; no manifold optimizer, no SVD or CUDA"
+}
+
+=== PASS systems_practice/paper/2026-09-26/01-alphaq/run.sh 0.0s ===
+{
+  "alpha": [
+    1.6968534938244006,
+    4.149082688439194,
+    2.061633772642998
+  ],
+  "bits": [
+    4,
+    2,
+    4
+  ],
+  "payload_budget_bits": 96,
+  "used_bits": 96,
+  "objective": 0.0390239412069643,
+  "uniform3_objective": 0.06292906717498943,
+  "scope": "nominal bit budget only; no packed model or inference"
+}
+
+=== PASS systems_practice/paper/2026-09-26/02-qdeq/run.sh 0.0s ===
+{
+  "coefficients": [
+    1.0,
+    -0.19999999999999996
+  ],
+  "local_energy": 0.0009999999999955609,
+  "actual_energy": 0.0010000000000000018,
+  "initial_energy": 0.32499999999999996,
+  "codes_enumerated": 256,
+  "training_updates": 0,
+  "scope": "one local step; no implicit backward or W8A8 training"
+}
+
+=== PASS systems_practice/paper/2026-09-27/01-edge-distill/run.sh 0.0s ===
+{
+  "distance_mse_rotated": 0.0,
+  "teacher_anchored_nce_rotated": 1.6265233750364456,
+  "teacher_anchored_nce_aligned": 0.6265233750364456,
+  "training_updates": 0,
+  "scope": "loss invariance counterexample; no QAT or cross-attention training"
+}
+
+=== PASS systems_practice/paper/2026-09-27/02-basc/run.sh 0.0s ===
+{
+  "sweep": [
+    {
+      "alpha": 0.25,
+      "weight_mse": 0.030270720498001114,
+      "cal_spike_mismatch": 11,
+      "test_spike_mismatch": 14
+    },
+    {
+      "alpha": 0.35,
+      "weight_mse": 0.013275978533980442,
+      "cal_spike_mismatch": 16,
+      "test_spike_mismatch": 15
+    },
+    {
+      "alpha": 0.45,
+      "weight_mse": 0.00302308899427224,
+      "cal_spike_mismatch": 4,
+      "test_spike_mismatch": 6
+    },
+    {
+      "alpha": 0.55,
+      "weight_mse": 0.0017529944713588236,
+      "cal_spike_mismatch": 7,
+      "test_spike_mismatch": 7
+    },
+    {
+      "alpha": 0.65,
+      "weight_mse": 0.008615381160641334,
+      "cal_spike_mismatch": 7,
+      "test_spike_mismatch": 8
+    },
+    {
+      "alpha": 0.75,
+      "weight_mse": 0.005929586547677404,
+      "cal_spike_mismatch": 4,
+      "test_spike_mismatch": 6
+    },
+    {
+      "alpha": 0.85,
+      "weight_mse": 0.0068465992921661915,
+      "cal_spike_mismatch": 4,
+      "test_spike_mismatch": 9
+    }
+  ],
+  "selected_on_calibration": 0.45,
+  "training_updates": 0,
+  "scope": "scale sweep only; no TSC surrogate-gradient training or BIC pruning"
+}
+
+=== PASS systems_practice/paper/2026-09-28/01-rift/run.sh 0.0s ===
+{
+  "selected_tokens": [
+    16,
+    16,
+    64,
+    64
+  ],
+  "kept": [
+    1,
+    2,
+    3
+  ],
+  "synthetic_recall": 1.0,
+  "shifted_recall": 0.6666666666666666,
+  "monotone_cases": 4,
+  "rejected": 2,
+  "real_energy_measured": false,
+  "predictor_trained": false,
+  "full_paper_reproduced": false
+}
+
+=== PASS systems_practice/paper/2026-09-28/02-rate-distortion/run.sh 0.2s ===
+{
+  "SQ": {
+    "train": {
+      "mse_per_vector": 1.1920686745114475,
+      "utilization": 0.375
+    },
+    "heldout": {
+      "mse_per_vector": 1.3598638176859614,
+      "utilization": 0.1875
+    }
+  },
+  "PQ": {
+    "train": {
+      "mse_per_vector": 0.4148379964704562,
+      "utilization": 0.375
+    },
+    "heldout": {
+      "mse_per_vector": 0.4513490182786027,
+      "utilization": 0.375
+    }
+  },
+  "VQ": {
+    "train": {
+      "mse_per_vector": 0.13480702181038148,
+      "utilization": 0.375
+    },
+    "heldout": {
+      "mse_per_vector": 0.14715052276227375,
+      "utilization": 0.375
+    }
+  },
+  "bits_per_vector": 4.0,
+  "heldout_nominal_bits": 512,
+  "codebook_float_count": {
+    "SQ": 8,
+    "PQ": 16,
+    "VQ": 64
+  },
+  "vq_center_updates": 33,
+  "serialized_packed_stream": false,
+  "zero_empty_cluster_check": true,
+  "full_paper_reproduced": false
+}
+
+=== PASS systems_practice/paper/2026-09-29/01-overrep/run.sh 0.1s ===
+step 0 alpha 0.0 train_loss 0.07931104917232353
+step 19 alpha 0.95 train_loss 0.16231127315136878
+step 199 alpha 7.6e-05 train_loss 1.2804271438917294e-05
+step 239 alpha 0.0 train_loss 5.399304226054659e-08
+PASS initial_eval 0.07944333209762935 final_eval 6.860634352844259e-08 merge_max_abs 1.1102230246251565e-16 alpha1_merge_gap 0.7794722880234904
+240 actual updates; FP64 Python arithmetic; no model/board performance claim
+
+=== PASS systems_practice/paper/2026-09-29/02-gradcodes/run.sh 0.0s ===
+step 0 codes [2, 1] scale [0.9846741533352393, 0.9944937392811624] train_loss 0.18458170402849639
+step 19 codes [3, 0] scale [0.810123849322342, 0.7857670181300025] train_loss 0.007036167318618356
+step 79 codes [3, 0] scale [0.705676192062973, 0.70035340139386] train_loss 9.377167595691626e-06
+PASS changes 2 initial_eval 0.5218869950664744 final_eval 1.1091441591050057e-05 code_bytes 1 metadata_bytes 24
+80 scale updates; guided local Bernoulli candidates, not author sampler; no low-bit kernel speed claim
+
+=== PASS systems_practice/paper/2026-09-30/01-writeback/run.sh 0.0s ===
+{
+  "steps": 60,
+  "reference_final": 0.6,
+  "naive_final": 0.0,
+  "feedback_final": 0.5714285714285714,
+  "feedback_residual": 0.028571428571429136,
+  "naive_writes": 0,
+  "feedback_writes": 4,
+  "naive_rmse": 0.3507373186113315,
+  "feedback_rmse": 0.040527978074445324,
+  "one_state_actual_payload_bytes": 5,
+  "logical_bits_per_state_plus_residual": 36,
+  "training_updates": 0,
+  "scope": "scalar recurrence, no GRU/task/hardware performance"
+}
+
+=== PASS systems_practice/paper/2026-09-30/02-group-risk/run.sh 0.0s ===
+{
+  "pooled_observations": [
+    [
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0
+    ]
+  ],
+  "opposite_winners": [
+    1,
+    0
+  ],
+  "slack_identity_checks": 729,
+  "separable_upper_bound": 6,
+  "complete_mask_worst": 3,
+  "selected_on_tune": 1,
+  "heldout_risk": 0.9,
+  "training_updates": 0,
+  "scope": "synthetic risk tables, no LLM inference or speedup"
+}
+
+=== PASS systems_practice/paper/2026-10-01/01-joint-search/run.sh 0.0s ===
+{"joint": ["wide", 4, 3.0, 0.15], "sequential": ["narrow", 4, 2.0, 0.8], "mask_equivalence": true, "expected_cost": 3.2, "discrete_cost": 4, "cost_unit": "synthetic, not latency", "training_updates": 0}
+
+=== PASS systems_practice/paper/2026-10-01/02-debias/run.sh 0.0s ===
+{"cases": [{"alpha": 0, "H": [[12.0, 0.0], [0.0, 4.0]], "scores": [1.5, 2.0], "pruned_index": 0, "weights": [0.0, 1.0], "objective": 1.5}, {"alpha": 1, "H": [[60.0, 0.0], [0.0, 4.0]], "scores": [7.5, 2.0], "pruned_index": 1, "weights": [0.5, 0.0], "objective": 2.0}], "objective_identity": true, "singular_rejected": true, "interpretation": "preserves paired response differences, not guaranteed social fairness"}
+
+=== PASS systems_practice/paper/2026-10-02/01-debias/run.sh 0.0s ===
+{
+  "results": [
+    {
+      "alpha": 0.0,
+      "hessian": [
+        [
+          10.1,
+          0.0
+        ],
+        [
+          0.0,
+          10.1
+        ]
+      ],
+      "scores": [
+        5.05,
+        3.2320000000000007
+      ],
+      "pruned": 1,
+      "objective": 3.2320000000000015
+    },
+    {
+      "alpha": 1.0,
+      "hessian": [
+        [
+          10.1,
+          0.0
+        ],
+        [
+          0.0,
+          50.1
+        ]
+      ],
+      "scores": [
+        5.05,
+        16.032000000000004
+      ],
+      "pruned": 0,
+      "objective": 5.05
+    }
+  ],
+  "identical_pair_and_singular_checks": "PASS",
+  "scope": "CPU independent 2D quadratic model"
+}
+
+=== PASS systems_practice/paper/2026-10-02/02-damp/run.sh 0.0s ===
+{
+  "injection_energy": [
+    4.0,
+    1.0,
+    0.1,
+    0.05
+  ],
+  "retention": [
+    0.1,
+    0.99,
+    0.8,
+    0.5
+  ],
+  "risk": [
+    4.040404040404041,
+    50.25125628140696,
+    0.2777777777777779,
+    0.06666666666666667
+  ],
+  "finite_impulse_energy": [
+    4.04040404040404,
+    50.25125628140685,
+    0.27777777777777773,
+    0.06666666666666665
+  ],
+  "protect_energy": 0,
+  "protect_risk": 1,
+  "remaining_energy_only": 50.5957007258514,
+  "remaining_risk": 4.384848484848486,
+  "common_decay_and_unit_boundary": "PASS",
+  "scope": "CPU scalar proxy; no measured compression or model accuracy"
+}
+
+=== PASS systems_practice/paper/2026-10-02/03-gsq/run.sh 0.0s ===
+{
+  "steps": 600,
+  "initial_scale": 0.8,
+  "final_scale": 0.8009117152290246,
+  "finite_difference_max_error": 1.0503872077682885e-12,
+  "hard_codes": [
+    1,
+    1,
+    2,
+    3
+  ],
+  "hard_mse": 0.04055503720289447,
+  "payload_bytes": 5,
+  "fp32_weights_bytes": 16,
+  "boundary": "four weights only; stochastic soft training and real 2-bit packing; no model reconstruction or native kernel"
+}
+
+=== PASS systems_practice/paper/2026-10-03/01-optq/run.sh 0.0s ===
+{
+  "grid_results": [
+    {
+      "lambda": 0.0,
+      "q": [
+        0.0,
+        1.0
+      ],
+      "calibration": 0.0010000000000000018,
+      "validation": 0.5000666666666667
+    },
+    {
+      "lambda": 0.1,
+      "q": [
+        0.0,
+        1.0
+      ],
+      "calibration": 0.0010000000000000018,
+      "validation": 0.5000666666666667
+    },
+    {
+      "lambda": 1.0,
+      "q": [
+        0.0,
+        1.0
+      ],
+      "calibration": 0.0010000000000000018,
+      "validation": 0.5000666666666667
+    },
+    {
+      "lambda": 10.0,
+      "q": [
+        0.0,
+        1.0
+      ],
+      "calibration": 0.0010000000000000018,
+      "validation": 0.5000666666666667
+    },
+    {
+      "lambda": 1000.0,
+      "q": [
+        0.0,
+        0.0
+      ],
+      "calibration": 2.401,
+      "validation": 0.16006666666666666
+    }
+  ],
+  "chosen_on_validation": {
+    "lambda": 1000.0,
+    "q": [
+      0.0,
+      0.0
+    ],
+    "calibration": 2.401,
+    "validation": 0.16006666666666666
+  },
+  "heldout_mse": 0.48019999999999996,
+  "nullspace_empirical": 0.0,
+  "isotropic_population": 2.0,
+  "not_OPTQ_replication": true
+}
+
+=== PASS systems_practice/paper/2026-10-03/02-coec/run.sh 0.0s ===
+{
+  "one_sided_test": 0.30945977853425055,
+  "two_sided_test": 0.0,
+  "selected_test": 0.0,
+  "angles": [
+    0.4,
+    -0.6
+  ],
+  "preserved_frobenius_sq": 4.25,
+  "scale_mismatch_error_lower_bound": 0.9600637960155471,
+  "not_full_COEC": true
+}
+
+=== PASS systems_practice/paper/2026-10-04/01-hope/run.sh 0.0s ===
+{
+  "selected": [
+    0,
+    2
+  ],
+  "diagonal": [
+    0,
+    1
+  ],
+  "calibration_full": 0.8133333333333332,
+  "calibration_diagonal": 1.3333333333333333,
+  "heldout_full": 16.81,
+  "heldout_diagonal": 0.04000000000000001,
+  "conditional_objective": 2.44,
+  "status": "PASS; shifted heldout can regress; surrogate only; no model accuracy or pruning speed"
+}
+
+=== PASS systems_practice/paper/2026-10-04/02-dquant/run.sh 0.1s ===
+{
+  "nearest_bits": 18,
+  "nearest_error": 0.7000000000000001,
+  "drift_bits": 16,
+  "drift_error": 2.7,
+  "oracle_error": 2.7,
+  "actual_payload_bytes": 2,
+  "format_note": "fixed shared codebook; count/scale metadata excluded; NOT total KV BPV",
+  "status": "PASS roundtrip/infeasible; scalar prefix-code demonstration, not D-Quant replication"
+}
+
+=== PASS systems_practice/paper/2026-10-05/01-flexposit/run.sh 0.0s ===
+{
+  "independent_not_author_code": true,
+  "posit4_es1_levels": [
+    -16.0,
+    -4.0,
+    -2.0,
+    -1.0,
+    -0.5,
+    -0.25,
+    -0.0625,
+    0.0,
+    0.0625,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    16.0
+  ],
+  "calibration_squared_errors_4_5": [
+    [
+      0.05252499999999999,
+      0.0031500000000000013
+    ],
+    [
+      0.09020781250000003,
+      0.04010039062499998
+    ],
+    [
+      0.0006405703124999996,
+      3.910699462890632e-05
+    ],
+    [
+      0.125,
+      0.0625
+    ]
+  ],
+  "upgrade_config": [
+    0,
+    0,
+    0,
+    1
+  ],
+  "mean_bits": 4.25,
+  "calibration_loss": 0.20587338281250003,
+  "shifted_loss_frozen_config": 4.2114343750000005,
+  "payload_bits_theoretical": 68,
+  "packed_export_implemented": false
+}
+
+=== PASS systems_practice/paper/2026-10-05/02-tlm/run.sh 0.0s ===
+{
+  "fixed": {
+    "actual_steps": 2000,
+    "weights": [
+      0.9999999999887027,
+      0.9999999999887027,
+      1.23591707524307e-11,
+      1.23591707524307e-11
+    ],
+    "prefix_coverage": [
+      0,
+      1000,
+      0,
+      1000
+    ],
+    "heldout_mse_by_depth": [
+      0.36284222125044574,
+      1.8523662395649586e-22,
+      3.801235265763047e-23,
+      1.636354528798501e-24
+    ]
+  },
+  "uniform": {
+    "actual_steps": 2000,
+    "weights": [
+      1.994099838528597,
+      0.00995445541491967,
+      -0.006426075653812083,
+      0.0021407116401018765
+    ],
+    "prefix_coverage": [
+      438,
+      538,
+      503,
+      521
+    ],
+    "heldout_mse_by_depth": [
+      1.2631229076884608e-05,
+      5.964146218421113e-06,
+      2.0411139382134114e-06,
+      1.9373371633394284e-08
+    ]
+  },
+  "prefix_gradient_receipt_probability": [
+    1.0,
+    0.75,
+    0.5,
+    0.25
+  ],
+  "scope": "linear toy; no language PPL, no hardware speedup"
+}
+
+=== PASS systems_practice/paper/2026-10-06/01-irekogpt/run.sh 0.0s ===
+{
+  "lambda_selected_on_tune": 0.01,
+  "weights": [
+    2.433190510317494,
+    0.39338815066666033
+  ],
+  "results": {
+    "iid": {
+      "1": {
+        "baseline": 2.72045781261324,
+        "ridge": 0.37089127727596594
+      },
+      "2": {
+        "baseline": 0.0,
+        "ridge": 0.28861388625594786
+      }
+    },
+    "shifted": {
+      "1": {
+        "baseline": 2.6839829848855867,
+        "ridge": 7.928719776933926
+      },
+      "2": {
+        "baseline": 0.0,
+        "ridge": 6.2436218733574265
+      }
+    }
+  },
+  "actual_closed_form_parameter_update": true,
+  "full_model_reproduction": false
+}
+
+=== PASS systems_practice/paper/2026-10-06/02-s2prune/run.sh 0.0s ===
+{
+  "cases": 39,
+  "allocation": [
+    1,
+    1,
+    2,
+    4
+  ],
+  "coverage_regions": 4,
+  "global_top_coverage": 2,
+  "retained_hidden_fp16_bytes": 1024,
+  "full_hidden_fp16_bytes": 2048,
+  "index_int32_bytes": 32,
+  "no_task_accuracy_or_kernel_speed_claim": true
+}
+
+=== PASS systems_practice/paper/2026-10-07/01-prune-budget/run.sh 0.1s ===
+{
+  "parent_steps": 200,
+  "parent": [
+    1.9986414269528516,
+    -0.4996264036753363,
+    0.02133634306978533
+  ],
+  "results": [
+    {
+      "name": "pruned_retrain",
+      "steps": 40,
+      "test_mse": 0.002063446274000484,
+      "weights": [
+        2.0031179296045982,
+        -0.5650499480134455,
+        0.0
+      ]
+    },
+    {
+      "name": "scratch_equal_retrain",
+      "steps": 40,
+      "test_mse": 0.010251528320077037,
+      "weights": [
+        2.006763919526343,
+        -0.19779102709853907,
+        0.0
+      ]
+    },
+    {
+      "name": "scratch_total_steps",
+      "steps": 240,
+      "test_mse": 0.0013638448993255853,
+      "weights": [
+        2.002514686009449,
+        -0.6258138704164766,
+        0.0
+      ]
+    }
+  ],
+  "checks": "PASS real updates, fixed mask, independent tune/test",
+  "caution": "equal steps is a toy budget, not compute/token equivalence; parent cost remains 200"
+}
+
+=== PASS systems_practice/paper/2026-10-07/02-deployment-gap/run.sh 0.0s ===
+{
+  "results": [
+    {
+      "weight": 0.76,
+      "quantized": 1.0,
+      "changed_indices": [
+        4
+      ],
+      "certified_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "max_abs": 0.30000000000000004
+    },
+    {
+      "weight": 1.24,
+      "quantized": 1.0,
+      "changed_indices": [
+        3
+      ],
+      "certified_indices": [
+        0,
+        1,
+        4
+      ],
+      "max_abs": 0.30000000000000004
+    }
+  ],
+  "checks": "PASS frozen quantizer cell and margin gate",
+  "scope": "no training, no attack model, no author artifact replication"
+}
+
+=== PASS systems_practice/paper/2026-10-08/01-gdn/run.sh 0.0s ===
+{
+  "alternating_key_impulse_norm": 4.177199746236069e-13,
+  "fixed_key_impulse_norm": 0.7740428188605086,
+  "reference": [
+    1.5,
+    -5.0
+  ],
+  "bad_fused": [
+    3.75,
+    -5.0
+  ],
+  "fixed_fused": [
+    1.5,
+    -5.0
+  ],
+  "uncontrolled_alpha_growth": 2.7169239322355936,
+  "scope": "Python CPU algebra only; no NVFP4/LLM/Thor execution"
+}
+
+=== PASS systems_practice/paper/2026-10-08/02-putri/run.sh 0.0s ===
+{
+  "kept_channel": 0,
+  "before_weight": 1.0,
+  "updated_weight": 2.6071781493364665,
+  "lambda": 0,
+  "test_mse_before": 0.8076480832273519,
+  "test_mse_after": 0.0036554767081438152,
+  "shift_mse_before": 0.9916868023726783,
+  "shift_mse_after": 3.9822761366776347,
+  "parameters_before": 2,
+  "parameters_after": 1,
+  "scope": "independent CPU least squares, no GQA pruning/LLM/Thor run"
+}
+
+=== PASS systems_practice/paper/2026-10-09/01-g2ptq/run.sh 0.0s ===
+PASS gradient=9.0 clipped_step=2.0
+
+=== PASS systems_practice/paper/2026-10-09/02-edgevln/run.sh 0.0s ===
+PASS memory/latency budget selects int4 candidate
+
+=== PASS systems_practice/paper/2026-10-11/01-wrp/run.sh 0.0s ===
+{
+  "cka_column_permutation": 0.9999999999999977,
+  "unpermuted_input_output_squared_error": 41.0,
+  "zero_gram_similarity": 0,
+  "empty_rejected": true,
+  "scope": "CPU algebra only; no model pruning, training, timing or device result"
+}
+
+=== PASS systems_practice/paper/2026-10-11/02-toga/run.sh 0.0s ===
+{
+  "joint_bits": [
+    4,
+    4,
+    4,
+    0
+  ],
+  "sequential_bits": [
+    4,
+    4,
+    4,
+    0
+  ],
+  "logical_bits_excluding_metadata": [
+    12,
+    12
+  ],
+  "calibration_mse": [
+    0.010678571428571431,
+    0.010678571428571431
+  ],
+  "heldout_mse": [
+    0.09300340136054426,
+    0.09300340136054426
+  ],
+  "shifted_mse": [
+    14.44,
+    14.44
+  ],
+  "zero_budget_rejected": true,
+  "scope": "exhaustive CPU numerical model; no packing, training updates, CUDA kernel or task accuracy"
+}
+
+=== PASS systems_practice/paper/2026-10-12/01-razor/run.sh 0.0s ===
+{
+  "identity_checks": 1000,
+  "same_norm_case_a": [
+    0.49999999999999994,
+    1.9999999999999998,
+    1.4999999999999998
+  ],
+  "same_norm_case_b": [
+    3.8333333333333326,
+    1.333333333333333,
+    5.166666666666666
+  ],
+  "refill_exact_compensation": 0.0,
+  "zero_mass_rejected": true,
+  "scope": "independent CPU scalar formula; no model training, pruning export, or hardware timing"
+}
+
+=== PASS systems_practice/paper/2026-10-12/02-coreprune/run.sh 0.0s ===
+{
+  "subset_identities": 16,
+  "static_keep": [
+    2,
+    3
+  ],
+  "static_error": 0.37071428571428566,
+  "conditional_keep": [
+    0,
+    1
+  ],
+  "conditional_error": 0.1650000000000001,
+  "exhaustive_optimum": 0.1650000000000001,
+  "negative_rescue_marginals": [
+    [
+      [
+        0,
+        1
+      ],
+      1,
+      -0.07451298701298698
+    ],
+    [
+      [
+        0,
+        2
+      ],
+      0,
+      -0.4283642224012892
+    ],
+    [
+      [
+        0,
+        2
+      ],
+      2,
+      -0.21447384806973824
+    ],
+    [
+      [
+        1,
+        3
+      ],
+      1,
+      -0.04899193548387093
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      2,
+      -0.40124999999999983
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      3,
+      -0.4941176470588235
+    ]
+  ],
+  "all_removed_rejected": true,
+  "scope": "one head/receiver, fixed attention, B=1 rescue; no depth refresh or full model reproduction"
+}
+
+=== PASS systems_practice/paper/2026-10-13/01-scaling/run.sh 0.0s ===
+{
+  "synthetic_holdout_max_error": 0.0,
+  "sign_changing_QA_error": 0.11176470588235292,
+  "domain_rejections": 3,
+  "chosen": "int4",
+  "fixed_int4_priority_regret": 0.0,
+  "timing": "not measured",
+  "full_model_reproduced": false
+}
+
+=== PASS systems_practice/paper/2026-10-13/02-p4q/run.sh 0.1s ===
+{
+  "dense_calibration_scale": 1.2230096989676187,
+  "retained_calibration_scale": 1.125328396516977,
+  "heldout_retained_mse": {
+    "dense": 0.24491047670365748,
+    "retained": 0.27211906158336885
+  },
+  "shifted_retained_mse": {
+    "dense": 0.1514811329450056,
+    "retained": 0.12028041209245446
+  },
+  "changed_support_samples": 15,
+  "boundary": "budgets 0,10,11 + no mutation pass",
+  "packed_storage": false,
+  "training_updates": 0
+}
+
+=== PASS systems_practice/paper/2026-10-14/01-dbw/run.sh 0.0s ===
+{
+  "ideal": [
+    5.1063829787234045,
+    2.269503546099291,
+    0.5673758865248227,
+    0.056737588652482275
+  ],
+  "floor_bits": [
+    5,
+    2,
+    0,
+    0
+  ],
+  "floor_sum": 7,
+  "capped_apportion": [
+    5,
+    2,
+    1,
+    0
+  ],
+  "budget": 8,
+  "discarded_diagonal_energy": 0.010000000000000002,
+  "rejected": 3,
+  "training_updates": false,
+  "gpu_run": false
+}
+
+=== PASS systems_practice/paper/2026-10-14/02-tasq/run.sh 0.0s ===
+{
+  "rows": [
+    {
+      "method": "euclidean",
+      "key_mse": 1.5319025625391987,
+      "diagonal_qk_error": 19.335948304941443,
+      "shifted_query_error": 7.744647009912853,
+      "index_bytes": 16,
+      "codebook_bytes": 32,
+      "file_bytes": 48
+    },
+    {
+      "method": "query_weighted",
+      "key_mse": 4.136467033155647,
+      "diagonal_qk_error": 1.751080445096158,
+      "shifted_query_error": 64.80857041416047,
+      "index_bytes": 16,
+      "codebook_bytes": 32,
+      "file_bytes": 48
+    }
+  ],
+  "learned_query_weights": [
+    18.3877285340299,
+    0.04124054298028968
+  ],
+  "index_bits_per_channel": 1,
+  "actual_bits_per_channel": 3.0,
+  "full_tasq_reproduction": false
+}
+
+=== PASS systems_practice/paper/2026-10-15/01-multialloc/run.sh 0.0s ===
+{
+  "selected_calibration_policy": [
+    6,
+    213,
+    [
+      4,
+      2
+    ],
+    [
+      2,
+      1
+    ]
+  ],
+  "feasible_candidates": 28,
+  "shift_score_of_frozen_policy": 23,
+  "shift_oracle_only_for_diagnosis": [
+    3.5,
+    213,
+    [
+      2,
+      4
+    ],
+    [
+      1,
+      2
+    ]
+  ],
+  "payload_only_bytes": 128,
+  "full_example_bytes": 260,
+  "budget_bytes": 224,
+  "infeasible_rejected": true,
+  "scope": "Analytical toy storage model and synthetic profiles; no packed KV file/model/kernel run"
+}
+
+=== PASS systems_practice/paper/2026-10-15/02-feedback/run.sh 0.0s ===
+{
+  "g": 0.7071067811865476,
+  "trace_plain": 5.0,
+  "trace_joint": 4.0,
+  "trace_bound": 4.0,
+  "better": 755,
+  "worse": 687,
+  "equal": 79,
+  "feedback_overloads": 357,
+  "counterexample": {
+    "w": [
+      -0.95,
+      -0.95
+    ],
+    "plain_error": 0.012500000000000022,
+    "joint_error": 0.21016047348899292,
+    "feedback_overload": false
+  },
+  "scope": "fixed-grid PTQ mechanism; no QAT/model/native backend"
+}
+
+=== PASS systems_practice/paper/2026-10-17/01-aiq/run.sh 0.0s ===
+{
+  "coefficient_A": 203,
+  "coefficient_B": 62,
+  "coefficient_vs_decoded_error": 1.7763568394002505e-15,
+  "quantized_vs_original_dot_error": 0.040097353950800496,
+  "AIQ_weight_rmse": 0.006936852601438747,
+  "uniform8_weight_rmse": 0.006611238149298911,
+  "actual_file_bytes": 44,
+  "fp16_weight_payload_bytes": 64,
+  "cases": "zero + signed pack/reload + integer identity",
+  "performance": "not measured; no GPU execution"
+}
+
+=== PASS systems_practice/paper/2026-10-17/02-kashin/run.sh 0.0s ===
+{
+  "initial_residual": 5.326615696131671,
+  "final_residual": 1.9436262741078873e-14,
+  "factor_quant_nrmse": 0.14563649242042048,
+  "uniform4_nrmse": 0.11294699265717852,
+  "actual_file_bytes": 60,
+  "fp16_payload_bytes": 64,
+  "metadata_bytes": 44,
+  "performance": "not measured; dense educational DCT; not author JAX/H100 reproduction"
+}
+
+=== PASS systems_practice/paper/2026-10-18/01-roleq/run.sh 0.0s ===
+{
+  "oracle_cases": 3,
+  "results": [
+    {
+      "case": "writer_column_structure",
+      "axis": "row",
+      "weight_mse": 24.8875,
+      "file_bytes": 44
+    },
+    {
+      "case": "writer_column_structure",
+      "axis": "column",
+      "weight_mse": 0.63125,
+      "file_bytes": 44
+    },
+    {
+      "case": "transposed_reader_structure",
+      "axis": "row",
+      "weight_mse": 0.63125,
+      "file_bytes": 44
+    },
+    {
+      "case": "transposed_reader_structure",
+      "axis": "column",
+      "weight_mse": 24.8875,
+      "file_bytes": 44
+    }
+  ],
+  "scope": "weight reconstruction only; no rotation/GPTQ/distillation"
+}
+
+=== PASS systems_practice/paper/2026-10-18/02-fpot/run.sh 0.1s ===
+{
+  "results": [
+    {
+      "method": "pot",
+      "scale": 0.10500000000000001,
+      "weight_mse": 0.03853701804073716,
+      "evaluation_mse": 54.173992076466185,
+      "shifted_mse": 73.55804463019533,
+      "file_bytes": 44
+    },
+    {
+      "method": "exact_then_replace",
+      "scale": 0.34500000000000003,
+      "weight_mse": 0.00993705802209774,
+      "evaluation_mse": 10.694575851042824,
+      "shifted_mse": 13.373239316895853,
+      "file_bytes": 44
+    },
+    {
+      "method": "approx_grid",
+      "scale": 0.36000000000000004,
+      "weight_mse": 0.011804136331886865,
+      "evaluation_mse": 11.968571898467493,
+      "shifted_mse": 13.173305184047505,
+      "file_bytes": 44
+    }
+  ],
+  "integer_shift_dot_cases": 62,
+  "negative_odd_demo": {
+    "x": -3,
+    "naive_x_plus_shift": -5,
+    "guard_bit_exact": -4.5
+  },
+  "scope": "CPU numerical experiment; no speed or gate-count measurement"
+}
+
+=== PASS systems_practice/paper/2026-10-19/01-vlm-pruning/run.sh 0.0s ===
+{
+  "bi_scores": [
+    6.938893903907228e-18,
+    0.010593094448352203
+  ],
+  "removed_layer": 0,
+  "eval_mse_before": 0.4423539036924704,
+  "eval_mse_after": 6.191187675760885e-11,
+  "actual_steps": 200,
+  "train_loss_trace": [
+    [
+      1,
+      0.26648103242397553
+    ],
+    [
+      10,
+      0.08638992958847057
+    ],
+    [
+      50,
+      0.0006807415751880417
+    ],
+    [
+      200,
+      3.985088649423382e-11
+    ]
+  ],
+  "projector": [
+    [
+      1.9999856653849395,
+      9.825419521072221e-07
+    ],
+    [
+      9.865304546668032e-06,
+      1.9999982953976734
+    ]
+  ],
+  "zero_norm_rejected": true,
+  "scope": "synthetic CPU mechanism; no task accuracy/hardware performance"
+}
+
+=== PASS systems_practice/paper/2026-10-19/02-metakv/run.sh 0.0s ===
+{
+  "baseline_priority": "fp16",
+  "least_compressed_per_method": "q8",
+  "no_feasible_paper": "A",
+  "no_feasible_source": "B",
+  "drift_predicted_feasible": true,
+  "synthetic_actual_CSR": 0,
+  "rejections": 3,
+  "scope": "synthetic selection only; no compression/predictor training/device timing"
+}
+
+=== PASS systems_practice/paper/2026-10-21/01-apertus/run.sh 0.1s ===
+{
+  "steps": 160,
+  "finite_difference_pass": true,
+  "teacher_top2_mass": 0.7525934949582225,
+  "eval_kl_before": 0.17538118538787906,
+  "eval_kl_after": 0.03756404561414031,
+  "trace_train_loss": [
+    [
+      1,
+      0.9157003413239594
+    ],
+    [
+      41,
+      0.6496880020561229
+    ],
+    [
+      81,
+      0.6325944752734078
+    ],
+    [
+      121,
+      0.626310792060439
+    ],
+    [
+      160,
+      0.6256593737409611
+    ]
+  ],
+  "latent_weights": [
+    [
+      0.8142319830283191,
+      -0.5145146383048981
+    ],
+    [
+      -0.5896097644254451,
+      0.951678056813831
+    ],
+    [
+      -0.22462221860287576,
+      -0.4371634185089323
+    ]
+  ],
+  "quantized_weights": [
+    [
+      0.875,
+      -0.5
+    ],
+    [
+      -0.625,
+      0.875
+    ],
+    [
+      -0.25,
+      -0.375
+    ]
+  ],
+  "scope": "CPU arithmetic; fake-quant STE, no packed backend or model reproduction"
+}
+
+=== PASS systems_practice/paper/2026-10-21/02-spectral/run.sh 0.0s ===
+{
+  "rho": [
+    0.9953450773057203,
+    0.001671221538921407,
+    0.0013507918623944703,
+    0.0016329092929638818
+  ],
+  "tune_mse": {
+    "0": 0.8284050854816887,
+    "0.25": 0.25658969918856195,
+    "0.5": 0.03440448486813516,
+    "1": 0.04211657536398219
+  },
+  "selected_alpha": 0.5,
+  "equivalence_max_abs": 3.552713678800501e-15,
+  "results": {
+    "eval": {
+      "absminmax_u2": 0.14760969280190922,
+      "rotation_only": 0.5934253758557363,
+      "selected": 0.02716811548238441
+    },
+    "shift": {
+      "absminmax_u2": 0.15838031990640325,
+      "rotation_only": 0.28450064218661264,
+      "selected": 0.8950138162719012
+    }
+  },
+  "actual_file_bytes": 43,
+  "fp16_weight_payload_bytes": 24,
+  "training_steps": 0,
+  "packed_reload_equal": true,
+  "scope": "u2 minmax RTN, FP64 host MAC; not AutoRound/native lowbit"
+}
+
+=== PASS systems_practice/paper/2026-10-22/01-last/run.sh 0.0s ===
+{
+  "selected": [
+    0,
+    2
+  ],
+  "topk": [
+    0,
+    1
+  ],
+  "rejections": 3,
+  "shift_failure": true,
+  "payload_fp16_bytes": {
+    "full": 16,
+    "selected": 8,
+    "selected_with_u32_indices": 16
+  },
+  "scope": "independent selection only; no VLM accuracy/edge-cloud latency/author code reproduction"
+}
+
+=== PASS systems_practice/paper/2026-10-22/02-spq/run.sh 0.1s ===
+{
+  "numpy": "1.26.4",
+  "rank": 2,
+  "rows": {
+    "eval": {
+      "truncated": 0.15823857494809312,
+      "packed": 0.15912610996033613
+    },
+    "shift": {
+      "truncated": 0.2834933406922694,
+      "packed": 0.640166382005235
+    }
+  },
+  "bytes": {
+    "original_fp16": 128,
+    "packed_file": 88,
+    "int8_payload": 32,
+    "scales": 40,
+    "header": 16,
+    "fp32_shadow_if_retained": 128
+  },
+  "no_training": true,
+  "scope": "independent rank/packing example; no SPQ model/LoRA/Thor reproduction"
+}
+
+=== PASS systems_practice/paper/2026-10-23/01-drq/run.sh 0.0s ===
+{
+  "rec_codes": [
+    0,
+    1
+  ],
+  "robust_codes": [
+    0,
+    0
+  ],
+  "alpha_selected_on_tune": 64,
+  "calibration": [
+    0.0004000000000000007,
+    0.9603999999999999
+  ],
+  "eval": [
+    0.310624511976784,
+    0.36471206881661267
+  ],
+  "shift": [
+    0.7938302661270721,
+    0.0
+  ],
+  "robust_objective": [
+    32.0132,
+    31.693199999999997
+  ],
+  "file_bytes": 6,
+  "fp16_weight_payload_bytes": 4,
+  "limitation": "large alpha; no paper reconstruction-increase guard, no model or device run"
+}
+
+=== PASS systems_practice/paper/2026-10-23/02-pareto/run.sh 0.0s ===
+{
+  "front": [
+    {
+      "mask": [
+        0,
+        0,
+        0
+      ],
+      "params": 0,
+      "cal_kl": 0.00535938722370284
+    },
+    {
+      "mask": [
+        0,
+        0,
+        1
+      ],
+      "params": 4,
+      "cal_kl": 0.00159548470982109
+    },
+    {
+      "mask": [
+        1,
+        0,
+        1
+      ],
+      "params": 8,
+      "cal_kl": 0.00020555322118555447
+    },
+    {
+      "mask": [
+        1,
+        1,
+        1
+      ],
+      "params": 12,
+      "cal_kl": 0.0
+    }
+  ],
+  "chosen": [
+    1,
+    0,
+    1
+  ],
+  "test_kl": 0.0001390027580825368,
+  "file_bytes": 33,
+  "full_fp32_payload_bytes": 48,
+  "cpu_batch31_p50_us": {
+    "full": 105.843,
+    "pruned": 77.213
+  },
+  "scope": "Python CPU synthetic residual network; not attention, BO, LLM or board benchmark"
+}
+
+=== PASS systems_practice/paper/2026-10-26/01-minima/run.sh 0.0s ===
+{
+  "reference": 2.4621171572600096,
+  "stable_merge": 2.4621171572600096,
+  "naive_average": -16.079527207670044,
+  "worst_error_9_cases": 0,
+  "empty_rejected": true,
+  "scope": "Python CPU arithmetic only; no codec, model, training or GPU timing"
+}
+
+=== PASS systems_practice/paper/2026-10-26/02-compress/run.sh 0.0s ===
+{
+  "selected_heads": [
+    1
+  ],
+  "all_head_tokens": [
+    0,
+    5
+  ],
+  "selected_head_tokens": [
+    2,
+    3
+  ],
+  "normal_retained_mass": 0.7,
+  "shift_retained_mass": 0.04,
+  "dense_FP16_KV_payload_bytes": 24,
+  "selected_with_indices_bytes": 12,
+  "invalid_budget_rejected": 2,
+  "scope": "independent CPU toy selection, not author calibration/GQA runtime"
+}
+
+=== FAIL(2) systems_practice/paper/2026-10-28/01-layertrim/run.sh 0.0s ===
+systems_practice/paper/2026-10-28/01-layertrim/run.sh: 2: set: Illegal option -o pipefail
+
+=== FAIL(2) systems_practice/paper/2026-10-28/02-hqp/run.sh 0.0s ===
+systems_practice/paper/2026-10-28/02-hqp/run.sh: 2: set: Illegal option -o pipefail
+
+=== PASS systems_practice/paper/2026-10-29/01-edge-measurement/run.sh 0.0s ===
+{
+  "points": [
+    {
+      "name": "jetson",
+      "latency_ms": 42.0,
+      "energy_j": 5.1,
+      "quality": 0.91
+    },
+    {
+      "name": "server_gpu",
+      "latency_ms": 18.0,
+      "energy_j": 11.0,
+      "quality": 0.93
+    },
+    {
+      "name": "cpu",
+      "latency_ms": 120.0,
+      "energy_j": 18.0,
+      "quality": 0.9
+    }
+  ],
+  "pareto": [
+    {
+      "name": "jetson",
+      "latency_ms": 42.0,
+      "energy_j": 5.1,
+      "quality": 0.91
+    },
+    {
+      "name": "server_gpu",
+      "latency_ms": 18.0,
+      "energy_j": 11.0,
+      "quality": 0.93
+    }
+  ]
+}
+
+=== PASS systems_practice/paper/2026-10-29/02-green-ai/run.sh 0.0s ===
+{
+  "accepted": [
+    {
+      "method": "fp32",
+      "quality": 0.92,
+      "latency_ms": 40,
+      "energy_j": 8,
+      "energy_per_quality": 8.695652173913043
+    },
+    {
+      "method": "int8_fused",
+      "quality": 0.919,
+      "latency_ms": 24,
+      "energy_j": 4.5,
+      "energy_per_quality": 4.896626768226333
+    }
+  ]
+}
+
+=== FAIL(2) systems_practice/quantization/2026-09-19/awq/run.sh 0.0s ===
+usage: upstream_api.py [-h] --source SOURCE
+upstream_api.py: error: verified upstream checkout missing; see source.json and retry instructions
+
+=== FAIL(2) systems_practice/quantization/2026-09-20/gptq/run.sh 0.0s ===
+UNVERIFIED: set GPTQ_SOURCE to a verified pinned checkout
+
+=== FAIL(2) systems_practice/quantization/2026-09-21/adaround/run.sh 0.1s ===
+BLOCKED: 需要 Python>=3.10、AIMET/torch 依赖及 AIMET_SOURCE_ROOT；未执行安装
+{
+  "python": "3.12.3",
+  "required_python": ">=3.10",
+  "missing_modules": [
+    "torch",
+    "aimet_torch"
+  ],
+  "source_root": null,
+  "expected_commit": "17f4d5fa41231b218d96c5fdfd2a3329e6d31c7b",
+  "execution_device": "cpu",
+  "thor_verified": false
+}
+
+=== FAIL(2) systems_practice/quantization/2026-09-22/autoround/run.sh 0.0s ===
+{
+  "status": "blocked",
+  "errors": [
+    "missing package: torch",
+    "missing package: auto_round",
+    "missing package: transformers",
+    "missing pinned checkout; set AUTOROUND_SOURCE"
+  ]
+}
+
+=== FAIL(2) systems_practice/quantization/2026-09-23/hqq/run.sh 0.0s ===
+{
+  "status": "blocked",
+  "errors": [
+    "missing package: torch",
+    "missing package: termcolor",
+    "missing pinned checkout; set HQQ_SOURCE"
+  ]
+}
+
+=== FAIL(2) systems_practice/quantization/2026-09-24/omniquant/run.sh 0.0s ===
+missing dependencies: torch, tqdm
+missing source checkout: /home/guhaoran/code/EveryDay/systems_practice/.tmp/quant_sources/omniquant-pinned
+
+=== FAIL(2) systems_practice/quantization/2026-09-25/quarot/run.sh 0.0s ===
+{
+  "method": "quarot",
+  "python": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]",
+  "missing": [
+    "torch",
+    "upstream checkout"
+  ],
+  "source": "/home/guhaoran/code/EveryDay/systems_practice/.tmp/quant_sources/quarot-pinned",
+  "native_run": false
+}
+
+=== FAIL(2) systems_practice/quantization/2026-09-26/spinquant/run.sh 0.0s ===
+{
+  "method": "spinquant",
+  "python": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]",
+  "missing": [
+    "torch",
+    "upstream checkout"
+  ],
+  "source": "/home/guhaoran/code/EveryDay/systems_practice/.tmp/quant_sources/spinquant-pinned",
+  "native_run": false
+}
+
+=== FAIL(2) systems_practice/quantization/2026-09-27/spqr/run.sh 0.0s ===
+{
+  "method": "spqr",
+  "python": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]",
+  "missing": [
+    "torch",
+    "upstream checkout"
+  ],
+  "source": "/home/guhaoran/code/EveryDay/systems_practice/.tmp/quant_sources/spqr-pinned",
+  "native_run": false
+}
+
+=== FAIL(2) systems_practice/quantization/2026-09-28/omniquant/run.sh 0.0s ===
+missing dependencies: torch, tqdm
+missing source checkout: /home/guhaoran/code/EveryDay/systems_practice/.tmp/quant_sources/omniquant-pinned
+
+=== FAIL(2) systems_practice/quantization/2026-09-29/smoothquant/run.sh 0.0s ===
+systems_practice/quantization/2026-09-29/smoothquant/run.sh: 5: SMOOTHQUANT_SOURCE: Set SMOOTHQUANT_SOURCE to your verified clean checkout
+
+=== FAIL(1) systems_practice/quantization/2026-09-30/llm_int8/run.sh 0.1s ===
+Traceback (most recent call last):
+  File "/home/guhaoran/code/EveryDay/systems_practice/quantization/2026-09-30/llm_int8/example.py", line 6, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+=== FAIL(1) systems_practice/quantization/2026-10-01/calibration/run.sh 0.1s ===
+Traceback (most recent call last):
+  File "/home/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-01/calibration/example.py", line 6, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+=== FAIL(1) systems_practice/quantization/2026-10-02/calibration/run.sh 0.1s ===
+Traceback (most recent call last):
+  File "/home/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-02/calibration/example.py", line 6, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+=== FAIL(1) systems_practice/quantization/2026-10-02/qat/run.sh 0.1s ===
+Traceback (most recent call last):
+  File "/home/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-02/qat/example.py", line 9, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+=== FAIL(1) systems_practice/quantization/2026-10-03/nf4_qlora/run.sh 0.1s ===
+Traceback (most recent call last):
+  File "/home/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-03/nf4_qlora/example.py", line 8, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+=== FAIL(2) systems_practice/quantization/2026-10-04/kivi/run.sh 0.0s ===
+systems_practice/quantization/2026-10-04/kivi/run.sh: 5: KIVI_REPO: set KIVI_REPO to the pinned local checkout
+
+=== FAIL(1) systems_practice/quantization/2026-10-05/optimizer_8bit/run.sh 0.1s ===
+Traceback (most recent call last):
+  File "/home/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-05/optimizer_8bit/native.py", line 6, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+=== FAIL(1) systems_practice/quantization/2026-10-06/fp8_scaling/run.sh 0.1s ===
+Traceback (most recent call last):
+  File "/home/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-06/fp8_scaling/example.py", line 7, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+=== PASS systems_practice/quantization/2026-10-07/block_fp4/run.sh 0.1s ===
+{
+  "shape": {
+    "x": [
+      8,
+      65
+    ],
+    "w": [
+      17,
+      65
+    ]
+  },
+  "fp16": {
+    "nrmse": 0.0003235483321165277,
+    "max_abs": 0.007428361565954944,
+    "cosine": 0.9999999561883189
+  },
+  "absmax_int4_qdq": {
+    "nrmse": 0.3409415076049427,
+    "max_abs": 4.49803202953939,
+    "cosine": 0.9419384578670877
+  },
+  "independent_nvfp4_qdq": {
+    "nrmse": 0.14778226516289505,
+    "max_abs": 2.1742279661158213,
+    "cosine": 0.989071923756924
+  },
+  "shifted_frozen_activation_scale": {
+    "nrmse": 0.3706738713508669,
+    "max_abs": 34.840450924586975,
+    "cosine": 0.9466183448056861
+  },
+  "saturation_counts": {
+    "w": 40,
+    "x": 19,
+    "shifted": 189
+  },
+  "storage": {
+    "fp16_unpadded": 2210,
+    "packed_padded": 680,
+    "scale": 85,
+    "header": 20,
+    "actual_file": 785
+  },
+  "python_cpu_batch_ms_p50": [
+    0.40318502578884363,
+    0.9932210086844862
+  ],
+  "checks": "PASS reload,7 zero/tail shapes,4 invalid, ties-even",
+  "scope": "independent Python CPU QDQ+matmul; no upstream/native GPU run"
+}
+
+=== PASS systems_practice/quantization/2026-10-08/awq/run.sh 0.1s ===
+{
+  "relationship": "independent, not llm-awq execution",
+  "ratio": 0.3,
+  "codes": 231,
+  "saturated_endpoint_count": 27,
+  "packed_bytes": 116,
+  "group_scale_bytes": 84,
+  "channel_scale_bytes": 132,
+  "file_bytes": 332,
+  "fp32_payload": 924,
+  "fp16_payload": 462,
+  "test": {
+    "fp16": 0.00011581528330096505,
+    "absmax": 0.05152904188744709,
+    "awq_inspired": 0.022089711522292648
+  },
+  "shifted": {
+    "fp16": 0.00018779479528316292,
+    "absmax": 0.021850476473537793,
+    "awq_inspired": 0.03262990231279023
+  },
+  "fp32_CPU_batch_mean_ms_p50": 0.281212996924296,
+  "decoded_awq_CPU_batch_mean_ms_p50": 0.28080266201868653
+}
+
+=== FAIL(2) systems_practice/quantization/2026-10-09/gptq/run.sh 0.0s ===
+systems_practice/quantization/2026-10-09/gptq/run.sh: 4: GPTQ_SOURCE: set GPTQ_SOURCE to a checked-out fixed GPTQ source tree
+
+=== FAIL(2) systems_practice/quantization/2026-10-11/adaround/run.sh 0.1s ===
+BLOCKED: 需要 Python>=3.10、AIMET/torch 依赖及 AIMET_SOURCE_ROOT；未执行安装
+{
+  "python": "3.12.3",
+  "required_python": ">=3.10",
+  "missing_modules": [
+    "torch",
+    "aimet_torch"
+  ],
+  "source_root": null,
+  "expected_commit": "6360e0c7d9f122cfa64f42475f099c3dafca4010",
+  "execution_device": "cpu",
+  "thor_verified": false
+}
+
+=== FAIL(1) systems_practice/quantization/2026-10-12/autoround/run.sh 0.0s ===
+missing dependencies: torch,auto_round
+
+=== FAIL(1) systems_practice/quantization/2026-10-13/hqq/run.sh 0.1s ===
+Traceback (most recent call last):
+  File "/home/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-13/hqq/example.py", line 8, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+=== FAIL(2) systems_practice/quantization/2026-10-14/omniquant/run.sh 0.0s ===
+systems_practice/quantization/2026-10-14/omniquant/run.sh: 5: OMNIQUANT_SOURCE: set source snapshot containing quantize/int_linear.py
+
+=== FAIL(2) systems_practice/quantization/2026-10-15/quarot/run.sh 0.0s ===
+systems_practice/quantization/2026-10-15/quarot/run.sh: 5: QUAROT_SOURCE: Set QUAROT_SOURCE to the pinned repository/source snapshot
+
+=== FAIL(2) systems_practice/quantization/2026-10-17/spinquant/run.sh 0.0s ===
+systems_practice/quantization/2026-10-17/spinquant/run.sh: 5: SPINQUANT_ROOT: Set SPINQUANT_ROOT to the pinned source snapshot or checkout
+
+=== FAIL(1) systems_practice/quantization/2026-10-18/spqr/run.sh 0.1s ===
+Traceback (most recent call last):
+  File "/home/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-18/spqr/example.py", line 136, in <module>
+    main()
+  File "/home/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-18/spqr/example.py", line 18, in main
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+=== FAIL(1) systems_practice/quantization/2026-10-19/smoothquant/run.sh 0.0s ===
+
+=== FAIL(1) systems_practice/quantization/2026-10-21/llm_int8/run.sh 0.1s ===
+Traceback (most recent call last):
+  File "/home/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-21/llm_int8/example.py", line 14, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+=== FAIL(1) systems_practice/quantization/2026-10-22/calibration/run.sh 0.1s ===
+Traceback (most recent call last):
+  File "/home/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-22/calibration/example.py", line 9, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+=== FAIL(1) systems_practice/quantization/2026-10-23/qat/run.sh 0.1s ===
+Traceback (most recent call last):
+  File "/home/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-23/qat/native.py", line 111, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-23/qat/native.py", line 18, in main
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+=== FAIL(1) systems_practice/quantization/2026-10-26/kivi/run.sh 0.1s ===
+Traceback (most recent call last):
+  File "/home/guhaoran/code/EveryDay/systems_practice/quantization/2026-10-26/kivi/example.py", line 14, in <module>
+    assert hashlib.sha256((source/'quant/new_pack.py').read_bytes()).hexdigest() == '3678af0e34a0ba18e5d80a4128acf11d4070667c800a15540a16d07253a4f75e', 'wrong source revision'
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/guhaoran/code/EveryDay/systems_practice/.tmp/quant_sources/kivi-4qwpqaj4/source/quant/new_pack.py'
+
+=== FAIL(2) systems_practice/quantization/2026-10-28/fp8_scaling/run.sh 0.0s ===
+systems_practice/quantization/2026-10-28/fp8_scaling/run.sh: 2: set: Illegal option -o pipefail
+
+=== PASS systems_practice/quantization/2026-10-29/block_fp4/run.sh 0.1s ===
+{
+  "shape": [
+    3,
+    37
+  ],
+  "block": 16,
+  "codebook": "independent E2M1-like teaching codebook",
+  "rows": [
+    {
+      "method": "mxfp4_like",
+      "mse": 0.1855027973651886,
+      "max_abs": 1.597711443901062,
+      "payload_bytes": 140,
+      "blocks": 7,
+      "local_scale_bytes": 0
+    },
+    {
+      "method": "nvfp4_like",
+      "mse": 0.1855027973651886,
+      "max_abs": 1.597711443901062,
+      "payload_bytes": 168,
+      "blocks": 7,
+      "local_scale_bytes": 28
+    }
+  ],
+  "boundary": "empty input rejected; shifted outlier retained"
+}
+
+=== PASS systems_practice/quantization/cpp/run.sh 2.2s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/quantization/cpp/build/cpp-OFF
+[ 50%] Building CXX object CMakeFiles/quant_cpu.dir/src/quant_cpu.cpp.o
+[100%] Linking CXX executable quant_cpu
+[100%] Built target quant_cpu
+{"status":"cpp_self_test_passed","group_shapes":5,"finite_fp16_patterns":63488,"native_quantizer_run":false,"checks":["known_bytes","odd_tail","invalid_code","truncation","wrong_magic","trailing_bytes","invalid_scale","FP16_ties_even","known_GEMM","zero_row"]}

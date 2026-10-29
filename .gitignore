@@ -58,6 +58,11 @@ systems_practice/**/cpu_stride_check
 systems_practice/**/rknn_stride_binding
 systems_practice/**/build/
 systems_practice/**/.tmp/
+# 早期课程脚本在日期目录直接生成的可执行文件及临时汇编。
+systems_practice/arm/2026-10-28/main
+systems_practice/arm/2026-10-28/results.s
+systems_practice/cpp17/2026-10-28/main
+systems_practice/os/2026-10-28/main
 
 # 目标设备生成或下载的模型/数据；转换命令和可复现脚本会提交。
 *.rknn

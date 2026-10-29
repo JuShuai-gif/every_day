@@ -1,0 +1,1237 @@
+=== PASS preprocess 2.7s ===
+device=NVIDIA Thor compute_capability=11.0 driver=13000 runtime=13000 warmups=10 repeats=50
+PASS mode=baseline shape=2x224x224x3 block=256 max_abs_error=0.000974 kernel_ms_p50=0.029920 kernel_ms_p95=0.032960 e2e_ms_p50=0.057649 e2e_ms_p95=0.069361 device_payload_bytes=2107392 pinned_payload_bytes=903168 theoretical_logical_traffic_bytes=3311616
+PASS mode=fused shape=2x224x224x3 block=256 max_abs_error=0.000974 kernel_ms_p50=0.019712 kernel_ms_p95=0.028000 e2e_ms_p50=0.047834 e2e_ms_p95=0.051500 device_payload_bytes=903168 pinned_payload_bytes=903168 theoretical_logical_traffic_bytes=903168
+PERF_GOAL kernel_not_slower=PASS e2e_p95_le_1ms=PASS
+PASS mode=baseline shape=2x223x225x3 block=256 max_abs_error=0.000974 kernel_ms_p50=0.030752 kernel_ms_p95=0.033856 e2e_ms_p50=0.059371 e2e_ms_p95=0.064639 device_payload_bytes=2107350 pinned_payload_bytes=903150 theoretical_logical_traffic_bytes=3311550
+PASS mode=fused shape=2x223x225x3 block=256 max_abs_error=0.000974 kernel_ms_p50=0.019456 kernel_ms_p95=0.021408 e2e_ms_p50=0.048741 e2e_ms_p95=0.051805 device_payload_bytes=903150 pinned_payload_bytes=903150 theoretical_logical_traffic_bytes=903150
+PASS mode=baseline shape=1x1x1x3 block=256 max_abs_error=0.000716 kernel_ms_p50=0.009152 kernel_ms_p95=0.009696 e2e_ms_p50=0.024305 e2e_ms_p95=0.025666 device_payload_bytes=21 pinned_payload_bytes=9 theoretical_logical_traffic_bytes=33
+PASS mode=fused shape=1x1x1x3 block=256 max_abs_error=0.000716 kernel_ms_p50=0.006368 kernel_ms_p95=0.007360 e2e_ms_p50=0.022138 e2e_ms_p95=0.023760 device_payload_bytes=9 pinned_payload_bytes=9 theoretical_logical_traffic_bytes=9
+PASS empty_batch_noop mode=baseline
+PASS empty_batch_noop mode=fused
+
+=== PASS pool 4.2s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The CUDA compiler identification is NVIDIA 13.0.48
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-13.0/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Configuring done (1.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-18/build/gpu
+[ 25%] Building CXX object CMakeFiles/cpu_check.dir/src/cpu_check.cpp.o
+[ 50%] Building CUDA object CMakeFiles/ptx_pool.dir/src/ptx_pool.cu.o
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-18/src/cpu_check.cpp: In function ‘int main()’:
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-18/src/cpu_check.cpp:105:21: warning: loop variable ‘args’ creates a copy from type ‘const std::vector<std::__cxx11::basic_string<char> >’ [-Wrange-loop-construct]
+  105 |     for (const auto args : {std::vector<std::string>{"--profile", "all"},
+      |                     ^~~~
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-18/src/cpu_check.cpp:105:21: note: use reference type to prevent copying
+  105 |     for (const auto args : {std::vector<std::string>{"--profile", "all"},
+      |                     ^~~~
+      |                     &
+[ 75%] Linking CXX executable cpu_check
+[ 75%] Built target cpu_check
+[100%] Linking CUDA executable ptx_pool
+[100%] Built target ptx_pool
+Internal ctest changing into directory: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-18/build/gpu
+Test project /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-18/build/gpu
+    Start 1: cpu_contract
+1/1 Test #1: cpu_contract .....................   Passed    0.02 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.02 sec
+device=NVIDIA Thor sm=110 runtime=13000 driver=13000
+PASS B=1 T=1 K=1 stride=4 mode=optimized max_abs_error=0
+PASS B=1 T=7 K=64 stride=64 mode=optimized max_abs_error=0
+PASS B=2 T=9 K=127 stride=128 mode=optimized max_abs_error=0
+PASS B=2 T=8 K=128 stride=128 mode=optimized max_abs_error=0
+PASS B=1 T=9 K=65 stride=68 mode=optimized max_abs_error=0
+PASS B=1 T=9 K=66 stride=68 mode=optimized max_abs_error=0
+PASS B=2 T=197 K=67 stride=68 mode=optimized max_abs_error=0
+optimized GPU event kernel interval p50_ms=0.00729600014 p95_ms=0.00828799978 samples=100
+optimized host H2D+kernel+D2H+wait p50_ms=0.045722 p95_ms=0.046445 samples=100
+
+=== PASS qgemm_0918 6.5s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The CUDA compiler identification is NVIDIA 13.0.48
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-13.0/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Configuring done (1.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-18/session-02/build/gpu
+[ 25%] Building CXX object CMakeFiles/quant_cpu.dir/src/main.cpp.o
+[ 50%] Building CUDA object CMakeFiles/quant_gpu.dir/src/quant_gemm.cu.o
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-18/session-02/src/main.cpp: In function ‘int main()’:
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-18/session-02/src/main.cpp:110:21: warning: loop variable ‘mode’ creates a copy from type ‘const std::pair<int, int>’ [-Wrange-loop-construct]
+  110 |     for (const auto mode : {std::pair<int, int>{4, 4}, {4, 16}, {8, 8}, {8, 16}}) {
+      |                     ^~~~
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-18/session-02/src/main.cpp:110:21: note: use reference type to prevent copying
+  110 |     for (const auto mode : {std::pair<int, int>{4, 4}, {4, 16}, {8, 8}, {8, 16}}) {
+      |                     ^~~~
+      |                     &
+[ 75%] Linking CXX executable quant_cpu
+[ 75%] Built target quant_cpu
+[100%] Linking CUDA executable quant_gpu
+[100%] Built target quant_gpu
+device=NVIDIA Thor sm=110 runtime=13000 driver=13000
+PASS W4A4/absmax/fp32 original_FP32_nrmse=0
+W4A4/absmax/fp32 GPU_kernel p50_ms=0.00739199994 p95_ms=0.0128960004
+W4A4/absmax/fp32 host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.025491 p95_ms=0.026825
+PASS W4A4/absmax/baseline original_FP32_nrmse=0.22752747
+W4A4/absmax/baseline GPU_kernel p50_ms=0.0124159995 p95_ms=0.0135040004
+W4A4/absmax/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.066342 p95_ms=0.079231
+PASS W4A4/absmax/tiled original_FP32_nrmse=0.22752747
+W4A4/absmax/tiled GPU_kernel p50_ms=0.00937599968 p95_ms=0.0103679998
+W4A4/absmax/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.057983 p95_ms=0.065455
+PASS W4A4/smoothquant/baseline original_FP32_nrmse=0.105820917
+W4A4/smoothquant/baseline GPU_kernel p50_ms=0.0125439996 p95_ms=0.0166720003
+W4A4/smoothquant/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.064713 p95_ms=0.088159
+PASS W4A4/smoothquant/tiled original_FP32_nrmse=0.105820917
+W4A4/smoothquant/tiled GPU_kernel p50_ms=0.00937599968 p95_ms=0.0104320003
+W4A4/smoothquant/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.057028 p95_ms=0.071027
+PASS W4A4/calibrated/baseline original_FP32_nrmse=0.094600425
+W4A4/calibrated/baseline GPU_kernel p50_ms=0.01248 p95_ms=0.0135040004
+W4A4/calibrated/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.064556 p95_ms=0.072871
+PASS W4A4/calibrated/tiled original_FP32_nrmse=0.094600425
+W4A4/calibrated/tiled GPU_kernel p50_ms=0.00944000017 p95_ms=0.0104639996
+W4A4/calibrated/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.057889 p95_ms=0.072713
+PASS W4A4/outlier/baseline original_FP32_nrmse=0.0192496691
+W4A4/outlier/baseline GPU_kernel p50_ms=0.0134720001 p95_ms=0.0141120004
+W4A4/outlier/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.069722 p95_ms=0.086056
+PASS W4A4/outlier/tiled original_FP32_nrmse=0.0192496691
+W4A4/outlier/tiled GPU_kernel p50_ms=0.00947200041 p95_ms=0.0114240004
+W4A4/outlier/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.062509 p95_ms=0.070593
+PASS W4A4/qat/baseline original_FP32_nrmse=0.0192496691
+W4A4/qat/baseline GPU_kernel p50_ms=0.0134720001 p95_ms=0.0135679999
+W4A4/qat/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.069824 p95_ms=0.074704
+PASS W4A4/qat/tiled original_FP32_nrmse=0.0192496691
+W4A4/qat/tiled GPU_kernel p50_ms=0.0101760002 p95_ms=0.0113279996
+W4A4/qat/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.062454 p95_ms=0.070602
+PASS W4A16/absmax/baseline original_FP32_nrmse=0.0634353999
+W4A16/absmax/baseline GPU_kernel p50_ms=0.0114559997 p95_ms=0.0124479998
+W4A16/absmax/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.065454 p95_ms=0.067759
+PASS W4A16/absmax/tiled original_FP32_nrmse=0.0634353999
+W4A16/absmax/tiled GPU_kernel p50_ms=0.00944000017 p95_ms=0.0114240004
+W4A16/absmax/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.057843 p95_ms=0.071
+PASS W4A16/smoothquant/baseline original_FP32_nrmse=0.0338272928
+W4A16/smoothquant/baseline GPU_kernel p50_ms=0.0114240004 p95_ms=0.01248
+W4A16/smoothquant/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.065518 p95_ms=0.07149
+PASS W4A16/smoothquant/tiled original_FP32_nrmse=0.0338272928
+W4A16/smoothquant/tiled GPU_kernel p50_ms=0.00947200041 p95_ms=0.0114240004
+W4A16/smoothquant/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.058259 p95_ms=0.06574
+PASS W4A16/calibrated/baseline original_FP32_nrmse=0.0246811757
+W4A16/calibrated/baseline GPU_kernel p50_ms=0.0114559997 p95_ms=0.0124479998
+W4A16/calibrated/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.0655 p95_ms=0.077463
+PASS W4A16/calibrated/tiled original_FP32_nrmse=0.0246811757
+W4A16/calibrated/tiled GPU_kernel p50_ms=0.00944000017 p95_ms=0.0104639996
+W4A16/calibrated/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.05738 p95_ms=0.065426
+PASS W4A16/outlier/baseline original_FP32_nrmse=0.0131443933
+W4A16/outlier/baseline GPU_kernel p50_ms=0.0114559997 p95_ms=0.01248
+W4A16/outlier/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.055796 p95_ms=0.070463
+PASS W4A16/outlier/tiled original_FP32_nrmse=0.0131443933
+W4A16/outlier/tiled GPU_kernel p50_ms=0.010272 p95_ms=0.0114240004
+W4A16/outlier/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.055231 p95_ms=0.070519
+PASS W4A16/qat/baseline original_FP32_nrmse=0.0131443933
+W4A16/qat/baseline GPU_kernel p50_ms=0.0114240004 p95_ms=0.0124479998
+W4A16/qat/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.065454 p95_ms=0.076602
+PASS W4A16/qat/tiled original_FP32_nrmse=0.0131443933
+W4A16/qat/tiled GPU_kernel p50_ms=0.00960000046 p95_ms=0.0114559997
+W4A16/qat/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.057371 p95_ms=0.073102
+PASS W8A8/absmax/baseline original_FP32_nrmse=0.0192121381
+W8A8/absmax/baseline GPU_kernel p50_ms=0.00934400037 p95_ms=0.0104
+W8A8/absmax/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.057343 p95_ms=0.069805
+PASS W8A8/absmax/tiled original_FP32_nrmse=0.0192121381
+W8A8/absmax/tiled GPU_kernel p50_ms=0.00940799993 p95_ms=0.0104959998
+W8A8/absmax/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.058472 p95_ms=0.066231
+PASS W8A8/smoothquant/baseline original_FP32_nrmse=0.00572971954
+W8A8/smoothquant/baseline GPU_kernel p50_ms=0.00937599968 p95_ms=0.0104
+W8A8/smoothquant/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.058944 p95_ms=0.159676
+PASS W8A8/smoothquant/tiled original_FP32_nrmse=0.00572971954
+W8A8/smoothquant/tiled GPU_kernel p50_ms=0.00944000017 p95_ms=0.0114240004
+W8A8/smoothquant/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.058306 p95_ms=0.065657
+PASS W8A8/calibrated/baseline original_FP32_nrmse=0.00572971954
+W8A8/calibrated/baseline GPU_kernel p50_ms=0.00940799993 p95_ms=0.0178880002
+W8A8/calibrated/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.056871 p95_ms=0.059102
+PASS W8A8/calibrated/tiled original_FP32_nrmse=0.00572971954
+W8A8/calibrated/tiled GPU_kernel p50_ms=0.00944000017 p95_ms=0.0104959998
+W8A8/calibrated/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.057824 p95_ms=0.073065
+PASS W8A8/outlier/baseline original_FP32_nrmse=0.00117313811
+W8A8/outlier/baseline GPU_kernel p50_ms=0.00940799993 p95_ms=0.0104320003
+W8A8/outlier/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.059242 p95_ms=0.070667
+PASS W8A8/outlier/tiled original_FP32_nrmse=0.00117313811
+W8A8/outlier/tiled GPU_kernel p50_ms=0.00953599997 p95_ms=0.0114240004
+W8A8/outlier/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.05676 p95_ms=0.069472
+PASS W8A8/qat/baseline original_FP32_nrmse=0.00120726471
+W8A8/qat/baseline GPU_kernel p50_ms=0.00960000046 p95_ms=0.0137599995
+W8A8/qat/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.058093 p95_ms=0.069379
+PASS W8A8/qat/tiled original_FP32_nrmse=0.00120726471
+W8A8/qat/tiled GPU_kernel p50_ms=0.00947200041 p95_ms=0.0112640001
+W8A8/qat/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.066139 p95_ms=0.068704
+PASS W8A16/absmax/baseline original_FP32_nrmse=0.00332892632
+W8A16/absmax/baseline GPU_kernel p50_ms=0.00940799993 p95_ms=0.0114879999
+W8A16/absmax/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.055268 p95_ms=0.06451
+PASS W8A16/absmax/tiled original_FP32_nrmse=0.00332892632
+W8A16/absmax/tiled GPU_kernel p50_ms=0.0101439999 p95_ms=0.0114559997
+W8A16/absmax/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.063231 p95_ms=0.064426
+PASS W8A16/smoothquant/baseline original_FP32_nrmse=0.00164348458
+W8A16/smoothquant/baseline GPU_kernel p50_ms=0.00937599968 p95_ms=0.00947200041
+W8A16/smoothquant/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.057121 p95_ms=0.07613
+PASS W8A16/smoothquant/tiled original_FP32_nrmse=0.00164348458
+W8A16/smoothquant/tiled GPU_kernel p50_ms=0.0104 p95_ms=0.0114240004
+W8A16/smoothquant/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.064408 p95_ms=0.066019
+PASS W8A16/calibrated/baseline original_FP32_nrmse=0.00136760243
+W8A16/calibrated/baseline GPU_kernel p50_ms=0.00940799993 p95_ms=0.0175679997
+W8A16/calibrated/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.055398 p95_ms=0.056973
+PASS W8A16/calibrated/tiled original_FP32_nrmse=0.00136760243
+W8A16/calibrated/tiled GPU_kernel p50_ms=0.0101439999 p95_ms=0.0114559997
+W8A16/calibrated/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.063204 p95_ms=0.072176
+PASS W8A16/outlier/baseline original_FP32_nrmse=0.000793615737
+W8A16/outlier/baseline GPU_kernel p50_ms=0.00940799993 p95_ms=0.0104320003
+W8A16/outlier/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.047889 p95_ms=0.06012
+PASS W8A16/outlier/tiled original_FP32_nrmse=0.000793615737
+W8A16/outlier/tiled GPU_kernel p50_ms=0.0104639996 p95_ms=0.0114879999
+W8A16/outlier/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.061222 p95_ms=0.07338
+PASS W8A16/qat/baseline original_FP32_nrmse=0.000793615737
+W8A16/qat/baseline GPU_kernel p50_ms=0.00940799993 p95_ms=0.0104320003
+W8A16/qat/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.054851 p95_ms=0.061352
+PASS W8A16/qat/tiled original_FP32_nrmse=0.000793615737
+W8A16/qat/tiled GPU_kernel p50_ms=0.0104639996 p95_ms=0.012352
+W8A16/qat/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.053491 p95_ms=0.124343
+
+=== PASS transpose_0919 3.8s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The CUDA compiler identification is NVIDIA 13.0.48
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-13.0/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Configuring done (1.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-19/build/gpu
+[ 25%] Building CXX object CMakeFiles/cpu_check.dir/src/cpu_check.cpp.o
+[ 50%] Building CUDA object CMakeFiles/transpose.dir/src/transpose.cu.o
+[ 75%] Linking CXX executable cpu_check
+[ 75%] Built target cpu_check
+[100%] Linking CUDA executable transpose
+[100%] Built target transpose
+device=NVIDIA Thor CC=11.0 driver=13000 runtime=13000
+B=2 rows=197 cols=128 input_stride=131 output_stride=200 warmup=20 samples=100
+variant=2 gpu_p50_ms=0.006208 gpu_p95_ms=0.007264 useful_GBps=64.9897 e2e_p50_ms=0.044166 e2e_p95_ms=0.053083
+
+=== PASS row_reduce 4.1s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The CUDA compiler identification is NVIDIA 13.0.48
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-13.0/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Configuring done (1.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-20/build/gpu
+[ 25%] Building CXX object CMakeFiles/cpu_check.dir/src/cpu_check.cpp.o
+[ 50%] Building CUDA object CMakeFiles/row_reduce.dir/src/row_reduce.cu.o
+[ 75%] Linking CXX executable cpu_check
+[ 75%] Built target cpu_check
+[100%] Linking CUDA executable row_reduce
+[100%] Built target row_reduce
+NVIDIA Thor CC=11.0 SMs=20 driver_api=13000 runtime=13000
+acc=1 threads=128 regs/thread=38 static_shared=16 local_bytes=0 theoretical_active_blocks/SM=12 theoretical_occupancy=1
+acc=2 threads=128 regs/thread=19 static_shared=16 local_bytes=0 theoretical_active_blocks/SM=12 theoretical_occupancy=1
+acc=4 threads=128 regs/thread=22 static_shared=16 local_bytes=0 theoretical_active_blocks/SM=12 theoretical_occupancy=1
+acc=8 threads=128 regs/thread=26 static_shared=16 local_bytes=0 theoretical_active_blocks/SM=12 theoretical_occupancy=1
+acc=4 threads=256 regs/thread=22 static_shared=32 local_bytes=0 theoretical_active_blocks/SM=6 theoretical_occupancy=1
+variant=2 rows=394 cols=4097 gpu_p50_ms=0.011296 gpu_p95_ms=0.017312 useful_GBps=571.746 e2e_p50_ms=0.077093 e2e_p95_ms=0.084889
+
+=== PASS softmax_0926 0.8s ===
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-09-26/build/thor
+[ 50%] Built target cpu
+[100%] Built target softmax
+GPU comparisons=192; warmup=20 samples=100 rows=1024 cols=127 FP32
+optimized=0 kernel_ms_p50=0.034016 p95=0.036416 request_ms_p50=0.079668 p95=0.086787
+optimized=1 kernel_ms_p50=0.008832 p95=0.011104 request_ms_p50=0.054454 p95=0.074241
+
+=== PASS gemm_0930 2.8s ===
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Jul_16_07:31:19_PM_PDT_2025
+Cuda compilation tools, release 13.0, V13.0.48
+Build cuda_13.0.r13.0/compiler.36260728_0
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z11gemm_async2PKfS0_Pf5Shape' for 'sm_110'
+ptxas info    : Function properties for _Z11gemm_async2PKfS0_Pf5Shape
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 39 registers, used 1 barriers, 4096 bytes smem
+ptxas info    : Compile time = 8.072 ms
+ptxas info    : Compiling entry function '_Z9gemm_syncPKfS0_Pf5Shape' for 'sm_110'
+ptxas info    : Function properties for _Z9gemm_syncPKfS0_Pf5Shape
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 38 registers, used 1 barriers, 2048 bytes smem
+ptxas info    : Compile time = 4.141 ms
+NVIDIA Thor cc=11.0
+PASS GPU 400 comparisons
+NVIDIA Thor cc=11.0
+sync GPU_event_ms p50=0.008864 p95=0.00976 host_H2D_kernel_D2H_wait_ms p50=0.030398 p95=0.032548
+async2 GPU_event_ms p50=0.0088 p95=0.00992 host_H2D_kernel_D2H_wait_ms p50=0.029768 p95=0.032362
+
+=== PASS qgemm_1001 6.6s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The CUDA compiler identification is NVIDIA 13.0.48
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-13.0/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Configuring done (1.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-10-01/build/gpu
+[ 25%] Building CXX object CMakeFiles/quant_cpu.dir/src/main.cpp.o
+[ 50%] Building CUDA object CMakeFiles/quant_gpu.dir/src/quant_gemm.cu.o
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-10-01/src/main.cpp: In function ‘int main()’:
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-10-01/src/main.cpp:121:21: warning: loop variable ‘mode’ creates a copy from type ‘const std::pair<int, int>’ [-Wrange-loop-construct]
+  121 |     for (const auto mode : {std::pair<int, int>{4, 4}, {4, 16}, {8, 8}, {8, 16}}) {
+      |                     ^~~~
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-10-01/src/main.cpp:121:21: note: use reference type to prevent copying
+  121 |     for (const auto mode : {std::pair<int, int>{4, 4}, {4, 16}, {8, 8}, {8, 16}}) {
+      |                     ^~~~
+      |                     &
+[ 75%] Linking CXX executable quant_cpu
+[ 75%] Built target quant_cpu
+[100%] Linking CUDA executable quant_gpu
+[100%] Built target quant_gpu
+device=NVIDIA Thor sm=110 runtime=13000 driver=13000
+PASS W4A4/absmax/fp32 original_FP32_nrmse=0
+W4A4/absmax/fp32 GPU_kernel p50_ms=0.00729600014 p95_ms=0.00822400022
+W4A4/absmax/fp32 host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.024898 p95_ms=0.027269
+PASS W4A4/absmax/baseline original_FP32_nrmse=0.227617825
+W4A4/absmax/baseline GPU_kernel p50_ms=0.0114240004 p95_ms=0.0132799996
+W4A4/absmax/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.063805 p95_ms=0.065351
+PASS W4A4/absmax/tiled original_FP32_nrmse=0.227617825
+W4A4/absmax/tiled GPU_kernel p50_ms=0.00921600033 p95_ms=0.00947200041
+W4A4/absmax/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.055352 p95_ms=0.065574
+PASS W4A4/smoothquant/baseline original_FP32_nrmse=0.113882121
+W4A4/smoothquant/baseline GPU_kernel p50_ms=0.0114879999 p95_ms=0.0125120003
+W4A4/smoothquant/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.063409 p95_ms=0.067278
+PASS W4A4/smoothquant/tiled original_FP32_nrmse=0.113882121
+W4A4/smoothquant/tiled GPU_kernel p50_ms=0.00937599968 p95_ms=0.0179520007
+W4A4/smoothquant/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.055343 p95_ms=0.063445
+PASS W4A4/calibrated/baseline original_FP32_nrmse=0.107532623
+W4A4/calibrated/baseline GPU_kernel p50_ms=0.0114879999 p95_ms=0.0127680004
+W4A4/calibrated/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.06351 p95_ms=0.067454
+PASS W4A4/calibrated/tiled original_FP32_nrmse=0.107532623
+W4A4/calibrated/tiled GPU_kernel p50_ms=0.00934400037 p95_ms=0.0103040002
+W4A4/calibrated/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.055352 p95_ms=0.063528
+PASS W4A4/outlier/baseline original_FP32_nrmse=0.0197030427
+W4A4/outlier/baseline GPU_kernel p50_ms=0.0115839997 p95_ms=0.0126080001
+W4A4/outlier/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.067325 p95_ms=0.069213
+PASS W4A4/outlier/tiled original_FP32_nrmse=0.0197030427
+W4A4/outlier/tiled GPU_kernel p50_ms=0.00940799993 p95_ms=0.0114240004
+W4A4/outlier/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.065463 p95_ms=0.071889
+PASS W4A4/qat/baseline original_FP32_nrmse=0.0197030427
+W4A4/qat/baseline GPU_kernel p50_ms=0.0114559997 p95_ms=0.0125439996
+W4A4/qat/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.066472 p95_ms=0.076666
+PASS W4A4/qat/tiled original_FP32_nrmse=0.0197030427
+W4A4/qat/tiled GPU_kernel p50_ms=0.00944000017 p95_ms=0.0178880002
+W4A4/qat/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.059157 p95_ms=0.066694
+PASS W4A16/absmax/baseline original_FP32_nrmse=0.0708170329
+W4A16/absmax/baseline GPU_kernel p50_ms=0.0113279996 p95_ms=0.0123199997
+W4A16/absmax/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.063093 p95_ms=0.076297
+PASS W4A16/absmax/tiled original_FP32_nrmse=0.0708170329
+W4A16/absmax/tiled GPU_kernel p50_ms=0.0103359995 p95_ms=0.0158399995
+W4A16/absmax/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.061954 p95_ms=0.063768
+PASS W4A16/smoothquant/baseline original_FP32_nrmse=0.0550575072
+W4A16/smoothquant/baseline GPU_kernel p50_ms=0.0113279996 p95_ms=0.0115200002
+W4A16/smoothquant/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.06338 p95_ms=0.079435
+PASS W4A16/smoothquant/tiled original_FP32_nrmse=0.0550575072
+W4A16/smoothquant/tiled GPU_kernel p50_ms=0.00944000017 p95_ms=0.0104959998
+W4A16/smoothquant/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.062148 p95_ms=0.068862
+PASS W4A16/calibrated/baseline original_FP32_nrmse=0.0426062808
+W4A16/calibrated/baseline GPU_kernel p50_ms=0.0114240004 p95_ms=0.0134720001
+W4A16/calibrated/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.062519 p95_ms=0.06963
+PASS W4A16/calibrated/tiled original_FP32_nrmse=0.0426062808
+W4A16/calibrated/tiled GPU_kernel p50_ms=0.00944000017 p95_ms=0.0104320003
+W4A16/calibrated/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.062148 p95_ms=0.069602
+PASS W4A16/outlier/baseline original_FP32_nrmse=0.0136085668
+W4A16/outlier/baseline GPU_kernel p50_ms=0.0113920001 p95_ms=0.0124479998
+W4A16/outlier/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.064491 p95_ms=0.066482
+PASS W4A16/outlier/tiled original_FP32_nrmse=0.0136085668
+W4A16/outlier/tiled GPU_kernel p50_ms=0.00956800021 p95_ms=0.0113599999
+W4A16/outlier/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.057185 p95_ms=0.070889
+PASS W4A16/qat/baseline original_FP32_nrmse=0.0136085668
+W4A16/qat/baseline GPU_kernel p50_ms=0.0114240004 p95_ms=0.0124479998
+W4A16/qat/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.064815 p95_ms=0.071176
+PASS W4A16/qat/tiled original_FP32_nrmse=0.0136085668
+W4A16/qat/tiled GPU_kernel p50_ms=0.00947200041 p95_ms=0.0104959998
+W4A16/qat/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.064009 p95_ms=0.071454
+PASS W8A8/absmax/baseline original_FP32_nrmse=0.0192324483
+W8A8/absmax/baseline GPU_kernel p50_ms=0.00918400008 p95_ms=0.00947200041
+W8A8/absmax/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.054361 p95_ms=0.063
+PASS W8A8/absmax/tiled original_FP32_nrmse=0.0192324483
+W8A8/absmax/tiled GPU_kernel p50_ms=0.00944000017 p95_ms=0.0104639996
+W8A8/absmax/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.062343 p95_ms=0.063379
+PASS W8A8/smoothquant/baseline original_FP32_nrmse=0.00616795483
+W8A8/smoothquant/baseline GPU_kernel p50_ms=0.00921600033 p95_ms=0.00950399972
+W8A8/smoothquant/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.054314 p95_ms=0.064926
+PASS W8A8/smoothquant/tiled original_FP32_nrmse=0.00616795483
+W8A8/smoothquant/tiled GPU_kernel p50_ms=0.00953599997 p95_ms=0.0147519996
+W8A8/smoothquant/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.062195 p95_ms=0.063259
+PASS W8A8/calibrated/baseline original_FP32_nrmse=0.00616795483
+W8A8/calibrated/baseline GPU_kernel p50_ms=0.00934400037 p95_ms=0.0100159999
+W8A8/calibrated/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.055222 p95_ms=0.068963
+PASS W8A8/calibrated/tiled original_FP32_nrmse=0.00616795483
+W8A8/calibrated/tiled GPU_kernel p50_ms=0.00944000017 p95_ms=0.0104639996
+W8A8/calibrated/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.06276 p95_ms=0.064343
+PASS W8A8/outlier/baseline original_FP32_nrmse=0.00120564733
+W8A8/outlier/baseline GPU_kernel p50_ms=0.00931200013 p95_ms=0.00953599997
+W8A8/outlier/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.057185 p95_ms=0.065232
+PASS W8A8/outlier/tiled original_FP32_nrmse=0.00120564733
+W8A8/outlier/tiled GPU_kernel p50_ms=0.00950399972 p95_ms=0.0105600003
+W8A8/outlier/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.064991 p95_ms=0.073528
+PASS W8A8/qat/baseline original_FP32_nrmse=0.00120564733
+W8A8/qat/baseline GPU_kernel p50_ms=0.00876799971 p95_ms=0.00947200041
+W8A8/qat/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.056741 p95_ms=0.058417
+PASS W8A8/qat/tiled original_FP32_nrmse=0.00120564733
+W8A8/qat/tiled GPU_kernel p50_ms=0.0103040002 p95_ms=0.0104959998
+W8A8/qat/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.06426 p95_ms=0.072778
+PASS W8A16/absmax/baseline original_FP32_nrmse=0.00352344979
+W8A16/absmax/baseline GPU_kernel p50_ms=0.00841599982 p95_ms=0.00947200041
+W8A16/absmax/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.05425 p95_ms=0.055241
+PASS W8A16/absmax/tiled original_FP32_nrmse=0.00352344979
+W8A16/absmax/tiled GPU_kernel p50_ms=0.00953599997 p95_ms=0.014304
+W8A16/absmax/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.062731 p95_ms=0.064482
+PASS W8A16/smoothquant/baseline original_FP32_nrmse=0.00301672782
+W8A16/smoothquant/baseline GPU_kernel p50_ms=0.00745599996 p95_ms=0.00940799993
+W8A16/smoothquant/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.054426 p95_ms=0.055806
+PASS W8A16/smoothquant/tiled original_FP32_nrmse=0.00301672782
+W8A16/smoothquant/tiled GPU_kernel p50_ms=0.00953599997 p95_ms=0.0110719996
+W8A16/smoothquant/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.062537 p95_ms=0.075435
+PASS W8A16/calibrated/baseline original_FP32_nrmse=0.00236252183
+W8A16/calibrated/baseline GPU_kernel p50_ms=0.00844800007 p95_ms=0.00947200041
+W8A16/calibrated/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.054379 p95_ms=0.05538
+PASS W8A16/calibrated/tiled original_FP32_nrmse=0.00236252183
+W8A16/calibrated/tiled GPU_kernel p50_ms=0.0100800004 p95_ms=0.0116480002
+W8A16/calibrated/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.06225 p95_ms=0.068231
+PASS W8A16/outlier/baseline original_FP32_nrmse=0.000846423212
+W8A16/outlier/baseline GPU_kernel p50_ms=0.00934400037 p95_ms=0.0101760002
+W8A16/outlier/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.055917 p95_ms=0.071881
+PASS W8A16/outlier/tiled original_FP32_nrmse=0.000846423212
+W8A16/outlier/tiled GPU_kernel p50_ms=0.0103359995 p95_ms=0.0180159993
+W8A16/outlier/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.053352 p95_ms=0.066445
+PASS W8A16/qat/baseline original_FP32_nrmse=0.000846423212
+W8A16/qat/baseline GPU_kernel p50_ms=0.00937599968 p95_ms=0.0103359995
+W8A16/qat/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.04587 p95_ms=0.058084
+PASS W8A16/qat/tiled original_FP32_nrmse=0.000846423212
+W8A16/qat/tiled GPU_kernel p50_ms=0.010272 p95_ms=0.0114559997
+W8A16/qat/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.064575 p95_ms=0.074361
+
+=== PASS qgemm_1002 6.6s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The CUDA compiler identification is NVIDIA 13.0.48
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-13.0/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Configuring done (1.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-10-02/build/gpu
+[ 25%] Building CXX object CMakeFiles/quant_cpu.dir/src/main.cpp.o
+[ 50%] Building CUDA object CMakeFiles/quant_gpu.dir/src/quant_gemm.cu.o
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-10-02/src/main.cpp: In function ‘int main()’:
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-10-02/src/main.cpp:121:21: warning: loop variable ‘mode’ creates a copy from type ‘const std::pair<int, int>’ [-Wrange-loop-construct]
+  121 |     for (const auto mode : {std::pair<int, int>{4, 4}, {4, 16}, {8, 8}, {8, 16}}) {
+      |                     ^~~~
+/home/guhaoran/code/EveryDay/systems_practice/daily/2026-10-02/src/main.cpp:121:21: note: use reference type to prevent copying
+  121 |     for (const auto mode : {std::pair<int, int>{4, 4}, {4, 16}, {8, 8}, {8, 16}}) {
+      |                     ^~~~
+      |                     &
+[ 75%] Linking CXX executable quant_cpu
+[ 75%] Built target quant_cpu
+[100%] Linking CUDA executable quant_gpu
+[100%] Built target quant_gpu
+device=NVIDIA Thor sm=110 runtime=13000 driver=13000
+PASS W4A4/absmax/fp32 original_FP32_nrmse=0
+W4A4/absmax/fp32 GPU_kernel p50_ms=0.0072639999 p95_ms=0.00828799978
+W4A4/absmax/fp32 host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.025398 p95_ms=0.026518
+PASS W4A4/absmax/baseline original_FP32_nrmse=0.227617825
+W4A4/absmax/baseline GPU_kernel p50_ms=0.0114559997 p95_ms=0.0184640009
+W4A4/absmax/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.065713 p95_ms=0.069093
+PASS W4A4/absmax/tiled original_FP32_nrmse=0.227617825
+W4A4/absmax/tiled GPU_kernel p50_ms=0.00924799964 p95_ms=0.00947200041
+W4A4/absmax/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.056722 p95_ms=0.071787
+PASS W4A4/smoothquant/baseline original_FP32_nrmse=0.113882121
+W4A4/smoothquant/baseline GPU_kernel p50_ms=0.0114879999 p95_ms=0.0134720001
+W4A4/smoothquant/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.06438 p95_ms=0.071768
+PASS W4A4/smoothquant/tiled original_FP32_nrmse=0.113882121
+W4A4/smoothquant/tiled GPU_kernel p50_ms=0.00937599968 p95_ms=0.0104320003
+W4A4/smoothquant/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.056093 p95_ms=0.06763
+PASS W4A4/calibrated/baseline original_FP32_nrmse=0.107532623
+W4A4/calibrated/baseline GPU_kernel p50_ms=0.0114240004 p95_ms=0.01248
+W4A4/calibrated/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.064453 p95_ms=0.076139
+PASS W4A4/calibrated/tiled original_FP32_nrmse=0.107532623
+W4A4/calibrated/tiled GPU_kernel p50_ms=0.00940799993 p95_ms=0.0104320003
+W4A4/calibrated/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.056288 p95_ms=0.064037
+PASS W4A4/outlier/baseline original_FP32_nrmse=0.0197030427
+W4A4/outlier/baseline GPU_kernel p50_ms=0.0115200002 p95_ms=0.01248
+W4A4/outlier/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.067519 p95_ms=0.073944
+PASS W4A4/outlier/tiled original_FP32_nrmse=0.0197030427
+W4A4/outlier/tiled GPU_kernel p50_ms=0.00940799993 p95_ms=0.0104
+W4A4/outlier/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.059565 p95_ms=0.070148
+PASS W4A4/qat/baseline original_FP32_nrmse=0.0197030427
+W4A4/qat/baseline GPU_kernel p50_ms=0.0114559997 p95_ms=0.0125759998
+W4A4/qat/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.066343 p95_ms=0.070825
+PASS W4A4/qat/tiled original_FP32_nrmse=0.0197030427
+W4A4/qat/tiled GPU_kernel p50_ms=0.00940799993 p95_ms=0.0104320003
+W4A4/qat/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.059324 p95_ms=0.067889
+PASS W4A16/absmax/baseline original_FP32_nrmse=0.0708170329
+W4A16/absmax/baseline GPU_kernel p50_ms=0.0112960003 p95_ms=0.0115200002
+W4A16/absmax/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.063435 p95_ms=0.064843
+PASS W4A16/absmax/tiled original_FP32_nrmse=0.0708170329
+W4A16/absmax/tiled GPU_kernel p50_ms=0.0100800004 p95_ms=0.0199679993
+W4A16/absmax/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.055676 p95_ms=0.065519
+PASS W4A16/smoothquant/baseline original_FP32_nrmse=0.0550575072
+W4A16/smoothquant/baseline GPU_kernel p50_ms=0.0104959998 p95_ms=0.0114879999
+W4A16/smoothquant/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.063398 p95_ms=0.070788
+PASS W4A16/smoothquant/tiled original_FP32_nrmse=0.0550575072
+W4A16/smoothquant/tiled GPU_kernel p50_ms=0.00944000017 p95_ms=0.0104959998
+W4A16/smoothquant/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.061908 p95_ms=0.065463
+PASS W4A16/calibrated/baseline original_FP32_nrmse=0.0426062808
+W4A16/calibrated/baseline GPU_kernel p50_ms=0.0112640001 p95_ms=0.0114879999
+W4A16/calibrated/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.062953 p95_ms=0.075713
+PASS W4A16/calibrated/tiled original_FP32_nrmse=0.0426062808
+W4A16/calibrated/tiled GPU_kernel p50_ms=0.00944000017 p95_ms=0.0104639996
+W4A16/calibrated/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.062092 p95_ms=0.072111
+PASS W4A16/outlier/baseline original_FP32_nrmse=0.0136085668
+W4A16/outlier/baseline GPU_kernel p50_ms=0.0114559997 p95_ms=0.0123199997
+W4A16/outlier/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.065018 p95_ms=0.06912
+PASS W4A16/outlier/tiled original_FP32_nrmse=0.0136085668
+W4A16/outlier/tiled GPU_kernel p50_ms=0.00953599997 p95_ms=0.0113599999
+W4A16/outlier/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.063148 p95_ms=0.100139
+PASS W4A16/qat/baseline original_FP32_nrmse=0.0136085668
+W4A16/qat/baseline GPU_kernel p50_ms=0.0110719996 p95_ms=0.0192000009
+W4A16/qat/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.064241 p95_ms=0.070204
+PASS W4A16/qat/tiled original_FP32_nrmse=0.0136085668
+W4A16/qat/tiled GPU_kernel p50_ms=0.0103359995 p95_ms=0.0169920009
+W4A16/qat/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.064222 p95_ms=0.075694
+PASS W8A8/absmax/baseline original_FP32_nrmse=0.0192324483
+W8A8/absmax/baseline GPU_kernel p50_ms=0.00851199962 p95_ms=0.00950399972
+W8A8/absmax/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.055834 p95_ms=0.067
+PASS W8A8/absmax/tiled original_FP32_nrmse=0.0192324483
+W8A8/absmax/tiled GPU_kernel p50_ms=0.00944000017 p95_ms=0.0112640001
+W8A8/absmax/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.063083 p95_ms=0.067612
+PASS W8A8/smoothquant/baseline original_FP32_nrmse=0.00616795483
+W8A8/smoothquant/baseline GPU_kernel p50_ms=0.00940799993 p95_ms=0.00950399972
+W8A8/smoothquant/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.055445 p95_ms=0.063741
+PASS W8A8/smoothquant/tiled original_FP32_nrmse=0.00616795483
+W8A8/smoothquant/tiled GPU_kernel p50_ms=0.00944000017 p95_ms=0.0104639996
+W8A8/smoothquant/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.063158 p95_ms=0.069389
+PASS W8A8/calibrated/baseline original_FP32_nrmse=0.00616795483
+W8A8/calibrated/baseline GPU_kernel p50_ms=0.00937599968 p95_ms=0.00950399972
+W8A8/calibrated/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.055851 p95_ms=0.060472
+PASS W8A8/calibrated/tiled original_FP32_nrmse=0.00616795483
+W8A8/calibrated/tiled GPU_kernel p50_ms=0.00944000017 p95_ms=0.0114240004
+W8A8/calibrated/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.056297 p95_ms=0.066353
+PASS W8A8/outlier/baseline original_FP32_nrmse=0.00120564733
+W8A8/outlier/baseline GPU_kernel p50_ms=0.00940799993 p95_ms=0.0141120004
+W8A8/outlier/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.056769 p95_ms=0.058593
+PASS W8A8/outlier/tiled original_FP32_nrmse=0.00120564733
+W8A8/outlier/tiled GPU_kernel p50_ms=0.0104 p95_ms=0.0139199998
+W8A8/outlier/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.054037 p95_ms=0.07475
+PASS W8A8/qat/baseline original_FP32_nrmse=0.00120564733
+W8A8/qat/baseline GPU_kernel p50_ms=0.00841599982 p95_ms=0.00950399972
+W8A8/qat/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.056704 p95_ms=0.065074
+PASS W8A8/qat/tiled original_FP32_nrmse=0.00120564733
+W8A8/qat/tiled GPU_kernel p50_ms=0.0104 p95_ms=0.0105280001
+W8A8/qat/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.055453 p95_ms=0.067343
+PASS W8A16/absmax/baseline original_FP32_nrmse=0.00352344979
+W8A16/absmax/baseline GPU_kernel p50_ms=0.00838399958 p95_ms=0.00940799993
+W8A16/absmax/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.05463 p95_ms=0.061343
+PASS W8A16/absmax/tiled original_FP32_nrmse=0.00352344979
+W8A16/absmax/tiled GPU_kernel p50_ms=0.0104320003 p95_ms=0.0104959998
+W8A16/absmax/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.062352 p95_ms=0.074926
+PASS W8A16/smoothquant/baseline original_FP32_nrmse=0.00301672782
+W8A16/smoothquant/baseline GPU_kernel p50_ms=0.00838399958 p95_ms=0.00940799993
+W8A16/smoothquant/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.054805 p95_ms=0.065926
+PASS W8A16/smoothquant/tiled original_FP32_nrmse=0.00301672782
+W8A16/smoothquant/tiled GPU_kernel p50_ms=0.0104 p95_ms=0.0104959998
+W8A16/smoothquant/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.062361 p95_ms=0.063852
+PASS W8A16/calibrated/baseline original_FP32_nrmse=0.00236252183
+W8A16/calibrated/baseline GPU_kernel p50_ms=0.00838399958 p95_ms=0.00947200041
+W8A16/calibrated/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.054297 p95_ms=0.065778
+PASS W8A16/calibrated/tiled original_FP32_nrmse=0.00236252183
+W8A16/calibrated/tiled GPU_kernel p50_ms=0.0104 p95_ms=0.0104959998
+W8A16/calibrated/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.06238 p95_ms=0.078491
+PASS W8A16/outlier/baseline original_FP32_nrmse=0.000846423212
+W8A16/outlier/baseline GPU_kernel p50_ms=0.00844800007 p95_ms=0.00950399972
+W8A16/outlier/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.056065 p95_ms=0.067936
+PASS W8A16/outlier/tiled original_FP32_nrmse=0.000846423212
+W8A16/outlier/tiled GPU_kernel p50_ms=0.0104320003 p95_ms=0.0106239999
+W8A16/outlier/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.057074 p95_ms=0.080527
+PASS W8A16/qat/baseline original_FP32_nrmse=0.000846423212
+W8A16/qat/baseline GPU_kernel p50_ms=0.00841599982 p95_ms=0.00947200041
+W8A16/qat/baseline host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.045324 p95_ms=0.066529
+PASS W8A16/qat/tiled original_FP32_nrmse=0.000846423212
+W8A16/qat/tiled GPU_kernel p50_ms=0.0104 p95_ms=0.0105600003
+W8A16/qat/tiled host_preprocess_H2D_GEMM_D2H_wait p50_ms=0.058593 p95_ms=0.076788
+
+=== PASS transpose_1002 4.3s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The CUDA compiler identification is NVIDIA 13.0.48
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-13.0/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Configuring done (1.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-10-02/session-02/build/gpu
+[ 25%] Building CXX object CMakeFiles/cpu.dir/src/cpu.cpp.o
+[ 50%] Linking CXX executable cpu
+[ 50%] Built target cpu
+[ 75%] Building CUDA object CMakeFiles/transpose.dir/src/transpose.cu.o
+[100%] Linking CUDA executable transpose
+[100%] Built target transpose
+device=NVIDIA Thor cc=11.0 warmup=10 samples=30 resident-input
+mode=0 h=1024 w=2048 kernel_p50_ms=0.190688 kernel_p95_ms=0.196736 effective_GBps=87.9825 H2D_host_us=2044.09 D2H_host_us=1492.59
+mode=1 h=1024 w=2048 kernel_p50_ms=0.083872 kernel_p95_ms=0.0912 effective_GBps=200.034 H2D_host_us=2044.09 D2H_host_us=68.138
+mode=2 h=1024 w=2048 kernel_p50_ms=0.02672 kernel_p95_ms=0.02784 effective_GBps=627.89 H2D_host_us=2044.09 D2H_host_us=62.658
+PASS GPU exact equality and output padding
+
+=== PASS energy_1003 5.9s ===
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The CUDA compiler identification is NVIDIA 13.0.48
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-13.0/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Configuring done (1.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-10-03/build/gpu
+[ 25%] Building CXX object CMakeFiles/cpu.dir/src/cpu.cpp.o
+[ 50%] Linking CXX executable cpu
+[ 50%] Built target cpu
+[ 75%] Building CUDA object CMakeFiles/energy.dir/src/energy.cu.o
+[100%] Linking CUDA executable energy
+[100%] Built target energy
+GPU=NVIDIA Thor SM=20 maxThreadsPerSM=1536
+mode=0 rows=394 cols=33 regs=39 shared=512 local=0 resident_blocks_bound=12 kernel_p50_ms=0.0072 kernel_p95_ms=0.008256
+ transfer_kernel_wait_e2e_p50_us=707.705 p95_us=2345.11
+mode=1 rows=394 cols=33 regs=40 shared=0 local=0 resident_blocks_bound=12 kernel_p50_ms=0.005248 kernel_p95_ms=0.006336
+ transfer_kernel_wait_e2e_p50_us=2327.94 p95_us=2351.8
+mode=0 rows=394 cols=129 regs=39 shared=512 local=0 resident_blocks_bound=12 kernel_p50_ms=0.007616 kernel_p95_ms=0.00976
+ transfer_kernel_wait_e2e_p50_us=952.529 p95_us=4661.39
+mode=1 rows=394 cols=129 regs=40 shared=0 local=0 resident_blocks_bound=12 kernel_p50_ms=0.005664 kernel_p95_ms=0.008128
+ transfer_kernel_wait_e2e_p50_us=133.824 p95_us=4680.53
+mode=0 rows=394 cols=1025 regs=39 shared=512 local=0 resident_blocks_bound=12 kernel_p50_ms=0.008288 kernel_p95_ms=0.008448
+ transfer_kernel_wait_e2e_p50_us=47.74 p95_us=51.852
+mode=1 rows=394 cols=1025 regs=40 shared=0 local=0 resident_blocks_bound=12 kernel_p50_ms=0.006304 kernel_p95_ms=0.007328
+ transfer_kernel_wait_e2e_p50_us=47.13 p95_us=49.519
+mode=0 rows=394 cols=8192 regs=39 shared=512 local=0 resident_blocks_bound=12 kernel_p50_ms=0.014464 kernel_p95_ms=0.014528
+ transfer_kernel_wait_e2e_p50_us=134.204 p95_us=152.907
+mode=1 rows=394 cols=8192 regs=40 shared=0 local=0 resident_blocks_bound=12 kernel_p50_ms=0.014464 kernel_p95_ms=0.015552
+ transfer_kernel_wait_e2e_p50_us=133.037 p95_us=4994.89
+PASS GPU
+
+=== PASS softmax_1009 0.3s ===
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-10-09/build/thor
+[ 50%] Built target softmax
+[100%] Built target cpu_check
+Thor SM110 compile/run smoke test passed; add numerical and event timing capture before reporting performance.
+
+=== PASS trt_1011 10.4s ===
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Jul_16_07:31:19_PM_PDT_2025
+Cuda compilation tools, release 13.0, V13.0.48
+Build cuda_13.0.r13.0/compiler.36260728_0
+sm_110
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The CUDA compiler identification is NVIDIA 13.0.48
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-13.0/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Found CUDAToolkit: /usr/local/cuda-13.0/targets/sbsa-linux/include (found version "13.0.48")
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Configuring done (1.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/guhaoran/code/EveryDay/systems_practice/daily/2026-10-11/build/thor
+[ 16%] Building CXX object CMakeFiles/cpu_check.dir/src/cpu_check.cpp.o
+[ 33%] Building CUDA object CMakeFiles/kernels.dir/src/kernels.cu.o
+[ 50%] Linking CXX executable cpu_check
+[ 50%] Built target cpu_check
+[ 66%] Building CXX object CMakeFiles/trt.dir/src/trt.cpp.o
+[ 83%] Linking CXX executable trt
+[ 83%] Built target trt
+[100%] Linking CUDA executable kernels
+[100%] Built target kernels
+device=NVIDIA Thor cc=11.0
+PASS shape=1x1 cold_request_us=2195.35
+PASS shape=1x3 cold_request_us=572.76
+PASS shape=1x4 cold_request_us=221.158
+PASS shape=1x5 cold_request_us=2301.76
+PASS shape=1x31 cold_request_us=2641.7
+PASS shape=1x32 cold_request_us=1956.09
+PASS shape=1x33 cold_request_us=2282.88
+PASS shape=1x4097 cold_request_us=2338.09
+PASS shape=4x1 cold_request_us=2285.16
+PASS shape=4x3 cold_request_us=2339.68
+PASS shape=4x4 cold_request_us=2333.67
+PASS shape=4x5 cold_request_us=1798.43
+PASS shape=4x31 cold_request_us=226.222
+PASS shape=4x32 cold_request_us=2331
+PASS shape=4x33 cold_request_us=2319.04
+PASS shape=4x4097 cold_request_us=2307.48
+PASS shape=8x1 cold_request_us=2305.11
+PASS shape=8x3 cold_request_us=2306.43
+PASS shape=8x4 cold_request_us=2294.38
+PASS shape=8x5 cold_request_us=2325.82
+PASS shape=8x31 cold_request_us=2339.17
+PASS shape=8x32 cold_request_us=1607.15
+PASS shape=8x33 cold_request_us=332.351
+PASS shape=8x4097 cold_request_us=2201.86
+IExecutionContext::setInputShape: Error Code 3: API Usage Error (Parameter check failed, condition: satisfyProfile. Set dimension [9,33] for tensor x does not satisfy any optimization profiles. Valid range for profile 0: [1,1]..[8,4097]. In setInputShape at runtime/api/executionContext.cpp:2372)
+PASS 24 TRT shapes; rejected B=9
+device=NVIDIA Thor cc=11.0
+version=0 B=1 K=1 device_batch_mean_us_p50=4.45088 p95=4.52448
+version=1 B=1 K=1 device_batch_mean_us_p50=2.19712 p95=2.34592
+device=NVIDIA Thor cc=11.0
+version=0 B=1 K=3 device_batch_mean_us_p50=4.5376 p95=5.71328
+version=1 B=1 K=3 device_batch_mean_us_p50=3.46112 p95=3.73664
+device=NVIDIA Thor cc=11.0
+version=0 B=1 K=4 device_batch_mean_us_p50=4.4736 p95=4.53568
+version=1 B=1 K=4 device_batch_mean_us_p50=2.25472 p95=2.41408
+device=NVIDIA Thor cc=11.0
+version=0 B=1 K=5 device_batch_mean_us_p50=4.56608 p95=4.6624
+version=1 B=1 K=5 device_batch_mean_us_p50=3.50144 p95=3.8032
+device=NVIDIA Thor cc=11.0
+version=0 B=1 K=31 device_batch_mean_us_p50=4.6384 p95=7.44192
+version=1 B=1 K=31 device_batch_mean_us_p50=3.98432 p95=4.21088
+device=NVIDIA Thor cc=11.0
+version=0 B=1 K=32 device_batch_mean_us_p50=4.61536 p95=5.31712
+version=1 B=1 K=32 device_batch_mean_us_p50=2.35168 p95=3.09888
+device=NVIDIA Thor cc=11.0
+version=0 B=1 K=33 device_batch_mean_us_p50=4.5264 p95=6.29952
+version=1 B=1 K=33 device_batch_mean_us_p50=3.83008 p95=3.968
+device=NVIDIA Thor cc=11.0
+version=0 B=1 K=4097 device_batch_mean_us_p50=7.56672 p95=8.45696
+version=1 B=1 K=4097 device_batch_mean_us_p50=3.8 p95=4.73376
+device=NVIDIA Thor cc=11.0
+version=0 B=4 K=1 device_batch_mean_us_p50=4.56224 p95=7.27104
+version=1 B=4 K=1 device_batch_mean_us_p50=2.30432 p95=2.9712
+device=NVIDIA Thor cc=11.0
+version=0 B=4 K=3 device_batch_mean_us_p50=4.54624 p95=6.4272
+version=1 B=4 K=3 device_batch_mean_us_p50=2.73344 p95=3.82432
+device=NVIDIA Thor cc=11.0
+version=0 B=4 K=4 device_batch_mean_us_p50=4.44672 p95=4.57984
+version=1 B=4 K=4 device_batch_mean_us_p50=2.25184 p95=3.93792
+device=NVIDIA Thor cc=11.0
+version=0 B=4 K=5 device_batch_mean_us_p50=4.48384 p95=7.10048
+version=1 B=4 K=5 device_batch_mean_us_p50=2.24288 p95=3.95456
+device=NVIDIA Thor cc=11.0
+version=0 B=4 K=31 device_batch_mean_us_p50=4.4464 p95=4.5008
+version=1 B=4 K=31 device_batch_mean_us_p50=2.59328 p95=4.19584
+device=NVIDIA Thor cc=11.0
+version=0 B=4 K=32 device_batch_mean_us_p50=4.3952 p95=6.35872
+version=1 B=4 K=32 device_batch_mean_us_p50=2.22912 p95=3.11392
+device=NVIDIA Thor cc=11.0
+version=0 B=4 K=33 device_batch_mean_us_p50=4.4768 p95=7.896
+version=1 B=4 K=33 device_batch_mean_us_p50=2.22592 p95=2.32224
+device=NVIDIA Thor cc=11.0
+version=0 B=4 K=4097 device_batch_mean_us_p50=10.1008 p95=11.6995
+version=1 B=4 K=4097 device_batch_mean_us_p50=3.97216 p95=4.05216
+device=NVIDIA Thor cc=11.0
+version=0 B=8 K=1 device_batch_mean_us_p50=5.22336 p95=6.78112
+version=1 B=8 K=1 device_batch_mean_us_p50=2.2752 p95=3.48448
+device=NVIDIA Thor cc=11.0
+version=0 B=8 K=3 device_batch_mean_us_p50=4.52768 p95=6.7072
+version=1 B=8 K=3 device_batch_mean_us_p50=2.24384 p95=2.53056
+device=NVIDIA Thor cc=11.0
+version=0 B=8 K=4 device_batch_mean_us_p50=4.5312 p95=7.1232
+version=1 B=8 K=4 device_batch_mean_us_p50=2.85184 p95=3.48288
+device=NVIDIA Thor cc=11.0
+version=0 B=8 K=5 device_batch_mean_us_p50=6.31872 p95=6.81696
+version=1 B=8 K=5 device_batch_mean_us_p50=3.13184 p95=3.28928
+device=NVIDIA Thor cc=11.0
+version=0 B=8 K=31 device_batch_mean_us_p50=4.70528 p95=6.62464
+version=1 B=8 K=31 device_batch_mean_us_p50=2.29792 p95=3.46816
+device=NVIDIA Thor cc=11.0
+version=0 B=8 K=32 device_batch_mean_us_p50=6.18912 p95=7.05248
+version=1 B=8 K=32 device_batch_mean_us_p50=3.07424 p95=3.10784
+device=NVIDIA Thor cc=11.0
+version=0 B=8 K=33 device_batch_mean_us_p50=6.53024 p95=8.17472
+version=1 B=8 K=33 device_batch_mean_us_p50=3.664 p95=4.1888
+device=NVIDIA Thor cc=11.0
+version=0 B=8 K=4097 device_batch_mean_us_p50=8.19328 p95=9.33888
+version=1 B=8 K=4097 device_batch_mean_us_p50=3.96032 p95=4.79072
+
+=== PASS gemm_1013 2.6s ===
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z10gemm_asyncPKfS0_Pfiiiii' for 'sm_110'
+ptxas info    : Function properties for _Z10gemm_asyncPKfS0_Pfiiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 38 registers, used 1 barriers, 2048 bytes smem
+ptxas info    : Compile time = 14.018 ms
+ptxas info    : Compiling entry function '_Z13gemm_baselinePKfS0_Pfiiiii' for 'sm_110'
+ptxas info    : Function properties for _Z13gemm_baselinePKfS0_Pfiiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 40 registers, used 1 barriers, 2048 bytes smem
+ptxas info    : Compile time = 8.739 ms
+NVIDIA Thor sm_110
+PASS GPU shapes=216 kernels=2
+
+=== PASS qgemm_1014 15.9s ===
+PASS independent C++ group INT32/FP16 reference fixtures=28
+PASS SM110 baseline W4A4 kernel_event_ms p50=0.005312 p95=0.006528 samples=50 warmup=10
+PASS SM110 tiled W4A4 kernel_event_ms p50=0.005568 p95=0.016832 samples=50 warmup=10
+PASS SM110 baseline W4A16 kernel_event_ms p50=0.005216 p95=0.006176 samples=50 warmup=10
+PASS SM110 tiled W4A16 kernel_event_ms p50=0.005184 p95=0.006752 samples=50 warmup=10
+PASS SM110 baseline W8A8 kernel_event_ms p50=0.005248 p95=0.006368 samples=50 warmup=10
+PASS SM110 tiled W8A8 kernel_event_ms p50=0.005504 p95=0.007392 samples=50 warmup=10
+PASS SM110 baseline W8A16 kernel_event_ms p50=0.005472 p95=0.010016 samples=50 warmup=10
+PASS SM110 tiled W8A16 kernel_event_ms p50=0.005184 p95=0.006592 samples=50 warmup=10
+PASS SM110 baseline W4A4 kernel_event_ms p50=0.006336 p95=0.014016 samples=50 warmup=10
+PASS SM110 tiled W4A4 kernel_event_ms p50=0.006848 p95=0.011776 samples=50 warmup=10
+PASS SM110 baseline W4A16 kernel_event_ms p50=0.006208 p95=0.00928 samples=50 warmup=10
+PASS SM110 tiled W4A16 kernel_event_ms p50=0.007776 p95=0.017504 samples=50 warmup=10
+PASS SM110 baseline W8A8 kernel_event_ms p50=0.00672 p95=0.007328 samples=50 warmup=10
+PASS SM110 tiled W8A8 kernel_event_ms p50=0.007392 p95=0.008512 samples=50 warmup=10
+PASS SM110 baseline W8A16 kernel_event_ms p50=0.00624 p95=0.007296 samples=50 warmup=10
+PASS SM110 tiled W8A16 kernel_event_ms p50=0.006304 p95=0.007296 samples=50 warmup=10
+PASS SM110 baseline W4A4 kernel_event_ms p50=0.00832 p95=0.009152 samples=50 warmup=10
+PASS SM110 tiled W4A4 kernel_event_ms p50=0.006304 p95=0.008192 samples=50 warmup=10
+PASS SM110 baseline W4A16 kernel_event_ms p50=0.006272 p95=0.008128 samples=50 warmup=10
+PASS SM110 tiled W4A16 kernel_event_ms p50=0.006272 p95=0.008128 samples=50 warmup=10
+PASS SM110 baseline W8A8 kernel_event_ms p50=0.006304 p95=0.008128 samples=50 warmup=10
+PASS SM110 tiled W8A8 kernel_event_ms p50=0.006272 p95=0.00816 samples=50 warmup=10
+PASS SM110 baseline W8A16 kernel_event_ms p50=0.006272 p95=0.00832 samples=50 warmup=10
+PASS SM110 tiled W8A16 kernel_event_ms p50=0.006368 p95=0.010208 samples=50 warmup=10
+PASS SM110 baseline W8A8 kernel_event_ms p50=0.004992 p95=0.006752 samples=50 warmup=10
+PASS SM110 tiled W8A8 kernel_event_ms p50=0.00512 p95=0.0072 samples=50 warmup=10
+PASS SM110 baseline W4A4 kernel_event_ms p50=0.00832 p95=0.009664 samples=50 warmup=10
+PASS SM110 tiled W4A4 kernel_event_ms p50=0.008128 p95=0.009344 samples=50 warmup=10
+PASS SM110 baseline W4A16 kernel_event_ms p50=0.008416 p95=0.010336 samples=50 warmup=10
+PASS SM110 tiled W4A16 kernel_event_ms p50=0.008256 p95=0.009376 samples=50 warmup=10
+PASS SM110 baseline W8A8 kernel_event_ms p50=0.007968 p95=0.008256 samples=50 warmup=10
+PASS SM110 tiled W8A8 kernel_event_ms p50=0.008928 p95=0.016 samples=50 warmup=10
+PASS SM110 baseline W8A16 kernel_event_ms p50=0.008256 p95=0.009376 samples=50 warmup=10
+PASS SM110 tiled W8A16 kernel_event_ms p50=0.008288 p95=0.009344 samples=50 warmup=10
+PASS SM110 baseline W4A4 kernel_event_ms p50=0.006304 p95=0.007328 samples=50 warmup=10
+PASS SM110 tiled W4A4 kernel_event_ms p50=0.007136 p95=0.013984 samples=50 warmup=10
+PASS SM110 baseline W4A16 kernel_event_ms p50=0.006304 p95=0.013856 samples=50 warmup=10
+PASS SM110 tiled W4A16 kernel_event_ms p50=0.007136 p95=0.008352 samples=50 warmup=10
+PASS SM110 baseline W8A8 kernel_event_ms p50=0.00672 p95=0.015712 samples=50 warmup=10
+PASS SM110 tiled W8A8 kernel_event_ms p50=0.006336 p95=0.00736 samples=50 warmup=10
+PASS SM110 baseline W8A16 kernel_event_ms p50=0.00624 p95=0.007648 samples=50 warmup=10
+PASS SM110 tiled W8A16 kernel_event_ms p50=0.00624 p95=0.007968 samples=50 warmup=10
+PASS SM110 baseline W8A16 kernel_event_ms p50=0.005312 p95=0.006976 samples=50 warmup=10
+PASS SM110 tiled W8A16 kernel_event_ms p50=0.006208 p95=0.007328 samples=50 warmup=10
+PASS SM110 baseline W4A4 kernel_event_ms p50=0.00624 p95=0.007296 samples=50 warmup=10
+PASS SM110 tiled W4A4 kernel_event_ms p50=0.006112 p95=0.00768 samples=50 warmup=10
+PASS SM110 baseline W4A16 kernel_event_ms p50=0.006304 p95=0.008288 samples=50 warmup=10
+PASS SM110 tiled W4A16 kernel_event_ms p50=0.005408 p95=0.007712 samples=50 warmup=10
+PASS SM110 baseline W8A8 kernel_event_ms p50=0.00528 p95=0.007296 samples=50 warmup=10
+PASS SM110 tiled W8A8 kernel_event_ms p50=0.00544 p95=0.00736 samples=50 warmup=10
+PASS SM110 baseline W8A16 kernel_event_ms p50=0.005248 p95=0.007808 samples=50 warmup=10
+PASS SM110 tiled W8A16 kernel_event_ms p50=0.005504 p95=0.007424 samples=50 warmup=10
+PASS SM110 baseline W4A4 kernel_event_ms p50=0.006272 p95=0.00736 samples=50 warmup=10
+PASS SM110 tiled W4A4 kernel_event_ms p50=0.005856 p95=0.012736 samples=50 warmup=10
+PASS SM110 baseline W4A16 kernel_event_ms p50=0.005216 p95=0.007104 samples=50 warmup=10
+PASS SM110 tiled W4A16 kernel_event_ms p50=0.005024 p95=0.006752 samples=50 warmup=10
+
+=== PASS transpose_1015 3.3s ===
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z14transpose_tileILi1EEvPKfPf5Shape' for 'sm_110'
+ptxas info    : Function properties for _Z14transpose_tileILi1EEvPKfPf5Shape
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 30 registers, used 1 barriers, 4224 bytes smem
+ptxas info    : Compile time = 5.328 ms
+ptxas info    : Compiling entry function '_Z14transpose_tileILi0EEvPKfPf5Shape' for 'sm_110'
+ptxas info    : Function properties for _Z14transpose_tileILi0EEvPKfPf5Shape
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 30 registers, used 1 barriers, 4096 bytes smem
+ptxas info    : Compile time = 4.040 ms
+ptxas info    : Compiling entry function '_Z16transpose_directPKfPf5Shape' for 'sm_110'
+ptxas info    : Function properties for _Z16transpose_directPKfPf5Shape
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 20 registers, used 0 barriers
+ptxas info    : Compile time = 2.505 ms
+PASS GPU 150 mode/shape cases
+mode=0 kernel_batch_mean_p50_ms=0.108654 p95_ms=0.10884 logical_GBps=87.0248 transfer_request_p50_ms=0.195787
+mode=1 kernel_batch_mean_p50_ms=0.0474045 p95_ms=0.0477158 logical_GBps=199.467 transfer_request_p50_ms=0.131601
+mode=2 kernel_batch_mean_p50_ms=0.0143664 p95_ms=0.0149683 logical_GBps=658.176 transfer_request_p50_ms=0.101028
+
+=== PASS energy_1017 5.1s ===
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z10row_energyILi4EEvPKfPfiii' for 'sm_110'
+ptxas info    : Function properties for _Z10row_energyILi4EEvPKfPfiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 21 registers, used 0 barriers
+ptxas info    : Compile time = 7.127 ms
+ptxas info    : Compiling entry function '_Z10row_energyILi1EEvPKfPfiii' for 'sm_110'
+ptxas info    : Function properties for _Z10row_energyILi1EEvPKfPfiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 40 registers, used 0 barriers
+ptxas info    : Compile time = 5.682 ms
+NVIDIA Thor driver=13000 runtime=13000
+U=1 registers=40 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+U=4 registers=21 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+PASS U=1 GPU_batch_mean_P50_ms=0.0031744 P95_ms=0.0034592 transfer_kernel_host_P50_ms=0.023657
+PASS U=4 GPU_batch_mean_P50_ms=0.00315456 P95_ms=0.00358336 transfer_kernel_host_P50_ms=0.023324
+NVIDIA Thor driver=13000 runtime=13000
+U=1 registers=40 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+U=4 registers=21 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+PASS U=1 GPU_batch_mean_P50_ms=0.00313408 P95_ms=0.003504 transfer_kernel_host_P50_ms=0.023408
+PASS U=4 GPU_batch_mean_P50_ms=0.00297152 P95_ms=0.00476416 transfer_kernel_host_P50_ms=0.023426
+NVIDIA Thor driver=13000 runtime=13000
+U=1 registers=40 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+U=4 registers=21 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+PASS U=1 GPU_batch_mean_P50_ms=0.00340032 P95_ms=0.0036832 transfer_kernel_host_P50_ms=0.024667
+PASS U=4 GPU_batch_mean_P50_ms=0.00306624 P95_ms=0.00360512 transfer_kernel_host_P50_ms=0.023158
+NVIDIA Thor driver=13000 runtime=13000
+U=1 registers=40 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+U=4 registers=21 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+PASS U=1 GPU_batch_mean_P50_ms=0.00409664 P95_ms=0.00483008 transfer_kernel_host_P50_ms=0.02399
+PASS U=4 GPU_batch_mean_P50_ms=0.00340864 P95_ms=0.00364672 transfer_kernel_host_P50_ms=0.023444
+NVIDIA Thor driver=13000 runtime=13000
+U=1 registers=40 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+U=4 registers=21 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+PASS U=1 GPU_batch_mean_P50_ms=0.004032 P95_ms=0.00459008 transfer_kernel_host_P50_ms=0.024768
+PASS U=4 GPU_batch_mean_P50_ms=0.0027232 P95_ms=0.00323136 transfer_kernel_host_P50_ms=0.023482
+NVIDIA Thor driver=13000 runtime=13000
+U=1 registers=40 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+U=4 registers=21 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+PASS U=1 GPU_batch_mean_P50_ms=0.003728 P95_ms=0.00455744 transfer_kernel_host_P50_ms=0.024055
+PASS U=4 GPU_batch_mean_P50_ms=0.00356608 P95_ms=0.00498048 transfer_kernel_host_P50_ms=0.02425
+NVIDIA Thor driver=13000 runtime=13000
+U=1 registers=40 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+U=4 registers=21 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+PASS U=1 GPU_batch_mean_P50_ms=0.00409152 P95_ms=0.00413184 transfer_kernel_host_P50_ms=0.023574
+PASS U=4 GPU_batch_mean_P50_ms=0.00407424 P95_ms=0.00491136 transfer_kernel_host_P50_ms=0.023676
+NVIDIA Thor driver=13000 runtime=13000
+U=1 registers=40 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+U=4 registers=21 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+PASS U=1 GPU_batch_mean_P50_ms=0.00591616 P95_ms=0.00652736 transfer_kernel_host_P50_ms=0.044852
+PASS U=4 GPU_batch_mean_P50_ms=0.0082336 P95_ms=0.00896192 transfer_kernel_host_P50_ms=0.054194
+NVIDIA Thor driver=13000 runtime=13000
+U=1 registers=40 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+U=4 registers=21 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+PASS U=1 GPU_batch_mean_P50_ms=0.034887 P95_ms=0.0355494 transfer_kernel_host_P50_ms=0.082232
+PASS U=4 GPU_batch_mean_P50_ms=0.0736992 P95_ms=0.0738707 transfer_kernel_host_P50_ms=0.117666
+NVIDIA Thor driver=13000 runtime=13000
+U=1 registers=40 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+U=4 registers=21 local_bytes=0 shared_bytes=0 max_active_blocks_per_SM=12
+PASS U=1 GPU_batch_mean_P50_ms=0.286561 P95_ms=0.292111 transfer_kernel_host_P50_ms=0.906131
+PASS U=4 GPU_batch_mean_P50_ms=0.330883 P95_ms=0.40207 transfer_kernel_host_P50_ms=0.871186
+
+=== PASS trt_1026 20.9s ===
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Jul_16_07:31:19_PM_PDT_2025
+Cuda compilation tools, release 13.0, V13.0.48
+Build cuda_13.0.r13.0/compiler.36260728_0
+sm_110
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z13affine_fused4PKfPfi' for 'sm_110'
+ptxas info    : Function properties for _Z13affine_fused4PKfPfi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 20 registers, used 0 barriers
+ptxas info    : Compile time = 4.223 ms
+ptxas info    : Compiling entry function '_Z13bias_baselinePKfPfi' for 'sm_110'
+ptxas info    : Function properties for _Z13bias_baselinePKfPfi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 10 registers, used 0 barriers
+ptxas info    : Compile time = 1.447 ms
+ptxas info    : Compiling entry function '_Z14scale_baselinePKfPfi' for 'sm_110'
+ptxas info    : Function properties for _Z14scale_baselinePKfPfi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 10 registers, used 0 barriers
+ptxas info    : Compile time = 1.337 ms
+mode=0 n=1 GPU_pipeline_us_P50/P95=10.784/16.16 host_submit_us_P50=8.361 H2D_pipeline_D2H_sync_us_P50/P95=31.759/37.39
+mode=1 n=1 GPU_pipeline_us_P50/P95=8.448/9.504 host_submit_us_P50=6.065 H2D_pipeline_D2H_sync_us_P50/P95=29.509/30.481
+mode=2 n=1 GPU_pipeline_us_P50/P95=5.344/5.952 host_submit_us_P50=2.102 H2D_pipeline_D2H_sync_us_P50/P95=25.991/27.037
+preprocess fused=0 GPU_event_ms_P50=0.007296 P95=0.008384
+preprocess fused=1 GPU_event_ms_P50=0.005312 P95=0.005376
+mode=0 n=3 GPU_pipeline_us_P50/P95=10.88/12.064 host_submit_us_P50=8.426 H2D_pipeline_D2H_sync_us_P50/P95=31.362/32.851
+mode=1 n=3 GPU_pipeline_us_P50/P95=8.416/12.096 host_submit_us_P50=5.926 H2D_pipeline_D2H_sync_us_P50/P95=29.055/55.435
+mode=2 n=3 GPU_pipeline_us_P50/P95=5.6/6.624 host_submit_us_P50=2.111 H2D_pipeline_D2H_sync_us_P50/P95=25.38/26.889
+preprocess fused=0 GPU_event_ms_P50=0.007296 P95=0.008192
+preprocess fused=1 GPU_event_ms_P50=0.005248 P95=0.006272
+mode=0 n=4 GPU_pipeline_us_P50/P95=10.816/11.584 host_submit_us_P50=8.454 H2D_pipeline_D2H_sync_us_P50/P95=31.621/33.982
+mode=1 n=4 GPU_pipeline_us_P50/P95=8.576/9.728 host_submit_us_P50=6.093 H2D_pipeline_D2H_sync_us_P50/P95=29.158/30.843
+mode=2 n=4 GPU_pipeline_us_P50/P95=5.568/7.552 host_submit_us_P50=2.083 H2D_pipeline_D2H_sync_us_P50/P95=26.074/45.009
+preprocess fused=0 GPU_event_ms_P50=0.007744 P95=0.014656
+preprocess fused=1 GPU_event_ms_P50=0.005312 P95=0.005408
+mode=0 n=5 GPU_pipeline_us_P50/P95=10.848/15.744 host_submit_us_P50=8.509 H2D_pipeline_D2H_sync_us_P50/P95=31.694/36.583
+mode=1 n=5 GPU_pipeline_us_P50/P95=8.512/9.728 host_submit_us_P50=6.148 H2D_pipeline_D2H_sync_us_P50/P95=29.371/30.463
+mode=2 n=5 GPU_pipeline_us_P50/P95=5.44/6.4 host_submit_us_P50=2.018 H2D_pipeline_D2H_sync_us_P50/P95=25.851/26.981
+preprocess fused=0 GPU_event_ms_P50=0.007296 P95=0.008064
+preprocess fused=1 GPU_event_ms_P50=0.005152 P95=0.009952
+mode=0 n=31 GPU_pipeline_us_P50/P95=10.752/12.064 host_submit_us_P50=8.371 H2D_pipeline_D2H_sync_us_P50/P95=31.879/33.778
+mode=1 n=31 GPU_pipeline_us_P50/P95=8.512/8.928 host_submit_us_P50=6.093 H2D_pipeline_D2H_sync_us_P50/P95=29.334/30.963
+mode=2 n=31 GPU_pipeline_us_P50/P95=5.6/6.592 host_submit_us_P50=2.111 H2D_pipeline_D2H_sync_us_P50/P95=25.898/27.083
+preprocess fused=0 GPU_event_ms_P50=0.007296 P95=0.008384
+preprocess fused=1 GPU_event_ms_P50=0.00528 P95=0.006336
+mode=0 n=32 GPU_pipeline_us_P50/P95=10.816/12.64 host_submit_us_P50=8.445 H2D_pipeline_D2H_sync_us_P50/P95=31.814/34.056
+mode=1 n=32 GPU_pipeline_us_P50/P95=8.672/10.56 host_submit_us_P50=6.195 H2D_pipeline_D2H_sync_us_P50/P95=29.749/31.38
+mode=2 n=32 GPU_pipeline_us_P50/P95=5.344/5.984 host_submit_us_P50=2.102 H2D_pipeline_D2H_sync_us_P50/P95=25.426/27.593
+preprocess fused=0 GPU_event_ms_P50=0.007328 P95=0.007776
+preprocess fused=1 GPU_event_ms_P50=0.00528 P95=0.006176
+mode=0 n=33 GPU_pipeline_us_P50/P95=10.816/12.224 host_submit_us_P50=8.389 H2D_pipeline_D2H_sync_us_P50/P95=31.602/36.241
+mode=1 n=33 GPU_pipeline_us_P50/P95=8.512/9.408 host_submit_us_P50=6.204 H2D_pipeline_D2H_sync_us_P50/P95=29.325/30.963
+mode=2 n=33 GPU_pipeline_us_P50/P95=5.472/6.208 host_submit_us_P50=2.185 H2D_pipeline_D2H_sync_us_P50/P95=25.861/27.028
+preprocess fused=0 GPU_event_ms_P50=0.007264 P95=0.008352
+preprocess fused=1 GPU_event_ms_P50=0.005248 P95=0.006272
+mode=0 n=257 GPU_pipeline_us_P50/P95=10.784/14.592 host_submit_us_P50=8.278 H2D_pipeline_D2H_sync_us_P50/P95=31.648/38.25
+mode=1 n=257 GPU_pipeline_us_P50/P95=8.576/9.888 host_submit_us_P50=6.157 H2D_pipeline_D2H_sync_us_P50/P95=29.37/31.528
+mode=2 n=257 GPU_pipeline_us_P50/P95=5.792/6.592 host_submit_us_P50=2.083 H2D_pipeline_D2H_sync_us_P50/P95=26.426/28.028
+preprocess fused=0 GPU_event_ms_P50=0.007328 P95=0.008288
+preprocess fused=1 GPU_event_ms_P50=0.00528 P95=0.005376
+mode=0 n=4097 GPU_pipeline_us_P50/P95=10.464/12.672 host_submit_us_P50=8.491 H2D_pipeline_D2H_sync_us_P50/P95=32.787/37.37
+mode=1 n=4097 GPU_pipeline_us_P50/P95=8.128/9.664 host_submit_us_P50=6.111 H2D_pipeline_D2H_sync_us_P50/P95=30.269/32.158
+mode=2 n=4097 GPU_pipeline_us_P50/P95=5.6/11.744 host_submit_us_P50=1.731 H2D_pipeline_D2H_sync_us_P50/P95=27.806/60.139
+preprocess fused=0 GPU_event_ms_P50=0.007296 P95=0.008384
+preprocess fused=1 GPU_event_ms_P50=0.00528 P95=0.00624
+mode=0 n=65539 GPU_pipeline_us_P50/P95=10.304/13.696 host_submit_us_P50=10.454 H2D_pipeline_D2H_sync_us_P50/P95=40.027/47.768
+mode=1 n=65539 GPU_pipeline_us_P50/P95=6.176/8.256 host_submit_us_P50=8.186 H2D_pipeline_D2H_sync_us_P50/P95=36.472/38.436
+mode=2 n=65539 GPU_pipeline_us_P50/P95=6.112/9.184 host_submit_us_P50=2.093 H2D_pipeline_D2H_sync_us_P50/P95=35.371/51.371
+preprocess fused=0 GPU_event_ms_P50=0.010368 P95=0.011456
+preprocess fused=1 GPU_event_ms_P50=0.00528 P95=0.006336
+
+=== PASS gemm_1028 1.6s ===
+cpu build complete; use ./build.sh thor for nvcc
+cpu_gemm_pass max_abs=0 tail_shape=3x5x7
+thor_sm110_candidate_ok
+
+=== PASS qgemm_1029 16.3s ===
+PASS independent C++ group INT32/FP16 reference fixtures=28
+PASS SM110 baseline W4A4 kernel_event_ms p50=0.005248 p95=0.007104 samples=50 warmup=10
+PASS SM110 tiled W4A4 kernel_event_ms p50=0.005664 p95=0.00768 samples=50 warmup=10
+PASS SM110 baseline W4A16 kernel_event_ms p50=0.005248 p95=0.006784 samples=50 warmup=10
+PASS SM110 tiled W4A16 kernel_event_ms p50=0.005344 p95=0.007296 samples=50 warmup=10
+PASS SM110 baseline W8A8 kernel_event_ms p50=0.005984 p95=0.007232 samples=50 warmup=10
+PASS SM110 tiled W8A8 kernel_event_ms p50=0.00576 p95=0.008128 samples=50 warmup=10
+PASS SM110 baseline W8A16 kernel_event_ms p50=0.00496 p95=0.006592 samples=50 warmup=10
+PASS SM110 tiled W8A16 kernel_event_ms p50=0.005248 p95=0.007456 samples=50 warmup=10
+PASS SM110 baseline W4A4 kernel_event_ms p50=0.007136 p95=0.01312 samples=50 warmup=10
+PASS SM110 tiled W4A4 kernel_event_ms p50=0.006816 p95=0.01488 samples=50 warmup=10
+PASS SM110 baseline W4A16 kernel_event_ms p50=0.0072 p95=0.008288 samples=50 warmup=10
+PASS SM110 tiled W4A16 kernel_event_ms p50=0.00672 p95=0.017088 samples=50 warmup=10
+PASS SM110 baseline W8A8 kernel_event_ms p50=0.006272 p95=0.008288 samples=50 warmup=10
+PASS SM110 tiled W8A8 kernel_event_ms p50=0.00704 p95=0.008064 samples=50 warmup=10
+PASS SM110 baseline W8A16 kernel_event_ms p50=0.00704 p95=0.007328 samples=50 warmup=10
+PASS SM110 tiled W8A16 kernel_event_ms p50=0.007264 p95=0.00832 samples=50 warmup=10
+PASS SM110 baseline W4A4 kernel_event_ms p50=0.008224 p95=0.009312 samples=50 warmup=10
+PASS SM110 tiled W4A4 kernel_event_ms p50=0.007264 p95=0.008352 samples=50 warmup=10
+PASS SM110 baseline W4A16 kernel_event_ms p50=0.007104 p95=0.008224 samples=50 warmup=10
+PASS SM110 tiled W4A16 kernel_event_ms p50=0.007232 p95=0.008192 samples=50 warmup=10
+PASS SM110 baseline W8A8 kernel_event_ms p50=0.00704 p95=0.008384 samples=50 warmup=10
+PASS SM110 tiled W8A8 kernel_event_ms p50=0.007264 p95=0.00832 samples=50 warmup=10
+PASS SM110 baseline W8A16 kernel_event_ms p50=0.007296 p95=0.00832 samples=50 warmup=10
+PASS SM110 tiled W8A16 kernel_event_ms p50=0.007264 p95=0.00832 samples=50 warmup=10
+PASS SM110 baseline W8A8 kernel_event_ms p50=0.00528 p95=0.00736 samples=50 warmup=10
+PASS SM110 tiled W8A8 kernel_event_ms p50=0.005824 p95=0.007808 samples=50 warmup=10
+PASS SM110 baseline W4A4 kernel_event_ms p50=0.009216 p95=0.010368 samples=50 warmup=10
+PASS SM110 tiled W4A4 kernel_event_ms p50=0.008576 p95=0.015584 samples=50 warmup=10
+PASS SM110 baseline W4A16 kernel_event_ms p50=0.00928 p95=0.010304 samples=50 warmup=10
+PASS SM110 tiled W4A16 kernel_event_ms p50=0.008224 p95=0.009376 samples=50 warmup=10
+PASS SM110 baseline W8A8 kernel_event_ms p50=0.00816 p95=0.009216 samples=50 warmup=10
+PASS SM110 tiled W8A8 kernel_event_ms p50=0.008352 p95=0.009408 samples=50 warmup=10
+PASS SM110 baseline W8A16 kernel_event_ms p50=0.008288 p95=0.009312 samples=50 warmup=10
+PASS SM110 tiled W8A16 kernel_event_ms p50=0.00832 p95=0.009344 samples=50 warmup=10
+PASS SM110 baseline W4A4 kernel_event_ms p50=0.006304 p95=0.014432 samples=50 warmup=10
+PASS SM110 tiled W4A4 kernel_event_ms p50=0.007008 p95=0.007744 samples=50 warmup=10
+PASS SM110 baseline W4A16 kernel_event_ms p50=0.006656 p95=0.012384 samples=50 warmup=10
+PASS SM110 tiled W4A16 kernel_event_ms p50=0.00704 p95=0.016992 samples=50 warmup=10
+PASS SM110 baseline W8A8 kernel_event_ms p50=0.006208 p95=0.007296 samples=50 warmup=10
+PASS SM110 tiled W8A8 kernel_event_ms p50=0.007008 p95=0.007296 samples=50 warmup=10
+PASS SM110 baseline W8A16 kernel_event_ms p50=0.006208 p95=0.007648 samples=50 warmup=10
+PASS SM110 tiled W8A16 kernel_event_ms p50=0.006272 p95=0.008192 samples=50 warmup=10
+PASS SM110 baseline W8A16 kernel_event_ms p50=0.005248 p95=0.006272 samples=50 warmup=10
+PASS SM110 tiled W8A16 kernel_event_ms p50=0.005984 p95=0.00848 samples=50 warmup=10
+PASS SM110 baseline W4A4 kernel_event_ms p50=0.006432 p95=0.008768 samples=50 warmup=10
+PASS SM110 tiled W4A4 kernel_event_ms p50=0.006176 p95=0.01232 samples=50 warmup=10
+PASS SM110 baseline W4A16 kernel_event_ms p50=0.006208 p95=0.007296 samples=50 warmup=10
+PASS SM110 tiled W4A16 kernel_event_ms p50=0.005312 p95=0.008192 samples=50 warmup=10
+PASS SM110 baseline W8A8 kernel_event_ms p50=0.00528 p95=0.007328 samples=50 warmup=10
+PASS SM110 tiled W8A8 kernel_event_ms p50=0.00608 p95=0.007296 samples=50 warmup=10
+PASS SM110 baseline W8A16 kernel_event_ms p50=0.005088 p95=0.006528 samples=50 warmup=10
+PASS SM110 tiled W8A16 kernel_event_ms p50=0.005536 p95=0.007424 samples=50 warmup=10
+PASS SM110 baseline W4A4 kernel_event_ms p50=0.006496 p95=0.01216 samples=50 warmup=10
+PASS SM110 tiled W4A4 kernel_event_ms p50=0.005504 p95=0.007456 samples=50 warmup=10
+PASS SM110 baseline W4A16 kernel_event_ms p50=0.006048 p95=0.007264 samples=50 warmup=10
+PASS SM110 tiled W4A16 kernel_event_ms p50=0.00576 p95=0.007328 samples=50 warmup=10
+
+=== PASS nf4 1.9s ===
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z8nf4_warpPKhPKfS2_S2_Pf' for 'sm_110'
+ptxas info    : Function properties for _Z8nf4_warpPKhPKfS2_S2_Pf
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 20 registers, used 0 barriers
+ptxas info    : Compile time = 4.146 ms
+ptxas info    : Compiling entry function '_Z10nf4_scalarPKhPKfS2_S2_Pf' for 'sm_110'
+ptxas info    : Function properties for _Z10nf4_scalarPKhPKfS2_S2_Pf
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 40 registers, used 0 barriers
+ptxas info    : Compile time = 6.620 ms
+GPU=NVIDIA Thor SM=20 maxThreadsPerSM=1536
+mode=0 kernel_p50_ms=0.010272 kernel_p95_ms=0.011392
+mode=1 kernel_p50_ms=0.006976 kernel_p95_ms=0.012224
+PASS custom NF4 low-nibble-first SIMT GEMV K=130 N=33; not native Tensor Core
+
+=== PASS kivi_qk 2.0s ===
+T=1 D=1 variant=0 GPU kernel ms P50=0.005088 P95=0.006208
+T=1 D=1 variant=1 GPU kernel ms P50=0.005248 P95=0.00624
+T=17 D=17 variant=0 GPU kernel ms P50=0.00624 P95=0.007296
+T=17 D=17 variant=1 GPU kernel ms P50=0.004896 P95=0.006208
+T=33 D=65 variant=0 GPU kernel ms P50=0.00832 P95=0.009344
+T=33 D=65 variant=1 GPU kernel ms P50=0.005056 P95=0.005792
+T=1024 D=128 variant=0 GPU kernel ms P50=0.010464 P95=0.011424
+T=1024 D=128 variant=1 GPU kernel ms P50=0.006624 P95=0.011808
+
+=== PASS optimizer_codec 1.9s ===
+variant=0 device_kernel_ms_p50=0.026624 p95=0.027712
+variant=1 device_kernel_ms_p50=0.008832 p95=0.010176
+PASS 24 boundary/zero variant tests; uniform signed codec only, not native bnb Adam
+
+=== PASS fp8_codec 2.4s ===
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Jul_16_07:31:19_PM_PDT_2025
+Cuda compilation tools, release 13.0, V13.0.48
+Build cuda_13.0.r13.0/compiler.36260728_0
+sm_110
+SM110 scalar kernel_ms p50=0.020448 p95=0.020704 n=1048579
+PASS 8 shapes host CUDA Math byte oracle
+SM110 vector kernel_ms p50=0.010304 p95=0.011392 n=1048579
+PASS 8 shapes host CUDA Math byte oracle
+
+=== PASS block_fp4 1.9s ===
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z12decode_pairsPKhS0_fPfi' for 'sm_110'
+ptxas info    : Function properties for _Z12decode_pairsPKhS0_fPfi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 14 registers, used 0 barriers
+ptxas info    : Compile time = 4.935 ms
+ptxas info    : Compiling entry function '_Z15decode_baselinePKhS0_fPfi' for 'sm_110'
+ptxas info    : Function properties for _Z15decode_baselinePKhS0_fPfi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 13 registers, used 0 barriers
+ptxas info    : Compile time = 2.846 ms
+baseline n=1048577 GPU_event_batch_ms_p50=0.0327933 p95=0.0330339
+pairs n=1048577 GPU_event_batch_ms_p50=0.0225475 p95=0.0230877
+PASS SIMT NVFP4 decode; no Tensor Core GEMM
+
+=== PASS awq_gemv 3.3s ===
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Jul_16_07:31:19_PM_PDT_2025
+Cuda compilation tools, release 13.0, V13.0.48
+Build cuda_13.0.r13.0/compiler.36260728_0
+sm_110
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z9gemv_warpPK6__halfPKhPKfPfiii' for 'sm_110'
+ptxas info    : Function properties for _Z9gemv_warpPK6__halfPKhPKfPfiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 40 registers, used 0 barriers
+ptxas info    : Compile time = 13.206 ms
+ptxas info    : Compiling entry function '_Z13gemv_baselinePK6__halfPKhPKfPfiii' for 'sm_110'
+ptxas info    : Function properties for _Z13gemv_baselinePK6__halfPKhPKfPfiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 40 registers, used 0 barriers
+ptxas info    : Compile time = 10.627 ms
+baseline GPU_kernel_batch_mean_ms P50=0.0534406 P95=0.0538563
+warp_candidate GPU_kernel_batch_mean_ms P50=0.0061552 P95=0.00673184
+PASS actual Thor GPU baseline/warp
+
+=== PASS llm_int8 4.3s ===
+NVIDIA Thor cc=11.0
+PASS 17x19x1 mask=0 max_abs=0
+PASS 17x19x1 mask=1 max_abs=0
+PASS 17x19x1 mask=2 max_abs=0
+PASS 17x19x15 mask=0 max_abs=3.8147e-06
+PASS 17x19x15 mask=1 max_abs=3.8147e-06
+PASS 17x19x15 mask=2 max_abs=1.52588e-05
+PASS 17x19x16 mask=0 max_abs=7.62939e-06
+PASS 17x19x16 mask=1 max_abs=1.14441e-05
+PASS 17x19x16 mask=2 max_abs=2.28882e-05
+PASS 17x19x17 mask=0 max_abs=7.62939e-06
+PASS 17x19x17 mask=1 max_abs=9.53674e-06
+PASS 17x19x17 mask=2 max_abs=2.28882e-05
+PASS 17x19x65 mask=0 max_abs=2.67029e-05
+PASS 17x19x65 mask=1 max_abs=2.28882e-05
+PASS 17x19x65 mask=2 max_abs=3.91006e-05
+PASS 1x1x1 mask=0 max_abs=0
+PASS 16x16x16 mask=2 max_abs=7.62939e-06
+PASS 128x128x256 mask=1 max_abs=5.34058e-05
+baseline GPU_batch_mean_us_P50=40.5952 P95=41.7248
+tiled GPU_batch_mean_us_P50=18.3248 P95=19.2096
+transfer_kernel_transfer_single_us=149.408 payload_bytes=132352
+
+=== PASS transfer 1.4s ===
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Jul_16_07:31:19_PM_PDT_2025
+Cuda compilation tools, release 13.0, V13.0.48
+Build cuda_13.0.r13.0/compiler.36260728_0
+PASS Thor SM110 transfer-only 6 roundtrips; no inference/kernel timing

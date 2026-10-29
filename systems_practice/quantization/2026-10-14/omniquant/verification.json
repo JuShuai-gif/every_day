@@ -8,7 +8,7 @@
   "source_fetched": true,
   "source_read": true,
   "example_delivered": true,
-  "cpu_example_run": false,
+  "cpu_example_run": true,
   "thor_verified": false,
   "read_symbols": [
     "QuantLinear.__init__/forward/set_quant_state",
@@ -23,8 +23,17 @@
     "results/native-run.txt"
   ],
   "blockers": [
+    "Native GPU backend, Thor compatibility and ncu remain unverified; CPU run is not low-bit GPU inference."
+  ],
+  "license": "LICENCE MIT; pyproject Apache classifier conflict retained",
+  "historical_mac_blockers": [
     "torch missing; native packing/error/timing unexecuted",
     "AutoGPTQ/MLC Thor SM110 compatibility not audited"
   ],
-  "license": "LICENCE MIT; pyproject Apache classifier conflict retained"
+  "thor_2026_10_29": {
+    "cpu_native_run": true,
+    "environment": "Old_Thor Docker ghr-flashrt-thor, PyTorch 2.12.0a0 CUDA 13.2; CPU execution",
+    "evidence": "../../../validation/2026-10-29-thor/cached-quant-retry.txt",
+    "gpu_backend_verified": false
+  }
 }

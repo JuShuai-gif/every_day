@@ -1,0 +1,18 @@
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+PASS 4104 overlap cases + 1026 disjoint lengths
+scalar n=16 CPU_batch_mean_us p50=0.0078125 p95=0.00788281
+auto n=16 CPU_batch_mean_us p50=0.00434375 p95=0.00470312
+scalar n=4096 CPU_batch_mean_us p50=2.03054 p95=2.04529
+auto n=4096 CPU_batch_mean_us p50=0.788414 p95=0.788492
+scalar n=262144 CPU_batch_mean_us p50=109.908 p95=116.989
+auto n=262144 CPU_batch_mean_us p50=53.285 p95=59.2565
+PASS 4104 overlap cases + 1026 disjoint lengths
+src/kernel.cpp:8:29: optimized: loop vectorized using 16 byte vectors
+src/kernel.cpp:8:29: optimized:  loop versioned for vectorization because of possible aliasing
+src/kernel.cpp:6:17: note: vectorized 1 loops in function.
+src/kernel.cpp:11:1: note: ***** Analysis failed with vector mode V4SI
+src/kernel.cpp:11:1: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SI

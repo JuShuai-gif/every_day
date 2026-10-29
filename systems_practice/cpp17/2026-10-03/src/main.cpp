@@ -75,7 +75,7 @@ int main() {
     check(owned.size() == 3);
     bool bounds = false;
     try {
-      v.substr(4);
+      (void)v.substr(4);
     } catch (const std::out_of_range&) {
       bounds = true;
     }
