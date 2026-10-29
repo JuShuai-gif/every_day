@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/NVIDIA/apex",
+  "ref": "master",
+  "commit": null,
+  "read_date": "2026-10-25",
+  "license": "BSD-3-Clause; LICENSE read",
+  "files": [
+    {
+      "path": "csrc/layer_norm_cuda_kernel.cu",
+      "symbols": [
+        "cuRMSOnlineSum",
+        "cuChanRMSOnlineSum",
+        "cuWelfordMuSigma2 RMS branches",
+        "cuApplyLayerNorm_",
+        "cuApplyRMSNorm"
+      ],
+      "url": "https://github.com/NVIDIA/apex/blob/master/csrc/layer_norm_cuda_kernel.cu"
+    }
+  ],
+  "original_scene": "PyTorch mixed dtype normalization forward/backward",
+  "preserved": "sum-square/scale and warp participant contract",
+  "omitted": "gamma, autograd, multiple dtypes, framework dispatch",
+  "relationship": "Independent implementation inspired by selected source; starts from unarchived Oct24 draft, reread/revalidated today",
+  "source_read": true,
+  "recorded_at": "2026-10-25T08:45:36.795238+08:00",
+  "research_record": "results/research.json"
+}

@@ -1,0 +1,28 @@
+{
+  "lesson_date": "2026-10-24",
+  "recorded_at": "2026-10-25T08:45:56.193217+08:00",
+  "actual_final_validation_date": "2026-10-25",
+  "date_note": "Start date command returned Oct24; finalized Oct25, no extra Oct25 cursor consumed.",
+  "repository": "https://github.com/ggml-org/llama.cpp",
+  "ref": "master",
+  "commit": null,
+  "file_blob_sha": "3f0ea6f2a474edef78ea0858d38739d5461f8faf",
+  "blob_is_not_commit": true,
+  "read_dates": [
+    "2026-10-24",
+    "2026-10-25"
+  ],
+  "path": "ggml/src/ggml-cuda/norm.cu",
+  "url": "https://github.com/ggml-org/llama.cpp/blob/master/ggml/src/ggml-cuda/norm.cu",
+  "read_symbols": [
+    "rms_norm_f32",
+    "rms_norm_f32_dispatch",
+    "rms_norm_f32_cuda"
+  ],
+  "license": "MIT",
+  "license_read": true,
+  "source_read": true,
+  "original_scenario": "ggml tensor RMSNorm; scalar and vector caching/dispatch",
+  "relationship": "Independent inspired implementation; no upstream code copied; omit float4, gamma and general tensor dispatch",
+  "source_transport": "GitHub connector actual file content"
+}

@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-27",
+  "source_read": true,
+  "source_fetched": true,
+  "example_delivered": true,
+  "cpu_example_run": true,
+  "thor_verified": false,
+  "rknn_toolkit_verified": false,
+  "board_runtime_verified": false,
+  "evidence": [
+    "results/cpu.txt",
+    "results/sanitize.txt",
+    "results/convert.txt",
+    "results/rknn_compile.txt"
+  ],
+  "blockers": [
+    "Mac lacks Toolkit2, rknnrt and RK3588 board",
+    "conversion, precision and NPU timing unverified"
+  ]
+}

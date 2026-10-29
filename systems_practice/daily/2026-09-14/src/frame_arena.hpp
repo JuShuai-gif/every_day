@@ -1,32 +1,35 @@
-#pragma once
+#pragma once  // 防止该头文件被同一个编译单元重复包含。
 
-#include <atomic>
-#include <cstddef>
-#include <exception>
-#include <limits>
-#include <new>
-#include <stdexcept>
-#include <type_traits>
-#include <utility>
-#include <vector>
+#include <atomic>       // 原子游标、状态字和无锁析构链。
+#include <cstddef>      // std::byte、std::size_t。
+#include <exception>    // std::terminate。
+#include <limits>       // std::numeric_limits。
+#include <new>          // placement new。
+#include <stdexcept>    // 异常类型。
+#include <type_traits>  // 编译期类型约束。
+#include <utility>      // std::exchange、std::forward。
+#include <vector>       // 预先分配的原始字节存储。
 
 // 借鉴 gRPC Arena 的“原子 bump + ManagedNew 链表”；本练习固定容量，适合实时控制帧。
 class FrameArena {
  public:
   class Producer {
    public:
+    // 默认构造的 Producer 不关联任何 arena，不能用于 make/managed_new。
     Producer() = default;
     Producer(const Producer&) = delete;
     Producer& operator=(const Producer&) = delete;
+    // 租约只能移动，移动后 other 失效，避免两个对象重复归还同一份租约。
     Producer(Producer&& other) noexcept : arena_(std::exchange(other.arena_, nullptr)) {
     }
     Producer& operator=(Producer&& other) noexcept {
       if (this != &other) {
-        release();
+        release();  // 先归还当前租约，再接管 other 的租约。
         arena_ = std::exchange(other.arena_, nullptr);
       }
       return *this;
     }
+    // RAII：worker 无论正常返回还是异常展开，都会自动减少活跃计数。
     ~Producer() {
       release();
     }
@@ -45,12 +48,14 @@ class FrameArena {
     FrameArena* arena_ = nullptr;
   };
 
+  // 创建固定容量字节池。容量向上取整到 16 字节，保证后续 bump 分配的对齐。
   explicit FrameArena(std::size_t bytes) : storage_(round_up(bytes)) {
     // 仅在创建时申请底层 vector；帧内 allocate 不会触发动态扩容。
     if (bytes == 0) {
       throw std::invalid_argument("arena capacity must be positive");
     }
   }
+  // arena 含有原子状态与内部指针，禁止复制，避免两份对象共享同一生命周期。
   FrameArena(const FrameArena&) = delete;
   FrameArena& operator=(const FrameArena&) = delete;
   ~FrameArena() {
@@ -126,13 +131,14 @@ class FrameArena {
     used_.store(0, std::memory_order_relaxed);
     state_.store(0, std::memory_order_release);
   }
+  // 返回当前帧已占用的字节数，主要供观测和测试使用。
   std::size_t used_bytes() const noexcept {
     return used_.load(std::memory_order_relaxed);
   }
 
  private:
-  static constexpr std::size_t kAlignment = 16;
-  static constexpr std::uint64_t kClosedBit = std::uint64_t{1} << 63;
+  static constexpr std::size_t kAlignment = 16;                        // 本练习支持的最大对象对齐。
+  static constexpr std::uint64_t kClosedBit = std::uint64_t{1} << 63;  // 状态字最高位。
   struct ManagedNodeBase {
     // 基类让不同 T 共用一条析构链表；destroy 保存正确的静态析构函数。
     ManagedNodeBase* next = nullptr;
@@ -193,8 +199,8 @@ class FrameArena {
       }
     }
   }
-  std::vector<std::byte> storage_;
-  std::atomic<std::size_t> used_{0};
+  std::vector<std::byte> storage_;       // 整个 arena 唯一的底层分配。
+  std::atomic<std::size_t> used_{0};     // bump 游标；只递增，reset 时归零。
   std::atomic<std::uint64_t> state_{0};  // closed bit + 活跃 producer 计数，保护 reset 边界。
   std::atomic<ManagedNodeBase*> managed_head_{nullptr};
 };

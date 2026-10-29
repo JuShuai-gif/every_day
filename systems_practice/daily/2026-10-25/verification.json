@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-25",
+  "recorded_at": "2026-10-25T08:45:36.795238+08:00",
+  "source_read": true,
+  "version_pinned": false,
+  "host_compiled": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "target_board_verified": false,
+  "source_record": "source.json",
+  "evidence": [
+    "results/verified-cpu.txt",
+    "results/verified-sanitize.txt"
+  ],
+  "performance_domain": "No main GPU/OS/C++ benchmark claim; CPU contract checks only",
+  "code_origin": "Oct24 unfinished draft copied without old logs; reviewed/tested Oct25",
+  "target": "Thor SM110",
+  "gpu_compiled": false,
+  "gpu_run": false,
+  "ncu_run": false,
+  "ptx_generated": false,
+  "sass_generated": false,
+  "gpu_performance_measured": false,
+  "theoretical_comparison": "Turing SM75",
+  "next_theoretical_comparison": "Ampere",
+  "blockers": [
+    "No nvcc/ncu/NVIDIA device on Mac"
+  ],
+  "cases": 100,
+  "rejections": 6,
+  "max_abs": 2.38419e-07,
+  "toolchain_document_reference": "JetPack7.2.1/L4T39.2.1/CUDA13.2.2; actual board driver/ncu tuple unverified"
+}

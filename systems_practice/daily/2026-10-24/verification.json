@@ -1,0 +1,34 @@
+{
+  "lesson_date": "2026-10-24",
+  "recorded_at": "2026-10-25T08:45:56.193217+08:00",
+  "actual_final_validation_date": "2026-10-25",
+  "date_note": "Start date command returned Oct24; finalized Oct25, no extra Oct25 cursor consumed.",
+  "source_read": true,
+  "host_compile": true,
+  "host_run": true,
+  "asan_ubsan_passed": true,
+  "target_board_verified": false,
+  "gpu_compiled": false,
+  "gpu_run": false,
+  "ncu_collected": false,
+  "generated_ptx": false,
+  "generated_sass": false,
+  "performance_measured": false,
+  "host": "macOS-26.6.2-arm64-arm-64bit",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+  "cpu_cases": 100,
+  "cpu_rejections": 6,
+  "cpu_model_max_abs": 2.38419e-07,
+  "handwritten_ptx": true,
+  "cuda_target": "sm_110",
+  "theoretical_comparison": "Turing SM75",
+  "next_comparison": "Ampere",
+  "blockers": [
+    "No nvcc/ncu/NVIDIA GPU; CPU model is not GPU verification"
+  ],
+  "evidence": [
+    "results/verified-cpu.txt",
+    "results/verified-sanitize.txt",
+    "results/thor-attempt.txt"
+  ]
+}

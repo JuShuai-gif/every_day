@@ -1,0 +1,35 @@
+# 指令集和调度调优分开：默认 Armv8-A 可在 RK3588 两种核心运行。
+option(EDGE_ENABLE_NEON "Enable explicit NEON paths where implemented" ON)
+option(EDGE_AUTO_VECTORIZE "Allow compiler loop/SLP vectorization" ON)
+set(EDGE_CPU_TUNE "generic" CACHE STRING "generic, cortex-a55, cortex-a76")
+set_property(CACHE EDGE_CPU_TUNE PROPERTY STRINGS generic cortex-a55 cortex-a76)
+
+function(edge_configure_target target)
+  if(NOT EDGE_CPU_TUNE MATCHES "^(generic|cortex-a55|cortex-a76)$")
+    message(FATAL_ERROR "Invalid EDGE_CPU_TUNE; use generic, cortex-a55 or cortex-a76")
+  endif()
+  if(NOT EDGE_CPU_TUNE STREQUAL "generic")
+    if(NOT CMAKE_SYSTEM_NAME STREQUAL "Linux" OR NOT CMAKE_SYSTEM_PROCESSOR MATCHES "^(aarch64|arm64)$")
+      message(FATAL_ERROR "Cortex tuning is restricted to Linux AArch64 builds; Mac is a correctness host")
+    endif()
+    # 仅改变目标调度/成本模型，不启用仅某些核心可用的 ISA 扩展。
+    target_compile_options(${target} PRIVATE "-mtune=${EDGE_CPU_TUNE}")
+  endif()
+  if(NOT EDGE_ENABLE_NEON)
+    target_compile_definitions(${target} PRIVATE EDGE_DISABLE_NEON=1)
+  endif()
+  if(NOT EDGE_AUTO_VECTORIZE)
+    if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+      target_compile_options(${target} PRIVATE -fno-vectorize -fno-slp-vectorize)
+    elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+      target_compile_options(${target} PRIVATE -fno-tree-vectorize -fno-tree-slp-vectorize)
+    else()
+      message(FATAL_ERROR "Vectorization controls require Clang or GCC")
+    endif()
+  endif()
+  target_compile_definitions(${target} PRIVATE
+    EDGE_BUILD_CPU_TUNE="${EDGE_CPU_TUNE}"
+    EDGE_BUILD_EXPLICIT_NEON=$<BOOL:${EDGE_ENABLE_NEON}>
+    EDGE_BUILD_AUTO_VECTORIZE=$<BOOL:${EDGE_AUTO_VECTORIZE}>)
+  message(STATUS "edge experiment: tune=${EDGE_CPU_TUNE}, explicit_neon=${EDGE_ENABLE_NEON}, auto_vectorize=${EDGE_AUTO_VECTORIZE}")
+endfunction()

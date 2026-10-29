@@ -1,0 +1,28 @@
+{
+  "lesson_date": "2026-10-24",
+  "recorded_at": "2026-10-25T08:45:56.193217+08:00",
+  "actual_final_validation_date": "2026-10-25",
+  "date_note": "Start date command returned Oct24; finalized Oct25, no extra Oct25 cursor consumed.",
+  "repository": "https://github.com/llvm/llvm-project",
+  "ref": "llvmorg-20.1.8",
+  "commit": null,
+  "file_blob_sha": "61808337369561992274175766b4a724911ba503",
+  "blob_is_not_commit": true,
+  "read_dates": [
+    "2026-10-24",
+    "2026-10-25"
+  ],
+  "path": "libcxx/src/shared_mutex.cpp",
+  "url": "https://github.com/llvm/llvm-project/blob/llvmorg-20.1.8/libcxx/src/shared_mutex.cpp",
+  "read_symbols": [
+    "__shared_mutex_base::lock",
+    "__shared_mutex_base::lock_shared",
+    "__shared_mutex_base::unlock_shared"
+  ],
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "license_read": true,
+  "source_read": true,
+  "original_scenario": "Standard library reader/writer synchronization",
+  "relationship": "Independent Store uses standard API; does not copy lock implementation or claim host uses exact same revision",
+  "source_transport": "GitHub connector actual file content"
+}

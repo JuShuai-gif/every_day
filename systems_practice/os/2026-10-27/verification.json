@@ -1,0 +1,1 @@
+{"date":"2026-10-27","lesson_id":"26","source_read":true,"host_compile":true,"host_run":true,"sanitize_passed":true,"linux_run":false,"xv6_compiled":false,"qemu_run":false,"board_runtime_verified":false,"evidence":["results/release.txt","results/sanitize.txt","results/perf.txt"],"performance_scope":"one host observation; no P95 claim"}

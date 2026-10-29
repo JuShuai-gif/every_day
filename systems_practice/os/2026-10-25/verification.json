@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-25",
+  "recorded_at": "2026-10-25T08:45:36.795238+08:00",
+  "source_read": true,
+  "version_pinned": true,
+  "host_compiled": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "target_board_verified": false,
+  "source_record": "source.json",
+  "evidence": [
+    "results/verified-release.txt",
+    "results/verified-sanitize.txt"
+  ],
+  "performance_domain": "No main GPU/OS/C++ benchmark claim; CPU contract checks only",
+  "code_origin": "Oct24 unfinished draft copied without old logs; reviewed/tested Oct25",
+  "lesson_id": "24",
+  "topic_ids": [
+    "24a",
+    "24b"
+  ],
+  "xv6_compiled": false,
+  "qemu_run": false,
+  "linux_run": false,
+  "real_device_async_verified": false,
+  "cycles": 1000,
+  "rejections": 5099
+}

@@ -1,0 +1,32 @@
+{
+  "repository": "https://github.com/llvm/llvm-project",
+  "ref": "llvmorg-20.1.8",
+  "read_date": "2026-10-25",
+  "license": "Apache-2.0 WITH LLVM-exception; source SPDX read",
+  "files": [
+    {
+      "path": "libcxx/src/shared_mutex.cpp",
+      "symbols": [
+        "__shared_mutex_base::lock",
+        "lock_shared",
+        "unlock_shared",
+        "unlock"
+      ]
+    },
+    {
+      "path": "libcxx/include/shared_mutex",
+      "symbols": [
+        "shared_mutex",
+        "__shared_mutex_base",
+        "shared_lock interface"
+      ]
+    }
+  ],
+  "call_chain": "shared_lock -> shared_mutex::lock_shared -> __shared_mutex_base; internal mutex/state/gate1/gate2",
+  "relationship": "Original business snapshot example using standard API; no copied locking implementation",
+  "preserved": "protected publication and lifetime ownership",
+  "omitted": "implementing mutex or claiming Apple libc++ exact binary match",
+  "source_read": true,
+  "recorded_at": "2026-10-25T08:45:36.795238+08:00",
+  "research_record": "../../daily/2026-10-25/results/research.json"
+}

@@ -1,0 +1,27 @@
+{
+  "lesson_date": "2026-10-24",
+  "recorded_at": "2026-10-25T08:45:56.193217+08:00",
+  "actual_final_validation_date": "2026-10-25",
+  "date_note": "Start date command returned Oct24; finalized Oct25, no extra Oct25 cursor consumed.",
+  "repository": "https://github.com/NVIDIA/cuda-samples",
+  "ref": "v13.0",
+  "commit": null,
+  "file_blob_sha": "5a38d3ab145202c95721ae2af738cdb8d3700526",
+  "blob_is_not_commit": true,
+  "read_dates": [
+    "2026-10-24",
+    "2026-10-25"
+  ],
+  "path": "Samples/0_Introduction/asyncAPI/asyncAPI.cu",
+  "url": "https://github.com/NVIDIA/cuda-samples/blob/v13.0/Samples/0_Introduction/asyncAPI/asyncAPI.cu",
+  "read_symbols": [
+    "main",
+    "cudaEventRecord/cudaEventQuery usage"
+  ],
+  "license": "BSD-3-Clause",
+  "license_read": true,
+  "source_read": true,
+  "original_scenario": "Asynchronous copy/kernel completion",
+  "relationship": "Independent state machine; reuse own Oct22 SDK example; not actual DMA or driver model",
+  "source_transport": "GitHub connector actual file content"
+}

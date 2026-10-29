@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-27",
+  "repository": "https://github.com/airockchip/rknn_model_zoo",
+  "commit": "837db8e992815ff8647eadb709f07067f4bc3a71",
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "path": "examples/mobilenet/cpp/rknpu2/mobilenet.cc",
+      "symbols": [
+        "init_mobilenet_model",
+        "inference_mobilenet_model",
+        "rknn_init",
+        "rknn_inputs_set",
+        "rknn_run",
+        "rknn_outputs_get"
+      ]
+    },
+    {
+      "path": "examples/mobilenet/python/mobilenet.py",
+      "symbols": [
+        "load_onnx",
+        "build",
+        "export_rknn",
+        "init_runtime",
+        "inference"
+      ]
+    }
+  ],
+  "relationship": "independent adaptation preserves conversion and runtime boundaries; omits RGA, camera decoder and real calibration"
+}

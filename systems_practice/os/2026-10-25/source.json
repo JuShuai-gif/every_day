@@ -1,0 +1,25 @@
+{
+  "repository": "https://github.com/NVIDIA/cuda-samples",
+  "ref": "v13.0",
+  "commit": null,
+  "read_date": "2026-10-25",
+  "license": "BSD-3-Clause source header read",
+  "files": [
+    {
+      "path": "Samples/0_Introduction/simpleStreams/simpleStreams.cu",
+      "symbols": [
+        "AllocateHostMemory",
+        "FreeHostMemory",
+        "correct_data",
+        "main stream/event/copy/cleanup sequences"
+      ],
+      "url": "https://github.com/NVIDIA/cuda-samples/blob/v13.0/Samples/0_Introduction/simpleStreams/simpleStreams.cu"
+    }
+  ],
+  "relationship": "Independent single-thread ownership state model; not CUDA runtime reproduction",
+  "preserved": "completion precedes buffer reuse",
+  "omitted": "real device, overlap, driver reset recovery",
+  "source_read": true,
+  "recorded_at": "2026-10-25T08:45:36.795238+08:00",
+  "research_record": "../../daily/2026-10-25/results/research.json"
+}
