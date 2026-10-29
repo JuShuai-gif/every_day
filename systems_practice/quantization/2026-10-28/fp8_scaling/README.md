@@ -10,10 +10,15 @@ FP8 scaling 将张量除以 scale 后编码为 E4M3（权重/前向常见）或 
 输入 shape 是 1×8 FP32 小向量；scale=maxabs/448，E4M3 有限值范围通过显式裁剪。真实项目应将 calibration/tune/eval 分离，记录校准集、dtype、scale 粒度（tensor/channel/block）和 outlier。FP8 后端是否在 Thor SM110 可用必须用目标 CUDA/torchao 版本验证；本机没有 CUDA。
 
 ## 运行与结果
-`sh run.sh` 实际运行标准库例子并打印 MSE、payload；`python3 native_example.py` 需要安装好的 torch/torchao/CUDA，今天未运行、未安装。结果是 CPU codec 检查，不是 Tensor Core 或端到端性能。
+`sh run.sh` 实际运行标准库例子并打印 MSE、payload；`python3 native_example.py` 在原 Mac 运行时未运行；后续在 Thor 既有 torchao 0.18 镜像实测，见文末。结果是 CPU codec 检查，不是 Tensor Core 或端到端性能。
 
 ## 工业故障与边界
 scale 过小导致溢出/饱和，表现为长尾误差；scale 过大导致小值下溢，表现为零比例升高；E4M3/E5M2 选错会改变范围/精度；动态 scale 若跨 batch 不稳定会让校准结论失效。部署前需用真实模型比较 FP16/FP8 误差、存储、kernel 与 E2E，Thor 命令固定 `sm_110`。
 
 ## 验证状态
-源码阅读/示例交付/CPU 运行已分开记录在 `source.json`、`verification.json`；native torch、Thor、ncu/PTX/SASS 未验证，原因写入记录。
+源码阅读/示例交付/CPU 运行已分开记录在 `source.json`、`verification.json`；原 Mac 运行时 native torch、Thor、ncu/PTX/SASS 未验证；后续 GPU 功能复测见文末。
+
+
+## 2026-10-29 Thor 原生功能复测
+
+既有 NVIDIA PyTorch 26.06 容器使用 torchao 0.18.0+git28e6aca5；将输入与权重统一为 FP16，并把 Linear 扩到 64×64，明确断言转换为 `Float8Tensor`，避免小层静默回退。16×64 输入与 FP16 参考比较通过，最大绝对误差 0.076416；[输出](../../../validation/2026-10-29-thor/fp8-ao018-final.txt)。这不是原先阅读的 torchao 0.13 版本复现；未采集指令、ncu 或性能。

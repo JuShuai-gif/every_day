@@ -5,7 +5,7 @@
 ## 覆盖与结果
 
 - 117 个被跟踪 Python 文件通过 AST 解析；370 个 shell 文件通过 `bash -n`。语法检查不等于运行。
-- 233 个 `run.sh` 首轮以宿主 `sh`、GCC 执行，168 通过、65 失败；其中 Bash 解释器错误经 Docker/Bash 复测 9 项通过。剩余非量化脚本用临时 GCC 包装器将 `-fno-vectorize/-fno-slp-vectorize` 映射为 GCC 对应选项，23 项中 20 项通过，另两项 ARM DOTPROD 经修复后通过。`daily/2026-09-15` 由明确 `sm_110` 目标编译和实机运行通过。`arm/2026-09-30` 经临时映射 Clang 参数到 GCC 后通过 4104 overlap 和 1026 disjoint 检查及 sanitizer，并产生 GCC 向量化诊断；Clang 专有诊断仍未运行，见 `arm-vectorizer-gcc.txt`。
+- 第二轮用 Bash、GCC 兼容包装器和路径清理后的缓存复核 233 个 `run.sh`：201 通过，剩余 31 个均为量化原生入口的固定依赖/源码/版本阻塞；09-15 CUDA/CPU 路径与 ARM 10-21 正确参数复测通过。`arm/2026-09-30` 经临时映射 Clang 参数到 GCC 后通过 4104 overlap 和 1026 disjoint 检查及 sanitizer，并产生 GCC 向量化诊断；Clang 专有诊断仍未运行，见 `arm-vectorizer-gcc.txt`。完整第二轮日志见 `recheck-run.txt`。
 - 复用已校验源码快照后，KIVI、SpQR、HQQ、OmniQuant 和 SmoothQuant 的原生 CPU 示例通过；对应日志为 `kivi-native.txt`、`cached-quant-first.txt` 和 `cached-quant-retry.txt`。这些运行使用容器现有 PyTorch，不代表原生低位 GPU 后端通过。10-28 FP8 原生示例在现有 torchao 0.18 镜像修复 dtype 和小 shape 静默回退后通过 `Float8Tensor` 与 FP16 误差检查（最大绝对误差 0.076416）；这是不同于原读 0.13 的兼容验证，不是指令或性能证明。GPTQ 固定 commit 快照的 5 个 SHA256 均匹配，原生 GPU 校准与 QDQ 评估通过（NRMSE 0.09776）；CUDA 打包扩展未安装，不能视为低位 kernel 性能。见 `gptq-native-final.txt`。26 个量化原生入口仍未通过：缺对应固定 commit 的上游 checkout、AIMET/AutoRound/HQQ/bitsandbytes/torchao 等包，或需要已审阅的特定 PyTorch 版本。未安装依赖，也未跳过版本校验。独立教学例子通过不代表原生接口通过；详见 `docker-retry.txt`。
 - Git 跟踪的 28 个 `.cu` 文件以 CUDA 13.0、C++17、`-arch=sm_110` 编译；首轮 26 通过，两个 Softmax 缺 `math_constants.h`，修复后两者构建运行通过。28 项 GPU 测试命令均成功退出，含 TensorRT 两个例子、量化 GEMM、codec、内存传输；不同脚本覆盖程度不同，不能把每个退出码当全模型验证。原始批量结果见 `gpu-sweep.txt`。
 - 加强后 2026-10-09 Softmax 比较 3 个行数 × 6 个列数 × 两 kernel 共 36 项；2026-10-28 GEMM 比较两个非整 tile shape × 两 kernel 共 4 项。2026-10-29 四位宽、28 个 fixture × 两 kernel 的硬件数值检查通过。`fixed-retests.txt` 与 `qgemm-final.txt` 为最终日志。
@@ -17,3 +17,7 @@
 `gemm-sm110.ptx.txt` 和 `gemm-sm110.sass.txt` 来自实际 Thor CUDA 13.0 编译；PTX `.target sm_110`，可观察 `bfe.s32`；SASS 可观察 `LDG`、`SHF`、`LOP3`、`STS`、`IMAD` 等指令。它们只能说明生成代码，不能单凭指令顺序推断耗时。ncu 宿主与普通 Docker 均报 `ERR_NVGPUCTRPERM`，无性能计数器报告；`ncu-container.txt` 中带 profiler 的 event 时间不作性能结论。控制频率/温度、E2E、功耗及硬件计数器尚未完成。
 
 部分文本的行尾空白或末尾空行已规范化以通过 Git 检查；相应 `.raw.json` 原样编码原始输出。其余日志保留实际运行内容。所有中间二进制、容器和模型未纳入归档。
+
+## 第二轮复核
+
+2026-10-29 16:56–17:02（北京时间）重新执行：233 个 `run.sh` 中 201 个直接通过；其余 31 个为量化原生依赖、固定 checkout 或版本校验阻塞，另有正确参数后的 ARM/路径绑定复测通过。28 个 `.cu` 文件再次全部以 CUDA 13.0 `sm_110` 编译通过，28 个 Thor GPU 目标再次全部成功退出。第二轮原始日志为 `recheck-run.txt`、`recheck-cuda-compile.txt` 和 `recheck-gpu-sweep.txt`。第二轮 Docker ncu 仍返回 `ERR_NVGPUCTRPERM`，见 `recheck-ncu.txt`。

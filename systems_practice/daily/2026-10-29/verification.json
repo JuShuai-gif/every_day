@@ -26,5 +26,15 @@
     "controlled clocks/thermal, end-to-end and power not measured"
   ],
   "performance": "28 fixtures x 2 variants passed on Thor; CUDA event samples recorded, not a controlled E2E or hardware-counter comparison.",
-  "sanitize_passed": true
+  "sanitize_passed": true,
+  "full_recheck_2026_10_29": {
+    "run_sh_total": 233,
+    "run_sh_pass": 201,
+    "run_sh_blocked_or_unrun": 31,
+    "cuda_files": 28,
+    "cuda_compile_pass": 28,
+    "thor_gpu_paths": 28,
+    "thor_gpu_pass": 28,
+    "ncu": "ERR_NVGPUCTRPERM"
+  }
 }
