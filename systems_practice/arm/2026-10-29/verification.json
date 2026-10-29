@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-29",
+  "lesson_id": "source04",
+  "source_read": true,
+  "host_compile": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "target_board_verified": false,
+  "evidence": [
+    "results/run.txt",
+    "results/sanitize-final.txt"
+  ],
+  "reason": "Mac scalar fallback and tail contract pass; RK3588/Thor board and PMU not available",
+  "cpu_sanitizer": false
+}

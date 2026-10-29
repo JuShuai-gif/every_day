@@ -1,0 +1,14 @@
+{
+  "date":"2026-10-29",
+  "repository":"https://github.com/NVIDIA/cutlass",
+  "read_branch":"main",
+  "read_date":"2026-10-29",
+  "files":[
+    {"path":"examples/81_blackwell_gemm_blockwise/81_blackwell_gemm_blockwise.cu","symbols":["cutlass::gemm::device::Gemm","ScaleConfig","initialize_workspace"],"url":"https://github.com/NVIDIA/cutlass/blob/main/examples/81_blackwell_gemm_blockwise/81_blackwell_gemm_blockwise.cu"},
+    {"path":"include/cutlass/gemm/collective/builders/sm100_umma_builder.inl","symbols":["sm100_umma_builder","CollectiveMma"],"url":"https://github.com/NVIDIA/cutlass/blob/main/include/cutlass/gemm/collective/builders/sm100_umma_builder.inl"}
+  ],
+  "license":"BSD-3-Clause",
+  "original_scenario":"CUTLASS block-scaled GEMM on Blackwell SM100-class devices",
+  "relationship":"Our CUDA is an independent Thor SM110 SIMT correctness baseline plus shared-tile candidate; it retains explicit group scale placement and omits CuTe/UMMA/Tensor Core machinery.",
+  "limitations":"GitHub page was readable, but no local checkout or CUDA build was available. CUTLASS main currently documents other architectures; no SM110 support claim is inferred."
+}

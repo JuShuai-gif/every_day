@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
-  "last_delivery_date": "2026-10-28",
+  "last_delivery_date": "2026-10-29",
   "next_lesson_id": null,
   "delivered_lesson_ids": [
     "01",
@@ -647,6 +647,21 @@
       "verification": "2026-10-28/README.md",
       "arm_evidence": "results.s actual/host assembly candidate",
       "performance_scope": "correctness only; no PMU/board/E2E"
+    },
+    {
+      "date": "2026-10-29",
+      "lesson_id": "source04",
+      "path": "2026-10-29",
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "source_read": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "recorded_at": "2026-10-29T09:30:00+08:00",
+      "verification": "2026-10-29/verification.json",
+      "performance_scope": "correctness only"
     }
   ],
   "backlog": [
@@ -788,13 +803,13 @@
       "reason": "User requested four working/deployment capability layers; mapped existing 28 lessons, preserved order and historical progress. Actual delivery08 advances to09 separately."
     }
   ],
-  "last_canonical_lesson_date": "2026-10-28",
+  "last_canonical_lesson_date": "2026-10-29",
   "first_cycle_teaching_delivery_complete": true,
   "next_stage": "verified source kernels and integrated edge projects",
-  "next_action": "Continue adjacent-operator layout contract and versioned dispatch; no restart of first cycle.",
+  "next_action": "Continue source04 adjacent operator layout contract; no first-cycle restart",
   "delivered_integrated_case_ids": [
     "source01",
     "source02"
   ],
-  "updated_at": "2026-10-28T09:30:00+08:00"
+  "updated_at": "2026-10-29T09:30:00+08:00"
 }

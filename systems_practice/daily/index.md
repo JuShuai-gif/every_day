@@ -99,3 +99,5 @@
 
 
 | [2026-10-28](2026-10-28/README.md) | PTX / CUTLASS | Thor SM110 分块 GEMM：shared tile、CTA 栅栏与尾块；[FP8](../quantization/2026-10-28/fp8_scaling/README.md) · [ARM](../arm/2026-10-28/README.md) · [OS](../os/2026-10-28/README.md) · [C++17](../cpp17/2026-10-28/README.md) · [论文](../paper/2026-10-28/README.md) | [CUDA baseline/tiled](2026-10-28/src/gemm.cu) / [CPU oracle](2026-10-28/src/cpu_check.cpp) | CPU Release 通过；nvcc/ncu/Thor/PTX/SASS 未验 | 无 GPU/E2E 数字；唯一目标 sm_110。
+
+| [2026-10-29](2026-10-29/README.md) | 量化 GEMM | W4A16 组尺度与 signed-nibble 解码；[MXFP4/NVFP4](../quantization/2026-10-29/block_fp4/README.md) · [ARM source04](../arm/2026-10-29/README.md) · [OS28](../os/2026-10-29/README.md) · [C++17第27课](../cpp17/2026-10-29/README.md) · [两篇论文](../paper/2026-10-29/README.md) | [Thor baseline/tiled](2026-10-29/src/gemm.cu) / [CPU与算法](2026-10-29/experiment.py) | CPU 28 fixtures、20量化对照和边界通过；nvcc/ncu/Thor/PTX/SASS 未验 | 无 GPU/E2E/功耗数字；唯一目标 sm_110；源码与状态见 [verification](2026-10-29/verification.json) |

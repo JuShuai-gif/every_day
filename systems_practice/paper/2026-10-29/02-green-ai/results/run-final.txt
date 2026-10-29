@@ -1,0 +1,18 @@
+{
+  "accepted": [
+    {
+      "method": "fp32",
+      "quality": 0.92,
+      "latency_ms": 40,
+      "energy_j": 8,
+      "energy_per_quality": 8.695652173913043
+    },
+    {
+      "method": "int8_fused",
+      "quality": 0.919,
+      "latency_ms": 24,
+      "energy_j": 4.5,
+      "energy_per_quality": 4.896626768226333
+    }
+  ]
+}

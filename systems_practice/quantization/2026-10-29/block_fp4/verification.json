@@ -1,0 +1,7 @@
+{
+  "method":"block_fp4","date":"2026-10-29","repository":"https://github.com/NVIDIA/Model-Optimizer","commit":"c359cb774db4daab623cddde6c7e0399a49cf7d2",
+  "source_record":"source.json","source_fetched":false,"source_read":false,"example_delivered":true,"cpu_example_run":true,"thor_verified":false,
+  "read_symbols":[],"evidence":["results/fetch.log","results/run.txt","results/cpu.json"],
+  "blockers":["GitHub clone/DNS failure","torch/modelopt/CUDA/nvcc/ncu/Thor absent"],
+  "notes":"Independent codec checks block16 scales, two-level metadata, outlier and empty input. No native API, Tensor Core, PTX/SASS or performance claim. Thor target remains sm_110 for any future CUDA extension."
+}

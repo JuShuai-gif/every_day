@@ -1,0 +1,61 @@
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:132: RuntimeWarning: divide by zero encountered in matmul
+  assert np.allclose((test/s)@(w*s).T,test@w.T,atol=1e-5,rtol=1e-5)
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:132: RuntimeWarning: overflow encountered in matmul
+  assert np.allclose((test/s)@(w*s).T,test@w.T,atol=1e-5,rtol=1e-5)
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:132: RuntimeWarning: invalid value encountered in matmul
+  assert np.allclose((test/s)@(w*s).T,test@w.T,atol=1e-5,rtol=1e-5)
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:133: RuntimeWarning: divide by zero encountered in matmul
+  result['fp16_reference']=metric(test.astype(np.float16).astype(np.float32)@w.astype(np.float16).astype(np.float32).T,test@w.T)
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:133: RuntimeWarning: overflow encountered in matmul
+  result['fp16_reference']=metric(test.astype(np.float16).astype(np.float32)@w.astype(np.float16).astype(np.float32).T,test@w.T)
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:133: RuntimeWarning: invalid value encountered in matmul
+  result['fp16_reference']=metric(test.astype(np.float16).astype(np.float32)@w.astype(np.float16).astype(np.float32).T,test@w.T)
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:135: RuntimeWarning: divide by zero encountered in matmul
+  for name,fn in [('fp32_numpy_gemm',lambda:test@w.T),('fp16_storage_decode_then_fp32_numpy_gemm',lambda:test.astype(np.float16).astype(np.float32)@w.astype(np.float16).astype(np.float32).T)]:
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:135: RuntimeWarning: overflow encountered in matmul
+  for name,fn in [('fp32_numpy_gemm',lambda:test@w.T),('fp16_storage_decode_then_fp32_numpy_gemm',lambda:test.astype(np.float16).astype(np.float32)@w.astype(np.float16).astype(np.float32).T)]:
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:135: RuntimeWarning: invalid value encountered in matmul
+  for name,fn in [('fp32_numpy_gemm',lambda:test@w.T),('fp16_storage_decode_then_fp32_numpy_gemm',lambda:test.astype(np.float16).astype(np.float32)@w.astype(np.float16).astype(np.float32).T)]:
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:148: RuntimeWarning: divide by zero encountered in matmul
+  candidates.append((float(np.mean((y-tune@w.T)**2)),alpha,clip,ss))
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:148: RuntimeWarning: overflow encountered in matmul
+  candidates.append((float(np.mean((y-tune@w.T)**2)),alpha,clip,ss))
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:148: RuntimeWarning: invalid value encountered in matmul
+  candidates.append((float(np.mean((y-tune@w.T)**2)),alpha,clip,ss))
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:93: RuntimeWarning: divide by zero encountered in matmul
+  target = train @ w.T
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:93: RuntimeWarning: overflow encountered in matmul
+  target = train @ w.T
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:93: RuntimeWarning: invalid value encountered in matmul
+  target = train @ w.T
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:97: RuntimeWarning: divide by zero encountered in matmul
+  err = a @ qdw.T-target
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:97: RuntimeWarning: overflow encountered in matmul
+  err = a @ qdw.T-target
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:97: RuntimeWarning: invalid value encountered in matmul
+  err = a @ qdw.T-target
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:101: RuntimeWarning: divide by zero encountered in matmul
+  tloss = float(np.mean((check-tune@w.T)**2))
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:101: RuntimeWarning: overflow encountered in matmul
+  tloss = float(np.mean((check-tune@w.T)**2))
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:101: RuntimeWarning: invalid value encountered in matmul
+  tloss = float(np.mean((check-tune@w.T)**2))
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:108: RuntimeWarning: divide by zero encountered in matmul
+  grad = (2.0/err.size)*(err.T@a)
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:108: RuntimeWarning: overflow encountered in matmul
+  grad = (2.0/err.size)*(err.T@a)
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:108: RuntimeWarning: invalid value encountered in matmul
+  grad = (2.0/err.size)*(err.T@a)
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:179: RuntimeWarning: divide by zero encountered in matmul
+  result['rows'].append(dict(mode=f'W{wb}A{ab}',method=name,selected_alpha=alpha if name in ('calibrated','qat') else None,clip=cc,error=metric(y,test@w.T),shift_error=metric(evaluate(shifted,ww,ss,wb,ab,cc,oi,fixed=fs)[0],shifted@w.T),storage=size,weight_file_bytes=path.stat().st_size,saturation=sat,cpu_quant_pack_gemm_ms_p50=float(np.median(times))))
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:179: RuntimeWarning: overflow encountered in matmul
+  result['rows'].append(dict(mode=f'W{wb}A{ab}',method=name,selected_alpha=alpha if name in ('calibrated','qat') else None,clip=cc,error=metric(y,test@w.T),shift_error=metric(evaluate(shifted,ww,ss,wb,ab,cc,oi,fixed=fs)[0],shifted@w.T),storage=size,weight_file_bytes=path.stat().st_size,saturation=sat,cpu_quant_pack_gemm_ms_p50=float(np.median(times))))
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:179: RuntimeWarning: invalid value encountered in matmul
+  result['rows'].append(dict(mode=f'W{wb}A{ab}',method=name,selected_alpha=alpha if name in ('calibrated','qat') else None,clip=cc,error=metric(y,test@w.T),shift_error=metric(evaluate(shifted,ww,ss,wb,ab,cc,oi,fixed=fs)[0],shifted@w.T),storage=size,weight_file_bytes=path.stat().st_size,saturation=sat,cpu_quant_pack_gemm_ms_p50=float(np.median(times))))
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:58: RuntimeWarning: divide by zero encountered in matmul
+  dot = aq[:, start:end].astype(np.float32) @ wq[:, start:end].astype(np.float32).T
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:58: RuntimeWarning: overflow encountered in matmul
+  dot = aq[:, start:end].astype(np.float32) @ wq[:, start:end].astype(np.float32).T
+/Users/guhaoran/code/EveryDay/systems_practice/daily/2026-10-29/experiment.py:58: RuntimeWarning: invalid value encountered in matmul
+  dot = aq[:, start:end].astype(np.float32) @ wq[:, start:end].astype(np.float32).T
+PASS independent C++ group INT32/FP16 reference fixtures=28

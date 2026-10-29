@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-29",
+  "theme": "quantized_gemm",
+  "target": "Jetson Thor SM110 only",
+  "source_record": "source.json",
+  "cpu_release": true,
+  "cpu_sanitizer": true,
+  "cuda_compile": false,
+  "thor_run": false,
+  "ncu": false,
+  "ptx": false,
+  "sass": false,
+  "evidence": [
+    "results/experiment.json",
+    "results/nvcc-thor.txt",
+    "results/release.txt",
+    "results/sanitize-final.txt"
+  ],
+  "cpu_result": "28 packed W4A4/W4A16/W8A8/W8A16 fixtures passed independent C++ group INT32/FP16 oracle; NumPy experiment produced 20 comparison rows and real packed files.",
+  "blockers": [
+    "nvcc command not found on Mac",
+    "no NVIDIA GPU/Thor SDK/ncu/cubin"
+  ],
+  "performance": "No GPU speedup, PTX/SASS or power claim. CPU timings include quant/pack/GEMM only.",
+  "sanitize_passed": true
+}

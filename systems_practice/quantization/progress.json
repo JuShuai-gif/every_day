@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "next_method_id": "block_fp4",
-  "last_lesson_date": "2026-10-28",
+  "next_method_id": "awq",
+  "last_lesson_date": "2026-10-29",
   "completed_methods": [
     "awq",
     "adaround",
@@ -600,6 +600,21 @@
       "counts_toward_daily_progress": true,
       "status": "source web/read/independent example complete; clone DNS, native torch and Thor pending",
       "reason": "No torch/torchao/CUDA install; FP8 backend and sm_110 validation pending"
+    },
+    {
+      "date": "2026-10-29",
+      "method": "block_fp4",
+      "commit": "c359cb774db4daab623cddde6c7e0399a49cf7d2",
+      "lesson": "2026-10-29/block_fp4/README.md",
+      "verification": "2026-10-29/block_fp4/verification.json",
+      "source_fetched": false,
+      "source_read": false,
+      "example_delivered": true,
+      "cpu_example_run": true,
+      "thor_verified": false,
+      "counts_toward_daily_progress": true,
+      "status": "independent block-scale codec delivered; upstream clone/source pages unavailable; native torch/CUDA/Thor pending",
+      "reason": "GitHub DNS/cache miss; no Model Optimizer runtime or Thor toolchain"
     }
   ],
   "backlog": [
@@ -1045,7 +1060,7 @@
   "policy": "One quantization lesson per Asia/Shanghai calendar day, independent of main rotation. Preparation does not advance cursor. Daily attempted lessons may advance cursor but failures stay in backlog and never enter completed_methods. Completion requires source read and concrete upstream usage example delivered; execution evidence tracked separately.",
   "last_language_audit": "2026-09-22T10:43:01.386131+08:00",
   "language_policy": "Torch-first for algorithms/models/precision/framework timing; C++ optional for explicit layout/CPU kernel studies",
-  "last_canonical_lesson_date": "2026-10-28",
+  "last_canonical_lesson_date": "2026-10-29",
   "backfill_reconciled_at": "2026-09-28T05:01:42.754872+00:00",
   "reconciliation_note": "2026-10-02 concurrent Oct1 registration corrected: calibration draft retained as supplemental; QAT canonical. One old backlog retry AWQ only. Earlier backfill history preserved.",
   "retry_history": [
@@ -1130,7 +1145,7 @@
       "counts_toward_daily_progress": false
     }
   ],
-  "next_cycle_note": "Next optimizer_8bit. KIVI native CPU and Thor pending.",
+  "next_cycle_note": "Next AWQ; block_fp4 source/native/Thor remains backlog",
   "source_retries": [
     {
       "date": "2026-10-18",
@@ -1204,5 +1219,5 @@
       "counts_toward_daily_progress": false
     }
   ],
-  "updated_at": "2026-10-28T09:30:00+08:00"
+  "updated_at": "2026-10-29T09:30:00+08:00"
 }

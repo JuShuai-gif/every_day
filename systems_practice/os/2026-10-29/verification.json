@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-29",
+  "lesson_id": "28",
+  "host_compile": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "linux_run": false,
+  "xv6_compiled": false,
+  "qemu_run": false,
+  "target_board_verified": false,
+  "evidence": [
+    "results/run.txt",
+    "results/sanitize-final.txt"
+  ],
+  "reason": "Mac host lifecycle model only; no Linux/RKNN/Thor board",
+  "cpu_sanitizer": false
+}

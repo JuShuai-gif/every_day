@@ -78,3 +78,7 @@
 
 
 2026-10-28：[LayerTrim](2026-10-28/01-layertrim/README.md) 与 [HQP](2026-10-28/02-hqp/README.md)。一手全文选段与独立 CPU 预算例通过；作者完整实现、模型、Thor/RK3588 未复现。
+
+## 2026-10-29
+
+- [Edge continuum measurement](2026-10-29/01-edge-measurement/README.md) · [Green AI quantized inference](2026-10-29/02-green-ai/README.md)

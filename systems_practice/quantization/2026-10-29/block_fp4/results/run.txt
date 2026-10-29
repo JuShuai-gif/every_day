@@ -1,0 +1,27 @@
+{
+  "shape": [
+    3,
+    37
+  ],
+  "block": 16,
+  "codebook": "independent E2M1-like teaching codebook",
+  "rows": [
+    {
+      "method": "mxfp4_like",
+      "mse": 0.1855027973651886,
+      "max_abs": 1.597711443901062,
+      "payload_bytes": 140,
+      "blocks": 7,
+      "local_scale_bytes": 0
+    },
+    {
+      "method": "nvfp4_like",
+      "mse": 0.1855027973651886,
+      "max_abs": 1.597711443901062,
+      "payload_bytes": 168,
+      "blocks": 7,
+      "local_scale_bytes": 28
+    }
+  ],
+  "boundary": "empty input rejected; shifted outlier retained"
+}

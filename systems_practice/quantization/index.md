@@ -70,3 +70,5 @@
 
 
 2026-10-28：[FP8 scaling](2026-10-28/fp8_scaling/README.md)。torchao Float8Linear/config/utils 实际网页源码已读；浅克隆因 GitHub DNS 失败。独立 E4M3 小例 CPU 通过，native torch/Thor 未运行；下一方法 MXFP4/NVFP4。
+
+2026-10-29：[MXFP4/NVFP4 分块浮点](2026-10-29/block_fp4/README.md)。Model Optimizer 浅克隆因 GitHub DNS/cache miss，独立 block-scale codec CPU 通过；native API、CUDA/Thor 未验证。下一方法 AWQ。

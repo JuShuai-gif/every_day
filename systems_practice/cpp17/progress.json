@@ -2,8 +2,8 @@
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
   "created_on": "2026-09-29",
-  "last_delivery_date": "2026-10-28",
-  "next_lesson_id": "27",
+  "last_delivery_date": "2026-10-29",
+  "next_lesson_id": "28",
   "delivered_lesson_ids": [
     "01",
     "02",
@@ -474,6 +474,24 @@
         "results.txt"
       ],
       "performance_scope": "not measured"
+    },
+    {
+      "date": "2026-10-29",
+      "lesson_id": "27",
+      "path": "2026-10-29",
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": true,
+      "source_read": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": false,
+      "recorded_at": "2026-10-29T09:30:00+08:00",
+      "verification": "2026-10-29/verification.json",
+      "evidence": [
+        "results/run.txt"
+      ],
+      "performance_scope": "not measured"
     }
   ],
   "backlog": [
@@ -597,6 +615,6 @@
       "verification": "2026-10-26/verification.json"
     }
   ],
-  "last_canonical_lesson_date": "2026-10-28",
-  "updated_at": "2026-10-28T09:30:00+08:00"
+  "last_canonical_lesson_date": "2026-10-29",
+  "updated_at": "2026-10-29T09:30:00+08:00"
 }

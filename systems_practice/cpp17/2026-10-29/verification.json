@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-29",
+  "lesson_id": "27",
+  "host_compile": true,
+  "host_run": true,
+  "sanitize_passed": true,
+  "target_board_verified": false,
+  "evidence": [
+    "results/run.txt",
+    "results/sanitize-final.txt"
+  ],
+  "reason": "Mac C++17 shared/weak lifetime pass; cross-DSO ABI and board deployment not tested",
+  "cpu_sanitizer": false
+}

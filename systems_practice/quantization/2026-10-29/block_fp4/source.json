@@ -1,0 +1,13 @@
+{
+  "date":"2026-10-29",
+  "repository":"https://github.com/NVIDIA/Model-Optimizer",
+  "requested_tag":"0.35.0",
+  "verified_commit":"c359cb774db4daab623cddde6c7e0399a49cf7d2",
+  "fetch_status":"clone failed: GitHub DNS; raw failure preserved in results/fetch.log",
+  "web_read":"GitHub search/read pages on 2026-10-29; exact v0.35.0 source pages returned cache miss, so implementation symbols are not claimed as locally read",
+  "files_attempted":["modelopt/torch/quantization/config.py","modelopt/torch/quantization/nn/modules/tensor_quantizer.py","modelopt/torch/quantization/qtensor/nvfp4_tensor.py","setup.py"],
+  "license":"repository metadata previously recorded as Apache-2.0; current tag license not re-fetched",
+  "original_scenario":"NVIDIA Model Optimizer block-scaled NVFP4 quantization",
+  "relationship":"example.py is an independent format/scale teaching codec; it does not reproduce Model Optimizer APIs or backend kernels",
+  "source_urls":["https://github.com/NVIDIA/Model-Optimizer/tree/v0.35.0/modelopt/torch/quantization/qtensor","https://github.com/NVIDIA/Model-Optimizer/blob/v0.35.0/modelopt/torch/quantization/config.py"]
+}
