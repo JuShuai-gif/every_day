@@ -3,6 +3,35 @@
 .idea/
 .vscode/
 
+# 项目根目录的可再生导出与临时工作区；源文件应放在 systems_practice/ 中。
+/output/
+/outputs/
+/.tmp/
+/tmp/
+
+# 编译器、链接器与性能分析产生的中间文件。
+*.o
+*.obj
+*.lo
+*.a
+*.so
+*.dylib
+*.dll
+*.d
+*.gcda
+*.gcno
+*.profraw
+*.profdata
+*.pdb
+*.ilk
+*.map
+*.stackdump
+*.swp
+*.swo
+*.orig
+*.rej
+*.log
+
 # Python 可再生环境与缓存；保留 .py 转换、验证和工具脚本。
 __pycache__/
 *.py[cod]
