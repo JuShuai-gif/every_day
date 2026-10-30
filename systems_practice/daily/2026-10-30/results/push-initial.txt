@@ -1,0 +1,4 @@
+$ git push origin main
+ssh: Could not resolve hostname github.com: -65563
+fatal: Could not read from remote repository.
+First sandbox push attempt failed due DNS; local commit e868eb8 retained.
