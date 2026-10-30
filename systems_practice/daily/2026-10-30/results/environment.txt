@@ -1,0 +1,3 @@
+$ sh run.sh thor
+nvcc: command not found
+Mac host has no NVIDIA CUDA GPU; Thor SM110 compile/run/ncu/PTX/SASS unavailable.

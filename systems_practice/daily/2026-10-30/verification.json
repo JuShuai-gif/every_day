@@ -1,0 +1,1 @@
+{"date":"2026-10-30","cpu_contract":true,"sanitizer":true,"cuda_compile":false,"thor_sm110":false,"ncu":false,"ptx_sass":false,"performance":false,"boundary":"Mac无nvcc/NVIDIA GPU；仅CPU地址模型与sanitizer已验证","source_read":true}

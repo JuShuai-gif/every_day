@@ -1,0 +1,1 @@
+{"status":"pass","test_nrmse":{"absmax":0.05152904188744708,"awq_inspired":0.02208971152229261},"shift_nrmse":{"absmax":0.021850476473537786,"awq_inspired":0.03262990231279021},"packed_bytes":116,"file_bytes":332,"reload_equal":true}

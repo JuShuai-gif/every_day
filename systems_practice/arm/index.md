@@ -92,3 +92,5 @@
 
 
 2026-10-28：[集成03：算子布局合同与版本化分派](2026-10-28/README.md)。llama.cpp CPU feature/backend 分派实际重读；Mac scalar/NEON候选与尾部 oracle 通过，Linux HWCAP、PMU、RK3588/Thor 未验。
+
+2026-10-30：[首轮完成后的能力探针：NEON/i8mm/SVE 运行时分派与标量回退](2026-10-30/README.md)。源码阅读与 Mac C++17 运行通过；不重启28节游标，RK3588/Orin/Thor Linux 能力与板端验证待补。

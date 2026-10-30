@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "next_method_id": "awq",
-  "last_lesson_date": "2026-10-29",
+  "next_method_id": "gptq",
+  "last_lesson_date": "2026-10-30",
   "completed_methods": [
     "awq",
     "adaround",
@@ -615,6 +615,21 @@
       "counts_toward_daily_progress": true,
       "status": "independent block-scale codec delivered; upstream clone/source pages unavailable; native torch/CUDA/Thor pending",
       "reason": "GitHub DNS/cache miss; no Model Optimizer runtime or Thor toolchain"
+    },
+    {
+      "date": "2026-10-30",
+      "method": "awq",
+      "commit": "d6e797a42b9ef7778de8ee2352116e0f48a78d61",
+      "lesson": "2026-10-30/awq/README.md",
+      "verification": "2026-10-30/awq/verification.json",
+      "source_fetched": false,
+      "source_read": true,
+      "example_delivered": true,
+      "cpu_example_run": true,
+      "thor_verified": false,
+      "counts_toward_daily_progress": true,
+      "status": "source/read/independent example complete; native torch and Thor pending",
+      "reason": "浅克隆尝试记录；固定源码网页已读；Mac无torch/nvcc"
     }
   ],
   "backlog": [
@@ -1219,5 +1234,5 @@
       "counts_toward_daily_progress": false
     }
   ],
-  "updated_at": "2026-10-29T09:30:00+08:00"
+  "updated_at": "2026-10-30T09:30:00+08:00"
 }

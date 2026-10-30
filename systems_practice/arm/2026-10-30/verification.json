@@ -1,0 +1,1 @@
+{"date":"2026-10-30","lesson_id":"integrated-dispatch-01","source_read":true,"host_compile":true,"host_run":true,"sanitize_passed":false,"target_board_verified":false,"note":"首轮28节已完成；Mac aarch64 但非Linux，仅验证安全标量回退；未执行可选ISA"}

@@ -1,0 +1,1 @@
+{'chosen': [2, 2, 3, 3, 4, 4, 8], 'average_bits': 3.7142857142857144, 'budget': 4.5, 'unassigned': 1}

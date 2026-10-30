@@ -1,0 +1,1 @@
+{"repository":"https://github.com/mit-pdos/xv6-riscv","ref":"riscv","read_date":"2026-10-30","file":"kernel/sysproc.c","symbols":["sys_uptime","argint"],"license":"MIT","relationship":"教学内核边界阅读；宿主分段示例为独立实现"}

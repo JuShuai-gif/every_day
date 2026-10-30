@@ -55,3 +55,5 @@
 
 
 2026-10-28：[CPP26：原子与发布可见性](2026-10-28/README.md)。libc++ atomic store/load 源码已读；Release 通过，sanitizer/TSan/Linux/板端未验，下一27。
+
+2026-10-30：[第28课：综合配置与推理服务生命周期](2026-10-30/README.md)。unique_ptr 构造/移动发布示例 C++17 通过；sanitizer、动态库和板端未验。

@@ -82,3 +82,5 @@
 ## 2026-10-29
 
 - [Edge continuum measurement](2026-10-29/01-edge-measurement/README.md) · [Green AI quantized inference](2026-10-29/02-green-ai/README.md)
+
+| 2026-10-30 | [PolyQ](2026-10-30/01-polyq/README.md) / 2026-07-16；[Vec-LUT](2026-10-30/02-vec-lut/README.md) / 2025-12-06（v2 2026-04-14） | 编译期位宽布局；并行 LUT 访存 | 完整复现难；作者设备/模型待补 | 两个 Python 机制例子通过，无模型/设备复现 |

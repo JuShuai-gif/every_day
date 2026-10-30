@@ -1,0 +1,7 @@
+{
+  "date":"2026-10-30","method":"awq","source_read":true,"example_delivered":true,
+  "source_fetch_record":"source-fetch.json","independent_cpu_example_run":true,
+  "native_api_run":false,"native_failure":"未在已有环境安装torch；不自动安装",
+  "thor_verified":false,"cuda_target":"sm_110","cuda_compile":false,"ncu":false,"ptx":false,"sass":false,
+  "performance_boundary":"独立Python解码循环仅作数值/存储对照，不代表原生低位GPU性能"
+}

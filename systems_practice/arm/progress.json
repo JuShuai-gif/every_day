@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
-  "last_delivery_date": "2026-10-29",
+  "last_delivery_date": "2026-10-30",
   "next_lesson_id": null,
   "delivered_lesson_ids": [
     "01",
@@ -662,6 +662,20 @@
       "recorded_at": "2026-10-29T09:30:00+08:00",
       "verification": "2026-10-29/verification.json",
       "performance_scope": "correctness only"
+    },
+    {
+      "date": "2026-10-30",
+      "lesson_id": "integrated-dispatch-01",
+      "path": "2026-10-30",
+      "lesson_delivered": true,
+      "counts_toward_daily_progress": false,
+      "source_read": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": false,
+      "target_board_verified": false,
+      "verification": "2026-10-30/verification.json",
+      "note": "首轮28节已完成；按next_action交付source04相邻能力探针，不重启游标"
     }
   ],
   "backlog": [
@@ -811,5 +825,5 @@
     "source01",
     "source02"
   ],
-  "updated_at": "2026-10-29T09:30:00+08:00"
+  "updated_at": "2026-10-30T09:30:00+08:00"
 }

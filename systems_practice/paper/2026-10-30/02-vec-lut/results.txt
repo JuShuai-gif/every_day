@@ -1,0 +1,1 @@
+{'tokens': 2, 'lookups_scalar': 6, 'vector_shape': [2, 3]}

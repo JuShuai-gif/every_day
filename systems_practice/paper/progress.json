@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-29T09:30:00+08:00",
+  "updated_at": "2026-10-30T09:30:00+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -847,6 +847,15 @@
         "arxiv:2602.06069"
       ],
       "reason": "full model/device reproduction pending; independent examples verified"
+    },
+    {
+      "ids": [
+        "arxiv:2607.14618",
+        "arxiv:2512.06443"
+      ],
+      "delivered_on": "2026-10-30",
+      "directory": "2026-10-30",
+      "status": "independent examples verified; full model/device reproduction pending"
     }
   ],
   "backlog": [
@@ -1266,5 +1275,5 @@
       "implementation_language": "Python standard library"
     }
   ],
-  "last_delivery_date": "2026-10-29"
+  "last_delivery_date": "2026-10-30"
 }

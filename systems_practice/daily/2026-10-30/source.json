@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/NVIDIA/cuda-samples",
+  "ref": "v13.0",
+  "read_date": "2026-10-30",
+  "files": [{"path":"Samples/6_Performance/transpose/transpose.cu","symbols":["transposeNaive","transposeCoalesced","transposeNoBankConflicts"],"scene":"CUDA transpose benchmark","retained":"coalesced global access, shared tile, +1 padding","adapted":"rectangular strides, tail predicates, RAII and Thor SM110 guard"}],
+  "license": "BSD-3-Clause (NOTICE.txt)",
+  "relationship": "改编：未复制原 SDK helper；独立实现保留机制并扩展 stride/尾块。GitHub 页面实际读取。"
+}

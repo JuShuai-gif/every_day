@@ -1,0 +1,15 @@
+{
+  "method":"awq",
+  "repository":"https://github.com/mit-han-lab/llm-awq.git",
+  "requested_ref":"d6e797a42b9ef7778de8ee2352116e0f48a78d61",
+  "read_date":"2026-10-30",
+  "files":[
+    {"path":"awq/quantize/auto_scale.py","symbols":["get_act_scale","scale_ln_fcs","auto_scale_block"]},
+    {"path":"awq/quantize/quantizer.py","symbols":["pseudo_quantize_tensor","real_quantize_model_weight"]},
+    {"path":"awq/quantize/qmodule.py","symbols":["pack_intweight","WQLinear.from_linear","WQLinear.forward"]},
+    {"path":"awq/kernels/csrc/quantization_new/gemv/gemv_cuda.cu","symbols":["gemv_kernel","gemv_forward_cuda_new"]}
+  ],
+  "license":"MIT root; GEMV CUDA file carries its own NVIDIA-derived notice; verify per file",
+  "relationship":"原仓库实现已实际阅读；native_example.py 保留真实 helper 调用但缩成单层随机 Linear；example.py 是独立 CPU codec，不冒充上游格式或性能。",
+  "fetch":"今日浅克隆尝试记录于 source-fetch.json；若 DNS 失败，使用已核验固定提交网页源码，不声称新 clone 成功。"
+}

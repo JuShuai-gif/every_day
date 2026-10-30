@@ -1,0 +1,1 @@
+{"repository":"https://github.com/ggml-org/llama.cpp","ref":"master","read_date":"2026-10-30","file":"ggml/src/ggml-cpu/vec.h","symbols":["GGML_SIMD","NEON vector aliases"],"license":"MIT","relationship":"源码机制阅读；本课为独立能力探针，未复制kernel"}
