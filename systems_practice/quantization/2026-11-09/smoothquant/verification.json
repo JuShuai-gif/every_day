@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-09",
+  "method": "smoothquant",
+  "repository": "https://github.com/mit-han-lab/smoothquant",
+  "commit": "c61476d728e42ae0d8a35e7e78494edcac3237b5",
+  "source_record": "source.json",
+  "source_fetched": true,
+  "source_read": true,
+  "example_delivered": true,
+  "cpu_example_run": true,
+  "mac_example_run": false,
+  "thor_verified": true,
+  "thor_native_api": true,
+  "integer_gemm_backend_verified": false,
+  "read_symbols": [
+    "smooth_ln_fcs",
+    "W8A8Linear.from_float",
+    "W8A8Linear.forward"
+  ],
+  "evidence": [
+    "results/host.txt",
+    "results/thor.txt"
+  ],
+  "blockers": [
+    "No native INT8 backend integrated; QDQ API + independent i8 serialization only",
+    "Mac lacks torch"
+  ],
+  "backlog_retry": "AutoRound still missing; one retry only"
+}

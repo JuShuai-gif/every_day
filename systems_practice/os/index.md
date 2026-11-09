@@ -58,3 +58,5 @@
 2026-10-28：[OS27：长期运行与故障恢复](2026-10-28/README.md)。xv6-riscv proc.c/proc.h 实际阅读；C++ bounded shutdown Release 通过，Linux 长稳/QEMU/板端未验，下一28。
 
 2026-10-30：[OS26：端到端延迟归因](2026-10-30/README.md)。计算/等待分段与分位数边界阅读完成；宿主 C++17 运行通过，Linux perf/xv6/QEMU/板端待验。
+
+2026-11-09 [project05](2026-11-09/README.md)：Mac与Thor Release/ASan/UBSan通过，最终源码SHA256一致；本课未测吞吐。

@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-09",
+  "source_read": true,
+  "primary_fulltext_sections_read": true,
+  "author_selected_implementation_read": true,
+  "cpu_example_run": true,
+  "thor_cpu_example_run": true,
+  "full_model_reproduced": false,
+  "training_steps": 0,
+  "evidence": [
+    "results/host.txt",
+    "results/thor.txt"
+  ]
+}

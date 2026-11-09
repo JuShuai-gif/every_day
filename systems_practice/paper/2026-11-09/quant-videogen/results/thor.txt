@@ -1,0 +1,4 @@
+stages 0 mse 0.0157500000000001 payload_and_metadata_bytes 20 fp32_reference 256
+stages 1 mse 0.0007875000000000098 payload_and_metadata_bytes 92 fp32_reference 256
+stages 2 mse 0.00011249999999999853 payload_and_metadata_bytes 164 fp32_reference 256
+PASS empty and constant inputs; no attention/video/GPU reproduction

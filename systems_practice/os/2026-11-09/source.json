@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-09",
+  "repository": "https://github.com/torvalds/linux",
+  "url": "https://github.com/torvalds/linux/blob/v6.8/fs/pipe.c",
+  "version": "v6.8",
+  "read_symbols": "pipe_write → pipe_full/O_NONBLOCK/EAGAIN；pipe_poll就绪检查",
+  "license": "GPL-2.0",
+  "relationship": "Linux原生pipe实现已读相关函数；用户态独立实现保留短写/EAGAIN语义，不复制内核锁或ring。与xv6区别：此处使用Linux/POSIX非阻塞状态，不声称xv6有同样poll接口。",
+  "source_read": true
+}

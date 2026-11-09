@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-30T09:30:00+08:00",
+  "updated_at": "2026-11-08T10:36:41+08:00",
   "daily_count": 2,
   "preferred_max_age_days": 180,
   "fallback_max_age_days": 365,
@@ -856,6 +856,32 @@
       "delivered_on": "2026-10-30",
       "directory": "2026-10-30",
       "status": "independent examples verified; full model/device reproduction pending"
+    },
+    {
+      "id": "arxiv:2602.02958",
+      "title": "Quant VideoGen: Auto-Regressive Long Video Generation via 2-Bit KV-Cache Quantization",
+      "first_submitted": "2026-02-03",
+      "version_read": "v1",
+      "delivered_on": "2026-11-09",
+      "directory": "2026-11-09/quant-videogen",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": true,
+      "cpu_mechanism_example_verified": true,
+      "thor_cpu_example_verified": true,
+      "full_paper_reproduced": false
+    },
+    {
+      "id": "arxiv:2512.01031",
+      "title": "VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference",
+      "first_submitted": "2025-11-30",
+      "version_read": "v1",
+      "delivered_on": "2026-11-09",
+      "directory": "2026-11-09/vlash",
+      "primary_fulltext_sections_read": true,
+      "author_selected_implementation_read": true,
+      "cpu_mechanism_example_verified": true,
+      "thor_cpu_example_verified": true,
+      "full_paper_reproduced": false
     }
   ],
   "backlog": [
@@ -1275,5 +1301,5 @@
       "implementation_language": "Python standard library"
     }
   ],
-  "last_delivery_date": "2026-10-30"
+  "last_delivery_date": "2026-11-09"
 }

@@ -1,0 +1,1 @@
+PASS publish, abandon cleanup, rename failure, empty output, post-close rejection; one final file

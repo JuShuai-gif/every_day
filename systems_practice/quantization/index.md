@@ -78,3 +78,5 @@
 2026-10-29 后续：2026-10-28 FP8 原生示例在 Thor 既有 PyTorch 26.06 / torchao 0.18 容器确认 `Float8Tensor` 转换并与 FP16 比较通过；这不是原读 torchao 0.13 的复现，ncu/指令/性能待验。[记录](../validation/2026-10-29-thor/fp8-ao018-final.txt)。
 
 2026-10-30：[AWQ第三轮：激活感知通道缩放与分布外退化](2026-10-30/awq/README.md)。固定提交源码实际阅读；浅克隆尝试见 `source-fetch.json`；独立真实u4打包/重载/CPU对照通过，原生torch、Thor、ncu、PTX/SASS待验。下一方法 GPTQ。
+
+2026-11-09 [SmoothQuant：alpha与校准覆盖](2026-11-09/smoothquant/README.md)。真实浅拉取、原生API/1876B导出重载在Thor通过；Mac缺torch。覆盖校准改善shift但普通eval略退化；QDQ比FP32慢，原生整数后端待测。

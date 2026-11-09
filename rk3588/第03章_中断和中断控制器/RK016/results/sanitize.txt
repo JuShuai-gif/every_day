@@ -1,0 +1,3 @@
+PASS CPU1=2 events/s despite CPU0 largest cumulative count; 4 rejected snapshots
+
+exit=0

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
   "created_on": "2026-09-29",
-  "last_delivery_date": "2026-10-30",
+  "last_delivery_date": "2026-11-09",
   "next_lesson_id": null,
   "delivered_lesson_ids": [
     "01",
@@ -506,6 +506,19 @@
       "target_board_verified": false,
       "verification": "2026-10-30/verification.json",
       "performance_scope": "not measured"
+    },
+    {
+      "date": "2026-11-09",
+      "lesson_id": "project05",
+      "path": "2026-11-09",
+      "lesson_delivered": true,
+      "source_read": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": true,
+      "verification": "2026-11-09/verification.json",
+      "counts_toward_daily_progress": true
     }
   ],
   "backlog": [
@@ -630,5 +643,6 @@
     }
   ],
   "last_canonical_lesson_date": "2026-10-29",
-  "updated_at": "2026-10-30T09:30:00+08:00"
+  "updated_at": "2026-11-09T10:43:28.966885+08:00",
+  "next_action": "project06: durable publication and directory fsync"
 }

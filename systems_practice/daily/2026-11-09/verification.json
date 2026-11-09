@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-09",
+  "source_read": true,
+  "lesson_delivered": true,
+  "host_compiled": true,
+  "host_run": true,
+  "host_sanitizers": true,
+  "thor_verified": true,
+  "thor_sanitizers": true,
+  "source_sha256": "7fa871bdc7f6773ae0c9ec6e802aff0db77d97b6829f08965636d6475c0d8953",
+  "evidence": [
+    "results/release.txt",
+    "results/sanitize.txt",
+    "results/thor-release.txt",
+    "results/thor-sanitize.txt"
+  ],
+  "performance_measured": false
+}

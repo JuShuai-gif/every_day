@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-09",
+  "repository": "https://github.com/llvm/llvm-project",
+  "url": "https://github.com/llvm/llvm-project/blob/llvmorg-20.1.8/llvm/lib/Support/ToolOutputFile.cpp",
+  "version": "llvmorg-20.1.8",
+  "read_symbols": "CleanupInstaller构造/析构，ToolOutputFile构造",
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "relationship": "原场景编译工具输出与失败清理；独立启发实现只在mkdtemp私有目录实验，新增rename发布，不复制信号清理。主课讲内存会话，本课增加真实文件系统错误边界。",
+  "source_read": true
+}

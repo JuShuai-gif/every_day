@@ -1,0 +1,17 @@
+systems_practice/daily/2026-11-09/run.sh: OK
+systems_practice/daily/2026-11-09/src/main.cpp: OK
+systems_practice/arm/2026-11-09/run.sh: OK
+systems_practice/arm/2026-11-09/src/main.cpp: OK
+systems_practice/os/2026-11-09/run.sh: OK
+systems_practice/os/2026-11-09/src/main.cpp: OK
+systems_practice/cpp17/2026-11-09/run.sh: OK
+systems_practice/cpp17/2026-11-09/src/main.cpp: OK
+systems_practice/paper/2026-11-09/quant-videogen/run.sh: OK
+systems_practice/paper/2026-11-09/quant-videogen/example.py: OK
+systems_practice/paper/2026-11-09/vlash/run.sh: OK
+systems_practice/paper/2026-11-09/vlash/example.py: OK
+systems_practice/quantization/2026-11-09/smoothquant/run.sh: OK
+systems_practice/quantization/2026-11-09/smoothquant/example.py: OK
+systems_practice/.tmp/quant_sources/smoothquant-bavij_s7/source/smoothquant/fake_quant.py: OK
+systems_practice/.tmp/quant_sources/smoothquant-bavij_s7/source/smoothquant/smooth.py: OK
+systems_practice/validation/2026-11-09-thor/run_remote.sh: OK

@@ -105,3 +105,6 @@
 2026-10-29 后续 [Old_Thor 全仓验证](../validation/2026-10-29-thor/README.md)：28 个 CUDA 源文件在修复后均以 `sm_110` 编译，28 项 GPU 命令成功退出；10-09 Softmax、10-28 GEMM 和 10-29 量化 GEMM 已补充实机数值对照。ncu 性能计数器受权限限制，26 个量化原生入口仍需依赖/版本，不能称全仓验证完成。
 
 | [2026-10-30](2026-10-30/README.md) | GPU 访存优化 | Thor SM110 转置：global 合并、shared PAD0/PAD1 bank 映射与尾块屏障；[AWQ](../quantization/2026-10-30/awq/README.md) · [ARM dispatch](../arm/2026-10-30/README.md) · [OS26](../os/2026-10-30/README.md) · [C++17第28课](../cpp17/2026-10-30/README.md) · [PolyQ/Vec-LUT](../paper/2026-10-30/README.md) | CPU合同与ASan/UBSan通过；Thor/nvcc/ncu/PTX/SASS未验 | 无GPU/E2E/功耗数字，唯一CUDA执行目标 sm_110；AWQ独立CPU例真实打包与误差对照，原生torch/Thor待补 |
+
+2026-11-09 [C++工程：候选构造与无异常提交](2026-11-09/README.md)：Mac/Thor 100提交、200失败回滚、100非法配置及ASan/UBSan通过。下一主方向CUDA Kernel；GPU理论对照仍待Turing，执行仅Thor sm_110。
+同日：[SmoothQuant](../quantization/2026-11-09/smoothquant/README.md) · [ARM source10](../arm/2026-11-09/README.md) · [OS project05](../os/2026-11-09/README.md) · [C++17 project05](../cpp17/2026-11-09/README.md) · [两篇论文](../paper/2026-11-09/README.md) · [RK016](../../rk3588/第03章_中断和中断控制器/RK016/README.md)。原六栏当日必需可运行例在Thor通过，17项hash一致；RK3588待测。量化为原生QDQ API，不是INT8 kernel加速。[验收](../validation/2026-11-09-thor/README.md)。

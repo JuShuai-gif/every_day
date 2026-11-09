@@ -1,0 +1,59 @@
+{
+  "method": "smoothquant",
+  "repository": "https://github.com/mit-han-lab/smoothquant.git",
+  "commit": "c61476d728e42ae0d8a35e7e78494edcac3237b5",
+  "license": "MIT",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 9767,
+      "sha256": "409f645f09e8a67e5cc359b1c57f6fba0f7d62a1a9ba84828e29d718aa188b7d",
+      "local_source": ".tmp/quant_sources/smoothquant-bavij_s7/source/README.md",
+      "permalink": "https://github.com/mit-han-lab/smoothquant/blob/c61476d728e42ae0d8a35e7e78494edcac3237b5/README.md"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1068,
+      "sha256": "461e568b2ba8b2d9ab6a055746590a5bd2d030211dd751acba01cdf78511c06d",
+      "local_source": ".tmp/quant_sources/smoothquant-bavij_s7/source/LICENSE",
+      "permalink": "https://github.com/mit-han-lab/smoothquant/blob/c61476d728e42ae0d8a35e7e78494edcac3237b5/LICENSE"
+    },
+    {
+      "path": "smoothquant/smooth.py",
+      "bytes": 6137,
+      "sha256": "74daf140e0efd00082ec536200aa1d18d7b1ca516b6aa70a3cb96439f4d4e88b",
+      "local_source": ".tmp/quant_sources/smoothquant-bavij_s7/source/smoothquant/smooth.py",
+      "permalink": "https://github.com/mit-han-lab/smoothquant/blob/c61476d728e42ae0d8a35e7e78494edcac3237b5/smoothquant/smooth.py"
+    },
+    {
+      "path": "smoothquant/fake_quant.py",
+      "bytes": 12282,
+      "sha256": "d0979f66c1bc38f4146db8365a162c5b356401f864636076395a978a9d569787",
+      "local_source": ".tmp/quant_sources/smoothquant-bavij_s7/source/smoothquant/fake_quant.py",
+      "permalink": "https://github.com/mit-han-lab/smoothquant/blob/c61476d728e42ae0d8a35e7e78494edcac3237b5/smoothquant/fake_quant.py"
+    }
+  ],
+  "read_symbols": [
+    "smooth_ln_fcs",
+    "smooth_lm selected callers",
+    "W8A8Linear.from_float",
+    "W8A8Linear.forward",
+    "quantize_weight_per_channel_absmax",
+    "quantize_activation_per_token_absmax"
+  ],
+  "date": "2026-11-09",
+  "fresh_clone": true,
+  "source_fetched": true,
+  "provenance": "Approved fresh shallow clone succeeded; read symbols unchanged; four fresh files compared to cached bytes modulo trailing newline.",
+  "course": "https://hanlab.mit.edu/courses/2026-fall-65940",
+  "project": "https://hanlab.mit.edu/projects/smoothquant",
+  "paper": "https://arxiv.org/abs/2211.10438",
+  "authors": [
+    "Guangxuan Xiao",
+    "Ji Lin",
+    "Mickael Seznec",
+    "Hao Wu",
+    "Julien Demouth",
+    "Song Han"
+  ]
+}

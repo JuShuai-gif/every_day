@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-09",
+  "id": "2602.02958",
+  "title": "Quant VideoGen: Auto-Regressive Long Video Generation via 2-Bit KV-Cache Quantization",
+  "first_submitted": "2026-02-03",
+  "version_read": "v1",
+  "latest_version": "2026-05-05 v5",
+  "primary_url": "https://arxiv.org/html/2602.02958v1",
+  "project": "https://hanlab.mit.edu/projects/quant-videogen",
+  "repository": "https://github.com/svg-project/Quant-VideoGen",
+  "fulltext_sections_read": "methods, experimental setup and selected table1; not entire appendix",
+  "relationship": "independent mechanism example",
+  "author_implementation_read": true,
+  "license": "Repository root has no LICENSE; not confirmed",
+  "source_branch": "main",
+  "source_file": "quant_videogen/compress.py",
+  "read_symbols": [
+    "get_quantize_fn",
+    "get_quantize_type",
+    "compress_kv_cache"
+  ]
+}

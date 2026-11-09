@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-09",
+  "id": "2512.01031",
+  "title": "VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference",
+  "first_submitted": "2025-11-30",
+  "version_read": "v1",
+  "latest_version": "2026-07-26 v2",
+  "primary_url": "https://arxiv.org/html/2512.01031v1",
+  "project": "https://hanlab.mit.edu/projects/vlash",
+  "repository": "https://github.com/mit-han-lab/vlash",
+  "fulltext_sections_read": "methods, experimental setup and selected table1; not entire appendix",
+  "relationship": "independent mechanism example",
+  "author_implementation_read": true,
+  "license": "Apache-2.0 file header",
+  "source_branch": "main",
+  "source_file": "vlash/run.py",
+  "read_symbols": [
+    "VLASHAsyncManager.get_action",
+    "launch_next_inference",
+    "should_launch_next_inference"
+  ]
+}

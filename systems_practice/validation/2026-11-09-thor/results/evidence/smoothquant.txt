@@ -1,0 +1,111 @@
+alpha_tuning [(0.013705517165362835, 0.0), (0.006005654577165842, 0.25), (0.003598288167268038, 0.5), (0.006383521482348442, 0.75), (0.014412280172109604, 1.0)] selected 0.5
+{
+  "torch": "2.12.0a0+5aff3928d8.nv26.05",
+  "device": "cpu",
+  "selected_alpha": 0.5,
+  "tune_scores": [
+    [
+      0.013705517165362835,
+      0.0
+    ],
+    [
+      0.006005654577165842,
+      0.25
+    ],
+    [
+      0.003598288167268038,
+      0.5
+    ],
+    [
+      0.006383521482348442,
+      0.75
+    ],
+    [
+      0.014412280172109604,
+      1.0
+    ]
+  ],
+  "training_steps": 0,
+  "storage": {
+    "actual_file_bytes": 1876,
+    "weight_i8_bytes": 1280,
+    "weight_endpoint_fraction": 0.0328125
+  },
+  "reference_fp32_payload_bytes": 5536,
+  "reference_fp16_payload_bytes": 2768,
+  "eval": {
+    "activation_endpoint_fraction": 0.03125,
+    "absmax": {
+      "nrmse": 0.015222008340060711,
+      "max_abs": 0.1456284523010254,
+      "cosine": 0.9998841285705566
+    },
+    "smooth": {
+      "nrmse": 0.004057606682181358,
+      "max_abs": 0.036398887634277344,
+      "cosine": 0.999991774559021
+    },
+    "covered_calibration": {
+      "nrmse": 0.004095518961548805,
+      "max_abs": 0.03963613510131836,
+      "cosine": 0.9999915361404419
+    },
+    "fp16": {
+      "nrmse": 0.00039405442657880485,
+      "max_abs": 0.004817008972167969,
+      "cosine": 0.9999999403953552
+    }
+  },
+  "shift": {
+    "activation_endpoint_fraction": 0.03125,
+    "absmax": {
+      "nrmse": 0.016172250732779503,
+      "max_abs": 0.2555842399597168,
+      "cosine": 0.9998692870140076
+    },
+    "smooth": {
+      "nrmse": 0.004872818943113089,
+      "max_abs": 0.041311681270599365,
+      "cosine": 0.9999879598617554
+    },
+    "covered_calibration": {
+      "nrmse": 0.0038095125928521156,
+      "max_abs": 0.03506803512573242,
+      "cosine": 0.9999926090240479
+    },
+    "fp16": {
+      "nrmse": 0.00037268304731696844,
+      "max_abs": 0.00641632080078125,
+      "cosine": 0.9999997615814209
+    }
+  },
+  "zero": {
+    "activation_endpoint_fraction": 0.0,
+    "absmax": {
+      "nrmse": 0.0,
+      "max_abs": 0.0,
+      "cosine": 1.0
+    },
+    "smooth": {
+      "nrmse": 0.0,
+      "max_abs": 0.0,
+      "cosine": 1.0
+    },
+    "covered_calibration": {
+      "nrmse": 0.0,
+      "max_abs": 0.0,
+      "cosine": 1.0
+    },
+    "fp16": {
+      "nrmse": 0.0002361095102969557,
+      "max_abs": 5.4836273193359375e-05,
+      "cosine": 1.0
+    }
+  },
+  "cpu_framework_batch_mean_p50_us": {
+    "fp32": 21.742098033428192,
+    "absmax_qdq": 50.95865344628692,
+    "smooth_qdq": 50.96005043014884
+  },
+  "scope": "CPU LayerNorm + input clones + QDQ + FP32 linear; excludes export/calibration; not INT8 kernel or task accuracy"
+}

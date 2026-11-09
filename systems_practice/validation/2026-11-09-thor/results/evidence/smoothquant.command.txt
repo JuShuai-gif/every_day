@@ -1,0 +1,1 @@
+docker run --rm --pull=never --network=none --runtime=nvidia -v /home/guhaoran/systems_practice/.tmp/verify-20261109.jnN4WW:/work:ro -e QUANT_OUTPUT=/tmp/quant -w /work/systems_practice/quantization/2026-11-09/smoothquant --entrypoint sh ghr-flashrt-thor-backup:latest run.sh

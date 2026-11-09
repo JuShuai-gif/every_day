@@ -1,0 +1,1 @@
+docker run --rm --pull=never --network=none --entrypoint python ghr-flashrt-thor-backup:latest -c import auto_round; print(auto_round.__version__)

@@ -1,0 +1,3 @@
+PASS 1048576 ordered bytes, EAGAIN/resume, budget rejection, zero budget rejection
+
+exit=0

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Shanghai",
-  "last_delivery_date": "2026-10-30",
+  "last_delivery_date": "2026-11-09",
   "next_lesson_id": null,
   "delivered_lesson_ids": [
     "01",
@@ -676,6 +676,19 @@
       "target_board_verified": false,
       "verification": "2026-10-30/verification.json",
       "note": "首轮28节已完成；按next_action交付source04相邻能力探针，不重启游标"
+    },
+    {
+      "date": "2026-11-09",
+      "lesson_id": "source10",
+      "path": "2026-11-09",
+      "lesson_delivered": true,
+      "source_read": true,
+      "host_compile": true,
+      "host_run": true,
+      "sanitize_passed": true,
+      "target_board_verified": true,
+      "verification": "2026-11-09/README.md",
+      "counts_toward_daily_progress": true
     }
   ],
   "backlog": [
@@ -820,10 +833,10 @@
   "last_canonical_lesson_date": "2026-10-29",
   "first_cycle_teaching_delivery_complete": true,
   "next_stage": "verified source kernels and integrated edge projects",
-  "next_action": "Continue source04 adjacent operator layout contract; no first-cycle restart",
+  "next_action": "source11: packing working-set and total latency",
   "delivered_integrated_case_ids": [
     "source01",
     "source02"
   ],
-  "updated_at": "2026-10-30T09:30:00+08:00"
+  "updated_at": "2026-11-09T10:43:28.966885+08:00"
 }

@@ -1,0 +1,5 @@
+naive_target_error 0.2999999999999998 aligned_error 0.0
+PASS offset_pairs=5, excessive delay rejected, training_steps=0
+disturbed_endpoint_error 0.40000000000000036
+
+exit=0

@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-09",
+  "repository": "https://github.com/llvm/llvm-project",
+  "ref": "llvmorg-20.1.8",
+  "file": "llvm/lib/Support/ToolOutputFile.cpp",
+  "symbols": [
+    "CleanupInstaller",
+    "ToolOutputFile"
+  ],
+  "source_read": true,
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "relationship": "Independent candidate/commit lesson inspired by cleanup ownership",
+  "additional_file": "libcxx/include/__memory/unique_ptr.h",
+  "additional_symbol": "unique_ptr::swap"
+}

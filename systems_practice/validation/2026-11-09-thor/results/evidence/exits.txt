@@ -1,0 +1,13 @@
+daily-release 0
+daily-sanitize 0
+arm-release 0
+arm-sanitize 0
+os-release 0
+os-sanitize 0
+cpp17-release 0
+cpp17-sanitize 0
+arm-assembly 0
+paper-quant-videogen 0
+paper-vlash 0
+smoothquant 0
+backlog-autoround 1
